@@ -2,6 +2,6 @@
 ## 快捷导航
 - **paper/:**
 - **tutorials/:**
-    - [basic_tools.md](docs/tutorials/basic_tools.md)
+    - [basic_tools.md](docs/tutorials/basic_tools/README.md)
     - [github.md](docs/tutorials/github.md)
 ## 其他仓库
