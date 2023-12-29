@@ -3,6 +3,7 @@
 - **tutorials/:**
     - [github.md](docs/tutorials/github.md)
   - **basic_tools/:**
+      - [vpn.md](docs/tutorials/basic_tools/vpn.md)
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
       - [README.md](docs/tutorials/basic_tools/README.md)
 ## 其他仓库
