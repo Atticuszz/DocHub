@@ -1,14 +1,11 @@
 name: Run Python Script and Update README
 
 on:
-  push:
-    branches:
-      - main
+  [push]
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v2
