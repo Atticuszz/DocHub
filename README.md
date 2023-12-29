@@ -28,6 +28,21 @@
 		- [Download - Obsidian](https://obsidian.md/download)
 		- 安装完毕之后先不要创建仓库
 	- 如何配置？
+		- 你到期望的目录下，打开cmd或ps，运行下面的命令，并且选择克隆的目录作为vault(obsidian的仓库打开)
+	- 如何提交更改？
+		- ctrl+k,ctrl+shift+k，会将你的更改同步到GitHub
+	 - 如何同步？
+		 - 初次打开obsidian或者每五分钟，都会自动同步内容
+	- 同步异常？
+		- 运行下面的强制合并命令
+- 克隆仓库命令，选择你合适的目录下执行他
+```bash
+git clone git@github.com:Atticuszz/KnowledgeHub.git
+```
+
+- 强制合并更改命令，在你当前obsidian仓库目录下运行它
 ```bash
 
 ```
+
+		

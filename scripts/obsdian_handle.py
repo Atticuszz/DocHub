@@ -7,6 +7,7 @@
 """
 import logging
 import subprocess
+from pathlib import Path
 
 
 def run_command(command):
@@ -26,7 +27,8 @@ def run_command(command):
 
 def main():
     # 添加 .obsidian 文件夹
-    run_command('git add .obsidian')
+    obsidian_path = Path(__file__).parent.parent / '.obsidian'
+    run_command(f'git add -f {obsidian_path.as_posix()}')
 
     # 提交更改
     commit_message = "basic update .obsidian"
@@ -36,9 +38,9 @@ def main():
     run_command('git push')
 
     # 从版本控制中移除 .obsidian 文件夹
-    run_command('git rm --cached -r .obsidian')
-    run_command('git commit -m "Remove .obsidian from tracking"')
-    run_command('git push')
+    # run_command(f'git rm --cached -r {obsidian_path.as_posix()}')
+    # run_command('git commit -m "Remove .obsidian from tracking"')
+    # run_command('git push')
 
 
 if __name__ == "__main__":
