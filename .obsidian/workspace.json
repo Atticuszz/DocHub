@@ -165,6 +165,14 @@
   },
   "active": "81969448d4982b7f",
   "lastOpenFiles": [
+    "scripts/readme_handler.py~",
+    "docs/tutorials/github.md",
+    "docs/tutorials/basic_tools.md",
+    "docs/tutorials",
+    "docs/paper",
+    "docs",
+    "knowledge/paper",
+    "knowledge/tutorials/basic_tools.md",
     "knowledge/tutorials/github.md",
     "README.md",
     "scripts/logs/__pycache__/__init__.cpython-311.pyc",
@@ -173,10 +181,6 @@
     "scripts/__pycache__/__init__.cpython-311.pyc",
     "scripts/__pycache__/readme_handler.cpython-311.pyc",
     "scripts/__pycache__",
-    "scripts/readme_handler.py~",
-    "scripts/logs/scripts.log",
-    "scripts/logs/config.py~",
-    "scripts/logs/config.py",
     "Profession/js/npm_yarn.md",
     "Profession/app/react_native/expo.md",
     "Bowser/windows.md",
@@ -207,10 +211,6 @@
     "Profession/python/py-env/Poetry.md",
     "Tools/VPN.md",
     "university/First semester of junior year/Untitled.md",
-    "Tools/AI/Chat-GPT.md",
-    "Tools/AI/GPT_history/GPT_history.md",
-    "Tools/AI/GPT_history/不要删除.md",
-    "Tools/AI/GPT_history/chatgpt (1).md",
     "Untitled.canvas"
   ]
 }

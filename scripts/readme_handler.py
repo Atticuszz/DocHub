@@ -8,7 +8,7 @@
 import logging
 from pathlib import Path
 HEAD_TITLE = "## 快捷导航"
-ROOT_PATH = Path(__file__).parents[1] / "knowledge"
+ROOT_PATH = Path(__file__).parents[1]
 EXCLUDE_DIRS = []
 
 
@@ -33,11 +33,11 @@ def generate_markdown_links() -> str:
                 logging.warning(f"Unknown file type: {item}")
         return links
 
-    markdown_links = create_links(ROOT_PATH)
+    markdown_links = create_links(ROOT_PATH / 'docs')
     return '\n'.join(markdown_links)
 
 
-README_PATH = Path(__file__).parents[1] / "README.md"
+README_PATH = ROOT_PATH / "README.md"
 
 
 def update_readme_content(new_content: str, header_title: str):
