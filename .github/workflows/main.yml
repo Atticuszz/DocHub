@@ -7,27 +7,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+        with:
+          ref: 'main'
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.11'
+      - name: Configuring git credentials
+        run: |
+          git config --global user.email "1831768457@qq.com"
+          git config --global user.name "Atticuszz"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install poetry
-        poetry install
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
 
-    - name: Run the script
-      run: python scripts/main.py
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install poetry
+          poetry install
 
-    - name: Commit README changes
-      run: |
-        git config --global user.name "${{ github.actor }}"
-        git config --global user.email "1831768457@qq.com"
-        git add README.md
-        git commit -m "Update README.md automatically"
-        git push
+      - name: Run the script
+        run: python scripts/main.py
+
+      - name: Commit README changes
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "1831768457@qq.com"
+          git add README.md
+          git commit -m "Update README.md automatically"
+          git push
