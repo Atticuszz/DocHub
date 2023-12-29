@@ -165,6 +165,7 @@
   },
   "active": "81969448d4982b7f",
   "lastOpenFiles": [
+    "assets",
     "scripts/readme_handler.py~",
     "docs/tutorials/github.md",
     "docs/tutorials/basic_tools.md",
@@ -180,7 +181,6 @@
     "scripts/logs/__pycache__",
     "scripts/__pycache__/__init__.cpython-311.pyc",
     "scripts/__pycache__/readme_handler.cpython-311.pyc",
-    "scripts/__pycache__",
     "Profession/js/npm_yarn.md",
     "Profession/app/react_native/expo.md",
     "Bowser/windows.md",
