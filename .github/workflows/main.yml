@@ -35,8 +35,6 @@ jobs:
 
       - name: Commit README changes
         run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "1831768457@qq.com"
           git add README.md
           git commit -m "Update README.md automatically"
           git push
