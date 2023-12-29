@@ -1,7 +1,7 @@
 name: Run Python Script and Update README
 
 on:
-  [push]
+  push:
 
 jobs:
   run-script:
@@ -36,5 +36,4 @@ jobs:
       - name: Commit README changes
         run: |
           git add README.md
-          git commit -m "Update README.md automatically"
-          git push
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update README.md automatically" && git push)
