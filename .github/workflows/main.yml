@@ -1,6 +1,9 @@
 name: Run Python Script and Update README
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   run-script:
