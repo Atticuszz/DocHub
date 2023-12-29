@@ -165,6 +165,11 @@
   },
   "active": "e5fb1abf4287bce9",
   "lastOpenFiles": [
+    "docs/tutorials/basic_tools/README.md~",
+    "README.md~",
+    "docs/tutorials/basic_tools/README.md",
+    "docs/tutorials/README.md",
+    "docs/tutorials/basic_tools",
     "scripts/main.py~",
     "assets",
     "scripts/readme_handler.py~",
@@ -178,9 +183,6 @@
     "knowledge/tutorials/github.md",
     "README.md",
     "scripts/logs/__pycache__/__init__.cpython-311.pyc",
-    "scripts/logs/__pycache__/config.cpython-311.pyc",
-    "scripts/logs/__pycache__",
-    "scripts/__pycache__/__init__.cpython-311.pyc",
     "Profession/js/npm_yarn.md",
     "Profession/app/react_native/expo.md",
     "Bowser/windows.md",
@@ -209,8 +211,6 @@
     "Profession/python/py-env/Pip.md",
     "Profession/python/py-env/conda.md",
     "Profession/python/py-env/Poetry.md",
-    "Tools/VPN.md",
-    "university/First semester of junior year/Untitled.md",
     "Untitled.canvas"
   ]
 }
