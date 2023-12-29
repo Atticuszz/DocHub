@@ -28,4 +28,6 @@
 		- [Download - Obsidian](https://obsidian.md/download)
 		- 安装完毕之后先不要创建仓库
 	- 如何配置？
-		- 
+```bash
+
+```
