@@ -22,4 +22,4 @@ jobs:
         poetry install
 
     - name: Run the script
-      run: python KnowledgeHub/scripts/main.py
+      run: python scripts/main.py
