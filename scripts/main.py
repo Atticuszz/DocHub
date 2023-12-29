@@ -5,8 +5,8 @@
 @Date Created : 29/12/2023
 @Description  :
 """
-from scripts.logs.config import setup_logging
-from scripts.readme_handler import update_readme
+from logs.config import setup_logging
+from readme_handler import update_readme
 
 if __name__ == '__main__':
     setup_logging()

@@ -163,8 +163,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "81969448d4982b7f",
+  "active": "e5fb1abf4287bce9",
   "lastOpenFiles": [
+    "scripts/main.py~",
     "assets",
     "scripts/readme_handler.py~",
     "docs/tutorials/github.md",
@@ -180,7 +181,6 @@
     "scripts/logs/__pycache__/config.cpython-311.pyc",
     "scripts/logs/__pycache__",
     "scripts/__pycache__/__init__.cpython-311.pyc",
-    "scripts/__pycache__/readme_handler.cpython-311.pyc",
     "Profession/js/npm_yarn.md",
     "Profession/app/react_native/expo.md",
     "Bowser/windows.md",

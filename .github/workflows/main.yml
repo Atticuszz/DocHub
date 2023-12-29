@@ -13,7 +13,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.11'  # 确保这里的版本与你的环境相匹配
+        python-version: '3.11'
 
     - name: Install dependencies
       run: |
