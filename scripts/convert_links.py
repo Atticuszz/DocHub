@@ -9,7 +9,7 @@ import re
 from pathlib import Path
 import logging
 
-from .common import DOC_PATH
+from common import DOC_PATH
 
 def convert_obsidian_image_and_links_to_standard_md(content):
     obsidian_pattern = r'!\[\[(.+?)\]\]|\[\[(.+?)\]\]'

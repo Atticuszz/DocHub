@@ -8,7 +8,7 @@
 import logging
 from pathlib import Path
 
-from .common import ROOT_PATH
+from common import ROOT_PATH
 
 HEAD_TITLE = "## 快捷导航"
 HEAD_TITLE_2 = "## 最近修改"
