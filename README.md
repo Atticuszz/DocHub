@@ -115,8 +115,8 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 **同步内容共享内容不费吹灰之力**
 - 有多丝滑？![assets/push_github.gif](assets/push_github.gif)复制到docs中的文件，ctrl+k填写提交信息，一键推送GitHub
 - github action
-	- 自动化脚本执行![[assets/Pasted image 20231230175017.png]]自动生成docs的目录快捷入口![[assets/Pasted image 20231230175039.png]]
-	- 自动生成docs的最近修改情况![[assets/Pasted image 20231230175217.png]]
+	- 自动化脚本执行![assets/Pasted image 20231230175017.png](assets/Pasted%20image%2020231230175017.png)自动生成docs的目录快捷入口![assets/Pasted image 20231230175039.png](assets/Pasted%20image%2020231230175039.png)
+	- 自动生成docs的最近修改情况![assets/Pasted image 20231230175217.png](assets/Pasted%20image%2020231230175217.png)
 
 ### 常见问题和禁忌
 #### 合并远程内容失败
