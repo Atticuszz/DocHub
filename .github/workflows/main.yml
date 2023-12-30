@@ -36,4 +36,6 @@ jobs:
       - name: Commit README changes
         run: |
           git add README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update README.md automatically" && git push)
+          git commit -m "Update README.md automatically" || echo "No changes to commit"
+          git push origin main
+      
