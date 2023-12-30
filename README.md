@@ -63,11 +63,15 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 	- 为什么使用它？
 		- 因为他是IDE,常见配套的VCS工具很全面，包括**git clone**,**git commit,git push**,常见的命令都有图形化界面,*避免频繁的输入命令行*
 	- 如何使用它克隆仓库？
-		- 找到从版本控制获取，英文应该是 from VCS，输入仓库链接就可以了
+		- 找到从版本控制获取，英文应该是 from VCS，输入仓库链接就可以了![[assets/Pasted image 20231230164241.png]]
 	- 如何推送到github，而不是手动上传内容
 		- 先提交更改![](assets/Pasted%20image%2020231230153401.png)
 		- 再推送到GitHub![](assets/Pasted%20image%2020231230153558.png)
-	- 如何从github自动更新收到内容
+	- 如何从github自动更新收到内容？
+		- 菜单栏的拉取操作![[assets/Pasted image 20231230164019.png]]
+	- 优缺点？
+		- 优点是可以查看仓库的脚本等高级配置，图形化界面提交推送
+		- 缺点是更新仓库需要手动，推送也需要手动，下面这个可以做到**完全自动更新仓库内容和推送**
 - obsidian
 	- 是什么？
 		- 是一个笔记知识库管理软件(主要是.md文件，也可以有其他文件pdf之类的)，基于Electron框架编写，有着庞大的生态，因此有各种各样的插件可以解决软件使用过程中的一些小需求，比如obsdian-git插件这就让obsidian可以进行基于GitHub的多人协作，备份文档
@@ -82,3 +86,15 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 	 - 如何同步？
 		 - 初次打开obsidian或者每五分钟，或者ctrl+alt+p,都会自动同步内容
 
+### 常见问题
+#### 合并远程内容失败
+- 当前仓库目录下运行
+```PowerShell
+# 重置当前分支到远程分支的状态
+git fetch --all
+git reset --hard origin/main
+
+# 强制拉取远程分支并重置本地分支
+git pull --rebase --strategy-option theirs origin main
+
+```
