@@ -5,17 +5,17 @@
     - **github/:**
         - [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
       - [git.md](docs/tutorials/VCS/git.md)
+  - **shell/:**
+      - [CMD.md](docs/tutorials/shell/CMD.md)
   - **basic_tools/:**
       - [vpn.md](docs/tutorials/basic_tools/vpn.md)
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
       - [README.md](docs/tutorials/basic_tools/README.md)
 ## 最近修改
-### 2023-12-30 Atticus Zhou : 2023-12-30 11:41:08: ...
-- 🚚 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md) <- SSH keypair setup for GitHub.md
-### 2023-12-30 Atticus Zhou : update README.MD
-- ✨ [git.md](docs/tutorials/VCS/git.md)
-- ✨ [SSH keypair setup for GitHub.md](docs/tutorials/VCS/github/SSH keypair setup for GitHub.md)
-- 🗑️ docs/tutorials/github.md
+### 2023-12-30 Atticus Zhou : vault backup: 2023-12-30 15:54:50
+- 🔨 [git.md](docs/tutorials/VCS/git.md)
+### 2023-12-30 Atticus Zhou : readme 完善教程
+- ✨ [CMD.md](docs/tutorials/shell/CMD.md)
 ## 其他仓库
 - 比如后面有单独的项目GitHub链接
 
@@ -52,7 +52,7 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 下载完毕之后，你可以使用想往常访问文件夹一样访问
 
 #### 结合本地应用使用
-- pycharm  *git需要完成[[docs/tutorials/VCS/git.md|基本配置]]才可进行推送*
+- pycharm  *git需要完成[基本配置](docs/tutorials/VCS/git.md)才可进行推送*
 	- 是什么？
 		- jetbrains系列的IDE(集成开发环境)，适用于python和常见前端框架vue,reat等等
 	- 为什么使用它？
