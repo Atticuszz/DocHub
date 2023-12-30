@@ -10,6 +10,11 @@
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
       - [README.md](docs/tutorials/basic_tools/README.md)
 ## 最近修改
+### 2023-12-30 Atticus Zhou : update readme_handler.py
+- 🔨 [readme_handler.py](scripts/readme_handler.py)
+### 2023-12-30 Atticus Zhou : add recently modified script
+- 🔨 [README.md](README.md)
+- 🔨 [readme_handler.py](scripts/readme_handler.py)
 ### 2023-12-30 Atticus Zhou : add recently modified script
 - 🔨 [README.md](README.md)
 - 🚚 [obsidian_config_zipper.py](scripts/obsidian_config_zipper.py) <- obsdian_handle.py
@@ -123,10 +128,6 @@
 ### 2023-12-30 Atticus Zhou : vault backup: 2023-12-30 09:54:54
 - 🔨 [.gitignore](.gitignore)
 - 🔨 [workspace.json](.obsidian/workspace.json)
-### 2023-12-29 Atticuszz : Update README.md automatically
-- 🔨 [README.md](README.md)
-### 2023-12-29 Atticus Zhou : Update basic_tools
-- ✨ [vpn.md](docs/tutorials/basic_tools/vpn.md)
 ## 其他仓库
 - 比如后面有单独的项目GitHub链接
 
