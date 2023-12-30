@@ -13,7 +13,7 @@ ROOT_PATH = Path(__file__).parents[1]
 EXCLUDE_DIRS = []
 
 
-def generate_markdown_links() -> str:
+def generate_quick_navigation_links() -> str:
     """
     Generates markdown links for all files and directories in the given root_path.
     """
@@ -74,13 +74,7 @@ def update_readme_content(new_content: str, header_title: str):
         file.truncate()
 
 
-def update_readme():
-    """
-    Update the README.md file by replacing content under the specified header title
-    with new_content.
-    """
-    new_content = generate_markdown_links()
-    update_readme_content(new_content, HEAD_TITLE)
+
 
 
 def update_recently_modified(target_dir: str = 'docs')->str:
@@ -173,6 +167,15 @@ def update_recently_modified(target_dir: str = 'docs')->str:
     markdown_content = generate_markdown(commit_changes)
     return markdown_content
 
+def update_readme():
+    """
+    Update the README.md file by replacing content under the specified header title
+    with new_content.
+    """
+    new_content = generate_quick_navigation_links()
+    update_readme_content(new_content, HEAD_TITLE)
+    new_content = update_recently_modified()
+    update_readme_content(new_content, HEAD_TITLE_2)
 
 if __name__ == '__main__':
     from scripts.logs.config import setup_logging
