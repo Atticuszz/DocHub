@@ -9,6 +9,9 @@
       - [vpn.md](docs/tutorials/basic_tools/vpn.md)
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
       - [README.md](docs/tutorials/basic_tools/README.md)
+## 最近修改
+
+
 ## 其他仓库
 - 比如后面有单独的项目GitHub链接
 
@@ -17,6 +20,19 @@
 - 这个仓库如其名，是基于git+github+obsidian的知识仓库，用于共享学习过程中的资料文件，或者相关项目的资料，或者作为其他项目仓库的集中导航入口
 ### 如何使用？
 *默认都是windows 64位系统*
+#### 直接访问仓库
+
+
+
+
+
+
+
+
+
+
+
+
 - git
 	- 是什么？
 		- **版本控制系统**(*是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统*)核心工具

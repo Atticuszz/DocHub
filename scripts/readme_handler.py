@@ -80,3 +80,62 @@ def update_readme():
     """
     new_content = generate_markdown_links()
     update_readme_content(new_content, HEAD_TITLE)
+
+
+def update_recently_modified():
+    """
+    Update the README.md file by replacing content under the specified header title
+    with new_content.
+    """
+    import subprocess
+    import re
+
+    # 获取最近五次提交的哈希值
+    commits = subprocess.check_output(
+        ['git', 'log', '-15', '--pretty=format:%H'],
+        universal_newlines=True
+    ).splitlines()
+
+    # 用于存储提交和修改文件的信息
+    commit_changes = {}
+
+    # 遍历每次提交，获取修改的文件列表
+    for commit in commits:
+        files_changed = subprocess.check_output(
+            ['git', 'diff-tree', '--no-commit-id', '--name-status', '-r', commit],
+            universal_newlines=True
+        )
+        # 解析文件状态和文件名
+        changes = re.findall(r'(\w)\s+(.+)', files_changed)
+        commit_changes[commit] = changes
+
+    # 为文件状态分配前缀或 emoji
+    status_prefix = {
+        'A': '✨',  # 文件添加
+        'M': '🔨',  # 文件修改
+        'D': '🗑️',  # 文件删除
+        'R': '🚚',  # 文件重命名或移动
+    }
+
+    # 生成 Markdown 格式的提交和文件更改列表
+    markdown_list = []
+    for commit, changes in commit_changes.items():
+        markdown_list.append(f"### Commit {commit[:7]}")
+        before = len(markdown_list)
+        for status, file in changes:
+            if not file.startswith('docs/'):
+                continue
+            prefix = status_prefix.get(status, '')
+            markdown_list.append(f"- {prefix} {file}")
+        if len(markdown_list) == before:
+            # clean useless commit imformation
+            markdown_list.pop()
+    # 将生成的列表转换为字符串
+    markdown_content = '\n'.join(markdown_list)
+
+    # 打印结果，或者将其写入 README.md 文件
+    print(markdown_content)
+if __name__ == '__main__':
+    from scripts.logs.config import setup_logging
+    setup_logging()
+    update_recently_modified()
