@@ -140,7 +140,8 @@ def update_recently_modified(target_dir: str = 'docs')->str:
                 f"### {commit['date']} {commit['author']} : {commit['message']}")
             start_index = len(markdown_lines)
             for status, _, path, renamed in commit['changes']:
-                if not path.startswith(target_dir):
+                if not path.strip('" ').startswith(target_dir):
+                    # print(f"Skipping {path}")
                     continue
                 emoji = status_emojis.get(status, '')
 
@@ -188,5 +189,6 @@ if __name__ == '__main__':
     from scripts.logs.config import setup_logging
     setup_logging()
     new = update_recently_modified()
-    update_readme_content(new, HEAD_TITLE_2)
+    print(new)
+    # update_readme_content(new, HEAD_TITLE_2)
 

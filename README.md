@@ -110,7 +110,9 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 		 - 初次打开obsidian或者每五分钟，或者ctrl+alt+p,都会自动同步内容
 *如果是使用obsidian，同步内容只需要快捷键或者设置obsidian-git插件自动推送* 
 **同步内容共享内容不费吹灰之力**
-- 有多丝滑？
+- 有多丝滑？![[assets/push_github.gif]]复制到docs中的文件，ctrl+k填写提交信息，一键推送GitHub
+- 云端自动化脚本执行
+	- 
 
 ### 常见问题和禁忌
 #### 合并远程内容失败
