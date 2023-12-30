@@ -131,14 +131,16 @@ def update_recently_modified(target_dir: str = 'docs')->str:
         # 生成 Markdown
         markdown_lines = []
         for commit in commit_changes:
+            # head of commit msg
             markdown_lines.append(
                 f"### {commit['date']} {commit['author']} : {commit['message']}")
             start_index = len(markdown_lines)
             for status, _, path, renamed in commit['changes']:
-                # if not path.startswith(target_dir):
-                #     continue
+                if not path.startswith(target_dir):
+                    continue
                 emoji = status_emojis.get(status, '')
 
+                # for special case of renamed files, show both old and new paths
                 if status == 'R' and renamed:
                     old_path, new_path = path, renamed
                     old_path_name = Path(old_path).name
@@ -150,6 +152,7 @@ def update_recently_modified(target_dir: str = 'docs')->str:
                 else:
                     rel_path = Path(path).as_posix()
                     path_name = Path(path).name
+                    # no need to link dead files
                     if status != 'D':
                         linked_path = f"[{path_name}]({rel_path})"
                     else:
