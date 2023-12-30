@@ -5,17 +5,17 @@
     - **github/:**
         - [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
       - [git.md](docs/tutorials/VCS/git.md)
+  - **shell/:**
+      - [CMD.md](docs/tutorials/shell/CMD.md)
   - **basic_tools/:**
       - [vpn.md](docs/tutorials/basic_tools/vpn.md)
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
       - [README.md](docs/tutorials/basic_tools/README.md)
 ## 最近修改
-### 2023-12-30 Atticus Zhou : 2023-12-30 11:41:08: ...
-- 🚚 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md) <- SSH keypair setup for GitHub.md
-### 2023-12-30 Atticus Zhou : update README.MD
-- ✨ [git.md](docs/tutorials/VCS/git.md)
-- ✨ [SSH keypair setup for GitHub.md](docs/tutorials/VCS/github/SSH keypair setup for GitHub.md)
-- 🗑️ docs/tutorials/github.md
+### 2023-12-30 Atticus Zhou : vault backup: 2023-12-30 15:54:50
+- 🔨 [git.md](docs/tutorials/VCS/git.md)
+### 2023-12-30 Atticus Zhou : readme 完善教程
+- ✨ [CMD.md](docs/tutorials/shell/CMD.md)
 ## 其他仓库
 - 比如后面有单独的项目GitHub链接
 
