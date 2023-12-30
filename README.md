@@ -25,8 +25,9 @@
       - [String.md](docs/C++/STL/String.md)
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
-    - [.md](docs/C++/.md)
 ## 最近修改
+### 2023-12-30 Atticus Zhou : Delete docs/C++/.md
+- 🗑️ docs/C++/.md
 ### 2023-12-30 Atticus Zhou : 2023-12-30 17:21:00: add c++
 - ✨ [.md](docs/C++/.md)
 - ✨ [Queue.md](docs/C++/STL/Queue.md)
