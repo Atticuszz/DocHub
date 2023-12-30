@@ -6,42 +6,39 @@
 @Description  :
 """
 import logging
-import subprocess
 from pathlib import Path
+import zipfile
+
+from scripts.logs.config import setup_logging
 
 
-def run_command(command):
-    """ 运行命令行指令 """
-    process = subprocess.run(
-        command,
-        shell=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True)
-    if process.returncode != 0:
-        logging.error(f'Error: {process.stderr}')
-        exit(process.returncode)
-    logging.info(process.stdout)
-    return process
+def zip_directory(folder_path, output_path):
+    folder_path = Path(folder_path)
+    output_path = Path(output_path)
 
+    # Ensure the output directory exists
+    output_path.parent.mkdir(parents=True, exist_ok=True)
 
-def main():
-    # 添加 .obsidian 文件夹
-    obsidian_path = Path(__file__).parent.parent / '.obsidian'
-    run_command(f'git add -f {obsidian_path.as_posix()}')
+    # Create a ZipFile object
+    with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+        # Walk through the directory
+        for file in folder_path.rglob('*'):
+            if file.is_file():  # Make sure to only add files
+                # Create a relative path for files to keep the directory structure
+                zipf.write(file, file.relative_to(folder_path))
+    logging.info(f"Created zip file at: {output_path}")
 
-    # 提交更改
-    commit_message = "basic update .obsidian"
-    run_command(f'git commit -m "{commit_message}"')
+root_path = Path(__file__).parents[1]
 
-    # 推送到远程仓库
-    run_command('git push')
+# Specify the directory you want to zip
+directory_to_zip = root_path /'.obsidian'  # Change to your specific folder path
 
-    # 从版本控制中移除 .obsidian 文件夹
-    # run_command(f'git rm --cached -r {obsidian_path.as_posix()}')
-    # run_command('git commit -m "Remove .obsidian from tracking"')
-    # run_command('git push')
+# Specify the output zip file path
+output_zip_file = root_path / "assets/obsidian.zip"  # Change to your desired output path
+
 
 
 if __name__ == "__main__":
-    main()
+    setup_logging()
+    # Call the function
+    zip_directory(directory_to_zip, output_zip_file)
