@@ -1,22 +1,5 @@
 {
-  "obsidian-git:commit": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "K"
-    }
-  ],
   "editor:insert-link": [],
-  "obsidian-git:push2": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "K"
-    }
-  ],
   "workspace:export-pdf": [
     {
       "modifiers": [
@@ -24,6 +7,15 @@
         "Shift"
       ],
       "key": "P"
+    }
+  ],
+  "obsidian-auto-link-title:enhance-url-with-title": [],
+  "obsidian-git:commit-push-specified-message": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "K"
     }
   ]
 }
