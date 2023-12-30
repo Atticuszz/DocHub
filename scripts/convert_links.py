@@ -9,7 +9,8 @@ import re
 from pathlib import Path
 import logging
 
-from common import DOC_PATH
+from common import  ROOT_PATH
+
 
 def convert_obsidian_image_and_links_to_standard_md(content):
     obsidian_pattern = r'!\[\[(.+?)\]\]|\[\[(.+?)\]\]'
@@ -27,7 +28,7 @@ def convert_obsidian_image_and_links_to_standard_md(content):
     return re.sub(obsidian_pattern, replace_obsidian, content)
 
 
-def convert_wiki_links_in_dir(directory: Path = DOC_PATH, ext='.md'):
+def convert_wiki_links_in_dir(directory: Path = ROOT_PATH, ext='.md'):
     def convert_wiki_links_in_file(file_path):
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
