@@ -3,7 +3,7 @@
 @Organization : SupaVision
 @Author       : 18317
 @Date Created : 29/12/2023
-@Description  :
+@Description  : generate directory links and recently modified files
 """
 import logging
 from pathlib import Path

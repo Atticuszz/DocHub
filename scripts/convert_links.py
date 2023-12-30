@@ -3,7 +3,7 @@
 @Organization : SupaVision
 @Author       : 18317
 @Date Created : 30/12/2023
-@Description  :
+@Description  : convert wiki-links like [[]] -> standard markdown links []()
 """
 import re
 from pathlib import Path
