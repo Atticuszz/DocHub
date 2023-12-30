@@ -3,7 +3,7 @@
 - **tutorials/:**
   - **VCS/:**
     - **github/:**
-        - [SSH keypair setup for GitHub.md](docs/tutorials/VCS/github/SSH keypair setup for GitHub.md)
+        - [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
       - [git.md](docs/tutorials/VCS/git.md)
   - **basic_tools/:**
       - [vpn.md](docs/tutorials/basic_tools/vpn.md)
