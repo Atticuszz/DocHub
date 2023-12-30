@@ -42,8 +42,8 @@
 ### 2023-12-30 Atticus Zhou : update readme
 - 🗑️ "docs/papers/[9 Apr 2023 (v1), last revised 12 Sep 2023 (this version, v3)]Point-SLAM\357\274\232Dense Neural Point Cloud-based SLAM.pdf"
 ### 2023-12-30 Atticus Zhou : 2023-12-30 16:16:57: add point-slam.pdf papers
-- ✨ [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM Dense Neural Point Cloud-based SLAM.pdf)
-- ✨ [[9 Apr 2023 (v1), last revised 12 Sep 2023 (this version, v3)]Point-SLAM\357\274\232Dense Neural Point Cloud-based SLAM.pdf"]("docs/papers/[9 Apr 2023 (v1), last revised 12 Sep 2023 (this version, v3)]Point-SLAM\357\274\232Dense Neural Point Cloud-based SLAM.pdf")
+- ✨ [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM%20Dense%20Neural%20Point%20Cloud-based%20SLAM.pdf)
+- ✨ [[9 Apr 2023 (v1), last revised 12 Sep 2023 (this version, v3)]Point-SLAM\357\274\232Dense Neural Point Cloud-based SLAM.pdf"]("docs/papers/[9%20Apr%202023%20(v1),%20last%20revised%2012%20Sep%202023%20(this%20version,%20v3)]Point-SLAM\357\274\232Dense%20Neural%20Point%20Cloud-based%20SLAM.pdf")
 ## 其他仓库
 - 比如后面有单独的项目GitHub链接
 
