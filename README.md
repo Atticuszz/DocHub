@@ -13,13 +13,34 @@
       - [vpn.md](docs/tutorials/basic_tools/vpn.md)
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
       - [README.md](docs/tutorials/basic_tools/README.md)
+- **C++/:**
+  - **STL/:**
+      - [set.md](docs/C++/STL/set.md)
+      - [unordered_map.md](docs/C++/STL/unordered_map.md)
+      - [algorithm.md](docs/C++/STL/algorithm.md)
+      - [stack.md](docs/C++/STL/stack.md)
+      - [unordered_set.md](docs/C++/STL/unordered_set.md)
+      - [Queue.md](docs/C++/STL/Queue.md)
+      - [vector.md](docs/C++/STL/vector.md)
+      - [String.md](docs/C++/STL/String.md)
+      - [map.md](docs/C++/STL/map.md)
+    - [syntax.md](docs/C++/syntax.md)
+    - [.md](docs/C++/.md)
 ## 最近修改
+### 2023-12-30 Atticus Zhou : 2023-12-30 17:21:00: add c++
+- ✨ [.md](docs/C++/.md)
+- ✨ [Queue.md](docs/C++/STL/Queue.md)
+- ✨ [String.md](docs/C++/STL/String.md)
+- ✨ [algorithm.md](docs/C++/STL/algorithm.md)
+- ✨ [map.md](docs/C++/STL/map.md)
+- ✨ [set.md](docs/C++/STL/set.md)
+- ✨ [stack.md](docs/C++/STL/stack.md)
+- ✨ [unordered_map.md](docs/C++/STL/unordered_map.md)
+- ✨ [unordered_set.md](docs/C++/STL/unordered_set.md)
+- ✨ [vector.md](docs/C++/STL/vector.md)
+- ✨ [syntax.md](docs/C++/syntax.md)
 ### 2023-12-30 Atticus Zhou : 2023-12-30 16:16:57: add point-slam.pdf papers
 - ✨ [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM Dense Neural Point Cloud-based SLAM.pdf)
-### 2023-12-30 Atticus Zhou : vault backup: 2023-12-30 15:54:50
-- 🔨 [git.md](docs/tutorials/VCS/git.md)
-### 2023-12-30 Atticus Zhou : readme 完善教程
-- ✨ [CMD.md](docs/tutorials/shell/CMD.md)
 ## 其他仓库
 - 比如后面有单独的项目GitHub链接
 
@@ -78,10 +99,10 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 		- [Download - Obsidian](https://obsidian.md/download)
 		- 安装完毕之后先不要创建仓库
 	- 导入预先配置
-		- release页面下载配置文件![[assets/Pasted image 20231230165223.png]]![[assets/Pasted image 20231230165254.png]]
-		- 你到期望的目录下，命令行运行仓库克隆命令![[assets/Pasted image 20231230170502.png]]
-		- 将obsidian.zip解压到克隆本地仓库的目录![[assets/Pasted image 20231230170800.png]]解压完记得**删除zip**,最终效果如图![[assets/Pasted image 20231230170848.png]]，这样你的仓库和obsidian配置文件就导入完成了
-		- 选择你克隆的目录地址打开它![[assets/open_valut.gif]]
+		- release页面下载配置文件![assets/Pasted image 20231230165223.png](assets/Pasted%20image%2020231230165223.png)![assets/Pasted image 20231230165254.png](assets/Pasted%20image%2020231230165254.png)
+		- 你到期望的目录下，命令行运行仓库克隆命令![assets/Pasted image 20231230170502.png](assets/Pasted%20image%2020231230170502.png)
+		- 将obsidian.zip解压到克隆本地仓库的目录![assets/Pasted image 20231230170800.png](assets/Pasted%20image%2020231230170800.png)解压完记得**删除zip**,最终效果如图![assets/Pasted image 20231230170848.png](assets/Pasted%20image%2020231230170848.png)，这样你的仓库和obsidian配置文件就导入完成了
+		- 选择你克隆的目录地址打开它![assets/open_valut.gif](assets/open_valut.gif)
 	- 如何提交更改？
 		- 先 **ctrl+alt+s**，打开右侧的资源面板，会显示最近修改的文件，点击它可以查看文件修改的具体细节![](assets/Pasted%20image%2020231230113200.png)
 		- 根据最近的修改，撰写一条提交信息，用于指示，你这次做了哪些改动，按下**ctrl+k** 会会弹出来一个![](assets/Pasted%20image%2020231230113031.png)选择提交信息之后，obsidian-git会将你的更改推送到GitHub仓库
