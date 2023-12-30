@@ -19,11 +19,12 @@ def convert_obsidian_image_and_links_to_standard_md(content):
         link_text = match.group(1) or match.group(2)
         parts = link_text.split('|')
         link = parts[0].strip().replace(' ', '%20')
-        text = parts[1].strip() if len(parts) > 1 else link
-        if match.group(1):  # 处理图片链接
-            return f'![{text}]({link})'
-        else:  # 处理普通链接
-            return f'[{text}]({link})'
+        # 保留.md扩展名
+        text = parts[1].strip() if len(parts) > 1 else link.replace('%20', ' ')
+
+        # 如果是图片链接，添加感叹号前缀
+        prefix = '!' if match.group(1) else ''
+        return f'{prefix}[{text}]({link})'
 
     return re.sub(obsidian_pattern, replace_obsidian, content)
 
