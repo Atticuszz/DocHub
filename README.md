@@ -39,8 +39,11 @@
 - ✨ [unordered_set.md](docs/C++/STL/unordered_set.md)
 - ✨ [vector.md](docs/C++/STL/vector.md)
 - ✨ [syntax.md](docs/C++/syntax.md)
+### 2023-12-30 Atticus Zhou : update readme
+- 🗑️ "docs/papers/[9 Apr 2023 (v1), last revised 12 Sep 2023 (this version, v3)]Point-SLAM\357\274\232Dense Neural Point Cloud-based SLAM.pdf"
 ### 2023-12-30 Atticus Zhou : 2023-12-30 16:16:57: add point-slam.pdf papers
 - ✨ [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM Dense Neural Point Cloud-based SLAM.pdf)
+- ✨ [[9 Apr 2023 (v1), last revised 12 Sep 2023 (this version, v3)]Point-SLAM\357\274\232Dense Neural Point Cloud-based SLAM.pdf"]("docs/papers/[9 Apr 2023 (v1), last revised 12 Sep 2023 (this version, v3)]Point-SLAM\357\274\232Dense Neural Point Cloud-based SLAM.pdf")
 ## 其他仓库
 - 比如后面有单独的项目GitHub链接
 
@@ -110,7 +113,7 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 		 - 初次打开obsidian或者每五分钟，或者ctrl+alt+p,都会自动同步内容
 *如果是使用obsidian，同步内容只需要快捷键或者设置obsidian-git插件自动推送* 
 **同步内容共享内容不费吹灰之力**
-- 有多丝滑？![[assets/push_github.gif]]复制到docs中的文件，ctrl+k填写提交信息，一键推送GitHub
+- 有多丝滑？![assets/push_github.gif](assets/push_github.gif)复制到docs中的文件，ctrl+k填写提交信息，一键推送GitHub
 - 云端自动化脚本执行
 	- 
 
