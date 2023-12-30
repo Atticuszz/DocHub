@@ -43,7 +43,7 @@
 ```bash
 git clone https://github.com/Atticuszz/KnowledgeHub.git
 ```
-- ssh *需要给自己的计算机和[[docs/tutorials/VCS/github/SSH keypair setup for GitHub|GitHub账户配置额外的密钥]],速度更快*
+- ssh *需要给自己的计算机和[[docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub|GitHub账户配置额外的密钥]],速度更快*
 ```bash
 git clone git@github.com:Atticuszz/KnowledgeHub.git
 ```
