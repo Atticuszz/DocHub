@@ -31,17 +31,16 @@
 	- 如何配置？
 		- 你到期望的目录下，打开cmd或ps，运行下面的命令，并且选择克隆的目录作为vault(obsidian的仓库打开)
 	- 如何提交更改？
-		- ctrl+k,ctrl+shift+k，会将你的更改同步到GitHub
+		- 先 **ctrl+alt+s**，打开右侧的资源面板，会显示最近修改的文件，点击它可以查看文件修改的具体细节![[assets/Pasted image 20231230113200.png]]
+		- 根据最近的修改，撰写一条提交信息，用于指示，你这次做了哪些改动，按下**ctrl+k** 会会弹出来一个![[assets/Pasted image 20231230113031.png]]选择提交信息之后，obsidian-git会将你的更改推送到GitHub仓库
 	 - 如何同步？
-		 - 初次打开obsidian或者每五分钟，都会自动同步内容
-	- 同步异常？
-		- 运行下面的强制合并命令
-- 克隆仓库命令，选择你合适的目录下执行他
+		 - 初次打开obsidian或者每五分钟，或者ctrl+alt+p,都会自动同步内容
+- 克隆仓库命令，选择你合适的目录下执行他 
+- https *网速太慢，考虑[[docs/tutorials/VCS/git|开启代理]]，代理也不行，考虑ssh*
+```bash
+git clone https://github.com/Atticuszz/KnowledgeHub.git
+```
+- ssh *需要给自己的计算机和[[docs/tutorials/VCS/github/SSH keypair setup for GitHub|GitHub账户配置额外的密钥]],速度更快*
 ```bash
 git clone git@github.com:Atticuszz/KnowledgeHub.git
-```
-
-- 强制合并更改命令，在你当前obsidian仓库目录下运行它
-```bash
-
 ```
