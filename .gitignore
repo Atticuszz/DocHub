@@ -161,5 +161,4 @@ cython_debug/
 #.idea/
 
 .obsidian
-__pycache__/
 *.pyc

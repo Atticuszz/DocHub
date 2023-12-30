@@ -165,6 +165,7 @@
   },
   "active": "81969448d4982b7f",
   "lastOpenFiles": [
+    "docs/tutorials/basic_tools/vpn.md",
     "scripts/obsdian_handle.py~",
     "docs/tutorials/basic_tools/git-install-instruction.md",
     "README.md",
@@ -182,7 +183,6 @@
     "docs/tutorials",
     "docs/paper",
     "docs",
-    "knowledge/paper",
     "knowledge/tutorials/basic_tools.md",
     "knowledge/tutorials/github.md",
     "Profession/js/npm_yarn.md",
