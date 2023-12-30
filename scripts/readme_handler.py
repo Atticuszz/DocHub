@@ -7,9 +7,11 @@
 """
 import logging
 from pathlib import Path
+
+from scripts.common import ROOT_PATH
+
 HEAD_TITLE = "## 快捷导航"
 HEAD_TITLE_2 = "## 最近修改"
-ROOT_PATH = Path(__file__).parents[1]
 EXCLUDE_DIRS = []
 
 

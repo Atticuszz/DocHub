@@ -33,7 +33,7 @@
 *git是预先配置*
 - git
 	- 是什么？
-		- **版本控制系统**(*是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统*)核心工具
+		- **版本控制系统**\(*是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统*\)核心工具
 	- 干嘛要装它？
 		- 这样，你得任何对指定目录下的文件都会被检测到，一旦commit(提交当前更改)，push(推送到GitHub云端)，obsidian+git插件会自动同步云端其他协作者的修改，这就达到了共同协作
 	 - 怎么安装？
@@ -52,12 +52,17 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 下载完毕之后，你可以使用想往常访问文件夹一样访问
 
 #### 结合本地应用使用
-- pycharm
+- pycharm  *git需要完成[[docs/tutorials/VCS/git|基本配置]]才可进行推送*
 	- 是什么？
 		- jetbrains系列的IDE(集成开发环境)，适用于python和常见前端框架vue,reat等等
 	- 为什么使用它？
-		- 因为他是IDE,常见配套的VCS工具很全面，包括**git clone**,**git commit,git push**,常见的命令都有图形化界面,*避免频繁的输入命令行*![](assets/Pasted%20image%2020231230153401.png)
-		- 
+		- 因为他是IDE,常见配套的VCS工具很全面，包括**git clone**,**git commit,git push**,常见的命令都有图形化界面,*避免频繁的输入命令行*
+	- 如何使用它克隆仓库？
+		- 找到从版本控制获取，英文应该是 from VCS，输入仓库链接就可以了
+	- 如何推送到github，而不是手动上传内容
+		- 先提交更改![](assets/Pasted%20image%2020231230153401.png)
+		- 再推送到GitHub![](assets/Pasted%20image%2020231230153558.png)
+	- 如何从github自动更新收到内容
 - obsidian
 	- 是什么？
 		- 是一个笔记知识库管理软件(主要是.md文件，也可以有其他文件pdf之类的)，基于Electron框架编写，有着庞大的生态，因此有各种各样的插件可以解决软件使用过程中的一些小需求，比如obsdian-git插件这就让obsidian可以进行基于GitHub的多人协作，备份文档

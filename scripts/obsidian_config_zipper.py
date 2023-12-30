@@ -9,6 +9,7 @@ import logging
 from pathlib import Path
 import zipfile
 
+from scripts.common import ROOT_PATH
 from scripts.logs.config import setup_logging
 
 
@@ -24,18 +25,19 @@ def zip_directory(folder_path, output_path):
         # Walk through the directory
         for file in folder_path.rglob('*'):
             if file.is_file():  # Make sure to only add files
-                # Create a relative path for files to keep the directory structure
+                # Create a relative path for files to keep the directory
+                # structure
                 zipf.write(file, file.relative_to(folder_path))
     logging.info(f"Created zip file at: {output_path}")
 
-root_path = Path(__file__).parents[1]
 
 # Specify the directory you want to zip
-directory_to_zip = root_path /'.obsidian'  # Change to your specific folder path
+# Change to your specific folder path
+directory_to_zip = ROOT_PATH / '.obsidian'
 
 # Specify the output zip file path
-output_zip_file = root_path / "assets/obsidian.zip"  # Change to your desired output path
-
+# Change to your desired output path
+output_zip_file = ROOT_PATH / "assets/obsidian.zip"
 
 
 if __name__ == "__main__":
