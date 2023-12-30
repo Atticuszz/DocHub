@@ -1,7 +1,6 @@
 
 ## 快捷导航
 - **papers/:**
-    - [[9 Apr 2023 (v1), last revised 12 Sep 2023 (this version, v3)]Point-SLAM：Dense Neural Point Cloud-based SLAM.pdf](docs/papers/[9%20Apr%202023%20(v1),%20last%20revised%2012%20Sep%202023%20(this%20version,%20v3)]Point-SLAM：Dense%20Neural%20Point%20Cloud-based%20SLAM.pdf)
     - [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM%20Dense%20Neural%20Point%20Cloud-based%20SLAM.pdf)
 - **tutorials/:**
   - **VCS/:**
@@ -63,12 +62,12 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 	- 为什么使用它？
 		- 因为他是IDE,常见配套的VCS工具很全面，包括**git clone**,**git commit,git push**,常见的命令都有图形化界面,*避免频繁的输入命令行*
 	- 如何使用它克隆仓库？
-		- 找到从版本控制获取，英文应该是 from VCS，输入仓库链接就可以了![[assets/Pasted image 20231230164241.png]]
+		- 找到从版本控制获取，英文应该是 from VCS，输入仓库链接就可以了![assets/Pasted image 20231230164241.png](assets/Pasted%20image%2020231230164241.png)
 	- 如何推送到github，而不是手动上传内容
 		- 先提交更改![](assets/Pasted%20image%2020231230153401.png)
 		- 再推送到GitHub![](assets/Pasted%20image%2020231230153558.png)
 	- 如何从github自动更新收到内容？
-		- 菜单栏的拉取操作![[assets/Pasted image 20231230164019.png]]
+		- 菜单栏的拉取操作![assets/Pasted image 20231230164019.png](assets/Pasted%20image%2020231230164019.png)
 	- 优缺点？
 		- 优点是可以查看仓库的脚本等高级配置，图形化界面提交推送
 		- 缺点是更新仓库需要手动，推送也需要手动，下面这个可以做到**完全自动更新仓库内容和推送**
