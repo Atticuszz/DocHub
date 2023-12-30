@@ -27,7 +27,9 @@ def generate_quick_navigation_links() -> str:
                 links.append(f"{'  ' * level}- **{item.name}/:**")
                 links.extend(create_links(item, level + 1))
             elif item.is_file():
-                rel_path = item.relative_to(ROOT_PATH).as_posix()
+                # Replace spaces with %20 for markdown links
+                rel_path = item.relative_to(ROOT_PATH).as_posix().replace(' ', '%20')
+
                 links.append(
                     f"{'  ' * (level + 1)}- [{item.name}]({rel_path})")
             else:
