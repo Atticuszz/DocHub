@@ -1,5 +1,8 @@
 
 ## 快捷导航
+- **papers/:**
+    - [[9 Apr 2023 (v1), last revised 12 Sep 2023 (this version, v3)]Point-SLAM：Dense Neural Point Cloud-based SLAM.pdf](docs/papers/[9%20Apr%202023%20(v1),%20last%20revised%2012%20Sep%202023%20(this%20version,%20v3)]Point-SLAM：Dense%20Neural%20Point%20Cloud-based%20SLAM.pdf)
+    - [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM%20Dense%20Neural%20Point%20Cloud-based%20SLAM.pdf)
 - **tutorials/:**
   - **VCS/:**
     - **github/:**
@@ -12,6 +15,8 @@
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
       - [README.md](docs/tutorials/basic_tools/README.md)
 ## 最近修改
+### 2023-12-30 Atticus Zhou : 2023-12-30 16:16:57: add point-slam.pdf papers
+- ✨ [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM Dense Neural Point Cloud-based SLAM.pdf)
 ### 2023-12-30 Atticus Zhou : vault backup: 2023-12-30 15:54:50
 - 🔨 [git.md](docs/tutorials/VCS/git.md)
 ### 2023-12-30 Atticus Zhou : readme 完善教程
