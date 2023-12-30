@@ -52,7 +52,7 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 下载完毕之后，你可以使用想往常访问文件夹一样访问
 
 #### 结合本地应用使用
-- pycharm  *git需要完成[[docs/tutorials/VCS/git|基本配置]]才可进行推送*
+- pycharm  *git需要完成[基本配置](docs/tutorials/VCS/git)才可进行推送*
 	- 是什么？
 		- jetbrains系列的IDE(集成开发环境)，适用于python和常见前端框架vue,reat等等
 	- 为什么使用它？
