@@ -1,7 +1,10 @@
 
 ## 快捷导航
 - **tutorials/:**
-    - [github.md](docs/tutorials/github.md)
+  - **VCS/:**
+    - **github/:**
+        - [SSH keypair setup for GitHub.md](docs/tutorials/VCS/github/SSH keypair setup for GitHub.md)
+      - [git.md](docs/tutorials/VCS/git.md)
   - **basic_tools/:**
       - [vpn.md](docs/tutorials/basic_tools/vpn.md)
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
