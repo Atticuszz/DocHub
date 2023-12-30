@@ -10,8 +10,123 @@
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
       - [README.md](docs/tutorials/basic_tools/README.md)
 ## 最近修改
-
-
+### 2023-12-30 Atticus Zhou : add recently modified script
+- 🔨 [README.md](README.md)
+- 🚚 [obsidian_config_zipper.py](scripts/obsidian_config_zipper.py) <- obsdian_handle.py
+- 🔨 [readme_handler.py](scripts/readme_handler.py)
+### 2023-12-30 Atticuszz : Update README.md automatically
+- 🔨 [README.md](README.md)
+### 2023-12-30 Atticus Zhou : 2023-12-30 11:41:08: ...
+- 🔨 [README.md](README.md)
+- 🚚 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md) <- SSH keypair setup for GitHub.md
+### 2023-12-30 Atticuszz : Update README.md automatically
+- 🔨 [README.md](README.md)
+### 2023-12-30 Atticus Zhou : update README.MD
+- 🔨 [README.md](README.md)
+- ✨ [Pasted image 20231230113031.png](assets/Pasted image 20231230113031.png)
+- ✨ [Pasted image 20231230113200.png](assets/Pasted image 20231230113200.png)
+- ✨ [git.md](docs/tutorials/VCS/git.md)
+- ✨ [SSH keypair setup for GitHub.md](docs/tutorials/VCS/github/SSH keypair setup for GitHub.md)
+- 🗑️ docs/tutorials/github.md
+### 2023-12-30 Atticus Zhou : fix bug in update readme script ci
+- 🔨 [main.yml](.github/workflows/main.yml)
+### 2023-12-30 Atticus Zhou : add obsidian config zipper script
+- 🔨 [.gitignore](.gitignore)
+- 🔨 [README.md](README.md)
+- 🔨 [scripts.log](scripts/logs/scripts.log)
+- 🔨 [obsdian_handle.py](scripts/obsdian_handle.py)
+### 2023-12-30 Atticus Zhou : Remove .obsidian from tracking
+- 🗑️ .obsidian/app.json
+- 🗑️ .obsidian/appearance.json
+- 🗑️ .obsidian/community-plugins.json
+- 🗑️ .obsidian/core-plugins-migration.json
+- 🗑️ .obsidian/core-plugins.json
+- 🗑️ .obsidian/graph.json
+- 🗑️ .obsidian/hotkeys.json
+- 🗑️ .obsidian/page-preview.json
+- 🗑️ .obsidian/plugins/editing-toolbar/data.json
+- 🗑️ .obsidian/plugins/editing-toolbar/main.js
+- 🗑️ .obsidian/plugins/editing-toolbar/manifest.json
+- 🗑️ .obsidian/plugins/editing-toolbar/styles.css
+- 🗑️ .obsidian/plugins/obsidian-annotator/main.js
+- 🗑️ .obsidian/plugins/obsidian-annotator/manifest.json
+- 🗑️ .obsidian/plugins/obsidian-auto-link-title/main.js
+- 🗑️ .obsidian/plugins/obsidian-auto-link-title/manifest.json
+- 🗑️ .obsidian/plugins/obsidian-auto-link-title/styles.css
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/data.json
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/lua/citefilter.lua
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/lua/markdown.lua
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/lua/pdf.lua
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/lua/url.lua
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/lua/utf8_filenames.lua
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/main.js
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/manifest.json
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/styles.css
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty
+- 🗑️ .obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex
+- 🗑️ .obsidian/plugins/obsidian-excalidraw-plugin/data.json
+- 🗑️ .obsidian/plugins/obsidian-excalidraw-plugin/main.js
+- 🗑️ .obsidian/plugins/obsidian-excalidraw-plugin/manifest.json
+- 🗑️ .obsidian/plugins/obsidian-excalidraw-plugin/styles.css
+- 🗑️ .obsidian/plugins/obsidian-git/data.json
+- 🗑️ .obsidian/plugins/obsidian-git/main.js
+- 🗑️ .obsidian/plugins/obsidian-git/manifest.json
+- 🗑️ .obsidian/plugins/obsidian-git/styles.css
+- 🗑️ .obsidian/plugins/obsidian-image-toolkit/main.js
+- 🗑️ .obsidian/plugins/obsidian-image-toolkit/manifest.json
+- 🗑️ .obsidian/plugins/obsidian-image-toolkit/styles.css
+- 🗑️ .obsidian/plugins/obsidian-importer/main.js
+- 🗑️ .obsidian/plugins/obsidian-importer/manifest.json
+- 🗑️ .obsidian/plugins/obsidian-importer/styles.css
+- 🗑️ .obsidian/plugins/obsidian-markmind/data.json
+- 🗑️ .obsidian/plugins/obsidian-markmind/main.js
+- 🗑️ .obsidian/plugins/obsidian-markmind/manifest.json
+- 🗑️ .obsidian/plugins/obsidian-markmind/styles.css
+- 🗑️ .obsidian/plugins/obsidian-pandoc/data.json
+- 🗑️ .obsidian/plugins/obsidian-pandoc/main.js
+- 🗑️ .obsidian/plugins/obsidian-pandoc/manifest.json
+- 🗑️ .obsidian/plugins/obsidian-pandoc/styles.css
+- 🗑️ .obsidian/plugins/oz-clear-unused-images/data.json
+- 🗑️ .obsidian/plugins/oz-clear-unused-images/main.js
+- 🗑️ .obsidian/plugins/oz-clear-unused-images/manifest.json
+- 🗑️ .obsidian/plugins/oz-clear-unused-images/styles.css
+- 🗑️ .obsidian/plugins/quick-explorer/main.js
+- 🗑️ .obsidian/plugins/quick-explorer/manifest.json
+- 🗑️ .obsidian/plugins/quick-explorer/styles.css
+- 🗑️ .obsidian/plugins/quick-latex/main.js
+- 🗑️ .obsidian/plugins/quick-latex/manifest.json
+- 🗑️ .obsidian/plugins/quick-latex/styles.css
+- 🗑️ .obsidian/plugins/table-editor-obsidian/data.json
+- 🗑️ .obsidian/plugins/table-editor-obsidian/main.js
+- 🗑️ .obsidian/plugins/table-editor-obsidian/manifest.json
+- 🗑️ .obsidian/plugins/table-editor-obsidian/styles.css
+- 🗑️ .obsidian/plugins/url-into-selection/main.js
+- 🗑️ .obsidian/plugins/url-into-selection/manifest.json
+- 🗑️ .obsidian/themes/Things/manifest.json
+- 🗑️ .obsidian/themes/Things/theme.css
+- 🗑️ .obsidian/workspace.json
+- 🗑️ .obsidian/workspaces.json
+### 2023-12-30 Atticus Zhou : 2023-12-30 10:21:19: test push
+- 🔨 [workspace.json](.obsidian/workspace.json)
+### 2023-12-30 Atticus Zhou : 2023-12-30 10:11:10: modified hotkeys
+- 🔨 [hotkeys.json](.obsidian/hotkeys.json)
+### 2023-12-30 Atticus Zhou : 2023-12-30 10:00:41: test
+- 🔨 [hotkeys.json](.obsidian/hotkeys.json)
+- 🔨 [README.md](README.md)
+### 2023-12-30 Atticus Zhou : vault backup: 2023-12-30 09:57:22
+- 🔨 [.gitignore](.gitignore)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+### 2023-12-30 Atticus Zhou : vault backup: 2023-12-30 09:54:54
+- 🔨 [.gitignore](.gitignore)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+### 2023-12-29 Atticuszz : Update README.md automatically
+- 🔨 [README.md](README.md)
+### 2023-12-29 Atticus Zhou : Update basic_tools
+- ✨ [vpn.md](docs/tutorials/basic_tools/vpn.md)
 ## 其他仓库
 - 比如后面有单独的项目GitHub链接
 

@@ -8,6 +8,7 @@
 import logging
 from pathlib import Path
 HEAD_TITLE = "## 快捷导航"
+HEAD_TITLE_2 = "## 最近修改"
 ROOT_PATH = Path(__file__).parents[1]
 EXCLUDE_DIRS = []
 
@@ -82,60 +83,100 @@ def update_readme():
     update_readme_content(new_content, HEAD_TITLE)
 
 
-def update_recently_modified():
+def update_recently_modified(target_dir: str = 'docs')->str:
     """
     Update the README.md file by replacing content under the specified header title
     with new_content.
     """
     import subprocess
     import re
+    # 获取和解析 Git 提交数据
 
-    # 获取最近五次提交的哈希值
-    commits = subprocess.check_output(
-        ['git', 'log', '-15', '--pretty=format:%H'],
-        universal_newlines=True
-    ).splitlines()
+    def get_git_changes(num_commits):
+        # 使用唯一分隔符（例如 "|||"）来分隔日期、作者和提交信息
+        separator = "|||"
+        commit_log = subprocess.check_output(
+            [
+                'git',
+                'log',
+                f'-{num_commits}',
+                f'--pretty=format:%ad{separator}%an{separator}%s',
+                '--date=short',
+                '--name-status'],
+            universal_newlines=True)
 
-    # 用于存储提交和修改文件的信息
-    commit_changes = {}
+        commit_changes = []
+        current_commit_info = []
+        for line in commit_log.splitlines():
+            if separator in line:
+                # 分割日期、作者和提交信息
+                parts = line.split(separator)
+                date, author, message = parts[0], parts[1], parts[2]
+                current_commit_info = {
+                    'date': date,
+                    'author': author,
+                    'message': message,
+                    'changes': []}
+                commit_changes.append(current_commit_info)
+            else:
+                match = re.match(r'^([AMDRT])(\d+)?\t(.+?)(?:\t(.+))?$', line)
+                if match and current_commit_info:
+                    current_commit_info['changes'].append(match.groups())
+        return commit_changes
 
-    # 遍历每次提交，获取修改的文件列表
-    for commit in commits:
-        files_changed = subprocess.check_output(
-            ['git', 'diff-tree', '--no-commit-id', '--name-status', '-r', commit],
-            universal_newlines=True
-        )
-        # 解析文件状态和文件名
-        changes = re.findall(r'(\w)\s+(.+)', files_changed)
-        commit_changes[commit] = changes
+    # 处理解析后的数据并生成 Markdown 内容
+    def generate_markdown(commit_changes)->str:
+        # 定义文件状态的 emoji
+        status_emojis = {
+            'A': '✨',  # Added
+            'M': '🔨',  # Modified
+            'D': '🗑️',  # Deleted
+            'R': '🚚',  # Renamed
+        }
 
-    # 为文件状态分配前缀或 emoji
-    status_prefix = {
-        'A': '✨',  # 文件添加
-        'M': '🔨',  # 文件修改
-        'D': '🗑️',  # 文件删除
-        'R': '🚚',  # 文件重命名或移动
-    }
+        # 生成 Markdown
+        markdown_lines = []
+        for commit in commit_changes:
+            markdown_lines.append(
+                f"### {commit['date']} {commit['author']} : {commit['message']}")
+            start_index = len(markdown_lines)
+            for status, _, path, renamed in commit['changes']:
+                # if not path.startswith(target_dir):
+                #     continue
+                emoji = status_emojis.get(status, '')
 
-    # 生成 Markdown 格式的提交和文件更改列表
-    markdown_list = []
-    for commit, changes in commit_changes.items():
-        markdown_list.append(f"### Commit {commit[:7]}")
-        before = len(markdown_list)
-        for status, file in changes:
-            if not file.startswith('docs/'):
-                continue
-            prefix = status_prefix.get(status, '')
-            markdown_list.append(f"- {prefix} {file}")
-        if len(markdown_list) == before:
-            # clean useless commit imformation
-            markdown_list.pop()
-    # 将生成的列表转换为字符串
-    markdown_content = '\n'.join(markdown_list)
+                if status == 'R' and renamed:
+                    old_path, new_path = path, renamed
+                    old_path_name = Path(old_path).name
+                    new_path_name = Path(new_path).name
+                    rel_path = Path(new_path).as_posix()
+                    linked_path = f"[{new_path_name}]({rel_path})"
+                    markdown_lines.append(
+                        f"- {emoji} {linked_path} <- {old_path_name}")
+                else:
+                    rel_path = Path(path).as_posix()
+                    path_name = Path(path).name
+                    if status != 'D':
+                        linked_path = f"[{path_name}]({rel_path})"
+                    else:
+                        linked_path = path
+                    markdown_lines.append(f"- {emoji} {linked_path}")
 
-    # 打印结果，或者将其写入 README.md 文件
-    print(markdown_content)
+            if len(markdown_lines) == start_index:
+                # clean
+                markdown_lines.pop()
+
+        return '\n'.join(markdown_lines)
+
+    # 使用上面定义的函数
+    commit_changes = get_git_changes(15)
+    markdown_content = generate_markdown(commit_changes)
+    return markdown_content
+
+
 if __name__ == '__main__':
     from scripts.logs.config import setup_logging
     setup_logging()
-    update_recently_modified()
+    new = update_recently_modified()
+    update_readme_content(new, HEAD_TITLE_2)
+
