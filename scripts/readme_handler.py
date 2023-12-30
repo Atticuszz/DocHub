@@ -150,12 +150,12 @@ def update_recently_modified(target_dir: str = 'docs')->str:
                     old_path, new_path = path, renamed
                     old_path_name = Path(old_path).name
                     new_path_name = Path(new_path).name
-                    rel_path = Path(new_path).as_posix()
+                    rel_path = Path(new_path).as_posix().replace(' ', '%20')
                     linked_path = f"[{new_path_name}]({rel_path})"
                     markdown_lines.append(
                         f"- {emoji} {linked_path} <- {old_path_name}")
                 else:
-                    rel_path = Path(path).as_posix()
+                    rel_path = Path(path).as_posix().replace(' ', '%20')
                     path_name = Path(path).name
                     # no need to link dead files
                     if status != 'D':
