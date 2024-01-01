@@ -1,5 +1,20 @@
+- 简化版 *都在powershell中完成*
+## SSH
+1. generate key-pair
+```powershell
+ssh-keygen -t ed25519 -C "1831768457@qq.com"
+```
+2. copy id_rsa.pub into [github_ssh_setting](https://github.com/settings/keys)  set auth key type
+```powershell
+cat ~/.ssh/id_rsa.pub | clip
+```
+3. test ssh connect  *you may need to enter yes as it's requiring to trust connection to github*
+```powershell
+ssh -T git@github.com
+```
+--------------
 
-*转自GitHub[Setup SSH keys for use with GitHub/GitLab/BitBucket etc · GitHub](https://gist.github.com/developius/c81f021eb5c5916013dc)*
+*以下转自GitHub[Setup SSH keys for use with GitHub/GitLab/BitBucket etc · GitHub](https://gist.github.com/developius/c81f021eb5c5916013dc)*
 
 ### Create a repo.
 Make sure there is at least one file in it (even just the README.md)
