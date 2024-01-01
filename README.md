@@ -26,6 +26,8 @@
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
 ## 最近修改
+### 2024-01-01 Atticuszz : 2024-01-01 15:37:02: 添加了简化版ssh链接GitHub
+- 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
 ### 2023-12-30 Atticus Zhou : Delete docs/C++/.md
 - 🗑️ docs/C++/.md
 ### 2023-12-30 Atticus Zhou : 2023-12-30 17:21:00: add c++
@@ -42,9 +44,6 @@
 - ✨ [syntax.md](docs/C++/syntax.md)
 ### 2023-12-30 Atticus Zhou : update readme
 - 🗑️ "docs/papers/[9 Apr 2023 (v1), last revised 12 Sep 2023 (this version, v3)]Point-SLAM\357\274\232Dense Neural Point Cloud-based SLAM.pdf"
-### 2023-12-30 Atticus Zhou : 2023-12-30 16:16:57: add point-slam.pdf papers
-- ✨ [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM%20Dense%20Neural%20Point%20Cloud-based%20SLAM.pdf)
-- ✨ [[9 Apr 2023 (v1), last revised 12 Sep 2023 (this version, v3)]Point-SLAM\357\274\232Dense Neural Point Cloud-based SLAM.pdf"]("docs/papers/[9%20Apr%202023%20(v1),%20last%20revised%2012%20Sep%202023%20(this%20version,%20v3)]Point-SLAM\357\274\232Dense%20Neural%20Point%20Cloud-based%20SLAM.pdf")
 ## 其他仓库
 - 比如后面有单独的项目GitHub链接
 
