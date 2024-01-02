@@ -1,5 +1,4 @@
 - 简化版 *都在powershell中完成*
-]
 *system: win11*
 ### in admin powershell 
 #### start ssh-agent
@@ -161,4 +160,4 @@ ssh -T git@github.com
     > Enter same passphrase again: [Type passphrase again]
     ```
     
-4. 将 SSH 公钥添加到 GitHub 上的帐户。 有关详细信息，请参阅“[新增 SSH 密钥到 GitHub 帐户](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)”。
+4. 将 SSH 公钥添加到 GitHub 上的帐户。 有关详细信息，请参阅“[新增 SSH 密钥到 GitHub 帐户](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)”
