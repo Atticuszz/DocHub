@@ -26,24 +26,14 @@
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
 ## 最近修改
+### 2024-01-02 Atticuszz : 更新了ssh链接GitHub的方式
+- 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
 ### 2024-01-02 Atticuszz : 2024-01-02 17:05:44: ...
 - 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
 ### 2024-01-01 Atticuszz : 2024-01-01 15:37:02: 添加了简化版ssh链接GitHub
 - 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
 ### 2023-12-30 Atticus Zhou : Delete docs/C++/.md
 - 🗑️ docs/C++/.md
-### 2023-12-30 Atticus Zhou : 2023-12-30 17:21:00: add c++
-- ✨ [.md](docs/C++/.md)
-- ✨ [Queue.md](docs/C++/STL/Queue.md)
-- ✨ [String.md](docs/C++/STL/String.md)
-- ✨ [algorithm.md](docs/C++/STL/algorithm.md)
-- ✨ [map.md](docs/C++/STL/map.md)
-- ✨ [set.md](docs/C++/STL/set.md)
-- ✨ [stack.md](docs/C++/STL/stack.md)
-- ✨ [unordered_map.md](docs/C++/STL/unordered_map.md)
-- ✨ [unordered_set.md](docs/C++/STL/unordered_set.md)
-- ✨ [vector.md](docs/C++/STL/vector.md)
-- ✨ [syntax.md](docs/C++/syntax.md)
 ## 其他仓库
 - 比如后面有单独的项目GitHub链接
 
