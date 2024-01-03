@@ -26,6 +26,9 @@
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
 ## 最近修改
+### 2024-01-03 Atticuszz : 2024-01-03 18:33:04: 添加了ssh代理设置，避免开启代理的情况下ssh几乎失效
+- 🔨 [git.md](docs/tutorials/VCS/git.md)
+- 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
 ### 2024-01-02 Atticuszz : 更新了ssh链接GitHub的方式
 - 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
 ### 2024-01-02 Atticuszz : 2024-01-02 17:05:44: ...
