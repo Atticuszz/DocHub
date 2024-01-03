@@ -1,6 +1,7 @@
 - 简化版 *都在powershell中完成*
+### SSH
 *system: win11*
-### in admin powershell 
+*in admin powershell* 
 #### start ssh-agent
 ```powershell
 Get-Service -Name ssh-agent | Set-Service -StartupType Manual
@@ -11,7 +12,7 @@ Start-Service ssh-agent
 ssh-keygen -t ed25519 -C "1831768457@qq.com"
 ```
 
-### in normal powersehll
+ *in normal powersehll*
 #### add ssh-key-pair into ssh-agent
 ```powershell
 ssh-add C:\Users\18317\.ssh\id_ed25519
@@ -20,6 +21,19 @@ ssh-add C:\Users\18317\.ssh\id_ed25519
 #### copy id_ed25519.pub into  [github_ssh_setting](https://github.com/settings/keys) set auth key type
 ```powershell
 cat ~/.ssh/id_ed25519.pub | clip
+```
+
+#### test ssh connect by https 
+```shell
+ssh -T -p 443 git@ssh.github.com
+```
+#### add config
+ add the following text into `~/.ssh/config`
+```text
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+    User git
 ```
 
 #### test test ssh connect  
