@@ -38,7 +38,13 @@
 ### 2023-12-30 Atticus Zhou : Delete docs/C++/.md
 - 🗑️ docs/C++/.md
 ## 其他仓库
-- 比如后面有单独的项目GitHub链接
+### 论文速览
+1. [GitHub - eriksandstroem/Point-SLAM: Point-SLAM: Dense Neural Point Cloud-based SLAM](https://github.com/eriksandstroem/Point-SLAM)
+	- ![](https://github.com/eriksandstroem/Point-SLAM/raw/main/media/office_4.gif)
+2. [GitHub - youmi-zym/GO-SLAM: [ICCV2023] GO-SLAM: Global Optimization for Consistent 3D Instant Reconstruction](https://github.com/youmi-zym/GO-SLAM)
+	- ![](https://github.com/youmi-zym/GO-SLAM/raw/main/images/comparison.png)
+3. [GitHub - HengyiWang/Co-SLAM: [CVPR'23] Co-SLAM: Joint Coordinate and Sparse Parametric Encodings for Neural Real-Time SLAM](https://github.com/HengyiWang/Co-SLAM)
+	- ![](https://github.com/HengyiWang/Co-SLAM/raw/main/media/coslam_teaser.gif)
 
 ## 使用说明
 ### 这个仓库是什么？
