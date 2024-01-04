@@ -26,9 +26,8 @@
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
 ## 最近修改
-### 2024-01-03 by Atticuszz - 2024-01-03 18:33:04: 添加了ssh代理设置，避免开启代理的情况下ssh几乎失效
+### 2024-01-04 by Atticuszz - 增加了git常见命令
 - 🔨 [git.md](docs/tutorials/VCS/git.md)
-- 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
 ## 其他仓库
 ### 论文速览
 1. [GitHub - eriksandstroem/Point-SLAM: Point-SLAM: Dense Neural Point Cloud-based SLAM](https://github.com/eriksandstroem/Point-SLAM)
