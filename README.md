@@ -29,10 +29,6 @@
 ### 2024-01-03 by Atticuszz - 2024-01-03 18:33:04: 添加了ssh代理设置，避免开启代理的情况下ssh几乎失效
 - 🔨 [git.md](docs/tutorials/VCS/git.md)
 - 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
-### 2024-01-02 by Atticuszz - 更新了ssh链接GitHub的方式
-- 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
-### 2024-01-02 by Atticuszz - 2024-01-02 17:05:44: ...
-- 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
 ## 其他仓库
 ### 论文速览
 1. [GitHub - eriksandstroem/Point-SLAM: Point-SLAM: Dense Neural Point Cloud-based SLAM](https://github.com/eriksandstroem/Point-SLAM)
@@ -40,7 +36,7 @@
 2. [GitHub - youmi-zym/GO-SLAM: [ICCV2023] GO-SLAM: Global Optimization for Consistent 3D Instant Reconstruction](https://github.com/youmi-zym/GO-SLAM)
 	- ![](https://github.com/youmi-zym/GO-SLAM/raw/main/images/comparison.png)
 3. [GitHub - HengyiWang/Co-SLAM: [CVPR'23] Co-SLAM: Joint Coordinate and Sparse Parametric Encodings for Neural Real-Time SLAM](https://github.com/HengyiWang/Co-SLAM)
-	- ![[https://github.com/HengyiWang/Co-SLAM/raw/main/media/coslam_teaser.gif]]
+	- ![https://github.com/HengyiWang/Co-SLAM/raw/main/media/coslam_teaser.gif](https://github.com/HengyiWang/Co-SLAM/raw/main/media/coslam_teaser.gif)
 
 ## 使用说明
 ### 这个仓库是什么？
