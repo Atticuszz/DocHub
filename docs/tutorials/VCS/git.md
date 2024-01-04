@@ -14,3 +14,45 @@ git config --global user.email "1831768457@qq.com"
 git config --global init.defaultBranch main
 git config credential.helper
 ```
+
+## usual   commands
+### reset http proxy
+``` bash
+
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+git config --global --unset core.gitProxy
+
+git config --local --unset http.proxy
+git config --local --unset https.proxy
+
+git config --local --unset core.gitProxy
+
+git config --global --unset http."https://github.com".proxy
+
+
+```
+### check info
+
+```bash
+git config --global --list  
+# 只在本地仓库可以
+git config --local --list 
+```
+
+```shell
+git remote -v
+```
+
+
+## LFS
+```
+git lfs install
+git lfs track "*.onnx"
+git add .gitattributes
+git add  "<file_path>.onnx"
+git commit -m "add extractor model .onnx"
+git push origin main
+```
+
