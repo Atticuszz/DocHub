@@ -24,20 +24,19 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install script package
         run: |
           python -m pip install --upgrade pip
-          pip install poetry
-          poetry install useful-scripts
+          pip install useful-scripts
 
       - name: Run the script for navigation links
-        run: poetry run markdown --root ${{ github.workspace }} generate_nav --output ${{ github.workspace }}/README.md --dir docs --title "## 快捷导航"
+        run: markdown --root ${{ github.workspace }} generate_nav --output ${{ github.workspace }}/README.md --dir docs --title "## 快捷导航"
 
       - name: Run the script for recently modified
-        run: poetry run markdown --root ${{ github.workspace }} modify_recent --output ${{ github.workspace }}/README.md --num_commits 15 --dir docs --title "## 最近修改"
+        run: markdown --root ${{ github.workspace }} modify_recent --output ${{ github.workspace }}/README.md --num_commits 15 --dir docs --title "## 最近修改"
 
       - name: Run the script for converting wiki links
-        run: poetry run markdown --root ${{ github.workspace }} convert_wiki_links
+        run: markdown --root ${{ github.workspace }} convert_wiki_links
 
       - name: Commit README changes
         run: |
