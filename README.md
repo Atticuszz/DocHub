@@ -26,17 +26,13 @@
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
 ## 最近修改
-### 2024-01-03 Atticuszz : 2024-01-03 18:33:04: 添加了ssh代理设置，避免开启代理的情况下ssh几乎失效
+### 2024-01-03 by Atticuszz - 2024-01-03 18:33:04: 添加了ssh代理设置，避免开启代理的情况下ssh几乎失效
 - 🔨 [git.md](docs/tutorials/VCS/git.md)
 - 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
-### 2024-01-02 Atticuszz : 更新了ssh链接GitHub的方式
+### 2024-01-02 by Atticuszz - 更新了ssh链接GitHub的方式
 - 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
-### 2024-01-02 Atticuszz : 2024-01-02 17:05:44: ...
+### 2024-01-02 by Atticuszz - 2024-01-02 17:05:44: ...
 - 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
-### 2024-01-01 Atticuszz : 2024-01-01 15:37:02: 添加了简化版ssh链接GitHub
-- 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
-### 2023-12-30 Atticus Zhou : Delete docs/C++/.md
-- 🗑️ docs/C++/.md
 ## 其他仓库
 ### 论文速览
 1. [GitHub - eriksandstroem/Point-SLAM: Point-SLAM: Dense Neural Point Cloud-based SLAM](https://github.com/eriksandstroem/Point-SLAM)
