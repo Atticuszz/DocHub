@@ -9,6 +9,7 @@
       - [git.md](docs/tutorials/VCS/git.md)
   - **shell/:**
       - [CMD.md](docs/tutorials/shell/CMD.md)
+      - [powershell.md](docs/tutorials/shell/powershell.md)
   - **basic_tools/:**
       - [vpn.md](docs/tutorials/basic_tools/vpn.md)
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
@@ -26,6 +27,8 @@
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
 ## 最近修改
+### 2024-01-04 by Atticuszz - 2024-01-04 21:40:19: powershell 杀掉 占用进程命令
+- ✨ [powershell.md](docs/tutorials/shell/powershell.md)
 ### 2024-01-04 by Atticuszz - 增加了git常见命令
 - 🔨 [git.md](docs/tutorials/VCS/git.md)
 ## 其他仓库
