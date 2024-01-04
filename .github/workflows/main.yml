@@ -31,13 +31,13 @@ jobs:
           poetry install
 
       - name: Run the script for navigation links
-        run: poetry run markdown generate_nav --output README.md --dir docs --title "## 快捷导航"
+        run: poetry run markdown --root ${{ github.workspace }} generate_nav --output ${{ github.workspace }}/README.md --dir docs --title "## 快捷导航"
 
       - name: Run the script for recently modified
-        run: poetry run markdown modify_recent --output README.md --num_commits 15 --dir docs --title "## 最近修改"
+        run: poetry run markdown --root ${{ github.workspace }} modify_recent --output ${{ github.workspace }}/README.md --num_commits 15 --dir docs --title "## 最近修改"
 
       - name: Run the script for converting wiki links
-        run: poetry run markdown convert_wiki_links
+        run: poetry run markdown --root ${{ github.workspace }} convert_wiki_links
 
       - name: Commit README changes
         run: |
