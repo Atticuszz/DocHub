@@ -29,6 +29,10 @@
     - [syntax.md](docs/C++/syntax.md)
   - [meetings.md](docs/meetings.md)
 ## 最近修改
+### 2024-01-09 by Atticuszz - 去除了仓库的python代码，直接通过自动话脚本命令行
+- 🔨 [meetings.md](docs/meetings.md)
+### 2024-01-09 by Atticuszz - Update README.md automatically
+- 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 ### 2024-01-09 by Atticuszz - 1. 移动使用仓库的教程到单独的文件 2. 增加了pycharm自动拉取仓库的教程 3. 添加了下一次会议的主题和准备材料需求
 - ✨ [meetings.md](docs/meetings.md)
 - ✨ [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
