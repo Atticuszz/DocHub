@@ -43,7 +43,7 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 		- 再推送到GitHub![](assets/Pasted%20image%2020231230153558.png)
 	- 如何从github自动更新收到内容？
 		- 菜单栏的拉取操作![assets/Pasted image 20231230164019.png](assets/Pasted%20image%2020231230164019.png)
-		- 或者安装[GitToolBox - IntelliJ IDEs Plugin | Marketplace](https://plugins.jetbrains.com/plugin/7499-gittoolbox)插件，会自动fetech最新的内容，安装后大概在底部菜单栏![[assets/Pasted image 20240109175609.png]]
+		- 或者安装[GitToolBox - IntelliJ IDEs Plugin | Marketplace](https://plugins.jetbrains.com/plugin/7499-gittoolbox)插件，会自动fetech最新的内容，安装后大概在底部菜单栏![assets/Pasted image 20240109175609.png](assets/Pasted%20image%2020240109175609.png)
 	- 优缺点？
 		- 优点是，比较全面的图形化界面管理git和GitHub
 		- 缺点是，ide占用比较多的系统资源，不是游戏本会比较吃力

@@ -10,6 +10,7 @@
   - **shell/:**
       - [CMD.md](docs/tutorials/shell/CMD.md)
       - [powershell.md](docs/tutorials/shell/powershell.md)
+    - [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
   - **basic_tools/:**
       - [vpn.md](docs/tutorials/basic_tools/vpn.md)
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
@@ -26,7 +27,11 @@
       - [String.md](docs/C++/STL/String.md)
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
+  - [meetings.md](docs/meetings.md)
 ## 最近修改
+### 2024-01-09 by Atticuszz - 1. 移动使用仓库的教程到单独的文件 2. 增加了pycharm自动拉取仓库的教程 3. 添加了下一次会议的主题和准备材料需求
+- ✨ [meetings.md](docs/meetings.md)
+- ✨ [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 ### 2024-01-04 by Atticuszz - 2024-01-04 21:40:19: powershell 杀掉 占用进程命令
 - ✨ [powershell.md](docs/tutorials/shell/powershell.md)
 ### 2024-01-04 by Atticuszz - 增加了git常见命令
@@ -40,7 +45,7 @@
 3. [GitHub - HengyiWang/Co-SLAM: [CVPR'23] Co-SLAM: Joint Coordinate and Sparse Parametric Encodings for Neural Real-Time SLAM](https://github.com/HengyiWang/Co-SLAM)
 	- ![https://github.com/HengyiWang/Co-SLAM/raw/main/media/coslam_teaser.gif](https://github.com/HengyiWang/Co-SLAM/raw/main/media/coslam_teaser.gif)
 
-**[[docs/tutorials/KnowledgeHub|仓库使用教程]]**
+**[仓库使用教程](docs/tutorials/KnowledgeHub)**
 
 ### 常见问题和禁忌
 #### 合并远程内容失败
