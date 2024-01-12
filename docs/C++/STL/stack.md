@@ -1,5 +1,7 @@
 # Stack
-- 
+
+-
+
 ```C++
 #include <stack>
 int main() {

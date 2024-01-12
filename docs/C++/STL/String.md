@@ -1,13 +1,9 @@
-
-
-
-
 # String
 
 ```C++
 #include<string>
 
-string str = "Hello, world!";  // 
+string str = "Hello, world!";  //
 string sub = str.substr(0, 5);  // sub = "Hello"
 
 # 类型转换
