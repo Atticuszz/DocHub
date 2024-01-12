@@ -28,8 +28,26 @@
     - [syntax.md](docs/C++/syntax.md)
   - [meetings.md](docs/meetings.md)
 ## 最近修改
-### 2024-01-12 by zsqgle - Update use_vpn.md
+### 2024-01-12 by Atticuszz - Update README.md automatically
+- 🔨 [Queue.md](docs/C++/STL/Queue.md)
+- 🔨 [String.md](docs/C++/STL/String.md)
+- 🔨 [algorithm.md](docs/C++/STL/algorithm.md)
+- 🔨 [map.md](docs/C++/STL/map.md)
+- 🔨 [set.md](docs/C++/STL/set.md)
+- 🔨 [stack.md](docs/C++/STL/stack.md)
+- 🔨 [unordered_map.md](docs/C++/STL/unordered_map.md)
+- 🔨 [unordered_set.md](docs/C++/STL/unordered_set.md)
+- 🔨 [vector.md](docs/C++/STL/vector.md)
+- 🔨 [syntax.md](docs/C++/syntax.md)
+- 🔨 [meetings.md](docs/meetings.md)
+- 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
+- 🔨 [git.md](docs/tutorials/VCS/git.md)
+- 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
+- 🔨 [README.md](docs/tutorials/basic_tools/README.md)
+- 🔨 [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
 - 🔨 [use_vpn.md](docs/tutorials/basic_tools/use_vpn.md)
+- 🔨 [CMD.md](docs/tutorials/shell/CMD.md)
+- 🔨 [powershell.md](docs/tutorials/shell/powershell.md)
 ## 其他仓库
 
 ### 论文速览
