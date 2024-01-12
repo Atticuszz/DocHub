@@ -12,7 +12,7 @@
       - [powershell.md](docs/tutorials/shell/powershell.md)
     - [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
   - **basic_tools/:**
-      - [vpn.md](docs/tutorials/basic_tools/vpn.md)
+      - [use_vpn.md](docs/tutorials/basic_tools/use_vpn.md)
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
       - [README.md](docs/tutorials/basic_tools/README.md)
 - **C++/:**
@@ -29,12 +29,8 @@
     - [syntax.md](docs/C++/syntax.md)
   - [meetings.md](docs/meetings.md)
 ## 最近修改
-### 2024-01-12 by zsqgle - Update vpn.md
-- 🔨 [vpn.md](docs/tutorials/basic_tools/vpn.md)
-### 2024-01-12 by zsqgle - Update vpn.md
-- 🔨 [vpn.md](docs/tutorials/basic_tools/vpn.md)
-### 2024-01-12 by zsqgle - Update vpn.md
-- 🔨 [vpn.md](docs/tutorials/basic_tools/vpn.md)
+### 2024-01-12 by zsqgle - Rename vpn.md to use_vpn.md
+- 🚚 [use_vpn.md](docs/tutorials/basic_tools/use_vpn.md) <- vpn.md
 ### 2024-01-09 by Atticuszz - 去除了仓库的python代码，直接通过自动话脚本命令行
 - 🔨 [meetings.md](docs/meetings.md)
 ### 2024-01-09 by Atticuszz - Update README.md automatically
@@ -44,8 +40,6 @@
 - ✨ [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 ### 2024-01-04 by Atticuszz - 2024-01-04 21:40:19: powershell 杀掉 占用进程命令
 - ✨ [powershell.md](docs/tutorials/shell/powershell.md)
-### 2024-01-04 by Atticuszz - 增加了git常见命令
-- 🔨 [git.md](docs/tutorials/VCS/git.md)
 ## 其他仓库
 ### 论文速览
 1. [GitHub - eriksandstroem/Point-SLAM: Point-SLAM: Dense Neural Point Cloud-based SLAM](https://github.com/eriksandstroem/Point-SLAM)
