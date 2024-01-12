@@ -37,4 +37,4 @@ ci:
     # Default message is more verbose
     autoupdate_commit_msg: '[pre-commit.ci] autoupdate'
     # Default is weekly
-    autoupdate_schedule: monthly
+    autoupdate_schedule: weekly
