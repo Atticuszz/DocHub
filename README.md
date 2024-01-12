@@ -33,6 +33,8 @@
 - 🔨 [vpn.md](docs/tutorials/basic_tools/vpn.md)
 ### 2024-01-12 by zsqgle - Update vpn.md
 - 🔨 [vpn.md](docs/tutorials/basic_tools/vpn.md)
+### 2024-01-12 by zsqgle - Update vpn.md
+- 🔨 [vpn.md](docs/tutorials/basic_tools/vpn.md)
 ### 2024-01-09 by Atticuszz - 去除了仓库的python代码，直接通过自动话脚本命令行
 - 🔨 [meetings.md](docs/meetings.md)
 ### 2024-01-09 by Atticuszz - Update README.md automatically
