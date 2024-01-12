@@ -37,9 +37,6 @@
 - 🔨 [meetings.md](docs/meetings.md)
 ### 2024-01-09 by Atticuszz - Update README.md automatically
 - 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
-### 2024-01-09 by Atticuszz - 1. 移动使用仓库的教程到单独的文件 2. 增加了pycharm自动拉取仓库的教程 3. 添加了下一次会议的主题和准备材料需求
-- ✨ [meetings.md](docs/meetings.md)
-- ✨ [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 ## 其他仓库
 ### 论文速览
 1. [GitHub - eriksandstroem/Point-SLAM: Point-SLAM: Dense Neural Point Cloud-based SLAM](https://github.com/eriksandstroem/Point-SLAM)
