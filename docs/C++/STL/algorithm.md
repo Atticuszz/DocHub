@@ -1,5 +1,7 @@
 ### reverse
-- 
+
+-
+
 ```c++
 #include <algorithm> // for std::reverse
 #include <string>
@@ -11,7 +13,9 @@ int main() {
 ```
 
 ### char digit to int
-- 
+
+-
+
 ```c++
 #include <string>
 int main() {
@@ -19,7 +23,7 @@ int main() {
     int num_1 = std::stoi(digit_char);
     long num_2 = std::stol(digit_char);
     long long num_3 = std::stoll(digit_char);
-    
+
     // single char
 	char digitChar = '4';
 	int digit = digitChar - '0';

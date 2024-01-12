@@ -2,59 +2,63 @@ A queue is a container adaptor that provides a FIFO (First-In-First-Out) data st
 
 ## Initialization
 
-- **Empty Queue**: 
-    ```cpp
-    std::queue<int> q;
-    ```
+- **Empty Queue**:
+  ```cpp
+  std::queue<int> q;
+  ```
 
 ## Adding Elements
 
-- **Append to End**: 
-    ```cpp
-    q.push(4);
-    ```
+- **Append to End**:
+  ```cpp
+  q.push(4);
+  ```
 
 ## Access Elements
 
-- **Access Next Element**: 
-    ```cpp
-    int next = q.front();
-    ```
+- **Access Next Element**:
 
-- **Access Last Element**: 
-    ```cpp
-    int last = q.back();
-    ```
+  ```cpp
+  int next = q.front();
+  ```
+
+- **Access Last Element**:
+  ```cpp
+  int last = q.back();
+  ```
 
 ## Removing Elements
 
-- **Remove Next Element**: 
-    ```cpp
-    q.pop();  // Removes the element at the front of the queue
-    ```
+- **Remove Next Element**:
+  ```cpp
+  q.pop();  // Removes the element at the front of the queue
+  ```
 
 ## Query Attributes
 
-- **Get Queue Size**: 
-    ```cpp
-    size_t size = q.size();
-    ```
+- **Get Queue Size**:
 
-- **Check if Queue is Empty**: 
-    ```cpp
-    bool isEmpty = q.empty();
-    ```
+  ```cpp
+  size_t size = q.size();
+  ```
+
+- **Check if Queue is Empty**:
+  ```cpp
+  bool isEmpty = q.empty();
+  ```
 
 ## Other Common Operations
 
-- **Swap Contents**: 
-    ```cpp
-    std::queue<int> q1, q2;
-    q1.swap(q2);  // Swaps the contents of q1 and q2
-    ```
+- **Swap Contents**:
+  ```cpp
+  std::queue<int> q1, q2;
+  q1.swap(q2);  // Swaps the contents of q1 and q2
+  ```
 
 # Examples
-- 
+
+-
+
 ```cpp
 #include <iostream>
 #include <queue>
@@ -80,3 +84,4 @@ int main() {
 
     return 0;
 }
+```
