@@ -24,10 +24,11 @@ repos:
       - id: codespell
         files: \.(md|yml|yaml)$
 
-  - repo: https://github.com/markdownlint/markdownlint
-    rev: v0.13.0  # 使用最新版本
+  - repo: https://github.com/prettier/prettier
+    rev: '2.5.1'  # 使用最新版本
     hooks:
-      - id: markdownlint
+      - id: prettier
+        args: [ '--write', '**/*.md' ]
 
 
 ci:
