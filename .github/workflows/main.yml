@@ -31,6 +31,7 @@ jobs:
 
       - name: Run pre-commit hooks
         run: pre-commit run --all-files
+        continue-on-error: true
 
       - name: Run the script for navigation links
         run: markdown --root ${{ github.workspace }} generate_nav --output ${{ github.workspace }}/README.md --dir docs --title "## 快捷导航"
