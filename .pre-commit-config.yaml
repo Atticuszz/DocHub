@@ -1,0 +1,39 @@
+exclude: '^\.idea/|assets/'
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-yaml
+        # 检查YAML文件是否格式正确
+      - id: check-json
+        # 检查JSON文件是否格式正确
+      - id: trailing-whitespace
+        # 删除行尾空格
+      - id: check-added-large-files
+        # 检查是否有大文件被错误地添加到git
+      - id: end-of-file-fixer
+        # 确保文件以一个空行结尾
+      - id: mixed-line-ending
+        # 统一文件的行结束符（例如，将CRLF转换为LF）
+        args: [ "--fix=lf" ]
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.6
+    hooks:
+      - id: codespell
+        files: \.(md|yml|yaml)$
+
+  - repo: https://github.com/markdownlint/markdownlint
+    rev: v0.13.0  # 使用最新版本
+    hooks:
+      - id: markdownlint
+
+
+ci:
+    # Settings for the https://pre-commit.ci/ continuous integration service
+    autofix_prs: false
+    # Default message is more verbose
+    autoupdate_commit_msg: '[pre-commit.ci] autoupdate'
+    # Default is weekly
+    autoupdate_schedule: monthly
