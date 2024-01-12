@@ -1,6 +1,7 @@
 ## Initialization
 
 - **Empty Map**:
+
   ```cpp
   std::map<int, std::string> myMap;
 
