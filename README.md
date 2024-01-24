@@ -36,6 +36,8 @@
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
 ## 最近修改
+### 2024-01-24 by zzy - delete
+- 🔨 [todolist.md](docs/schedule/todolist.md)
 ### 2024-01-24 by Atticuszz - meeting_work
 - 🔨 [todolist.md](docs/schedule/todolist.md)
 ### 2024-01-24 by Atticuszz - Update README.md automatically
@@ -65,8 +67,6 @@
 - 🚚 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md) <- meetings.md
 - ✨ [standard.md](docs/schedule/meetings/standard.md)
 - ✨ [todolist.md](docs/schedule/todolist.md)
-### 2024-01-12 by Atticuszz - Update README.md automatically
-- 🔨 [map.md](docs/C++/STL/map.md)
 ## 其他仓库
 
 ### 论文速览
