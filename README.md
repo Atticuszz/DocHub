@@ -36,6 +36,11 @@
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
 ## 最近修改
+### 2024-01-24 by Atticuszz - 2024-01-24 17:54:15: 添加了会议资源
+- 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
+### 2024-01-24 by Atticuszz - Update README.md automatically
+- 🔨 [Drawing 2024-01-24 11.42.08.excalidraw.md](docs/Excalidraw/Drawing%202024-01-24%2011.42.08.excalidraw.md)
+- 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
 ### 2024-01-24 by Atticuszz - vault backup: 2024-01-24 17:01:43
 - 🚚 [Drawing 2024-01-24 11.42.08.excalidraw.md](docs/Excalidraw/Drawing%202024-01-24%2011.42.08.excalidraw.md) <- Drawing 2024-01-24 11.42.08.excalidraw.md
 - ✨ [neuralrecon.pdf](docs/papers/neuralrecon.pdf)
