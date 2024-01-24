@@ -55,14 +55,6 @@
 ### 2024-01-24 by Atticuszz - Update README.md automatically
 - 🔨 [Drawing 2024-01-24 11.42.08.excalidraw.md](docs/Excalidraw/Drawing%202024-01-24%2011.42.08.excalidraw.md)
 - 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
-### 2024-01-24 by Atticuszz - vault backup: 2024-01-24 17:01:43
-- 🚚 [Drawing 2024-01-24 11.42.08.excalidraw.md](docs/Excalidraw/Drawing%202024-01-24%2011.42.08.excalidraw.md) <- Drawing 2024-01-24 11.42.08.excalidraw.md
-- ✨ [neuralrecon.pdf](docs/papers/neuralrecon.pdf)
-- 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
-### 2024-01-24 by Atticuszz - Update README.md automatically
-- 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
-### 2024-01-24 by Atticuszz - 我添加了一句话
-- 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 ## 其他仓库
 
 ### 论文速览
