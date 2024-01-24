@@ -1,41 +1,43 @@
 ## 快捷导航
+- **Excalidraw/:**
+    - [Drawing 2024-01-24 11.42.08.excalidraw.md](docs/Excalidraw/Drawing%202024-01-24%2011.42.08.excalidraw.md)
+  - [百度网盘.md](docs/百度网盘.md)
 - **schedule/:**
+    - [todolist.md](docs/schedule/todolist.md)
   - **meetings/:**
       - [standard.md](docs/schedule/meetings/standard.md)
       - [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
-    - [todolist.md](docs/schedule/todolist.md)
 - **papers/:**
-    - [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM%20Dense%20Neural%20Point%20Cloud-based%20SLAM.pdf)
     - [neuralrecon.pdf](docs/papers/neuralrecon.pdf)
+    - [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM%20Dense%20Neural%20Point%20Cloud-based%20SLAM.pdf)
 - **tutorials/:**
   - **VCS/:**
+      - [git.md](docs/tutorials/VCS/git.md)
     - **github/:**
         - [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
-      - [git.md](docs/tutorials/VCS/git.md)
   - **shell/:**
       - [CMD.md](docs/tutorials/shell/CMD.md)
       - [powershell.md](docs/tutorials/shell/powershell.md)
     - [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
   - **basic_tools/:**
       - [use_vpn.md](docs/tutorials/basic_tools/use_vpn.md)
-      - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
       - [README.md](docs/tutorials/basic_tools/README.md)
-- **Excalidraw/:**
-    - [Drawing 2024-01-24 11.42.08.excalidraw.md](docs/Excalidraw/Drawing%202024-01-24%2011.42.08.excalidraw.md)
-  - [百度网盘.md](docs/百度网盘.md)
+      - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
 - **C++/:**
+    - [syntax.md](docs/C++/syntax.md)
   - **STL/:**
+      - [map.md](docs/C++/STL/map.md)
       - [set.md](docs/C++/STL/set.md)
       - [unordered_map.md](docs/C++/STL/unordered_map.md)
+      - [unordered_set.md](docs/C++/STL/unordered_set.md)
+      - [String.md](docs/C++/STL/String.md)
       - [algorithm.md](docs/C++/STL/algorithm.md)
       - [stack.md](docs/C++/STL/stack.md)
-      - [unordered_set.md](docs/C++/STL/unordered_set.md)
-      - [Queue.md](docs/C++/STL/Queue.md)
       - [vector.md](docs/C++/STL/vector.md)
-      - [String.md](docs/C++/STL/String.md)
-      - [map.md](docs/C++/STL/map.md)
-    - [syntax.md](docs/C++/syntax.md)
+      - [Queue.md](docs/C++/STL/Queue.md)
 ## 最近修改
+### 2024-01-24 by Atticuszz - vault backup: 2024-01-24 21:25:41
+- 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 ### 2024-01-24 by Atticuszz - vault backup: 2024-01-24 19:00:59
 - 🔨 [git.md](docs/tutorials/VCS/git.md)
 ### 2024-01-24 by Atticuszz - Update README.md automatically
@@ -48,13 +50,6 @@
 - 🔨 [todolist.md](docs/schedule/todolist.md)
 ### 2024-01-24 by Atticuszz - 2024-01-24 18:33:54: ...
 - 🔨 [todolist.md](docs/schedule/todolist.md)
-### 2024-01-24 by Atticuszz - Update README.md automatically
-- 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
-### 2024-01-24 by Atticuszz - 2024-01-24 17:54:15: 添加了会议资源
-- 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
-### 2024-01-24 by Atticuszz - Update README.md automatically
-- 🔨 [Drawing 2024-01-24 11.42.08.excalidraw.md](docs/Excalidraw/Drawing%202024-01-24%2011.42.08.excalidraw.md)
-- 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
 ## 其他仓库
 
 ### 论文速览
