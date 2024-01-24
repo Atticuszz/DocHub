@@ -1,4 +1,9 @@
 ## 快捷导航
+- **schedule/:**
+  - **meetings/:**
+      - [standard.md](docs/schedule/meetings/standard.md)
+      - [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
+    - [todolist.md](docs/schedule/todolist.md)
 - **papers/:**
     - [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM%20Dense%20Neural%20Point%20Cloud-based%20SLAM.pdf)
 - **tutorials/:**
@@ -26,8 +31,13 @@
       - [String.md](docs/C++/STL/String.md)
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
-  - [meetings.md](docs/meetings.md)
 ## 最近修改
+### 2024-01-24 by Atticuszz - 2024-01-24 12:12:49: ...
+- 🚚 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md) <- meetings.md
+- ✨ [standard.md](docs/schedule/meetings/standard.md)
+- ✨ [todolist.md](docs/schedule/todolist.md)
+### 2024-01-12 by Atticuszz - Update README.md automatically
+- 🔨 [map.md](docs/C++/STL/map.md)
 ### 2024-01-12 by Atticuszz - Update README.md automatically
 - 🔨 [Queue.md](docs/C++/STL/Queue.md)
 - 🔨 [String.md](docs/C++/STL/String.md)
@@ -39,7 +49,6 @@
 - 🔨 [unordered_set.md](docs/C++/STL/unordered_set.md)
 - 🔨 [vector.md](docs/C++/STL/vector.md)
 - 🔨 [syntax.md](docs/C++/syntax.md)
-- 🔨 [meetings.md](docs/meetings.md)
 - 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 - 🔨 [git.md](docs/tutorials/VCS/git.md)
 - 🔨 [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
