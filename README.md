@@ -6,6 +6,7 @@
     - [todolist.md](docs/schedule/todolist.md)
 - **papers/:**
     - [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM%20Dense%20Neural%20Point%20Cloud-based%20SLAM.pdf)
+    - [neuralrecon.pdf](docs/papers/neuralrecon.pdf)
 - **tutorials/:**
   - **VCS/:**
     - **github/:**
@@ -19,6 +20,9 @@
       - [use_vpn.md](docs/tutorials/basic_tools/use_vpn.md)
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
       - [README.md](docs/tutorials/basic_tools/README.md)
+- **Excalidraw/:**
+    - [Drawing 2024-01-24 11.42.08.excalidraw.md](docs/Excalidraw/Drawing%202024-01-24%2011.42.08.excalidraw.md)
+  - [百度网盘.md](docs/百度网盘.md)
 - **C++/:**
   - **STL/:**
       - [set.md](docs/C++/STL/set.md)
@@ -32,6 +36,17 @@
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
 ## 最近修改
+### 2024-01-24 by Atticuszz - 2024-01-24 17:54:15: 添加了会议资源
+- 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
+### 2024-01-24 by Atticuszz - Update README.md automatically
+- 🔨 [Drawing 2024-01-24 11.42.08.excalidraw.md](docs/Excalidraw/Drawing%202024-01-24%2011.42.08.excalidraw.md)
+- 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
+### 2024-01-24 by Atticuszz - vault backup: 2024-01-24 17:01:43
+- 🚚 [Drawing 2024-01-24 11.42.08.excalidraw.md](docs/Excalidraw/Drawing%202024-01-24%2011.42.08.excalidraw.md) <- Drawing 2024-01-24 11.42.08.excalidraw.md
+- ✨ [neuralrecon.pdf](docs/papers/neuralrecon.pdf)
+- 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
+### 2024-01-24 by Atticuszz - Update README.md automatically
+- 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 ### 2024-01-24 by Atticuszz - 我添加了一句话
 - 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 ### 2024-01-24 by Atticuszz - Update README.md automatically
