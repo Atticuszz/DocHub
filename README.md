@@ -32,6 +32,12 @@
       - [map.md](docs/C++/STL/map.md)
     - [syntax.md](docs/C++/syntax.md)
 ## 最近修改
+### 2024-01-24 by Atticuszz - 我添加了一句话
+- 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
+### 2024-01-24 by Atticuszz - Update README.md automatically
+- 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
+- 🔨 [standard.md](docs/schedule/meetings/standard.md)
+- 🔨 [todolist.md](docs/schedule/todolist.md)
 ### 2024-01-24 by Atticuszz - 2024-01-24 12:12:49: ...
 - 🚚 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md) <- meetings.md
 - ✨ [standard.md](docs/schedule/meetings/standard.md)
