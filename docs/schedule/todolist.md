@@ -1,5 +1,9 @@
 ### your name
 
 - [ ] things you would do
-- open cv
-- 
+=======
+- [x] try to commit
+
+>>>>>>> origin/main
+
+open cv
