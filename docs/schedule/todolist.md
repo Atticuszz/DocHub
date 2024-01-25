@@ -1,4 +1,3 @@
 ### your name
 
-- [ ] things you would do
-- [ ]
+have a try
