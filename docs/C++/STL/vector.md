@@ -109,7 +109,7 @@ int main() {
     std::vector<int> vec = {3, 1, 4, 1, 5, 9, 2, 6, 5};
 
     // 使用 std::min_element 和 lambda 函数找到最小正整数
-    auto it = std::min_element(vec.begin(), vec.end(), [](int a, int b) {
+    auto it = std::min_element(vec.begin(), vec.end(), [](Invalid path or deleted file) {
         if (a <= 0) return false;
         if (b <= 0) return true;
         return a < b;
