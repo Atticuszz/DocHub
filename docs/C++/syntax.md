@@ -42,7 +42,7 @@ for (const auto& elem : vec) {
 ## Lambda Expressions
 
 ```cpp
-auto add = [](int a, int b) -> int {
+auto add = [](Invalid path or deleted file) -> int {
     return a + b;
 };
 ```
@@ -109,9 +109,9 @@ switch (value) {
 
 ```cpp
 unordered_map<string, function<int(int, int)>> operations = {
-            {"+", [](int a, int b) { return a + b; }},
-            {"-", [](int a, int b) { return a - b; }},
-            {"*", [](int a, int b) { return a * b; }},
-            {"/", [](int a, int b) { return a / b; }}
+            {"+", [](Invalid path or deleted file) { return a + b; }},
+            {"-", [](Invalid path or deleted file) { return a - b; }},
+            {"*", [](Invalid path or deleted file) { return a * b; }},
+            {"/", [](Invalid path or deleted file) { return a / b; }}
         };
 ```
