@@ -1,11 +1,10 @@
 ## 快捷导航
-
 - **Excalidraw/:**
   - [Drawing 2024-01-24 15.34.27.excalidraw.md](Excalidraw/Drawing-2024-01-24-15.34.27.excalidraw.md)
 - **node_modules/:**
 - **docs/:**
   - **Excalidraw/:**
-    - [Drawing 2024-01-24 11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md)
+    - [Drawing-2024-01-24-11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md)
   - [百度网盘.md](docs/百度网盘.md)
   - **schedule/:**
     - [todolist.md](docs/schedule/todolist.md)
@@ -14,7 +13,7 @@
       - [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
   - **papers/:**
     - [neuralrecon.pdf](docs/papers/neuralrecon.pdf)
-    - [Point-SLAM Dense Neural Point Cloud-based SLAM.pdf](docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf)
+    - [Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf](docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf)
   - **tutorials/:**
     - **VCS/:**
       - [git.md](docs/tutorials/VCS/git.md)
@@ -43,36 +42,33 @@
     - [Raspberry PI 4B.md](device/Raspberry-PI/Raspberry-PI-4B.md)
   - **camera/:**
     - [Astra Pro Plus产品规格书.pdf](device/camera/Astra-Pro-Plus产品规格书.pdf)
-
 ## 最近修改
-
-### 2024-01-26 by RoyZhang - 2024-01-26 13:18:47: ...
-
+### 2024-01-26 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
+- 🔨 [dependabot.yml](.github/dependabot.yml)
+- 🔨 [main.yml](.github/workflows/main.yml)
+- 🔨 [.pre-commit-config.yaml](.pre-commit-config.yaml)
+- 🔨 [Drawing 2024-01-24 15.34.27.excalidraw.md](Excalidraw/Drawing 2024-01-24 15.34.27.excalidraw.md)
+- 🔨 [README.md](README.md)
+- 🔨 [Raspberry PI 4B.md](device/Raspberry PI/Raspberry PI 4B.md)
+### 2024-01-26 by Atticuszz - Ci workflows
+- 🔨 [README.md](README.md)
+- 🚚 [Drawing-2024-01-24-11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md) <- Drawing 2024-01-24 11.42.08.excalidraw.md
+- 🚚 [Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf](docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf) <- Point-SLAM Dense Neural Point Cloud-based SLAM.pdf
 - 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
-
+### 2024-01-26 by RoyZhang - 2024-01-26 13:18:47: ...
+- 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 ### 2024-01-26 by Roy Zhang - Update Raspberry PI 4B.md
-
 - 🔨 [Raspberry PI 4B.md](device/Raspberry PI/Raspberry PI 4B.md)
-
 ### 2024-01-26 by RoyZhang - 2024-01-26 13:14:03: ...
-
 - 🔨 [Raspberry PI 4B.md](device/Raspberry PI/Raspberry PI 4B.md)
-
 ### 2024-01-26 by RoyZhang - 2024-01-26 13:10:48: ...
-
 - 🔨 [Raspberry PI 4B.md](device/Raspberry PI 4B.md)
-
 ### 2024-01-26 by RoyZhang - 2024-01-26 13:09:27: ...
-
 - ✨ [Raspberry PI 4B.md](device/Raspberry PI 4B.md)
-
 ### 2024-01-26 by Atticuszz - Update README.md automatically
-
 - 🔨 [README.md](README.md)
 - 🔨 [todolist.md](docs/schedule/todolist.md)
-
 ### 2024-01-26 by Atticuszz - repair image links from ci modified wrong
-
 - 🔨 [README.md](README.md)
 - 🔨 [vector.md](docs/C++/STL/vector.md)
 - 🔨 [syntax.md](docs/C++/syntax.md)
@@ -80,31 +76,17 @@
 - 🔨 [todolist.md](docs/schedule/todolist.md)
 - 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 - 🔨 [CMD.md](docs/tutorials/shell/CMD.md)
-
 ### 2024-01-26 by Atticuszz - revert
-
 - 🗑️ use_vpn.md
-
 ### 2024-01-25 by zzyss-marker - Updated the camera's product datasheet
-
 - 🗑️ Untitled 1.canvas
 - 🗑️ Untitled.canvas
 - ✨ [Astra Pro Plus\344\272\247\345\223\201\350\247\204\346\240\274\344\271\246.pdf"]("device/camera/Astra Pro Plus\344\272\247\345\223\201\350\247\204\346\240\274\344\271\246.pdf")
-
 ### 2024-01-25 by Atticuszz - Update README.md automatically
-
 - 🔨 [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
-
 ### 2024-01-25 by RoyZhang - 2024-01-25 14:22:51: ...
-
 - ✨ [Untitled 1.canvas](Untitled 1.canvas)
 - 🔨 [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
-
-### 2024-01-25 by RoyZhang - vault backup: 2024-01-25 14:21:28
-
-- ✨ [Untitled.canvas](Untitled.canvas)
-- 🔨 [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
-
 ## 其他仓库
 
 ### 论文速览
