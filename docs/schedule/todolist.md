@@ -1,3 +1,4 @@
 ### your name
 
-january
+- [ ] things you would do
+- [x] try to commit
