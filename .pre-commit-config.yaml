@@ -16,7 +16,7 @@ repos:
         # 确保文件以一个空行结尾
       - id: mixed-line-ending
         # 统一文件的行结束符（例如，将CRLF转换为LF）
-        args: [ "--fix=lf" ]
+        args: ["--fix=lf"]
 
   - repo: https://github.com/codespell-project/codespell
     rev: v2.2.6
@@ -28,13 +28,12 @@ repos:
     rev: v4.0.0-alpha.8 # 使用最新版本
     hooks:
       - id: prettier
-        args: [ '--write', '**/*.md' ]
-
+        args: ["--write", "**/*.md"]
 
 ci:
-    # Settings for the https://pre-commit.ci/ continuous integration service
-    autofix_prs: True
-    # Default message is more verbose
-    autoupdate_commit_msg: '[pre-commit.ci] autoupdate'
-    # Default is weekly
-    autoupdate_schedule: weekly
+  # Settings for the https://pre-commit.ci/ continuous integration service
+  autofix_prs: True
+  # Default message is more verbose
+  autoupdate_commit_msg: "[pre-commit.ci] autoupdate"
+  # Default is weekly
+  autoupdate_schedule: weekly
