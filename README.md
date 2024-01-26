@@ -1,5 +1,4 @@
 ## 快捷导航
-
 - **Excalidraw/:**
   - [Drawing_2024-01-24_15.34.27.excalidraw.md](Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md)
 - **node_modules/:**
@@ -14,7 +13,6 @@
   - **papers/:**
     - [neuralrecon.pdf](docs/papers/neuralrecon.pdf)
     - [Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf](docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf)
-  - [baidu driver.md](docs/baidu_driver.md)
   - **tutorials/:**
     - **VCS/:**
       - [git.md](docs/tutorials/VCS/git.md)
@@ -38,86 +36,44 @@
       - [stack.md](docs/C++/STL/stack.md)
       - [vector.md](docs/C++/STL/vector.md)
       - [Queue.md](docs/C++/STL/Queue.md)
+  - [baidu_driver.md](docs/baidu_driver.md)
 - **device/:**
+  - **car shopping/:**
+    - [Purchase comparsion.md](device/car_shopping/Purchase_comparsion.md)
   - **camera/:**
     - [Astra_Pro_Plus产品规格书.pdf](device/camera/Astra_Pro_Plus产品规格书.pdf)
+    - [未命名.md](device/camera/未命名.md)
   - **Raspberry_PI/:**
     - [Raspberry_PI_4B.md](device/Raspberry_PI/Raspberry_PI_4B.md)
-
 ## 最近修改
-
-### 2024-01-26 by Atticus Zhou - Update README.md
-
-- 🔨 [README.md](README.md)
-
-### 2024-01-26 by Atticuszz - fix: fix ci bugs
-
-- 🔨 [main.yml](.github/workflows/main.yml)
-
+### 2024-01-26 by Millicent142857 - addition
+- 🗑️ 82218e5b53f2e51d90452c69e6be9142 1.mp4
+- 🗑️ 82218e5b53f2e51d90452c69e6be9142.mp4
+- 🔨 [Purchase comparsion.md](device/car_shopping/Purchase_comparsion.md)
+### 2024-01-26 by Millicent142857 - change
+- 🗑️ "\346\234\252\345\221\275\345\220\215 1.canvas"
+- 🗑️ "\346\234\252\345\221\275\345\220\215 2.canvas"
+- 🗑️ "\346\234\252\345\221\275\345\220\215 3.canvas"
+- 🗑️ "\346\234\252\345\221\275\345\220\215.canvas"
+### 2024-01-26 by Millicent142857 - change
+- 🗑️ 1.\346\227\240\344\272\272\351\251\276\351\251\266\350\257\276\347\250\213.pdf"
+### 2024-01-26 by Millicent142857 - purchase
+- 🔨 [Purchase comparsion.md](device/car_shopping/Purchase_comparsion.md)
+### 2024-01-26 by Millicent142857 - car
+- ✨ [1.\346\227\240\344\272\272\351\251\276\351\251\266\350\257\276\347\250\213 1.pdf"]("assets/1.\346\227\240\344\272\272\351\251\276\351\251\266\350\257\276\347\250\213 1.pdf")
+- ✨ [82218e5b53f2e51d90452c69e6be9142 2.mp4](assets/82218e5b53f2e51d90452c69e6be9142 2.mp4)
+- 🔨 [Purchase comparsion.md](device/car_shopping/Purchase_comparsion.md)
 ### 2024-01-26 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
-
 - 🔨 [README.md](README.md)
-
 ### 2024-01-26 by Atticuszz - Ci workflows
-
-- 🔨 [main.yml](.github/workflows/main.yml)
-- 🚚 [Drawing_2024-01-24_15.34.27.excalidraw.md](Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md) <- Drawing 2024-01-24 15.34.27.excalidraw.md
 - 🔨 [README.md](README.md)
-- 🚚 [Pasted_image_20231230113031.png](assets/Pasted_image_20231230113031.png) <- Pasted image 20231230113031.png
-- 🚚 [Pasted_image_20231230113200.png](assets/Pasted_image_20231230113200.png) <- Pasted image 20231230113200.png
-- 🚚 [Pasted_image_20231230145332.png](assets/Pasted_image_20231230145332.png) <- Pasted image 20231230145332.png
-- 🚚 [Pasted_image_20231230150259.png](assets/Pasted_image_20231230150259.png) <- Pasted image 20231230150259.png
-- 🚚 [Pasted_image_20231230150849.png](assets/Pasted_image_20231230150849.png) <- Pasted image 20231230150849.png
-- 🚚 [Pasted_image_20231230150953.png](assets/Pasted_image_20231230150953.png) <- Pasted image 20231230150953.png
-- 🚚 [Pasted_image_20231230151305.png](assets/Pasted_image_20231230151305.png) <- Pasted image 20231230151305.png
-- 🚚 [Pasted_image_20231230153401.png](assets/Pasted_image_20231230153401.png) <- Pasted image 20231230153401.png
-- 🚚 [Pasted_image_20231230153558.png](assets/Pasted_image_20231230153558.png) <- Pasted image 20231230153558.png
-- 🚚 [Pasted_image_20231230164019.png](assets/Pasted_image_20231230164019.png) <- Pasted image 20231230164019.png
-- 🚚 [Pasted_image_20231230164241.png](assets/Pasted_image_20231230164241.png) <- Pasted image 20231230164241.png
-- 🚚 [Pasted_image_20231230165223.png](assets/Pasted_image_20231230165223.png) <- Pasted image 20231230165223.png
-- 🚚 [Pasted_image_20231230165254.png](assets/Pasted_image_20231230165254.png) <- Pasted image 20231230165254.png
-- 🚚 [Pasted_image_20231230170502.png](assets/Pasted_image_20231230170502.png) <- Pasted image 20231230170502.png
-- 🚚 [Pasted_image_20231230170800.png](assets/Pasted_image_20231230170800.png) <- Pasted image 20231230170800.png
-- 🚚 [Pasted_image_20231230170848.png](assets/Pasted_image_20231230170848.png) <- Pasted image 20231230170848.png
-- 🚚 [Pasted_image_20231230175017.png](assets/Pasted_image_20231230175017.png) <- Pasted image 20231230175017.png
-- 🚚 [Pasted_image_20231230175039.png](assets/Pasted_image_20231230175039.png) <- Pasted image 20231230175039.png
-- 🚚 [Pasted_image_20231230175217.png](assets/Pasted_image_20231230175217.png) <- Pasted image 20231230175217.png
-- 🚚 [Pasted_image_20240109175609.png](assets/Pasted_image_20240109175609.png) <- Pasted image 20240109175609.png
-- 🚚 [Pasted_image_20240124155710.png](assets/Pasted_image_20240124155710.png) <- Pasted image 20240124155710.png
-- 🚚 [original_1706083643541_4137f8cb68761ad4aa99f079cb510f49_1.png](assets/original_1706083643541_4137f8cb68761ad4aa99f079cb510f49_1.png) <- original_1706083643541_4137f8cb68761ad4aa99f079cb510f49 1.png
-- 🚚 [Raspberry_PI_4B.md](device/Raspberry_PI/Raspberry_PI_4B.md) <- Raspberry PI 4B.md
-- 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
-- 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
-- 🔨 [CMD.md](docs/tutorials/shell/CMD.md)
-
+- 🚚 [baidu_driver.md](docs/baidu_driver.md) <- baidu driver.md
+### 2024-01-26 by Atticus Zhou - Update README.md
+- 🔨 [README.md](README.md)
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
-
 - 🔨 [main.yml](.github/workflows/main.yml)
-
-### 2024-01-26 by Atticuszz - fix: fix ci bugs
-
-- 🔨 [main.yml](.github/workflows/main.yml)
-
-### 2024-01-26 by Atticuszz - fix: fix ci bugs
-
-- 🔨 [main.yml](.github/workflows/main.yml)
-
-### 2024-01-26 by Atticuszz - fix: fix ci bugs
-
-- 🔨 [main.yml](.github/workflows/main.yml)
-
-### 2024-01-26 by Atticuszz - fix: fix ci bugs
-
-- 🔨 [main.yml](.github/workflows/main.yml)
-
-### 2024-01-26 by Atticuszz - fix: fix ci bugs
-
-- 🔨 [main.yml](.github/workflows/main.yml)
-
-### 2024-01-26 by Atticuszz - fix: fix ci bugs
-
-- 🔨 [main.yml](.github/workflows/main.yml)
-
+### 2024-01-26 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
+- 🔨 [README.md](README.md)
 ## 其他仓库
 
 ### 论文速览

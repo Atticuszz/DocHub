@@ -1,7 +1,9 @@
 # **轮趣科技**
 
 教程：提供产品的源码程序（代码注释包含在源码中），源码讲解视频，教程手册，原理图等等
+
 # ![](file:///C:\Users\李信\AppData\Local\Temp\ksohtml19120\wps1.png) 
+
 试看：B站搜索WHEELTEC提供部分教学（下附试看链接）
 【ROS入门系列教程（一）——工作空间与功能包（WHEELTEC）-哔哩哔哩】 [https://b23.tv/rQNX3oI](https://b23.tv/rQNX3oI)
 
@@ -25,8 +27,8 @@ ROSMASTER-X3 ROS全向机器人资料目录：[https://www.yahboom.com/study/RO
 
 ②时间：分大小周，大周工作五天（周一至周五可咨询），小周工作六天（周一至周六可咨询），非工作时间无技术值班
 
-技术工程师上班时间为：9:00-12:30以及14:00-17:30  
-淘宝客服上班时间为：9:00-22:00  
+技术工程师上班时间为：9:00-12:30以及14:00-17:30
+淘宝客服上班时间为：9:00-22:00
 如不在线可以先留言给淘宝客服，上线后会处理
 
 ③可支持范围：有疑问可以解答，判断硬件是否可支持，无法支持代开发
@@ -37,7 +39,7 @@ ROSMASTER-X3 ROS全向机器人资料目录：[https://www.yahboom.com/study/RO
 
 教程：包含使用教程，软件，源码（包含注释）
 
-![](file:///C:\Users\李信\AppData\Local\Temp\ksohtml19120\wps2.png) 
+![](file:///C:\Users\李信\AppData\Local\Temp\ksohtml19120\wps2.png)
 
 课程目录如下：
 
@@ -73,11 +75,11 @@ ROSMASTER-X3 ROS全向机器人资料目录：[https://www.yahboom.com/study/RO
 
 提供试看内容如下：
 
-![[assets/1.无人驾驶课程.pdf]]
-![[device/car shopping/第6课 人体跟踪.pdf]]
-![[device/car shopping/第11课 图像处理—形态学处理.pdf]]
-![[assets/dca901c006db20111c474e20759d9edf.mp4]]
-![[assets/82218e5b53f2e51d90452c69e6be9142 1.mp4]]
+![assets/1.无人驾驶课程.pdf](assets/1.无人驾驶课程.pdf)
+![device/car_shopping/第6课_人体跟踪.pdf](device/car_shopping/第6课_人体跟踪.pdf)
+![device/car_shopping/第11课_图像处理—形态学处理.pdf](device/car_shopping/第11课_图像处理—形态学处理.pdf)
+![assets/dca901c006db20111c474e20759d9edf.mp4](assets/dca901c006db20111c474e20759d9edf.mp4)
+![assets/82218e5b53f2e51d90452c69e6be9142 1.mp4](assets/82218e5b53f2e51d90452c69e6be9142 1.mp4)
 售后：
 
 ①方式：付款之后会自动发送对应的售后加群方式，交流群有专业的技术人员。
