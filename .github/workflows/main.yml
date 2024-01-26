@@ -17,8 +17,8 @@ jobs:
       # 新增：创建并切换到CI分支
       - name: Create and checkout CI branch
         run: |
-          git checkout -b ci-branch
-          git push --set-upstream origin ci-branch
+          git checkout -b ci-auto-update
+          git push --set-upstream origin ci-auto-update
 
       - name: Configuring git credentials
         run: |
@@ -63,5 +63,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Update from CI"
           pr_body: "This is an automated PR to update contents"
-          source_branch: "ci-branch"
+          source_branch: "ci-auto-update"
           destination_branch: "main"
