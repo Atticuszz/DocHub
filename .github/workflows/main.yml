@@ -61,7 +61,7 @@ jobs:
         run: |
           git add .
           git commit -m "Ci workflows" || echo "No changes to commit"
-          git push origin ci-auto-update --force
+          git push origin ci-auto-update 
 
       # 新增：创建或更新 PR 到主分支
       - name: Create Pull Request
