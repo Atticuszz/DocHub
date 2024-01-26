@@ -15,7 +15,7 @@ jobs:
         with:
           ref: 'main'
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ATTICUS_PAT }}
 
       # 新增：创建并切换到CI分支
       - name: Checkout CI branch
@@ -61,7 +61,7 @@ jobs:
         run: |
           git add .
           git commit -m "Ci workflows" || echo "No changes to commit"
-          git push origin ci-auto-update 
+          git push origin ci-auto-update --force
 
       # 新增：创建或更新 PR 到主分支
       - name: Create Pull Request
