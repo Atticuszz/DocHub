@@ -2,7 +2,6 @@
 
 - **Excalidraw/:**
   - [Drawing_2024-01-24_15.34.27.excalidraw.md](Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md)
-- **node_modules/:**
 - **docs/:**
   - **Excalidraw/:**
     - [Drawing-2024-01-24-11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md)
@@ -40,12 +39,12 @@
   - [baidu_driver.md](docs/baidu_driver.md)
 - **device/:**
   - **car shopping/:**
-    - [Purchase comparsion.md](device/car_shopping/Purchase_comparsion.md)
+    - [Purchase comparsion.md](docs/device/car_shopping/Purchase_comparsion.md)
   - **camera/:**
-    - [Astra_Pro_Plus产品规格书.pdf](device/camera/Astra_Pro_Plus产品规格书.pdf)
-    - [未命名.md](device/camera/未命名.md)
+    - [Astra_Pro_Plus产品规格书.pdf](docs/device/camera/Astra_Pro_Plus产品规格书.pdf)
+    - [未命名.md](docs/device/camera/未命名.md)
   - **Raspberry_PI/:**
-    - [Raspberry_PI_4B.md](device/Raspberry_PI/Raspberry_PI_4B.md)
+    - [Raspberry_PI_4B.md](docs/device/Raspberry_PI/Raspberry_PI_4B.md)
 
 ## 最近修改
 
@@ -53,7 +52,7 @@
 
 - 🗑️ 82218e5b53f2e51d90452c69e6be9142 1.mp4
 - 🗑️ 82218e5b53f2e51d90452c69e6be9142.mp4
-- 🔨 [Purchase comparsion.md](device/car_shopping/Purchase_comparsion.md)
+- 🔨 [Purchase comparsion.md](docs/device/car_shopping/Purchase_comparsion.md)
 
 ### 2024-01-26 by Millicent142857 - change
 
@@ -68,13 +67,13 @@
 
 ### 2024-01-26 by Millicent142857 - purchase
 
-- 🔨 [Purchase comparsion.md](device/car_shopping/Purchase_comparsion.md)
+- 🔨 [Purchase comparsion.md](docs/device/car_shopping/Purchase_comparsion.md)
 
 ### 2024-01-26 by Millicent142857 - car
 
 - ✨ [1.\346\227\240\344\272\272\351\251\276\351\251\266\350\257\276\347\250\213 1.pdf"]("assets/1.\346\227\240\344\272\272\351\251\276\351\251\266\350\257\276\347\250\213 1.pdf")
 - ✨ [82218e5b53f2e51d90452c69e6be9142 2.mp4](assets/82218e5b53f2e51d90452c69e6be9142 2.mp4)
-- 🔨 [Purchase comparsion.md](device/car_shopping/Purchase_comparsion.md)
+- 🔨 [Purchase comparsion.md](docs/device/car_shopping/Purchase_comparsion.md)
 
 ### 2024-01-26 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
 
