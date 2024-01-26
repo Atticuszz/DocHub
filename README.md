@@ -1,4 +1,5 @@
 ## 快捷导航
+
 - **Excalidraw/:**
   - [Drawing 2024-01-24 15.34.27.excalidraw.md](Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md)
 - **node_modules/:**
@@ -74,41 +75,69 @@
     - [Raspberry PI 4B.md](device/Raspberry_PI/Raspberry_PI_4B.md)
   - **camera/:**
     - [Astra Pro Plus产品规格书.pdf](device/camera/Astra_Pro_Plus产品规格书.pdf)
+
 ## 最近修改
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - Update README.md automatically
+
 - 🔨 [README.md](README.md)
+
 ### 2024-01-26 by Atticuszz - Ci workflows
+
 - 🔨 [README.md](README.md)
+
 ### 2024-01-26 by Atticuszz - Ci workflows
+
 - 🔨 [README.md](README.md)
+
 ### 2024-01-26 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
+
 - 🔨 [dependabot.yml](.github/dependabot.yml)
 - 🔨 [main.yml](.github/workflows/main.yml)
 - 🔨 [.pre-commit-config.yaml](.pre-commit-config.yaml)
 - 🔨 [Drawing 2024-01-24 15.34.27.excalidraw.md](Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md)
 - 🔨 [README.md](README.md)
 - 🔨 [Raspberry PI 4B.md](device/Raspberry_PI/Raspberry_PI_4B.md)
+
 ### 2024-01-26 by Atticuszz - Ci workflows
+
 - 🔨 [README.md](README.md)
 - 🚚 [Drawing-2024-01-24-11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md) <- Drawing 2024-01-24 11.42.08.excalidraw.md
 - 🚚 [Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf](docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf) <- Point-SLAM Dense Neural Point Cloud-based SLAM.pdf
 - 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
+
 ## 其他仓库
 
 ### 论文速览
