@@ -18,11 +18,15 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       # 新增：创建并切换到CI分支
-      - name: Create and checkout CI branch
+      - name: Update local repository and create/check CI branch
         run: |
-          
-          git checkout -b ci-auto-update
-          git pull
+          git fetch origin
+          if git branch --list ci-auto-update; then
+            git checkout ci-auto-update
+            git merge origin/ci-auto-update || true
+          else
+            git checkout -b ci-auto-update
+          fi
           git push --set-upstream origin ci-auto-update
 
       - name: Configuring git credentials
