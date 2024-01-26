@@ -74,8 +74,8 @@ ROSMASTER-X3 ROS全向机器人资料目录：[https://www.yahboom.com/study/RO
 提供试看内容如下：
 
 ![[assets/1.无人驾驶课程.pdf]]
-![[assets/第6课 人体跟踪.pdf]]
-![[assets/第11课 图像处理—形态学处理.pdf]]
+![[device/car shopping/第6课 人体跟踪.pdf]]
+![[device/car shopping/第11课 图像处理—形态学处理.pdf]]
 ![[assets/dca901c006db20111c474e20759d9edf.mp4]]
 ![[assets/82218e5b53f2e51d90452c69e6be9142 1.mp4]]
 售后：
