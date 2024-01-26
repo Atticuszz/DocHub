@@ -1,4 +1,5 @@
 ## 快捷导航
+
 - **Excalidraw/:**
   - [Drawing_2024-01-24_15.34.27.excalidraw.md](Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md)
 - **node_modules/:**
@@ -42,14 +43,23 @@
     - [Astra_Pro_Plus产品规格书.pdf](device/camera/Astra_Pro_Plus产品规格书.pdf)
   - **Raspberry_PI/:**
     - [Raspberry_PI_4B.md](device/Raspberry_PI/Raspberry_PI_4B.md)
+
 ## 最近修改
+
 ### 2024-01-26 by Atticus Zhou - Update README.md
+
 - 🔨 [README.md](README.md)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
+
 - 🔨 [README.md](README.md)
+
 ### 2024-01-26 by Atticuszz - Ci workflows
+
 - 🔨 [main.yml](.github/workflows/main.yml)
 - 🚚 [Drawing_2024-01-24_15.34.27.excalidraw.md](Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md) <- Drawing 2024-01-24 15.34.27.excalidraw.md
 - 🔨 [README.md](README.md)
@@ -79,20 +89,35 @@
 - 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
 - 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 - 🔨 [CMD.md](docs/tutorials/shell/CMD.md)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ### 2024-01-26 by Atticuszz - fix: fix ci bugs
+
 - 🔨 [main.yml](.github/workflows/main.yml)
+
 ## 其他仓库
 
 ### 论文速览
