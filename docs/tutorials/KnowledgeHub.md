@@ -47,7 +47,7 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 
 #### 结合本地应用使用
 
-- pycharm _git需要完成[基本配置](docs/tutorials/VCS/git.md)才可进行推送_
+- Pycharm _git需要完成[基本配置](docs/tutorials/VCS/git.md)才可进行推送_
 
   - 是什么？
     - jetbrains系列的IDE(集成开发环境)，适用于python和常见前端框架vue,reat等等
