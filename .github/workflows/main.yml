@@ -2,6 +2,9 @@ name: Run Python Script and Update README
 
 on:
   push:
+    branches:
+      - main
+      - test
 
 jobs:
   run-script:
