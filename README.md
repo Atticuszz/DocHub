@@ -43,6 +43,8 @@
   - **camera/:**
     - [Astra Pro Plus产品规格书.pdf](device/camera/Astra-Pro-Plus产品规格书.pdf)
 ## 最近修改
+### 2024-01-26 by Atticuszz - Ci workflows
+- 🔨 [README.md](README.md)
 ### 2024-01-26 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
 - 🔨 [dependabot.yml](.github/dependabot.yml)
 - 🔨 [main.yml](.github/workflows/main.yml)
@@ -83,9 +85,6 @@
 - 🗑️ Untitled.canvas
 - ✨ [Astra Pro Plus\344\272\247\345\223\201\350\247\204\346\240\274\344\271\246.pdf"]("device/camera/Astra Pro Plus\344\272\247\345\223\201\350\247\204\346\240\274\344\271\246.pdf")
 ### 2024-01-25 by Atticuszz - Update README.md automatically
-- 🔨 [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
-### 2024-01-25 by RoyZhang - 2024-01-25 14:22:51: ...
-- ✨ [Untitled 1.canvas](Untitled 1.canvas)
 - 🔨 [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
 ## 其他仓库
 
