@@ -26,7 +26,7 @@ jobs:
           else
             git checkout -b ci-auto-update
           fi
-          git pull origin main
+          git reset --hard origin/main
 
       - name: Configuring git credentials
         run: |
@@ -61,7 +61,7 @@ jobs:
         run: |
           git add README.md
           git commit -m "Ci workflows" || echo "No changes to commit"
-          git push origin ci-auto-update
+          git push origin ci-auto-update --force
 
       # 新增：创建或更新 PR 到主分支
       - name: Create Pull Request
