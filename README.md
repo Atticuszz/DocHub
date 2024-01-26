@@ -39,12 +39,12 @@
   - [baidu_driver.md](docs/baidu_driver.md)
 - **device/:**
   - **car shopping/:**
-    - [Purchase comparsion.md](docs/device/car_shopping/Purchase_comparsion.md)
+    - [Purchase comparsion.md](docs/device/Tutorial%20Comparison.md)
   - **camera/:**
-    - [Astra_Pro_Plus产品规格书.pdf](docs/device/camera/Astra_Pro_Plus产品规格书.pdf)
+    - [Astra_Pro_Plus_instrution.pdf](assets/Astra_Pro_Plus_instrution.pdf)
     - [未命名.md](docs/device/camera/未命名.md)
   - **Raspberry_PI/:**
-    - [Raspberry_PI_4B.md](docs/device/Raspberry_PI/Raspberry_PI_4B.md)
+    - [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
 
 ## 最近修改
 
@@ -52,7 +52,7 @@
 
 - 🗑️ 82218e5b53f2e51d90452c69e6be9142 1.mp4
 - 🗑️ 82218e5b53f2e51d90452c69e6be9142.mp4
-- 🔨 [Purchase comparsion.md](docs/device/car_shopping/Purchase_comparsion.md)
+- 🔨 [Purchase comparsion.md](docs/device/Tutorial%20Comparison.md)
 
 ### 2024-01-26 by Millicent142857 - change
 
@@ -67,13 +67,13 @@
 
 ### 2024-01-26 by Millicent142857 - purchase
 
-- 🔨 [Purchase comparsion.md](docs/device/car_shopping/Purchase_comparsion.md)
+- 🔨 [Purchase comparsion.md](docs/device/Tutorial%20Comparison.md)
 
 ### 2024-01-26 by Millicent142857 - car
 
 - ✨ [1.\346\227\240\344\272\272\351\251\276\351\251\266\350\257\276\347\250\213 1.pdf"]("assets/1.\346\227\240\344\272\272\351\251\276\351\251\266\350\257\276\347\250\213 1.pdf")
 - ✨ [82218e5b53f2e51d90452c69e6be9142 2.mp4](assets/82218e5b53f2e51d90452c69e6be9142 2.mp4)
-- 🔨 [Purchase comparsion.md](docs/device/car_shopping/Purchase_comparsion.md)
+- 🔨 [Purchase comparsion.md](docs/device/Tutorial%20Comparison.md)
 
 ### 2024-01-26 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
 
