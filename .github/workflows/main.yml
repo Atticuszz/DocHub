@@ -20,7 +20,9 @@ jobs:
       # 新增：创建并切换到CI分支
       - name: Create and checkout CI branch
         run: |
+          
           git checkout -b ci-auto-update
+          git pull
           git push --set-upstream origin ci-auto-update
 
       - name: Configuring git credentials
