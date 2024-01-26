@@ -3,7 +3,9 @@ name: Run Python Script and Update README
 on:
   push:
     branches:
-        - main
+      - main
+      - test
+
 jobs:
   run-script:
     runs-on: ubuntu-latest
@@ -15,11 +17,24 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      # 新增：创建并切换到CI分支
+      - name: Update local repository and create/check CI branch
+        run: |
+          git fetch origin
+          if git branch --list ci-auto-update; then
+            git checkout ci-auto-update
+            git merge origin/ci-auto-update || true
+          else
+            git checkout -b ci-auto-update
+          fi
+          git push --set-upstream origin ci-auto-update
+
       - name: Configuring git credentials
         run: |
           git config --global user.email "1831768457@qq.com"
           git config --global user.name "Atticuszz"
 
+      # 以下步骤保持不变，但是现在它们在CI分支上执行
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -34,9 +49,27 @@ jobs:
         run: pre-commit run --all-files
         continue-on-error: true
 
+      - name: Run the script for navigation links
+        run: markdown --root ${{ github.workspace }} generate_nav --output ${{ github.workspace }}/README.md --dir docs --title "## 快捷导航"
+
+      - name: Run the script for recently modified
+        run: markdown --root ${{ github.workspace }} modify_recent --output ${{ github.workspace }}/README.md --num_commits 15 --dir docs --title "## 最近修改"
+
+      - name: Run the script for converting wiki links
+        run: markdown --root ${{ github.workspace }} convert_wiki_links
 
       - name: Commit README changes
         run: |
           git add README.md
-          git commit -m "ci workflows" || echo "No changes to commit"
-          git push origin main
+          git commit -m "Ci workflows" || echo "No changes to commit"
+          git push
+
+      # 新增：创建或更新 PR 到主分支
+      - name: Create Pull Request
+        uses: repo-sync/pull-request@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Update from CI"
+          pr_body: "This is an automated PR to update contents"
+          source_branch: "ci-auto-update"
+          destination_branch: "main"
