@@ -4,10 +4,9 @@ kanban-plugin: basic
 
 ---
 
-
 ## TODO
 
-- [ ] 任务分配,以及研究任务安排
+- [ ] 编程语言的学习[[docs/tutorials/code/python/data model]]
 
 
 ## In process
@@ -18,12 +17,15 @@ kanban-plugin: basic
 ## Done
 
 **Complete**
+
+
+***
+
+## Archive
+
 - [x] @{2024-01-27}修复了CI的链接的bug问题@zz
 - [x] @{2024-01-27}重新整理了DocHhub的目录结构@zz
 - [x] @{2024-01-27}选购小车添加了具体的商品比较@zz
-
-
-
 
 %% kanban:settings
 ```

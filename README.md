@@ -7,7 +7,7 @@
   - **Excalidraw/:**
     - [Drawing-2024-01-24-11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md)
   - **schedule/:**
-    - [todolist.md](docs/schedule/todolist.md)
+    - [todolist.md](docs/schedule/TODOs/TODO.md)
     - **meetings/:**
       - [standard.md](docs/schedule/meetings/standard.md)
       - [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
