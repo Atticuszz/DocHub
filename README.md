@@ -1,7 +1,7 @@
 ## 快捷导航
 - **Excalidraw/:**
-  - [Drawing 2024-01-26 19.37.14.excalidraw.md](Excalidraw/Drawing_2024-01-26_19.37.14.excalidraw.md)
-  - [Drawing_2024-01-24_15.34.27.excalidraw.md](Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md)
+  - [Drawing 2024-01-26 19.37.14.excalidraw.md](docs/Excalidraw%201/Drawing_2024-01-26_19.37.14.excalidraw.md)
+  - [Drawing_2024-01-24_15.34.27.excalidraw.md](docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md)
 - **node_modules/:**
 - **docs/:**
   - **Excalidraw/:**
@@ -91,7 +91,7 @@
 ### 2024-01-26 by RoyZhang - 2024-01-26 20:31:55: ...
 - 🔨 [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
 ### 2024-01-26 by Atticuszz - vault backup: 2024-01-26 20:07:12
-- ✨ [Drawing 2024-01-26 19.37.14.excalidraw.md](Excalidraw/Drawing_2024-01-26_19.37.14.excalidraw.md)
+- ✨ [Drawing 2024-01-26 19.37.14.excalidraw.md](docs/Excalidraw%201/Drawing_2024-01-26_19.37.14.excalidraw.md)
 - 🔨 [README.md](README.md)
 - 🗑️ \346\234\252\345\221\275\345\220\215.md"
 ### 2024-01-26 by Millicent142857 - 2024-01-26 20:02:41: test
