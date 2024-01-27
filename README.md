@@ -26,17 +26,17 @@
     - **basic_tools/:**
       - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
   - **C++/:**
-    - [syntax.md](docs/C++/syntax.md)
+    - [syntax.md](docs/tutorials/code/C++/syntax.md)
     - **STL/:**
-      - [map.md](docs/C++/STL/map.md)
-      - [set.md](docs/C++/STL/set.md)
-      - [unordered_map.md](docs/C++/STL/unordered_map.md)
-      - [unordered_set.md](docs/C++/STL/unordered_set.md)
-      - [String.md](docs/C++/STL/String.md)
-      - [algorithm.md](docs/C++/STL/algorithm.md)
-      - [stack.md](docs/C++/STL/stack.md)
-      - [vector.md](docs/C++/STL/vector.md)
-      - [Queue.md](docs/C++/STL/Queue.md)
+      - [map.md](docs/tutorials/code/C++/STL/map.md)
+      - [set.md](docs/tutorials/code/C++/STL/set.md)
+      - [unordered_map.md](docs/tutorials/code/C++/STL/unordered_map.md)
+      - [unordered_set.md](docs/tutorials/code/C++/STL/unordered_set.md)
+      - [String.md](docs/tutorials/code/C++/STL/String.md)
+      - [algorithm.md](docs/tutorials/code/C++/STL/algorithm.md)
+      - [stack.md](docs/tutorials/code/C++/STL/stack.md)
+      - [vector.md](docs/tutorials/code/C++/STL/vector.md)
+      - [Queue.md](docs/tutorials/code/C++/STL/Queue.md)
   - [baidu_driver.md](docs/baidu_driver.md)
   - **device/:**
     - [Tutorial Comparison.md](docs/device/Tutorial_Comparison.md)
