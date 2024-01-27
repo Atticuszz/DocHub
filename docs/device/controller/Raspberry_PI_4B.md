@@ -1,4 +1,5 @@
 ### 参数列表
+
 **SOC Broadcom BCM2711**
 **CPU 64-位1.5GHz四核(28nm工艺)**
 **蓝牙 蓝牙5.0**
@@ -16,11 +17,12 @@
 **OpenGL ES,3.0 graphics\*\***
 
 ### 简介
+
 1. 前后端通讯问题
-	1. 理论上，无线网络传输速率可达30MB/s![[assets/Pasted image 20240126222059.png]]
+   1. 理论上，无线网络传输速率可达30MB/s![assets/Pasted_image_20240126222059.png](assets/Pasted_image_20240126222059.png)
 2. 系统兼容性问题
-	1. 商家都提供预装`ROS2`和`ubuntu20`![[assets/Pasted image 20240126222742.png]]的并且可以自己装系统升级![[assets/Pasted image 20240126222702.png]]
-	2. docker 容器化几乎绝杀了环境问题
+   1. 商家都提供预装`ROS2`和`ubuntu20`![assets/Pasted_image_20240126222742.png](assets/Pasted_image_20240126222742.png)的并且可以自己装系统升级![assets/Pasted_image_20240126222702.png](assets/Pasted_image_20240126222702.png)
+   2. docker 容器化几乎绝杀了环境问题
 3. 可扩展性->电气控制问题
-	1. 上位机和下位机都都有 `GPIO`这些常见的数字量信号，模拟量信号需要额外配置![[assets/Pasted image 20240126223025.png]]
-	2. 脉冲信号(控制电机的)，应该是交给下位机的![[assets/Pasted image 20240126223140.png]]
+   1. 上位机和下位机都都有 `GPIO`这些常见的数字量信号，模拟量信号需要额外配置![assets/Pasted_image_20240126223025.png](assets/Pasted_image_20240126223025.png)
+   2. 脉冲信号(控制电机的)，应该是交给下位机的![assets/Pasted_image_20240126223140.png](assets/Pasted_image_20240126223140.png)
