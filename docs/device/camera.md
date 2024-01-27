@@ -1,5 +1,3 @@
-
-
 ### 相机型号参数
 > Astra Pro Plus
 ![[assets/Pasted image 20240126210527.png]]
@@ -15,3 +13,4 @@
 
 2022年，`opencv`支持了该相机直接读取[这是官网的c++教程](https://docs.opencv.org/4.x/d4/d65/tutorial_orbbec_astra.html)，`python`也是类似的，并且，读取彩色或者深度图像，都是`cv2.imread()`方法，传递到参数不一样而已
 > 因此，`opencv-python` 是标准sdk的解决方案
+
