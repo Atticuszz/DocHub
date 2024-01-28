@@ -1,8 +1,19 @@
 ## basic
 
 - **"a"->string, 'a'->char**
+- inclued all
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+```
+- if else
+```c++
+return condition ? a : b;
+->python
+return a if condition else b
+```
 
-# value range
+## value range
 
 ### 有符号整数类型
 
