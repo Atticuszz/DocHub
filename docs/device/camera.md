@@ -19,6 +19,6 @@
 
 ### SDK安装教程
 
-- [安装教程](assets/AstraPro_SDK_install.pdf)
+- [安装教程](../../assets/AstraPro_SDK_install.pdf)
 
 相关SDK软件包放在release中（V0.0.3）
