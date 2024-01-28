@@ -24,7 +24,7 @@
     - [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
     - **code/:**
       - **python/:**
-        - [data model.md](docs/tutorials/code/python/data_model.md)
+        - [data_model.md](docs/tutorials/code/python/data_model.md)
       - **C++/:**
         - [syntax.md](docs/tutorials/code/C++/syntax.md)
         - **STL/:**
@@ -48,6 +48,25 @@
     - [purchase.md](docs/device/purchase.md)
     - [camera.md](docs/device/camera.md)
 ## 最近修改
+### 2024-01-28 by Pi-xiu - Update camera.md
+- 🔨 [camera.md](docs/device/camera.md)
+### 2024-01-28 by zzyss-marker - Updated the SDK installation tutorial
+- 🔨 [camera.md](docs/device/camera.md)
+### 2024-01-28 by zzyss-marker - SDK install
+- ✨ [AstraPro_SDK_install.pdf](assets/AstraPro_SDK_install.pdf)
+- 🔨 [camera.md](docs/device/camera.md)
+### 2024-01-28 by Atticuszz - 2024-01-28 15:58:33: add c++ string,algorithm
+- 🔨 [String.md](docs/tutorials/code/C++/STL/String.md)
+- 🔨 [algorithm.md](docs/tutorials/code/C++/STL/algorithm.md)
+- 🔨 [syntax.md](docs/tutorials/code/C++/syntax.md)
+### 2024-01-27 by Atticuszz - Ci workflows
+- 🔨 [README.md](README.md)
+- 🔨 [Drawing-2024-01-24-11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md)
+- 🔨 [Drawing_2024-01-24_15.34.27.excalidraw.md](docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md)
+- 🔨 [baidu_driver.md](docs/baidu_driver.md)
+- 🔨 [todolist.md](docs/schedule/todolist.md)
+- 🗑️ data model.md
+- ✨ [data_model.md](docs/tutorials/code/python/data_model.md)
 ### 2024-01-27 by Atticuszz - 2024-01-27 15:11:34: add todolist
 - 🔨 [README.md](README.md)
 - 🔨 [todolist.md](docs/schedule/todolist.md)
@@ -149,18 +168,6 @@
 - ✨ [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
 - ✨ [STM32.md](docs/device/controller/STM32.md)
 - ✨ [purchase.md](docs/device/purchase.md)
-### 2024-01-26 by RoyZhang - 2024-01-26 20:31:55: ...
-- 🔨 [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
-### 2024-01-26 by Atticuszz - vault backup: 2024-01-26 20:07:12
-- ✨ [Drawing 2024-01-26 19.37.14.excalidraw.md](Excalidraw/Drawing 2024-01-26 19.37.14.excalidraw.md)
-- 🔨 [README.md](README.md)
-- 🗑️ \346\234\252\345\221\275\345\220\215.md"
-### 2024-01-26 by Millicent142857 - 2024-01-26 20:02:41: test
-- 🔨 [baidu_driver.md](docs/baidu_driver.md)
-### 2024-01-26 by Millicent142857 - 2024-01-26 19:51:57: fix image url
-- ✨ [wps1.png](assets/wps1.png)
-- ✨ [wps2.png](assets/wps2.png)
-- 🔨 [Purchase_comparsion.md](device/car_shopping/Purchase_comparsion.md)
 ## 其他仓库
 
 ### 论文速览
