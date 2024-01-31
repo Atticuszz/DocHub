@@ -12,8 +12,8 @@
   - **papers/:**
     - [neuralrecon.pdf](docs/papers/neuralrecon.pdf)
     - [Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf](docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf)
+  - [account.md](docs/account.md)
   - **tutorials/:**
-    - [Obsidian.md](docs/tutorials/Obsidian.md)
     - **VCS/:**
       - [git.md](docs/tutorials/VCS/git.md)
       - **github/:**
@@ -48,6 +48,17 @@
     - [purchase.md](docs/device/purchase.md)
     - [camera.md](docs/device/camera.md)
 ## 最近修改
+### 2024-01-31 by Atticuszz - 2024-01-31 14:20:21: 添加萝卜图书馆和gpt4账号，仅限团队内部使用
+- ✨ [Pasted image 20240131141715.png](assets/Pasted_image_20240131141715.png)
+- ✨ [Pasted image 20240131141930.png](assets/Pasted_image_20240131141930.png)
+- ✨ [account.md](docs/account.md)
+- 🗑️ Obsidian.md
+### 2024-01-28 by Atticuszz - Ci workflows
+- 🔨 [README.md](README.md)
+- 🔨 [camera.md](docs/device/camera.md)
+- 🔨 [String.md](docs/tutorials/code/C++/STL/String.md)
+- 🔨 [algorithm.md](docs/tutorials/code/C++/STL/algorithm.md)
+- 🔨 [syntax.md](docs/tutorials/code/C++/syntax.md)
 ### 2024-01-28 by Pi-xiu - Update camera.md
 - 🔨 [camera.md](docs/device/camera.md)
 ### 2024-01-28 by zzyss-marker - Updated the SDK installation tutorial
@@ -126,48 +137,6 @@
 - 🔨 [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
 - 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 - 🔨 [CMD.md](docs/tutorials/shell/CMD.md)
-### 2024-01-27 by Atticuszz - 2024-01-27 11:27:51: 添加了商品详细的比较，根据消费者购买情况评论等
-- ✨ [Screenshot_2024-01-27-11-10-09-16.jpg](assets/Screenshot_2024-01-27-11-10-09-16.jpg)
-- ✨ [Screenshot_2024-01-27-11-14-29-12.jpg](assets/Screenshot_2024-01-27-11-14-29-12.jpg)
-- ✨ [Screenshot_2024-01-27-11-15-31-19_090d9ae461b065ca11c329abb9cd0d70.jpg](assets/Screenshot_2024-01-27-11-15-31-19_090d9ae461b065ca11c329abb9cd0d70.jpg)
-- ✨ [Screenshot_2024-01-27-11-17-14-46_090d9ae461b065ca11c329abb9cd0d70.jpg](assets/Screenshot_2024-01-27-11-17-14-46_090d9ae461b065ca11c329abb9cd0d70.jpg)
-- ✨ [Screenshot_2024-01-27-11-19-21-82_090d9ae461b065ca11c329abb9cd0d70 1.jpg](assets/Screenshot_2024-01-27-11-19-21-82_090d9ae461b065ca11c329abb9cd0d70_1.jpg)
-- ✨ [Screenshot_2024-01-27-11-19-21-82_090d9ae461b065ca11c329abb9cd0d70.jpg](assets/Screenshot_2024-01-27-11-19-21-82_090d9ae461b065ca11c329abb9cd0d70.jpg)
-- ✨ [Screenshot_2024-01-27-11-27-07-66.jpg](assets/Screenshot_2024-01-27-11-27-07-66.jpg)
-- 🔨 [camera.md](docs/device/camera.md)
-- 🔨 [purchase.md](docs/device/purchase.md)
-### 2024-01-26 by Atticuszz - 2024-01-26 23:04:38: ...
-- 🔨 [purchase.md](docs/device/purchase.md)
-### 2024-01-26 by Atticuszz - 2024-01-26 22:59:30: purchase comparison
-- 🔨 [README.md](README.md)
-- 🚚 [Astra_Pro_Plus_instrution.pdf](assets/Astra_Pro_Plus_instrution.pdf) <- Astra_Pro_Plus\344\272\247\345\223\201\350\247\204\346\240\274\344\271\246.pdf"
-- ✨ [Pasted image 20240126203653.png](assets/Pasted_image_20240126203653.png)
-- ✨ [Pasted image 20240126204115.png](assets/Pasted_image_20240126204115.png)
-- ✨ [Pasted image 20240126204218.png](assets/Pasted_image_20240126204218.png)
-- ✨ [Pasted image 20240126204913.png](assets/Pasted_image_20240126204913.png)
-- ✨ [Pasted image 20240126210527.png](assets/Pasted_image_20240126210527.png)
-- ✨ [Pasted image 20240126213933.png](assets/Pasted_image_20240126213933.png)
-- ✨ [Pasted image 20240126214907.png](assets/Pasted_image_20240126214907.png)
-- ✨ [Pasted image 20240126221333.png](assets/Pasted_image_20240126221333.png)
-- ✨ [Pasted image 20240126222059.png](assets/Pasted_image_20240126222059.png)
-- ✨ [Pasted image 20240126222702.png](assets/Pasted_image_20240126222702.png)
-- ✨ [Pasted image 20240126222742.png](assets/Pasted_image_20240126222742.png)
-- ✨ [Pasted image 20240126223025.png](assets/Pasted_image_20240126223025.png)
-- ✨ [Pasted image 20240126223140.png](assets/Pasted_image_20240126223140.png)
-- ✨ [Pasted image 20240126224319.png](assets/Pasted_image_20240126224319.png)
-- ✨ [Pasted image 20240126224620.png](assets/Pasted_image_20240126224620.png)
-- ✨ [Pasted image 20240126224714.png](assets/Pasted_image_20240126224714.png)
-- ✨ [Pasted image 20240126224745.png](assets/Pasted_image_20240126224745.png)
-- ✨ [Pasted image 20240126225757.png](assets/Pasted_image_20240126225757.png)
-- ✨ [Screenshot_2024-01-26-20-47-53-92_090d9ae461b065ca11c329abb9cd0d70.jpg](assets/Screenshot_2024-01-26-20-47-53-92_090d9ae461b065ca11c329abb9cd0d70.jpg)
-- 🗑️ Raspberry_PI_4B.md
-- ✨ [camera.md](docs/device/camera.md)
-- 🗑️ 82218e5b53f2e51d90452c69e6be9142 2.mp4
-- 🗑️ \347\254\25411\350\257\276_\345\233\276\345\203\217\345\244\204\347\220\206\342\200\224\345\275\242\346\200\201\345\255\246\345\244\204\347\220\206.pdf"
-- 🗑️ \347\254\2546\350\257\276_\344\272\272\344\275\223\350\267\237\350\270\252.pdf"
-- ✨ [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
-- ✨ [STM32.md](docs/device/controller/STM32.md)
-- ✨ [purchase.md](docs/device/purchase.md)
 ## 其他仓库
 
 ### 论文速览
