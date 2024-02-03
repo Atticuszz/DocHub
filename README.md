@@ -38,7 +38,7 @@
           - [vector.md](docs/tutorials/code/C++/STL/vector.md)
           - [Queue.md](docs/tutorials/code/C++/STL/Queue.md)
     - **basic_tools/:**
-      - [git-install-instruction.md](docs/tutorials/basic_tools/git-install-instruction.md)
+      - [git-install-instruction.md](docs/tools/git-install-instruction.md)
   - [baidu_driver.md](docs/baidu_driver.md)
   - **device/:**
     - [Tutorial_Comparison.md](docs/device/Tutorial_Comparison.md)
