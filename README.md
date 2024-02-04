@@ -39,7 +39,7 @@
       - **python/:**
         - [data_model.md](docs/tutorials/code/python/data_model.md)
     - **shell/:**
-      - [CMD.md](docs/tutorials/shell/CMD.md)
+      - [CMD.md](docs/OS/Windows/CMD.md)
       - [powershell.md](docs/tutorials/shell/powershell.md)
   - **Excalidraw/:**
     - [Drawing_2024-01-24_15.34.27.excalidraw.md](docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md)
