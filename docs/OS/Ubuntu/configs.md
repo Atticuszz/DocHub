@@ -138,7 +138,7 @@ phddns enable
 #### access port
 
 - set local port forwarding in `Termius`
-- ![../../../assets/Pasted_image_20240202222655.png](../../../assets/Pasted_image_20240202222655.png)
+- ![[assets/Pasted image 20240204144722.png]]
 -
 
 #### wifi
