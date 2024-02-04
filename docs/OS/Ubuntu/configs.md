@@ -32,6 +32,13 @@ PubkeyAuthentication yes
 PasswordAuthentication no
 PermitRootLogin yes
 ```
+- generate ssh-pub-key **in local machine**
+```powershell 
+
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+# select one of it 
+ssh-keygen -t ed25519 -C "1831768457@qq.com"
+```
 
 - add ssh-pub-key
 
