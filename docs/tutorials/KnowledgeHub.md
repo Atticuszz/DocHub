@@ -28,9 +28,9 @@ _git是预先配置_
     - 这样，你得任何对指定目录下的文件都会被检测到，一旦commit(提交当前更改)，push(推送到GitHub云端)，obsidian+git插件会自动同步云端其他协作者的修改，这就达到了共同协作
   - 怎么安装？
     - [下载链接](https://git-scm.com/download/win) （选这**64-bit Git for Windows Setup.** 这个)
-    - [安装指导](../../docs/tutorials/basic_tools/git-install-instruction.md)
+    - [安装指导](../../docs/tools/git-install-instruction.md)
   - 安装完之后如何下载github仓库？
-    - 克隆仓库命令，选择[你合适的目录下打开命令行](../../docs/tutorials/shell/CMD.md)或者执行他
+    - 克隆仓库命令，选择[你合适的目录下打开命令行](docs/OS/Windows/CMD.md)或者执行他
 - https _网速太慢，考虑[开启代理](../../docs/tutorials/VCS/git.md)，代理也不行，考虑ssh_
 
 ```bash

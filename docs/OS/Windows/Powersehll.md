@@ -19,3 +19,11 @@ netstat -ano | findstr :<port>
 ```ps
 handle.exe <file path>
 ```
+
+### get command .exe path
+
+```ps
+(Get-Command poetry).Source
+```
+
+`->C:\Users\18317\AppData\Roaming\Python\Scripts\poetry.exe`
