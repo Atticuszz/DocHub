@@ -1,4 +1,5 @@
 ## 快捷导航
+
 - **docs/:**
   - **Excalidraw/:**
     - [Drawing-2024-01-24-11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md)
@@ -68,8 +69,11 @@
       - [SSH_keypair_setup_for_GitHub.md](docs/VCS/github/SSH_keypair_setup_for_GitHub.md)
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
+
 ## 最近修改
+
 ### 2024-02-14 by Atticuszz - move files
+
 - 🔨 [README.md](README.md)
 - 🚚 [git.md](docs/VCS/git.md) <- git.md
 - 🚚 [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md) <- How_to_connect_ssh.md
@@ -86,7 +90,9 @@
 - 🗑️ vector.md
 - 🗑️ syntax.md
 - 🗑️ data_model.md
+
 ### 2024-02-14 by Atticuszz - add ubuntu wsl commands
+
 - 🔨 [DocHub.iml](.idea/DocHub.iml)
 - 🔨 [modules.xml](.idea/modules.xml)
 - 🔨 [vcs.xml](.idea/vcs.xml)
@@ -142,7 +148,9 @@
 - ✨ [pyqt6.md](docs/Language/python/third_party_lib/pyqt6.md)
 - ✨ [GPU-wsl.md](docs/OS/GPU-wsl.md)
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+
 ### 2024-02-05 by zzyss-marker - update
+
 - ✨ [1ffa2d81edf7f1dece8d86f71f4b57f 1.png](assets/1ffa2d81edf7f1dece8d86f71f4b57f 1.png)
 - ✨ [1ffa2d81edf7f1dece8d86f71f4b57f 2.png](assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png)
 - ✨ [1ffa2d81edf7f1dece8d86f71f4b57f.png](assets/1ffa2d81edf7f1dece8d86f71f4b57f.png)
@@ -152,40 +160,61 @@
 - ✨ [c68058356f448e566b6677b9455f17a 1.png](assets/c68058356f448e566b6677b9455f17a_1.png)
 - ✨ [c68058356f448e566b6677b9455f17a.png](assets/c68058356f448e566b6677b9455f17a.png)
 - ✨ [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
+
 ### 2024-02-04 by Atticuszz - vault backup: 2024-02-04 14:47:25
+
 - ✨ [Pasted image 20240204144722.png](assets/Pasted_image_20240204144722.png)
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+
 ### 2024-02-04 by Atticuszz - 2024-02-04 14:46:44: add ssh-pub-key generate cmd
+
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+
 ### 2024-02-04 by Atticuszz - 2024-02-04 14:01:06: add ubuntu commands for ssh connection
+
 - 🔨 [README.md](README.md)
 - ✨ [configs.md](docs/OS/Ubuntu/configs.md)
 - ✨ [install_via_usb.md](docs/OS/Ubuntu/install_via_usb.md)
 - 🚚 [CMD.md](docs/OS/Windows/CMD.md) <- CMD.md
 - 🚚 [Powersehll.md](docs/OS/Windows/Powersehll.md) <- powershell.md
 - 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
+
 ### 2024-02-04 by Atticuszz - 2024-02-04 12:55:27: add chatgpt url
+
 - 🔨 [account.md](docs/account.md)
+
 ### 2024-02-04 by Atticuszz - vault backup: 2024-02-04 12:54:44
+
 - 🗑️ Dijkstra.py
 - 🗑️ Dijkstra_algorithm.md
+
 ### 2024-02-04 by RoyZhang - 2024-02-04 12:32:59: ...
+
 - 🔨 [account.md](docs/account.md)
+
 ### 2024-02-04 by Atticuszz - Ci workflows
+
 - 🔨 [README.md](README.md)
 - 🚚 [Pasted_image_20240203205308.png](assets/Pasted_image_20240203205308.png) <- Pasted image 20240203205308.png
 - 🔨 [Dijkstra.py](code/algorithm/Dijkstra_algorithm/Dijkstra.py)
 - 🔨 [Dijkstra_algorithm.md](code/algorithm/Dijkstra_algorithm/Dijkstra_algorithm.md)
 - 🔨 [plugin.md](docs/tools/IDE/plugin.md)
 - 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
+
 ### 2024-02-04 by RoyZhang - 2024-02-04 10:40:58: ...
+
 - 🗑️ Dijkstra.md
 - ✨ [Dijkstra_algorithm.md](code/algorithm/Dijkstra_algorithm/Dijkstra_algorithm.md)
+
 ### 2024-02-04 by RoyZhang - 2024-02-04 10:35:44: ...
+
 - 🔨 [misc.xml](.idea/misc.xml)
 - ✨ [Dijkstra.md](code/algorithm/Dijkstra_algorithm/Dijkstra.md)
+
 ### 2024-02-04 by RoyZhang - vault backup: 2024-02-04 10:32:54
+
 - ✨ [Dijkstra.py](code/algorithm/Dijkstra_algorithm/Dijkstra.py)
+
 ## 其他仓库
 
 ### 论文速览
