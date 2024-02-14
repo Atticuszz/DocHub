@@ -20,9 +20,9 @@
   - **tutorials/:**
     - [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
     - **VCS/:**
-      - [git.md](docs/tutorials/VCS/git.md)
+      - [git.md](docs/VCS/git.md)
       - **github/:**
-        - [SSH_keypair_setup_for_GitHub.md](docs/tutorials/VCS/github/SSH_keypair_setup_for_GitHub.md)
+        - [SSH_keypair_setup_for_GitHub.md](docs/VCS/github/SSH_keypair_setup_for_GitHub.md)
     - **code/:**
       - **C++/:**
         - **STL/:**
