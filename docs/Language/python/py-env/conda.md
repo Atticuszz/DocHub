@@ -4,8 +4,6 @@
 C:\Users\18317\anaconda3\Scripts
 ```
 
-
-
 ### proxy for clash
 
 - add and test
@@ -37,38 +35,55 @@ conda config --set channel_priority strict
 ```bash
 conda config --show channels
 ```
+
 ### install deps
-- install from  env.yml
+
+- install from env.yml
+
 ```bash
 conda env create -f env.yml
 ```
+
 - output current env deps to env.yml
+
 ```bash
 conda env export --file env.yml
 ```
+
 - update from env.yml `--prune` for auto update deps
+
 ```bash
 conda env update -f env.yml
 ```
+
 - install by auto update deps
+
 ```bash
 conda install <package> --update-all
 ```
 
 ### info check
+
 - show conda info
+
 ```bash
 conda info
 ```
+
 - show all conda envs
+
 ```bash
 conda env list
 ```
+
 - current env packages
+
 ```bash
 conda list
 ```
+
 - specified env packages
+
 ```bash
 conda list -n <env>
 ```

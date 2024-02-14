@@ -32,15 +32,16 @@ set +a
 source ~/.zshrc
 ```
 
-
-
 ### code
+
 #### install cmake
+
 ```bash
 sudo apt-get update
 sudo apt-get install cmake
 cmake --version
 ```
+
 #### install python
 
 ```bash
@@ -159,28 +160,31 @@ plugins=(
 }
 ```
 
-
-
 #### install conda
+
 1. install by wget
+
 ```bash
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod +x Miniconda3-latest-Linux-x86_64.sh
 ./Miniconda3-latest-Linux-x86_64.sh
 # note it may show that conda installed in /root/miniconda3
 ```
+
 > remember set no to auto activate in your shell if u use poetry,etc to manage py-env
 
-2. add `/root/miniconda3/bin`  to `PATH` in `/etc/environment`
+2. add `/root/miniconda3/bin` to `PATH` in `/etc/environment`
+
 ```bash
 PATH="/root/miniconda3/bin:"
 source /etc/environment
 ```
-3. test conda 
+
+3. test conda
+
 ```bash
 conda info
 ```
-
 
 ### net
 
@@ -207,11 +211,13 @@ PubkeyAuthentication yes
 PasswordAuthentication no
 PermitRootLogin yes
 ```
+
 - generate ssh-pub-key **in local machine**
-```powershell 
+
+```powershell
 
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-# select one of it 
+# select one of it
 ssh-keygen -t ed25519 -C "1831768457@qq.com"
 ```
 
@@ -313,7 +319,7 @@ phddns enable
 #### access port
 
 - set local port forwarding in `Termius`
-- ![[assets/Pasted image 20240204144722.png]]
+- ![../../../assets/Pasted_image_20240204144722.png](../../../assets/Pasted_image_20240204144722.png)
 
 #### wifi
 
