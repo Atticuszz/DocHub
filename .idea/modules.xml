@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/DocHub.iml" filepath="$PROJECT_DIR$/.idea/DocHub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Obsidian/.idea/Obsidian.iml" filepath="$PROJECT_DIR$/../Obsidian/.idea/Obsidian.iml" />
     </modules>
   </component>
 </project>
