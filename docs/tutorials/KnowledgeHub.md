@@ -30,14 +30,14 @@ _git是预先配置_
     - [下载链接](https://git-scm.com/download/win) （选这**64-bit Git for Windows Setup.** 这个)
     - [安装指导](../../docs/tools/git-install-instruction.md)
   - 安装完之后如何下载github仓库？
-    - 克隆仓库命令，选择[你合适的目录下打开命令行](docs/OS/Windows/CMD.md)或者执行他
-- https _网速太慢，考虑[开启代理](../VCS/git.md)，代理也不行，考虑ssh_
+    - 克隆仓库命令，选择[你合适的目录下打开命令行](../../docs/OS/Windows/CMD.md)或者执行他
+- https _网速太慢，考虑[开启代理](../../docs/VCS/git.md)，代理也不行，考虑ssh_
 
 ```bash
 git clone https://github.com/Atticuszz/KnowledgeHub.git
 ```
 
-- ssh _需要给自己的计算机和[GitHub账户配置额外的密钥](../VCS/github/SSH_keypair_setup_for_GitHub.md),速度更快_
+- ssh _需要给自己的计算机和[GitHub账户配置额外的密钥](../../docs/VCS/github/SSH_keypair_setup_for_GitHub.md),速度更快_
 
 ```bash
 git clone git@github.com:Atticuszz/KnowledgeHub.git
@@ -47,7 +47,7 @@ git clone git@github.com:Atticuszz/KnowledgeHub.git
 
 #### 结合本地应用使用
 
-- Pycharm _git需要完成[基本配置](../VCS/git.md)才可进行推送_
+- Pycharm _git需要完成[基本配置](../../docs/VCS/git.md)才可进行推送_
 
   - 是什么？
     - jetbrains系列的IDE(集成开发环境)，适用于python和常见前端框架vue,reat等等
