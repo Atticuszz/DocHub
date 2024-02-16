@@ -72,6 +72,14 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-02-16 by Atticus Zhou - 添加定位部分的想法
+- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
+### 2024-02-16 by Atticuszz - Ci workflows
+- 🔨 [README.md](README.md)
+- 🚚 [Pasted_image_20240216143622.png](assets/Pasted_image_20240216143622.png) <- Pasted image 20240216143622.png
+- 🚚 [Pasted_image_20240216144139.png](assets/Pasted_image_20240216144139.png) <- Pasted image 20240216144139.png
+- 🔨 [gpt-chats-history.md](docs/papers/gpt-chats-history.md)
+- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
 ### 2024-02-16 by Atticuszz - 2024-02-16 14:50:42: ...
 - 🔨 [read-dairy.md](docs/papers/read-dairy.md)
 ### 2024-02-16 by Atticuszz - 2024-02-16 14:43:11: 基本确定重建方案和定位方法
@@ -189,13 +197,6 @@
 - 🚚 [CMD.md](docs/OS/Windows/CMD.md) <- CMD.md
 - 🚚 [Powersehll.md](docs/OS/Windows/Powersehll.md) <- powershell.md
 - 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
-### 2024-02-04 by Atticuszz - 2024-02-04 12:55:27: add chatgpt url
-- 🔨 [account.md](docs/account.md)
-### 2024-02-04 by Atticuszz - vault backup: 2024-02-04 12:54:44
-- 🗑️ Dijkstra.py
-- 🗑️ Dijkstra_algorithm.md
-### 2024-02-04 by RoyZhang - 2024-02-04 12:32:59: ...
-- 🔨 [account.md](docs/account.md)
 ## 其他仓库
 
 ### 论文速览
