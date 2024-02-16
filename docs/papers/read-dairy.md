@@ -56,6 +56,9 @@ _怎么解决定位问题？_
 只要实现了点云构造，对连续帧深度图生成的点云图像进行 **对齐**，就可以直接推算出相机的位置参数，`open3d`应该是有成熟的点云对齐函数[open3d.registration.GlobalOptimizationGaussNewton — Open3D 0.6.0 documentation](https://www.open3d.org/docs/0.6.0/python_api/open3d.registration.GlobalOptimizationGaussNewton.html)
 ![../../assets/Pasted_image_20240216144139.png](../../assets/Pasted_image_20240216144139.png)
 
+直接构建不需要定位，或者说从点云对齐得到的连续帧率得到的相对运动信息可以辅助加速点云对齐
+
+初始全局定位可能会麻烦一点，要全局搜索？或者开始粗略几个初始点，然后根据移动，后续连续帧的一系列信息才开始定位，精确空间定位需要仔细设计
 ### planning
 
 2024-02-16
