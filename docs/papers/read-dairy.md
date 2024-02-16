@@ -23,6 +23,11 @@
 
 问题
 但是没有透露实时性好，基本上就是说计算量很大。。。用不了
+2. [[docs/papers/neuralrecon.pdf|neuralrecon]]
+应该是浙大的研究，主要是根据相机参数和`rpg`生成那种只有表面的空间结构，性能很强，但是必须提供相机参数。。。
+
+可能的应用
+如果点云重建的效果不好，可以根据点云对齐推算的位置作为初始参数使用这个方法用rpg进行三位表面重建，对于机器人来说，空间了解表面基本上够了，并且该方法的精度还可以的
 
 
 ## solution
@@ -40,3 +45,11 @@
 *怎么解决定位问题？*
 只要实现了点云构造，对连续帧深度图生成的点云图像进行 **对齐**，就可以直接推算出相机的位置参数，`open3d`应该是有成熟的点云对齐函数[open3d.registration.GlobalOptimizationGaussNewton — Open3D 0.6.0 documentation](https://www.open3d.org/docs/0.6.0/python_api/open3d.registration.GlobalOptimizationGaussNewton.html)
 ![[assets/Pasted image 20240216144139.png]]
+
+
+
+### planning 
+2024-02-16
+*导航的地图怎么办，以及导航方法？*
+1. 可以将点云数据转化成二位的`占用网格`，传统路径规划算法
+2. 或者至今在三维空间实现空间路径规划，可能要找找最新的，香港科技大学，GitHub仓库里面好像是有类似的，是关于无人机的
