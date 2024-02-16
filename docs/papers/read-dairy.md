@@ -1,0 +1,42 @@
+
+## basic knowledge
+### nerf
+#### 模型概述
+`nerf` 模型可以理解为三位重建的深度学习模型，给定空间位置`x,y,x`和观察方向`方向向量`,输出该位置的`RPG`和体积密度\(表示空间的透明度)
+
+#### 训练NeRF模型所需信息
+1. **彩色图像**：NeRF通过对一系列从不同视角拍摄的彩色图像进行训练，学习场景的3D表示。
+2. **相机参数**：传统的NeRF模型训练需要知道每张图像对应的相机参数，包括相机的位置、朝向（姿态）和内参（焦距、光心等）。这些参数用于将3D场景映射到2D图像平面，帮助模型理解不同视角下观察到的场景变化。
+### RPG图像
+彩色图像，除了长宽之外，可以描述这张图有多少个点，还要描述每个点的颜色，那么颜色使用三原色表示，也就是常见的三色通道，范围一般是`0-255`
+### 深度图像
+这个变成单通道了，范围不清楚，但是每个像素点变成了描述距离的远近
+## essay
+1. [[docs/papers/nopo-nerf.pdf|nopo-nerf]]
+2024-02-16
+这是牛津大学提出的，一种更适用于现实环境中的`nerf`方案。
+
+因为使用nerf三位重建需要相机位置参数，对于`meta`给的数据集，他们有提前提供的相机姿态信息，但是显示中，随手拍摄的视频，不仅无法提供精确的相机姿态信息，即使可以预先硬件测量，也可能会出现大量的晃动，导致姿态参数不稳定，无法高效的重建。
+
+解决方案
+大概是将相机姿态参数作为**待优化**的变量，将深度图像作为损失函数的一种，避免了特别依赖相机参数的问题，并且模型也学会了估计位置
+
+问题
+但是没有透露实时性好，基本上就是说计算量很大。。。用不了
+
+
+## solution
+### 3-d reconstruction
+2024-02-16
+*怎么重建？*
+有深度图像就可以直接生成点云，重点关注19年时候英特尔开源的点云处理库`open3d`这是现有的正常维护中的库，有深度图就可以实现点云的三维重建了
+*没有深度图像咋办？或者深度图像质量不高咋办?*
+[GitHub - LiheYoung/Depth-Anything: Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data. Foundation Model for Monocular Depth Estimation](https://github.com/LiheYoung/Depth-Anything)
+![[assets/Pasted image 20240216143622.png]]
+现在已经有了直接从`RPG`转化成深度图像的模型了，根据他的模型参数，性能是非常好的，可以直接接近实时
+
+### loaclization
+2024-02-16
+*怎么解决定位问题？*
+只要实现了点云构造，对连续帧深度图生成的点云图像进行 **对齐**，就可以直接推算出相机的位置参数，`open3d`应该是有成熟的点云对齐函数[open3d.registration.GlobalOptimizationGaussNewton — Open3D 0.6.0 documentation](https://www.open3d.org/docs/0.6.0/python_api/open3d.registration.GlobalOptimizationGaussNewton.html)
+![[assets/Pasted image 20240216144139.png]]
