@@ -1,4 +1,5 @@
 ## 快捷导航
+
 - **docs/:**
   - **Excalidraw/:**
     - [Drawing-2024-01-24-11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md)
@@ -73,35 +74,54 @@
       - [SSH_keypair_setup_for_GitHub.md](docs/VCS/github/SSH_keypair_setup_for_GitHub.md)
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
+
 ## 最近修改
+
 ### 2024-02-20 by Atticuszz - add obsidian and clash installer scripts
+
 - 🔨 [vcs.xml](.idea/vcs.xml)
 - ✨ [Clash_installer.ps1](docs/tutorials/Clash_installer.ps1)
 - ✨ [dochub_installer.ps1](docs/tutorials/dochub_installer.ps1)
+
 ### 2024-02-16 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
+
 - 🔨 [README.md](README.md)
+
 ### 2024-02-16 by Atticuszz - Ci workflows
+
 - 🔨 [README.md](README.md)
 - 🔨 [read-dairy.md](docs/papers/read-dairy.md)
+
 ### 2024-02-16 by Atticus Zhou - 添加定位部分的想法
+
 - 🔨 [read-dairy.md](docs/papers/read-dairy.md)
+
 ### 2024-02-16 by Atticuszz - Ci workflows
+
 - 🔨 [README.md](README.md)
 - 🚚 [Pasted_image_20240216143622.png](assets/Pasted_image_20240216143622.png) <- Pasted image 20240216143622.png
 - 🚚 [Pasted_image_20240216144139.png](assets/Pasted_image_20240216144139.png) <- Pasted image 20240216144139.png
 - 🔨 [gpt-chats-history.md](docs/papers/gpt-chats-history.md)
 - 🔨 [read-dairy.md](docs/papers/read-dairy.md)
+
 ### 2024-02-16 by Atticuszz - 2024-02-16 14:50:42: ...
+
 - 🔨 [read-dairy.md](docs/papers/read-dairy.md)
+
 ### 2024-02-16 by Atticuszz - 2024-02-16 14:43:11: 基本确定重建方案和定位方法
+
 - ✨ [Pasted image 20240216143622.png](assets/Pasted_image_20240216143622.png)
 - ✨ [Pasted image 20240216144139.png](assets/Pasted_image_20240216144139.png)
 - ✨ [gpt-chats-history.md](docs/papers/gpt-chats-history.md)
 - ✨ [nopo-nerf.pdf](docs/papers/nopo-nerf.pdf)
 - ✨ [read-dairy.md](docs/papers/read-dairy.md)
+
 ### 2024-02-14 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
+
 - 🔨 [README.md](README.md)
+
 ### 2024-02-14 by Atticuszz - Ci workflows
+
 - 🔨 [README.md](README.md)
 - 🚚 [1ffa2d81edf7f1dece8d86f71f4b57f_2.png](assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png) <- 1ffa2d81edf7f1dece8d86f71f4b57f 2.png
 - 🚚 [530bcd1287b9daae311bd6a7d0d8f6e_1.png](assets/530bcd1287b9daae311bd6a7d0d8f6e_1.png) <- 530bcd1287b9daae311bd6a7d0d8f6e 1.png
@@ -113,7 +133,9 @@
 - 🔨 [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - 🔨 [account.md](docs/account.md)
 - 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
+
 ### 2024-02-14 by Atticuszz - move files
+
 - 🔨 [README.md](README.md)
 - 🚚 [git.md](docs/VCS/git.md) <- git.md
 - 🚚 [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md) <- How_to_connect_ssh.md
@@ -130,7 +152,9 @@
 - 🗑️ vector.md
 - 🗑️ syntax.md
 - 🗑️ data_model.md
+
 ### 2024-02-14 by Atticuszz - add ubuntu wsl commands
+
 - 🔨 [DocHub.iml](.idea/DocHub.iml)
 - 🔨 [modules.xml](.idea/modules.xml)
 - 🔨 [vcs.xml](.idea/vcs.xml)
@@ -186,7 +210,9 @@
 - ✨ [pyqt6.md](docs/Language/python/third_party_lib/pyqt6.md)
 - ✨ [GPU-wsl.md](docs/OS/GPU-wsl.md)
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+
 ### 2024-02-05 by zzyss-marker - update
+
 - ✨ [1ffa2d81edf7f1dece8d86f71f4b57f 1.png](assets/1ffa2d81edf7f1dece8d86f71f4b57f 1.png)
 - ✨ [1ffa2d81edf7f1dece8d86f71f4b57f 2.png](assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png)
 - ✨ [1ffa2d81edf7f1dece8d86f71f4b57f.png](assets/1ffa2d81edf7f1dece8d86f71f4b57f.png)
@@ -196,6 +222,7 @@
 - ✨ [c68058356f448e566b6677b9455f17a 1.png](assets/c68058356f448e566b6677b9455f17a_1.png)
 - ✨ [c68058356f448e566b6677b9455f17a.png](assets/c68058356f448e566b6677b9455f17a.png)
 - ✨ [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
+
 ## 其他仓库
 
 ### 论文速览
