@@ -17,6 +17,8 @@
     - **IDE/:**
       - [plugin.md](docs/tools/IDE/plugin.md)
   - **tutorials/:**
+    - [Clash_installer.ps1](docs/tutorials/Clash_installer.ps1)
+    - [dochub_installer.ps1](docs/tutorials/dochub_installer.ps1)
     - [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
   - **schedule/:**
     - [todolist.md](docs/schedule/todolist.md)
@@ -74,6 +76,21 @@
 - **node_modules/:**
 
 ## 最近修改
+
+### 2024-02-20 by Atticuszz - add obsidian and clash installer scripts
+
+- 🔨 [vcs.xml](.idea/vcs.xml)
+- ✨ [Clash_installer.ps1](docs/tutorials/Clash_installer.ps1)
+- ✨ [dochub_installer.ps1](docs/tutorials/dochub_installer.ps1)
+
+### 2024-02-16 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+- 🔨 [README.md](README.md)
+
+### 2024-02-16 by Atticuszz - Ci workflows
+
+- 🔨 [README.md](README.md)
+- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
 
 ### 2024-02-16 by Atticus Zhou - 添加定位部分的想法
 
@@ -205,24 +222,6 @@
 - ✨ [c68058356f448e566b6677b9455f17a 1.png](assets/c68058356f448e566b6677b9455f17a_1.png)
 - ✨ [c68058356f448e566b6677b9455f17a.png](assets/c68058356f448e566b6677b9455f17a.png)
 - ✨ [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
-
-### 2024-02-04 by Atticuszz - vault backup: 2024-02-04 14:47:25
-
-- ✨ [Pasted image 20240204144722.png](assets/Pasted_image_20240204144722.png)
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-
-### 2024-02-04 by Atticuszz - 2024-02-04 14:46:44: add ssh-pub-key generate cmd
-
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-
-### 2024-02-04 by Atticuszz - 2024-02-04 14:01:06: add ubuntu commands for ssh connection
-
-- 🔨 [README.md](README.md)
-- ✨ [configs.md](docs/OS/Ubuntu/configs.md)
-- ✨ [install_via_usb.md](docs/OS/Ubuntu/install_via_usb.md)
-- 🚚 [CMD.md](docs/OS/Windows/CMD.md) <- CMD.md
-- 🚚 [Powersehll.md](docs/OS/Windows/Powersehll.md) <- powershell.md
-- 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
 
 ## 其他仓库
 
