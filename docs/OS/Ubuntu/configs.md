@@ -19,6 +19,7 @@ nano /etc/bash.bashrc
 set -a
 . /etc/environment
 set +a
+
 source /etc/bash.bashrc
 ```
 

@@ -37,7 +37,7 @@ if (Test-Path $cloneDir) {
 Write-Output "Clone directory path:$cloneDir"
 
 # 询问是否更新插件zip
-$zipUrl = "https://github.com/SupaVision/DocHub/releases/download/v0.0.2/obsidian.zip"
+$zipUrl = "https://github.com/SupaVision/DocHub/releases/download/obsidian/obsidian.zip"
 $zipPath = "$cloneDir\obsidian.zip"
 $updateZipResponse = Read-Host "Do you want to update the plugin zip? [Y/N]"
 if ($updateZipResponse -eq 'Y') {
