@@ -48,7 +48,7 @@ if ($updateZipResponse -eq 'Y') {
         $extractPath = "$cloneDir\.obsidian"
         Expand-Archive -Path $zipPath -DestinationPath $extractPath -Force
         Write-Output "Plugin zip updated and extracted successfully."
-	
+
 	# 移除下载的zip文件
         Remove-Item -Path $zipPath -Force
         Write-Output "Downloaded zip file removed."
