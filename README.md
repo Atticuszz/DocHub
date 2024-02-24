@@ -77,6 +77,26 @@
 
 ## 最近修改
 
+### 2024-02-24 by Atticuszz - add comments on ubuntu configs
+
+- ✨ [Pasted image 20240224182254.png](assets/Pasted_image_20240224182254.png)
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+
+### 2024-02-20 by Atticuszz - vault backup: 2024-02-20 20:36:48
+
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+- 🔨 [dochub_installer.ps1](docs/tutorials/dochub_installer.ps1)
+
+### 2024-02-20 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+- 🔨 [README.md](README.md)
+
+### 2024-02-20 by Atticuszz - Ci workflows
+
+- 🔨 [README.md](README.md)
+- 🔨 [Clash_installer.ps1](docs/tutorials/Clash_installer.ps1)
+- 🔨 [dochub_installer.ps1](docs/tutorials/dochub_installer.ps1)
+
 ### 2024-02-20 by Atticuszz - add obsidian and clash installer scripts
 
 - 🔨 [vcs.xml](.idea/vcs.xml)
@@ -115,113 +135,6 @@
 - ✨ [gpt-chats-history.md](docs/papers/gpt-chats-history.md)
 - ✨ [nopo-nerf.pdf](docs/papers/nopo-nerf.pdf)
 - ✨ [read-dairy.md](docs/papers/read-dairy.md)
-
-### 2024-02-14 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
-
-- 🔨 [README.md](README.md)
-
-### 2024-02-14 by Atticuszz - Ci workflows
-
-- 🔨 [README.md](README.md)
-- 🚚 [1ffa2d81edf7f1dece8d86f71f4b57f_2.png](assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png) <- 1ffa2d81edf7f1dece8d86f71f4b57f 2.png
-- 🚚 [530bcd1287b9daae311bd6a7d0d8f6e_1.png](assets/530bcd1287b9daae311bd6a7d0d8f6e_1.png) <- 530bcd1287b9daae311bd6a7d0d8f6e 1.png
-- 🚚 [Pasted_image_20240204144722.png](assets/Pasted_image_20240204144722.png) <- Pasted image 20240204144722.png
-- 🚚 [c68058356f448e566b6677b9455f17a_1.png](assets/c68058356f448e566b6677b9455f17a_1.png) <- c68058356f448e566b6677b9455f17a 1.png
-- 🔨 [Poetry.md](docs/Language/python/py-env/Poetry.md)
-- 🔨 [conda.md](docs/Language/python/py-env/conda.md)
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-- 🔨 [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
-- 🔨 [account.md](docs/account.md)
-- 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
-
-### 2024-02-14 by Atticuszz - move files
-
-- 🔨 [README.md](README.md)
-- 🚚 [git.md](docs/VCS/git.md) <- git.md
-- 🚚 [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md) <- How_to_connect_ssh.md
-- 🚚 [SSH_keypair_setup_for_GitHub.md](docs/VCS/github/SSH_keypair_setup_for_GitHub.md) <- SSH_keypair_setup_for_GitHub.md
-- 🔨 [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
-- 🗑️ Queue.md
-- 🗑️ String.md
-- 🗑️ algorithm.md
-- 🗑️ map.md
-- 🗑️ set.md
-- 🗑️ stack.md
-- 🗑️ unordered_map.md
-- 🗑️ unordered_set.md
-- 🗑️ vector.md
-- 🗑️ syntax.md
-- 🗑️ data_model.md
-
-### 2024-02-14 by Atticuszz - add ubuntu wsl commands
-
-- 🔨 [DocHub.iml](.idea/DocHub.iml)
-- 🔨 [modules.xml](.idea/modules.xml)
-- 🔨 [vcs.xml](.idea/vcs.xml)
-- 🗑️ 1ffa2d81edf7f1dece8d86f71f4b57f 1.png
-- 🗑️ 530bcd1287b9daae311bd6a7d0d8f6e.png
-- ✨ [Pasted-image-20231225160132.png](assets/Pasted-image-20231225160132.png)
-- ✨ [Pasted-image-20231225160155.png](assets/Pasted-image-20231225160155.png)
-- ✨ [Pasted-image-20231225160220.png](assets/Pasted-image-20231225160220.png)
-- ✨ [Pasted-image-20231225160308.png](assets/Pasted-image-20231225160308.png)
-- ✨ [Pasted-image-20231225160345.png](assets/Pasted-image-20231225160345.png)
-- ✨ [Pasted-image-20231225160406.png](assets/Pasted-image-20231225160406.png)
-- ✨ [Pasted-image-20231225160433.png](assets/Pasted-image-20231225160433.png)
-- ✨ [Pasted-image-20231225160550.png](assets/Pasted-image-20231225160550.png)
-- ✨ [Pasted-image-20231225160608.png](assets/Pasted-image-20231225160608.png)
-- ✨ [Pasted-image-20231225160633.png](assets/Pasted-image-20231225160633.png)
-- ✨ [Pasted-image-20231225160934.png](assets/Pasted-image-20231225160934.png)
-- ✨ [Pasted-image-20231225161207.png](assets/Pasted-image-20231225161207.png)
-- ✨ [Pasted-image-20231225161331.png](assets/Pasted-image-20231225161331.png)
-- ✨ [Pasted-image-20240113221912.png](assets/Pasted-image-20240113221912.png)
-- 🗑️ Pasted_image_20240126214907.png
-- 🗑️ Pasted_image_20240126224620.png
-- 🗑️ Pasted_image_20240126224714.png
-- 🗑️ Pasted_image_20240126225757.png
-- ✨ [Pasted_image_20240211163343.png](assets/Pasted_image_20240211163343.png)
-- ✨ [Pasted_image_20240211170112.png](assets/Pasted_image_20240211170112.png)
-- ✨ [Pasted_image_20240211170137.png](assets/Pasted_image_20240211170137.png)
-- ✨ [Pasted_image_20240212110546.png](assets/Pasted_image_20240212110546.png)
-- ✨ [Pasted_image_20240212111245.png](assets/Pasted_image_20240212111245.png)
-- ✨ [Pasted_image_20240212114616.png](assets/Pasted_image_20240212114616.png)
-- ✨ [Pasted_image_20240212120735.png](assets/Pasted_image_20240212120735.png)
-- 🗑️ Screenshot_2024-01-26-20-47-53-92_090d9ae461b065ca11c329abb9cd0d70.jpg
-- 🗑️ Screenshot_2024-01-27-11-10-09-16.jpg
-- 🗑️ Screenshot_2024-01-27-11-19-21-82_090d9ae461b065ca11c329abb9cd0d70_1.jpg
-- 🗑️ c68058356f448e566b6677b9455f17a.png
-- ✨ [Queue.md](docs/Language/C++/STL/Queue.md)
-- ✨ [String.md](docs/Language/C++/STL/String.md)
-- ✨ [algorithm.md](docs/Language/C++/STL/algorithm.md)
-- ✨ [map.md](docs/Language/C++/STL/map.md)
-- ✨ [set.md](docs/Language/C++/STL/set.md)
-- ✨ [stack.md](docs/Language/C++/STL/stack.md)
-- ✨ [unordered_map.md](docs/Language/C++/STL/unordered_map.md)
-- ✨ [unordered_set.md](docs/Language/C++/STL/unordered_set.md)
-- ✨ [vector.md](docs/Language/C++/STL/vector.md)
-- ✨ [syntax.md](docs/Language/C++/syntax.md)
-- ✨ [npm_yarn.md](docs/Language/js_ts/npm_yarn.md)
-- 🚚 [react.md](docs/Language/js_ts/react.md) <- AstraPro_SDK_install.pdf.md
-- ✨ [nuxt.js.md](docs/Language/js_ts/vue.js/nuxt.js.md)
-- ✨ [Pip.md](docs/Language/python/py-env/Pip.md)
-- ✨ [Poetry.md](docs/Language/python/py-env/Poetry.md)
-- ✨ [conda.md](docs/Language/python/py-env/conda.md)
-- ✨ [Pathlib.md](docs/Language/python/standard_lib/Pathlib.md)
-- ✨ [Numpy.md](docs/Language/python/third_party_lib/Numpy.md)
-- ✨ [pyqt6.md](docs/Language/python/third_party_lib/pyqt6.md)
-- ✨ [GPU-wsl.md](docs/OS/GPU-wsl.md)
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-
-### 2024-02-05 by zzyss-marker - update
-
-- ✨ [1ffa2d81edf7f1dece8d86f71f4b57f 1.png](assets/1ffa2d81edf7f1dece8d86f71f4b57f 1.png)
-- ✨ [1ffa2d81edf7f1dece8d86f71f4b57f 2.png](assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png)
-- ✨ [1ffa2d81edf7f1dece8d86f71f4b57f.png](assets/1ffa2d81edf7f1dece8d86f71f4b57f.png)
-- ✨ [530bcd1287b9daae311bd6a7d0d8f6e 1.png](assets/530bcd1287b9daae311bd6a7d0d8f6e_1.png)
-- ✨ [530bcd1287b9daae311bd6a7d0d8f6e.png](assets/530bcd1287b9daae311bd6a7d0d8f6e.png)
-- ✨ [c289f87ef103efb2964dd7c4dacb4e9.png](assets/c289f87ef103efb2964dd7c4dacb4e9.png)
-- ✨ [c68058356f448e566b6677b9455f17a 1.png](assets/c68058356f448e566b6677b9455f17a_1.png)
-- ✨ [c68058356f448e566b6677b9455f17a.png](assets/c68058356f448e566b6677b9455f17a.png)
-- ✨ [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 
 ## 其他仓库
 
