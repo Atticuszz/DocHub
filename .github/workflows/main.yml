@@ -37,10 +37,10 @@ jobs:
         continue-on-error: true
 
       - name: Run the script for navigation links
-        run: markdown --root ${{ github.workspace }} generate_nav --output ${{ github.workspace }}/README.md --dir docs --title "## Navigation"
+        run: markdown --root ${{ github.workspace }} generate_nav --output ${{ github.workspace }}/README.md --dir docs --title "## 快捷导航"
 
       - name: Run the script for recently modified
-        run: markdown --root ${{ github.workspace }} modify_recent --output ${{ github.workspace }}/README.md --num_commits 15 --dir docs --title "## Modified"
+        run: markdown --root ${{ github.workspace }} modify_recent --output ${{ github.workspace }}/README.md --num_commits 15 --dir docs --title "## 最近修改"
 
       - name: Run the script for converting wiki links
         run: markdown --root ${{ github.workspace }} convert_wiki_links
