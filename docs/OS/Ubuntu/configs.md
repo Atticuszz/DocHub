@@ -1,3 +1,4 @@
+### init 
 #### init install
 
 ```bash
@@ -10,21 +11,21 @@ sudo apt-get install unzip
 ```
 
 #### auto read envs
-
+> make ur bash auto read envs from shells like bash,zsh and Centralize it for easier management
 - for origin bash
-
+*bash is the basic shell in linux*
 ```bash
 nano /etc/bash.bashrc
 # add following
 set -a
 . /etc/environment
 set +a
-
+# note it's run in new session,instead of in /etc/bash.bashrc
 source /etc/bash.bashrc
 ```
 
 - for zsh
-
+*zsh is the enhanced and popular shell*
 ```bash
 nano ~/.zshrc
 set -a
@@ -32,7 +33,17 @@ set -a
 set +a
 source ~/.zshrc
 ```
+#### add envs in `/etc/environment`
+you may see bash sentences like :
+```bash
+export PATH="/root/.local/bin:$PATH
+```
+add `/root/.local/bin:` into `PATH="/root/.local/bin:path_a:path_b"`
 
+```/etc/environment
+# real example
+PATH="/root/miniconda3/bin:/root/.local/bin:/usr/local/cuda-11.8/bin:/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+```
 ### code
 
 #### install cmake
@@ -70,7 +81,8 @@ poetry --version
 ```
 
 #### install zsh
-
+see yellow hints 
+![[assets/Pasted image 20240224182254.png]]
 [ZSH + Oh My ZSH! on Windows with WSL - DEV Community](https://dev.to/equiman/zsh-on-windows-with-wsl-1jck)
 
 1. install zsh
