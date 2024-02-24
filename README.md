@@ -74,6 +74,8 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-02-24 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
 ### 2024-02-24 by Atticus Zhou - Update main.yml
 - 🔨 [main.yml](.github/workflows/main.yml)
 ### 2024-02-24 by Atticuszz - Ci workflows Update README.md
@@ -103,10 +105,6 @@
 - 🔨 [README.md](README.md)
 - 🔨 [Clash_installer.ps1](docs/tutorials/Clash_installer.ps1)
 - 🔨 [dochub_installer.ps1](docs/tutorials/dochub_installer.ps1)
-### 2024-02-20 by Atticuszz - add obsidian and clash installer scripts
-- 🔨 [vcs.xml](.idea/vcs.xml)
-- ✨ [Clash_installer.ps1](docs/tutorials/Clash_installer.ps1)
-- ✨ [dochub_installer.ps1](docs/tutorials/dochub_installer.ps1)
 ## 其他仓库
 
 ### 论文速览
