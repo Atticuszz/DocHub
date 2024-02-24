@@ -86,6 +86,8 @@
 - 🔨 [README.md](README.md)
 ### 2024-02-24 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
+### 2024-02-24 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
 ### 2024-02-24 by Atticus Zhou - Update main.yml
 - 🔨 [main.yml](.github/workflows/main.yml)
 ### 2024-02-24 by Atticuszz - Ci workflows Update README.md
@@ -102,9 +104,6 @@
 ### 2024-02-24 by Atticuszz - Ci workflows
 - 🔨 [README.md](README.md)
 - 🚚 [Pasted_image_20240224182254.png](assets/Pasted_image_20240224182254.png) <- Pasted image 20240224182254.png
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-24 by Atticuszz - add comments on ubuntu configs
-- ✨ [Pasted image 20240224182254.png](assets/Pasted_image_20240224182254.png)
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ## 其他仓库
 
