@@ -76,6 +76,18 @@
 ## 最近修改
 ### 2024-02-24 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
+### 2024-02-24 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+### 2024-02-24 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+### 2024-02-24 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+### 2024-02-24 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+### 2024-02-24 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+### 2024-02-24 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
 ### 2024-02-24 by Atticus Zhou - Update main.yml
 - 🔨 [main.yml](.github/workflows/main.yml)
 ### 2024-02-24 by Atticuszz - Ci workflows Update README.md
@@ -93,18 +105,6 @@
 - 🔨 [README.md](README.md)
 - 🚚 [Pasted_image_20240224182254.png](assets/Pasted_image_20240224182254.png) <- Pasted image 20240224182254.png
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-24 by Atticuszz - add comments on ubuntu configs
-- ✨ [Pasted image 20240224182254.png](assets/Pasted_image_20240224182254.png)
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-20 by Atticuszz - vault backup: 2024-02-20 20:36:48
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-- 🔨 [dochub_installer.ps1](docs/tutorials/dochub_installer.ps1)
-### 2024-02-20 by pre-commit-ci[bot] - [pre-commit.ci] auto fixes from pre-commit.com hooks
-- 🔨 [README.md](README.md)
-### 2024-02-20 by Atticuszz - Ci workflows
-- 🔨 [README.md](README.md)
-- 🔨 [Clash_installer.ps1](docs/tutorials/Clash_installer.ps1)
-- 🔨 [dochub_installer.ps1](docs/tutorials/dochub_installer.ps1)
 ## 其他仓库
 
 ### 论文速览
