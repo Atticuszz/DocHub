@@ -74,20 +74,9 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
-### 2024-02-24 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-24 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-24 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-24 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-24 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-24 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-24 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
+### 2024-02-24 by Atticuszz - update TODO
+- 🔨 [TODO.md](docs/schedule/TODO.md)
+- 🔨 [standard.md](docs/schedule/meetings/standard.md)
 ### 2024-02-24 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
 ### 2024-02-24 by Atticuszz - Ci workflows Update README.md
