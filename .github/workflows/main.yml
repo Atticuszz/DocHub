@@ -1,9 +1,10 @@
-name: Update README and Create Pull Request
+name: Run Python Script and Update README
+
 on:
-  workflow_call:
-    secrets:
-      personal_pat:
-        required: true
+  push:
+    branches:
+      - main
+      - test
 
 jobs:
   run-script:
@@ -12,62 +13,40 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: "main"
           fetch-depth: 0
-          token: ${{ secrets.personal_pat }}
-
-      - name: Checkout CI branch or create it if not exists
-        run: |
-          git fetch origin
-          if git branch --list -r | grep origin/ ci-auto-update; then
-            git checkout ci-auto-update
-          else
-            git checkout -b ci-auto-update
-            git push --set-upstream origin ci-auto-update --force
-          fi
-
-      - name: Reset CI branch to match main branch
-        run: |
-          git fetch origin main
-          git reset --hard origin/main
-          git clean -fd
+          token: ${{ secrets.ATTICUS_PAT }}
 
       - name: Configuring git credentials
         run: |
           git config --global user.email "1831768457@qq.com"
           git config --global user.name "Atticuszz"
 
-      # 以下步骤保持不变，但是现在它们在CI分支上执行
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install useful-scripts pre-commit
+          pip install pygizmokit pre-commit
 
       - name: Run pre-commit hooks
         run: pre-commit run --all-files
         continue-on-error: true
 
-      - name: Run the script for recently modified
-        run: markdown --root ${{ github.workspace }} modify_recent --output ${{ github.workspace }}/README.md --num_commits 15 --dir docs --title "## 最近修改"
+      - name: Run the script for navigation links
+        run: markdown --root ${{ github.workspace }} generate_nav --output ${{ github.workspace }}/README.md --dir docs --title "## Navigation"
 
+      - name: Run the script for recently modified
+        run: markdown --root ${{ github.workspace }} modify_recent --output ${{ github.workspace }}/README.md --num_commits 15 --dir docs --title "## Modified"
+
+      - name: Run the script for converting wiki links
+        run: markdown --root ${{ github.workspace }} convert_wiki_links
 
       - name: Commit README changes
         run: |
           git add .
-          git commit -m "Ci workflows" || echo "No changes to commit"
-          git push origin ci-auto-update --force
-
-      # 新增：创建或更新 PR 到主分支
-      - name: Create Pull Request
-        uses: repo-sync/pull-request@v2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_title: "Update from CI"
-          pr_body: "This is an automated PR to update contents"
-          source_branch: ci-auto-update
-          destination_branch: main
+          git commit -m "Ci workflows Update README.md" || echo "No changes to commit"
+          git push origin main --force
