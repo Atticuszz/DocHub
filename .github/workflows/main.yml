@@ -1,10 +1,9 @@
-name: Run Python Script and Update README
-
+name: Update README and Create Pull Request
 on:
-  push:
-    branches:
-      - main
-      - test
+  workflow_call:
+    secrets:
+      personal_pat:
+        required: true
 
 jobs:
   run-script:
@@ -13,20 +12,25 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          ref: "main"
+          ref: main
           fetch-depth: 0
-          token: ${{ secrets.ATTICUS_PAT }}
+          token: ${{ secrets.personal_pat }}
 
-      # 新增：创建并切换到CI分支
-      - name: Checkout CI branch
+      - name: Checkout CI branch or create it if not exists
         run: |
           git fetch origin
-          if git branch --list ci-auto-update; then
+          if git branch --list -r | grep origin/ ci-auto-update; then
             git checkout ci-auto-update
           else
             git checkout -b ci-auto-update
+            git push --set-upstream origin ci-auto-update --force
           fi
+
+      - name: Reset CI branch to match main branch
+        run: |
+          git fetch origin main
           git reset --hard origin/main
+          git clean -fd
 
       - name: Configuring git credentials
         run: |
@@ -37,7 +41,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: 3.11
 
       - name: Install dependencies
         run: |
@@ -48,14 +52,9 @@ jobs:
         run: pre-commit run --all-files
         continue-on-error: true
 
-      - name: Run the script for navigation links
-        run: markdown --root ${{ github.workspace }} generate_nav --output ${{ github.workspace }}/README.md --dir docs --title "## 快捷导航"
-
       - name: Run the script for recently modified
         run: markdown --root ${{ github.workspace }} modify_recent --output ${{ github.workspace }}/README.md --num_commits 15 --dir docs --title "## 最近修改"
 
-      - name: Run the script for converting wiki links
-        run: markdown --root ${{ github.workspace }} convert_wiki_links
 
       - name: Commit README changes
         run: |
@@ -65,11 +64,10 @@ jobs:
 
       # 新增：创建或更新 PR 到主分支
       - name: Create Pull Request
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/test'
         uses: repo-sync/pull-request@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Update from CI"
           pr_body: "This is an automated PR to update contents"
-          source_branch: "ci-auto-update"
-          destination_branch: "main"
+          source_branch: ci-auto-update
+          destination_branch: main
