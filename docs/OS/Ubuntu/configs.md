@@ -44,7 +44,7 @@ source ~/.zshrc
 you may see bash sentences like :
 
 ```bash
-export PATH="/root/.local/bin:$PATH
+export PATH="/root/.local/bin:$PATH"
 ```
 
 add `/root/.local/bin:` into `PATH="/root/.local/bin:path_a:path_b"`
