@@ -102,11 +102,8 @@
 - 🔨 [README.md](README.md)
 ### 2024-02-25 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
-### 2024-02-25 by Atticuszz - update conda.md
-- 🔨 [DocHub.iml](.idea/DocHub.iml)
-- 🔨 [modules.xml](.idea/modules.xml)
-- 🔨 [vcs.xml](.idea/vcs.xml)
-- 🔨 [conda.md](docs/Language/python/py-env/conda.md)
+### 2024-02-25 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
 ## 其他仓库
 
 ### 论文速览
