@@ -85,7 +85,7 @@ sudo update-alternatives --config python3
 curl -sSL https://install.python-poetry.org | python3 -
 nano ~/.bashrc
 # add it
-export PATH="/root/.local/bin:$PATH
+export PATH="/root/.local/bin:$PATH"
 source ~/.bashrc
 poetry --version
 ```
