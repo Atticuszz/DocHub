@@ -77,6 +77,12 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-02-26 by Ye0137 - add command of auto activate conda
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+- 🚚 [Pasted_image_20240226204859.png](assets/Pasted_image_20240226204859.png) <- Pasted image 20240226204859.png
+- 🔨 [TODO.md](docs/schedule/TODO.md)
 ### 2024-02-26 by Atticuszz - add todo
 - ✨ [Pasted image 20240226204859.png](assets/Pasted_image_20240226204859.png)
 - 🔨 [TODO.md](docs/schedule/TODO.md)
@@ -99,11 +105,6 @@
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ### 2024-02-26 by Atticuszz - fix: proxy in wsl
 - ✨ [Pasted image 20240226165051.png](assets/Pasted_image_20240226165051.png)
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-26 by Atticuszz - add prompt to set proxy
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ## 其他仓库
 

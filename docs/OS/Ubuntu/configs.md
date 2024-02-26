@@ -212,7 +212,9 @@ source /etc/environment
 ```bash
 conda info
 ```
+
 4.  optinal, enable auto activate conda
+
 ```bash
 conda config --set auto_activate_base true
 ```
