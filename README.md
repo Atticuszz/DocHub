@@ -77,6 +77,11 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-02-26 by Ye0137 - finished all to init env
+- 🔨 [TODO.md](docs/schedule/TODO.md)
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ### 2024-02-26 by Ye0137 - 修正了zsh安装的细节，wsl代理的旧的方式，如果tun mode失败
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
@@ -98,8 +103,6 @@
 - 🔨 [README.md](README.md)
 ### 2024-02-26 by Atticus Zhou - Update main.yml
 - 🔨 [main.yml](.github/workflows/main.yml)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
 ## 其他仓库
 
 ### 论文速览
