@@ -453,12 +453,13 @@ docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 #### proxy
 
 > clash TUN mode
+
 1. set run as admin
-![[assets/Pasted image 20240226165051.png|250]]
+   ![250](../../../assets/Pasted_image_20240226165051.png)
 1. install `service mode`,if installed ,it's green ![100](../../../assets/Pasted_image_20240226155154.png)
    - ![../../../assets/Pasted_image_20240226155240.png](../../../assets/Pasted_image_20240226155240.png)
-2. open `Tun mode`![500](../../../assets/Pasted_image_20240226155318.png)
-3. test connect in wsl
+1. open `Tun mode`![500](../../../assets/Pasted_image_20240226155318.png)
+1. test connect in wsl
 
 ### BUGs
 
