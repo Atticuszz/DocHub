@@ -122,6 +122,7 @@ git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zs
 - add theme config `~/.zshrc`
 
 ```bash
+# correct the old ZSH_THEME or can not find p10k command
 ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(history)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -144,7 +145,7 @@ git clone https://github.com/Pilaton/OhMyZsh-full-autoupdate.git ${ZSH_CUSTOM:-~
 ```
 
 - add plugins config
-
+*must add the following before the `source $ZSH/oh-my-zsh.sh`*
 ```bash
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
@@ -178,7 +179,6 @@ plugins=(
 
 ```json
 {
-  "terminal.integrated.fontFamily": "MesloLGS NF",
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
@@ -451,6 +451,23 @@ docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 ```
 
 #### proxy
+
+> connect to your clash proxy old way if tun mode failed for pc
+```bash
+sudo nano /etc/environment
+```
+- check clash proxy of `allow lan` wifi `ipv4`
+```
+# add following
+http_proxy="http://192.168.0.107:7890"
+https_proxy="http://192.168.0.107:7890"
+ftp_proxy="ftp://192.168.0.107:7890"
+no_proxy="localhost,127.0.0.1,::1"
+```
+- apply changes
+```bash
+source /etc/environment
+```
 
 > clash TUN mode
 
