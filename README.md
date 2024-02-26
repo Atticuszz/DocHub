@@ -103,32 +103,13 @@
 - 🔨 [README.md](README.md)
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
 - 🚚 [Pasted_image_20240226140209.png](assets/Pasted_image_20240226140209.png) <- Pasted image 20240226140209.png
 - 🚚 [Pasted_image_20240226140304.png](assets/Pasted_image_20240226140304.png) <- Pasted image 20240226140304.png
 - 🚚 [Pasted_image_20240226140501.png](assets/Pasted_image_20240226140501.png) <- Pasted image 20240226140501.png
 - 🗑️ Free time.md
 - ✨ [Free_time.md](docs/schedule/Free_time.md)
-### 2024-02-26 by Atticuszz - 添加所有成员的时间安排
-- ✨ [2a53cb5ae29ab325a478a60bfa56f3c.jpg](assets/2a53cb5ae29ab325a478a60bfa56f3c.jpg)
-- ✨ [Pasted image 20240226140209.png](assets/Pasted_image_20240226140209.png)
-- ✨ [Pasted image 20240226140304.png](assets/Pasted_image_20240226140304.png)
-- ✨ [Pasted image 20240226140501.png](assets/Pasted_image_20240226140501.png)
-- 🗑️ Pasted-image-20231225160132.png
-- 🗑️ Pasted-image-20231225160155.png
-- 🗑️ Pasted-image-20231225160220.png
-- 🗑️ Pasted-image-20231225160308.png
-- 🗑️ Pasted-image-20231225160345.png
-- 🗑️ Pasted-image-20231225160406.png
-- 🗑️ Pasted-image-20231225160433.png
-- 🗑️ Pasted-image-20231225160550.png
-- 🗑️ Pasted-image-20231225160608.png
-- 🗑️ Pasted-image-20231225160633.png
-- 🗑️ Pasted-image-20231225160934.png
-- 🗑️ Pasted-image-20231225161207.png
-- 🗑️ Pasted-image-20231225161331.png
-- 🗑️ Pasted-image-20240113221912.png
-- 🔨 [Poetry.md](docs/Language/python/py-env/Poetry.md)
-- ✨ [Free time.md](docs/schedule/Free_time.md)
 ## 其他仓库
 
 ### 论文速览
