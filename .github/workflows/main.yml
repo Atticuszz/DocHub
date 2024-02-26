@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - test
+    paths-ignore:
+      - "README.md" # 忽略README.md文件的变更
 
 jobs:
   run-script:
@@ -46,6 +48,7 @@ jobs:
         run: markdown --root ${{ github.workspace }} convert_wiki_links
 
       - name: Commit README changes
+        if: ${{ github.event.head_commit.message != 'Ci workflows Update README.md' }} # 添加条件
         run: |
           git add .
           git commit -m "Ci workflows Update README.md" || echo "No changes to commit"
