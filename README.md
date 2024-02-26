@@ -77,6 +77,11 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-02-26 by Ye0137 - 修正了zsh安装的细节，wsl代理的旧的方式，如果tun mode失败
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+- 🔨 [Free_time.md](docs/schedule/Free_time.md)
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
 - 🚚 [Pasted_image_20240226165051.png](assets/Pasted_image_20240226165051.png) <- Pasted image 20240226165051.png
@@ -93,12 +98,6 @@
 - 🔨 [README.md](README.md)
 ### 2024-02-26 by Atticus Zhou - Update main.yml
 - 🔨 [main.yml](.github/workflows/main.yml)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
 ## 其他仓库

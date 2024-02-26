@@ -145,7 +145,8 @@ git clone https://github.com/Pilaton/OhMyZsh-full-autoupdate.git ${ZSH_CUSTOM:-~
 ```
 
 - add plugins config
-*must add the following before the `source $ZSH/oh-my-zsh.sh`*
+  _must add the following before the `source $ZSH/oh-my-zsh.sh`_
+
 ```bash
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
@@ -453,10 +454,13 @@ docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 #### proxy
 
 > connect to your clash proxy old way if tun mode failed for pc
+
 ```bash
 sudo nano /etc/environment
 ```
+
 - check clash proxy of `allow lan` wifi `ipv4`
+
 ```
 # add following
 http_proxy="http://192.168.0.107:7890"
@@ -464,7 +468,9 @@ https_proxy="http://192.168.0.107:7890"
 ftp_proxy="ftp://192.168.0.107:7890"
 no_proxy="localhost,127.0.0.1,::1"
 ```
+
 - apply changes
+
 ```bash
 source /etc/environment
 ```
