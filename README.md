@@ -20,7 +20,7 @@
     - [dochub_installer.ps1](docs/tutorials/dochub_installer.ps1)
     - [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
   - **schedule/:**
-    - [Free time.md](docs/schedule/Free_time.md)
+    - [Free_time.md](docs/schedule/Free_time.md)
     - [TODO.md](docs/schedule/TODO.md)
     - **meetings/:**
       - [standard.md](docs/schedule/meetings/standard.md)
@@ -75,6 +75,13 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+- 🚚 [Pasted_image_20240226140209.png](assets/Pasted_image_20240226140209.png) <- Pasted image 20240226140209.png
+- 🚚 [Pasted_image_20240226140304.png](assets/Pasted_image_20240226140304.png) <- Pasted image 20240226140304.png
+- 🚚 [Pasted_image_20240226140501.png](assets/Pasted_image_20240226140501.png) <- Pasted image 20240226140501.png
+- 🗑️ Free time.md
+- ✨ [Free_time.md](docs/schedule/Free_time.md)
 ### 2024-02-26 by Atticuszz - 添加所有成员的时间安排
 - ✨ [2a53cb5ae29ab325a478a60bfa56f3c.jpg](assets/2a53cb5ae29ab325a478a60bfa56f3c.jpg)
 - ✨ [Pasted image 20240226140209.png](assets/Pasted_image_20240226140209.png)
@@ -96,8 +103,6 @@
 - 🗑️ Pasted-image-20240113221912.png
 - 🔨 [Poetry.md](docs/Language/python/py-env/Poetry.md)
 - ✨ [Free time.md](docs/schedule/Free_time.md)
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
 ### 2024-02-25 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
 ### 2024-02-25 by Atticuszz - Ci workflows Update README.md
