@@ -1,4 +1,6 @@
 ## 快捷导航
+- **DocHub/:**
+- **AutoDrive_frontend/:**
 - **docs/:**
   - **Excalidraw/:**
     - [Drawing-2024-01-24-11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md)
@@ -75,6 +77,10 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+- 🚚 [Pasted_image_20240226165051.png](assets/Pasted_image_20240226165051.png) <- Pasted image 20240226165051.png
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ### 2024-02-26 by Atticuszz - fix: proxy in wsl
 - ✨ [Pasted image 20240226165051.png](assets/Pasted_image_20240226165051.png)
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
@@ -87,18 +93,6 @@
 - 🔨 [README.md](README.md)
 ### 2024-02-26 by Atticus Zhou - Update main.yml
 - 🔨 [main.yml](.github/workflows/main.yml)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md

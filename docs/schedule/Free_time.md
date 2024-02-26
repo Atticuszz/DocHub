@@ -16,6 +16,8 @@
 
 ### 李信
 
+![../../assets/7047cf28aead44112d2857bfaa194ed.jpg](../../assets/7047cf28aead44112d2857bfaa194ed.jpg)
+
 ### 张彬
 
 ![400](../../assets/2a53cb5ae29ab325a478a60bfa56f3c.jpg)
