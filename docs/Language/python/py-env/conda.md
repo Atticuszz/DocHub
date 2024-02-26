@@ -38,22 +38,22 @@ conda config --show channels
 
 ### install deps
 
-- install from env.yml
+- install from environment.yml
 
 ```bash
-conda env create -f env.yml
+conda env create -f environment.yml
 ```
 
-- output current env deps to env.yml
+- output current env deps to environment.yml
 
 ```bash
-conda env export --file env.yml
+conda env export --no-builds >environment.yml
 ```
 
-- update from env.yml `--prune` for auto update deps
+- update from environment.yml `--prune` for auto update deps
 
 ```bash
-conda env update -f env.yml
+conda env update -f environment.yml
 ```
 
 - install by auto update deps

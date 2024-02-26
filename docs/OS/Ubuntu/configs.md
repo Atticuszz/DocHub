@@ -1,3 +1,5 @@
+### init
+
 #### init install
 
 ```bash
@@ -11,7 +13,10 @@ sudo apt-get install unzip
 
 #### auto read envs
 
+> make ur bash auto read envs from shells like bash,zsh and Centralize it for easier management
+
 - for origin bash
+  _bash is the basic shell in linux_
 
 ```bash
 nano /etc/bash.bashrc
@@ -19,10 +24,12 @@ nano /etc/bash.bashrc
 set -a
 . /etc/environment
 set +a
+# note it's run in new session,instead of in /etc/bash.bashrc
 source /etc/bash.bashrc
 ```
 
 - for zsh
+  _zsh is the enhanced and popular shell_
 
 ```bash
 nano ~/.zshrc
@@ -30,6 +37,21 @@ set -a
 . /etc/environment
 set +a
 source ~/.zshrc
+```
+
+#### add envs in `/etc/environment`
+
+you may see bash sentences like :
+
+```bash
+export PATH="/root/.local/bin:$PATH
+```
+
+add `/root/.local/bin:` into `PATH="/root/.local/bin:path_a:path_b"`
+
+```/etc/environment
+# real example
+PATH="/root/miniconda3/bin:/root/.local/bin:/usr/local/cuda-11.8/bin:/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 ```
 
 ### code
@@ -63,13 +85,15 @@ sudo update-alternatives --config python3
 curl -sSL https://install.python-poetry.org | python3 -
 nano ~/.bashrc
 # add it
-export PATH="/root/.local/bin:$PATH
+export PATH="/root/.local/bin:$PATH"
 source ~/.bashrc
 poetry --version
 ```
 
 #### install zsh
 
+see yellow hints
+![../../../assets/Pasted_image_20240224182254.png](../../../assets/Pasted_image_20240224182254.png)
 [ZSH + Oh My ZSH! on Windows with WSL - DEV Community](https://dev.to/equiman/zsh-on-windows-with-wsl-1jck)
 
 1. install zsh
@@ -426,28 +450,12 @@ docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 
 #### proxy
 
-> connect to your clash proxy
+> clash TUN mode
 
-```bash
-sudo nano /etc/environment
-```
-
-- check clash proxy ipv4![../../../assets/Pasted_image_20240211170112.png](../../../assets/Pasted_image_20240211170112.png)
-- ![../../../assets/Pasted_image_20240211170137.png](../../../assets/Pasted_image_20240211170137.png)
-
-```
-# add following
-http_proxy="http://192.168.0.107:7890"
-https_proxy="http://192.168.0.107:7890"
-ftp_proxy="ftp://192.168.0.107:7890"
-no_proxy="localhost,127.0.0.1,::1"
-```
-
-- apply changes
-
-```bash
-source /etc/environment
-```
+1. install `service mode`,if installed ,it's green ![100](../../../assets/Pasted_image_20240226155154.png)
+   - ![../../../assets/Pasted_image_20240226155240.png](../../../assets/Pasted_image_20240226155240.png)
+2. open `Tun mode`![500](../../../assets/Pasted_image_20240226155318.png)
+3. test connect in wsl
 
 ### BUGs
 
