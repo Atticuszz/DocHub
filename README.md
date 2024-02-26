@@ -105,11 +105,6 @@
 - 🔨 [README.md](README.md)
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
-- 🚚 [Pasted_image_20240226140209.png](assets/Pasted_image_20240226140209.png) <- Pasted image 20240226140209.png
-- 🚚 [Pasted_image_20240226140304.png](assets/Pasted_image_20240226140304.png) <- Pasted image 20240226140304.png
-- 🚚 [Pasted_image_20240226140501.png](assets/Pasted_image_20240226140501.png) <- Pasted image 20240226140501.png
-- 🗑️ Free time.md
-- ✨ [Free_time.md](docs/schedule/Free_time.md)
 ## 其他仓库
 
 ### 论文速览
