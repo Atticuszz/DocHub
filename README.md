@@ -75,8 +75,30 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
+### 2024-02-26 by Atticuszz - 添加了wsl代理的新方法
+- 🗑️ 1.\346\227\240\344\272\272\351\251\276\351\251\266\350\257\276\347\250\213 1.pdf"
+- ✨ [Pasted image 20240226155154.png](assets/Pasted_image_20240226155154.png)
+- ✨ [Pasted image 20240226155240.png](assets/Pasted_image_20240226155240.png)
+- ✨ [Pasted image 20240226155318.png](assets/Pasted_image_20240226155318.png)
+- ✨ [Pasted-image-20230718153908.png](assets/Pasted-image-20230718153908.png)
+- ✨ [Pasted-image-20230720163254.png](assets/Pasted-image-20230720163254.png)
+- ✨ [Pasted-image-20230805074218.png](assets/Pasted-image-20230805074218.png)
+- ✨ [Pasted-image-20231120202204.png](assets/Pasted-image-20231120202204.png)
+- ✨ [Pasted-image-20231207140546.png](assets/Pasted-image-20231207140546.png)
+- ✨ [Pasted-image-20231207140606.png](assets/Pasted-image-20231207140606.png)
+- ✨ [Pasted-image-20231207140646.png](assets/Pasted-image-20231207140646.png)
+- ✨ [Pasted-image-20231225160345.png](assets/Pasted-image-20231225160345.png)
+- ✨ [Pasted-image-20231225160406.png](assets/Pasted-image-20231225160406.png)
+- ✨ [Pasted-image-20231225160433.png](assets/Pasted-image-20231225160433.png)
+- ✨ [Pasted-image-20231225160550.png](assets/Pasted-image-20231225160550.png)
+- ✨ [Pasted-image-20231225160608.png](assets/Pasted-image-20231225160608.png)
+- ✨ [Pasted-image-20231225160633.png](assets/Pasted-image-20231225160633.png)
+- ✨ [Pasted-image-20231225160934.png](assets/Pasted-image-20231225160934.png)
+- ✨ [Pasted-image-20231225161207.png](assets/Pasted-image-20231225161207.png)
+- ✨ [Pasted-image-20231225161331.png](assets/Pasted-image-20231225161331.png)
+- 🗑️ Pasted_image_20240211170112.png
+- 🗑️ Pasted_image_20240211170137.png
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
