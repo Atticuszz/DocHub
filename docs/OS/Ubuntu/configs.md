@@ -1,3 +1,4 @@
+*please config proxy first, roll to botton of page*
 ### init
 
 #### init install
