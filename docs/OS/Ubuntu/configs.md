@@ -449,30 +449,12 @@ docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 ```
 
 #### proxy
+> clash TUN mode
 
-> connect to your clash proxy
-
-```bash
-sudo nano /etc/environment
-```
-
-- check clash proxy ipv4![../../../assets/Pasted_image_20240211170112.png](../../../assets/Pasted_image_20240211170112.png)
-- ![../../../assets/Pasted_image_20240211170137.png](../../../assets/Pasted_image_20240211170137.png)
-
-```
-# add following
-http_proxy="http://192.168.0.107:7890"
-https_proxy="http://192.168.0.107:7890"
-ftp_proxy="ftp://192.168.0.107:7890"
-no_proxy="localhost,127.0.0.1,::1"
-```
-
-- apply changes
-
-```bash
-source /etc/environment
-```
-
+1. install `service mode`,if installed ,it's green ![[assets/Pasted image 20240226155154.png|100]]
+	- ![[assets/Pasted image 20240226155240.png]]
+2. open `Tun mode`![[assets/Pasted image 20240226155318.png|500]]
+3. test connect in wsl
 ### BUGs
 
 1. run `sudo apt-get update` got
