@@ -20,6 +20,7 @@
     - [dochub_installer.ps1](docs/tutorials/dochub_installer.ps1)
     - [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
   - **schedule/:**
+    - [Free_time.md](docs/schedule/Free_time.md)
     - [TODO.md](docs/schedule/TODO.md)
     - **meetings/:**
       - [standard.md](docs/schedule/meetings/standard.md)
@@ -74,27 +75,40 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
+### 2024-02-26 by Atticuszz - fix: proxy in wsl
+- ✨ [Pasted image 20240226165051.png](assets/Pasted_image_20240226165051.png)
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+### 2024-02-26 by Atticuszz - add prompt to set proxy
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
+### 2024-02-26 by Atticus Zhou - Update main.yml
+- 🔨 [main.yml](.github/workflows/main.yml)
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### 2024-02-25 by Atticuszz - Ci workflows Update README.md
+=======
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
+>>>>>>> origin/main
 - 🔨 [README.md](README.md)
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
+<<<<<<< HEAD
 ### 2024-02-25 by zzyss-marker - vault backup: 2024-02-25 21:47:44
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 =======
@@ -106,6 +120,11 @@
 ### 2024-02-25 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
 ### 2024-02-25 by Atticuszz - Ci workflows Update README.md
+=======
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
+>>>>>>> origin/main
 - 🔨 [README.md](README.md)
 ## 其他仓库
 
