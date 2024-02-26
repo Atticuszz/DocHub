@@ -75,6 +75,12 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+- 🚚 [Pasted_image_20240226155154.png](assets/Pasted_image_20240226155154.png) <- Pasted image 20240226155154.png
+- 🚚 [Pasted_image_20240226155240.png](assets/Pasted_image_20240226155240.png) <- Pasted image 20240226155240.png
+- 🚚 [Pasted_image_20240226155318.png](assets/Pasted_image_20240226155318.png) <- Pasted image 20240226155318.png
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ### 2024-02-26 by Atticuszz - 添加了wsl代理的新方法
 - 🗑️ 1.\346\227\240\344\272\272\351\251\276\351\251\266\350\257\276\347\250\213 1.pdf"
 - ✨ [Pasted image 20240226155154.png](assets/Pasted_image_20240226155154.png)
@@ -99,8 +105,6 @@
 - 🗑️ Pasted_image_20240211170112.png
 - 🗑️ Pasted_image_20240211170137.png
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
