@@ -114,14 +114,6 @@ poetry export -f requirements.txt --output requirements.txt
 
 ```
 
-Install dependencies from `requirements.txt`:
-
-```bash
-
-poetry install --requirements requirements.txt
-
-```
-
 List virtual environments:
 
 ```bash
