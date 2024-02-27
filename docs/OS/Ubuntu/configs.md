@@ -213,6 +213,12 @@ source /etc/environment
 conda info
 ```
 
+4.  optinal, enable auto activate conda
+
+```bash
+conda config --set auto_activate_base true
+```
+
 ### net
 
 **before ssh connect,u maybe connect by gui or connect by password**
