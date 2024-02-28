@@ -36,7 +36,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
+                "file": "docs/schedule/meetings/2024-2-28.md",
                 "mode": "source",
                 "source": false
               }
@@ -109,6 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "docs/schedule/meetings/2024-2-28.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -125,6 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "docs/schedule/meetings/2024-2-28.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "docs/schedule/meetings/2024-2-28.md"
               }
             }
           },
@@ -210,8 +212,13 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "e5fb1abf4287bce9",
+  "active": "89ba84733ba748f6",
   "lastOpenFiles": [
+    "assets/Pasted image 20240228171953.png",
+    "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
+    "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
+    "docs/schedule/meetings/2024-2-28.md",
+    "docs/schedule/meetings/standard.md",
     "docs/OS/Ubuntu/configs.md",
     "conflict-files-obsidian-git.md",
     "docs/OS/Ubuntu/install_via_usb.md",
@@ -243,13 +250,8 @@
     "docs/device/purchase.md",
     "docs/tools/git-install-instruction.md",
     "docs/tools/IDE/plugin.md",
-    "docs/schedule/meetings/standard.md",
     "docs/schedule/meetings/2024-1-24.md",
     "docs/schedule/todolist.md",
-    "docs/tutorials/KnowledgeHub.md",
-    "docs/papers/read-dairy.md",
-    "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
-    "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
     "docs/papers/nopo-nerf.pdf",
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
     "docs/papers/neuralrecon.pdf",
