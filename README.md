@@ -1,6 +1,4 @@
 ## 快捷导航
-- **DocHub/:**
-- **AutoDrive_frontend/:**
 - **docs/:**
   - **Excalidraw/:**
     - [Drawing-2024-01-24-11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md)
@@ -26,6 +24,7 @@
     - [TODO.md](docs/schedule/TODO.md)
     - **meetings/:**
       - [standard.md](docs/schedule/meetings/standard.md)
+      - [2024-2-28.md](docs/schedule/meetings/2024-2-28.md)
       - [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
   - **Language/:**
     - **js_ts/:**
@@ -77,6 +76,33 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-02-28 by Atticuszz - 添加今天的会议总结
+- 🔨 [data.json](.obsidian/plugins/obsidian-excalidraw-plugin/data.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🗑️ AutoDrive_frontend
+- 🗑️ DocHub
+- ✨ [Pasted image 20240228171953.png](assets/Pasted_image_20240228171953.png)
+- ✨ [2024-2-28.md](docs/schedule/meetings/2024-2-28.md)
+### 2024-02-28 by Atticuszz - vault backup: 2024-02-28 15:40:28
+- 🔨 [hotkeys.json](.obsidian/hotkeys.json)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+### 2024-02-28 by Atticuszz - Ci workflows Update README.md
+- 🔨 [app.json](.obsidian/.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/.obsidian/appearance.json)
+- 🔨 [core-plugins-migration.json](.obsidian/.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/.obsidian/core-plugins.json)
+- 🔨 [workspace.json](.obsidian/.obsidian/workspace.json)
+- 🔨 [main.js](.obsidian/plugins/editing-toolbar/main.js)
+- 🔨 [main.js](.obsidian/plugins/obsidian-annotator/main.js)
+- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
+- 🔨 [main.js](.obsidian/plugins/obsidian-git/main.js)
+- 🔨 [main.js](.obsidian/plugins/obsidian-kanban/main.js)
+- 🔨 [main.js](.obsidian/plugins/obsidian-markmind/main.js)
+- 🔨 [main.js](.obsidian/plugins/omnisearch/main.js)
+- 🔨 [main.js](.obsidian/plugins/oz-clear-unused-images/main.js)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
 ### 2024-02-28 by Millicent142857 - vault backup: 2024-02-28 12:18:31
 - ✨ [app.json](.obsidian/.obsidian/app.json)
 - ✨ [appearance.json](.obsidian/.obsidian/appearance.json)
@@ -277,11 +303,6 @@
 - 🔨 [TODO.md](docs/schedule/TODO.md)
 ### 2024-02-26 by Ye0137 - finished all to init env
 - 🔨 [TODO.md](docs/schedule/TODO.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-26 by Ye0137 - 修正了zsh安装的细节，wsl代理的旧的方式，如果tun mode失败
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ## 其他仓库
 
 ### 论文速览
