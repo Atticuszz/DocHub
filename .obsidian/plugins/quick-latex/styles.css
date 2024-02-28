@@ -1,7 +1,7 @@
-.text-snippets-class > * > textarea{
-    width:40em;
-    height: 100%;
-  }
+.text-snippets-class > * > textarea {
+  width: 40em;
+  height: 100%;
+}
 
 .text-snippets-class > * {
   height: 100%;

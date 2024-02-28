@@ -109,7 +109,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -126,7 +125,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -212,13 +210,14 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "89ba84733ba748f6",
+  "active": "e5fb1abf4287bce9",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/configs.md",
+    "conflict-files-obsidian-git.md",
     "docs/OS/Ubuntu/install_via_usb.md",
     "docs/OS/Windows/CMD.md",
     "docs/OS/Windows/Powersehll.md",
     "docs/OS/GPU-wsl.md",
-    "docs/OS/Ubuntu/configs.md",
     "docs/schedule/Free_time.md",
     "docs/schedule/TODO.md",
     "docs/account.md",
@@ -234,7 +233,6 @@
     "docs/VCS/git.md",
     "assets/Pasted_image_20240226165051.png",
     "assets/Pasted image 20240226165051.png",
-    "conflict-files-obsidian-git.md",
     "assets/Pasted_image_20240226155318.png",
     "assets/Pasted_image_20240226155240.png",
     "assets/Pasted_image_20240226155154.png",

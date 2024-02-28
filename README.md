@@ -77,6 +77,192 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-02-28 by Millicent142857 - vault backup: 2024-02-28 12:18:31
+- ✨ [app.json](.obsidian/.obsidian/app.json)
+- ✨ [appearance.json](.obsidian/.obsidian/appearance.json)
+- ✨ [core-plugins-migration.json](.obsidian/.obsidian/core-plugins-migration.json)
+- ✨ [core-plugins.json](.obsidian/.obsidian/core-plugins.json)
+- ✨ [workspace.json](.obsidian/.obsidian/workspace.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+### 2024-02-28 by Atticuszz - Ci workflows Update README.md
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [graph.json](.obsidian/graph.json)
+- 🔨 [hotkeys.json](.obsidian/hotkeys.json)
+- 🔨 [page-preview.json](.obsidian/page-preview.json)
+- 🔨 [data.json](.obsidian/plugins/editing-toolbar/data.json)
+- 🔨 [main.js](.obsidian/plugins/editing-toolbar/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/editing-toolbar/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/editing-toolbar/styles.css)
+- 🔨 [data.json](.obsidian/plugins/execute-code/data.json)
+- 🔨 [main.js](.obsidian/plugins/execute-code/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/execute-code/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/execute-code/styles.css)
+- 🔨 [data.json](.obsidian/plugins/nldates-obsidian/data.json)
+- 🔨 [main.js](.obsidian/plugins/nldates-obsidian/main.js)
+- 🔨 [main.js](.obsidian/plugins/obsidian-annotator/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/obsidian-annotator/manifest.json)
+- 🔨 [main.js](.obsidian/plugins/obsidian-auto-link-title/main.js)
+- 🔨 [styles.css](.obsidian/plugins/obsidian-auto-link-title/styles.css)
+- 🔨 [data.json](.obsidian/plugins/obsidian-enhancing-export/data.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [main.js](.obsidian/plugins/obsidian-enhancing-export/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/obsidian-enhancing-export/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/obsidian-enhancing-export/styles.css)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-excalidraw-plugin/data.json)
+- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/obsidian-excalidraw-plugin/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/obsidian-excalidraw-plugin/styles.css)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [main.js](.obsidian/plugins/obsidian-git/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/obsidian-git/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/obsidian-git/styles.css)
+- 🔨 [data.json](.obsidian/plugins/obsidian-image-toolkit/data.json)
+- 🔨 [main.js](.obsidian/plugins/obsidian-image-toolkit/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/obsidian-image-toolkit/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/obsidian-image-toolkit/styles.css)
+- 🔨 [main.js](.obsidian/plugins/obsidian-importer/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/obsidian-importer/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/obsidian-importer/styles.css)
+- 🔨 [data.json](.obsidian/plugins/obsidian-kanban/data.json)
+- 🔨 [main.js](.obsidian/plugins/obsidian-kanban/main.js)
+- 🔨 [styles.css](.obsidian/plugins/obsidian-kanban/styles.css)
+- 🔨 [data.json](.obsidian/plugins/obsidian-markmind/data.json)
+- 🔨 [main.js](.obsidian/plugins/obsidian-markmind/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/obsidian-markmind/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/obsidian-markmind/styles.css)
+- 🔨 [data.json](.obsidian/plugins/obsidian-pandoc/data.json)
+- 🔨 [main.js](.obsidian/plugins/obsidian-pandoc/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/obsidian-pandoc/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/obsidian-pandoc/styles.css)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [main.js](.obsidian/plugins/omnisearch/main.js)
+- 🔨 [data.json](.obsidian/plugins/oz-clear-unused-images/data.json)
+- 🔨 [main.js](.obsidian/plugins/oz-clear-unused-images/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/oz-clear-unused-images/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/oz-clear-unused-images/styles.css)
+- 🔨 [main.js](.obsidian/plugins/quick-explorer/main.js)
+- 🔨 [styles.css](.obsidian/plugins/quick-explorer/styles.css)
+- 🔨 [main.js](.obsidian/plugins/quick-latex/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/quick-latex/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/quick-latex/styles.css)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [main.js](.obsidian/plugins/table-editor-obsidian/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/table-editor-obsidian/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/table-editor-obsidian/styles.css)
+- 🔨 [main.js](.obsidian/plugins/url-into-selection/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/url-into-selection/manifest.json)
+- 🔨 [theme.css](.obsidian/themes/Things/theme.css)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [workspaces.json](.obsidian/workspaces.json)
+- 🔨 [README.md](README.md)
+### 2024-02-28 by Atticuszz - add auto update plugins
+- 🔨 [.gitignore](.gitignore)
+- ✨ [app.json](.obsidian/app.json)
+- ✨ [appearance.json](.obsidian/appearance.json)
+- ✨ [community-plugins.json](.obsidian/community-plugins.json)
+- ✨ [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- ✨ [core-plugins.json](.obsidian/core-plugins.json)
+- ✨ [graph.json](.obsidian/graph.json)
+- ✨ [hotkeys.json](.obsidian/hotkeys.json)
+- ✨ [obsidian.zip](.obsidian/obsidian.zip)
+- ✨ [page-preview.json](.obsidian/page-preview.json)
+- ✨ [data.json](.obsidian/plugins/editing-toolbar/data.json)
+- ✨ [main.js](.obsidian/plugins/editing-toolbar/main.js)
+- ✨ [manifest.json](.obsidian/plugins/editing-toolbar/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/editing-toolbar/styles.css)
+- ✨ [data.json](.obsidian/plugins/execute-code/data.json)
+- ✨ [main.js](.obsidian/plugins/execute-code/main.js)
+- ✨ [manifest.json](.obsidian/plugins/execute-code/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/execute-code/styles.css)
+- ✨ [data.json](.obsidian/plugins/nldates-obsidian/data.json)
+- ✨ [main.js](.obsidian/plugins/nldates-obsidian/main.js)
+- ✨ [manifest.json](.obsidian/plugins/nldates-obsidian/manifest.json)
+- ✨ [main.js](.obsidian/plugins/obsidian-annotator/main.js)
+- ✨ [manifest.json](.obsidian/plugins/obsidian-annotator/manifest.json)
+- ✨ [main.js](.obsidian/plugins/obsidian-auto-link-title/main.js)
+- ✨ [manifest.json](.obsidian/plugins/obsidian-auto-link-title/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/obsidian-auto-link-title/styles.css)
+- ✨ [data.json](.obsidian/plugins/obsidian-enhancing-export/data.json)
+- ✨ [citefilter.lua](.obsidian/plugins/obsidian-enhancing-export/lua/citefilter.lua)
+- ✨ [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- ✨ [markdown.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown.lua)
+- ✨ [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- ✨ [pdf.lua](.obsidian/plugins/obsidian-enhancing-export/lua/pdf.lua)
+- ✨ [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- ✨ [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- ✨ [utf8_filenames.lua](.obsidian/plugins/obsidian-enhancing-export/lua/utf8_filenames.lua)
+- ✨ [main.js](.obsidian/plugins/obsidian-enhancing-export/main.js)
+- ✨ [manifest.json](.obsidian/plugins/obsidian-enhancing-export/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/obsidian-enhancing-export/styles.css)
+- ✨ [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- ✨ [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- ✨ [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- ✨ [data.json](.obsidian/plugins/obsidian-excalidraw-plugin/data.json)
+- ✨ [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
+- ✨ [manifest.json](.obsidian/plugins/obsidian-excalidraw-plugin/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/obsidian-excalidraw-plugin/styles.css)
+- ✨ [data.json](.obsidian/plugins/obsidian-git/data.json)
+- ✨ [main.js](.obsidian/plugins/obsidian-git/main.js)
+- ✨ [manifest.json](.obsidian/plugins/obsidian-git/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/obsidian-git/styles.css)
+- ✨ [data.json](.obsidian/plugins/obsidian-image-toolkit/data.json)
+- ✨ [main.js](.obsidian/plugins/obsidian-image-toolkit/main.js)
+- ✨ [manifest.json](.obsidian/plugins/obsidian-image-toolkit/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/obsidian-image-toolkit/styles.css)
+- ✨ [main.js](.obsidian/plugins/obsidian-importer/main.js)
+- ✨ [manifest.json](.obsidian/plugins/obsidian-importer/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/obsidian-importer/styles.css)
+- ✨ [data.json](.obsidian/plugins/obsidian-kanban/data.json)
+- ✨ [main.js](.obsidian/plugins/obsidian-kanban/main.js)
+- ✨ [manifest.json](.obsidian/plugins/obsidian-kanban/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/obsidian-kanban/styles.css)
+- ✨ [data.json](.obsidian/plugins/obsidian-markmind/data.json)
+- ✨ [main.js](.obsidian/plugins/obsidian-markmind/main.js)
+- ✨ [manifest.json](.obsidian/plugins/obsidian-markmind/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/obsidian-markmind/styles.css)
+- ✨ [data.json](.obsidian/plugins/obsidian-pandoc/data.json)
+- ✨ [main.js](.obsidian/plugins/obsidian-pandoc/main.js)
+- ✨ [manifest.json](.obsidian/plugins/obsidian-pandoc/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/obsidian-pandoc/styles.css)
+- ✨ [data.json](.obsidian/plugins/omnisearch/data.json)
+- ✨ [main.js](.obsidian/plugins/omnisearch/main.js)
+- ✨ [manifest.json](.obsidian/plugins/omnisearch/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/omnisearch/styles.css)
+- ✨ [data.json](.obsidian/plugins/oz-clear-unused-images/data.json)
+- ✨ [main.js](.obsidian/plugins/oz-clear-unused-images/main.js)
+- ✨ [manifest.json](.obsidian/plugins/oz-clear-unused-images/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/oz-clear-unused-images/styles.css)
+- ✨ [main.js](.obsidian/plugins/quick-explorer/main.js)
+- ✨ [manifest.json](.obsidian/plugins/quick-explorer/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/quick-explorer/styles.css)
+- ✨ [main.js](.obsidian/plugins/quick-latex/main.js)
+- ✨ [manifest.json](.obsidian/plugins/quick-latex/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/quick-latex/styles.css)
+- ✨ [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- ✨ [main.js](.obsidian/plugins/table-editor-obsidian/main.js)
+- ✨ [manifest.json](.obsidian/plugins/table-editor-obsidian/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/table-editor-obsidian/styles.css)
+- ✨ [main.js](.obsidian/plugins/url-into-selection/main.js)
+- ✨ [manifest.json](.obsidian/plugins/url-into-selection/manifest.json)
+- ✨ [manifest.json](.obsidian/themes/Things/manifest.json)
+- ✨ [theme.css](.obsidian/themes/Things/theme.css)
+- ✨ [types.json](.obsidian/types.json)
+- ✨ [workspace.json](.obsidian/workspace.json)
+- ✨ [workspaces.json](.obsidian/workspaces.json)
+### 2024-02-26 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ### 2024-02-26 by Ye0137 - add command of auto activate conda
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
@@ -96,73 +282,6 @@
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ### 2024-02-26 by Ye0137 - 修正了zsh安装的细节，wsl代理的旧的方式，如果tun mode失败
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-- 🔨 [Free_time.md](docs/schedule/Free_time.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-- 🚚 [Pasted_image_20240226165051.png](assets/Pasted_image_20240226165051.png) <- Pasted image 20240226165051.png
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-26 by Atticuszz - fix: proxy in wsl
-- ✨ [Pasted image 20240226165051.png](assets/Pasted_image_20240226165051.png)
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-<<<<<<< HEAD
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-26 by Atticuszz - add prompt to set proxy
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticus Zhou - Update main.yml
-- 🔨 [main.yml](.github/workflows/main.yml)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-<<<<<<< HEAD
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-<<<<<<< HEAD
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
-=======
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
->>>>>>> origin/main
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-<<<<<<< HEAD
-### 2024-02-25 by zzyss-marker - vault backup: 2024-02-25 21:47:44
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-=======
->>>>>>> origin/main
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-25 by Atticuszz - Ci workflows Update README.md
-=======
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
->>>>>>> origin/main
-- 🔨 [README.md](README.md)
-=======
->>>>>>> origin/main
-=======
->>>>>>> origin/main
-=======
->>>>>>> origin/main
 ## 其他仓库
 
 ### 论文速览
