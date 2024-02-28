@@ -1,0 +1,267 @@
+{
+  "main": {
+    "id": "f9508c72efec9470",
+    "type": "split",
+    "children": [
+      {
+        "id": "414e9632750a09aa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "231d0ecdf777027f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "51158149346d4627",
+            "type": "leaf",
+            "state": {
+              "type": "diff-view",
+              "state": {
+                "file": "docs/OS/Ubuntu/configs.md",
+                "staged": false
+              }
+            }
+          },
+          {
+            "id": "89ba84733ba748f6",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "docs/schedule/TODO.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1cf8a6c5889338d6",
+    "type": "split",
+    "children": [
+      {
+        "id": "986c2766e027ae11",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e5fb1abf4287bce9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3af94c3f442307d5",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "1d2a417b4d4421b7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "47a7fb051f9573eb",
+    "type": "split",
+    "children": [
+      {
+        "id": "1be3b56d45aba669",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cbb2b0927a9a2b61",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/schedule/TODO.md",
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "dbce23fdc71b5bd7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/schedule/TODO.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5d12bf5c232f51b8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "b12cdacea1391417",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
+          },
+          {
+            "id": "fe33bc386c72aa8e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/schedule/TODO.md"
+              }
+            }
+          },
+          {
+            "id": "6c7a22ce9a44906b",
+            "type": "leaf",
+            "state": {
+              "type": "code-execute-manage-executors",
+              "state": {}
+            }
+          },
+          {
+            "id": "b02e2e30d05790c3",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "79aef470e1fbe4d9",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 6
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "publish:Publish changes...": false,
+      "random-note:Open random note": false,
+      "workspaces:Manage workspace layouts": false,
+      "switcher:Open quick switcher": false,
+      "oz-clear-unused-images:Clear Unused Images": false,
+      "omnisearch:Omnisearch": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "obsidian-importer:Open Importer": false
+    }
+  },
+  "active": "89ba84733ba748f6",
+  "lastOpenFiles": [
+    "assets/Pasted_image_20240226204859.png",
+    "assets/Pasted image 20240226204859.png",
+    "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
+    "assets/7047cf28aead44112d2857bfaa194ed.jpg",
+    "DocHub",
+    "AutoDrive_frontend",
+    "docs/VCS/github/How_to_connect_ssh.md",
+    "docs/VCS/git.md",
+    "docs/OS/Ubuntu/configs.md",
+    "docs/OS/Windows/Powersehll.md",
+    "assets/Pasted_image_20240226165051.png",
+    "assets/Pasted image 20240226165051.png",
+    "conflict-files-obsidian-git.md",
+    "assets/Pasted_image_20240226155318.png",
+    "assets/Pasted_image_20240226155240.png",
+    "assets/Pasted_image_20240226155154.png",
+    "assets/Pasted image 20240226155318.png",
+    "assets/Pasted image 20240226155240.png",
+    "assets/Pasted image 20240226155154.png",
+    "docs/schedule/Free_time.md",
+    "docs/schedule/Free time.md",
+    "docs/schedule/TODO.md",
+    "docs/Language/python/py-env/conda.md",
+    "README.md",
+    "docs/device/purchase.md",
+    "docs/tools/git-install-instruction.md",
+    "docs/tools/IDE/plugin.md",
+    "docs/schedule/meetings/standard.md",
+    "docs/OS/GPU-wsl.md",
+    "docs/OS/Windows/CMD.md",
+    "docs/schedule/meetings/2024-1-24.md",
+    "docs/schedule/todolist.md",
+    "docs/tutorials/KnowledgeHub.md",
+    "docs/papers/read-dairy.md",
+    "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
+    "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
+    "2024-02-16.md",
+    "docs/papers/gpt-chats-history.md",
+    "docs/papers/nopo-nerf.pdf",
+    "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
+    "docs/papers/neuralrecon.pdf",
+    "docs/VCS/github",
+    "docs/VCS",
+    "docs/Language/python/third_party_lib",
+    "docs/Language/python/PyPI",
+    "docs/Language/python/standard_lib",
+    "未命名.canvas",
+    "未命名 3.canvas",
+    "未命名 2.canvas",
+    "未命名 1.canvas",
+    "Untitled.canvas"
+  ]
+}
