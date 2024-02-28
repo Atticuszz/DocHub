@@ -44,5 +44,14 @@
       ],
       "key": "T"
     }
-  ]
+  ],
+  "obsidian-git:commit": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "M"
+    }
+  ],
+  "quick-latex:addInlineMath": []
 }

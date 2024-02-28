@@ -34,9 +34,11 @@
             "id": "89ba84733ba748f6",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "docs/schedule/TODO.md"
+                "file": "docs/OS/Ubuntu/configs.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -107,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/schedule/TODO.md",
+                "file": "docs/OS/Ubuntu/configs.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -124,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/schedule/TODO.md",
+                "file": "docs/OS/Ubuntu/configs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/schedule/TODO.md"
+                "file": "docs/OS/Ubuntu/configs.md"
               }
             }
           },
@@ -212,6 +214,16 @@
   },
   "active": "89ba84733ba748f6",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/install_via_usb.md",
+    "docs/OS/Windows/CMD.md",
+    "docs/OS/Windows/Powersehll.md",
+    "docs/OS/GPU-wsl.md",
+    "docs/OS/Ubuntu/configs.md",
+    "docs/schedule/Free_time.md",
+    "docs/schedule/TODO.md",
+    "docs/account.md",
+    "docs/baidu_driver.md",
+    "docs/Language/python/py-env/conda.md",
     "assets/Pasted_image_20240226204859.png",
     "assets/Pasted image 20240226204859.png",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
@@ -220,8 +232,6 @@
     "AutoDrive_frontend",
     "docs/VCS/github/How_to_connect_ssh.md",
     "docs/VCS/git.md",
-    "docs/OS/Ubuntu/configs.md",
-    "docs/OS/Windows/Powersehll.md",
     "assets/Pasted_image_20240226165051.png",
     "assets/Pasted image 20240226165051.png",
     "conflict-files-obsidian-git.md",
@@ -230,26 +240,18 @@
     "assets/Pasted_image_20240226155154.png",
     "assets/Pasted image 20240226155318.png",
     "assets/Pasted image 20240226155240.png",
-    "assets/Pasted image 20240226155154.png",
-    "docs/schedule/Free_time.md",
     "docs/schedule/Free time.md",
-    "docs/schedule/TODO.md",
-    "docs/Language/python/py-env/conda.md",
     "README.md",
     "docs/device/purchase.md",
     "docs/tools/git-install-instruction.md",
     "docs/tools/IDE/plugin.md",
     "docs/schedule/meetings/standard.md",
-    "docs/OS/GPU-wsl.md",
-    "docs/OS/Windows/CMD.md",
     "docs/schedule/meetings/2024-1-24.md",
     "docs/schedule/todolist.md",
     "docs/tutorials/KnowledgeHub.md",
     "docs/papers/read-dairy.md",
     "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
     "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
-    "2024-02-16.md",
-    "docs/papers/gpt-chats-history.md",
     "docs/papers/nopo-nerf.pdf",
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
     "docs/papers/neuralrecon.pdf",
