@@ -5544,12 +5544,10 @@ class jt extends e.PluginSettingTab {
       o
         .createEl("span", { text: "     作者： " })
         .createEl("a", { text: "Cuman ✨", href: "https://github.com/cumany" }),
-      o
-        .createEl("span", { text: "     教程： " })
-        .createEl("a", {
-          text: "pkmer.cn",
-          href: "https://pkmer.cn/show/20230329145815",
-        }),
+      o.createEl("span", { text: "     教程： " }).createEl("a", {
+        text: "pkmer.cn",
+        href: "https://pkmer.cn/show/20230329145815",
+      }),
       o.createEl("h2", { text: u("Plugin Settings") }),
       new e.Setting(o)
         .setName(u("Editing Toolbar append method"))
