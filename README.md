@@ -65,6 +65,7 @@
     - [Tutorial_Comparison.md](docs/device/Tutorial_Comparison.md)
   - **papers/:**
     - [gpt-chats-history.md](docs/papers/gpt-chats-history.md)
+    - [IEEE 模板.docx](docs/papers/IEEE_模板.docx)
     - [nopo-nerf.pdf](docs/papers/nopo-nerf.pdf)
     - [read-dairy.md](docs/papers/read-dairy.md)
     - [neuralrecon.pdf](docs/papers/neuralrecon.pdf)
@@ -76,6 +77,35 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-02-29 by Atticuszz - shell for auto set proxy as wsl start
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+- ✨ [IEEE \346\250\241\346\235\277.docx"]("docs/papers/IEEE \346\250\241\346\235\277.docx")
+### 2024-02-28 by Atticuszz - vault backup: 2024-02-28 19:31:41
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+### 2024-02-28 by Atticuszz - Ci workflows Update README.md
+- 🔨 [data.json](.obsidian/plugins/obsidian-excalidraw-plugin/data.json)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🚚 [Pasted_image_20240228171953.png](assets/Pasted_image_20240228171953.png) <- Pasted image 20240228171953.png
+- 🔨 [2024-2-28.md](docs/schedule/meetings/2024-2-28.md)
 ### 2024-02-28 by Atticuszz - 添加今天的会议总结
 - 🔨 [data.json](.obsidian/plugins/obsidian-excalidraw-plugin/data.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
@@ -294,14 +324,6 @@
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
 - 🚚 [Pasted_image_20240226204859.png](assets/Pasted_image_20240226204859.png) <- Pasted image 20240226204859.png
-- 🔨 [TODO.md](docs/schedule/TODO.md)
-### 2024-02-26 by Atticuszz - add todo
-- ✨ [Pasted image 20240226204859.png](assets/Pasted_image_20240226204859.png)
-- 🔨 [TODO.md](docs/schedule/TODO.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-- 🔨 [TODO.md](docs/schedule/TODO.md)
-### 2024-02-26 by Ye0137 - finished all to init env
 - 🔨 [TODO.md](docs/schedule/TODO.md)
 ## 其他仓库
 

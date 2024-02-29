@@ -473,7 +473,6 @@ sudo /tmp/set_proxy_as_start_up.sh
 
 ```
 
-
 > connect to your clash proxy old way if tun mode failed for pc
 
 ```bash
