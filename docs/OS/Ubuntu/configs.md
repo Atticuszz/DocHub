@@ -459,6 +459,21 @@ docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 
 #### proxy
 
+> shell for auto set proxy as wsl start
+
+```bash
+# 使用wget下载脚本
+wget -O /tmp/set_proxy_as_start_up.sh https://raw.githubusercontent.com/Atticuszz/PyGizmoKit/main/scripts/set_proxy_as_start_up.sh
+
+# 给脚本执行权限
+chmod +x /tmp/set_proxy_as_start_up.sh
+
+# 执行脚本
+sudo /tmp/set_proxy_as_start_up.sh
+
+```
+
+
 > connect to your clash proxy old way if tun mode failed for pc
 
 ```bash
