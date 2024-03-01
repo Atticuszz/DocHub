@@ -65,8 +65,8 @@
     - [Tutorial_Comparison.md](docs/device/Tutorial_Comparison.md)
   - **papers/:**
     - [gpt-chats-history.md](docs/papers/gpt-chats-history.md)
-    - [IEEE 模板.docx](docs/papers/IEEE_模板.docx)
     - [nopo-nerf.pdf](docs/papers/nopo-nerf.pdf)
+    - [IEEE_模板.docx](docs/papers/IEEE_模板.docx)
     - [read-dairy.md](docs/papers/read-dairy.md)
     - [neuralrecon.pdf](docs/papers/neuralrecon.pdf)
     - [Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf](docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf)
@@ -77,6 +77,45 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-01 by Atticuszz - add comments on wsl proxy
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+### 2024-02-29 by Atticuszz - Ci workflows Update README.md
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 ### 2024-02-29 by Atticuszz - shell for auto set proxy as wsl start
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
@@ -319,12 +358,6 @@
 ### 2024-02-26 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-26 by Ye0137 - add command of auto activate conda
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-26 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-- 🚚 [Pasted_image_20240226204859.png](assets/Pasted_image_20240226204859.png) <- Pasted image 20240226204859.png
-- 🔨 [TODO.md](docs/schedule/TODO.md)
 ## 其他仓库
 
 ### 论文速览
