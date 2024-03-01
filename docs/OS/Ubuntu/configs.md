@@ -461,7 +461,8 @@ docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 
 > shell for auto set proxy as wsl start
 
-*set proxies manually and try set auto start with sh*
+_set proxies manually and try set auto start with sh_
+
 ```bash
 # 使用wget下载脚本
 wget -O /tmp/set_proxy_as_start_up.sh https://raw.githubusercontent.com/Atticuszz/PyGizmoKit/main/scripts/set_proxy_as_start_up.sh
@@ -481,6 +482,7 @@ sudo nano /etc/environment
 ```
 
 > set proxies manually
+
 - check clash proxy of `allow lan` wifi `ipv4`
 
 ```
@@ -499,7 +501,8 @@ source /etc/environment
 
 > clash TUN mode
 
-*not stable*
+_not stable_
+
 1. set run as admin
    ![250](../../../assets/Pasted_image_20240226165051.png)
 1. install `service mode`,if installed ,it's green ![100](../../../assets/Pasted_image_20240226155154.png)
