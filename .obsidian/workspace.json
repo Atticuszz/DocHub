@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
+                "file": "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
+                "file": "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
+                "file": "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md"
+                "file": "docs/VCS/github/SSH_keypair_setup_for_GitHub.md"
               }
             }
           },
@@ -166,7 +166,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -190,33 +190,34 @@
   },
   "active": "231d0ecdf777027f",
   "lastOpenFiles": [
+    "docs/VCS/github/How_to_connect_ssh.md",
+    "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
+    "docs/tutorials/KnowledgeHub.md",
+    "docs/schedule/meetings/2024-2-28.md",
+    "docs/schedule/meetings/standard.md",
+    "docs/schedule/meetings/2024-1-24.md",
+    "docs/OS/GPU-wsl.md",
+    "docs/OS/Windows/Powersehll.md",
+    "docs/OS/Windows/CMD.md",
+    "docs/OS/Ubuntu/install_via_usb.md",
+    "docs/OS/Ubuntu/configs.md",
     "docs/schedule/TODO.md",
     "docs/schedule/Free_time.md",
-    "docs/OS/GPU-wsl.md",
-    "docs/OS/Windows/CMD.md",
-    "docs/schedule/meetings/standard.md",
-    "docs/OS/Ubuntu/configs.md",
-    "docs/tutorials/KnowledgeHub.md",
-    "docs/OS/Windows/Powersehll.md",
     "README.md",
     "docs/papers/IEEE_模板.docx",
-    "docs/schedule/meetings/2024-2-28.md",
     "assets/Pasted_image_20240228171953.png",
     "assets/Pasted image 20240228171953.png",
     "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
     "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
     "conflict-files-obsidian-git.md",
-    "docs/OS/Ubuntu/install_via_usb.md",
     "docs/account.md",
     "docs/baidu_driver.md",
     "docs/Language/python/py-env/conda.md",
     "assets/Pasted_image_20240226204859.png",
     "assets/Pasted image 20240226204859.png",
-    "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
     "assets/7047cf28aead44112d2857bfaa194ed.jpg",
     "DocHub",
     "AutoDrive_frontend",
-    "docs/VCS/github/How_to_connect_ssh.md",
     "docs/VCS/git.md",
     "assets/Pasted_image_20240226165051.png",
     "assets/Pasted image 20240226165051.png",
@@ -227,7 +228,6 @@
     "docs/device/purchase.md",
     "docs/tools/git-install-instruction.md",
     "docs/tools/IDE/plugin.md",
-    "docs/schedule/meetings/2024-1-24.md",
     "docs/schedule/todolist.md",
     "docs/papers/nopo-nerf.pdf",
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",

@@ -1,5 +1,4 @@
-- 简化版 _都在powershell中完成_
-
+- 简化版 *for bash or powershell*
 ### SSH
 
 _system: win11_
