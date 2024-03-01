@@ -13,37 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "51158149346d4627",
-            "type": "leaf",
-            "state": {
-              "type": "diff-view",
-              "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
-                "staged": false
-              }
-            }
-          },
-          {
-            "id": "89ba84733ba748f6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
                 "file": "docs/OS/Ubuntu/configs.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -212,22 +188,25 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "89ba84733ba748f6",
+  "active": "231d0ecdf777027f",
   "lastOpenFiles": [
+    "docs/schedule/TODO.md",
+    "docs/schedule/Free_time.md",
+    "docs/OS/GPU-wsl.md",
+    "docs/OS/Windows/CMD.md",
+    "docs/schedule/meetings/standard.md",
+    "docs/OS/Ubuntu/configs.md",
+    "docs/tutorials/KnowledgeHub.md",
+    "docs/OS/Windows/Powersehll.md",
+    "README.md",
+    "docs/papers/IEEE_模板.docx",
     "docs/schedule/meetings/2024-2-28.md",
     "assets/Pasted_image_20240228171953.png",
     "assets/Pasted image 20240228171953.png",
     "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
     "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
-    "docs/schedule/meetings/standard.md",
-    "docs/OS/Ubuntu/configs.md",
     "conflict-files-obsidian-git.md",
     "docs/OS/Ubuntu/install_via_usb.md",
-    "docs/OS/Windows/CMD.md",
-    "docs/OS/Windows/Powersehll.md",
-    "docs/OS/GPU-wsl.md",
-    "docs/schedule/Free_time.md",
-    "docs/schedule/TODO.md",
     "docs/account.md",
     "docs/baidu_driver.md",
     "docs/Language/python/py-env/conda.md",
@@ -245,7 +224,6 @@
     "assets/Pasted_image_20240226155240.png",
     "assets/Pasted_image_20240226155154.png",
     "docs/schedule/Free time.md",
-    "README.md",
     "docs/device/purchase.md",
     "docs/tools/git-install-instruction.md",
     "docs/tools/IDE/plugin.md",
@@ -258,7 +236,6 @@
     "docs/VCS",
     "docs/Language/python/third_party_lib",
     "docs/Language/python/PyPI",
-    "docs/Language/python/standard_lib",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
