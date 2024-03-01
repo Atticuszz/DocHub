@@ -1,4 +1,5 @@
-- 简化版 *for bash or powershell*
+- 简化版 _for bash or powershell_
+
 ### SSH
 
 _system: win11_
