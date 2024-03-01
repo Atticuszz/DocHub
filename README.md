@@ -77,6 +77,31 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-01 by Atticuszz - add auto complete plugin
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- ✨ [histories.json](.obsidian/plugins/various-complements/histories.json)
+- ✨ [main.js](.obsidian/plugins/various-complements/main.js)
+- ✨ [manifest.json](.obsidian/plugins/various-complements/manifest.json)
+- ✨ [styles.css](.obsidian/plugins/various-complements/styles.css)
+- 🔨 [SSH_keypair_setup_for_GitHub.md](docs/VCS/github/SSH_keypair_setup_for_GitHub.md)
+### 2024-03-01 by Atticuszz - Ci workflows Update README.md
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [main.js](.obsidian/plugins/obsidian-enhancing-export/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/obsidian-enhancing-export/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/obsidian-enhancing-export/styles.css)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-excalidraw-plugin/data.json)
+- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/obsidian-excalidraw-plugin/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/obsidian-excalidraw-plugin/styles.css)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [README.md](README.md)
 ### 2024-03-01 by Atticuszz - chore: update git ssh commands and ubuntu configs
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 - 🔨 [git.md](docs/VCS/git.md)
@@ -186,20 +211,6 @@
 ### 2024-02-28 by Atticuszz - vault backup: 2024-02-28 19:31:41
 - 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
-### 2024-02-28 by Atticuszz - Ci workflows Update README.md
-- 🔨 [data.json](.obsidian/plugins/obsidian-excalidraw-plugin/data.json)
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [README.md](README.md)
-- 🚚 [Pasted_image_20240228171953.png](assets/Pasted_image_20240228171953.png) <- Pasted image 20240228171953.png
-- 🔨 [2024-2-28.md](docs/schedule/meetings/2024-2-28.md)
-### 2024-02-28 by Atticuszz - 添加今天的会议总结
-- 🔨 [data.json](.obsidian/plugins/obsidian-excalidraw-plugin/data.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🗑️ AutoDrive_frontend
-- 🗑️ DocHub
-- ✨ [Pasted image 20240228171953.png](assets/Pasted_image_20240228171953.png)
-- ✨ [2024-2-28.md](docs/schedule/meetings/2024-2-28.md)
 ## 其他仓库
 
 ### 论文速览
