@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
+                "file": "docs/tools/IDE/activate code.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
+                "file": "docs/tools/IDE/activate code.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
+                "file": "docs/tools/IDE/activate code.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/VCS/github/SSH_keypair_setup_for_GitHub.md"
+                "file": "docs/tools/IDE/activate code.md"
               }
             }
           },
@@ -190,8 +190,10 @@
   },
   "active": "231d0ecdf777027f",
   "lastOpenFiles": [
-    "docs/VCS/github/How_to_connect_ssh.md",
+    "docs/tools/IDE/plugin.md",
+    "docs/tools/IDE/activate code.md",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
+    "docs/VCS/github/How_to_connect_ssh.md",
     "docs/tutorials/KnowledgeHub.md",
     "docs/schedule/meetings/2024-2-28.md",
     "docs/schedule/meetings/standard.md",
@@ -227,8 +229,6 @@
     "docs/schedule/Free time.md",
     "docs/device/purchase.md",
     "docs/tools/git-install-instruction.md",
-    "docs/tools/IDE/plugin.md",
-    "docs/schedule/todolist.md",
     "docs/papers/nopo-nerf.pdf",
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
     "docs/papers/neuralrecon.pdf",
