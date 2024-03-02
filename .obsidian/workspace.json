@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "43d3fb4ceeb05da6",
+        "id": "41f86a1520115f7d",
         "type": "tabs",
         "children": [
           {
-            "id": "0db9acd08088f219",
+            "id": "1f7b8f1aebf4fefc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/schedule/TODO.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "88844573fdd8e87b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/schedule/Free_time.md",
+                "file": "docs/OS/Ubuntu/configs.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -69,7 +56,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "git",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/schedule/Free_time.md",
+                "file": "docs/OS/Ubuntu/configs.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/schedule/Free_time.md",
+                "file": "docs/OS/Ubuntu/configs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,16 +137,8 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/schedule/Free_time.md"
+                "file": "docs/OS/Ubuntu/configs.md"
               }
-            }
-          },
-          {
-            "id": "6c7a22ce9a44906b",
-            "type": "leaf",
-            "state": {
-              "type": "code-execute-manage-executors",
-              "state": {}
             }
           },
           {
@@ -171,7 +150,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -179,71 +158,70 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "oz-clear-unused-images:Clear Unused Images": false,
+      "obsidian-importer:Open Importer": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "omnisearch:Omnisearch": false,
+      "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "command-palette:打开命令面板": false,
       "random-note:开始漫游笔记": false,
       "workspaces:管理工作区布局": false,
-      "publish:发布更改": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "oz-clear-unused-images:Clear Unused Images": false,
-      "obsidian-importer:Open Importer": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "publish:发布更改": false
     }
   },
-  "active": "88844573fdd8e87b",
+  "active": "1f7b8f1aebf4fefc",
   "lastOpenFiles": [
-    "assets/Pasted_image_20240226204859.png",
-    "conflict-files-obsidian-git.md",
-    "docs/schedule/TODO.md",
-    "assets/Pasted_image_20240226165051.png",
-    "assets/Pasted image 20240226165051.png",
-    "docs/schedule/Free_time.md",
-    "README.md",
-    "docs/OS/Ubuntu/configs.md",
-    "assets/7047cf28aead44112d2857bfaa194ed.jpg",
     "docs/VCS/git.md",
-    "docs/tutorials/dochub_installer.ps1",
-    "docs/tutorials/Clash_installer.ps1",
+    "docs/schedule/TODO.md",
+    "docs/account.md",
+    "docs/schedule/Free_time.md",
+    "docs/OS/Ubuntu/configs.md",
+    "conflict-files-obsidian-git.md",
+    "assets/Pasted_image_20240226204859.png",
+    "assets/7047cf28aead44112d2857bfaa194ed.jpg",
+    "DocHub",
+    "AutoDrive_frontend",
+    "docs/OS/Ubuntu/install_via_usb.md",
+    "docs/OS/Windows/CMD.md",
+    "docs/OS/Windows/Powersehll.md",
+    "assets/Pasted_image_20240226165051.png",
     "assets/Pasted_image_20240226155318.png",
     "assets/Pasted_image_20240226155240.png",
     "assets/Pasted_image_20240226155154.png",
     "assets/Pasted_image_20240226140501.png",
     "assets/Pasted_image_20240226140304.png",
     "assets/Pasted_image_20240226140209.png",
-    "assets/Pasted_image_20240224182254.png",
-    "docs/schedule/meetings/standard.md",
-    "docs/schedule/meetings/2024-1-24.md",
-    "docs/OS/Ubuntu/install_via_usb.md",
-    "docs/schedule/todolist.md",
-    "docs/papers/gpt-chats-history.md",
-    "docs/OS/Windows/Powersehll.md",
-    "docs/OS/Windows/CMD.md",
-    "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
-    "docs/papers/nopo-nerf.pdf",
-    "docs/papers/neuralrecon.pdf",
-    "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
-    "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
-    "docs/baidu_driver.md",
-    "docs/tutorials/KnowledgeHub.md",
-    "docs/tools/git-install-instruction.md",
+    "assets/Pasted-image-20231207140646.png",
+    "docs/OS/GPU-wsl.md",
+    "docs/tutorials/dochub_installer.ps1",
+    "docs/tutorials/Clash_installer.ps1",
     "docs/papers/read-dairy.md",
-    "DocHub/docs/C++/STL/map.md",
+    "docs/papers/nopo-nerf.pdf",
+    "docs/papers/gpt-chats-history.md",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
     "docs/VCS/github/How_to_connect_ssh.md",
     "docs/VCS/github",
     "docs/VCS",
-    "docs/OS/Windows",
-    "docs/OS/Ubuntu",
-    "docs/OS/GPU-wsl.md",
-    "docs/OS",
-    "docs/tools/IDE/plugin.md",
+    "docs/Language/js_ts/vue.js/nuxt.js.md",
     "docs/Language/python/third_party_lib/pyqt6.md",
-    "未命名 3.canvas",
-    "未命名 2.canvas",
-    "未命名 1.canvas",
-    "未命名.canvas",
+    "docs/Language/python/third_party_lib/Numpy.md",
+    "docs/Language/python/standard_lib/Pathlib.md",
+    "docs/Language/python/py-env/Poetry.md",
+    "docs/Language/python/py-env/Pip.md",
+    "docs/Language/python/py-env/conda.md",
+    "docs/Language/C++/STL/unordered_set.md",
+    "docs/Language/C++/STL/vector.md",
+    "docs/Language/C++/STL/unordered_map.md",
+    "docs/Language/C++/STL/set.md",
+    "docs/Language/C++/STL/String.md",
+    "docs/Language/js_ts/vue.js",
+    "docs/Language/python/third_party_lib",
+    "docs/Language/python/standard_lib",
+    "Untitled 1.canvas",
     "Untitled.canvas",
-    "Untitled 1.canvas"
+    "未命名.canvas"
   ]
 }
