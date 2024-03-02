@@ -66,9 +66,9 @@
     - [Tutorial_Comparison.md](docs/device/Tutorial_Comparison.md)
   - **papers/:**
     - [gpt-chats-history.md](docs/papers/gpt-chats-history.md)
-    - [SCI paper.md](docs/papers/SCI_paper.md)
     - [nopo-nerf.pdf](docs/papers/nopo-nerf.pdf)
     - [IEEE_模板.docx](docs/papers/IEEE_模板.docx)
+    - [SCI_paper.md](docs/papers/SCI_paper.md)
     - [read-dairy.md](docs/papers/read-dairy.md)
     - [neuralrecon.pdf](docs/papers/neuralrecon.pdf)
     - [Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf](docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf)
@@ -79,6 +79,29 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-02 by haijuanwu - vault backup: 2024-03-02 17:45:32
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [CMD.md](docs/OS/Windows/CMD.md)
+### 2024-03-02 by Atticuszz - Ci workflows Update README.md
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🚚 [SCI_paper.md](docs/papers/SCI_paper.md) <- SCI paper.md
 ### 2024-03-02 by zzyss-marker - ...: 2024-03-02 17:41:46
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - ✨ [SCI paper.md](docs/papers/SCI_paper.md)
@@ -181,23 +204,6 @@
 ### 2024-03-01 by Atticuszz - Ci workflows Update README.md
 - 🔨 [README.md](README.md)
 - 🔨 [SSH_keypair_setup_for_GitHub.md](docs/VCS/github/SSH_keypair_setup_for_GitHub.md)
-### 2024-03-01 by Atticuszz - chore: update plugins
-- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
-- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
-- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
-- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
-- 🔨 [main.js](.obsidian/plugins/obsidian-enhancing-export/main.js)
-- 🔨 [manifest.json](.obsidian/plugins/obsidian-enhancing-export/manifest.json)
-- 🔨 [styles.css](.obsidian/plugins/obsidian-enhancing-export/styles.css)
-- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
-- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
-- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
-- 🔨 [data.json](.obsidian/plugins/obsidian-excalidraw-plugin/data.json)
-- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
-- 🔨 [manifest.json](.obsidian/plugins/obsidian-excalidraw-plugin/manifest.json)
-- 🔨 [styles.css](.obsidian/plugins/obsidian-excalidraw-plugin/styles.css)
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [types.json](.obsidian/types.json)
 ## 其他仓库
 
 ### 论文速览
