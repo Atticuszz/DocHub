@@ -14,6 +14,7 @@
   - **tools/:**
     - [git-install-instruction.md](docs/tools/git-install-instruction.md)
     - **IDE/:**
+      - [activate code.md](docs/tools/IDE/activate_code.md)
       - [plugin.md](docs/tools/IDE/plugin.md)
   - **tutorials/:**
     - [Clash_installer.ps1](docs/tutorials/Clash_installer.ps1)
@@ -77,6 +78,34 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-02 by Atticuszz - 添加激活码
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- ✨ [activate code.md](docs/tools/IDE/activate_code.md)
+- 🔨 [plugin.md](docs/tools/IDE/plugin.md)
+### 2024-03-01 by Atticuszz - Ci workflows Update README.md
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
+- 🔨 [histories.json](.obsidian/plugins/various-complements/histories.json)
+- 🔨 [main.js](.obsidian/plugins/various-complements/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/various-complements/manifest.json)
+- 🔨 [README.md](README.md)
+- 🔨 [SSH_keypair_setup_for_GitHub.md](docs/VCS/github/SSH_keypair_setup_for_GitHub.md)
 ### 2024-03-01 by Atticuszz - add auto complete plugin
 - 🔨 [community-plugins.json](.obsidian/community-plugins.json)
 - ✨ [histories.json](.obsidian/plugins/various-complements/histories.json)
@@ -189,28 +218,6 @@
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [README.md](README.md)
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-02-29 by Atticuszz - shell for auto set proxy as wsl start
-- 🔨 [app.json](.obsidian/app.json)
-- 🔨 [appearance.json](.obsidian/appearance.json)
-- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
-- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
-- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
-- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
-- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
-- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
-- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
-- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
-- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
-- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
-- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
-- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
-- 🔨 [types.json](.obsidian/types.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-- ✨ [IEEE \346\250\241\346\235\277.docx"]("docs/papers/IEEE \346\250\241\346\235\277.docx")
-### 2024-02-28 by Atticuszz - vault backup: 2024-02-28 19:31:41
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
 ## 其他仓库
 
 ### 论文速览
