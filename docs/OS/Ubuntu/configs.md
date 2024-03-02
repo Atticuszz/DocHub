@@ -41,19 +41,11 @@ set +a
 source ~/.zshrc
 ```
 
-#### add envs in `/etc/environment`
-
-you may see bash sentences like :
+#### add envs to `/etc/environment`
 
 ```bash
-export PATH="/root/.local/bin:$PATH"
-```
+echo 'MY_ENV_VAR="my_value"' | sudo tee -a /etc/environment > /dev/null
 
-add `/root/.local/bin:` into `PATH="/root/.local/bin:path_a:path_b"`
-
-```/etc/environment
-# real example
-PATH="/root/miniconda3/bin:/root/.local/bin:/usr/local/cuda-11.8/bin:/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 ```
 
 ### code
@@ -68,6 +60,8 @@ cmake --version
 
 #### install python
 
+- python 3
+
 ```bash
 sudo apt update
 sudo apt install software-properties-common
@@ -79,6 +73,25 @@ sudo apt-get install python3.11-dev
 python3.11 --version
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
 sudo update-alternatives --config python3
+```
+
+- python pip
+
+```bash
+sudo apt update
+sudo apt install python3-pip
+```
+
+- python venv
+
+```bash
+sudo apt update
+sudo apt install python3-venv
+python3 -m venv myenv
+source myenv/bin/activate
+pip install -r requirements.txt
+# to get out of current venv
+deactivate
 ```
 
 #### install poetry
@@ -459,11 +472,29 @@ docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 
 #### proxy
 
+> shell for auto set proxy as wsl start
+
+_set proxies manually and try set auto start with sh_
+
+```bash
+# 使用wget下载脚本
+wget -O /tmp/set_proxy_as_start_up.sh https://raw.githubusercontent.com/Atticuszz/PyGizmoKit/main/scripts/set_proxy_as_start_up.sh
+
+# 给脚本执行权限
+chmod +x /tmp/set_proxy_as_start_up.sh
+
+# 执行脚本
+sudo /tmp/set_proxy_as_start_up.sh
+
+```
+
 > connect to your clash proxy old way if tun mode failed for pc
 
 ```bash
 sudo nano /etc/environment
 ```
+
+> set proxies manually
 
 - check clash proxy of `allow lan` wifi `ipv4`
 
@@ -482,6 +513,8 @@ source /etc/environment
 ```
 
 > clash TUN mode
+
+_not stable_
 
 1. set run as admin
    ![250](../../../assets/Pasted_image_20240226165051.png)

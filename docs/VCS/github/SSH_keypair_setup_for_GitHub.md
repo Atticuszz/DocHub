@@ -1,4 +1,4 @@
-- 简化版 _都在powershell中完成_
+- 简化版 _for bash or powershell_
 
 ### SSH
 

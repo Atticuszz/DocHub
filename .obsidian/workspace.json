@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "74e9a24272943df0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -172,14 +185,18 @@
       "publish:发布更改": false
     }
   },
-  "active": "1f7b8f1aebf4fefc",
+  "active": "74e9a24272943df0",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/configs.md",
+    "conflict-files-obsidian-git.md",
+    "docs/tools/IDE/activate_code.md",
+    "docs/schedule/meetings/2024-2-28.md",
+    "docs/papers/IEEE_模板.docx",
+    "assets/Pasted_image_20240228171953.png",
     "docs/VCS/git.md",
     "docs/schedule/TODO.md",
     "docs/account.md",
     "docs/schedule/Free_time.md",
-    "docs/OS/Ubuntu/configs.md",
-    "conflict-files-obsidian-git.md",
     "assets/Pasted_image_20240226204859.png",
     "assets/7047cf28aead44112d2857bfaa194ed.jpg",
     "DocHub",
@@ -194,7 +211,6 @@
     "assets/Pasted_image_20240226140501.png",
     "assets/Pasted_image_20240226140304.png",
     "assets/Pasted_image_20240226140209.png",
-    "assets/Pasted-image-20231207140646.png",
     "docs/OS/GPU-wsl.md",
     "docs/tutorials/dochub_installer.ps1",
     "docs/tutorials/Clash_installer.ps1",
@@ -215,11 +231,8 @@
     "docs/Language/C++/STL/unordered_set.md",
     "docs/Language/C++/STL/vector.md",
     "docs/Language/C++/STL/unordered_map.md",
-    "docs/Language/C++/STL/set.md",
-    "docs/Language/C++/STL/String.md",
     "docs/Language/js_ts/vue.js",
     "docs/Language/python/third_party_lib",
-    "docs/Language/python/standard_lib",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "未命名.canvas"

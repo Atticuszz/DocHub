@@ -1349,7 +1349,7 @@ function rl(e, t, l, n) {
   let c = !1;
   for (let i = 0, a = t.length; i < a; i++) {
     let s = t[i],
-      r = l && l[i],
+      r = l && l[e.length],
       g;
     if (!(s == null || s === !0 || s === !1))
       if ((g = typeof s) == "object" && s.nodeType) e.push(s);
@@ -4568,7 +4568,7 @@ async function jn(e, t, l, n, c, i, a, s, r, g) {
   }
   const k =
       c.type === "pandoc"
-        ? `${Q} ${c.arguments ?? ""} ${c.customArguments ?? ""} "\${currentPath}"`
+        ? `${Q} "\${currentPath}" ${c.arguments ?? ""} ${c.customArguments ?? ""}`
         : c.command,
     z = cl(k, V),
     ee = Zt(z.match(/(?:[^\s"]+|"[^"]*")+/g), { alias: { output: ["o"] } }),
