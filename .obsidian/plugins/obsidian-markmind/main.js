@@ -4803,14 +4803,12 @@ class Ae extends ye {
                     var I = e.linePoint([D], e.lineWidth)[0],
                       S = e.linePoint([N], e.lineWidth)[0],
                       B = `M${I[0]} ${I[1]},Q${I[0]} ${S[1]},${S[0]} ${S[1]}`,
-                      T = e.svgDom
-                        .path()
-                        .stroke({
-                          color: m,
-                          width: e.lineWidth,
-                          linecap: "round",
-                          linejoin: "round",
-                        });
+                      T = e.svgDom.path().stroke({
+                        color: m,
+                        width: e.lineWidth,
+                        linecap: "round",
+                        linejoin: "round",
+                      });
                     T.plot(B),
                       T.fill("none"),
                       (v = e.svgDom.line(
@@ -4912,14 +4910,12 @@ var xe = {
                 var v = e.linePoint([p], n)[0],
                   y = e.linePoint([m], n)[0],
                   A = `M${v[0]} ${v[1]},Q${v[0]} ${y[1]},${y[0]} ${y[1]}`,
-                  x = e.svgDom
-                    .path()
-                    .stroke({
-                      color: g,
-                      width: n + 2,
-                      linecap: "round",
-                      linejoin: "round",
-                    });
+                  x = e.svgDom.path().stroke({
+                    color: g,
+                    width: n + 2,
+                    linecap: "round",
+                    linejoin: "round",
+                  });
                 x.plot(A),
                   x.fill("none"),
                   e.svgDom
@@ -4961,14 +4957,12 @@ var xe = {
                   var v = e.linePoint([p], n)[0],
                     y = e.linePoint([m], n)[0],
                     A = `M${v[0]} ${v[1]},Q${v[0]} ${y[1]},${y[0]} ${y[1]}`,
-                    x = e.svgDom
-                      .path()
-                      .stroke({
-                        color: g,
-                        width: n + 2,
-                        linecap: "round",
-                        linejoin: "round",
-                      });
+                    x = e.svgDom.path().stroke({
+                      color: g,
+                      width: n + 2,
+                      linecap: "round",
+                      linejoin: "round",
+                    });
                   x.plot(A),
                     x.fill("none"),
                     e.svgDom
@@ -5020,14 +5014,12 @@ var xe = {
                 var g = e.linePoint([u], n)[0],
                   y = e.linePoint([p], n)[0],
                   A = `M${g[0]} ${g[1]},Q${g[0]} ${y[1]},${y[0]} ${y[1]}`,
-                  x = e.svgDom
-                    .path()
-                    .stroke({
-                      color: f,
-                      width: n + 2,
-                      linecap: "round",
-                      linejoin: "round",
-                    });
+                  x = e.svgDom.path().stroke({
+                    color: f,
+                    width: n + 2,
+                    linecap: "round",
+                    linejoin: "round",
+                  });
                 x.plot(A),
                   x.fill("none"),
                   e.svgDom
@@ -5069,14 +5061,12 @@ var xe = {
                   var g = e.linePoint([u], n)[0],
                     v = e.linePoint([p], n)[0],
                     A = `M${g[0]} ${g[1]},Q${g[0]} ${v[1]},${v[0]} ${v[1]}`,
-                    x = e.svgDom
-                      .path()
-                      .stroke({
-                        color: f,
-                        width: n + 2,
-                        linecap: "round",
-                        linejoin: "round",
-                      });
+                    x = e.svgDom.path().stroke({
+                      color: f,
+                      width: n + 2,
+                      linecap: "round",
+                      linejoin: "round",
+                    });
                   x.plot(A),
                     x.fill("none"),
                     e.svgDom
@@ -5241,14 +5231,12 @@ var xe = {
                   var w = e.linePoint([x], n)[0],
                     k = e.linePoint([b], n)[0],
                     C = `M${w[0]} ${w[1]},Q${w[0]} ${k[1]},${k[0]} ${k[1]}`,
-                    E = e.svgDom
-                      .path()
-                      .stroke({
-                        color: u,
-                        width: n,
-                        linecap: "round",
-                        linejoin: "round",
-                      });
+                    E = e.svgDom.path().stroke({
+                      color: u,
+                      width: n,
+                      linecap: "round",
+                      linejoin: "round",
+                    });
                   E.plot(C),
                     E.fill("none"),
                     (D = e.svgDom.line(e.linePoint([b, A], n))).fill("none"),
@@ -7086,14 +7074,12 @@ var xe = {
                       (f = d.y),
                       (g = parseInt(c + "")),
                       (v = parseInt(u + ""));
-                  var y = e.group
-                    .line(m, f, g, v)
-                    .stroke({
-                      color: p,
-                      width: i,
-                      linecap: "round",
-                      linejoin: "round",
-                    });
+                  var y = e.group.line(m, f, g, v).stroke({
+                    color: p,
+                    width: i,
+                    linecap: "round",
+                    linejoin: "round",
+                  });
                 } else {
                   var A = [s.x + r.width / 2, s.y + r.height],
                     x = [l.x + h.width / 2, l.y];
@@ -7117,14 +7103,12 @@ var xe = {
                     var D = e.linePoint([k], i)[0],
                       N = e.linePoint([w], i)[0],
                       I = `M${D[0]} ${D[1]},Q${D[0]} ${N[1]},${N[0]} ${N[1]}`,
-                      S = e.group
-                        .path()
-                        .stroke({
-                          color: p,
-                          width: i,
-                          linecap: "round",
-                          linejoin: "round",
-                        });
+                      S = e.group.path().stroke({
+                        color: p,
+                        width: i,
+                        linecap: "round",
+                        linejoin: "round",
+                      });
                     S.plot(I),
                       S.fill("none"),
                       (y = e.group.polyline(e.linePoint(E, i))).fill("none"),
@@ -7201,14 +7185,12 @@ var xe = {
                         (g = parseInt(c + "")),
                         (v = parseInt(u + "")),
                         (y = parseInt(p + ""));
-                    var A = e.group
-                      .line(f, g, v, y)
-                      .stroke({
-                        color: m,
-                        width: i,
-                        linecap: "round",
-                        linejoin: "round",
-                      });
+                    var A = e.group.line(f, g, v, y).stroke({
+                      color: m,
+                      width: i,
+                      linecap: "round",
+                      linejoin: "round",
+                    });
                   } else {
                     var x = [s.x + r.width / 2, s.y],
                       b = [l.x + h.width / 2, l.y + h.height],
@@ -7232,14 +7214,12 @@ var xe = {
                       var N = e.linePoint([C], i)[0],
                         I = e.linePoint([k], i)[0],
                         S = `M${N[0]} ${N[1]},Q${N[0]} ${I[1]},${I[0]} ${I[1]}`,
-                        B = e.group
-                          .path()
-                          .stroke({
-                            color: m,
-                            width: i,
-                            linecap: "round",
-                            linejoin: "round",
-                          });
+                        B = e.group.path().stroke({
+                          color: m,
+                          width: i,
+                          linecap: "round",
+                          linejoin: "round",
+                        });
                       B.plot(S),
                         B.fill("none"),
                         (A = e.group.polyline(e.linePoint(D, i))).fill("none"),
@@ -7567,14 +7547,12 @@ var xe = {
                       (l = e.linePoint([[o.x, o.y + o.height]], t)[0]),
                       (d = e.linePoint([[h[0] - 6, l[1]]], t)[0]),
                       (c = `M${h[0]} ${h[1]},Q${h[0]} ${h[1] + 6},${d[0]} ${d[1]} `);
-                  var u = e.svgDom
-                    .path()
-                    .stroke({
-                      color: a,
-                      width: t,
-                      linecap: "round",
-                      linejoin: "round",
-                    });
+                  var u = e.svgDom.path().stroke({
+                    color: a,
+                    width: t,
+                    linecap: "round",
+                    linejoin: "round",
+                  });
                   u.plot(c), u.fill("none");
                   var p = e.svgDom.line(e.linePoint([r, h], t));
                   p.fill("none"),
@@ -10706,15 +10684,13 @@ var xe = {
         })),
         i.extend(i.Defs, {
           pattern: function (e, t, n) {
-            return this.put(new i.Pattern())
-              .update(n)
-              .attr({
-                x: 0,
-                y: 0,
-                width: e,
-                height: t,
-                patternUnits: "userSpaceOnUse",
-              });
+            return this.put(new i.Pattern()).update(n).attr({
+              x: 0,
+              y: 0,
+              width: e,
+              height: t,
+              patternUnits: "userSpaceOnUse",
+            });
           },
         }),
         (i.Shape = i.invent({
