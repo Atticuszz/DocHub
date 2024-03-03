@@ -40,6 +40,12 @@ wsl --shutdown
 
 1. in your `C:\Users\<username>` create `.wslconfig`
 
+_if existed,open it by ps_
+
+```powershell
+notepad $env:USERPROFILE\.wslconfig
+```
+
 ```text
 [wsl2]
 autoProxy=true
