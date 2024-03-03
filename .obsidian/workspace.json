@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/tools/IDE/activate code.md",
+                "file": "docs/OS/Ubuntu/configs.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/tools/IDE/activate code.md",
+                "file": "docs/OS/Ubuntu/configs.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/tools/IDE/activate code.md",
+                "file": "docs/OS/Ubuntu/configs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/tools/IDE/activate code.md"
+                "file": "docs/OS/Ubuntu/configs.md"
               }
             }
           },
@@ -190,6 +190,9 @@
   },
   "active": "231d0ecdf777027f",
   "lastOpenFiles": [
+    "docs/VCS/git.md",
+    "docs/device/camera.md",
+    "docs/device/controller/STM32.md",
     "docs/tools/IDE/plugin.md",
     "docs/tools/IDE/activate code.md",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
@@ -220,15 +223,12 @@
     "assets/7047cf28aead44112d2857bfaa194ed.jpg",
     "DocHub",
     "AutoDrive_frontend",
-    "docs/VCS/git.md",
     "assets/Pasted_image_20240226165051.png",
     "assets/Pasted image 20240226165051.png",
     "assets/Pasted_image_20240226155318.png",
     "assets/Pasted_image_20240226155240.png",
     "assets/Pasted_image_20240226155154.png",
     "docs/schedule/Free time.md",
-    "docs/device/purchase.md",
-    "docs/tools/git-install-instruction.md",
     "docs/papers/nopo-nerf.pdf",
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
     "docs/papers/neuralrecon.pdf",

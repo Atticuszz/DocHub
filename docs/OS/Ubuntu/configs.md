@@ -472,10 +472,34 @@ docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 
 #### proxy
 
+> set .wslconfig to enable share proxy 
+
+😊best one for latest wsl
+1. in your `C:\Users\<username>` create `.wslconfig`
+```text
+[wsl2] 
+autoProxy=true
+networkingMode=mirrored
+firewall=true
+```
+2. restart wsl 
+```powershell
+wsl --shutdown 
+wsl
+```
+ 
 > shell for auto set proxy as wsl start
 
 _set proxies manually and try set auto start with sh_
+1. enable systemd
+```bash
+sudo nano /etc/wsl.conf
 
+# add it 
+[boot]
+systemd=false
+```
+2. add wget .sh for auto start with set proxies
 ```bash
 # 使用wget下载脚本
 wget -O /tmp/set_proxy_as_start_up.sh https://raw.githubusercontent.com/Atticuszz/PyGizmoKit/main/scripts/set_proxy_as_start_up.sh
@@ -488,13 +512,12 @@ sudo /tmp/set_proxy_as_start_up.sh
 
 ```
 
-> connect to your clash proxy old way if tun mode failed for pc
+
+>set proxies manually, connect to your clash proxy old way 
 
 ```bash
 sudo nano /etc/environment
 ```
-
-> set proxies manually
 
 - check clash proxy of `allow lan` wifi `ipv4`
 
@@ -512,16 +535,6 @@ no_proxy="localhost,127.0.0.1,::1"
 source /etc/environment
 ```
 
-> clash TUN mode
-
-_not stable_
-
-1. set run as admin
-   ![250](../../../assets/Pasted_image_20240226165051.png)
-1. install `service mode`,if installed ,it's green ![100](../../../assets/Pasted_image_20240226155154.png)
-   - ![../../../assets/Pasted_image_20240226155240.png](../../../assets/Pasted_image_20240226155240.png)
-1. open `Tun mode`![500](../../../assets/Pasted_image_20240226155318.png)
-1. test connect in wsl
 
 ### BUGs
 
