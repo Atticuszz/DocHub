@@ -11,11 +11,9 @@
             "id": "231d0ecdf777027f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/schedule/TODO.md"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
+                "file": "docs/schedule/TODO.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
+                "file": "docs/schedule/TODO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md"
+                "file": "docs/schedule/TODO.md"
               }
             }
           },
@@ -190,12 +188,12 @@
   },
   "active": "231d0ecdf777027f",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/configs.md",
+    "docs/OS/Ubuntu/wsl.md",
     "docs/OS/Ubuntu/net.md",
     "docs/OS/Ubuntu/install_via_usb.md",
-    "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/bugs.md",
-    "docs/OS/Ubuntu/wsl.md",
     "docs/OS/Ubuntu/shell.md",
     "docs/OS/GPU-wsl.md",
     "docs/OS/Ubuntu/system.md",
