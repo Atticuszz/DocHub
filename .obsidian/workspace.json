@@ -11,11 +11,9 @@
             "id": "231d0ecdf777027f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/schedule/TODO.md"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
+                "file": "docs/schedule/TODO.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
+                "file": "docs/schedule/TODO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md"
+                "file": "docs/schedule/TODO.md"
               }
             }
           },
@@ -190,13 +188,18 @@
   },
   "active": "231d0ecdf777027f",
   "lastOpenFiles": [
+    "docs/tools/git-install-instruction.md",
+    "docs/tools/IDE/plugin.md",
+    "docs/OS/Ubuntu/wsl.md",
+    "docs/schedule/meetings/2024-2-28.md",
+    "docs/schedule/meetings/standard.md",
+    "docs/Language/python/py-env/Pip.md",
+    "docs/OS/Ubuntu/configs.md",
+    "docs/OS/Ubuntu/shell.md",
     "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/net.md",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
-    "docs/schedule/meetings/standard.md",
     "docs/schedule/Free_time.md",
-    "docs/tools/IDE/plugin.md",
-    "docs/tools/git-install-instruction.md",
     "conflict-files-obsidian-git.md",
     "assets/Pasted_image_20240303125609.png",
     "assets/Pasted_image_20240303125518.png",
@@ -209,9 +212,6 @@
     "docs/device/purchase.md",
     "README.md",
     "docs/schedule/TODO.md",
-    "docs/OS/Ubuntu/wsl.md",
-    "docs/OS/Ubuntu/shell.md",
-    "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/install_via_usb.md",
     "docs/OS/Ubuntu/code_env.md",
@@ -221,8 +221,6 @@
     "docs/device/camera.md",
     "docs/device/controller/STM32.md",
     "docs/tools/IDE/activate code.md",
-    "docs/VCS/github/How_to_connect_ssh.md",
-    "docs/tutorials/KnowledgeHub.md",
     "docs/papers/IEEE_模板.docx",
     "assets/Pasted_image_20240228171953.png",
     "assets/Pasted image 20240228171953.png",

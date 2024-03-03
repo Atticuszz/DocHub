@@ -15,3 +15,12 @@ git ls-remote --tags --heads https://github.com/strapi/ts-zen.git
 ```bash
 pip check
 ```
+
+uninstall 
+```bash
+pip uninstall -r requirements.txt -y
+```
+
+```bash
+python3 -m venv env
+```
