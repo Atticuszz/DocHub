@@ -4722,17 +4722,15 @@ From previous: `);
               let i = xu(n.keys, n.trans._cache, n.cache === "clone");
               return i
                 ? R.resolve(i)
-                : r
-                    .getMany(n)
-                    .then(
-                      (o) => (
-                        (n.trans._cache = {
-                          keys: n.keys,
-                          values: n.cache === "clone" ? On(o) : o,
-                        }),
-                        o
-                      ),
-                    );
+                : r.getMany(n).then(
+                    (o) => (
+                      (n.trans._cache = {
+                        keys: n.keys,
+                        values: n.cache === "clone" ? On(o) : o,
+                      }),
+                      o
+                    ),
+                  );
             },
             mutate: (n) => (
               n.type !== "add" && (n.trans._cache = null), r.mutate(n)
