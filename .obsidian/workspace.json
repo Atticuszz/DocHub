@@ -4,16 +4,60 @@
     "type": "split",
     "children": [
       {
-        "id": "e56dd614afa56e53",
+        "id": "59cea1a20fad3e6d",
         "type": "tabs",
         "children": [
           {
-            "id": "eba8a2d521c8c2cf",
+            "id": "aeac7cb64446f93e",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "docs/schedule/TODO.md"
+              }
+            }
+          },
+          {
+            "id": "2d432c0ee7351c14",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "80b6ebb03c8b367b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/device/camera.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9fba079b7b7d9dc4",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "docs/schedule/TODO.md"
+              }
+            }
+          },
+          {
+            "id": "8671a66f2b5a9a33",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/VCS/git.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +113,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "47a7fb051f9573eb",
@@ -85,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/schedule/TODO.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/schedule/TODO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +182,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "docs/schedule/TODO.md"
               }
             }
           },
@@ -188,17 +233,34 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "eba8a2d521c8c2cf",
+  "active": "aeac7cb64446f93e",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "docs/OS/Ubuntu/wsl.md",
+    "assets/Pasted image 20240303125609.png",
+    "assets/Pasted image 20240303125518.png",
+    "assets/Pasted image 20240303125354.png",
+    "assets/Pasted image 20240303125319.png",
+    "assets/Pasted image 20240303125256.png",
+    "docs/VCS/git.md",
+    "docs/device/camera.md",
+    "docs/VCS/github/How_to_connect_ssh.md",
+    "docs/tools/git-install-instruction.md",
+    "README.md",
+    "assets/1f1f2a4fcbae0ba55e6d37a5a3aadf6.png",
+    "docs/schedule/TODO.md",
+    "assets/Pasted image 20240303121857.png",
+    "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/shell.md",
     "docs/OS/Ubuntu/net.md",
     "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/bugs.md",
+    "docs/schedule/meetings/2024-1-24.md",
+    "docs/schedule/Free_time.md",
+    "docs/schedule/meetings/standard.md",
+    "docs/schedule/meetings/2024-2-28.md",
+    "conflict-files-obsidian-git.md",
     "assets/AstraPro_SDK_install.pdf",
-    "docs/device/camera.md",
     "docs/papers/read-dairy.md",
     "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
     "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
@@ -211,31 +273,13 @@
     "docs/papers/neuralrecon.pdf",
     "docs/OS/GPU-wsl.md",
     "assets/c68058356f448e566b6677b9455f17a_1.png",
-    "assets/Pasted_image_20240204144722.png",
-    "assets/530bcd1287b9daae311bd6a7d0d8f6e_1.png",
-    "assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
-    "docs/VCS/github/How_to_connect_ssh.md",
     "docs/VCS/github",
-    "docs/VCS/git.md",
     "docs/VCS",
-    "docs/Language/python/third_party_lib/pyqt6.md",
-    "docs/Language/python/third_party_lib/Numpy.md",
-    "docs/Language/python/third_party_lib/Milvus.md",
-    "docs/Language/python/third_party_lib/django.md",
-    "docs/Language/python/PyPI/PyPI-recovery-Codes.md",
-    "docs/Language/python/py-env/Poetry.md",
-    "docs/Language/python/PyPI/Account_settings.md",
-    "docs/Language/python/py-env/Pip.md",
-    "docs/Language/python/py-env/conda.md",
     "docs/Language/python/third_party_lib",
     "docs/Language/python/PyPI",
     "docs/Language/python/standard_lib",
     "docs/Language/python/py-env",
-    "assets/Pasted_image_20240211170112.png",
-    "assets/Pasted_image_20240211163343.png",
-    "assets/cookbook 2.md/Exported image 20231211121254-0.png",
-    "assets/cookbook 1.md/Exported image 20231211121234-5.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
