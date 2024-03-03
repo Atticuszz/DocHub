@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/net.md",
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/net.md",
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/net.md",
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/net.md"
+                "file": "docs/OS/Ubuntu/wsl.md"
               }
             }
           },
@@ -190,17 +190,29 @@
   },
   "active": "231d0ecdf777027f",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/system.md",
+    "docs/OS/Ubuntu/net.md",
+    "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
+    "docs/schedule/meetings/standard.md",
+    "docs/schedule/Free_time.md",
+    "docs/tools/IDE/plugin.md",
+    "docs/tools/git-install-instruction.md",
+    "conflict-files-obsidian-git.md",
+    "assets/Pasted_image_20240303125609.png",
+    "assets/Pasted_image_20240303125518.png",
+    "assets/Pasted_image_20240303125354.png",
+    "assets/Pasted_image_20240303125319.png",
+    "assets/Pasted_image_20240303125256.png",
+    "assets/Pasted_image_20240303121857.png",
+    "assets/1f1f2a4fcbae0ba55e6d37a5a3aadf6.png",
     "docs/OS/Windows/Powersehll.md",
     "docs/device/purchase.md",
     "README.md",
     "docs/schedule/TODO.md",
     "docs/OS/Ubuntu/wsl.md",
-    "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/shell.md",
-    "docs/OS/Ubuntu/net.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/bugs.md",
-    "conflict-files-obsidian-git.md",
     "docs/OS/Ubuntu/install_via_usb.md",
     "docs/OS/Ubuntu/code_env.md",
     "docs/OS/GPU-wsl.md",
@@ -208,27 +220,15 @@
     "docs/VCS/git.md",
     "docs/device/camera.md",
     "docs/device/controller/STM32.md",
-    "docs/tools/IDE/plugin.md",
     "docs/tools/IDE/activate code.md",
-    "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
     "docs/VCS/github/How_to_connect_ssh.md",
     "docs/tutorials/KnowledgeHub.md",
-    "docs/schedule/meetings/2024-2-28.md",
-    "docs/schedule/meetings/standard.md",
-    "docs/schedule/meetings/2024-1-24.md",
     "docs/papers/IEEE_模板.docx",
     "assets/Pasted_image_20240228171953.png",
     "assets/Pasted image 20240228171953.png",
     "assets/Pasted_image_20240226204859.png",
-    "assets/Pasted image 20240226204859.png",
-    "assets/7047cf28aead44112d2857bfaa194ed.jpg",
     "DocHub",
     "AutoDrive_frontend",
-    "assets/Pasted_image_20240226165051.png",
-    "assets/Pasted image 20240226165051.png",
-    "assets/Pasted_image_20240226155318.png",
-    "assets/Pasted_image_20240226155240.png",
-    "assets/Pasted_image_20240226155154.png",
     "docs/papers/nopo-nerf.pdf",
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
     "docs/papers/neuralrecon.pdf",
