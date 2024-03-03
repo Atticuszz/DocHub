@@ -35,8 +35,11 @@ connect by ssh ,enter password first time and try to connect by ssh-key
 ### set proxies
 
 > before any download from web, set proxies first for too slow speed
-#### wsl 
-[[docs/OS/Ubuntu/wsl#proxy|proxy]]
+
+#### wsl
+
+[proxy](docs/OS/Ubuntu/wsl#proxy)
+
 1. set shared proxies first!!
 
 #### native ubuntu
