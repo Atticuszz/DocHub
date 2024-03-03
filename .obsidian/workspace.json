@@ -8,24 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "aeac7cb64446f93e",
-            "type": "leaf",
-            "state": {
-              "type": "kanban",
-              "state": {
-                "file": "docs/schedule/TODO.md"
-              }
-            }
-          },
-          {
             "id": "2d432c0ee7351c14",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
+                "file": "assets/Pasted image 20240303125256.png"
               }
             }
           },
@@ -57,13 +45,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/VCS/git.md",
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -113,8 +102,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "47a7fb051f9573eb",
@@ -130,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/schedule/TODO.md",
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -147,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/schedule/TODO.md",
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -182,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/schedule/TODO.md"
+                "file": "docs/OS/Ubuntu/wsl.md"
               }
             }
           },
@@ -233,22 +221,26 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "aeac7cb64446f93e",
+  "active": "8671a66f2b5a9a33",
   "lastOpenFiles": [
+    "docs/VCS/git.md",
+    "docs/schedule/TODO.md",
+    "docs/device/camera.md",
+    "assets/Pasted image 20240303125256.png",
+    "assets/Pasted image 20240303121857.png",
+    "assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png",
+    "assets/1f1f2a4fcbae0ba55e6d37a5a3aadf6.png",
+    "assets/1ffa2d81edf7f1dece8d86f71f4b57f.png",
+    "README.md",
+    "Excalidraw/Drawing 2024-03-03 13.07.53.excalidraw.md",
+    "Excalidraw",
     "docs/OS/Ubuntu/wsl.md",
     "assets/Pasted image 20240303125609.png",
     "assets/Pasted image 20240303125518.png",
     "assets/Pasted image 20240303125354.png",
     "assets/Pasted image 20240303125319.png",
-    "assets/Pasted image 20240303125256.png",
-    "docs/VCS/git.md",
-    "docs/device/camera.md",
     "docs/VCS/github/How_to_connect_ssh.md",
     "docs/tools/git-install-instruction.md",
-    "README.md",
-    "assets/1f1f2a4fcbae0ba55e6d37a5a3aadf6.png",
-    "docs/schedule/TODO.md",
-    "assets/Pasted image 20240303121857.png",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/shell.md",
@@ -265,21 +257,17 @@
     "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
     "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
     "assets/Pasted image 20240216144139.png",
-    "assets/Pasted image 20240216143622.png",
     "2024-02-16.md",
     "docs/papers/gpt-chats-history.md",
     "docs/papers/nopo-nerf.pdf",
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
     "docs/papers/neuralrecon.pdf",
     "docs/OS/GPU-wsl.md",
-    "assets/c68058356f448e566b6677b9455f17a_1.png",
-    "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
     "docs/VCS/github",
     "docs/VCS",
     "docs/Language/python/third_party_lib",
     "docs/Language/python/PyPI",
     "docs/Language/python/standard_lib",
-    "docs/Language/python/py-env",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
