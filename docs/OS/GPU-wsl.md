@@ -139,3 +139,9 @@ cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 ```
 
 - ->![../../assets/Pasted_image_20240212120735.png](../../assets/Pasted_image_20240212120735.png)
+
+- gpu test
+
+```bash
+docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
+```
