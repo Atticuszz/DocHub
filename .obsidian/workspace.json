@@ -4,55 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "59cea1a20fad3e6d",
+        "id": "1c59ee9f1815c3be",
         "type": "tabs",
         "children": [
           {
-            "id": "2d432c0ee7351c14",
+            "id": "07946424d16aa677",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "assets/Pasted image 20240303125256.png"
-              }
-            }
-          },
-          {
-            "id": "80b6ebb03c8b367b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/device/camera.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9fba079b7b7d9dc4",
-            "type": "leaf",
-            "state": {
-              "type": "kanban",
-              "state": {
-                "file": "docs/schedule/TODO.md"
-              }
-            }
-          },
-          {
-            "id": "8671a66f2b5a9a33",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -118,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -135,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -169,9 +130,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "docs/OS/Ubuntu/wsl.md"
-              }
+              "state": {}
             }
           },
           {
@@ -221,24 +180,26 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "8671a66f2b5a9a33",
+  "active": "07946424d16aa677",
   "lastOpenFiles": [
-    "docs/VCS/git.md",
+    "docs/OS/Ubuntu/wsl.md",
     "docs/schedule/TODO.md",
     "docs/device/camera.md",
+    "conflict-files-obsidian-git.md",
+    "assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png",
+    "assets/Pasted_image_20240303125609.png",
+    "assets/Pasted_image_20240303125518.png",
+    "assets/Pasted_image_20240303125354.png",
+    "assets/Pasted_image_20240303125319.png",
+    "assets/Pasted_image_20240303125256.png",
+    "assets/Pasted_image_20240303121857.png",
+    "docs/VCS/git.md",
     "assets/Pasted image 20240303125256.png",
     "assets/Pasted image 20240303121857.png",
-    "assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png",
     "assets/1f1f2a4fcbae0ba55e6d37a5a3aadf6.png",
-    "assets/1ffa2d81edf7f1dece8d86f71f4b57f.png",
     "README.md",
     "Excalidraw/Drawing 2024-03-03 13.07.53.excalidraw.md",
     "Excalidraw",
-    "docs/OS/Ubuntu/wsl.md",
-    "assets/Pasted image 20240303125609.png",
-    "assets/Pasted image 20240303125518.png",
-    "assets/Pasted image 20240303125354.png",
-    "assets/Pasted image 20240303125319.png",
     "docs/VCS/github/How_to_connect_ssh.md",
     "docs/tools/git-install-instruction.md",
     "docs/OS/Ubuntu/configs.md",
@@ -251,12 +212,10 @@
     "docs/schedule/Free_time.md",
     "docs/schedule/meetings/standard.md",
     "docs/schedule/meetings/2024-2-28.md",
-    "conflict-files-obsidian-git.md",
     "assets/AstraPro_SDK_install.pdf",
     "docs/papers/read-dairy.md",
     "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
     "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
-    "assets/Pasted image 20240216144139.png",
     "2024-02-16.md",
     "docs/papers/gpt-chats-history.md",
     "docs/papers/nopo-nerf.pdf",
