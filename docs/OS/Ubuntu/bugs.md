@@ -1,4 +1,3 @@
-
 1. run `sudo apt-get update` got
 
 ```bash

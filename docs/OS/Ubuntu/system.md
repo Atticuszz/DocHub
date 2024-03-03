@@ -41,5 +41,3 @@ sudo chown -R %username%  %filepath%
 # sudo chown -R atticuszz /etc/
 
 ```
-
-
