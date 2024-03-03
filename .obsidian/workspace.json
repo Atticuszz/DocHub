@@ -11,13 +11,28 @@
             "id": "231d0ecdf777027f",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "docs/schedule/TODO.md"
+                "file": "docs/OS/Ubuntu/configs.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e3a5424f11ce6abc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -83,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/schedule/TODO.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -100,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/schedule/TODO.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/schedule/TODO.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -186,9 +201,11 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "231d0ecdf777027f",
+  "active": "e3a5424f11ce6abc",
   "lastOpenFiles": [
     "docs/OS/Ubuntu/configs.md",
+    "conflict-files-obsidian-git.md",
+    "docs/schedule/TODO.md",
     "docs/OS/Ubuntu/wsl.md",
     "docs/OS/Ubuntu/net.md",
     "docs/OS/Ubuntu/install_via_usb.md",
@@ -197,7 +214,6 @@
     "docs/OS/Ubuntu/shell.md",
     "docs/OS/GPU-wsl.md",
     "docs/OS/Ubuntu/system.md",
-    "conflict-files-obsidian-git.md",
     "docs/papers/SCI_paper.md",
     "docs/VCS/git.md",
     "docs/device/camera.md",
@@ -212,7 +228,6 @@
     "docs/schedule/meetings/2024-1-24.md",
     "docs/OS/Windows/Powersehll.md",
     "docs/OS/Windows/CMD.md",
-    "docs/schedule/TODO.md",
     "docs/schedule/Free_time.md",
     "docs/papers/IEEE_模板.docx",
     "assets/Pasted_image_20240228171953.png",

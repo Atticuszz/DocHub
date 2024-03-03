@@ -5,7 +5,12 @@
     - [Drawing_2024-01-24_15.34.27.excalidraw.md](docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md)
   - **OS/:**
     - **Ubuntu/:**
-      - [install_via_usb.md](docs/OS/Ubuntu/install_via_usb.md)
+      - [system.md](docs/OS/Ubuntu/system.md)
+      - [bugs.md](docs/OS/Ubuntu/bugs.md)
+      - [code_env.md](docs/OS/Ubuntu/code_env.md)
+      - [wsl.md](docs/OS/Ubuntu/wsl.md)
+      - [shell.md](docs/OS/Ubuntu/shell.md)
+      - [net.md](docs/OS/Ubuntu/net.md)
       - [configs.md](docs/OS/Ubuntu/configs.md)
     - **Windows/:**
       - [CMD.md](docs/OS/Windows/CMD.md)
@@ -79,6 +84,43 @@
       - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-03 by Atticuszz - 重构ubunut配置部分
+- 🔨 [histories.json](.obsidian/plugins/various-complements/histories.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [GPU-wsl.md](docs/OS/GPU-wsl.md)
+- ✨ [bugs.md](docs/OS/Ubuntu/bugs.md)
+- ✨ [code_env.md](docs/OS/Ubuntu/code_env.md)
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+- 🗑️ install_via_usb.md
+- ✨ [net.md](docs/OS/Ubuntu/net.md)
+- ✨ [shell.md](docs/OS/Ubuntu/shell.md)
+- ✨ [system.md](docs/OS/Ubuntu/system.md)
+- ✨ [wsl.md](docs/OS/Ubuntu/wsl.md)
+### 2024-03-03 by Atticuszz - 删除了tun模式来共享代理，添加了最新的代理方案官方支持
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [histories.json](.obsidian/plugins/various-complements/histories.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+### 2024-03-02 by Atticuszz - Ci workflows Update README.md
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🔨 [CMD.md](docs/OS/Windows/CMD.md)
 ### 2024-03-02 by haijuanwu - vault backup: 2024-03-02 17:45:32
 - 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
@@ -196,14 +238,6 @@
 - 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
 - 🔨 [types.json](.obsidian/types.json)
 - 🔨 [README.md](README.md)
-### 2024-03-01 by Atticuszz - chore: update git ssh commands and ubuntu configs
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-- 🔨 [git.md](docs/VCS/git.md)
-### 2024-03-01 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-### 2024-03-01 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-- 🔨 [SSH_keypair_setup_for_GitHub.md](docs/VCS/github/SSH_keypair_setup_for_GitHub.md)
 ## 其他仓库
 
 ### 论文速览

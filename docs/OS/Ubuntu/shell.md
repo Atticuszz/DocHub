@@ -1,4 +1,3 @@
-
 #### auto read envs
 
 > make ur bash auto read envs from shells like bash,zsh and Centralize it for easier management
