@@ -2997,6 +2997,7 @@ var require_trees = __commonJS({
       }
       node = elems;
       do {
+<<<<<<< HEAD
         n = s.heap[
           1
           /*SMALLEST*/
@@ -3005,25 +3006,42 @@ var require_trees = __commonJS({
           1
           /*SMALLEST*/
         ] = s.heap[s.heap_len--];
+=======
+        n = s.heap[1];
+        /*SMALLEST*/
+        s.heap[1] = s.heap[s.heap_len--];
+        /*SMALLEST*/
+>>>>>>> origin/main
         pqdownheap(
           s,
           tree,
           1
           /*SMALLEST*/
         );
+<<<<<<< HEAD
         m = s.heap[
           1
           /*SMALLEST*/
         ];
+=======
+        m = s.heap[1];
+        /*SMALLEST*/
+>>>>>>> origin/main
         s.heap[--s.heap_max] = n;
         s.heap[--s.heap_max] = m;
         tree[node * 2] = tree[n * 2] + tree[m * 2];
         s.depth[node] = (s.depth[n] >= s.depth[m] ? s.depth[n] : s.depth[m]) + 1;
         tree[n * 2 + 1] = tree[m * 2 + 1] = node;
+<<<<<<< HEAD
         s.heap[
           1
           /*SMALLEST*/
         ] = node++;
+=======
+        s.heap[1] =
+          /*SMALLEST*/
+          node++;
+>>>>>>> origin/main
         pqdownheap(
           s,
           tree,
@@ -3031,10 +3049,15 @@ var require_trees = __commonJS({
           /*SMALLEST*/
         );
       } while (s.heap_len >= 2);
+<<<<<<< HEAD
       s.heap[--s.heap_max] = s.heap[
         1
         /*SMALLEST*/
       ];
+=======
+      s.heap[--s.heap_max] = s.heap[1];
+      /*SMALLEST*/
+>>>>>>> origin/main
       gen_bitlen(s, desc);
       gen_codes(tree, max_code, s.bl_count);
     }

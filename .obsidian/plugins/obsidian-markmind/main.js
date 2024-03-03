@@ -12,7 +12,11697 @@ INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
 LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
+<<<<<<< HEAD
 ***************************************************************************** */function t(e,t,i,n){return new(i||(i=Promise))((function(s,r){function o(e){try{h(n.next(e))}catch(e){r(e)}}function a(e){try{h(n.throw(e))}catch(e){r(e)}}function h(e){var t;e.done?s(e.value):(t=e.value,t instanceof i?t:new i((function(e){e(t)}))).then(o,a)}h((n=n.apply(e,t||[])).next())}))}function i(e,t){const i=Object.keys(t).map((i=>function(e,t,i){const n=e[t],s=e.hasOwnProperty(t);let r=i(n);n&&Object.setPrototypeOf(r,n);return Object.setPrototypeOf(o,r),e[t]=o,a;function o(...i){return r===n&&e[t]===o&&a(),r.apply(this,i)}function a(){e[t]===o&&(s?e[t]=n:delete e[t]),r!==n&&(r=n,Object.setPrototypeOf(o,n||Function))}}(e,i,t[i])));return 1===i.length?i[0]:function(){i.forEach((e=>e()))}}var n={"Open as mindmap board":"Open as mindmap","Create new mindmap":"Create new mindmap","New mindmap board":"New mindmap board","Untitled mindmap":"Untitled mindmap","Open as markdown":"Open as markdown","Sub title":"Sub title","Export to opml":"Export to opml","Export to image":"Export to image","Canvas size":"Canvas size","Canvas size desc":"Width and height of the canvas","Canvas background":"Canvas background","Canvas background desc":"Background color of canvas","Max level of node to markdown head":"Max level of node to create a Heading","Max level of node to markdown head desc":"Specify which Node Level creates a seperate Heading instead of a List-Item","Font size":"Font Size","Font size desc":"Specify the Font Size","Mind map layout direct":"Mindmap Layout","Mind map layout direct desc":"Specify the direction the nodes are placed in your Mindmap",Right:"Right",Left:"Left",Centered:"Centered","Open PDF File":"Open PDF file...","Save Image error,Please try again":"Save image error,please try again","Creating Rect Annotate":"Creating rect annotate...","Cancel Create Rect Annotate":"Cancel create rect annotate","File Is Not Exist":"File is not exist","Open File Error":"Open file error","PDF Cannot Open More Instances":"PDF reader cannot open more instances","Create Rect Annotate":"Created rect annotate","Stroke Array":"Stroke Color","Stroke Array Desc":"Node link color base on this value or random color","PDFJs Plugin Path":"PDF reader path","PDFJs Plugin Path Desc":"If you want to use PDF annotation,You need download pdf js plugin and set up this value","Andriod pdfjs Plugin Path":"Andriod pdf reader path","Ios pdfjs Plugin Path":"Ios pdf reader path","Mac pdfjs Plugin Path":"Mac pdfjs Plugin Path","PDF Path":"PDF store path","PDF Annotate Path":"PDF annotate store path","PDF Image Path":"Image store path of PDF rect annotate","Miss PDF Reader Path":"Miss PDF plugin path,you need download Pdf js plugin,and set up value of PDF reader path","Please Use Rich Mode":"Please change yaml mindmap-plugin basic to rich","The probation period has ended":"The probation period has ended or active code has expired",Rect:"Rect",Circle:"Circle",Pointer:"Pointer","Show MindMap":"Show mind map","Hide MindMap":"Hide mind map","Open Protocol":"Support protocol","Open Protocol Desc":"Support protocol like 'obsidian://{protocol name}' for function of jump to pdf annotate",Protocol:"Protocol","Protocol Desc":"Protocol name",Open:"Open",Close:"Close","Open as outline":"Open as outline","Show Annotate":"Show annotate","Annotation save type":"PDF annotation save type","Annotation save type desc":"The type of save pdf annotation,there are two file types:`annos` and `md`，`annos` as default,`annos` is `json` file in fact ","Export annotate pdf":"Export annotate pdf","Export annotate pdf tip":"This is a time-consuming operation. Please wait patiently","Export annotate pdf success":"Export pdf success","Export annotate pdf error":"Export pdf error","Active Code":"Active code","Active Code Desc":"You can active markmind by use this value. Web site:<https://www.markmind.net>","Active error":"Active code error","Active success":"Active success","Annotate PDF":"Annotate PDF","Annotate EPUB":"Annotate EPUB","PDF Viewer Theme":"PDF viewer theme","PDF Viewer Theme desc":"Theme of pdf viewer","Copy as markdown":"Copy as markdown","Copy node text":"Copy node text only","Copy node link":"Copy node link","Export as opml":"Export as opml","Mobile app not support":"File not support mobile app","Not support file type":"The file type is not support,please open pdf file","Not find md file":"This pdf has not annotations in valut","Please select another node":"Please select another node","Change layout to mindmap":"Change layout to mindmap","Change layout to right":"Change layout to right","Change layout to left":"Change layout to left","Change layout to tree":"Change layout to tree","Copy mindmap node":"Copy selected node","Paste to node":"Paste to node","Toggle mardkown/mindmap":"Toggle markdown/mindmap mode","Copy node id":"Copy node ID","Mobile Active Code":"Mobile active code","Mobile Active Code Desc":"You can active mobile markmind by use value , it will create if you input active code","Mindmap mode":"Mindmap mode","Mindmap mode desc":"When create mindmap , it will create mode of this value , `basic` mode as default","Pdf screen short":"Folder to save image","Pdf screen short desc":"Save image to this folder when use pdf rect annotate","Set mindmap to center":"Set mindmap to center",save:"Save",cancel:"Cancel","Remove annotate space":"Remove space of pdf annotate","Remove annotate space desc":"In environment of chinese , open this and it will remove spaces between text automatic","Get path of vault":"Get base path of vault","Smooth movement":"Support smooth movement of mindmap nodes","Smooth movement desc":"Smooth movement of mindmap nodes","Support code block":"Support parse code block of mindmap","Support code block desc":"Support parse code block of mindmap in markdown file",toPng:"Export to PNG","Set pdf js path":"Set up pdf js plugin path","Please open a mind map":"Please open a mind map and try this command again","Set up pdf js path success":"Success,please restart obsidian","Create new outline":"Create new outline","Copy node":"Copy","Paste node":"Paste","Fill color":"Fill color","Stroke color":"Stroke color","Text color":"Text color","Text align":"Text align","Stroke width":"Stroke width","Stroke style":"Stroke style",nodeColor:"Setup board color",nodeColorDesc:"Use this to setup node background/stroke/font color","Export to html":"Export to html","Change layout to fishLeft":"Change layout to left fish","Change layout to fishRight":"Change layout to right fish","Open as table":"Open as table","get table html":"Get html code of table","get table markdown":"Get markdown of table","Get pdf annotations":"Import pdf highlight annotations","extract highlight success":"Import pdf highlight success","Change basic mode to rich mode":"Change basic mode to rich mode","Change rich mode to basic mode":"Change rich mode to basic mode","Export pdf annotations":"Export pdf annotations","Format of pdf highlight":"Format of pdf highlight","Format of pdf highlight desc":"When export pdf highights , it will generate file in this format","Use new version of pdfjs":"Toggle to new version of pdfjs","Use old version of pdfjs":"Toggle to old version of pdfjs",searchResult:"Find {{nodeNumber}} nodes contains this word","Toggle search box":"Toggle search box","Fine tune height of annotate":"Fine tune height of annotate","Fine tune height of annotate desc":"Fine tune height of annotate , adjust upward (px)","Fine tune height of annotate desc one":"Fine tune height of annotate , adjust downward (px)","Create hand drawn mindmap":"Create hand drawn mindmap from basic mode","Decode URI pdf link":"Open decode PDF link","Decode URI pdf link desc":"If your `annotate-target` is encode by `encodeURI` , you can open this","Expand to first node level":"Expand to first node level","Expand to second node level":"Expand to second node level","Expand to third node level":"Expand to third node level","Expand to all node level":"Expand to all node level","Expand to fourth node level":"Expand to fourth node level","Expand to fifth node level":"Expand to fifth node level","Auto create node when annotate":"Auto create node when annotate","Auto create node when annotate desc":"Auto create node when create pdf annotate","Add child node":"Add child node","Add brother node":"Add brother node","Edit node":"Edit node","Cancel edit node":"Cancel edit node","Delete node":"Delete node",Undo:"Undo",Redo:"Redo","Use custom short cut":"Use custom short cut","Use custom short cut desc":"You can set up custom short cut of mindmap for add node/delete node/undo/redo/edit node/quit edit node commands in `ctrl + p` board","PDF cache folder":"PDF cache folder","PDF cache folder desc":"When you open pdf in web by use pdf annotator, the pdf will store to this folder","Folder of paste image":"Folder of paste image","Folder of paste image desc":"When paste image , image will store to this folder","Change basic to table mode":"Change basic mindmap to table mode","Change basic to outline mode":"Change basic to outline mode","Saving data":"Saving data ...",Saved:"Saved","Only copy annotate link":"Only copy annotate link","Only copy annotate link desc":"Only copy annotate link when click an pdf annotate","Saving image":"Saving image ...","Auto set node to center when tab node of mindmap":"Auto set node to center when tab node of mindmap","Auto set node to center when tab node of mindmap desc":"Auto set node to center when use up/down/left/right key to tab node of mindmap","Auto open search box":"Auto open mindmap search box","Auto open search box desc":"If obsidian has search text, auto open mindmap search box","Export to pdf":"Export mindmap as a pdf file","Please do this in a separate window":"Please export mindmap to pdf in a independ window","PDF save success":"Save pdf success","Add collapse node mark":"Auto add collapse node ID of basic mode","Add collapse node mark desc":"When save mindmap of basic mode , auto add collapsed node ID in the end of node text","Change theme":"Open change theme box","Close change theme":"Close change theme box","Can not change layout":" Can not change node layout to table because the child of this node have summary, boundary , callout or layout","Only use obsidian folder for pdfjs plugin":"Put pdfjs plugin to .obsidian folder of vault","Only use obsidian folder for pdfjs plugin desc":"Put pdfjs plugin to .obsidian folder of vault in android or ios system","Generate mind maps by chatGTP":"Generate mind maps by chatGTP (outline)","Get inspiration":"Get inspiration by chatGTP",ChatGTPError:"Get text error from chatGTP,please try again",ChatGTPLoading:"AI is getting data , please wait a minute...","ChatGTP appkey":"Please input apikey of chatGPT","ChatGTP appkey desc":"Please input apikey of chatGPT",ProxyServer:"Please input proxy server","ProxyServer desc":"If you can not access website of openai api, you can use a proxy server","Generate mind maps by Q&A of chatGTP":"Generate mind maps by chatGPT (Q&A)","Annotate template":"Annotate template","Annotate template desc":"When click annotate, it will generate text according to this template to copy to clipboard","Support translate":"Support for word translation of pdf annotate","Support translate desc":"When make annotate of pdf, support word translation","Google translate":"Google tranlate","Google translate desc":"Google tranlate","Baidu translate":"Baidu translate","Baidu translate desc":"Baidu translate","Youdao translate":"Youdao translate","Youdao translate desc":"Youdao translate","Translate appid":"Translate appId or token","Translate appid desc":"AppId or token of translate","Translate secret":"Translate secret","Translate secret desc":"Secret of translate, if you use token, the value may be empty","Not have translations of pdf full text":"No full-text translation files available","Translate spend time":"Translating, please be patient and wait...","Translate success":"Translation successful","Parsing PDF structure":"Parsing PDF structuring...","Parsing PDF structure error":"Parsing PDF structure error","Full text translate":"Full text translation","Pdf in vault":"Currently only support PDF in vault","Completed translation":"Completed translation: ","Translation engine":"Translation engine",baidu:"baidu","Copy full text translations":"Copy full text translations to clipboard","Mindmap is in read":"Mind map in read-only mode","Export to pdf (old version)":"Export mindmap to pdf (v0.15.9)","Scale speed of mobile version":"Scale speed of mobile version","Scale speed of mobile version desc":"Scale speed of mobile version","Cover node":"Cover node text","Cancel cover node":"Cancel cover node text","Export to xmind zen":"Export mindmap to xmind zen file","Export xmind success":"Export to xmind zen file success"};const s={ar:{},cs:{},da:{},de:{"Open as mindmap board":"Öffne als Mindmap","Create new mindmap":"Erstelle neue Mindmap","New mindmap board":"Neue Mindmap","Untitled mindmap":"Unbenannte Mindmap","Open as markdown":"Öffne als Markdown","Sub title":"Untertitel","Export to opml":"Exportiere als opml","Export to image":"Exportiere als Bild","Canvas size":"Leinwandgröße","Canvas size desc":"Breite und Höhe der Leinwand","Canvas background":"Leinwand Hintergrund","Canvas background desc":"Hintergrundfarbe der Leinwand","Max level of node to markdown head":"Maximale Knotenebene welche eine Überschrift erstellt","Max level of node to markdown head desc":"Angeben, welche Knotenebene eine separate Überschrift anstelle eines Listenelements erstellt.","Font size":"Schriftgröße","Font size desc":"Gebe die Schriftgröße ans","Mind map layout direct":"Mindmap Layout","Mind map layout direct desc":"Geben Sie die Richtung an, in der die Knoten in Ihrer Mindmap platziert werden.",Right:"Rechts",Left:"Links",Centered:"Zentriert"},en:n,"en-gb":{},es:{},fr:{},hi:{},id:{},it:{},ja:{},ko:{},nl:{},nn:{},pl:{},pt:{},"pt-br":{},ro:{},ru:{},tr:{},"zh-cn":{"Open as mindmap board":"打开为思维导图","Create new mindmap":"创建新思维导图","New mindmap board":"新建思维导图","Untitled mindmap":"未命名思维导图","Open as markdown":"打开为 Markdown 文件","Sub title":"新节点","Export to opml":"导出至OPML","Export to image":"导出至图片","Canvas size":"画布尺寸","Canvas size desc":"绘制思维导图画布的宽度和高度","Canvas background":"背景颜色","Canvas background desc":"画布的背景颜色","Max level of node to markdown head":"节点文字转为markdown标题的最大层级","Max level of node to markdown head desc":"将小于该层级的节点文字转为markdown标题，最大层级为6，因为HTML标题支持最大为6级","Font size":"文字大小","Font size desc":"思维导图文字默认大小，单位px","Mind map layout direct":"思维导图布局方向","Mind map layout direct desc":"思维导图的布局方向，分为向两侧发散、仅右侧、仅左侧三个方向","Expand node":"展开节点","Collapse node":"收缩节点","Only show this node":"仅显示该节点","Expand all node":"展开所有节点","Collapse all node":"收缩所有节点","Add relate link":"添加联系线","Remove relate link":"删除联系线","Add summary node":"添加归纳","Remove summary node":"删除归纳","Remove node":"删除节点","Only remove this node":"仅删除该节点","Open PDF File":"正在打开PDF文件...","Save Image error,Please try again":"保存图片失败，请重试","Creating Rect Annotate":"正在创建矩形标注","Cancel Create Rect Annotate":"取消创建矩形标注","File Is Not Exist":"文件不存在","Open File Error":"打开文件失败","PDF Cannot Open More Instances":"不支持多开PDF阅读器","Create Rect Annotate":"创建矩形标注成功","Stroke Array":"颜色组","Stroke Array Desc":"节点连线颜色将按照颜色组生成,否则生成随机颜色","PDFJs Plugin Path":"PDFJs 插件路径","Andriod pdfjs Plugin Path":"安卓 PDFJs 插件路径","Ios pdfjs Plugin Path":"IOS PDFJs 插件路径","Mac pdfjs Plugin Path":"Mac PDFJs 插件路径","PDFJs Plugin Path Desc":"如果您要使用PDF标注功能，您需要下载PDFJS插件，并设置插件路径","PDF Path":"PDF 存储路径","PDF Annotate Path":"PDF 标注存储路径","PDF Image Path":"PDF 矩形标注生成的图片存储路径","Miss PDF Reader Path":"缺少PDF插件，您需要下载PDFJS插件，并在设置中设置PDF插件路径(绝对路径)","Please Use Rich Mode":"目前处于Basic模式或者未激活，无法使用PDF标注功能，请使用Rich模式或者激活软件","The probation period has ended":"免费版本或者激活码已过期，请至markmind.net购买激活码以激活应用",Rect:"矩形",Circle:"圆",Pointer:"点","Show MindMap":"显示思维导图","Hide MindMap":"隐藏思维导图","Open Protocol":"开启协议支持","Open Protocol Desc":"支持类似 obsidian://{Protocol name} 的协议,用于跳转至PDF标注",Protocol:"协议名","Protocol Desc":"协议名称",Open:"开启",Close:"关闭","Open as outline":"打开为大纲","Show Annotate":"展示标注","Annotation save type":"标注保存类型","Annotation save type desc":"当保存PDF标注时保存的文件类型，目前分为保存为annos和markdown两种，默认扩展名为annos(本质是json文件)","Export annotate pdf":"导出标注后的PDF文件","Export annotate pdf tip":"这是一个费时的操作，请耐心等待...","Export annotate pdf success":"导出PDF文件成功","Export annotate pdf error":"导出PDF文件失败","Active Code":"激活码","Active Code Desc":"可以使用该值激活markmind,网站：<https://www.markmind.net/cn>","Active error":"激活失败，请检查激活码","Active success":"已激活","Annotate PDF":"打开注释PDF","Annotate EPUB":"打开注释EPUB","PDF Viewer Theme":"PDF阅读器主题","PDF Viewer Theme desc":"切换PDF阅读器主题皮肤","Copy as markdown":"复制为markdown","Copy node text":"仅复制该节点文本","Copy node link":"复制节点引用链接","Export as opml":"导出为OPML","Mobile app not support":"移动端不支持打开本地PDF文件","Not support file type":"不支持注释该文件类型，只支持pdf文件","Not find md file":"这是一个外部pdf文件，在文件夹中尚不存在批注信息","Please select another node":"请选择另一个节点","Change layout to mindmap":"切换思维导图布局为默认","Change layout to right":"切换思维导图布局为右侧","Change layout to left":"切换思维导图布局为左侧","Change layout to tree":"切换思维导图布局为树向下布局","Copy mindmap node":"复制节点","Paste to node":"粘贴节点","Toggle mardkown/mindmap":"切换为Markdown或思维导图模式","Copy node id":"获取节点ID","Mobile Active Code":"移动端激活码","Mobile Active Code Desc":"用于激活移动端，当你填入激活码时，该值将自动生成","Mindmap mode":"思维导图模式","Mindmap mode desc":"当创建思维导图时，将按照该值创建思维导图的模式，默认是basic模式","Pdf screen short":"PDF 截图文件夹","Pdf screen short desc":"用于保存PDF矩形标注所截的图片","Set mindmap to center":"居中思维导图",save:"保存",cancel:"取消","Remove annotate space":"自动移除标注文字中的空格","Remove annotate space desc":"在中文环境下，某些pdf文字标注时，文字之间存在空格，可以开启该选项，将自动移除文字之间的空格","Get path of vault":"获取库的基础路径","Smooth movement":"开启支持思维导图节点支持平滑过渡效果","Smooth movement desc":"当点击引用节点时,节点跳转到同一思维导图的其他节点时的过渡效果","Support code block":"开启支持图文混排","Support code block desc":"支持在markdown文档中图文混排效果",toPng:"导出为PNG图片","Set pdf js path":"设置 pdfjs 插件路径","Please open a mind map":"请打开一个思维导图并重新执行此命令","Set up pdf js path success":"设置 pdfjs 插件路径成功，请重新启动 obsidian","Create new outline":"创建大纲","Copy node":"复制","Paste node":"粘贴","Fill color":"背景颜色","Stroke color":"外框颜色","Text color":"文字颜色","Text align":"对齐方式","Stroke width":"外框粗细","Stroke style":"外框样式",nodeColor:"节点设置面板颜色组",nodeColorDesc:"用于改变节点设置面板颜色组","Export to html":"导出思维导图为html文件","Change layout to fishLeft":"切换思维导图布局为左侧鱼骨图","Change layout to fishRight":"切换思维导图布局为右侧鱼骨图","Open as table":"打开为表格","get table html":"获取表格的HTML源码","get table markdown":"获取表格的 markdown 文本","Get pdf annotations":"导入PDF高亮标注","extract highlight success":"导入PDF高亮成功","Change basic mode to rich mode":"将 basic 模式转为 rich 模式","Change rich mode to basic mode":"将 rich 模式转为 basic 模式","Export pdf annotations":"导出 PDF 注释","Format of pdf highlight":"PDF 注释格式设置","Format of pdf highlight desc":"当导出 PDF 注释时，将按照该格式生成文件","Use new version of pdfjs":"切换至新版 pdfjs 插件","Use old version of pdfjs":"切换至旧版 pdfjs 插件",searchResult:"发现到 {{nodeNumber}} 个节点包含该关键字","Toggle search box":"打开或关闭搜索框","Fine tune height of annotate":"微调 PDF 标注高度","Fine tune height of annotate desc":"向上调整的距离 (px)","Fine tune height of annotate desc one":"向下调整的距离 (px)","Create hand drawn mindmap":"生成手绘模式的思维导图","Decode URI pdf link":"是否打开解码PDF链接","Decode URI pdf link desc":"如果你的 `annotate-target`被 `encodeURI`编码 , 可以打开该选项","Expand to first node level":"展开至第一级节点","Expand to second node level":"展开至第二级节点","Expand to third node level":"展开至第三级节点","Expand to all node level":"展开所有节点","Expand to fourth node level":"展开至第四级节点","Expand to fifth node level":"展开至第五级节点","Auto create node when annotate":"标注时自动生成思维导图节点","Auto create node when annotate desc":"当创建 pdf 标注时自动是否自动创建思维导图节点","Add child node":"添加子节点","Add brother node":"添加兄弟节点","Edit node":"编辑节点","Cancel edit node":"退出编辑节点","Delete node":"删除节点",Undo:"撤销",Redo:"恢复","Use custom short cut":"开启自定义快捷键","Use custom short cut desc":"支持思维导图设置自定义快捷键，目前支持如下命令（在 Ctrl + P 面板里）：添加节点、删除节点、编辑节点、取消编辑节点、撤销、恢复","PDF cache folder":"PDF 缓存目录","PDF cache folder desc":"当使用 PDF 标注工具打开在线 PDF 时，该 PDF 将自动缓存至该文件夹中，下次打开时将优先从该目录中读取数据","Folder of paste image":"粘贴图片文件夹","Folder of paste image desc":"设置文件夹路径，指向库中的某一文件夹，粘贴的图片将存入该文件夹中","Change basic to table mode":"打开 Basic 模式的思维导图为表格","Change basic to outline mode":"打开 Basic 模式为大纲","Saving data":"正在保存 ...",Saved:"已保存","Only copy annotate link":"开启支持只复制标注链接","Only copy annotate link desc":"当点击一个 PDF 标注时，只会复制链接","Saving image":"正在保存图片...","Auto set node to center when tab node of mindmap":"切换思维导图时自动居中节点","Auto set node to center when tab node of mindmap desc":"当使用上、下、左、右键切换节点时，自动居中节点","Auto open search box":"自动打开思维导图搜索框","Auto open search box desc":"当 obsidian 搜索中存在搜索条件，打开思维导图时自动打开搜索框，并触发思维导图搜索","Export to pdf":"导出思维导图为 PDF 文件","Please do this in a separate window":"请在独立窗口进行此操作，无法在主窗口执行","PDF save success":"PDF 保存成功","Add collapse node mark":"Basic 模式下自动添加折叠节点标记","Add collapse node mark desc":"Basic 模式下，保存思维导图时，自动在折叠的节点最后加入ID,用于下次打开可以恢复折叠原状","Change theme":"打开主题切换框","Close change theme":"关闭主题切换框","Can not change layout":"由于该节点的子节点存在归纳、外框、标注或者布局，所以无法转换为表格布局，防止数据丢失","Only use obsidian folder for pdfjs plugin":"支持 pdfjs 插件放在.obsidian 文件夹","Only use obsidian folder for pdfjs plugin desc":"在安卓或者ios系统支持将 pdfjs 插件放在库内的 .obsidian 文件夹","Generate mind maps by chatGTP":"智能生成思维导图(AI 大纲)","Get inspiration":"获取灵感(AI)",ChatGTPError:"AI 获取文本失败，请检查网络，重新尝试！",ChatGTPLoading:"AI 正在获取数据，请稍等...","ChatGTP appkey":"请输入 ChatGPT 的 apikey","ChatGTP appkey desc":"如果您没有这个Apikey 请至 ChatGPT 官网申请",ProxyServer:"网络代理","ProxyServer desc":"如果无法直接访问 OpenAI 的 api,可以使用网络代理","Generate mind maps by Q&A of chatGTP":"智能生成思维导图(AI 问答)","Annotate template":"标注格式","Annotate template desc":"当标注自动生成节点或者点击标注时，将以此格式生成标注，并复制到粘贴板","Support translate":"支持标注划词翻译","Support translate desc":"当做 pdf 标注时，划词时自动翻译","Google translate":"谷歌翻译","Google translate desc":"谷歌翻译设置","Baidu translate":"百度翻译","Baidu translate desc":"百度翻译设置","Youdao translate":"有道翻译","Youdao translate desc":"有道翻译设置","Translate appid":"翻译 Appid 或者 token","Translate appid desc":"请输入翻译的 AppId 或者 token","Translate secret":"翻译秘钥 secret","Translate secret desc":"请输入翻译秘钥 secret, 如果您是使用 token 之类的请求api，则该值可能不需要填写","Not have translations of pdf full text":"没有全文翻译文件，请重新翻译 PDF","Translate spend time":"正在翻译中，请等待，总共 （条数）： ","Translate success":"翻译完成","Parsing PDF structure":"正在解析 PDF 结构...","Parsing PDF structure error":"解析 PDF 出错","Full text translate":"全文翻译","Pdf in vault":"全文翻译暂时只支持库内的 pdf","Completed translation":"翻译已完成: ","Translation engine":"翻译引擎",baidu:"百度","Copy full text translations":"复制全文翻译到剪贴板","Mindmap is in read":"导图处于只读模式","Export to pdf (old version)":"导出导图为 PDF (v0.15.9)","Scale speed of mobile version":"移动端缩放速率","Scale speed of mobile version desc":"可以调整该值，使得移动端双指放大或者缩小变换流畅","Cover node":"遮挡节点文字","Cancel cover node":"取消遮挡节点文字","Export to xmind zen":"导出导图为 xmind zen 文件","Export xmind success":"导出 xmind zen 文件成功"},"zh-tw":{}}[e.moment.locale()];function r(t){return s||console.error("Error: mindmap locale not found",e.moment.locale()),s&&s[t]||n[t]}const o=/^(---)$.+?^(---)$.+?/ims,a=["---","","mindmap-plugin: basic","","---","",""].join("\n"),h=["---","","mindmap-plugin: rich","","---","",""].join("\n"),l=["---","","mindmap-plugin: basic","display-mode: outline","","---","",""].join("\n");function d(e,i,n,s,r,a,h,l,d,c){var u,p;return t(this,void 0,void 0,(function*(){var t=yield i.vault.adapter.read(n.path),d=s.querySelector(".markdown-embed");if(d){if(t=t.trim().replace(o,"")){const{root:e}=ds.transform(t);(m=ls(e)).isRoot=!0}else var m={id:os(),text:"Basic root",isRoot:!0,main:!0};var f=document.createElement("div");f.classList.add("mm-mindmap-container"),f.style.visibility="hidden",null===(u=s.querySelector(".markdown-embed-content"))||void 0===u||(u.style.display="none"),null===(p=s.querySelector(".markdown-embed-link"))||void 0===p||(p.style.zIndex="20"),d.appendChild(f),m.useScale=!1;var g=new Bi(m,f,h,!1);if(g.path=n.path,g._mode="basic",g.colors=a,g.parent=r,g._plugin=e,c?g.initTable(m):(g.init(),g.refresh()),!r)s.findAll(".internal-embed").forEach((e=>{const t=e.getAttribute("src"),s="string"==typeof t&&i.metadataCache.getFirstLinkpathDest(t,n.path);if(s&&"md"!==s.extension&&g){e.innerText="";var r=i.vault.getResourcePath(s);e.createEl("img",{attr:{src:r}},(t=>{e.hasAttribute("width")&&t.setAttribute("width",e.getAttribute("width")),e.hasAttribute("alt")&&t.setAttribute("alt",e.getAttribute("alt"))})),e.addClasses(["image-embed","is-loaded"])}})),s.querySelectorAll("img").forEach((e=>{e.onload=()=>{var t,i=null===(t=e.closest(".mm-node"))||void 0===t?void 0:t.getAttribute("data-id");if(i){var n=g.getNodeById(i);null==n||n.clearCacheData(),null==n||n.refreshBox(),g.timeOut&&clearTimeout(g.timeOut),g.timeOut=setTimeout((()=>{g.refresh()}),300)}},e.setAttribute("draggble","false")}));setTimeout((()=>{r||(g.refresh(),g.toDiv(!0),f.style.visibility="visible",g.center(),g.root.unSelect()),l&&l(g)}),900)}}))}function c(e,i,n,s,r,o,a,h,l){var d,c;return t(this,void 0,void 0,(function*(){var t=yield i.vault.adapter.read(n.path);if(p=s.querySelector(".markdown-embed")){var l=t.match(/^(\`\`\` json)$.+?^(\`\`\`)$.+?/ims);if(l&&l.length>0)var u=l[0].substring(8,l[0].length-4).trim();else u=JSON.stringify({mindData:[[{id:os(),text:"Root",isRoot:!0,main:!0,x:4e3,y:4e3,isExpand:!0,layout:{layoutName:"mindmap2",direct:"mindmap"}}]]});var p,m=document.createElement("div");if(m.classList.add("mm-mindmap-container"),m.style.visibility="hidden",null===(d=s.querySelector(".markdown-embed-content"))||void 0===d||(d.style.display="none"),null===(c=s.querySelector(".markdown-embed-link"))||void 0===c||(c.style.zIndex="20"),p=s.querySelector(".markdown-embed")){p.appendChild(m);var f=JSON.parse(u);f.useScale=!1;var g=new Bi(f,m,a,!1);if(g.path=n.path,g.colors=o,g.parent=r,g._mode="rich",g._plugin=e,g.initRich(f,{}),!r)s.findAll(".internal-embed").forEach((e=>{const t=e.getAttribute("src"),s="string"==typeof t&&i.metadataCache.getFirstLinkpathDest(t,n.path);if(s&&"md"!==s.extension&&g){e.innerText="";var r=i.vault.getResourcePath(s);e.createEl("img",{attr:{src:r}},(t=>{e.hasAttribute("width")&&t.setAttribute("width",e.getAttribute("width")),e.hasAttribute("alt")&&t.setAttribute("alt",e.getAttribute("alt"))})),e.addClasses(["image-embed","is-loaded"])}})),s.querySelectorAll("img").forEach((e=>{e.onload=()=>{var t,i=null===(t=e.closest(".mm-node"))||void 0===t?void 0:t.getAttribute("data-id");if(i){var n=g.getNodeById(i);n&&(n.clearCacheData(),n.refreshBox()),g.timeOut&&clearTimeout(g.timeOut),g.timeOut=setTimeout((()=>{g.refresh()}),300)}},e.setAttribute("draggble","false")}));setTimeout((()=>{r||(g.refresh(),g.toDiv(!0),m.style.visibility="visible",g.center(),g.root.unSelect()),h&&h(g)}),900)}}}))}function u(e,t,i){if(e&&e.length){const[n,s]=t,r=Math.PI/180*i,o=Math.cos(r),a=Math.sin(r);e.forEach((e=>{const[t,i]=e;e[0]=(t-n)*o-(i-s)*a+n,e[1]=(t-n)*a+(i-s)*o+s}))}}function p(e){const t=e[0],i=e[1];return Math.sqrt(Math.pow(t[0]-i[0],2)+Math.pow(t[1]-i[1],2))}function m(e,t){const i=t.hachureAngle+90;let n=t.hachureGap;n<0&&(n=4*t.strokeWidth),n=Math.max(n,.1);const s=[0,0];if(i)for(const t of e)u(t,s,i);const r=function(e,t){const i=[];for(const t of e){const e=[...t];e[0].join(",")!==e[e.length-1].join(",")&&e.push([e[0][0],e[0][1]]),e.length>2&&i.push(e)}const n=[];t=Math.max(t,.1);const s=[];for(const e of i)for(let t=0;t<e.length-1;t++){const i=e[t],n=e[t+1];if(i[1]!==n[1]){const e=Math.min(i[1],n[1]);s.push({ymin:e,ymax:Math.max(i[1],n[1]),x:e===i[1]?i[0]:n[0],islope:(n[0]-i[0])/(n[1]-i[1])})}}if(s.sort(((e,t)=>e.ymin<t.ymin?-1:e.ymin>t.ymin?1:e.x<t.x?-1:e.x>t.x?1:e.ymax===t.ymax?0:(e.ymax-t.ymax)/Math.abs(e.ymax-t.ymax))),!s.length)return n;let r=[],o=s[0].ymin;for(;r.length||s.length;){if(s.length){let e=-1;for(let t=0;t<s.length&&!(s[t].ymin>o);t++)e=t;s.splice(0,e+1).forEach((e=>{r.push({s:o,edge:e})}))}if(r=r.filter((e=>!(e.edge.ymax<=o))),r.sort(((e,t)=>e.edge.x===t.edge.x?0:(e.edge.x-t.edge.x)/Math.abs(e.edge.x-t.edge.x))),r.length>1)for(let e=0;e<r.length;e+=2){const t=e+1;if(t>=r.length)break;const i=r[e].edge,s=r[t].edge;n.push([[Math.round(i.x),o],[Math.round(s.x),o]])}o+=t,r.forEach((e=>{e.edge.x=e.edge.x+t*e.edge.islope}))}return n}(e,n);if(i){for(const t of e)u(t,s,-i);!function(e,t,i){const n=[];e.forEach((e=>n.push(...e))),u(n,t,i)}(r,s,-i)}return r}class f{constructor(e){this.helper=e}fillPolygons(e,t){return this._fillPolygons(e,t)}_fillPolygons(e,t){const i=m(e,t);return{type:"fillSketch",ops:this.renderLines(i,t)}}renderLines(e,t){const i=[];for(const n of e)i.push(...this.helper.doubleLineOps(n[0][0],n[0][1],n[1][0],n[1][1],t));return i}}class g extends f{fillPolygons(e,t){let i=t.hachureGap;i<0&&(i=4*t.strokeWidth),i=Math.max(i,.1);const n=m(e,Object.assign({},t,{hachureGap:i})),s=Math.PI/180*t.hachureAngle,r=[],o=.5*i*Math.cos(s),a=.5*i*Math.sin(s);for(const[e,t]of n)p([e,t])&&r.push([[e[0]-o,e[1]+a],[...t]],[[e[0]+o,e[1]-a],[...t]]);return{type:"fillSketch",ops:this.renderLines(r,t)}}}class v extends f{fillPolygons(e,t){const i=this._fillPolygons(e,t),n=Object.assign({},t,{hachureAngle:t.hachureAngle+90}),s=this._fillPolygons(e,n);return i.ops=i.ops.concat(s.ops),i}}class y{constructor(e){this.helper=e}fillPolygons(e,t){const i=m(e,t=Object.assign({},t,{hachureAngle:0}));return this.dotsOnLines(i,t)}dotsOnLines(e,t){const i=[];let n=t.hachureGap;n<0&&(n=4*t.strokeWidth),n=Math.max(n,.1);let s=t.fillWeight;s<0&&(s=t.strokeWidth/2);const r=n/4;for(const o of e){const e=p(o),a=e/n,h=Math.ceil(a)-1,l=e-h*n,d=(o[0][0]+o[1][0])/2-n/4,c=Math.min(o[0][1],o[1][1]);for(let e=0;e<h;e++){const o=c+l+e*n,a=d-r+2*Math.random()*r,h=o-r+2*Math.random()*r,u=this.helper.ellipse(a,h,s,s,t);i.push(...u.ops)}}return{type:"fillSketch",ops:i}}}class A{constructor(e){this.helper=e}fillPolygons(e,t){const i=m(e,t);return{type:"fillSketch",ops:this.dashedLine(i,t)}}dashedLine(e,t){const i=t.dashOffset<0?t.hachureGap<0?4*t.strokeWidth:t.hachureGap:t.dashOffset,n=t.dashGap<0?t.hachureGap<0?4*t.strokeWidth:t.hachureGap:t.dashGap,s=[];return e.forEach((e=>{const r=p(e),o=Math.floor(r/(i+n)),a=(r+n-o*(i+n))/2;let h=e[0],l=e[1];h[0]>l[0]&&(h=e[1],l=e[0]);const d=Math.atan((l[1]-h[1])/(l[0]-h[0]));for(let e=0;e<o;e++){const r=e*(i+n),o=r+i,l=[h[0]+r*Math.cos(d)+a*Math.cos(d),h[1]+r*Math.sin(d)+a*Math.sin(d)],c=[h[0]+o*Math.cos(d)+a*Math.cos(d),h[1]+o*Math.sin(d)+a*Math.sin(d)];s.push(...this.helper.doubleLineOps(l[0],l[1],c[0],c[1],t))}})),s}}class x{constructor(e){this.helper=e}fillPolygons(e,t){const i=t.hachureGap<0?4*t.strokeWidth:t.hachureGap,n=t.zigzagOffset<0?i:t.zigzagOffset,s=m(e,t=Object.assign({},t,{hachureGap:i+n}));return{type:"fillSketch",ops:this.zigzagLines(s,n,t)}}zigzagLines(e,t,i){const n=[];return e.forEach((e=>{const s=p(e),r=Math.round(s/(2*t));let o=e[0],a=e[1];o[0]>a[0]&&(o=e[1],a=e[0]);const h=Math.atan((a[1]-o[1])/(a[0]-o[0]));for(let e=0;e<r;e++){const s=2*e*t,r=2*(e+1)*t,a=Math.sqrt(2*Math.pow(t,2)),l=[o[0]+s*Math.cos(h),o[1]+s*Math.sin(h)],d=[o[0]+r*Math.cos(h),o[1]+r*Math.sin(h)],c=[l[0]+a*Math.cos(h+Math.PI/4),l[1]+a*Math.sin(h+Math.PI/4)];n.push(...this.helper.doubleLineOps(l[0],l[1],c[0],c[1],i),...this.helper.doubleLineOps(c[0],c[1],d[0],d[1],i))}})),n}}const b={};class w{constructor(e){this.seed=e}next(){return this.seed?(2**31-1&(this.seed=Math.imul(48271,this.seed)))/2**31:Math.random()}}const k={A:7,a:7,C:6,c:6,H:1,h:1,L:2,l:2,M:2,m:2,Q:4,q:4,S:4,s:4,T:2,t:2,V:1,v:1,Z:0,z:0};function C(e,t){return e.type===t}function E(e){const t=[],i=function(e){const t=new Array;for(;""!==e;)if(e.match(/^([ \t\r\n,]+)/))e=e.substr(RegExp.$1.length);else if(e.match(/^([aAcChHlLmMqQsStTvVzZ])/))t[t.length]={type:0,text:RegExp.$1},e=e.substr(RegExp.$1.length);else{if(!e.match(/^(([-+]?[0-9]+(\.[0-9]*)?|[-+]?\.[0-9]+)([eE][-+]?[0-9]+)?)/))return[];t[t.length]={type:1,text:`${parseFloat(RegExp.$1)}`},e=e.substr(RegExp.$1.length)}return t[t.length]={type:2,text:""},t}(e);let n="BOD",s=0,r=i[s];for(;!C(r,2);){let o=0;const a=[];if("BOD"===n){if("M"!==r.text&&"m"!==r.text)return E("M0,0"+e);s++,o=k[r.text],n=r.text}else C(r,1)?o=k[n]:(s++,o=k[r.text],n=r.text);if(!(s+o<i.length))throw new Error("Path data ended short");for(let e=s;e<s+o;e++){const t=i[e];if(!C(t,1))throw new Error("Param not a number: "+n+","+t.text);a[a.length]=+t.text}if("number"!=typeof k[n])throw new Error("Bad segment: "+n);{const e={key:n,data:a};t.push(e),s+=o,r=i[s],"M"===n&&(n="L"),"m"===n&&(n="l")}}return t}function D(e){let t=0,i=0,n=0,s=0;const r=[];for(const{key:o,data:a}of e)switch(o){case"M":r.push({key:"M",data:[...a]}),[t,i]=a,[n,s]=a;break;case"m":t+=a[0],i+=a[1],r.push({key:"M",data:[t,i]}),n=t,s=i;break;case"L":r.push({key:"L",data:[...a]}),[t,i]=a;break;case"l":t+=a[0],i+=a[1],r.push({key:"L",data:[t,i]});break;case"C":r.push({key:"C",data:[...a]}),t=a[4],i=a[5];break;case"c":{const e=a.map(((e,n)=>n%2?e+i:e+t));r.push({key:"C",data:e}),t=e[4],i=e[5];break}case"Q":r.push({key:"Q",data:[...a]}),t=a[2],i=a[3];break;case"q":{const e=a.map(((e,n)=>n%2?e+i:e+t));r.push({key:"Q",data:e}),t=e[2],i=e[3];break}case"A":r.push({key:"A",data:[...a]}),t=a[5],i=a[6];break;case"a":t+=a[5],i+=a[6],r.push({key:"A",data:[a[0],a[1],a[2],a[3],a[4],t,i]});break;case"H":r.push({key:"H",data:[...a]}),t=a[0];break;case"h":t+=a[0],r.push({key:"H",data:[t]});break;case"V":r.push({key:"V",data:[...a]}),i=a[0];break;case"v":i+=a[0],r.push({key:"V",data:[i]});break;case"S":r.push({key:"S",data:[...a]}),t=a[2],i=a[3];break;case"s":{const e=a.map(((e,n)=>n%2?e+i:e+t));r.push({key:"S",data:e}),t=e[2],i=e[3];break}case"T":r.push({key:"T",data:[...a]}),t=a[0],i=a[1];break;case"t":t+=a[0],i+=a[1],r.push({key:"T",data:[t,i]});break;case"Z":case"z":r.push({key:"Z",data:[]}),t=n,i=s}return r}function N(e){const t=[];let i="",n=0,s=0,r=0,o=0,a=0,h=0;for(const{key:l,data:d}of e){switch(l){case"M":t.push({key:"M",data:[...d]}),[n,s]=d,[r,o]=d;break;case"C":t.push({key:"C",data:[...d]}),n=d[4],s=d[5],a=d[2],h=d[3];break;case"L":t.push({key:"L",data:[...d]}),[n,s]=d;break;case"H":n=d[0],t.push({key:"L",data:[n,s]});break;case"V":s=d[0],t.push({key:"L",data:[n,s]});break;case"S":{let e=0,r=0;"C"===i||"S"===i?(e=n+(n-a),r=s+(s-h)):(e=n,r=s),t.push({key:"C",data:[e,r,...d]}),a=d[0],h=d[1],n=d[2],s=d[3];break}case"T":{const[e,r]=d;let o=0,l=0;"Q"===i||"T"===i?(o=n+(n-a),l=s+(s-h)):(o=n,l=s);const c=n+2*(o-n)/3,u=s+2*(l-s)/3,p=e+2*(o-e)/3,m=r+2*(l-r)/3;t.push({key:"C",data:[c,u,p,m,e,r]}),a=o,h=l,n=e,s=r;break}case"Q":{const[e,i,r,o]=d,l=n+2*(e-n)/3,c=s+2*(i-s)/3,u=r+2*(e-r)/3,p=o+2*(i-o)/3;t.push({key:"C",data:[l,c,u,p,r,o]}),a=e,h=i,n=r,s=o;break}case"A":{const e=Math.abs(d[0]),i=Math.abs(d[1]),r=d[2],o=d[3],a=d[4],h=d[5],l=d[6];if(0===e||0===i)t.push({key:"C",data:[n,s,h,l,h,l]}),n=h,s=l;else if(n!==h||s!==l){S(n,s,h,l,e,i,r,o,a).forEach((function(e){t.push({key:"C",data:e})})),n=h,s=l}break}case"Z":t.push({key:"Z",data:[]}),n=r,s=o}i=l}return t}function I(e,t,i){return[e*Math.cos(i)-t*Math.sin(i),e*Math.sin(i)+t*Math.cos(i)]}function S(e,t,i,n,s,r,o,a,h,l){const d=(c=o,Math.PI*c/180);var c;let u=[],p=0,m=0,f=0,g=0;if(l)[p,m,f,g]=l;else{[e,t]=I(e,t,-d),[i,n]=I(i,n,-d);const o=(e-i)/2,l=(t-n)/2;let c=o*o/(s*s)+l*l/(r*r);c>1&&(c=Math.sqrt(c),s*=c,r*=c);const u=s*s,v=r*r,y=u*v-u*l*l-v*o*o,A=u*l*l+v*o*o,x=(a===h?-1:1)*Math.sqrt(Math.abs(y/A));f=x*s*l/r+(e+i)/2,g=x*-r*o/s+(t+n)/2,p=Math.asin(parseFloat(((t-g)/r).toFixed(9))),m=Math.asin(parseFloat(((n-g)/r).toFixed(9))),e<f&&(p=Math.PI-p),i<f&&(m=Math.PI-m),p<0&&(p=2*Math.PI+p),m<0&&(m=2*Math.PI+m),h&&p>m&&(p-=2*Math.PI),!h&&m>p&&(m-=2*Math.PI)}let v=m-p;if(Math.abs(v)>120*Math.PI/180){const e=m,t=i,a=n;m=h&&m>p?p+120*Math.PI/180*1:p+120*Math.PI/180*-1,u=S(i=f+s*Math.cos(m),n=g+r*Math.sin(m),t,a,s,r,o,0,h,[m,e,f,g])}v=m-p;const y=Math.cos(p),A=Math.sin(p),x=Math.cos(m),b=Math.sin(m),w=Math.tan(v/4),k=4/3*s*w,C=4/3*r*w,E=[e,t],D=[e+k*A,t-C*y],N=[i+k*b,n-C*x],B=[i,n];if(D[0]=2*E[0]-D[0],D[1]=2*E[1]-D[1],l)return[D,N,B].concat(u);{u=[D,N,B].concat(u);const e=[];for(let t=0;t<u.length;t+=3){const i=I(u[t][0],u[t][1],d),n=I(u[t+1][0],u[t+1][1],d),s=I(u[t+2][0],u[t+2][1],d);e.push([i[0],i[1],n[0],n[1],s[0],s[1]])}return e}}const B={randOffset:function(e,t){return j(e,t)},randOffsetWithRange:function(e,t,i){return H(e,t,i)},ellipse:function(e,t,i,n,s){const r=O(i,n,s);return R(e,t,s,r).opset},doubleLineOps:function(e,t,i,n,s){return q(e,t,i,n,s,!0)}};function T(e,t,i,n,s){return{type:"path",ops:q(e,t,i,n,s)}}function M(e,t,i){const n=(e||[]).length;if(n>2){const s=[];for(let t=0;t<n-1;t++)s.push(...q(e[t][0],e[t][1],e[t+1][0],e[t+1][1],i));return t&&s.push(...q(e[n-1][0],e[n-1][1],e[0][0],e[0][1],i)),{type:"path",ops:s}}return 2===n?T(e[0][0],e[0][1],e[1][0],e[1][1],i):{type:"path",ops:[]}}function L(e,t,i,n,s){return function(e,t){return M(e,!0,t)}([[e,t],[e+i,t],[e+i,t+n],[e,t+n]],s)}function P(e,t){let i=U(e,1*(1+.2*t.roughness),t);if(!t.disableMultiStroke){const n=U(e,1.5*(1+.22*t.roughness),function(e){const t=Object.assign({},e);t.randomizer=void 0,e.seed&&(t.seed=e.seed+1);return t}(t));i=i.concat(n)}return{type:"path",ops:i}}function O(e,t,i){const n=Math.sqrt(2*Math.PI*Math.sqrt((Math.pow(e/2,2)+Math.pow(t/2,2))/2)),s=Math.ceil(Math.max(i.curveStepCount,i.curveStepCount/Math.sqrt(200)*n)),r=2*Math.PI/s;let o=Math.abs(e/2),a=Math.abs(t/2);const h=1-i.curveFitting;return o+=j(o*h,i),a+=j(a*h,i),{increment:r,rx:o,ry:a}}function R(e,t,i,n){const[s,r]=X(n.increment,e,t,n.rx,n.ry,1,n.increment*H(.1,H(.4,1,i),i),i);let o=W(s,null,i);if(!i.disableMultiStroke&&0!==i.roughness){const[s]=X(n.increment,e,t,n.rx,n.ry,1.5,0,i),r=W(s,null,i);o=o.concat(r)}return{estimatedPoints:r,opset:{type:"path",ops:o}}}function F(e,t,i,n,s,r,o,a,h){const l=e,d=t;let c=Math.abs(i/2),u=Math.abs(n/2);c+=j(.01*c,h),u+=j(.01*u,h);let p=s,m=r;for(;p<0;)p+=2*Math.PI,m+=2*Math.PI;m-p>2*Math.PI&&(p=0,m=2*Math.PI);const f=2*Math.PI/h.curveStepCount,g=Math.min(f/2,(m-p)/2),v=G(g,l,d,c,u,p,m,1,h);if(!h.disableMultiStroke){const e=G(g,l,d,c,u,p,m,1.5,h);v.push(...e)}return o&&(a?v.push(...q(l,d,l+c*Math.cos(p),d+u*Math.sin(p),h),...q(l,d,l+c*Math.cos(m),d+u*Math.sin(m),h)):v.push({op:"lineTo",data:[l,d]},{op:"lineTo",data:[l+c*Math.cos(p),d+u*Math.sin(p)]})),{type:"path",ops:v}}function _(e,t){const i=[];for(const n of e)if(n.length){const e=t.maxRandomnessOffset||0,s=n.length;if(s>2){i.push({op:"move",data:[n[0][0]+j(e,t),n[0][1]+j(e,t)]});for(let r=1;r<s;r++)i.push({op:"lineTo",data:[n[r][0]+j(e,t),n[r][1]+j(e,t)]})}}return{type:"fillPath",ops:i}}function z(e,t){return function(e,t){let i=e.fillStyle||"hachure";if(!b[i])switch(i){case"zigzag":b[i]||(b[i]=new g(t));break;case"cross-hatch":b[i]||(b[i]=new v(t));break;case"dots":b[i]||(b[i]=new y(t));break;case"dashed":b[i]||(b[i]=new A(t));break;case"zigzag-line":b[i]||(b[i]=new x(t));break;case"hachure":default:i="hachure",b[i]||(b[i]=new f(t))}return b[i]}(t,B).fillPolygons(e,t)}function Q(e){return e.randomizer||(e.randomizer=new w(e.seed||0)),e.randomizer.next()}function H(e,t,i,n=1){return i.roughness*n*(Q(i)*(t-e)+e)}function j(e,t,i=1){return H(-e,e,t,i)}function q(e,t,i,n,s,r=!1){const o=r?s.disableMultiStrokeFill:s.disableMultiStroke,a=V(e,t,i,n,s,!0,!1);if(o)return a;const h=V(e,t,i,n,s,!0,!0);return a.concat(h)}function V(e,t,i,n,s,r,o){const a=Math.pow(e-i,2)+Math.pow(t-n,2),h=Math.sqrt(a);let l=1;l=h<200?1:h>500?.4:-.0016668*h+1.233334;let d=s.maxRandomnessOffset||0;d*d*100>a&&(d=h/10);const c=d/2,u=.2+.2*Q(s);let p=s.bowing*s.maxRandomnessOffset*(n-t)/200,m=s.bowing*s.maxRandomnessOffset*(e-i)/200;p=j(p,s,l),m=j(m,s,l);const f=[],g=()=>j(c,s,l),v=()=>j(d,s,l),y=s.preserveVertices;return r&&(o?f.push({op:"move",data:[e+(y?0:g()),t+(y?0:g())]}):f.push({op:"move",data:[e+(y?0:j(d,s,l)),t+(y?0:j(d,s,l))]})),o?f.push({op:"bcurveTo",data:[p+e+(i-e)*u+g(),m+t+(n-t)*u+g(),p+e+2*(i-e)*u+g(),m+t+2*(n-t)*u+g(),i+(y?0:g()),n+(y?0:g())]}):f.push({op:"bcurveTo",data:[p+e+(i-e)*u+v(),m+t+(n-t)*u+v(),p+e+2*(i-e)*u+v(),m+t+2*(n-t)*u+v(),i+(y?0:v()),n+(y?0:v())]}),f}function U(e,t,i){const n=[];n.push([e[0][0]+j(t,i),e[0][1]+j(t,i)]),n.push([e[0][0]+j(t,i),e[0][1]+j(t,i)]);for(let s=1;s<e.length;s++)n.push([e[s][0]+j(t,i),e[s][1]+j(t,i)]),s===e.length-1&&n.push([e[s][0]+j(t,i),e[s][1]+j(t,i)]);return W(n,null,i)}function W(e,t,i){const n=e.length,s=[];if(n>3){const r=[],o=1-i.curveTightness;s.push({op:"move",data:[e[1][0],e[1][1]]});for(let t=1;t+2<n;t++){const i=e[t];r[0]=[i[0],i[1]],r[1]=[i[0]+(o*e[t+1][0]-o*e[t-1][0])/6,i[1]+(o*e[t+1][1]-o*e[t-1][1])/6],r[2]=[e[t+1][0]+(o*e[t][0]-o*e[t+2][0])/6,e[t+1][1]+(o*e[t][1]-o*e[t+2][1])/6],r[3]=[e[t+1][0],e[t+1][1]],s.push({op:"bcurveTo",data:[r[1][0],r[1][1],r[2][0],r[2][1],r[3][0],r[3][1]]})}if(t&&2===t.length){const e=i.maxRandomnessOffset;s.push({op:"lineTo",data:[t[0]+j(e,i),t[1]+j(e,i)]})}}else 3===n?(s.push({op:"move",data:[e[1][0],e[1][1]]}),s.push({op:"bcurveTo",data:[e[1][0],e[1][1],e[2][0],e[2][1],e[2][0],e[2][1]]})):2===n&&s.push(...q(e[0][0],e[0][1],e[1][0],e[1][1],i));return s}function X(e,t,i,n,s,r,o,a){const h=[],l=[];if(0===a.roughness){e/=4,l.push([t+n*Math.cos(-e),i+s*Math.sin(-e)]);for(let r=0;r<=2*Math.PI;r+=e){const e=[t+n*Math.cos(r),i+s*Math.sin(r)];h.push(e),l.push(e)}l.push([t+n*Math.cos(0),i+s*Math.sin(0)]),l.push([t+n*Math.cos(e),i+s*Math.sin(e)])}else{const d=j(.5,a)-Math.PI/2;l.push([j(r,a)+t+.9*n*Math.cos(d-e),j(r,a)+i+.9*s*Math.sin(d-e)]);const c=2*Math.PI+d-.01;for(let o=d;o<c;o+=e){const e=[j(r,a)+t+n*Math.cos(o),j(r,a)+i+s*Math.sin(o)];h.push(e),l.push(e)}l.push([j(r,a)+t+n*Math.cos(d+2*Math.PI+.5*o),j(r,a)+i+s*Math.sin(d+2*Math.PI+.5*o)]),l.push([j(r,a)+t+.98*n*Math.cos(d+o),j(r,a)+i+.98*s*Math.sin(d+o)]),l.push([j(r,a)+t+.9*n*Math.cos(d+.5*o),j(r,a)+i+.9*s*Math.sin(d+.5*o)])}return[l,h]}function G(e,t,i,n,s,r,o,a,h){const l=r+j(.1,h),d=[];d.push([j(a,h)+t+.9*n*Math.cos(l-e),j(a,h)+i+.9*s*Math.sin(l-e)]);for(let r=l;r<=o;r+=e)d.push([j(a,h)+t+n*Math.cos(r),j(a,h)+i+s*Math.sin(r)]);return d.push([t+n*Math.cos(o),i+s*Math.sin(o)]),d.push([t+n*Math.cos(o),i+s*Math.sin(o)]),W(d,null,h)}function Y(e,t,i,n,s,r,o,a){const h=[],l=[a.maxRandomnessOffset||1,(a.maxRandomnessOffset||1)+.3];let d=[0,0];const c=a.disableMultiStroke?1:2,u=a.preserveVertices;for(let p=0;p<c;p++)0===p?h.push({op:"move",data:[o[0],o[1]]}):h.push({op:"move",data:[o[0]+(u?0:j(l[0],a)),o[1]+(u?0:j(l[0],a))]}),d=u?[s,r]:[s+j(l[p],a),r+j(l[p],a)],h.push({op:"bcurveTo",data:[e+j(l[p],a),t+j(l[p],a),i+j(l[p],a),n+j(l[p],a),d[0],d[1]]});return h}function K(e){return[...e]}function Z(e,t){return Math.pow(e[0]-t[0],2)+Math.pow(e[1]-t[1],2)}function J(e,t,i){const n=Z(t,i);if(0===n)return Z(e,t);let s=((e[0]-t[0])*(i[0]-t[0])+(e[1]-t[1])*(i[1]-t[1]))/n;return s=Math.max(0,Math.min(1,s)),Z(e,$(t,i,s))}function $(e,t,i){return[e[0]+(t[0]-e[0])*i,e[1]+(t[1]-e[1])*i]}function ee(e,t,i,n){const s=n||[];if(function(e,t){const i=e[t+0],n=e[t+1],s=e[t+2],r=e[t+3];let o=3*n[0]-2*i[0]-r[0];o*=o;let a=3*n[1]-2*i[1]-r[1];a*=a;let h=3*s[0]-2*r[0]-i[0];h*=h;let l=3*s[1]-2*r[1]-i[1];return l*=l,o<h&&(o=h),a<l&&(a=l),o+a}(e,t)<i){const i=e[t+0];if(s.length){(r=s[s.length-1],o=i,Math.sqrt(Z(r,o)))>1&&s.push(i)}else s.push(i);s.push(e[t+3])}else{const n=.5,r=e[t+0],o=e[t+1],a=e[t+2],h=e[t+3],l=$(r,o,n),d=$(o,a,n),c=$(a,h,n),u=$(l,d,n),p=$(d,c,n),m=$(u,p,n);ee([r,l,u,m],0,i,s),ee([m,p,c,h],0,i,s)}var r,o;return s}function te(e,t){return ie(e,0,e.length,t)}function ie(e,t,i,n,s){const r=s||[],o=e[t],a=e[i-1];let h=0,l=1;for(let n=t+1;n<i-1;++n){const t=J(e[n],o,a);t>h&&(h=t,l=n)}return Math.sqrt(h)>n?(ie(e,t,l+1,n,r),ie(e,l,i,n,r)):(r.length||r.push(o),r.push(a)),r}function ne(e,t=.15,i){const n=[],s=(e.length-1)/3;for(let i=0;i<s;i++){ee(e,3*i,t,n)}return i&&i>0?ie(n,0,n.length,i):n}const se="none";class re{constructor(e){this.defaultOptions={maxRandomnessOffset:2,roughness:1,bowing:1,stroke:"#000",strokeWidth:1,curveTightness:0,curveFitting:.95,curveStepCount:9,fillStyle:"hachure",fillWeight:-1,hachureAngle:-41,hachureGap:-1,dashOffset:-1,dashGap:-1,zigzagOffset:-1,seed:0,disableMultiStroke:!1,disableMultiStrokeFill:!1,preserveVertices:!1},this.config=e||{},this.config.options&&(this.defaultOptions=this._o(this.config.options))}static newSeed(){return Math.floor(Math.random()*2**31)}_o(e){return e?Object.assign({},this.defaultOptions,e):this.defaultOptions}_d(e,t,i){return{shape:e,sets:t||[],options:i||this.defaultOptions}}line(e,t,i,n,s){const r=this._o(s);return this._d("line",[T(e,t,i,n,r)],r)}rectangle(e,t,i,n,s){const r=this._o(s),o=[],a=L(e,t,i,n,r);if(r.fill){const s=[[e,t],[e+i,t],[e+i,t+n],[e,t+n]];"solid"===r.fillStyle?o.push(_([s],r)):o.push(z([s],r))}return r.stroke!==se&&o.push(a),this._d("rectangle",o,r)}ellipse(e,t,i,n,s){const r=this._o(s),o=[],a=O(i,n,r),h=R(e,t,r,a);if(r.fill)if("solid"===r.fillStyle){const i=R(e,t,r,a).opset;i.type="fillPath",o.push(i)}else o.push(z([h.estimatedPoints],r));return r.stroke!==se&&o.push(h.opset),this._d("ellipse",o,r)}circle(e,t,i,n){const s=this.ellipse(e,t,i,i,n);return s.shape="circle",s}linearPath(e,t){const i=this._o(t);return this._d("linearPath",[M(e,!1,i)],i)}arc(e,t,i,n,s,r,o=!1,a){const h=this._o(a),l=[],d=F(e,t,i,n,s,r,o,!0,h);if(o&&h.fill)if("solid"===h.fillStyle){const o=Object.assign({},h);o.disableMultiStroke=!0;const a=F(e,t,i,n,s,r,!0,!1,o);a.type="fillPath",l.push(a)}else l.push(function(e,t,i,n,s,r,o){const a=e,h=t;let l=Math.abs(i/2),d=Math.abs(n/2);l+=j(.01*l,o),d+=j(.01*d,o);let c=s,u=r;for(;c<0;)c+=2*Math.PI,u+=2*Math.PI;u-c>2*Math.PI&&(c=0,u=2*Math.PI);const p=(u-c)/o.curveStepCount,m=[];for(let e=c;e<=u;e+=p)m.push([a+l*Math.cos(e),h+d*Math.sin(e)]);return m.push([a+l*Math.cos(u),h+d*Math.sin(u)]),m.push([a,h]),z([m],o)}(e,t,i,n,s,r,h));return h.stroke!==se&&l.push(d),this._d("arc",l,h)}curve(e,t){const i=this._o(t),n=[],s=P(e,i);if(i.fill&&i.fill!==se&&e.length>=3){const t=ne(function(e,t=0){const i=e.length;if(i<3)throw new Error("A curve must have at least three points.");const n=[];if(3===i)n.push(K(e[0]),K(e[1]),K(e[2]),K(e[2]));else{const i=[];i.push(e[0],e[0]);for(let t=1;t<e.length;t++)i.push(e[t]),t===e.length-1&&i.push(e[t]);const s=[],r=1-t;n.push(K(i[0]));for(let e=1;e+2<i.length;e++){const t=i[e];s[0]=[t[0],t[1]],s[1]=[t[0]+(r*i[e+1][0]-r*i[e-1][0])/6,t[1]+(r*i[e+1][1]-r*i[e-1][1])/6],s[2]=[i[e+1][0]+(r*i[e][0]-r*i[e+2][0])/6,i[e+1][1]+(r*i[e][1]-r*i[e+2][1])/6],s[3]=[i[e+1][0],i[e+1][1]],n.push(s[1],s[2],s[3])}}return n}(e),10,(1+i.roughness)/2);"solid"===i.fillStyle?n.push(_([t],i)):n.push(z([t],i))}return i.stroke!==se&&n.push(s),this._d("curve",n,i)}polygon(e,t){const i=this._o(t),n=[],s=M(e,!0,i);return i.fill&&("solid"===i.fillStyle?n.push(_([e],i)):n.push(z([e],i))),i.stroke!==se&&n.push(s),this._d("polygon",n,i)}path(e,t){const i=this._o(t),n=[];if(!e)return this._d("path",n,i);e=(e||"").replace(/\n/g," ").replace(/(-\s)/g,"-").replace("/(ss)/g"," ");const s=i.fill&&"transparent"!==i.fill&&i.fill!==se,r=i.stroke!==se,o=!!(i.simplification&&i.simplification<1),a=function(e,t,i){const n=N(D(E(e))),s=[];let r=[],o=[0,0],a=[];const h=()=>{a.length>=4&&r.push(...ne(a,t)),a=[]},l=()=>{h(),r.length&&(s.push(r),r=[])};for(const{key:e,data:t}of n)switch(e){case"M":l(),o=[t[0],t[1]],r.push(o);break;case"L":h(),r.push([t[0],t[1]]);break;case"C":if(!a.length){const e=r.length?r[r.length-1]:o;a.push([e[0],e[1]])}a.push([t[0],t[1]]),a.push([t[2],t[3]]),a.push([t[4],t[5]]);break;case"Z":h(),r.push([o[0],o[1]])}if(l(),!i)return s;const d=[];for(const e of s){const t=te(e,i);t.length&&d.push(t)}return d}(e,1,o?4-4*i.simplification:(1+i.roughness)/2);return s&&("solid"===i.fillStyle?n.push(_(a,i)):n.push(z(a,i))),r&&(o?a.forEach((e=>{n.push(M(e,!1,i))})):n.push(function(e,t){const i=N(D(E(e))),n=[];let s=[0,0],r=[0,0];for(const{key:e,data:o}of i)switch(e){case"M":{const e=1*(t.maxRandomnessOffset||0),i=t.preserveVertices;n.push({op:"move",data:o.map((n=>n+(i?0:j(e,t))))}),r=[o[0],o[1]],s=[o[0],o[1]];break}case"L":n.push(...q(r[0],r[1],o[0],o[1],t)),r=[o[0],o[1]];break;case"C":{const[e,i,s,a,h,l]=o;n.push(...Y(e,i,s,a,h,l,r,t)),r=[h,l];break}case"Z":n.push(...q(r[0],r[1],s[0],s[1],t)),r=[s[0],s[1]]}return{type:"path",ops:n}}(e,i))),this._d("path",n,i)}opsToPath(e,t){let i="";for(const n of e.ops){const e="number"==typeof t&&t>=0?n.data.map((e=>+e.toFixed(t))):n.data;switch(n.op){case"move":i+=`M${e[0]} ${e[1]} `;break;case"bcurveTo":i+=`C${e[0]} ${e[1]}, ${e[2]} ${e[3]}, ${e[4]} ${e[5]} `;break;case"lineTo":i+=`L${e[0]} ${e[1]} `}}return i.trim()}toPaths(e){const t=e.sets||[],i=e.options||this.defaultOptions,n=[];for(const e of t){let t=null;switch(e.type){case"path":t={d:this.opsToPath(e),stroke:i.stroke,strokeWidth:i.strokeWidth,fill:se};break;case"fillPath":t={d:this.opsToPath(e),stroke:se,strokeWidth:0,fill:i.fill||se};break;case"fillSketch":t=this.fillSketch(e,i)}t&&n.push(t)}return n}fillSketch(e,t){let i=t.fillWeight;return i<0&&(i=t.strokeWidth/2),{d:this.opsToPath(e),stroke:t.fill||se,strokeWidth:i,fill:se}}}class oe{constructor(e,t){this.canvas=e,this.ctx=this.canvas.getContext("2d"),this.gen=new re(t)}draw(e){const t=e.sets||[],i=e.options||this.getDefaultOptions(),n=this.ctx,s=e.options.fixedDecimalPlaceDigits;for(const r of t)switch(r.type){case"path":n.save(),n.strokeStyle="none"===i.stroke?"transparent":i.stroke,n.lineWidth=i.strokeWidth,i.strokeLineDash&&n.setLineDash(i.strokeLineDash),i.strokeLineDashOffset&&(n.lineDashOffset=i.strokeLineDashOffset),this._drawToContext(n,r,s),n.restore();break;case"fillPath":{n.save(),n.fillStyle=i.fill||"";const t="curve"===e.shape||"polygon"===e.shape||"path"===e.shape?"evenodd":"nonzero";this._drawToContext(n,r,s,t),n.restore();break}case"fillSketch":this.fillSketch(n,r,i)}}fillSketch(e,t,i){let n=i.fillWeight;n<0&&(n=i.strokeWidth/2),e.save(),i.fillLineDash&&e.setLineDash(i.fillLineDash),i.fillLineDashOffset&&(e.lineDashOffset=i.fillLineDashOffset),e.strokeStyle=i.fill||"",e.lineWidth=n,this._drawToContext(e,t,i.fixedDecimalPlaceDigits),e.restore()}_drawToContext(e,t,i,n="nonzero"){e.beginPath();for(const n of t.ops){const t="number"==typeof i&&i>=0?n.data.map((e=>+e.toFixed(i))):n.data;switch(n.op){case"move":e.moveTo(t[0],t[1]);break;case"bcurveTo":e.bezierCurveTo(t[0],t[1],t[2],t[3],t[4],t[5]);break;case"lineTo":e.lineTo(t[0],t[1])}}"fillPath"===t.type?e.fill(n):e.stroke()}get generator(){return this.gen}getDefaultOptions(){return this.gen.defaultOptions}line(e,t,i,n,s){const r=this.gen.line(e,t,i,n,s);return this.draw(r),r}rectangle(e,t,i,n,s){const r=this.gen.rectangle(e,t,i,n,s);return this.draw(r),r}ellipse(e,t,i,n,s){const r=this.gen.ellipse(e,t,i,n,s);return this.draw(r),r}circle(e,t,i,n){const s=this.gen.circle(e,t,i,n);return this.draw(s),s}linearPath(e,t){const i=this.gen.linearPath(e,t);return this.draw(i),i}polygon(e,t){const i=this.gen.polygon(e,t);return this.draw(i),i}arc(e,t,i,n,s,r,o=!1,a){const h=this.gen.arc(e,t,i,n,s,r,o,a);return this.draw(h),h}curve(e,t){const i=this.gen.curve(e,t);return this.draw(i),i}path(e,t){const i=this.gen.path(e,t);return this.draw(i),i}}const ae="http://www.w3.org/2000/svg";class he{constructor(e,t){this.svg=e,this.gen=new re(t)}draw(e){const t=e.sets||[],i=e.options||this.getDefaultOptions(),n=this.svg.ownerDocument||window.document,s=n.createElementNS(ae,"g"),r=e.options.fixedDecimalPlaceDigits;for(const o of t){let t=null;switch(o.type){case"path":t=n.createElementNS(ae,"path"),t.setAttribute("d",this.opsToPath(o,r)),t.setAttribute("stroke",i.stroke),t.setAttribute("stroke-width",i.strokeWidth+""),t.setAttribute("fill","none"),i.strokeLineDash&&t.setAttribute("stroke-dasharray",i.strokeLineDash.join(" ").trim()),i.strokeLineDashOffset&&t.setAttribute("stroke-dashoffset",`${i.strokeLineDashOffset}`);break;case"fillPath":t=n.createElementNS(ae,"path"),t.setAttribute("d",this.opsToPath(o,r)),t.setAttribute("stroke","none"),t.setAttribute("stroke-width","0"),t.setAttribute("fill",i.fill||""),"curve"!==e.shape&&"polygon"!==e.shape||t.setAttribute("fill-rule","evenodd");break;case"fillSketch":t=this.fillSketch(n,o,i)}t&&s.appendChild(t)}return s}fillSketch(e,t,i){let n=i.fillWeight;n<0&&(n=i.strokeWidth/2);const s=e.createElementNS(ae,"path");return s.setAttribute("d",this.opsToPath(t,i.fixedDecimalPlaceDigits)),s.setAttribute("stroke",i.fill||""),s.setAttribute("stroke-width",n+""),s.setAttribute("fill","none"),i.fillLineDash&&s.setAttribute("stroke-dasharray",i.fillLineDash.join(" ").trim()),i.fillLineDashOffset&&s.setAttribute("stroke-dashoffset",`${i.fillLineDashOffset}`),s}get generator(){return this.gen}getDefaultOptions(){return this.gen.defaultOptions}opsToPath(e,t){return this.gen.opsToPath(e,t)}line(e,t,i,n,s){const r=this.gen.line(e,t,i,n,s);return this.draw(r)}rectangle(e,t,i,n,s){const r=this.gen.rectangle(e,t,i,n,s);return this.draw(r)}ellipse(e,t,i,n,s){const r=this.gen.ellipse(e,t,i,n,s);return this.draw(r)}circle(e,t,i,n){const s=this.gen.circle(e,t,i,n);return this.draw(s)}linearPath(e,t){const i=this.gen.linearPath(e,t);return this.draw(i)}polygon(e,t){const i=this.gen.polygon(e,t);return this.draw(i)}arc(e,t,i,n,s,r,o=!1,a){const h=this.gen.arc(e,t,i,n,s,r,o,a);return this.draw(h)}curve(e,t){const i=this.gen.curve(e,t);return this.draw(i)}path(e,t){const i=this.gen.path(e,t);return this.draw(i)}}var le={canvas:(e,t)=>new oe(e,t),svg:(e,t)=>new he(e,t),generator:e=>new re(e),newSeed:()=>re.newSeed()};function de(e){if(window.getSelection){e.focus();var t=e.win.getSelection();try{t.selectAllChildren(e),t.collapseToEnd()}catch(e){}}}class ce{constructor(e,t){this.box={x:0,y:0,width:0,height:0},this.name="node",this.isExpand=!0,this.isSelect=!1,this.children=[],this.isHide=!1,this.isEdit=!1,this._barDom=null,this.callout=null,this.wireFrames=[],this.summaries=[],this.induce=null,this.wireFrame=null,this.layout=null,this.wfs=[],this.induces=[],this.belongInduce=null,this._wireFrames=[],this._summaries=[],this._removeLink=null,this.shouldRender=!0,this.containBar=!1,this.tNode=null,this._shapeDom=null,this._mathTime=null,this._noteTab=null,this.coverDom=null,this._hasImage=null,this._hasLink="",this.data=e,this.mindmap=t,this.data.stroke&&(this.stroke=this.data.stroke),this.data.style&&(this.style=Object.assign({},this.style,this.data.style)),this.initDom()}getId(){return this.data.id}getParent(){return this.parent||null}initDom(){this.containEl=document.createElement("div"),this.containEl.classList.add("mm-node"),this.containEl.setAttribute("contentEditable","false"),this.containEl.setAttribute("tabIndex","-1"),this.containEl.setAttribute("data-id",this.data.id),this.containEl.setAttribute("draggable","false"),this.assistDom=document.createElement("div"),this.assistDom.classList.add("mm-node-assist"),this.contentEl=document.createElement("div"),this.contentEl.classList.add("mm-node-content"),this.containEl.appendChild(this.contentEl),this.contentEl.appendChild(this.assistDom),this.editDom=document.createElement("div"),this.editDom.classList.add("mm-node-edit"),this.contentEl.appendChild(this.editDom),this.plgDom=document.createElement("div"),this.plgDom.classList.add("mm-note-dom"),this.contentEl.appendChild(this.plgDom),this.initNodeBar(),this.updateAnnotate(),this.data.note&&this.updateNote(),this.data.isRoot&&(this.containEl.classList.add("mm-root"),this.isRoot=!0),this.setStyle(),this.parseText(),this.data.cover&&this.createCoverDom()}createCoverDom(){var e=document.createElement("div");this.containEl.appendChild(e),e.classList.add("mm-node-cover"),this.coverDom=e}setCoverText(e){e?(this.data.cover=!0,this.coverDom||this.createCoverDom()):(this.data.cover=!1,this.containEl.contains(this.coverDom)&&(this.containEl.removeChild(this.coverDom),this.coverDom=null))}initNodeBar(){this._barDom=document.createElement("div"),this._barDom.classList.add("mm-node-bar"),this.containEl.appendChild(this._barDom)}parseText(){var t;e.MarkdownRenderer.renderMarkdown(this.data.text,this.editDom,this.mindmap.path||"",this.mindmap._plugin||(null===(t=this.mindmap.view)||void 0===t?void 0:t.plugin)).then((()=>{this.data.mdText=this.editDom.innerHTML,this.refreshBox(),this.mindmap&&this.mindmap.emit("initNode",{}),this._delay()}))}isMindmap(e){if(e&&e.frontmatter){var t=e.frontmatter["mindmap-plugin"];return"rich"==t||"basic"==t}return!1}isMindmapRichMode(e){return!!(e&&e.frontmatter&&e.frontmatter["mindmap-plugin"]&&"rich"==e.frontmatter["mindmap-plugin"])}_deleyRefreshLayout(e,t){if(e&&t){var i=(e=e.tNode?e.tNode:e).getRootLayout()||t.mmLayout,n=t._delayRefresh.filter((e=>e.layout==i));if(n&&n.length)n[0].timeOut&&clearTimeout(n[0].timeOut),n[0].timeOut=setTimeout((()=>{t.emit("renderEditNode",{node:e})}),800);else{if(!i)return;t._delayRefresh.push({node:e,layout:i,timeOut:setTimeout((()=>{t.emit("renderEditNode",{node:e})}),800)})}t._delayRefresh.length>20&&(t._delayRefresh=[])}}_refreshImage(e,t){var i=this;e.findAll(".internal-embed").forEach((e=>{const n=e.getAttribute("src");if(n.startsWith("http"))return;const s="string"==typeof n&&this.mindmap.view&&this.mindmap.view.app&&this.mindmap.view.app.metadataCache.getFirstLinkpathDest(n,this.mindmap.path);if(s&&"md"!==s.extension&&t){e.innerText="";var r=this.mindmap.view.app.vault.getResourcePath(s);e.createEl("img",{attr:{src:r}},(t=>{i._hasImage=t,e.hasAttribute("width")&&t.setAttribute("width",e.getAttribute("width")),e.hasAttribute("alt")&&t.setAttribute("alt",e.getAttribute("alt"))})),e.addClasses(["image-embed","is-loaded"])}})),e.querySelectorAll("img").forEach((e=>{var i;e.onload||(e.onload=()=>{var i,n=null===(i=e.closest(".mm-node"))||void 0===i?void 0:i.getAttribute("data-id");if(n){var s=t.getNodeById(n);s&&(s.clearCacheData(),s.refreshBox(),this._deleyRefreshLayout(s,t))}}),e.setAttribute("draggble","false");var n=null===(i=e.closest(".mm-node"))||void 0===i?void 0:i.getAttribute("data-id");if(n){var s=t.getNodeById(n);s&&(s.clearCacheData(),s.refreshBox(),this._deleyRefreshLayout(s,t))}}))}_createHandDrawFill(){var e=this.getLevel();if(this.mindmap&&this.mindmap.useHandMode&&e<=1){var t=this.mindmap._rc||le.svg(this.mindmap.draw),i=!!document.querySelector(".theme-dark")||!1;this.shapeSvg&&this.mindmap.draw.node.removeChild(this.shapeSvg);var n=this.getBox(),s=0==e?"solid":"sunburst",r=0==e?"1":"2",o=i?"#fff":"rgb(0, 170, 255)",a=i?"#333":"#000";this.shapeSvg=t.rectangle(n.x,n.y,n.width,n.height,{fill:this.stroke||this.data.stroke||o,fillStyle:s,stroke:this.stroke||this.data.stroke||a,fillWeight:r}),this.mindmap.draw.node.appendChild(this.shapeSvg)}}getImage(){return this._hasImage}getLink(){var e="",i=!1;return this.editDom.findAll("a").forEach((n=>t(this,void 0,void 0,(function*(){e=n.getAttribute("href"),i=!(!n.getAttribute("class")||"internal-link"!=n.getAttribute("class"))})))),{isMd:i,link:e}}_delay(){var i=this;this.editDom.style.overflow="",this.editDom.findAll(".internal-embed").forEach((n=>t(this,void 0,void 0,(function*(){var t,s;const r=n.getAttribute("src");if("string"==typeof r){var o=e.parseLinktext(r);if(!o)return;var a="";if(this.mindmap&&this.mindmap.view){var h=this.mindmap.view.app.metadataCache.getFirstLinkpathDest(o.path,this.mindmap.path);if(h instanceof e.TFile&&"md"===h.extension){if(this.editDom.querySelector(`.markdown-embed[data-name="${h.path}"]`))return;var l=this.mindmap.view.app.metadataCache.getFileCache(h);if(this.isMindmap(l)){if((m=document.createElement("div")).classList.add("markdown-embed"),n.appendChild(m),m.setAttribute("data-name",h.path),(f=document.createElement("div")).classList.add("markdown-embed-content"),(g=document.createElement("div")).classList.add("markdown-preview-view"),f.appendChild(g),(v=document.createElement("div")).classList.add("markdown-embed-link"),v.setAttribute("aria-label","Open link"),v.innerHTML=`<a data-href="${r}" href="${r}" class="internal-link" target="_blank" rel="noopener"><svg viewBox="0 0 100 100" class="link" width="20" height="20"><path fill="currentColor" stroke="currentColor" d="M74,8c-4.8,0-9.3,1.9-12.7,5.3l-10,10c-2.9,2.9-4.7,6.6-5.1,10.6C46,34.6,46,35.3,46,36c0,2.7,0.6,5.4,1.8,7.8l3.1-3.1 C50.3,39.2,50,37.6,50,36c0-3.7,1.5-7.3,4.1-9.9l10-10c2.6-2.6,6.2-4.1,9.9-4.1s7.3,1.5,9.9,4.1c2.6,2.6,4.1,6.2,4.1,9.9 s-1.5,7.3-4.1,9.9l-10,10C71.3,48.5,67.7,50,64,50c-1.6,0-3.2-0.3-4.7-0.8l-3.1,3.1c2.4,1.1,5,1.8,7.8,1.8c4.8,0,9.3-1.9,12.7-5.3 l10-10C90.1,35.3,92,30.8,92,26s-1.9-9.3-5.3-12.7C83.3,9.9,78.8,8,74,8L74,8z M62,36c-0.5,0-1,0.2-1.4,0.6l-24,24 c-0.5,0.5-0.7,1.2-0.6,1.9c0.2,0.7,0.7,1.2,1.4,1.4c0.7,0.2,1.4,0,1.9-0.6l24-24c0.6-0.6,0.8-1.5,0.4-2.2C63.5,36.4,62.8,36,62,36 z M36,46c-4.8,0-9.3,1.9-12.7,5.3l-10,10c-3.1,3.1-5,7.2-5.2,11.6c0,0.4,0,0.8,0,1.2c0,4.8,1.9,9.3,5.3,12.7 C16.7,90.1,21.2,92,26,92s9.3-1.9,12.7-5.3l10-10C52.1,73.3,54,68.8,54,64c0-2.7-0.6-5.4-1.8-7.8l-3.1,3.1 c0.5,1.5,0.8,3.1,0.8,4.7c0,3.7-1.5,7.3-4.1,9.9l-10,10C33.3,86.5,29.7,88,26,88s-7.3-1.5-9.9-4.1S12,77.7,12,74 c0-3.7,1.5-7.3,4.1-9.9l10-10c2.6-2.6,6.2-4.1,9.9-4.1c1.6,0,3.2,0.3,4.7,0.8l3.1-3.1C41.4,46.6,38.7,46,36,46L36,46z"></path></svg></a>`,this.editDom.style.overflow="auto",m.appendChild(f),m.appendChild(v),this.isMindmapRichMode(l))yield c(null===(t=this.mindmap.view)||void 0===t?void 0:t.plugin,this.mindmap.view.app,h,n,this,this.mindmap.colors,this.mindmap.setting,(e=>{this._refreshImage(n,e),setTimeout((()=>{e.toDiv(!0),e.containerEL.style.visibility="visible",e.center(),e.root.unSelect(),this.clearCacheData(),this.refreshBox(),this.mindmap&&this.mindmap.emit("renderEditNode",{node:i.tNode?i.tNode:i}),this._createHandDrawFill()}),900)}));else{var u=l&&l.frontmatter;if(u)var p=!!u["display-mode"]&&"table"==u["display-mode"];yield d(null===(s=this.mindmap.view)||void 0===s?void 0:s.plugin,this.mindmap.view.app,h,n,this,this.mindmap.colors,this.mindmap.setting,(e=>{this._refreshImage(n,e),setTimeout((()=>{e.toDiv(!0),e.containerEL.style.visibility="visible",e.center(),e.root.unSelect(),this.clearCacheData(),this.refreshBox(),this.mindmap&&this.mindmap.emit("renderEditNode",{node:i.tNode?i.tNode:i}),this._createHandDrawFill()}),900)}),0,p)}}else{if(!(a=yield this.mindmap.view.app.vault.adapter.read(h.path)).trim())return;var m,f,g,v;if((m=document.createElement("div")).classList.add("markdown-embed"),m.setAttribute("data-name",h.path),(f=document.createElement("div")).classList.add("markdown-embed-content"),(g=document.createElement("div")).classList.add("markdown-preview-view"),f.appendChild(g),(v=document.createElement("div")).classList.add("markdown-embed-link"),v.setAttribute("aria-label","Open link"),v.innerHTML=`<a data-href="${r}" href="${r}" class="internal-link" target="_blank" rel="noopener"><svg viewBox="0 0 100 100" class="link" width="20" height="20"><path fill="currentColor" stroke="currentColor" d="M74,8c-4.8,0-9.3,1.9-12.7,5.3l-10,10c-2.9,2.9-4.7,6.6-5.1,10.6C46,34.6,46,35.3,46,36c0,2.7,0.6,5.4,1.8,7.8l3.1-3.1 C50.3,39.2,50,37.6,50,36c0-3.7,1.5-7.3,4.1-9.9l10-10c2.6-2.6,6.2-4.1,9.9-4.1s7.3,1.5,9.9,4.1c2.6,2.6,4.1,6.2,4.1,9.9 s-1.5,7.3-4.1,9.9l-10,10C71.3,48.5,67.7,50,64,50c-1.6,0-3.2-0.3-4.7-0.8l-3.1,3.1c2.4,1.1,5,1.8,7.8,1.8c4.8,0,9.3-1.9,12.7-5.3 l10-10C90.1,35.3,92,30.8,92,26s-1.9-9.3-5.3-12.7C83.3,9.9,78.8,8,74,8L74,8z M62,36c-0.5,0-1,0.2-1.4,0.6l-24,24 c-0.5,0.5-0.7,1.2-0.6,1.9c0.2,0.7,0.7,1.2,1.4,1.4c0.7,0.2,1.4,0,1.9-0.6l24-24c0.6-0.6,0.8-1.5,0.4-2.2C63.5,36.4,62.8,36,62,36 z M36,46c-4.8,0-9.3,1.9-12.7,5.3l-10,10c-3.1,3.1-5,7.2-5.2,11.6c0,0.4,0,0.8,0,1.2c0,4.8,1.9,9.3,5.3,12.7 C16.7,90.1,21.2,92,26,92s9.3-1.9,12.7-5.3l10-10C52.1,73.3,54,68.8,54,64c0-2.7-0.6-5.4-1.8-7.8l-3.1,3.1 c0.5,1.5,0.8,3.1,0.8,4.7c0,3.7-1.5,7.3-4.1,9.9l-10,10C33.3,86.5,29.7,88,26,88s-7.3-1.5-9.9-4.1S12,77.7,12,74 c0-3.7,1.5-7.3,4.1-9.9l10-10c2.6-2.6,6.2-4.1,9.9-4.1c1.6,0,3.2,0.3,4.7,0.8l3.1-3.1C41.4,46.6,38.7,46,36,46L36,46z"></path></svg></a>`,n.appendChild(m),m.appendChild(f),m.appendChild(v),o.subpath){var y=this.mindmap.view.app.metadataCache.getFileCache(h),A=e.resolveSubpath(y,o.subpath);if(A&&A.start&&A.end)var x=a.substring(A.start.offset,A.end.offset);else if(A&&A.start&&!A.end)x=a.substr(A.start.offset);else x=a||""}else x=a||"";x&&e.MarkdownRenderer.renderMarkdown(x,g,this.mindmap.path||"",null).then((()=>{this.refreshBox(),this.mindmap&&this.mindmap.emit("renderEditNode",{node:i.tNode?i.tNode:i}),this._createHandDrawFill()}))}}}}})))),setTimeout((()=>{this._refreshImage(this.editDom,this.mindmap),(this.editDom.querySelector("code")||this.editDom.querySelector(".MathJax")||this.editDom.querySelector(".callout"))&&setTimeout((()=>{this.clearCacheData(),this.refreshBox(),this._deleyRefreshLayout(i,this.mindmap),this._createHandDrawFill()}),200),this.editDom.findAll("a.external-link").length&&setTimeout((()=>{this.clearCacheData(),this.refreshBox(),this._createHandDrawFill(),this.mindmap&&(this.mindmap._initTime&&clearTimeout(this.mindmap._initTime),this.mindmap._initTime=setTimeout((()=>{this._deleyRefreshLayout(i,this.mindmap)}),600))}),300),setTimeout((()=>{this.refreshBox(),this._createHandDrawFill()}),1500)}),280)}_delayRefresh(){}getRootLayout(){for(var e=this,t=null;e;)t=e.layout,e=e.belongInduce?e.belongInduce.node:e.parent;return t}select(){this.isSelect=!0,"relateLink"==this.nodeType||"callout"==this.nodeType?this.containEl.setAttribute("draggable","false"):this.containEl.setAttribute("draggable","true"),Object.assign(window,{myNode:this}),this.containEl.classList.contains("mm-node-select")||this.containEl.classList.add("mm-node-select"),this.mindmap.selectNode=this,this.tNode&&this.tNode.select()}unSelect(){this.isSelect=!1,this.containEl.setAttribute("draggable","false"),this.containEl.classList.contains("mm-node-select")&&this.containEl.classList.remove("mm-node-select")}edit(){this.editDom.innerText="",this._oldText=this.data.text,this.editDom.innerText=this._oldText,this.editDom.setAttribute("contentEditable","true"),this.containEl.setAttribute("draggable","false"),this.editDom.focus(),this.mindmap.editNode=this,this.isEdit=!0,this.data.cover&&this.coverDom&&(this.coverDom.style.display="none"),de(this.editDom),this.editDom.innerText!=r("Sub title")&&"callout"!=this.editDom.innerText||this.selectText(),this.containEl.classList.contains("mm-edit-node")||this.containEl.classList.add("mm-edit-node")}selectText(){var e=this.editDom;if(this.editDom.win.getSelection){var t=this.editDom.win.getSelection(),i=this.editDom.doc.createRange();i.selectNodeContents(e),t.removeAllRanges(),t.addRange(i)}}cancelEdit(){var t;if(this.shouldRender){var i=this.editDom.innerText.trim()||"";this.data.text=i,this.editDom.innerText="",this.data.cover&&this.coverDom&&(this.coverDom.style.display=""),e.MarkdownRenderer.renderMarkdown(i,this.editDom,this.mindmap.path||"",null===(t=this.mindmap.view)||void 0===t?void 0:t.plugin).then((()=>{this.data.mdText=this.editDom.innerHTML,this.refreshBox(),this._delay()})),i!=this._oldText&&(this.mindmap.execute("changeNodeText",{node:this.tNode?this.tNode:this,text:i,oldText:this._oldText}),this.callout&&this.callout.refresh()),this.editDom.setAttribute("contentEditable","false"),this.isEdit=!1,this.containEl.classList.contains("mm-edit-node")&&this.containEl.classList.remove("mm-edit-node"),this.mindmap.appEl.focus(),this.mindmap.editNode=null}}getLevel(){for(var e=0,t=this.parent;t;)e++,t=t.parent;return e}getChildren(){return this.children}setPosition(e,t){this.box.x=e,this.box.y=t,this.containEl.style.left=e+"px",this.containEl.style.top=t+"px",this.data.x=e,this.data.y=t}getPosition(){return{x:this.box.x,y:this.box.y}}move(e,t){var i=this.getPosition();this.setPosition(i.x+e,i.y+t)}getStyle(){return Object.assign({},this.style)}setStyle(e,t){t&&e?this.style=e:e&&(this.style=Object.assign({},this.style,e));var i=this.style,n="";for(var s in this.style)n+="font-size"==s||"border-width"==s?`${s}:${i[s]}px;`:`${s}:${i[s]};`;this.contentEl.setAttribute("style",n),this.nodeType&&"callout"==this.nodeType&&this.callout&&(this.callout.color=this.style["background-color"]||this.callout.color,this.callout.refresh())}isEmptyObject(e){for(var t in e)return!1;return!0}getData(){var e=Object.assign({},this.data);if(e.mdText&&delete e.mdText,this.layout?e.layout={layoutName:this.layout.layoutName,direct:this.layout.direct}:e.layout=null,"freeNode"==this.nodeType){e.main=!1;var t=this.getPosition();e.x=t.x,e.y=t.y}return this.isExpand&&(e.isExpand=!0),this.parent&&(e.pid=this.parent.getId()),e.children&&delete e.children,e.stroke=this.stroke||"",this.isEmptyObject(this.style)||(e.style=Object.assign({},this.style)),this.belongInduce&&(e.direct=this.direct),JSON.parse(JSON.stringify(e))}refreshBox(){this.box=this.getDomBox()}getBox(){return Object.assign({},this.box)}refreshCBox(){this.box=this.getCBox()}getContainBox(){return this.containBar?this.containBox:this.box}getCBox(e){var t=this.getBox(),i=0,n=0;if(this.callout){var s=this.callout.getBox();s.y<t.y&&(i=t.y-s.y),s.y+s.height>t.y+t.height&&(n=s.y+s.height-t.y-t.height)}if(e&&this.wfs.length){var r=0;this.wfs.forEach((e=>{if(e.data&&e.data.text){var t=e.getTextBox().height;r+=t}})),i+=r+3,n+=3}return Object.assign(Object.assign({},t),{th:i,bh:n})}getContainDomBox(){var e=parseInt(this.containEl.style.top);return{x:parseInt(this.containEl.style.left),y:e,width:Math.ceil(this.containEl.offsetWidth),height:Math.ceil(this.containEl.offsetHeight),th:0,bh:0}}getDomBox(){var e=parseInt(this.containEl.style.top);return{x:parseInt(this.containEl.style.left)||0,y:e||0,width:Math.ceil(this.contentEl.offsetWidth),height:Math.ceil(this.contentEl.offsetHeight),th:0,bh:0}}getNodeList(){var e=[];return function t(i){e.push(i),i.children.forEach((e=>{t(e)}))}(this),e}getShowNodeList(){var e=[];return function t(i){i.isShow()&&e.push(i),i.children.forEach((e=>{t(e)}))}(this),e}getSiblings(){return this.parent?this.parent.children.filter((e=>e!=this)):[]}isLeaf(){return!this.children.length}isShow(){return"none"!=this.containEl.style.display}show(){this.containEl.style.display="block",this.isHide=!1}hide(){this.containEl.style.display="none",this.isHide=!0}clearCacheData(){for(var e=this;e;)e.boundingRect=null,e=e.parent||e.belongInduce&&e.belongInduce.node}addChild(e,t){-1==this.children.indexOf(e)&&(t>-1?(t>this.children.length&&(t=this.children.length),this.children.splice(t,0,e)):this.children.push(e),e.parent=this)}removeChild(e){var t=this.children.indexOf(e);return t>-1&&this.children.splice(t,1),t}setText(e){this.data.text=e,this.editDom.innerHTML="",this.parseText()}expand(){this.isExpand=!0,this.data.isExpand=!0,function e(t){t.show(),t.boundingRect=null,t.induces.length&&t.induces.forEach((t=>{e(t.root)})),t.isExpand&&(t.layout&&(t.layout.svgDom&&(t.layout.svgDom.show(),t.layout.isShow=!0),t.layout.group&&(t.layout.group.show(),t.layout.isShow=!0),t.layout.tableDom&&(t.layout.tableDom.style.display="")),t.children.forEach((t=>{e(t)})))}(this),function e(t){t.isShow()||t.show(),t.refreshBox(),t.isExpand&&t.children.forEach((t=>{e(t)})),t.wfs.length&&t.wfs.forEach((e=>{e.show(),e.refreshItems()})),t.induces.length&&t.induces.forEach((t=>{t.show(),t.refreshItems(),e(t.root)}))}(this),this.containEl.classList.contains("mm-node-collapse")&&this.containEl.classList.remove("mm-node-collapse")}collapse(){function e(t){t.hide(),t.setPosition(10,10),t.induces.length&&t.induces.forEach((t=>{e(t.root)})),t.layout&&(t.layout.tableDom&&(t.layout.tableDom.style.display="none"),t.layout.svgDom&&(t.layout.svgDom.hide(),t.layout.isShow=!1),t.layout.group&&(t.layout.group.hide(),t.layout.isShow=!1)),t.isExpand&&t.children.forEach((t=>{e(t)}))}this.children.forEach((t=>{e(t)})),this.isExpand=!1,this.data.isExpand=!1,this.containEl.classList.contains("mm-node-collapse")||this.containEl.classList.add("mm-node-collapse"),this.layout&&(this.layout.tableDom&&(this.layout.tableDom.style.display="none"),this.layout.svgDom&&(this.layout.svgDom.hide(),this.layout.isShow=!1),this.layout.group&&(this.layout.group.hide(),this.layout.isShow=!1)),this.getMind().updateAllAssist()}isFirst(){if(this.parent){var e=this.parent.getChildren();return e&&0==e.indexOf(this)}return!0}isLast(){if(this.parent){var e=this.parent.getChildren();return e.length&&e.indexOf(this)==e.length-1}return!0}getNodeLayout(){return this.layout}getLayout(){for(var e=this,t=null;e;){if(e.layout){t=e.layout;break}e=e.parent}return t}getTopLayout(){if(!this.parent)return this.layout||null;var e=this,t=null,i=this.layout;for(this.layout=null;e;){if(e.layout){t=e.layout;break}e=e.parent}return this.layout=i,this.topLayout=t,t}getMind(){return this.mindmap||null}setAnnotate(e){"highlight"==e.type?(this.editDom.innerHTML=e.selectText,this.editDom.focus(),de(this.editDom)):(this.editDom.innerHTML=`![[${e.path}]]`,this.editDom.focus(),de(this.editDom)),this.data.annotate=e,this.updateAnnotate()}updateAnnotate(){!this.annotateDom&&this.data.annotate&&(this.annotateDom=document.createElement("div"),this.annotateDom.innerHTML='<svg t="1629010944160" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12916" width="16" height="16"><path d="M672.711111 662.670222L361.329778 351.232l266.979555-222.464 266.951111 266.951111-222.492444 266.951111z" fill="#FF445F" p-id="12917"></path><path d="M984.177778 395.719111a125.724444 125.724444 0 0 1-177.92 0l-177.976889-177.948444a125.895111 125.895111 0 0 1 177.976889-178.005334L984.177778 217.770667a125.838222 125.838222 0 0 1 0 177.948444z" fill="#EF5350" p-id="12918"></path><path d="M398.222222 506.965333S-16.867556 996.380444 5.347556 1018.680889C27.591111 1040.952889 517.034667 625.777778 517.034667 625.777778L398.222222 506.965333z" fill="#C4C6CF" p-id="12919"></path><path d="M717.226667 796.188444a125.838222 125.838222 0 0 1-178.005334 0L227.811556 484.721778a125.866667 125.866667 0 0 1 178.005333-177.948445l311.409778 311.438223a125.866667 125.866667 0 0 1 0 177.976888z" fill="#EF5350" p-id="12920"></path></svg>',this.annotateDom.classList.add("mm-node-annotate"),this.assistDom.appendChild(this.annotateDom))}deleteAnnotate(){this.annotateDom&&(this.assistDom.removeChild(this.annotateDom),this.annotateDom=null,this.data.annotate=null)}getAnnotateId(){return this.data.annotate?this.data.annotate.id:null}getAnnotate(){return this.data.annotate?JSON.parse(JSON.stringify(this.data.annotate)):null}updateNote(){if(this.plgDom.innerHTML="",this.data.note){var e=document.createElement("span");this.plgDom.appendChild(e),e.innerHTML='<svg t="1635666821412" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="20498" width="16" height="16"><path d="M832 64 192 64C121.6 64 64 121.6 64 192l0 512c0 70.4 57.6 128 128 128l128 0 132.096 120.448C459.072 957.632 466.88 960 474.432 960 493.824 960 512 944.704 512 922.496L512 832l320 0c70.4 0 128-57.6 128-128L960 192C960 121.6 902.4 64 832 64zM896 704c0 35.328-28.672 64-64 64L512 768c-16.96 0-33.28 6.72-45.248 18.752S448 815.04 448 832l0 30.08-84.864-77.376C351.296 773.952 335.936 768 320 768L192 768c-35.328 0-64-28.672-64-64L128 192c0-35.328 28.672-64 64-64l640 0c35.328 0 64 28.672 64 64L896 704zM736 320l-448 0C270.336 320 256 334.336 256 352S270.336 384 288 384l448 0C753.664 384 768 369.664 768 352S753.664 320 736 320zM736 512l-448 0C270.336 512 256 526.336 256 544S270.336 576 288 576l448 0C753.664 576 768 561.664 768 544S753.664 512 736 512z" p-id="20499"></path></svg>',e.style.display="flex",e.style.alignItems="center",e.style.margin="0 4px",e.style.cursor="pointer",e.classList.add("mm-note-span")}}setNote(e){this.data.note=e,this.updateNote()}}class ue{constructor(e,t){this.children=[],this.hasInit=!1,this.isSelect=!1,this.isExpand=!0,this.isEdit=!1,this.layout=null,this.induces=[],this.wireFrames=[],this.wfs=[],this.summaries=[],this.callout=null,this._tableDom=null,this.style={},this.isHide=!1,this.nodeType="",this.data=e,t&&(this.mindmap=t),e.style&&(this.style=e.style),this.iNode=new ce(e,t),this.iNode.tNode=this}init(e){this.hasInit||(0==this.getLevel()?(this.tdDom=document.createElement("th"),this.tdDom.setAttribute("colspan",e)):this.tdDom=document.createElement("td"),this.tdDom.appendChild(this.iNode.containEl),this.tdDom.setAttribute("data-id",this.data.id),this.hasInit=!0,this.setStyle())}_initTdDom(e){this.hasInit||(0==this.getLevel()?(this.tdDom=document.createElement("th"),this.tdDom.setAttribute("colspan",e)):this.tdDom=document.createElement("td"),this.tdDom.innerText=this.data.text,this.tdDom.setAttribute("data-id",this.data.id),this.hasInit=!0)}getLevel(){for(var e=0,t=this.parent;t;)e++,t=t.parent;return e}isLeaf(){return!this.children.length}isFirst(){if(this.parent){var e=this.parent.getChildren();return e&&0==e.indexOf(this)}return!0}isLast(){if(this.parent){var e=this.parent.getChildren();return e.length&&e.indexOf(this)==e.length-1}return!0}getChildren(){return this.children}getId(){return this.data.id}unSelect(){this.isSelect=!1}select(){this.isSelect=!0,this.mindmap.selectNode=this}getOffset(e,t){for(var i=0,n=0;e&&e!=t;)i+=e.offsetLeft,n+=e.offsetTop,e=e.offsetParent||e.parentElement||e.parentNode;return{x:i,y:n}}getBox(e){if(this._tableDom)var t=parseInt(this._tableDom.style.left),i=parseInt(this._tableDom.style.top),n=this.getOffset(this.iNode.containEl,this._tableDom);else t=parseInt(this.mindmap.tableDom.style.left),i=parseInt(this.mindmap.tableDom.style.top),n=this.getOffset(this.iNode.containEl,this.mindmap.tableDom);return{x:n.x+t,y:n.y+i,width:this.iNode.containEl.clientWidth,height:this.iNode.containEl.clientHeight}}getDomBox(){return this.getBox()}clearCacheData(){for(var e=this;e;)e.boundingRect=null,e=e.parent||e.belongInduce&&e.belongInduce.node}expand(){this.isExpand=!0,this.data.isExpand=!0,this.layout&&this.layout.tableDom&&(this.layout.tableDom.style.display="")}hide(){this.isHide=!0,this.layout&&this.layout.tableDom&&(this.layout.tableDom.style.display="none")}show(){this.isHide=!1,this.layout&&this.layout.tableDom&&(this.layout.tableDom.style.display="")}isShow(){return!this.isHide}collapse(){this.isExpand=!1,this.data.isExpand=!1,this.layout&&this.layout.tableDom&&(this.layout.tableDom.style.display="none")}refreshBox(){}getAnnotateId(){}addChild(e,t){-1==this.children.indexOf(e)&&(t>-1?(t>this.children.length&&(t=this.children.length),this.children.splice(t,0,e)):this.children.push(e),e.parent=this)}removeChild(e){var t=this.children.indexOf(e);return t>-1&&this.children.splice(t,1),t}getData(){var e=Object.assign({},this.data);return e.mdText&&delete e.mdText,e.isExpand=this.isExpand,this.parent&&(e.pid=this.parent.getId()),e.children&&delete e.children,this.style&&(e.style=Object.assign({},this.style)),this.layout&&(e.layout={layoutName:"table",direct:""}),JSON.parse(JSON.stringify(e))}setStyle(e,t){t&&e?this.style=e:e&&(this.style=Object.assign(Object.assign({},this.style),e));var i=this.style,n="";for(var s in this.style)n+="font-size"==s||"border-width"==s?`${s}:${i[s]}px;`:`${s}:${i[s]};`;this.tdDom.setAttribute("style",n),this.iNode.setStyle(this.style),this.nodeType&&"callout"==this.nodeType&&this.callout&&(this.callout.color=this.style["background-color"]||this.callout.color,this.callout.refresh())}getStyle(){return this.style}setNote(e){this.data.note=e,this.iNode.setNote(e)}edit(){this.isEdit=!0,this.iNode.edit()}cancelEdit(){this.isEdit=!1,this.iNode.cancelEdit()}setText(e){this.data.text=e}selectText(){this.iNode.selectText()}getMind(){return this.mindmap}getShowNodeList(){var e=[];return this.layout&&"table"==this.layout.layoutName&&e.push(this),e}setPosition(e,t){this.data.x=e,this.data.y=t,this.layout&&this.layout.setPosition(e,t)}getPosition(){return this.getBox()}move(e,t){var i=this.getPosition();this.setPosition(i.x+e,i.y+t)}getLayout(){for(var e=this,t=null;e;){if(e.layout){t=e.layout;break}e=e.parent}return t}getNodeLayout(){return this.layout}getRootLayout(){for(var e=this,t=null;e;)t=e.layout,e=e.belongInduce?e.belongInduce.node:e.parent;return t}getTopLayout(){if(!this.parent)return this.layout||null;var e=this,t=null,i=this.layout;for(this.layout=null;e;){if(e.layout){t=e.layout;break}e=e.parent}return this.layout=i,this.topLayout=t,t}refreshCBox(){this.box=this.getCBox()}getContainBox(){return this.containBar?this.containBox:this.box}getCBox(e){var t=this.getBox(),i=0,n=0;if(this.callout){var s=this.callout.getBox();s.y<t.y&&(i=t.y-s.y),s.y+s.height>t.y+t.height&&(n=s.y+s.height-t.y-t.height)}if(e&&this.wfs.length){var r=0;this.wfs.forEach((e=>{if(e.data&&e.data.text){var t=e.getTextBox().height;r<t&&(r=t)}})),i+=r+3,n+=3}return Object.assign(Object.assign({},t),{th:i,bh:n})}getSiblings(){return this.parent?this.parent.children.filter((e=>e!=this)):[]}getLink(){return this.iNode?this.iNode.getLink():""}getImage(){return this.iNode?this.iNode.getImage():""}}var pe="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};function me(e){var t={exports:{}};return e(t,t.exports),t.exports}function fe(e){throw new Error('Could not dynamically require "'+e+'". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.')}var ge=me((function(e,t){!function(i,n){var s=function(){var e=null,t={};f();var i=[],n=function(t){if(void 0!==(t=t||{}).seed&&null!==t.seed&&t.seed===parseInt(t.seed,10))e=t.seed;else if("string"==typeof t.seed)e=A(t.seed);else{if(void 0!==t.seed&&null!==t.seed)throw new TypeError("The seed value must be an integer or string");e=null}var h,l;if(null!==t.count&&void 0!==t.count){for(var d=t.count,c=[],u=0;u<t.count;u++)i.push(!1);for(t.count=null;d>c.length;){var p=n(t);null!==e&&(t.seed=e),c.push(p)}return t.count=d,c}return a([h=s(t),l=r(h,t),o(h,l,t)],t)};function s(e){if(i.length>0){var t=u(r=x(e.hue)),n=(r[1]-r[0])/i.length,s=parseInt((t-r[0])/n);return!0===i[s]?s=(s+2)%i.length:i[s]=!0,(t=u(r=[(r[0]+s*n)%359,(r[0]+(s+1)*n)%359]))<0&&(t=360+t),t}var r;return(t=u(r=l(e.hue)))<0&&(t=360+t),t}function r(e,t){if("monochrome"===t.hue)return 0;if("random"===t.luminosity)return u([0,100]);var i=d(e),n=i[0],s=i[1];switch(t.luminosity){case"bright":n=55;break;case"dark":n=s-10;break;case"light":s=55}return u([n,s])}function o(e,t,i){var n=h(e,t),s=100;switch(i.luminosity){case"dark":s=n+20;break;case"light":n=(s+n)/2;break;case"random":n=0,s=100}return u([n,s])}function a(e,t){switch(t.format){case"hsvArray":return e;case"hslArray":return y(e);case"hsl":var i=y(e);return"hsl("+i[0]+", "+i[1]+"%, "+i[2]+"%)";case"hsla":var n=y(e),s=t.alpha||Math.random();return"hsla("+n[0]+", "+n[1]+"%, "+n[2]+"%, "+s+")";case"rgbArray":return g(e);case"rgb":return"rgb("+g(e).join(", ")+")";case"rgba":var r=g(e);s=t.alpha||Math.random();return"rgba("+r.join(", ")+", "+s+")";default:return p(e)}}function h(e,t){for(var i=c(e).lowerBounds,n=0;n<i.length-1;n++){var s=i[n][0],r=i[n][1],o=i[n+1][0],a=i[n+1][1];if(t>=s&&t<=o){var h=(a-r)/(o-s);return h*t+(r-h*s)}}return 0}function l(e){if("number"==typeof parseInt(e)){var i=parseInt(e);if(i<360&&i>0)return[i,i]}if("string"==typeof e)if(t[e]){var n=t[e];if(n.hueRange)return n.hueRange}else if(e.match(/^#?([0-9A-F]{3}|[0-9A-F]{6})$/i)){var s=v(e)[0];return[s,s]}return[0,360]}function d(e){return c(e).saturationRange}function c(e){for(var i in e>=334&&e<=360&&(e-=360),t){var n=t[i];if(n.hueRange&&e>=n.hueRange[0]&&e<=n.hueRange[1])return t[i]}return"Color not found"}function u(t){if(null===e){var i=.618033988749895,n=Math.random();return n+=i,n%=1,Math.floor(t[0]+n*(t[1]+1-t[0]))}var s=t[1]||1,r=t[0]||0,o=(e=(9301*e+49297)%233280)/233280;return Math.floor(r+o*(s-r))}function p(e){var t=g(e);function i(e){var t=e.toString(16);return 1==t.length?"0"+t:t}return"#"+i(t[0])+i(t[1])+i(t[2])}function m(e,i,n){var s=n[0][0],r=n[n.length-1][0],o=n[n.length-1][1],a=n[0][1];t[e]={hueRange:i,lowerBounds:n,saturationRange:[s,r],brightnessRange:[o,a]}}function f(){m("monochrome",null,[[0,0],[100,0]]),m("red",[-26,18],[[20,100],[30,92],[40,89],[50,85],[60,78],[70,70],[80,60],[90,55],[100,50]]),m("orange",[18,46],[[20,100],[30,93],[40,88],[50,86],[60,85],[70,70],[100,70]]),m("yellow",[46,62],[[25,100],[40,94],[50,89],[60,86],[70,84],[80,82],[90,80],[100,75]]),m("green",[62,178],[[30,100],[40,90],[50,85],[60,81],[70,74],[80,64],[90,50],[100,40]]),m("blue",[178,257],[[20,100],[30,86],[40,80],[50,74],[60,60],[70,52],[80,44],[90,39],[100,35]]),m("purple",[257,282],[[20,100],[30,87],[40,79],[50,70],[60,65],[70,59],[80,52],[90,45],[100,42]]),m("pink",[282,334],[[20,100],[30,90],[40,86],[60,84],[80,80],[90,75],[100,73]])}function g(e){var t=e[0];0===t&&(t=1),360===t&&(t=359),t/=360;var i=e[1]/100,n=e[2]/100,s=Math.floor(6*t),r=6*t-s,o=n*(1-i),a=n*(1-r*i),h=n*(1-(1-r)*i),l=256,d=256,c=256;switch(s){case 0:l=n,d=h,c=o;break;case 1:l=a,d=n,c=o;break;case 2:l=o,d=n,c=h;break;case 3:l=o,d=a,c=n;break;case 4:l=h,d=o,c=n;break;case 5:l=n,d=o,c=a}return[Math.floor(255*l),Math.floor(255*d),Math.floor(255*c)]}function v(e){e=3===(e=e.replace(/^#/,"")).length?e.replace(/(.)/g,"$1$1"):e;var t=parseInt(e.substr(0,2),16)/255,i=parseInt(e.substr(2,2),16)/255,n=parseInt(e.substr(4,2),16)/255,s=Math.max(t,i,n),r=s-Math.min(t,i,n),o=s?r/s:0;switch(s){case t:return[(i-n)/r%6*60||0,o,s];case i:return[60*((n-t)/r+2)||0,o,s];case n:return[60*((t-i)/r+4)||0,o,s]}}function y(e){var t=e[0],i=e[1]/100,n=e[2]/100,s=(2-i)*n;return[t,Math.round(i*n/(s<1?s:2-s)*1e4)/100,s/2*100]}function A(e){for(var t=0,i=0;i!==e.length&&!(t>=Number.MAX_SAFE_INTEGER);i++)t+=e.charCodeAt(i);return t}function x(e){if(isNaN(e)){if("string"==typeof e)if(t[e]){var i=t[e];if(i.hueRange)return i.hueRange}else if(e.match(/^#?([0-9A-F]{3}|[0-9A-F]{6})$/i)){return c(v(e)[0]).hueRange}}else{var n=parseInt(e);if(n<360&&n>0)return c(e).hueRange}return[0,360]}return n}();e&&e.exports&&(t=e.exports=s),t.randomColor=s}()}));class ve{constructor(e){this.edges=[],this.isShow=!0,this.lineWeight=!0,this.svgDom=null,this.name=e}layout(e,t){}refresh(){}addEdge(e){this.edges.push(e)}removeEdge(e){var t=this.edges.indexOf(e);t>-1&&this.edges.splice(t,t)}moveNode(e,t,i){e&&e.move(t,i),e.callout&&e.callout.refresh(),e.wfs&&e.wfs.forEach((e=>{e.move(t,i)})),e.induces&&e.induces.forEach((e=>{e.move(t,i),this.moveNode(e.root,t,i)})),e&&e.children.forEach((e=>{this.moveNode(e,t,i)}))}linePoint(e,t){let i=0;var n=Math.ceil;return t%2==1&&(i=.5,n=parseInt),e.map((e=>[n(e[0])+i,n(e[1])+i]))}_updateNodeAssist(e,t){for(var i=e;i;){i.callout&&i.callout.refresh();var n=i.wireFrames,s=i.summaries;if(n.length&&n.forEach((t=>{t.items.indexOf(e)>-1&&(t.refreshNode(),t.refresh())})),s.length&&s.forEach((t=>{t.items.indexOf(e)>-1&&(t.refreshNode(),t.refresh())})),t){if(i==t)break;i=i.parent}else i=i.parent}}_updateRootAssist(){this.root.induce&&(this.root.induce.refreshItems(),this.root.induce.refresh()),this.root.wireFrame&&(this.root.wireFrame.refreshItems(),this.root.wireFrame.refresh())}}class ye extends ve{constructor(e,t,i){super("minder"),this.layoutName="mindmap",this.direct="",this.levelDis=40,this.nodeDis=8,this.firstLevelDis=80,this.firstNodeDis=20,this.isCache=!0,this.lefts=[],this.rights=[],this.colors=[],this.lineWidth=2,this.root=e,this.mind=this.root.mindmap,this.direct=t||"mindmap",this.colors=i||[],this.svgDom=this.mind.edgeGroup.group()}layout(e,t){e&&(this.root=e),this.root.isExpand&&(this.svgDom||(this.svgDom=this.root.mindmap.edgeGroup.group()),this.root.layout=this,t&&(this.direct=t),this.root.nodeType&&"induce"==this.root.nodeType&&(this.firstLevelDis=20,this.firstNodeDis=10),this.root.nodeType&&"freeNode"==this.root.nodeType&&(this.root.containEl.classList.contains("mm-root")||this.root.containEl.classList.add("mm-root")),this.lefts=[],this.rights=[],this.root.isShow()&&(this.setDirect(),this._layoutSecondLevelNode(this.root)),this.createLink())}setDirect(){var e=this,t=this.root.children.length,i=this.root;"right"==this.direct?(this.rights=i.children,this.rights.forEach((e=>{this._setDirect(e,"right")}))):"left"==this.direct?(this.lefts=i.children,this.lefts.forEach((e=>{this._setDirect(e,"left")}))):i.children.forEach((function(i,n){n<t/2?(e.rights.push(i),e._setDirect(i,"right")):(e.lefts.push(i),e._setDirect(i,"left"))}))}_setDirect(e,t){if(e.direct=t,e.containEl){var i=e.containEl.classList.contains("mm-node-second");e.containEl.setAttribute("class",""),e.containEl.classList.add("mm-node"),e.containEl.classList.add("mm-node-"+t),e.containEl.classList.add(`mm-${this.layoutName}-node`),e.isLeaf()&&!e.containEl.classList.contains("mm-node-leaf")?e.containEl.classList.add("mm-node-leaf"):e.containEl.classList.contains("mm-node-leaf")&&e.containEl.classList.remove("mm-node-leaf"),1==e.getLevel()&&"induce"!=this.root.nodeType&&(e.containEl.classList.add("mm-node-second"),e.refreshBox()),i&&e.refreshBox(),e.isExpand||e.containEl.classList.add("mm-node-collapse"),e.isSelect&&e.containEl.classList.add("mm-node-select")}!e.layout&&e.isExpand&&e.children.forEach((e=>{this._setDirect(e,t)}))}_layoutSecondLevelNode(e){this._layoutMinder(),"induce"!=this.root.nodeType&&this._doRefresh(),this._updateRootAssist()}_doRefresh(){var e=this.root,t=e.getPosition(),i=e.getBox(),n=t.y+i.height/2,s=e.getChildren(),r=s.filter((e=>"right"==e.direct)),o=s.filter((e=>"left"==e.direct));if(r.length>=2){var a=r[0],h=r[r.length-1],l=a.getPosition(),d=h.getPosition(),c=h.getBox(),u=d.y+c.height-n,p=n-l.y;if(Math.abs(u)!=Math.abs(p)){var m=Math.abs(Math.abs(u)-Math.abs(p))/2;Math.abs(u)>Math.abs(p)?r.forEach((e=>{this.moveNode(e,0,-parseInt(m+""))})):r.forEach((e=>{this.moveNode(e,0,parseInt(m+""))}))}}if(o.length>=2){a=o[0],h=o[o.length-1],l=a.getPosition(),d=h.getPosition(),c=h.getBox(),u=d.y+c.height-n,p=n-l.y;if(Math.abs(u)!=Math.abs(p)){m=Math.abs(Math.abs(u)-Math.abs(p))/2;Math.abs(u)>Math.abs(p)?o.forEach((e=>{this.moveNode(e,0,-parseInt(m+""))})):o.forEach((e=>{this.moveNode(e,0,parseInt(m+""))}))}}}updateRight(){var e=this.root.getPosition(),t=this.root.getBox(),i=this.rights,n=this._getNodesHeight(i),s=[parseInt(e.x+t.width+this.firstLevelDis+""),parseInt(e.y+t.height/2-n/2+"")];i.forEach((e=>{e.setPosition(s[0],s[1]);var t=e.getBox();s[1]+=parseInt(t.height+this.firstNodeDis+"")})),i.forEach((e=>{this._layoutRight(e)}))}updateLeft(){var e=this.root.getPosition(),t=this.root.getBox(),i=this.lefts,n=this._getNodesHeight(i),s=[parseInt(e.x-this.firstLevelDis+""),parseInt(e.y+t.height/2-n/2+"")];i.forEach((e=>{var t=e.getBox();e.setPosition(parseInt(s[0]-t.width+""),parseInt(s[1]+"")),s[1]+=t.height+this.firstNodeDis})),i.forEach((e=>{this._layoutLeft(e)}))}_layoutMinder(){this.updateRight(),this.updateLeft(),this._doLayout(this.root)}_getNodesHeight(e){if(e[0]&&1==e[0].getLevel())var t=this.firstNodeDis;else t=this.nodeDis;var i=0;return e.forEach(((n,s)=>{i+=n.getBox().height,s!=e.length-1&&(i+=t)})),i}_layoutRight(e){if(e.isExpand){var t=e.getPosition(),i=e.getBox(),n=this._getNodesHeight(e.children);e.callout&&e.callout.refresh();var s=[t.x+i.width+this.levelDis,i.y+i.height/2-n/2];if(e.children.forEach((e=>{e.setPosition(s[0],s[1]);var t=e.getBox();s[1]+=t.height+this.nodeDis})),e.layout)if("table"!=e.layout.layoutName){e.layout.layout(e,e.layout.direct||"");t=e.getPosition();i=e.mindmap.getBBox(e);var r=parseInt(Math.abs(t.x-i.x)+"");this.moveNode(e,r,0),e.boundingRect=null,e.direct="right"}else e.boundingRect=null,e.direct="right";else e.children.forEach((e=>{this._layoutRight(e)}))}}_updateNodeAssist(e){e.callout&&e.callout.refresh();var t=e.parent,i={};if(t){var n=t.wireFrames,s=t.summaries;n.length&&n.forEach((t=>{if(t.node==e&&(t.refresh(),t.data&&t.data.text))if(i[e.getId()])i[e.getId()].rangeNode=i[e.getId()].rangeNode.concat(t.rangeNode.slice()),i[e.getId()].rangeNode.unique();else{var n=t.getTextBox().height,s=t.rangeNode.slice();i[e.getId()]={node:e,wf:t,topDy:n+4,rangeNode:s}}})),s.length&&s.forEach((t=>{t.node==e&&t.refresh()}))}this.topInfo=i}_doLayout(e){var t=this,i=e.mindmap;i.traverseDF((e=>{if(e!=t.root&&e.isShow()){if(e.layout){if(e.layout!=t&&e.getTopLayout()!=t)return}else if(e.getLayout()!=t)return;t._updateNodeAssist(e);var n=e.getCBox();if(t.isCache&&e.boundingRect)var s=e.boundingRect;else{var r=e.getShowNodeList(),o=[],a=[],h=[],l=[];if(r.forEach((e=>{e.callout&&e.callout.isShow&&h.push(e.callout);var t=e.wireFrames;e.summaries.forEach((e=>{e.isShow()&&-1==a.indexOf(e)&&a.push(e)})),t.forEach((e=>{e.isHide||-1==o.indexOf(e)&&o.push(e)}))})),r=r.concat(o),a.forEach((e=>{r=r.concat(e.getAllItem()),l=l.concat(e.groups)})),(r=r.concat(h)).length)s=i.getBoundingRect(r)}var d=e.parent;if(d)var c=d.wireFrames,u=d.summaries;if(e.boundingRect)var p=e.boundingRect.topDy,m=e.boundingRect.downDy;else p=Math.abs(s.y-n.y),m=Math.abs(s.y+s.height-n.y-n.height),c&&c.length&&c.forEach((i=>{var n=i.topNode.getCBox();if(i.node==e&&(p+=Math.abs(6+n.th),t.topInfo[e.getId()]&&(p+=t.topInfo[e.getId()].topDy)),i.endNode&&i.endNode==e){var s=i.bottomNode.getCBox();m+=Math.abs(6+s.bh)}})),s.topDy=p,s.downDy=m,e.boundingRect=s;t._adjustNode(e,0,p,m),c&&c.length&&c.forEach((t=>{t.endNode==e&&t.refresh()})),u&&u.length&&u.forEach((t=>{t.endNode==e&&t.refresh()}))}}),e)}_layoutLeft(e){if(e.isExpand){var t=e.getPosition(),i=e.getBox(),n=this._getNodesHeight(e.children);e.callout&&e.callout.refresh();var s=[t.x-this.levelDis,t.y+i.height/2-n/2];if(e.children.forEach((e=>{var t=e.getBox();e.setPosition(s[0]-t.width,s[1]),s[1]+=t.height+this.nodeDis})),e.layout)if("table"!=e.layout.layoutName){e.layout.layout(e,e.layout.direct||"");t=e.getPosition();var r=e.mindmap.getBBox(e),o=Math.abs(t.x+i.width-r.x-r.width);this.moveNode(e,-o,0),e.direct="left",e.boundingRect=null}else e.direct="left",e.boundingRect=null;else e.children.forEach((e=>{this._layoutLeft(e)}))}}_adjustDoNode(e,t,i){if(e)for(var n=e.direct;e&&e!=this.root;){var s=e.getSiblings(),r=e.getPosition();s.forEach((e=>{e.direct==n&&(e.getPosition().y>r.y?this.moveNode(e,0,i):this.moveNode(e,0,-t))})),e=e.parent}}_adjustNode(e,t,i,n){if(e){var s=e.direct;if(e&&e!=this.root){var r=e.getSiblings(),o=e.getPosition();r.forEach((e=>{e.direct==s&&(e.getPosition().y>o.y?this.moveNode(e,t,n):this.moveNode(e,t,-i))}))}}}refresh(e){this.layout(this.root,e||this.direct),this.createLink()}createLink(){var e=this,t=this.root.mindmap;if(this.svgDom&&this.svgDom.clear(),0!=this.root.getChildren().length&&this.svgDom&&this.root.isShow()){var i=this.lineWidth;t.traverseBF((t=>{if(t.isExpand){var n=t.getChildren(),s=t.getBox(),r=t.getPosition(),o=t.getLevel(),a=n.length,h=2,l=1,d=2,c=1;1==a&&(h=4,l=1,d=4,c=3),n.forEach((n=>{var u=n.direct,p=n.getBox(),m=n.getPosition();let f=t.stroke?t.stroke:n.stroke?n.stroke:ge();if("right"==u){if(0==o||1==o){var g=[s.width+r.x,s.height/2+r.y];if(0==o)var v=[m.x,p.height/2+m.y];else v=[p.width+m.x,p.height+m.y]}else g=[s.width+r.x,s.height+r.y],v=[p.width+m.x,p.height+m.y];if(0==o)var y=[(A=[g[0]+this.firstLevelDis/h*l,g[1]])[0],v[1]];else{var A=[g[0]+this.levelDis/h*l,g[1]];y=[g[0]+this.levelDis/d*c,v[1]]}}else{if(0==o||1==o){g=[r.x,s.height/2+r.y];if(0==o)v=[m.x+p.width,p.height/2+m.y];else v=[m.x,p.height+m.y]}else g=[r.x,s.height+r.y],v=[m.x,p.height+m.y];if(0==o)y=[(A=[g[0]-this.firstLevelDis/h*l,g[1]])[0],v[1]];else A=[g[0]-this.levelDis/h*l,g[1]],y=[g[0]-this.levelDis/d*c,v[1]]}if(1==a)if(1==o)var x=[g,A,y,v];else if(Math.abs(g[1]-v[1])>2)x=[g,y,v];else x=[g,v];else if(0==t.getLevel()){var b=[],w=[];if(t.getChildren().forEach((e=>{"right"==e.direct?b.push(e):w.push(e)})),b.length>=2&&0==b.indexOf(n)||b.length>=2&&b.indexOf(n)==b.length-1)if("right"==u){if(v[1]>g[1])var k=[A[0],v[1]-2],C=[A[0]+2,v[1]];else k=[A[0],v[1]+2],C=[A[0]+2,v[1]];x=[g,A,k,C,v]}else{if(v[1]>g[1])k=[A[0],v[1]-2],C=[A[0]-2,v[1]];else k=[A[0],v[1]+2],C=[A[0]-2,v[1]];x=[g,A,k,C,v]}else if(w.length>=2&&0==w.indexOf(n)||w.length>=2&&w.indexOf(n)==w.length-1)if("right"==u){if(v[1]>g[1])k=[A[0],v[1]-2],C=[A[0]+2,v[1]];else k=[A[0],v[1]+2],C=[A[0]+2,v[1]];x=[g,A,k,C,v]}else{if(v[1]>g[1])k=[A[0],v[1]-2],C=[A[0]-2,v[1]];else k=[A[0],v[1]+2],C=[A[0]-2,v[1]];x=[g,A,k,C,v]}else if(b.length>=2&&0!=b.indexOf(n)||b.length>=2&&b.indexOf(n)!=b.length-1||w.length>=2&&0!=w.indexOf(n)||w.length>=2&&w.indexOf(n)!=w.length-1)x=[y,v];if(1==b.length&&1==w.length)x=[g,v];if(b.length>1&&1==w.length)if("right"==u)x=[g,y,v];else x=[g,v]}else if("right"==u)if(n.isFirst()||n.isLast()){if(v[1]>g[1])k=[A[0],v[1]-2],C=[A[0]+2,v[1]];else k=[A[0],v[1]+2],C=[A[0]+2,v[1]];x=[g,A,k,C,v]}else x=[y,v];else if(n.isFirst()||n.isLast()){if(v[1]>g[1])k=[A[0],v[1]-2],C=[A[0]-2,v[1]];else k=[A[0],v[1]+2],C=[A[0]-2,v[1]];x=[g,A,k,C,v]}else x=[y,v];var E=e.svgDom.polyline(e.linePoint(x,i));E.fill("none"),E.stroke({color:f,width:i,linecap:"round",linejoin:"round"}),E.source=t,E.target=n}))}}),this.root)}}}class Ae extends ye{constructor(e,t,i){super(e,t,i),this.firstLevelDis=50,this.levelDis=30,this.nodeDis=10,this.layoutName="mindmap1"}createLink(){var e=this,t=this.levelDis,i=this.direct;this.svgDom&&this.svgDom.clear();var n=this.root;if(this.svgDom&&this.root.isShow()){var s=this.root.getLevel();n.children.forEach(((e,t)=>{e.stroke||(e.stroke=this.colors[t]||ge())})),function n(r){if(r==e.root);else if(r.layout)return;if(r.isExpand){var o=r.getChildren(),a=o.length,h=r.getPosition(),l=r.getBox(),d=r.getLevel();o.length&&o.forEach((function(o){var c=o.direct,u=o.getPosition(),p=o.getBox();let m=r.stroke?r.stroke:o.stroke?o.stroke:ge();if(o.stroke||(o.stroke=m),o._barDom&&(o._barDom.style.backgroundColor=m,o._barDom.style.borderColor=m),d==s)if("minder"==i)if("right"==c)var f={x:h.x+l.width/2,y:h.y+l.height/2},g={x:u.x,y:p.height/2+u.y};else f={x:h.x+l.width/2,y:h.y+l.height/2},g={x:Number.parseInt(u.x+p.width+""),y:Number.parseInt(p.height/2+u.y+"")};else{f={x:h.x+l.width/2,y:h.y+l.height/2};if("right"==c)g={x:u.x,y:p.height/2+u.y};else g={x:u.x+p.width,y:p.height/2+u.y}}else if("right"==c)f={x:h.x+l.width,y:h.y+l.height/2},g={x:u.x,y:p.height/2+u.y};else f={x:h.x,y:h.y+l.height/2},g={x:u.x+p.width,y:p.height/2+u.y};if(d==s)var v=e.svgDom.path();else v=e.svgDom.polyline();if(v.fill("none"),v.stroke({color:m,width:e.lineWidth,linecap:"round",linejoin:"round"}),d==s)if("right"==c){var y=parseInt((f.x+g.x)/2-30+""),A=parseInt(f.y+(g.y-f.y)/1.1+""),x=`M ${f.x} ${f.y} Q ${y} ${A},${g.x} ${g.y} `;v.plot(x)}else{y=parseInt((f.x+g.x)/2+30+""),A=parseInt(f.y+(g.y-f.y)/1.1+""),x=`M ${f.x} ${f.y} Q ${y} ${A},${g.x} ${g.y} `;v.plot(x)}else{var b=g.y<f.y?"top":"bottom";if(1==a)var w=[[f.x,f.y],[g.x,g.y]];else if("right"==c)if("top"==b){var k=[f.x,f.y],C=[f.x+t/2,f.y],E=[g.x,g.y];if(o.isFirst())w=[k,C,D=[f.x+t/2,g.y+5],N=[f.x+t/2+5,g.y],E];else if(Math.abs(g.y-f.y)<3)w=[k,C,N=[f.x+t/2,g.y],E];else w=[k,C,D=[f.x+t/2,g.y+5],N=[f.x+t/2+5,g.y],E]}else{k=[f.x,f.y],C=[f.x+t/2,f.y],E=[g.x,g.y];if(o.isLast())w=[k,C,D=[f.x+t/2,g.y-5],N=[f.x+t/2+5,g.y],E];else if(Math.abs(g.y-f.y)<3)w=[k,C,N=[f.x+t/2,g.y],E];else{var D,N;w=[k,C,D=[f.x+t/2,g.y-5],N=[f.x+t/2+5,g.y],E]}}else if("top"==b){k=[f.x,f.y],C=[f.x-t/2,f.y],E=[g.x,g.y];if(o.isFirst())w=[k,C,D=[f.x-t/2,g.y+5],N=[f.x-t/2-5,g.y],E];else if(Math.abs(g.y-f.y)<3)w=[k,C,N=[f.x-t/2,g.y],E];else w=[k,C,D=[f.x-t/2,g.y+5],N=[f.x-t/2-5,g.y],E]}else{k=[f.x+1,f.y],C=[f.x-t/2,f.y],E=[g.x,g.y];if(o.isLast())w=[k,C,D=[f.x-t/2,g.y-5],N=[f.x-t/2-5,g.y],E];else if(Math.abs(g.y-f.y)<3)w=[k,C,N=[f.x-t/2,g.y],E];else w=[k,C,D=[f.x-t/2,g.y-5],N=[f.x-t/2-5,g.y],E]}if(D){(v=e.svgDom.polyline(e.linePoint([k,C,D],e.lineWidth))).fill("none"),v.stroke({color:m,width:e.lineWidth,linecap:"round",linejoin:"round"});var I=e.linePoint([D],e.lineWidth)[0],S=e.linePoint([N],e.lineWidth)[0],B=`M${I[0]} ${I[1]},Q${I[0]} ${S[1]},${S[0]} ${S[1]}`,T=e.svgDom.path().stroke({color:m,width:e.lineWidth,linecap:"round",linejoin:"round"});T.plot(B),T.fill("none"),(v=e.svgDom.line(e.linePoint([N,E],e.lineWidth))).fill("none"),v.stroke({color:m,width:e.lineWidth,linecap:"round",linejoin:"round"})}else{(v=e.svgDom.polyline(e.linePoint(w,e.lineWidth))).fill("none"),v.stroke({color:m,width:e.lineWidth,linecap:"round",linejoin:"round"})}}n(o)}))}}(n),n.children.forEach((e=>{r(e)}))}function r(e){if(e.isExpand){if(e.layout)return void e.layout.createLink();e.children.forEach((e=>{r(e)}))}}}}var xe={mindmap1:Ae,mindmap2:class extends ye{constructor(e,t,i){super(e,t,i),this.firstLevelDis=40,this.levelDis=30,this.nodeDis=10,this.type="minder",this.layoutName="mindmap2"}createLink(){var e=this,t=this.levelDis,i=this.root;if(this.svgDom&&this.svgDom.clear(),this.svgDom&&this.root.isExpand&&this.root.isShow()){var n=this.lineWidth,s=this.rights,r=this.lefts,o=i.getBox(),a=i.getPosition();s.length,r.length,i.children.forEach(((e,t)=>{e.stroke||(e.stroke=this.colors[t]||ge())})),function(){var t=[],h=[];s.forEach((e=>{e.getPosition().y+e.getBox().height/2>o.height/2+a.y?h.push(e):t.push(e)}));var l=t.length,d=h.length,c=parseInt((o.width/2-6)/l+""),u=parseInt((o.width/2-6)/d+"");t.forEach(((t,s)=>{var r=t.getBox(),h=t.getPosition(),l=r.height/2+h.y,d=l-(o.height/2+a.y),u=[a.x+o.width/2+6+c*s,a.y+o.height/2];if(Math.abs(d)>2)var p=[u[0],l-5*d/Math.abs(d)],m=[u[0]+5,l];else p=[u[0],l-d/2],m=[u[0]+Math.abs(d)/2,l];var f=[h.x,l];let g=i.stroke?i.stroke:t.stroke||ge();t.stroke||(t.stroke=g),t._barDom&&(t._barDom.style.backgroundColor=g,t._barDom.style.borderColor=g);var v=e.linePoint([p],n)[0],y=e.linePoint([m],n)[0],A=`M${v[0]} ${v[1]},Q${v[0]} ${y[1]},${y[0]} ${y[1]}`,x=e.svgDom.path().stroke({color:g,width:n+2,linecap:"round",linejoin:"round"});x.plot(A),x.fill("none"),e.svgDom.line(e.linePoint([u,p],n+2)).stroke({color:g,width:n+2,linecap:"round",linejoin:"round"}).fill("none"),e.svgDom.line(e.linePoint([m,f],n+2)).stroke({color:g,width:n+2,linecap:"round",linejoin:"round"}).fill("none")})),h.reverse().forEach(((t,s)=>{var r=t.getBox(),h=t.getPosition(),l=r.height/2+h.y,d=l-(o.height/2+a.y),c=[a.x+o.width/2+6+u*s,a.y+o.height/2];if(Math.abs(d)>2)var p=[c[0],l-5*d/Math.abs(d)],m=[c[0]+5,l];else p=[c[0],l-d/2],m=[c[0]+Math.abs(d)/2,l];var f=[h.x,l];let g=i.stroke?i.stroke:t.stroke||ge();t.stroke||(t.stroke=g),t._barDom&&(t._barDom.style.backgroundColor=g,t._barDom.style.borderColor=g);var v=e.linePoint([p],n)[0],y=e.linePoint([m],n)[0],A=`M${v[0]} ${v[1]},Q${v[0]} ${y[1]},${y[0]} ${y[1]}`,x=e.svgDom.path().stroke({color:g,width:n+2,linecap:"round",linejoin:"round"});x.plot(A),x.fill("none"),e.svgDom.line(e.linePoint([c,p],n+2)).stroke({color:g,width:n+2,linecap:"round",linejoin:"round"}).fill("none"),e.svgDom.line(e.linePoint([m,f],n+2)).stroke({color:g,width:n+2,linecap:"round",linejoin:"round"}).fill("none")}));var p=[],m=[];r.forEach((e=>{e.getPosition().y+e.getBox().height/2>o.height/2+a.y?m.push(e):p.push(e)}));var f=p.length,g=m.length,v=parseInt((o.width/2-12)/f+""),y=parseInt((o.width/2-12)/g+"");p.forEach(((t,s)=>{var r=t.getBox(),h=t.getPosition(),l=r.height/2+h.y,d=l-(o.height/2+a.y),c=[a.x+o.width/2-6-v*s,a.y+o.height/2];if(Math.abs(d)>2)var u=[c[0],l-5*d/Math.abs(d)],p=[c[0]-5,l];else u=[c[0],l-d/2],p=[c[0]-Math.abs(d)/2,l];var m=[h.x+r.width,l];let f=i.stroke?i.stroke:t.stroke||ge();t.stroke||(t.stroke=f),t._barDom&&(t._barDom.style.backgroundColor=f,t._barDom.style.borderColor=f);var g=e.linePoint([u],n)[0],y=e.linePoint([p],n)[0],A=`M${g[0]} ${g[1]},Q${g[0]} ${y[1]},${y[0]} ${y[1]}`,x=e.svgDom.path().stroke({color:f,width:n+2,linecap:"round",linejoin:"round"});x.plot(A),x.fill("none"),e.svgDom.line(e.linePoint([c,u],n+2)).stroke({color:f,width:n+2,linecap:"round",linejoin:"round"}).fill("none"),e.svgDom.line(e.linePoint([p,m],n+2)).stroke({color:f,width:n+2,linecap:"round",linejoin:"round"}).fill("none")})),m.reverse().forEach(((t,s)=>{var r=t.getBox(),h=t.getPosition(),l=r.height/2+h.y,d=l-(o.height/2+a.y),c=[a.x+o.width/2-6-y*s,a.y+o.height/2];if(Math.abs(d)>2)var u=[c[0],l-5*d/Math.abs(d)],p=[c[0]-5,l];else u=[c[0],l-d/2],p=[c[0]-Math.abs(d)/2,l];var m=[h.x+r.width,l];let f=i.stroke?i.stroke:t.stroke||ge();t.stroke||(t.stroke=f),t._barDom&&(t._barDom.style.backgroundColor=f,t._barDom.style.borderColor=f);var g=e.linePoint([u],n)[0],v=e.linePoint([p],n)[0],A=`M${g[0]} ${g[1]},Q${g[0]} ${v[1]},${v[0]} ${v[1]}`,x=e.svgDom.path().stroke({color:f,width:n+2,linecap:"round",linejoin:"round"});x.plot(A),x.fill("none"),e.svgDom.line(e.linePoint([c,u],n+2)).stroke({color:f,width:n+2,linecap:"round",linejoin:"round"}).fill("none"),e.svgDom.line(e.linePoint([p,m],n+2)).stroke({color:f,width:n+2,linecap:"round",linejoin:"round"}).fill("none")}))}(),i.children.forEach(((e,t)=>{h(e),l(e)}))}function h(i){if(!i.layout&&i.isExpand){var s=i.getChildren(),r=s.length,o=i.getPosition(),a=i.getBox();s.length&&s.forEach((function(s){var l=s.direct,d=s.getPosition(),c=s.getBox();let u=i.stroke?i.stroke:s.stroke?s.stroke:ge();if(s.stroke||(s.stroke=u),s._barDom&&(s._barDom.style.backgroundColor=u,s._barDom.style.borderColor=u),"right"==l)var p={x:o.x+a.width,y:o.y+a.height/2},m={x:d.x,y:c.height/2+d.y};else p={x:o.x,y:o.y+a.height/2},m={x:d.x+c.width,y:c.height/2+d.y};if(1==r)var f=[[p.x,p.y],[m.x,m.y]];else{var g=m.y<p.y?"top":"bottom";if("right"==l)if("top"==g){var v=[p.x,p.y],y=[p.x+t/2,p.y],A=[m.x,m.y];if(s.isFirst())f=[v,y,x=[p.x+t/2,m.y+5],b=[p.x+t/2+5,m.y],A];else if(Math.abs(m.y-p.y)<3)f=[v,y,b=[p.x+t/2,m.y],A];else f=[v,y,x=[p.x+t/2,m.y+5],b=[p.x+t/2+5,m.y],A]}else{v=[p.x,p.y],y=[p.x+t/2,p.y],A=[m.x,m.y];if(s.isLast())f=[v,y,x=[p.x+t/2,m.y-5],b=[p.x+t/2+5,m.y],A];else if(Math.abs(m.y-p.y)<3)f=[v,y,b=[p.x+t/2,m.y],A];else f=[v,y,x=[p.x+t/2,m.y-5],b=[p.x+t/2+5,m.y],A]}else if("top"==g){v=[p.x,p.y],y=[p.x-t/2,p.y],A=[m.x,m.y];if(s.isFirst())f=[v,y,x=[p.x-t/2,m.y+5],b=[p.x-t/2-5,m.y],A];else if(Math.abs(m.y-p.y)<3)f=[v,y,b=[p.x-t/2,m.y],A];else f=[v,y,x=[p.x-t/2,m.y+5],b=[p.x-t/2-5,m.y],A]}else{v=[p.x+1,p.y],y=[p.x-t/2,p.y],A=[m.x,m.y];if(s.isLast())f=[v,y,x=[p.x-t/2,m.y-5],b=[p.x-t/2-5,m.y],A];else if(Math.abs(m.y-p.y)<3)f=[v,y,b=[p.x-t/2,m.y],A];else{var x,b;f=[v,y,x=[p.x-t/2,m.y-5],b=[p.x-t/2-5,m.y],A]}}}if(x){(D=e.svgDom.polyline(e.linePoint([v,y,x],n))).fill("none"),D.stroke({color:u,width:n,linecap:"round",linejoin:"round"});var w=e.linePoint([x],n)[0],k=e.linePoint([b],n)[0],C=`M${w[0]} ${w[1]},Q${w[0]} ${k[1]},${k[0]} ${k[1]}`,E=e.svgDom.path().stroke({color:u,width:n,linecap:"round",linejoin:"round"});E.plot(C),E.fill("none"),(D=e.svgDom.line(e.linePoint([b,A],n))).fill("none"),D.stroke({color:u,width:n,linecap:"round",linejoin:"round"})}else{var D;(D=e.svgDom.polyline(e.linePoint(f,n))).fill("none"),D.stroke({color:u,width:n,linecap:"round",linejoin:"round"})}h(s)}))}}function l(e){if(e.isExpand){if(e.layout)return void e.layout.createLink();e.children.forEach((e=>{l(e)}))}}}},mindmap:class extends ve{constructor(e,t,i){super("mindmap"),this.layoutName="mindmap",this.direct="",this.levelDis=50,this.nodeDis=6,this.firstLevelDis=80,this.firstNodeDis=20,this.isCache=!0,this.lefts=[],this.rights=[],this.colors=[],this.lineWidth=2,this.root=e||null,this.mind=(null==e?void 0:e.mindmap)||null,this.direct=t||"mindmap",this.colors=i||[],this.svgDom||(this.svgDom=this.mind.edgeGroup.group()),this.layout()}setDirect(){var e=this,t=this.root.children.length,i=this.root;this.rights=[],this.lefts=[],"right"==this.direct?(this.rights=i.children,this.rights.forEach((e=>{this._setDirect(e,"right")}))):"left"==this.direct?(this.lefts=i.children,this.lefts.forEach((e=>{this._setDirect(e,"left")}))):i.children.forEach((function(i,n){n<t/2?(e.rights.push(i),e._setDirect(i,"right")):(e.lefts.push(i),e._setDirect(i,"left"))}))}_setDirect(e,t){e.stroke="",e.direct=t;var i=e.containEl.classList.contains("mm-node-second");e.containEl.setAttribute("class",""),e.containEl.classList.add("mm-node"),e.containEl.classList.add("mm-node-"+t),e.isLeaf()&&!e.containEl.classList.contains("mm-node-leaf")?e.containEl.classList.add("mm-node-leaf"):e.containEl.classList.contains("mm-node-leaf")&&e.containEl.classList.remove("mm-node-leaf"),1==e.getLevel()&&(e.containEl.classList.add("mm-node-second"),e.refreshBox()),i&&e.refreshBox(),e.isExpand||e.containEl.classList.add("mm-node-collapse"),e.children.forEach((e=>{this._setDirect(e,t)}))}layout(e,t){e&&(this.root=e),t&&(this.direct=t),this.setDirect(),"right"==this.direct?this.layoutRight():"left"==this.direct?this.layoutLeft():this.layoutMindMap(),this._dolayout(),this._doRefresh(),this.root&&this.root.mindmap.useHandMode?this.createHandDrawLink():this.createLink()}layoutMindMap(){this.layoutRight(),this.layoutLeft()}layoutRight(e,t){var i=e||this.rights,n=t||this.root,s=n.getPosition(),r=n.getBox(),o=n.getLevel();if(0==o)var a=this.firstLevelDis,h=this.firstNodeDis;else a=this.levelDis,h=this.nodeDis;var{disHeight:l,height:d}=this._getNodesHeight(i),c=d/i.length;if(0==o)var u=[parseInt(s.x+r.width+a+""),parseInt(s.y+r.height/2-l/2+"")];else if(1==o)u=[parseInt(s.x+r.width+a+""),parseInt(s.y+r.height/2-l/2-c/2-this.lineWidth/2+"")];else u=[parseInt(s.x+r.width+a+""),parseInt(s.y+r.height-l/2-c/2+"")];i.forEach((e=>{e.setPosition(u[0],u[1]);var t=e.getBox();u[1]+=parseInt(t.height+h+"")})),i.forEach((e=>{e.isExpand&&this.layoutRight(e.children,e)}))}layoutLeft(e,t){var i=e||this.lefts,n=t||this.root,s=n.getPosition(),r=n.getBox(),o=n.getLevel();if(0==o)var a=this.firstLevelDis,h=this.firstNodeDis;else a=this.levelDis,h=this.nodeDis;var{disHeight:l,height:d}=this._getNodesHeight(i),c=d/i.length;if(0==o)var u=[parseInt(s.x-a+""),parseInt(s.y+r.height/2-l/2+"")];else if(1==o)u=[parseInt(s.x-a+""),parseInt(s.y+r.height/2-l/2-c/2-this.lineWidth/2+"")];else u=[parseInt(s.x-a+""),parseInt(s.y+r.height-l/2-c/2+"")];i.forEach((e=>{var t=e.getBox();e.setPosition(parseInt(u[0]-t.width+""),parseInt(u[1]+"")),u[1]+=t.height+h})),i.forEach((e=>{e.isExpand&&this.layoutLeft(e.children,e)}))}_getNodesHeight(e){if(e[0]&&1==e[0].getLevel())var t=this.firstNodeDis;else t=this.nodeDis;var i=0,n=0;return 1==e.length?{disHeight:i=e[0].getBox().height,height:i}:(e.forEach(((s,r)=>{var o=s.getBox().height;i+=o,n+=o,r!=e.length-1&&(i+=t)})),{disHeight:i,height:n})}_doRefresh(){var e=this.root,t=e.getPosition(),i=e.getBox(),n=t.y+i.height/2,s=this.rights,r=this.lefts;if(s.length>=2){var o=s[0],a=s[s.length-1],h=o.getPosition(),l=a.getPosition(),d=a.getBox(),c=l.y+d.height-n,u=n-h.y;if(Math.abs(c)!=Math.abs(u)){var p=Math.abs(Math.abs(c)-Math.abs(u))/2+"";Math.abs(c)>Math.abs(u)?s.forEach((e=>{this.moveNode(e,0,-parseInt(p))})):s.forEach((e=>{this.moveNode(e,0,parseInt(p))}))}}if(r.length>=2){o=r[0],a=r[r.length-1],h=o.getPosition(),l=a.getPosition(),d=a.getBox(),c=l.y+d.height-n,u=n-h.y;if(Math.abs(c)!=Math.abs(u)){p=Math.abs(Math.abs(c)-Math.abs(u))/2+"";Math.abs(c)>Math.abs(u)?r.forEach((e=>{this.moveNode(e,0,-parseInt(p))})):r.forEach((e=>{this.moveNode(e,0,parseInt(p))}))}}}moveNode(e,t,i){e.move(t,i),e&&e.children&&e.children.forEach((e=>{this.moveNode(e,t,i)}))}linePoint(e,t){let i=0;var n;return t%2==1?(i=.5,n=parseInt):n=Math.ceil,e.map((e=>[n(e[0])+i,n(e[1])+i]))}_dolayout(){var e=this,t=this.mind;t.traverseDF((i=>{if(i!=e.root&&i.isExpand){var n=i.getCBox();if(e.isCache&&i.boundingRect)var s=i.boundingRect;else{var r=i.getShowNodeList();r.length&&(s=t.getBoundingRect(r))}if(s){if(i.boundingRect&&e.isCache)var o=s.topDy,a=s.downDy;else o=Math.abs(s.y-n.y),a=Math.abs(s.y+s.height-n.y-n.height),s.topDy=o,s.downDy=a,i.boundingRect=s;e._adjustNode(i,0,o,a)}}}))}_adjustNode(e,t,i,n){if(e){var s=e.direct;if(e&&e!=this.root){var r=e.getSiblings(),o=e.getPosition();r.forEach((e=>{e.direct==s&&(e.getPosition().y>o.y?this.moveNode(e,t,n):this.moveNode(e,t,-i))}))}}}refresh(e,t){this.layout(e,t)}createHandDrawLink(){var e=this;this.svgDom&&this.svgDom.clear();var t=le.svg(this.root.mindmap.draw);if(0!=this.root.getChildren().length){var i=this.levelDis,n=this.root,s=this.lineWidth,r=this.root.getLevel();this.root.children.forEach(((e,t)=>{e.stroke=this.colors[t]||ge()})),function n(o){if(o.isExpand){var a=o.getChildren(),h=o.getPosition(),l=o.getBox();l.height=l.height+s;var d=o.getLevel();a.length&&a.forEach((function(a){var c=a.direct,u=a.getPosition(),p=Object.assign({},a.getBox());p.height=p.height+s;let m=o.stroke?o.stroke:a.stroke?a.stroke:ge();if(a.stroke||(a.stroke=m),a._barDom&&(a._barDom.style.backgroundColor=m,a._barDom.style.borderColor=m),d==r)var f={x:h.x+l.width/2,y:h.y+l.height/2};else f=d==1+r?"right"==c?{x:h.x+l.width,y:h.y+l.height/2}:{x:h.x,y:h.y+l.height/2}:"right"==c?{x:h.x+l.width,y:h.y+l.height}:{x:h.x,y:h.y+l.height};if(d==r)if("right"==c)var g={x:u.x,y:p.height/2+u.y};else g={x:u.x+p.width,y:p.height/2+u.y};else g="right"==c?{x:u.x,y:p.height+u.y}:{x:u.x+p.width,y:p.height+u.y};if(s%2==1)var v=parseInt(f.x+"")-.5,y=parseInt(g.x+"")-.5,A=parseInt(f.y+"")-.5,x=parseInt(g.y+"")-.5;else v=parseInt(f.x+""),A=parseInt(f.y+""),y=parseInt(g.x+""),x=parseInt(g.y+"");if(s%2==1)var b=parseInt(u.x+"")-.5,w=parseInt(u.x+p.width+"")-.5,k=x,C=x;else b=parseInt(u.x+""),k=parseInt(p.height+u.y+""),w=parseInt(u.x+p.width+""),C=parseInt(p.height+u.y+"");if(d==r){var E=`M${v} ${A}  C ${parseInt(f.x+"")+(g.x-f.x)/9} ${parseInt(f.y+"")+(g.y-f.y)/9*8}, ${parseInt(f.x+(g.x-f.x)/9*8+"")} ${parseInt(g.y+"")}, ${y} ${x}`,D=t.path(E,{stroke:m,strokeWidth:s+1,fill:"none"});e.svgDom.node.appendChild(D)}else{var N={x:f.x+i/2,y:f.y},I={x:f.x+i/2,y:g.y};"left"==c&&(N.x=f.x-i/2,I.x=f.x-i/2),N.x=parseInt(N.x+""),N.y=parseInt(N.y+""),I.x=parseInt(I.x+""),I.y=parseInt(I.y+"");var S=`M${v} ${A}  C${N.x} ${N.y}, ${I.x} ${I.y}, ${y} ${x}`,B=t.path(S,{stroke:m,strokeWidth:d==r?s+1:s,fill:"none",roughness:.4});D=t.line(b-1,k,w+1,C,{stroke:m,strokeWidth:d==r?s+1:s,fill:"none",roughness:.8});e.svgDom.node.appendChild(D),e.svgDom.node.appendChild(B)}n(a)}))}}(n)}}createLink(){var e=this;if(this.svgDom&&this.svgDom.clear(),0!=this.root.getChildren().length){var t=this.levelDis,i=this.root,n=this.lineWidth,s=this.root.getLevel();this.root.children.forEach(((e,t)=>{e.stroke=this.colors[t]||ge()})),function i(r){if(r.isExpand){var o=r.getChildren(),a=r.getPosition(),h=r.getBox();h.height=h.height+n;var l=r.getLevel();o.length&&o.forEach((function(o){var d=o.direct,c=o.getPosition(),u=Object.assign({},o.getBox());u.height=u.height+n;let p=r.stroke?r.stroke:o.stroke?o.stroke:ge();if(o.stroke||(o.stroke=p),o._barDom&&(o._barDom.style.backgroundColor=p,o._barDom.style.borderColor=p),l==s)var m={x:a.x+h.width/2,y:a.y+h.height/2};else m=l==1+s?"right"==d?{x:a.x+h.width,y:a.y+h.height/2}:{x:a.x,y:a.y+h.height/2}:"right"==d?{x:a.x+h.width,y:a.y+h.height}:{x:a.x,y:a.y+h.height};if(l==s)if("right"==d)var f={x:c.x,y:u.height/2+c.y};else f={x:c.x+u.width,y:u.height/2+c.y};else f="right"==d?{x:c.x,y:u.height+c.y}:{x:c.x+u.width,y:u.height+c.y};if(n%2==1)var g=parseInt(m.x+"")-.5,v=parseInt(f.x+"")-.5,y=parseInt(m.y+"")-.5,A=parseInt(f.y+"")-.5;else g=parseInt(m.x+""),y=parseInt(m.y+""),v=parseInt(f.x+""),A=parseInt(f.y+"");if(l==s)var x=e.svgDom.path().stroke({color:p,width:n+1,linecap:"round",linejoin:"round"}).fill("none");else x=e.svgDom.path().stroke({color:p,width:n,linecap:"round",linejoin:"round"}).fill("none");if(n%2==1)var b=parseInt(c.x+"")-.5,w=parseInt(c.x+u.width+"")-.5,k=A,C=A;else b=parseInt(c.x+""),k=parseInt(u.height+c.y+""),w=parseInt(c.x+u.width+""),C=parseInt(u.height+c.y+"");if(l==s){var E=`M${g} ${y}  C ${parseInt(m.x+"")+(f.x-m.x)/9} ${parseInt(m.y+"")+(f.y-m.y)/9*8}, ${parseInt(m.x+(f.x-m.x)/9*8+"")} ${parseInt(f.y+"")}, ${v} ${A}`;x.plot(E)}else{e.svgDom.line(b,k,w,C).stroke({color:p,width:n,linecap:"miter",linejoin:"miter"}).fill("none");var D={x:m.x+t/2,y:m.y},N={x:m.x+t/2,y:f.y};"left"==d&&(D.x=m.x-t/2,N.x=m.x-t/2),D.x=parseInt(D.x+""),D.y=parseInt(D.y+""),N.x=parseInt(N.x+""),N.y=parseInt(N.y+"");var I=`M${g} ${y}  C ${D.x} ${D.y}, ${N.x} ${N.y}, ${v} ${A}`;x.plot(I)}i(o)}))}}(i)}}},fish:class extends ve{constructor(e,t,i){super("fish"),this.root=null,this.tops=[],this.bottoms=[],this.dis=10,this.levelDis=20,this.firstLevelDis=20,this.layoutName="fish",this.type="fish",this.angle=7*Math.PI/18,this.isCache=!1,this.colors=[],this.fishTail=null,this.stroke="",this.root=e,this.direct=t||"right",this.colors=i||[],this.stroke=ge(),this.svgDom||(this.svgDom=this.root.getMind().edgeGroup.group())}layout(e,t){if(this.direct=t||"right",this.tops=[],this.bottoms=[],this.root=e||this.root,this.root.isExpand){this.svgDom||(this.svgDom=this.root.getMind().edgeGroup.group()),this.root.layout=this,this.root.parent||"induce"==this.root.nodeType||this.root.containEl.classList.add("mm-root");var i=this.root.children.length;this.root.getChildren().forEach(((e,t)=>{t<Math.ceil(i/2)?(this.tops.push(e),e.getNodeList().forEach((e=>{e.mark="up",e.containEl.classList=[],e.containEl.classList.add("mm-node"),e.containEl.classList.add("mm-node-"+this.direct),e.containEl.classList.add(`mm-${this.layoutName}-node`),e.direct=this.direct,e.isExpand||e.containEl.classList.add("mm-node-collapse"),e.isLeaf()&&!e.containEl.classList.contains("mm-node-leaf")?e.containEl.classList.add("mm-node-leaf"):e.containEl.classList.contains("mm-node-leaf")&&e.containEl.classList.remove("mm-node-leaf")}))):(this.bottoms.push(e),e.getNodeList().forEach((e=>{e.mark="down",e.containEl.classList=[],e.containEl.classList.add("mm-node"),e.containEl.classList.add("mm-node-"+this.direct),e.containEl.classList.add(`mm-${this.layoutName}-node`),e.direct=this.direct,e.isExpand||e.containEl.classList.add("mm-node-collapse"),e.isLeaf()&&!e.containEl.classList.contains("mm-node-leaf")?e.containEl.classList.add("mm-node-leaf"):e.containEl.classList.contains("mm-node-leaf")&&e.containEl.classList.remove("mm-node-leaf")}))),e.containEl.classList.add("mm-node-second"),e.refreshBox()})),"left"==this.direct?this._layoutRight():"right"==this.direct&&this._layoutLeft(),this.root.mindmap.useHandMode?this.createHandDrawLink():this.createLink()}}_layoutLeft(){var e=this,t=this.root,i=t.getMind(),n=t.getBox(),s=t.getPosition(),r=s.y+n.height/2,o=[];this.tops.forEach(((t,i)=>{t.direct="up";var a=t.getCBox();0==i?(t.setPosition(n.width+s.x+40+e.dis/Math.tan(e.angle),r-e.dis-a.height),o=[n.width+s.x+40+e.dis/Math.tan(e.angle)+a.width+e.dis,0]):(t.setPosition(o[0]+e.dis/Math.tan(e.angle),r-e.dis-a.height),o=[o[0]+a.width+e.dis+40,0]),e._layout(t,"top")})),this.bottoms.forEach(((t,i)=>{t.direct="down";var a=t.getBox();if(0==i){var h=n.width+50+(e.dis+a.height)/Math.tan(e.angle)+e.dis;t.setPosition(h+s.x,r+e.dis),o=[h+a.width+e.dis+40,0]}else t.setPosition(o[0]+(e.dis+a.height)/Math.tan(e.angle)+e.dis,r+e.dis),o=[o[0]+a.width+e.dis,0];e._layout(t,"bottom")})),this.tops.forEach(((e,t)=>{if(t>0){var n=i.getBBox(this.tops[t-1]),s=e.getPosition(),r=n.right-s.x+this.dis+40;this.moveNode(e,r,0)}})),this.bottoms.forEach(((e,t)=>{if(t>0){var n=i.getBBox(this.bottoms[t-1]),s=e.getPosition(),r=n.right-s.x+this.dis+40;this.moveNode(e,r,0)}})),this.tops.forEach((e=>{this._updateNodeAssist(e,this.root)})),this.bottoms.forEach((e=>{this._updateNodeAssist(e,this.root)})),this._updateRootAssist()}_layoutRight(){var e=this,t=this.root,i=t.getMind(),n=t.getBox(),s=t.getPosition(),r=s.y+n.height/2,o=[];this.tops.forEach(((t,i)=>{t.direct="up";var n=t.getBox();0==i?(t.setPosition(s.x-n.width-e.dis-e.dis/Math.tan(e.angle)-40,r-e.dis-n.height),o=[s.x-n.width-e.dis-e.dis/Math.tan(e.angle)-40,0]):(t.setPosition(o[0]-n.width-e.dis-e.dis/Math.tan(e.angle)-40,r-e.dis-n.height),o=[o[0]-n.width-e.dis-e.dis/Math.tan(e.angle)-40,0]),e._layout1(t,"top")})),this.bottoms.forEach(((t,i)=>{t.direct="down";var n=t.getBox();if(0==i){var a=s.x-n.width-e.dis-(e.dis+n.height)/Math.tan(e.angle)-40;t.setPosition(a,r+e.dis),o=[a,0]}else t.setPosition(o[0]-n.width-(e.dis+n.height)/Math.tan(e.angle)-e.dis-40,r+e.dis),o=[o[0]-(e.dis+n.height)/Math.tan(e.angle)-e.dis-40,0];e._layout1(t,"bottom")})),this.tops.forEach(((e,t)=>{if(t>0){var n=i.getBBox(this.tops[t-1]),s=e.getPosition(),r=e.getBox(),o=s.x-n.x+this.dis+r.width+40;this.moveNode(e,-o,0)}})),this.bottoms.forEach(((e,t)=>{if(t>0){var n=i.getBBox(this.bottoms[t-1]),s=e.getPosition(),r=e.getBox(),o=s.x-n.x+this.dis+r.width+40;this.moveNode(e,-o,0)}})),this.tops.forEach((e=>{this._updateNodeAssist(e)})),this.bottoms.forEach((e=>{this._updateNodeAssist(e)})),this._updateRootAssist()}_layout(e,t){if(e.isExpand){e.layout&&(e.layout.group&&(e.layout.group.clear(),e.layout.group.remove(),e.layout.group=null),e.layout.svgDom&&(e.layout.svgDom.clear(),e.layout.svgDom.remove(),e.layout.svgDom=null));var i=this,n=e.getMind();if("top"==t){var s=e.getBox(),r=e.getPosition(),o=s.width+r.x+i.dis,a=e.getChildren(),h=0,l=0;a.forEach(((e,d)=>{if(e.isShow()){e.callout&&e.callout.refresh();var c=e.getCBox();if(0==d)l=o+(i.dis+s.height+c.bh)/Math.tan(i.angle),h=r.y-c.height-c.bh-i.dis,e.setPosition(l,h);else{var u=n.getBBox(a[d-1]),p=a[d-1].getCBox(),m=(p.y-u.y+i.dis+c.bh+p.height)/Math.tan(i.angle),f=p.x+m,g=u.y-i.dis-c.height-c.bh;e.setPosition(f,g)}i._updateNodeAssist(e,i.root),i._layout(e,t)}}))}else{s=e.getBox(),r=e.getPosition(),o=s.width+r.x+i.dis,h=0,l=0,a=e.getChildren();e.getChildren().forEach(((e,d)=>{if(e.isShow()){e.callout&&e.callout.refresh();var c=e.getCBox();if(0==d){var u=(i.dis+c.th+c.height)/Math.tan(i.angle);l=o+u,h=r.y+s.height+i.dis+c.th+0,e.setPosition(l,h)}else{var p=n.getBBox(a[d-1]),m=a[d-1].getCBox(),f=(u=(i.dis+c.th+c.height+p.y+p.height-m.y-m.height)/Math.tan(i.angle),m.x+u),g=p.y+p.height+i.dis+c.th;e.setPosition(f,g)}i._updateNodeAssist(e,i.root),i._layout(e,t)}}))}}}_layout1(e,t){if(e.isExpand){e.layout&&(e.layout.group&&(e.layout.group.clear(),e.layout.group.remove(),e.layout.group=null),e.layout.svgDom&&(e.layout.svgDom.clear(),e.layout.svgDom.remove(),e.layout.svgDom=null));var i=this,n=e.getMind(),s=e.getChildren();if("top"==t){var r=e.getBox(),o=(a=e.getPosition()).x-i.dis;s.forEach(((e,h)=>{if(e.isShow()){e.callout&&e.callout.refresh();var l=e.getCBox();if(0==h){var d=o-l.width-(r.height+i.dis+l.bh)/Math.tan(i.angle),c=a.y-l.height-l.bh-i.dis;e.setPosition(d,c)}else{var u=n.getBBox(s[h-1]),p=s[h-1].getBox(),m=(p.y-u.y+i.dis+p.height+l.bh+0)/Math.tan(i.angle),f=p.x+p.width-l.width-m,g=u.y-i.dis-l.height-l.bh-0;e.setPosition(f,g)}i._updateNodeAssist(e,i.root),i._layout1(e,t)}}))}else{var a;r=e.getBox(),o=(a=e.getPosition()).x-i.dis;e.getChildren().forEach(((e,h)=>{if(e.isShow()){e.callout&&e.callout.refresh();var l=e.getCBox();if(0==h){var d=o-l.width-(l.height+i.dis+l.th+0)/Math.tan(i.angle),c=a.y+r.height+i.dis+l.th+0;e.setPosition(d,c)}else{var u=n.getBBox(s[h-1]),p=s[h-1].getBox(),m=u.y+u.height-p.y-p.height,f=(m+i.dis+l.th+0+l.height)/Math.tan(i.angle),g=p.x+p.width-l.width-f,v=p.y+i.dis+m+l.th+0+p.height;e.setPosition(g,v)}i._updateNodeAssist(e,i.root),i._layout1(e,t)}}))}}}adjustNode(e,t){var i=e.getPosition(),n=e.getBBox(),s=e.getParent(),r=s.getPosition(),o=s.getBBox();if("top"==t)var a=r.y-i.y;else a=i.y-r.y-o.height+n.height;for(var h=a/Math.tan(this.angle);s.getLevel()>1;){r=s.getPosition(),s.getSiblings().forEach((e=>{var i=e.getPosition();"top"==t?i.y<r.y&&this.moveNode(e,h,-a):"bottom"==t&&i.y>r.y&&this.moveNode(e,h,a)})),s=s.getParent()}}adjustNode1(e,t){var i=e.getPosition(),n=e.getBBox(),s=e.getParent(),r=s.getPosition(),o=s.getBBox();if("top"==t)var a=r.y-i.y;else a=i.y-r.y-o.height+n.height;for(var h=a/Math.tan(this.angle);s.getLevel()>1;){r=s.getPosition(),s.getSiblings().forEach((e=>{var i=e.getPosition();"top"==t?i.y<r.y&&this.moveNode(e,-h,-a):"bottom"==t&&i.y>r.y&&this.moveNode(e,-h,a)})),s=s.getParent()}}createHandDrawLink(){if(this.svgDom&&this.svgDom.clear(),!this.svgDom)return;if(0==this.root.getChildren().length)return;if("left"==this.direct)return void this.createHandDrawLink1();var e=le.svg(this.root.mindmap.draw),t=this;this.dis;var i=this.root.getLevel();function n(s,r){var o=s.getBox(),a=s.getPosition();let h=s.parent.stroke?s.parent.stroke:s.stroke?s.stroke:ge();if(s.stroke||(s.stroke=h),s._barDom&&(s._barDom.style.backgroundColor=h,s._barDom.style.borderColor=h),s.getLevel()==i+1){if("top"==r){var l=[a.x-t.dis/Math.tan(t.angle),parseInt(a.y+o.height+t.dis)],d=[(c=[a.x,a.y+o.height+1])[0]+o.width+1,c[1]];t.svgDom.node.appendChild(e.linearPath(t.linePoint([l,c,d],1),{stroke:h,strokeWidth:1,fill:"none",roughness:.6}))}else if("bottom"==r){var c;l=[a.x-(t.dis+o.height)/Math.tan(t.angle),parseInt(a.y-t.dis)],d=[(c=[a.x,a.y+o.height+1])[0]+o.width+1,c[1]];t.svgDom.node.appendChild(e.linearPath(t.linePoint([l,c,d],1),{stroke:h,strokeWidth:1,fill:"none",roughness:.6}))}}else{var u=s.getParent(),p=u.getPosition(),m=u.getBox();if(s.isLast())var f=[l=[p.x+m.width-1,p.y+m.height+1],[l[0]+t.dis,l[1]],g=[a.x,a.y+o.height+1],d=[g[0]+o.width,g[1]]];else{var g;f=[g=[a.x,a.y+o.height+1],d=[g[0]+o.width,g[1]]]}t.svgDom.node.appendChild(e.linearPath(t.linePoint(f,1),{stroke:h,strokeWidth:1,fill:"none",roughness:.6}))}s.isExpand&&s.getChildren().forEach((e=>{n(e,r)}))}this.root.children.forEach(((e,t)=>{e.stroke||(e.stroke=this.colors[t]||ge())})),this.tops.forEach((e=>{n(e,"top")})),this.bottoms.forEach((e=>{n(e,"bottom")})),this.createHandDrawBone()}createLink(){if(this.svgDom&&this.svgDom.clear(),!this.svgDom)return;if(0==this.root.getChildren().length)return;if("left"==this.direct)return void this.createLink1();var e=this;this.dis;var t=this.root.getLevel();function i(n,s){var r=n.getBox(),o=n.getPosition();let a=n.parent.stroke?n.parent.stroke:n.stroke?n.stroke:ge();if(n.stroke||(n.stroke=a),n._barDom&&(n._barDom.style.backgroundColor=a,n._barDom.style.borderColor=a),n.getLevel()==t+1){if("top"==s){var h=[o.x-e.dis/Math.tan(e.angle),parseInt(o.y+r.height+e.dis)],l=[(d=[o.x,o.y+r.height+1])[0]+r.width+1,d[1]];(c=e.svgDom.polyline(e.linePoint([h,d,l],2))).fill("none"),c.stroke({color:a,width:2,linecap:"round",linejoin:"round"})}else if("bottom"==s){var d;h=[o.x-(e.dis+r.height)/Math.tan(e.angle),parseInt(o.y-e.dis)],l=[(d=[o.x,o.y+r.height+1])[0]+r.width+1,d[1]];(c=e.svgDom.polyline(e.linePoint([h,d,l],2))).fill("none"),c.stroke({color:a,width:2,linecap:"round",linejoin:"round"})}}else{var c,u=n.getParent(),p=u.getPosition(),m=u.getBox();if(n.isLast())var f=[h=[p.x+m.width-1,p.y+m.height+1],[h[0]+e.dis,h[1]],g=[o.x,o.y+r.height+1],l=[g[0]+r.width,g[1]]];else{var g;f=[g=[o.x,o.y+r.height+1],l=[g[0]+r.width,g[1]]]}(c=e.svgDom.polyline(e.linePoint(f,2))).fill("none"),c.stroke({color:a,width:2,linecap:"round",linejoin:"round"})}n.isExpand&&n.getChildren().forEach((e=>{i(e,s)}))}this.root.children.forEach(((e,t)=>{e.stroke||(e.stroke=this.colors[t]||ge())})),this.tops.forEach((e=>{i(e,"top")})),this.bottoms.forEach((e=>{i(e,"bottom")})),this.creatBone()}createHandDrawLink1(){var e=this;if(this.dis,!this.svgDom)return;if(this.svgDom&&this.svgDom.clear(),0==this.root.getChildren().length)return;var t=le.svg(this.root.mindmap.draw);var i=this.root.getLevel();function n(s,r){var o=s.getBox(),a=s.getPosition();let h=s.parent.stroke?s.parent.stroke:s.stroke?s.stroke:ge();if(s.stroke||(s.stroke=h),s._barDom&&(s._barDom.style.backgroundColor=h,s._barDom.style.borderColor=h),s.getChildren().length,s.getLevel()==i+1){if("top"==r){var l=[a.x+o.width+e.dis/Math.tan(e.angle),parseInt(a.y+o.height+e.dis)],d=[a.x+o.width,a.y+o.height+1],c=[a.x-1,d[1]];e.svgDom.node.appendChild(t.linearPath(e.linePoint([l,d,c],1),{stroke:h,strokeWidth:1,fill:"none",roughness:.6}))}else if("bottom"==r){l=[a.x+o.width+(e.dis+o.height)/Math.tan(e.angle),parseInt(a.y-e.dis)],d=[a.x+o.width,a.y+o.height+1],c=[a.x-1,d[1]];e.svgDom.node.appendChild(t.linearPath(e.linePoint([l,d,c],1),{stroke:h,strokeWidth:1,fill:"none",roughness:.6}))}}else{var u=s.getParent(),p=u.getPosition(),m=u.getBox();if(s.isLast())var f=[l=[p.x+1,p.y+m.height+1],[l[0]-e.dis,l[1]],g=[a.x+o.width,a.y+o.height+1],c=[a.x,g[1]]];else{var g;f=[g=[a.x+o.width,a.y+o.height+1],c=[a.x,g[1]]]}e.svgDom.node.appendChild(t.linearPath(e.linePoint(f,1),{stroke:h,strokeWidth:1,fill:"none",roughness:.6}))}s.isExpand&&s.getChildren().forEach((e=>{n(e,r)}))}this.root.children.forEach(((e,t)=>{e.stroke||(e.stroke=this.colors[t]||ge())})),this.tops.forEach((e=>{n(e,"top")})),this.bottoms.forEach((e=>{n(e,"bottom")})),this.createHandDrawBone1()}createLink1(){var e=this;if(this.dis,!this.svgDom)return;if(this.svgDom&&this.svgDom.clear(),0==this.root.getChildren().length)return;var t=this.root.getLevel();function i(n,s){var r=n.getBox(),o=n.getPosition();let a=n.parent.stroke?n.parent.stroke:n.stroke?n.stroke:ge();if(n.stroke||(n.stroke=a),n._barDom&&(n._barDom.style.backgroundColor=a,n._barDom.style.borderColor=a),n.getChildren().length,n.getLevel()==t+1){if("top"==s){var h=[o.x+r.width+e.dis/Math.tan(e.angle),parseInt(o.y+r.height+e.dis)],l=[o.x+r.width,o.y+r.height+1],d=[o.x-1,l[1]];(c=e.svgDom.polyline(e.linePoint([h,l,d],2))).fill("none"),c.stroke({color:a,width:2,linecap:"round",linejoin:"round"})}else if("bottom"==s){h=[o.x+r.width+(e.dis+r.height)/Math.tan(e.angle),parseInt(o.y-e.dis)],l=[o.x+r.width,o.y+r.height+1],d=[o.x-1,l[1]];(c=e.svgDom.polyline(e.linePoint([h,l,d],2))).fill("none"),c.stroke({color:a,width:2,linecap:"round",linejoin:"round"})}}else{var c,u=n.getParent(),p=u.getPosition(),m=u.getBox();if(n.isLast())var f=[h=[p.x+1,p.y+m.height+1],[h[0]-e.dis,h[1]],g=[o.x+r.width,o.y+r.height+1],d=[o.x,g[1]]];else{var g;f=[g=[o.x+r.width,o.y+r.height+1],d=[o.x,g[1]]]}(c=e.svgDom.polyline(e.linePoint(f,2))).fill("none"),c.stroke({color:a,width:2,linecap:"round",linejoin:"round"})}n.isExpand&&n.getChildren().forEach((e=>{i(e,s)}))}this.root.children.forEach(((e,t)=>{e.stroke||(e.stroke=this.colors[t]||ge())})),this.tops.forEach((e=>{i(e,"top")})),this.bottoms.forEach((e=>{i(e,"bottom")})),this.creatBone1()}createHandDrawBone(){var e=this;if(!this.isShow)return;if(!this.svgDom)return;var t=le.svg(this.root.mindmap.draw),i=this.root.getMind(),n=this.root,s=n.getBox(),r=n.getPosition(),o=i.getBoundingRect(n.getShowNodeList());let a=this.stroke;var h=parseInt(r.x+s.width)+.5,l=parseInt(r.y+s.height/2)+.5,d=parseInt(r.x+o.width+30)+.5,c=l;e.svgDom.node.appendChild(t.polygon([[h,l-3],[d,c],[h,l+3]],{stroke:a,strokeWidth:1,fill:a,roughness:.4}));var u=[r.x+o.width+30,l],p=[u[0]+60,u[1]-30],m=[u[0]+60,u[1]+30];e.fishTail=t.polygon([u,p,m],{stroke:a,strokeWidth:1,fill:a,roughness:.6}),e.svgDom.node.appendChild(e.fishTail)}creatBone(){var e=this;if(!this.isShow)return;if(!this.svgDom)return;var t=this.root.getMind(),i=this.root,n=i.getBox(),s=i.getPosition(),r=t.getBoundingRect(i.getShowNodeList());let o=this.root.stroke||this.stroke;this.stroke;var a=parseInt(s.x+n.width),h=parseInt(s.y+n.height/2),l=parseInt(s.x+r.width+30),d=h;e.svgDom.line(a,h,l,d).stroke({color:o,width:2,linecap:"round",linejoin:"round"});var c=[s.x+r.width+30,h],u=[c[0]+60,c[1]-30],p=[c[0]+60,c[1]+30];e.fishTail=e.svgDom.polygon([c,u,p]).fill("lightskyblue").stroke({color:o,width:2,linecap:"round",linejoin:"round"})}createHandDrawBone1(){var e=this;if(!this.svgDom)return;var t=le.svg(this.root.mindmap.draw),i=this.root,n=i.getMind(),s=i.getBox(),r=i.getPosition(),o=n.getBoundingRect(i.getShowNodeList());let a=this.stroke;var h=parseInt(r.x)+.5,l=parseInt(r.y+s.height/2)+.5,d=parseInt(o.x-40)+.5,c=l;e.svgDom.node.appendChild(t.polygon([[h,l-3],[d,c],[h,l+3]],{stroke:a,strokeWidth:1,fill:a,roughness:.4}));var u=[o.x-40,l],p=[u[0]-60,u[1]-30],m=[u[0]-60,u[1]+30];e.fishTail=t.polygon([u,p,m],{stroke:a,strokeWidth:1,fill:a,roughness:.6}),e.svgDom.node.appendChild(e.fishTail)}creatBone1(){var e=this;if(!this.svgDom)return;var t=this.root,i=t.getMind(),n=t.getBox(),s=t.getPosition(),r=i.getBoundingRect(t.getShowNodeList());let o=this.root.stroke||this.stroke;var a=parseInt(s.x),h=parseInt(s.y+n.height/2),l=parseInt(r.x-40),d=h;e.svgDom.line(a,h,l,d).stroke({color:o,width:2,linecap:"round",linejoin:"round"});var c=[r.x-40,h],u=[c[0]-60,c[1]-30],p=[c[0]-60,c[1]+30];e.fishTail=e.svgDom.polygon([c,u,p]).fill("lightskyblue").stroke({color:o,width:2,linecap:"round",linejoin:"round"})}refresh(){this.tops=[],this.bottoms=[],this.layout(this.root,this.direct)}},tree:class extends ve{constructor(e,t,i){super("tree"),this.layoutName="tree",this.direct="down",this.levelDis=20,this.dis=10,this.firstLevel=60,this.firstNodeDis=20,this.isCache=!0,this.lefts=[],this.rights=[],this.colors=[],this.lineWidth=2,this.cache={},this.group=null,this.root=e,"down"!=t&&"up"!=t||(this.direct=t),this.colors=i||[],this.mind=this.root.mindmap,this.group||(this.group=this.mind.edgeGroup.group())}layout(e,t){e&&(this.root=e),this.direct=t&&("down"==t||"up"==t)?t:"down",e.layout=this,this.group||(this.group=this.root.getMind().edgeGroup.group()),this.svgDom=this.group,this.root.isShow()&&(e.children.forEach((e=>{this.setDirect(e)})),this._doLayout(e),this.doLayout(e),this.root.nodeType&&"induce"!=this.root.nodeType&&this.refreshLayout(),this._updateRootAssist()),this.createLink()}setDirect(e){if(e.direct=this.direct,e.containEl){var t=e.containEl.classList.contains("mm-node-second");e.containEl.setAttribute("class",""),e.containEl.classList.add("mm-node"),e.containEl.classList.add("mm-node-"+this.direct),e.belongInduce&&e.containEl.classList.add("mm-node-induce"),e.isLeaf()&&!e.containEl.classList.contains("mm-node-leaf")?e.containEl.classList.add("mm-node-leaf"):e.containEl.classList.contains("mm-node-leaf")&&e.containEl.classList.remove("mm-node-leaf"),0==e.getLevel()&&this.root.nodeType&&"induce"!=this.root.nodeType&&e.containEl.classList.add("mm-root"),1==e.getLevel()&&this.root.nodeType&&"induce"!=this.root.nodeType&&(e.containEl.classList.add("mm-node-second"),e.refreshBox()),t&&e.refreshBox(),e.isExpand||e.containEl.classList.add("mm-node-collapse"),e.isSelect&&e.containEl.classList.add("mm-node-select"),(e===this.root||!e.layout&&e.isExpand)&&e.children.forEach((e=>{this.setDirect(e)}))}}_doLayout(e){var t=this,i=this.levelDis,n=this.dis,s=e.getBox(),r=e.getPosition();0==e.getLevel()&&(i=this.firstLevel,n=this.firstNodeDis);var o=e.getChildren().length-1;let a=0;if(e.getChildren().forEach((function(e,t){let i=e.getBox();a+=i.width,t!=o&&(a+=n)})),"down"==this.direct){let t=r.y+s.height+i,o=r.x+s.width/2-a/2,h=0;e.getChildren().forEach((function(e,i){e.callout&&e.callout.refresh();let s=e.getCBox();var r=t+s.th;0==i?(e.setPosition(o,r),h=o+s.width+n):(e.setPosition(h,r),h=h+s.width+n)}))}else{let t=r.y-i,o=r.x+s.width/2-a/2,h=0;e.getChildren().forEach((function(e,i){e.callout&&e.callout.refresh(),e.wireFrame&&e.wireFrame.refresh();let s=e.getCBox();0==i?(e.setPosition(o,t-s.height-s.bh),h=o+s.width+n):(e.setPosition(h,t-s.height-s.bh),h=h+s.width+n)}))}if("down"==this.direct&&e.layout&&e!=this.root)if("table"!=e.layout.layoutName){e.layout.layout(e,e.layout.direct||""),s=e.getMind().getBBox(e);var h=e.getCBox().th,l=Math.abs(Math.abs(r.y-s.y)-h);this.moveNode(e,0,l),e.boundingRect=null,e.direct="down"}else e.direct="down",e.boundingRect=null;else e.isExpand&&e.getChildren().forEach((function(e,i){t._doLayout(e)}))}doLayout(e){if(e&&e.isExpand){var t=this,i=e.getMind();i.traverseDF((e=>{if(e!=t.root&&e.isShow()){if(e.layout){if(e.layout!=t&&e.getTopLayout()!=t)return}else if(e.getLayout()!=t&&"down"==t.direct)return;e.callout&&e.callout.isShow&&e.callout.refresh();var n={},s=e.parent;if(s){var r=s.wireFrames,o=s.summaries;r.length&&r.forEach((t=>{if(t.node==e&&(t.refreshNode(),t.refresh(),t.data&&t.data.text))if(n[e.getId()])n[e.getId()].rangeNode=n[e.getId()].rangeNode.concat(t.rangeNode.slice()),n[e.getId()].rangeNode.unique();else{var i=t.getTextBox().height,s=t.rangeNode.slice();n[e.getId()]={node:e,wf:t,topDy:i+4,rangeNode:s}}})),o.length&&o.forEach((t=>{t.node==e&&(t.refreshNode(),t.refresh())}))}var a=e.getBox();if(t.isCache&&e.boundingRect)var h=e.boundingRect;else{var l=e.getShowNodeList(),d=[],c=[],u=[],p=[];if(l.forEach((e=>{e.callout&&e.callout.isShow&&-1==u.indexOf(e)&&u.push(e.callout),e.layout&&e.layout.isShow&&-1==p.indexOf(e.layout)&&p.push(e.layout);var t=e.wireFrames;e.summaries.forEach((e=>{e.isShow()&&-1==c.indexOf(e)&&c.push(e)})),t.forEach((e=>{e.isHide||-1==d.indexOf(e)&&d.push(e)}))})),l=l.concat(d).concat(u),c.forEach((e=>{l=l.concat(e.getAllItem())})),l.length){h=i.getBoundingRect(l);p.length&&p.forEach((e=>{if("fish"==e.layoutName&&"down"==t.direct&&("right"==e.direct?e.creatBone():e.creatBone1(),e.fishTail)){var i=e.fishTail.bbox();i.x<h.x&&(h.x=i.x),i.y<h.y&&(h.y=i.y),i.x+i.width>h.right&&(h.right=i.x+i.width),i.y+i.height>h.bottom&&(h.bottom=i.y+i.height),h.width=h.right-h.x,h.height=h.bottom-h.y}}))}}if(t.isCache&&e.boundingRect)var m=e.boundingRect.leftDx,f=e.boundingRect.rightDx;else{m=Math.abs(h.x-a.x),f=Math.abs(h.right-a.x-a.width);var g={},v={};r&&r.length&&r.forEach((t=>{var i=t.leftNode;if(t.node==e){if(g[i])return;g[i]=!0,m+=6}if(t.endNode&&t.endNode==e){var n=t.rightNode;if(v[n])return;v[n]=!0,f+=6}})),h.leftDx=m,h.rightDx=f,e.boundingRect=h}if(t.adjustNode(e,m,f,0),"top"!==e.direct)for(let e in n)t.adjustNode(n[e].node,0,0,n[e].topDy,n[e]);r&&r.length&&r.forEach((t=>{t.endNode==e&&t.refresh()})),o&&o.length&&o.forEach((t=>{t.endNode==e&&t.refresh()}))}}),e,!1)}}adjustNode(e,t,i,n,s){var r=this;if(s)s.rangeNode.forEach((e=>{"down"==r.direct?r.moveNode(e,0,n):r.moveNode(e,0,-n)}));else if(e&&e!=this.root){var o=e.getPosition();e.getSiblings().forEach((function(e){let n=e.getPosition();if(o.x>n.x){if(0==t)return;r.moveNode(e,-t,0)}else{if(0==i)return;r.moveNode(e,i,0)}}))}}refreshLayout(){var e=this.root,t=e.getPosition(),i=e.getBox(),n=t.x+i.width/2,s=e.getChildren();if(s.length>=2){var r=s[0],o=s[s.length-1],a=r.getPosition(),h=o.getPosition(),l=o.getBox(),d=h.x+l.width-n,c=n-a.x;if(Math.abs(d)!=Math.abs(c)){var u=Math.abs(Math.abs(d)-Math.abs(c))/2;Math.abs(d)>Math.abs(c)?s.forEach((e=>{this.moveNode(e,-u,0)})):s.forEach((e=>{this.moveNode(e,u,0)}))}}}createLink(){"down"==this.direct?this.createDownLink():this.createUpLink()}createDownLink(){var e=this,t=this.root;if(this.group&&this.group.clear(),0==this.root.getChildren().length)return;if(!this.group||!this.root.isShow())return;let i=this.lineWidth;function n(e){if(e.isExpand){if(e.layout)return void e.layout.createLink();e.children.forEach((e=>{n(e)}))}}!function t(n){if((!n.layout||n==e.root)&&n.isExpand){var s=n.getPosition(),r=n.getBox();n==e.root&&(r.height+=1),n.getChildren().forEach((function(o,a){let h=o.getBox(),l=o.getPosition(),d={x:s.x+r.width/2,y:s.y+r.height},c=l.x+h.width/2,u=l.y,p=n.stroke?n.stroke:o.stroke?o.stroke:e.colors[a]||ge();if(o.stroke||(o.stroke=p),o._barDom&&(o._barDom.style.backgroundColor=p,o._barDom.style.borderColor=p),1==n.getChildren().length){if(i%2==1)var m=parseInt(d.x+"")+.5,f=d.y,g=parseInt(c+"")+.5,v=parseInt(u+"")+.5;else m=parseInt(d.x+""),f=d.y,g=parseInt(c+""),v=parseInt(u+"");var y=e.group.line(m,f,g,v).stroke({color:p,width:i,linecap:"round",linejoin:"round"})}else{var A=[s.x+r.width/2,s.y+r.height],x=[l.x+h.width/2,l.y];if(0==n.getLevel())var b=[A[0],A[1]+e.firstLevel/2];else b=[A[0],A[1]+e.levelDis/2];if(l.x+h.width/2>s.x+r.width/2)var w=[x[0]-4,b[1]],k=[x[0],b[1]+4];else w=[x[0]+4,b[1]],k=[x[0],b[1]+4];var C=[A,b,w],E=[k,x];if(C.length>2){(y=e.group.polyline(e.linePoint(C,i))).fill("none"),y.stroke({color:p,width:i,linecap:"round",linejoin:"round"});var D=e.linePoint([k],i)[0],N=e.linePoint([w],i)[0],I=`M${D[0]} ${D[1]},Q${D[0]} ${N[1]},${N[0]} ${N[1]}`,S=e.group.path().stroke({color:p,width:i,linecap:"round",linejoin:"round"});S.plot(I),S.fill("none"),(y=e.group.polyline(e.linePoint(E,i))).fill("none"),y.stroke({color:p,width:i,linecap:"round",linejoin:"round"})}else{(y=e.group.polyline(e.linePoint(C,i))).fill("none"),y.stroke({color:p,width:i,linecap:"round",linejoin:"round"})}}t(o)}))}}(t),t.children.forEach(((e,t)=>{n(e)}))}createUpLink(){var e=this,t=this.root;if(this.group&&this.group.clear(),0==this.root.getChildren().length)return;if(!this.group||!this.root.isShow())return;let i=this.lineWidth;(t=this.root).children.forEach(((e,t)=>{e.stroke||(e.stroke=this.colors[t]||ge())})),function t(n){if(n.layout&&n!=e.root&&n.layout.group&&n.layout.group.clear(),n.isExpand){var s=n.getPosition(),r=n.getBox();n.getLevel(),n.getChildren().forEach((function(o,a){let h=o.getCBox(),l=o.getPosition(),d=parseInt(s.x+r.width/2+""),c=parseInt(s.y+""),u=parseInt(l.x+h.width/2+""),p=parseInt(l.y+h.height+""),m=n.stroke?n.stroke:o.stroke?o.stroke:ge();if(o.stroke||(o.stroke=m),o._barDom&&(o._barDom.style.backgroundColor=m,o._barDom.style.borderColor=m),1==n.getChildren().length){if(i%2==1)var f=parseInt(d+"")+.5,g=parseInt(c+"")+.5,v=parseInt(u+"")+.5,y=parseInt(p+"")+.5;else f=parseInt(d+""),g=parseInt(c+""),v=parseInt(u+""),y=parseInt(p+"");var A=e.group.line(f,g,v,y).stroke({color:m,width:i,linecap:"round",linejoin:"round"})}else{var x=[s.x+r.width/2,s.y],b=[l.x+h.width/2,l.y+h.height],w=[x[0],x[1]-e.levelDis/2];if(o.isFirst()||o.isLast()){if(l.x+h.width/2>s.x+r.width/2)var k=[b[0]-4,w[1]],C=[b[0],w[1]-4];else k=[b[0]+4,w[1]],C=[b[0],w[1]-4];var E=[x,w,k],D=[C,b]}else E=[k=[b[0],w[1]],b];if(E.length>2){(A=e.group.polyline(e.linePoint(E,i))).fill("none"),A.stroke({color:m,width:i,linecap:"round",linejoin:"round"});var N=e.linePoint([C],i)[0],I=e.linePoint([k],i)[0],S=`M${N[0]} ${N[1]},Q${N[0]} ${I[1]},${I[0]} ${I[1]}`,B=e.group.path().stroke({color:m,width:i,linecap:"round",linejoin:"round"});B.plot(S),B.fill("none"),(A=e.group.polyline(e.linePoint(D,i))).fill("none"),A.stroke({color:m,width:i,linecap:"round",linejoin:"round"})}else{(A=e.group.polyline(e.linePoint(E,i))).fill("none"),A.stroke({color:m,width:i,linecap:"round",linejoin:"round"})}}t(o)}))}}(t)}refresh(){var e=this.root;this.layout(e,this.direct),this.createLink()}},multipleTree:class extends ve{constructor(e,t,i){super("multipleTree"),this.mind=null,this.colors=[],this.layoutName="multipleTree",this.type="multipleTree",this.levelDis=20,this.firstLevelDis=40,this.nodeDis=18,this.root=null,this.rootLevel=0,this.rights=[],this.lefts=[],this.isCache=!1,this.name="multipleTree",this.lineWidth=2,this.root=e,this.mind=this.root.mindmap,this.colors=i||[],this.direct=t||"multipleTree",this.svgDom||(this.svgDom=this.mind.edgeGroup.group())}layout(e,t){if(this.rights=[],this.lefts=[],this.root=e||this.root,this.rootLevel=this.root.getLevel(),this.root.layout=this,this.direct=t,this.root.containEl.classList.contains("mm-multipleTree-node")||(this.root.containEl.classList.add("mm-node-down"),this.root.containEl.classList.add("mm-multipleTree-node")),this.svgDom||(this.svgDom=this.root.mindmap.edgeGroup.group()),"right"==this.direct)this.root.children.forEach((e=>{this.rights.push(e),this.setDirect(e,"right")}));else if("left"==this.direct)this.root.children.forEach((e=>{this.lefts.push(e),this.setDirect(e,"left")}));else{var i=this.root.children.length;this.root.children.forEach(((e,t)=>{t<Math.ceil(i/2)?(this.rights.push(e),this.setDirect(e,"right")):(this.lefts.push(e),this.setDirect(e,"left"))}))}this._layoutTow(),this._updateRootAssist(),this.createLink()}setDirect(e,t){if(e.direct=t,e.containEl){var i=e.containEl.classList.contains("mm-node-second");if(e.containEl.setAttribute("class",""),e.containEl.classList.add("mm-node"),e.containEl.classList.add("mm-node-down"),e.containEl.classList.add(`mm-${this.layoutName}-node`),e.isLeaf()&&!e.containEl.classList.contains("mm-node-leaf")?e.containEl.classList.add("mm-node-leaf"):e.containEl.classList.contains("mm-node-leaf")&&e.containEl.classList.remove("mm-node-leaf"),e.layout)return;1==e.getLevel()&&"induce"!=this.root.nodeType&&(e.containEl.classList.add("mm-node-second"),e.refreshBox()),i&&e.refreshBox(),e.isSelect&&e.containEl.classList.add("mm-node-select"),e.isExpand||e.containEl.classList.add("mm-node-collapse"),e.children.forEach((e=>{this.setDirect(e,t)}))}}_layoutTow(){this.root.isExpand&&this.root.isShow()&&(this._layoutRight(),this._layoutLeft())}_layoutRight(){var e=this.root.getCBox();this.rights.forEach(((t,i)=>{t.callout&&t.callout.refresh(),this._layoutRightNode(t,i,e,!0,t.getLevel()-1)}))}getParentPos(e){e.getLevel();var t=e.getDomBox();return{x:t.x+t.width/2,y:t.y+t.height}}_layoutRightNode(e,t,i,n,s){var r=this.root.getMind(),o=i.x+i.width/2,a=i.y+i.height;if(0==t){var h=e.getCBox(!0);e.setPosition(o+this.levelDis,a+this.nodeDis+h.th+i.bh)}else{var l=e.getCBox(!0);if(n){let i=this.rights[t-1];if(this.isCache&&i.boundingRect)var d=i.boundingRect;else{d=r.getBBox(i);i.boundingRect=d}var c=i.getPosition();if(i.layout){var{x:u}=this.getParentPos(i.parent);e.setPosition(u+this.levelDis,d.y+d.height+this.nodeDis+l.th)}else e.setPosition(c.x,d.y+d.height+this.nodeDis+l.th)}else{var p=e.parent.children[t-1];let i=p.getPosition();if(this.isCache&&p.boundingRect)d=p.boundingRect;else{d=r.getBBox(p);p.boundingRect=d}if(p.layout){var{x:u}=this.getParentPos(p.parent);e.setPosition(u+this.levelDis,d.y+d.height+this.nodeDis+l.th)}else e.setPosition(i.x,d.y+d.height+this.nodeDis+l.th)}}if(e.layout){if("table"!=e.layout.layoutName){e.layout.layout(e,e.layout.direct||"");let t=e.getPosition();i=r.getBBox(e);e.boundingRect=i;var m=Math.abs(t.x-i.x);if(h)var f=Math.abs(t.y-i.y)-h.th;else f=Math.abs(t.y-i.y);return this.moveNode(e,m,f),e.direct="right",void this._updateNodeAssist(e)}return e.boundingRect=null,e.direct="right",void this._updateNodeAssist(e)}if(this._updateNodeAssist(e),e.isExpand){var g=e.getCBox(!0);e.children.forEach(((e,t)=>{e.callout&&e.callout.refresh(),this._layoutRightNode(e,t,g)}))}}_layoutLeft(){var e=this.root.getCBox();this.lefts.forEach(((t,i)=>{t.callout&&t.callout.refresh(),this._layoutLeftNode(t,i,e,!0,t.getLevel()-1)}))}_layoutLeftNode(e,t,i,n,s){var r=this.root.getMind(),o=i.x+i.width/2,a=i.y+i.height,{width:h,th:l}=e.getCBox(!0);if(0==t){var d=0;s==this.rootLevel&&(d=20),e.setPosition(o-h-this.levelDis,a+this.nodeDis+d+l+i.bh)}else{var c=e.getCBox(!0);if(n){var u=this.lefts[t-1];if(this.isCache&&u.boundingRect)var p=u.boundingRect;else{p=r.getBBox(u);u.boundingRect=p}if(u.layout){var{x:m}=this.getParentPos(u.parent);e.setPosition(m-this.levelDis-h,p.y+p.height+this.nodeDis+c.th)}else{var f=u.getCBox(!0);e.setPosition(f.x+f.width-h,p.y+p.height+this.nodeDis+c.th)}}else{let i=e.parent.children[t-1];p=r.getBBox(i);if(this.isCache&&i.boundingRect)p=i.boundingRect;else{p=r.getBBox(i);i.boundingRect=p}if(i.layout){var{x:m}=this.getParentPos(i.parent);e.setPosition(m-this.levelDis-h,p.y+p.height+this.nodeDis+c.th)}else{let t=i.getCBox(!0);e.setPosition(t.x+t.width-h,p.y+p.height+this.nodeDis+c.th)}}}if(e.layout){if("table"!=e.layout.layoutName){e.layout.layout(e,e.layout.direct||"");var g=e.getPosition(),v=(i=r.getBBox(e),Math.abs(g.x+h-i.x-i.width)),y=Math.abs(g.y-i.y)-l;return this.moveNode(e,-v,y),e.direct="left",void this._updateNodeAssist(e)}g=e.getPosition(),i=r.getBBox(e),v=Math.abs(g.x+h-i.x-i.width),y=Math.abs(g.y-i.y)-l;return this.moveNode(e,-v,y),e.direct="left",e.boundingRect=null,void this._updateNodeAssist(e)}if(this._updateNodeAssist(e),e.isExpand){var A=e.getCBox(!0);e.children.forEach(((e,t)=>{e.callout&&e.callout.refresh(),this._layoutLeftNode(e,t,A)}))}}createLink(){var e=this;if(this.svgDom&&this.svgDom.clear(),this.svgDom&&this.root.isShow()&&0!=this.root.getChildren().length){var t=this.lineWidth;ge(),this.root.children.forEach(((e,t)=>{e.stroke||(e.stroke=this.colors[t]||ge())})),function i(n){if(n.isExpand){var s=Object.assign({},n.getBox());n!=e.root&&(s.height+=1);var r=[s.x+s.width/2,s.y+s.height];n.children.forEach((s=>{var o=Object.assign({},s.getBox());o.height+=1;var a=n.stroke?n.stroke:s.stroke?s.stroke:ge();if(s.stroke||(s.stroke=a),s._barDom&&(s._barDom.style.backgroundColor=a,s._barDom.style.borderColor=a),"right"==s.direct)var h=e.linePoint([[r[0],o.y+o.height-6]],t)[0],l=e.linePoint([[o.x+o.width,o.y+o.height]],t)[0],d=e.linePoint([[h[0]+6,l[1]]],t)[0],c=`M${h[0]} ${h[1]},Q${h[0]} ${h[1]+6},${d[0]} ${d[1]}`;else h=e.linePoint([[r[0],o.y+o.height-6]],t)[0],l=e.linePoint([[o.x,o.y+o.height]],t)[0],d=e.linePoint([[h[0]-6,l[1]]],t)[0],c=`M${h[0]} ${h[1]},Q${h[0]} ${h[1]+6},${d[0]} ${d[1]} `;var u=e.svgDom.path().stroke({color:a,width:t,linecap:"round",linejoin:"round"});u.plot(c),u.fill("none");var p=e.svgDom.line(e.linePoint([r,h],t));p.fill("none"),p.stroke({color:a,width:t,linecap:"round",linejoin:"round"});var m=e.svgDom.line(e.linePoint([d,l],t));m.fill("none"),m.stroke({color:a,width:t,linecap:"round",linejoin:"round"}),s.layout||i(s)}))}}(this.root),this.root.children.forEach(((e,t)=>{i(e)}))}function i(e){if(e.isExpand){if(e.layout)return void e.layout.createLink();e.children.forEach((e=>{i(e)}))}}}refresh(){this.layout(this.root,this.direct),this.createLink()}},vertical:class extends ve{constructor(e,t,i){if(super("vertical"),this.layoutName="vertical",this.type="vertical",this.dis=40,this.direct="vertical",this.isCache=!0,this.root=null,this.colors=[],this.svgDom=null,this.root=e,this.direct=t||"vertical",this.colors=i||[],!e.stroke){var n=ge();e.data.stroke=n,e.stroke=n}}layout(e,t){this.direct=t||"vertical",this.root=e||this.root,this.root.parent||this.root.containEl.classList.contains("mm-root")||this.root.containEl.classList.add("mm-root"),this.svgDom||(this.svgDom=this.root.getMind().edgeGroup.group()),this.root.layout=this,this._layout(this.root,this.direct),this._updateRootAssist(),this.createLink()}_layout(e,t){var i=this;this.root=e,this.direct=t||"vertical";var n=this.root.mindmap,s=this.root.getPosition(),r=this.root.getBox(),o=s.x+r.width/2,a=s.y+r.height;this.root.isExpand&&(this.root.children.forEach(((e,t)=>{var s="right";t%2==0&&(s="left");var r;if(e.stroke)var h=e.stroke;else h=this.colors[t]||ge(),e.data.stroke=h,e.stroke=h;r=new Array(100).fill(h),!e.layout&&(e.layout=new Ae(e,s,r)),e.layout.root=e;var l=e.getBox();if(0==t)e.setPosition(o-l.width/2,a+this.dis);else{var d=this.root.children[t-1],c=n.getBBox(d);e.boundingRect=c;var u=c.bottom;e.setPosition(o-l.width/2,u+this.dis)}e.layout.layout(e,s||this.direct||""),e.callout&&e.callout.refresh();var p=e.getPosition(),m=(l=n.getBBox(e),Math.abs(p.y-l.y));this.moveNode(e,0,m),e.containEl.classList=[],e.containEl.classList.add("mm-node"),e.containEl.classList.add("mm-node-"+s),e.containEl.classList.add("mm-node-second"),e.containEl.classList.add("mm-vertical-node"),e.isLeaf()?e.containEl.classList.contains("mm-node-leaf")||e.containEl.classList.add("mm-node-leaf"):e.containEl.classList.contains("mm-node-leaf")&&e.containEl.classList.remove("mm-node-leaf"),this._updateNodeAssist(e,i.root)})),this._updateNodeAssist(this.root,this.root))}createLink(){var e=this.root.children,t=e.length;if(this.svgDom&&this.svgDom.clear(),!this.svgDom||!this.root.isShow())return;if(0==t)return;let i=this.root.stroke?this.root.stroke:ge();var n=e[t-1];var s=this.root.getPosition(),r=this.root.getCBox();n.getCBox();var o=n.getPosition(),a=s.x+r.width/2,h=a,l=s.y+r.height,d=o.y;this.svgDom.line(a,l,h,d).stroke({color:i,width:2,linecap:"round",linejoin:"round"}),e.forEach((e=>{e.layout.createLink()}))}refresh(){this.layout(this.root,this.direct)}},table:class extends ve{constructor(e,t){super("table"),this.layoutName="table",this.direct="",this.data=null,this.levelDis=50,this.nodeDis=6,this.firstLevelDis=80,this.firstNodeDis=20,this.isCache=!0,this.lefts=[],this.rights=[],this.colors=[],this.lineWidth=2,this.tableDom=null,this.lastNode=null,this.x=0,this.y=0,this.root=e,this.direct=t||"right",this.mind=this.root.getMind();var i=this.getData(e),{x:n,y:s}=e.getPosition();this.x=n,this.y=s,this.initTableDom(),this.initTableNode(i),this.layout()}layout(e,t){var i=document.createElement("table");i.classList.add("mm-table"),i.classList.add("mm-table-bordered"),this.tableDom.innerHTML="",this.tableDom.appendChild(i);var n=this.getMaxlevel(),s=document.createElement("thead"),r=document.createElement("tr");i.appendChild(s),this.root.init(n),this.root.tdDom.setAttribute("colspan",n),r.appendChild(this.root.tdDom),s.appendChild(r);var o=[];this.root.children.forEach((e=>{this.mind.traverseDF((e=>{if(e.init(),e.isLeaf()&&1!=e.getLevel()){var t=document.createElement("tr");e.trDom=t,i.appendChild(t),t.appendChild(e.tdDom),o.push(e),e.tdDom.setAttribute("colspan",n-e.getLevel()+1),e.tdDom.setAttribute("rowspan",1)}}),e)})),o.forEach((e=>{for(var t=e.parent;t&&t!=this.root&&!i.querySelector(`[data-id='${t.data.id}']`);){t.tdDom.setAttribute("colspan",1);var n=t.children[0].trDom;n.insertBefore(t.tdDom,n.firstChild),t.trDom=n;var s=this.getRowspan(t);t.tdDom.setAttribute("rowspan",s),t=t.parent}})),this.root.children.forEach(((e,t)=>{if(!i.querySelector(`[data-id='${e.data.id}']`)){var r=document.createElement("tr");if(r.appendChild(e.tdDom),e.tdDom.setAttribute("colspan",n),e.tdDom.setAttribute("rowspan",1),e.trDom=r,0==t)Di(r,s);else{var o=this.getLastNode(this.root.children[t-1]);o&&Di(r,o.trDom)}}}))}initTableDom(){if(!this.tableDom){var e=document.createElement("div");e.classList.add("mm-table-content"),e.style.position="absolute",e.style.left=this.x+"px",e.style.top=this.y+"px",this.tableDom=e,this.mind.contentEL.appendChild(e)}}initTableNode(e){var t=this;!function e(i,n,s){var r=new ue(i,t.mind);r._tableDom=t.tableDom,n?(t.root=r,r.layout=t):(s.children.push(r),r.parent=s),r.direct=t.direct,t.lastNode=r,i.children&&i.children.length&&i.children.forEach((t=>{e(t,!1,r)}))}(e,!0),this.initTableDom()}getLastNode(e){return function e(t){var i=t.children.length;return i?e(t.children[i-1]):t}(e)}getMaxlevel(e){var t=0;return this.mind.traverseDF((e=>{var i=e.getLevel();t<i&&(t=i)}),e||this.root),t}getRowspan(e){return function e(t){var i=t.children.length,n=t.children.filter((e=>e.children&&e.children.length));if(n.length){var s=[i];n.forEach((t=>{var i=e(t);s.push(i)}));var r=0;return s.forEach((e=>{r+=e})),r-n.length}return i}(e)}getData(e){var t=e.getData();return e.getChildren().length&&(t.children=[],e.getChildren().forEach((e=>{t.children.push(this.getData(e))}))),t}createLink(){}refresh(){this.layout()}setPosition(e,t){this.x=e,this.y=t,this.tableDom&&(this.tableDom.style.left=e+"px",this.tableDom.style.top=t+"px")}getBox(){return this.tableDom?{x:this.x,y:this.y,width:this.tableDom.clientWidth,height:this.tableDom.clientHeight}:{x:this.x,y:this.y,width:0,height:0}}}},be=me((function(e,t){!function(t,i){e.exports=t.document?i(t,t.document):function(e){return i(e,e.document)}}("undefined"!=typeof window?window:pe,(function(e,t){var i=(void 0!==this?this:e).SVG=function(e){if(i.supported)return e=new i.Doc(e),i.parser.draw||i.prepare(),e};if(i.ns="http://www.w3.org/2000/svg",i.xmlns="http://www.w3.org/2000/xmlns/",i.xlink="http://www.w3.org/1999/xlink",i.svgjs="http://svgjs.com/svgjs",i.supported=!!t.createElementNS&&!!t.createElementNS(i.ns,"svg").createSVGRect,!i.supported)return!1;i.did=1e3,i.eid=function(e){return"Svgjs"+c(e)+i.did++},i.create=function(e){var i=t.createElementNS(this.ns,e);return i.setAttribute("id",this.eid(e)),i},i.extend=function(){var e,t,n,s;for(t=(e=[].slice.call(arguments)).pop(),s=e.length-1;s>=0;s--)if(e[s])for(n in t)e[s].prototype[n]=t[n];i.Set&&i.Set.inherit&&i.Set.inherit()},i.invent=function(e){var t="function"==typeof e.create?e.create:function(){this.constructor.call(this,i.create(e.create))};return e.inherit&&(t.prototype=new e.inherit),e.extend&&i.extend(t,e.extend),e.construct&&i.extend(e.parent||i.Container,e.construct),t},i.adopt=function(t){return t?t.instance?t.instance:((n="svg"==t.nodeName?t.parentNode instanceof e.SVGElement?new i.Nested:new i.Doc:"linearGradient"==t.nodeName?new i.Gradient("linear"):"radialGradient"==t.nodeName?new i.Gradient("radial"):i[c(t.nodeName)]?new(i[c(t.nodeName)]):new i.Element(t)).type=t.nodeName,n.node=t,t.instance=n,n instanceof i.Doc&&n.namespace().defs(),n.setData(JSON.parse(t.getAttribute("svgjs:data"))||{}),n):null;var n},i.prepare=function(){var e=t.getElementsByTagName("body")[0],n=(e?new i.Doc(e):i.adopt(t.documentElement).nested()).size(2,0);i.parser={body:e||t.documentElement,draw:n.style("opacity:0;position:absolute;left:-100%;top:-100%;overflow:hidden").attr("focusable","false").node,poly:n.polyline().node,path:n.path().node,native:i.create("svg")}},i.parser={native:i.create("svg")},t.addEventListener("DOMContentLoaded",(function(){i.parser.draw||i.prepare()}),!1),i.regex={numberAndUnit:/^([+-]?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?)([a-z%]*)$/i,hex:/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i,rgb:/rgb\((\d+),(\d+),(\d+)\)/,reference:/#([a-z0-9\-_]+)/i,transforms:/\)\s*,?\s*/,whitespace:/\s/g,isHex:/^#[a-f0-9]{3,6}$/i,isRgb:/^rgb\(/,isCss:/[^:]+:[^;]+;?/,isBlank:/^(\s+)?$/,isNumber:/^[+-]?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i,isPercent:/^-?[\d\.]+%$/,isImage:/\.(jpg|jpeg|png|gif|svg)(\?[^=]+.*)?/i,delimiter:/[\s,]+/,hyphen:/([^e])\-/gi,pathLetters:/[MLHVCSQTAZ]/gi,isPathLetter:/[MLHVCSQTAZ]/i,numbersWithDots:/((\d?\.\d+(?:e[+-]?\d+)?)((?:\.\d+(?:e[+-]?\d+)?)+))+/gi,dots:/\./g},i.utils={map:function(e,t){var i,n=e.length,s=[];for(i=0;i<n;i++)s.push(t(e[i]));return s},filter:function(e,t){var i,n=e.length,s=[];for(i=0;i<n;i++)t(e[i])&&s.push(e[i]);return s},radians:function(e){return e%360*Math.PI/180},degrees:function(e){return 180*e/Math.PI%360},filterSVGElements:function(t){return this.filter(t,(function(t){return t instanceof e.SVGElement}))}},i.defaults={attrs:{"fill-opacity":1,"stroke-opacity":1,"stroke-width":0,"stroke-linejoin":"miter","stroke-linecap":"butt",fill:"#000000",stroke:"#000000",opacity:1,x:0,y:0,cx:0,cy:0,width:0,height:0,r:0,rx:0,ry:0,offset:0,"stop-opacity":1,"stop-color":"#000000","font-size":16,"font-family":"Helvetica, Arial, sans-serif","text-anchor":"start"}},i.Color=function(e){var t,n;(this.r=0,this.g=0,this.b=0,e)&&("string"==typeof e?i.regex.isRgb.test(e)?(t=i.regex.rgb.exec(e.replace(i.regex.whitespace,"")),this.r=parseInt(t[1]),this.g=parseInt(t[2]),this.b=parseInt(t[3])):i.regex.isHex.test(e)&&(t=i.regex.hex.exec(4==(n=e).length?["#",n.substring(1,2),n.substring(1,2),n.substring(2,3),n.substring(2,3),n.substring(3,4),n.substring(3,4)].join(""):n),this.r=parseInt(t[1],16),this.g=parseInt(t[2],16),this.b=parseInt(t[3],16)):"object"==typeof e&&(this.r=e.r,this.g=e.g,this.b=e.b))},i.extend(i.Color,{toString:function(){return this.toHex()},toHex:function(){return"#"+u(this.r)+u(this.g)+u(this.b)},toRgb:function(){return"rgb("+[this.r,this.g,this.b].join()+")"},brightness:function(){return this.r/255*.3+this.g/255*.59+this.b/255*.11},morph:function(e){return this.destination=new i.Color(e),this},at:function(e){return this.destination?(e=e<0?0:e>1?1:e,new i.Color({r:~~(this.r+(this.destination.r-this.r)*e),g:~~(this.g+(this.destination.g-this.g)*e),b:~~(this.b+(this.destination.b-this.b)*e)})):this}}),i.Color.test=function(e){return e+="",i.regex.isHex.test(e)||i.regex.isRgb.test(e)},i.Color.isRgb=function(e){return e&&"number"==typeof e.r&&"number"==typeof e.g&&"number"==typeof e.b},i.Color.isColor=function(e){return i.Color.isRgb(e)||i.Color.test(e)},i.Array=function(e,t){0==(e=(e||[]).valueOf()).length&&t&&(e=t.valueOf()),this.value=this.parse(e)},i.extend(i.Array,{morph:function(e){if(this.destination=this.parse(e),this.value.length!=this.destination.length){for(var t=this.value[this.value.length-1],i=this.destination[this.destination.length-1];this.value.length>this.destination.length;)this.destination.push(i);for(;this.value.length<this.destination.length;)this.value.push(t)}return this},settle:function(){for(var e=0,t=this.value.length,i=[];e<t;e++)-1==i.indexOf(this.value[e])&&i.push(this.value[e]);return this.value=i},at:function(e){if(!this.destination)return this;for(var t=0,n=this.value.length,s=[];t<n;t++)s.push(this.value[t]+(this.destination[t]-this.value[t])*e);return new i.Array(s)},toString:function(){return this.value.join(" ")},valueOf:function(){return this.value},parse:function(e){return e=e.valueOf(),Array.isArray(e)?e:this.split(e)},split:function(e){return e.trim().split(i.regex.delimiter).map(parseFloat)},reverse:function(){return this.value.reverse(),this},clone:function(){var e=new this.constructor;return e.value=l(this.value),e}}),i.PointArray=function(e,t){i.Array.call(this,e,t||[[0,0]])},i.PointArray.prototype=new i.Array,i.PointArray.prototype.constructor=i.PointArray,i.extend(i.PointArray,{toString:function(){for(var e=0,t=this.value.length,i=[];e<t;e++)i.push(this.value[e].join(","));return i.join(" ")},toLine:function(){return{x1:this.value[0][0],y1:this.value[0][1],x2:this.value[1][0],y2:this.value[1][1]}},at:function(e){if(!this.destination)return this;for(var t=0,n=this.value.length,s=[];t<n;t++)s.push([this.value[t][0]+(this.destination[t][0]-this.value[t][0])*e,this.value[t][1]+(this.destination[t][1]-this.value[t][1])*e]);return new i.PointArray(s)},parse:function(e){var t=[];if(e=e.valueOf(),Array.isArray(e)){if(Array.isArray(e[0]))return e.map((function(e){return e.slice()}));if(null!=e[0].x)return e.map((function(e){return[e.x,e.y]}))}else e=e.trim().split(i.regex.delimiter).map(parseFloat);e.length%2!=0&&e.pop();for(var n=0,s=e.length;n<s;n+=2)t.push([e[n],e[n+1]]);return t},move:function(e,t){var i=this.bbox();if(e-=i.x,t-=i.y,!isNaN(e)&&!isNaN(t))for(var n=this.value.length-1;n>=0;n--)this.value[n]=[this.value[n][0]+e,this.value[n][1]+t];return this},size:function(e,t){var i,n=this.bbox();for(i=this.value.length-1;i>=0;i--)n.width&&(this.value[i][0]=(this.value[i][0]-n.x)*e/n.width+n.x),n.height&&(this.value[i][1]=(this.value[i][1]-n.y)*t/n.height+n.y);return this},bbox:function(){return i.parser.poly.setAttribute("points",this.toString()),i.parser.poly.getBBox()}});for(var n={M:function(e,t,i){return t.x=i.x=e[0],t.y=i.y=e[1],["M",t.x,t.y]},L:function(e,t){return t.x=e[0],t.y=e[1],["L",e[0],e[1]]},H:function(e,t){return t.x=e[0],["H",e[0]]},V:function(e,t){return t.y=e[0],["V",e[0]]},C:function(e,t){return t.x=e[4],t.y=e[5],["C",e[0],e[1],e[2],e[3],e[4],e[5]]},S:function(e,t){return t.x=e[2],t.y=e[3],["S",e[0],e[1],e[2],e[3]]},Q:function(e,t){return t.x=e[2],t.y=e[3],["Q",e[0],e[1],e[2],e[3]]},T:function(e,t){return t.x=e[0],t.y=e[1],["T",e[0],e[1]]},Z:function(e,t,i){return t.x=i.x,t.y=i.y,["Z"]},A:function(e,t){return t.x=e[5],t.y=e[6],["A",e[0],e[1],e[2],e[3],e[4],e[5],e[6]]}},s="mlhvqtcsaz".split(""),r=0,o=s.length;r<o;++r)n[s[r]]=function(e){return function(t,i,s){if("H"==e)t[0]=t[0]+i.x;else if("V"==e)t[0]=t[0]+i.y;else if("A"==e)t[5]=t[5]+i.x,t[6]=t[6]+i.y;else for(var r=0,o=t.length;r<o;++r)t[r]=t[r]+(r%2?i.y:i.x);return n[e](t,i,s)}}(s[r].toUpperCase());i.PathArray=function(e,t){i.Array.call(this,e,t||[["M",0,0]])},i.PathArray.prototype=new i.Array,i.PathArray.prototype.constructor=i.PathArray,i.extend(i.PathArray,{toString:function(){return function(e){for(var t=0,i=e.length,n="";t<i;t++)n+=e[t][0],null!=e[t][1]&&(n+=e[t][1],null!=e[t][2]&&(n+=" ",n+=e[t][2],null!=e[t][3]&&(n+=" ",n+=e[t][3],n+=" ",n+=e[t][4],null!=e[t][5]&&(n+=" ",n+=e[t][5],n+=" ",n+=e[t][6],null!=e[t][7]&&(n+=" ",n+=e[t][7])))));return n+" "}(this.value)},move:function(e,t){var i=this.bbox();if(e-=i.x,t-=i.y,!isNaN(e)&&!isNaN(t))for(var n,s=this.value.length-1;s>=0;s--)"M"==(n=this.value[s][0])||"L"==n||"T"==n?(this.value[s][1]+=e,this.value[s][2]+=t):"H"==n?this.value[s][1]+=e:"V"==n?this.value[s][1]+=t:"C"==n||"S"==n||"Q"==n?(this.value[s][1]+=e,this.value[s][2]+=t,this.value[s][3]+=e,this.value[s][4]+=t,"C"==n&&(this.value[s][5]+=e,this.value[s][6]+=t)):"A"==n&&(this.value[s][6]+=e,this.value[s][7]+=t);return this},size:function(e,t){var i,n,s=this.bbox();for(i=this.value.length-1;i>=0;i--)"M"==(n=this.value[i][0])||"L"==n||"T"==n?(this.value[i][1]=(this.value[i][1]-s.x)*e/s.width+s.x,this.value[i][2]=(this.value[i][2]-s.y)*t/s.height+s.y):"H"==n?this.value[i][1]=(this.value[i][1]-s.x)*e/s.width+s.x:"V"==n?this.value[i][1]=(this.value[i][1]-s.y)*t/s.height+s.y:"C"==n||"S"==n||"Q"==n?(this.value[i][1]=(this.value[i][1]-s.x)*e/s.width+s.x,this.value[i][2]=(this.value[i][2]-s.y)*t/s.height+s.y,this.value[i][3]=(this.value[i][3]-s.x)*e/s.width+s.x,this.value[i][4]=(this.value[i][4]-s.y)*t/s.height+s.y,"C"==n&&(this.value[i][5]=(this.value[i][5]-s.x)*e/s.width+s.x,this.value[i][6]=(this.value[i][6]-s.y)*t/s.height+s.y)):"A"==n&&(this.value[i][1]=this.value[i][1]*e/s.width,this.value[i][2]=this.value[i][2]*t/s.height,this.value[i][6]=(this.value[i][6]-s.x)*e/s.width+s.x,this.value[i][7]=(this.value[i][7]-s.y)*t/s.height+s.y);return this},equalCommands:function(e){var t,n,s;for(e=new i.PathArray(e),s=this.value.length===e.value.length,t=0,n=this.value.length;s&&t<n;t++)s=this.value[t][0]===e.value[t][0];return s},morph:function(e){return e=new i.PathArray(e),this.equalCommands(e)?this.destination=e:this.destination=null,this},at:function(e){if(!this.destination)return this;var t,n,s,r,o=this.value,a=this.destination.value,h=[],l=new i.PathArray;for(t=0,n=o.length;t<n;t++){for(h[t]=[o[t][0]],s=1,r=o[t].length;s<r;s++)h[t][s]=o[t][s]+(a[t][s]-o[t][s])*e;"A"===h[t][0]&&(h[t][4]=+(0!=h[t][4]),h[t][5]=+(0!=h[t][5]))}return l.value=h,l},parse:function(e){if(e instanceof i.PathArray)return e.valueOf();var t,s={M:2,L:2,H:1,V:1,C:6,S:4,Q:4,T:2,A:7,Z:0};e="string"==typeof e?e.replace(i.regex.numbersWithDots,h).replace(i.regex.pathLetters," $& ").replace(i.regex.hyphen,"$1 -").trim().split(i.regex.delimiter):e.reduce((function(e,t){return[].concat.call(e,t)}),[]);var r=[],o=new i.Point,a=new i.Point,l=0,d=e.length;do{i.regex.isPathLetter.test(e[l])?(t=e[l],++l):"M"==t?t="L":"m"==t&&(t="l"),r.push(n[t].call(null,e.slice(l,l+=s[t.toUpperCase()]).map(parseFloat),o,a))}while(d>l);return r},bbox:function(){return i.parser.path.setAttribute("d",this.toString()),i.parser.path.getBBox()}}),i.Number=i.invent({create:function(e,t){this.value=0,this.unit=t||"","number"==typeof e?this.value=isNaN(e)?0:isFinite(e)?e:e<0?-34e37:34e37:"string"==typeof e?(t=e.match(i.regex.numberAndUnit))&&(this.value=parseFloat(t[1]),"%"==t[5]?this.value/=100:"s"==t[5]&&(this.value*=1e3),this.unit=t[5]):e instanceof i.Number&&(this.value=e.valueOf(),this.unit=e.unit)},extend:{toString:function(){return("%"==this.unit?~~(1e8*this.value)/1e6:"s"==this.unit?this.value/1e3:this.value)+this.unit},toJSON:function(){return this.toString()},valueOf:function(){return this.value},plus:function(e){return e=new i.Number(e),new i.Number(this+e,this.unit||e.unit)},minus:function(e){return e=new i.Number(e),new i.Number(this-e,this.unit||e.unit)},times:function(e){return e=new i.Number(e),new i.Number(this*e,this.unit||e.unit)},divide:function(e){return e=new i.Number(e),new i.Number(this/e,this.unit||e.unit)},to:function(e){var t=new i.Number(this);return"string"==typeof e&&(t.unit=e),t},morph:function(e){return this.destination=new i.Number(e),e.relative&&(this.destination.value+=this.value),this},at:function(e){return this.destination?new i.Number(this.destination).minus(this).times(e).plus(this):this}}}),i.Element=i.invent({create:function(e){this._stroke=i.defaults.attrs.stroke,this._event=null,this._events={},this.dom={},(this.node=e)&&(this.type=e.nodeName,this.node.instance=this,this._events=e._events||{},this._stroke=e.getAttribute("stroke")||this._stroke)},extend:{x:function(e){return this.attr("x",e)},y:function(e){return this.attr("y",e)},cx:function(e){return null==e?this.x()+this.width()/2:this.x(e-this.width()/2)},cy:function(e){return null==e?this.y()+this.height()/2:this.y(e-this.height()/2)},move:function(e,t){return this.x(e).y(t)},center:function(e,t){return this.cx(e).cy(t)},width:function(e){return this.attr("width",e)},height:function(e){return this.attr("height",e)},size:function(e,t){var n=p(this,e,t);return this.width(new i.Number(n.width)).height(new i.Number(n.height))},clone:function(e){this.writeDataToDom();var t=v(this.node.cloneNode(!0));return e?e.add(t):this.after(t),t},remove:function(){return this.parent()&&this.parent().removeElement(this),this},replace:function(e){return this.after(e).remove(),e},addTo:function(e){return e.put(this)},putIn:function(e){return e.add(this)},id:function(e){return this.attr("id",e)},inside:function(e,t){var i=this.bbox();return e>i.x&&t>i.y&&e<i.x+i.width&&t<i.y+i.height},show:function(){return this.style("display","")},hide:function(){return this.style("display","none")},visible:function(){return"none"!=this.style("display")},toString:function(){return this.attr("id")},classes:function(){var e=this.attr("class");return null==e?[]:e.trim().split(i.regex.delimiter)},hasClass:function(e){return-1!=this.classes().indexOf(e)},addClass:function(e){if(!this.hasClass(e)){var t=this.classes();t.push(e),this.attr("class",t.join(" "))}return this},removeClass:function(e){return this.hasClass(e)&&this.attr("class",this.classes().filter((function(t){return t!=e})).join(" ")),this},toggleClass:function(e){return this.hasClass(e)?this.removeClass(e):this.addClass(e)},reference:function(e){return i.get(this.attr(e))},parent:function(t){var n=this;if(!n.node.parentNode)return null;if(n=i.adopt(n.node.parentNode),!t)return n;for(;n&&n.node instanceof e.SVGElement;){if("string"==typeof t?n.matches(t):n instanceof t)return n;if(!n.node.parentNode||"#document"==n.node.parentNode.nodeName||"#document-fragment"==n.node.parentNode.nodeName)return null;n=i.adopt(n.node.parentNode)}},doc:function(){return this instanceof i.Doc?this:this.parent(i.Doc)},parents:function(e){var t=[],i=this;do{if(!(i=i.parent(e))||!i.node)break;t.push(i)}while(i.parent);return t},matches:function(e){return function(e,t){return(e.matches||e.matchesSelector||e.msMatchesSelector||e.mozMatchesSelector||e.webkitMatchesSelector||e.oMatchesSelector).call(e,t)}(this.node,e)},native:function(){return this.node},svg:function(e){var n=t.createElement("svg");if(!(e&&this instanceof i.Parent))return n.appendChild(e=t.createElement("svg")),this.writeDataToDom(),e.appendChild(this.node.cloneNode(!0)),n.innerHTML.replace(/^<svg>/,"").replace(/<\/svg>$/,"");n.innerHTML="<svg>"+e.replace(/\n/,"").replace(/<([\w:-]+)([^<]+?)\/>/g,"<$1$2></$1>")+"</svg>";for(var s=0,r=n.firstChild.childNodes.length;s<r;s++)this.node.appendChild(n.firstChild.firstChild);return this},writeDataToDom:function(){(this.each||this.lines)&&(this.each?this:this.lines()).each((function(){this.writeDataToDom()}));return this.node.removeAttribute("svgjs:data"),Object.keys(this.dom).length&&this.node.setAttribute("svgjs:data",JSON.stringify(this.dom)),this},setData:function(e){return this.dom=e,this},is:function(e){return function(e,t){return e instanceof t}(this,e)}}}),i.easing={"-":function(e){return e},"<>":function(e){return-Math.cos(e*Math.PI)/2+.5},">":function(e){return Math.sin(e*Math.PI/2)},"<":function(e){return 1-Math.cos(e*Math.PI/2)}},i.morph=function(e){return function(t,n){return new i.MorphObj(t,n).at(e)}},i.Situation=i.invent({create:function(e){this.init=!1,this.reversed=!1,this.reversing=!1,this.duration=new i.Number(e.duration).valueOf(),this.delay=new i.Number(e.delay).valueOf(),this.start=+new Date+this.delay,this.finish=this.start+this.duration,this.ease=e.ease,this.loop=0,this.loops=!1,this.animations={},this.attrs={},this.styles={},this.transforms=[],this.once={}}}),i.FX=i.invent({create:function(e){this._target=e,this.situations=[],this.active=!1,this.situation=null,this.paused=!1,this.lastPos=0,this.pos=0,this.absPos=0,this._speed=1},extend:{animate:function(e,t,n){"object"==typeof e&&(t=e.ease,n=e.delay,e=e.duration);var s=new i.Situation({duration:e||1e3,delay:n||0,ease:i.easing[t||"-"]||t});return this.queue(s),this},delay:function(e){var t=new i.Situation({duration:e,delay:0,ease:i.easing["-"]});return this.queue(t)},target:function(e){return e&&e instanceof i.Element?(this._target=e,this):this._target},timeToAbsPos:function(e){return(e-this.situation.start)/(this.situation.duration/this._speed)},absPosToTime:function(e){return this.situation.duration/this._speed*e+this.situation.start},startAnimFrame:function(){this.stopAnimFrame(),this.animationFrame=e.requestAnimationFrame(function(){this.step()}.bind(this))},stopAnimFrame:function(){e.cancelAnimationFrame(this.animationFrame)},start:function(){return!this.active&&this.situation&&(this.active=!0,this.startCurrent()),this},startCurrent:function(){return this.situation.start=+new Date+this.situation.delay/this._speed,this.situation.finish=this.situation.start+this.situation.duration/this._speed,this.initAnimations().step()},queue:function(e){return("function"==typeof e||e instanceof i.Situation)&&this.situations.push(e),this.situation||(this.situation=this.situations.shift()),this},dequeue:function(){return this.stop(),this.situation=this.situations.shift(),this.situation&&(this.situation instanceof i.Situation?this.start():this.situation.call(this)),this},initAnimations:function(){var e,t,n,s=this.situation;if(s.init)return this;for(e in s.animations)for(n=this.target()[e](),Array.isArray(n)||(n=[n]),Array.isArray(s.animations[e])||(s.animations[e]=[s.animations[e]]),t=n.length;t--;)s.animations[e][t]instanceof i.Number&&(n[t]=new i.Number(n[t])),s.animations[e][t]=n[t].morph(s.animations[e][t]);for(e in s.attrs)s.attrs[e]=new i.MorphObj(this.target().attr(e),s.attrs[e]);for(e in s.styles)s.styles[e]=new i.MorphObj(this.target().style(e),s.styles[e]);return s.initialTransformation=this.target().matrixify(),s.init=!0,this},clearQueue:function(){return this.situations=[],this},clearCurrent:function(){return this.situation=null,this},stop:function(e,t){var i=this.active;return this.active=!1,t&&this.clearQueue(),e&&this.situation&&(!i&&this.startCurrent(),this.atEnd()),this.stopAnimFrame(),this.clearCurrent()},reset:function(){if(this.situation){var e=this.situation;this.stop(),this.situation=e,this.atStart()}return this},finish:function(){for(this.stop(!0,!1);this.dequeue().situation&&this.stop(!0,!1););return this.clearQueue().clearCurrent(),this},atStart:function(){return this.at(0,!0)},atEnd:function(){return!0===this.situation.loops&&(this.situation.loops=this.situation.loop+1),"number"==typeof this.situation.loops?this.at(this.situation.loops,!0):this.at(1,!0)},at:function(e,t){var i=this.situation.duration/this._speed;return this.absPos=e,t||(this.situation.reversed&&(this.absPos=1-this.absPos),this.absPos+=this.situation.loop),this.situation.start=+new Date-this.absPos*i,this.situation.finish=this.situation.start+i,this.step(!0)},speed:function(e){return 0===e?this.pause():e?(this._speed=e,this.at(this.absPos,!0)):this._speed},loop:function(e,t){var i=this.last();return i.loops=null==e||e,i.loop=0,t&&(i.reversing=!0),this},pause:function(){return this.paused=!0,this.stopAnimFrame(),this},play:function(){return this.paused?(this.paused=!1,this.at(this.absPos,!0)):this},reverse:function(e){var t=this.last();return t.reversed=void 0===e?!t.reversed:e,this},progress:function(e){return e?this.situation.ease(this.pos):this.pos},after:function(e){var t=this.last();return this.target().on("finished.fx",(function i(n){n.detail.situation==t&&(e.call(this,t),this.off("finished.fx",i))})),this._callStart()},during:function(e){var t=this.last(),n=function(n){n.detail.situation==t&&e.call(this,n.detail.pos,i.morph(n.detail.pos),n.detail.eased,t)};return this.target().off("during.fx",n).on("during.fx",n),this.after((function(){this.off("during.fx",n)})),this._callStart()},afterAll:function(e){var t=function t(i){e.call(this),this.off("allfinished.fx",t)};return this.target().off("allfinished.fx",t).on("allfinished.fx",t),this._callStart()},duringAll:function(e){var t=function(t){e.call(this,t.detail.pos,i.morph(t.detail.pos),t.detail.eased,t.detail.situation)};return this.target().off("during.fx",t).on("during.fx",t),this.afterAll((function(){this.off("during.fx",t)})),this._callStart()},last:function(){return this.situations.length?this.situations[this.situations.length-1]:this.situation},add:function(e,t,i){return this.last()[i||"animations"][e]=t,this._callStart()},step:function(e){var t,i,n;(e||(this.absPos=this.timeToAbsPos(+new Date)),!1!==this.situation.loops)?(t=Math.max(this.absPos,0),i=Math.floor(t),!0===this.situation.loops||i<this.situation.loops?(this.pos=t-i,n=this.situation.loop,this.situation.loop=i):(this.absPos=this.situation.loops,this.pos=1,n=this.situation.loop-1,this.situation.loop=this.situation.loops),this.situation.reversing&&(this.situation.reversed=this.situation.reversed!=Boolean((this.situation.loop-n)%2))):(this.absPos=Math.min(this.absPos,1),this.pos=this.absPos);this.pos<0&&(this.pos=0),this.situation.reversed&&(this.pos=1-this.pos);var s=this.situation.ease(this.pos);for(var r in this.situation.once)r>this.lastPos&&r<=s&&(this.situation.once[r].call(this.target(),this.pos,s),delete this.situation.once[r]);return this.active&&this.target().fire("during",{pos:this.pos,eased:s,fx:this,situation:this.situation}),this.situation?(this.eachAt(),1==this.pos&&!this.situation.reversed||this.situation.reversed&&0==this.pos?(this.stopAnimFrame(),this.target().fire("finished",{fx:this,situation:this.situation}),this.situations.length||(this.target().fire("allfinished"),this.situations.length||(this.target().off(".fx"),this.active=!1)),this.active?this.dequeue():this.clearCurrent()):!this.paused&&this.active&&this.startAnimFrame(),this.lastPos=s,this):this},eachAt:function(){var e,t,n,s=this,r=this.target(),o=this.situation;for(e in o.animations)n=[].concat(o.animations[e]).map((function(e){return"string"!=typeof e&&e.at?e.at(o.ease(s.pos),s.pos):e})),r[e].apply(r,n);for(e in o.attrs)n=[e].concat(o.attrs[e]).map((function(e){return"string"!=typeof e&&e.at?e.at(o.ease(s.pos),s.pos):e})),r.attr.apply(r,n);for(e in o.styles)n=[e].concat(o.styles[e]).map((function(e){return"string"!=typeof e&&e.at?e.at(o.ease(s.pos),s.pos):e})),r.style.apply(r,n);if(o.transforms.length){for(n=o.initialTransformation,e=0,t=o.transforms.length;e<t;e++){var a=o.transforms[e];a instanceof i.Matrix?n=a.relative?n.multiply((new i.Matrix).morph(a).at(o.ease(this.pos))):n.morph(a).at(o.ease(this.pos)):(a.relative||a.undo(n.extract()),n=n.multiply(a.at(o.ease(this.pos))))}r.matrix(n)}return this},once:function(e,t,i){var n=this.last();return i||(e=n.ease(e)),n.once[e]=t,this},_callStart:function(){return setTimeout(function(){this.start()}.bind(this),0),this}},parent:i.Element,construct:{animate:function(e,t,n){return(this.fx||(this.fx=new i.FX(this))).animate(e,t,n)},delay:function(e){return(this.fx||(this.fx=new i.FX(this))).delay(e)},stop:function(e,t){return this.fx&&this.fx.stop(e,t),this},finish:function(){return this.fx&&this.fx.finish(),this},pause:function(){return this.fx&&this.fx.pause(),this},play:function(){return this.fx&&this.fx.play(),this},speed:function(e){if(this.fx){if(null==e)return this.fx.speed();this.fx.speed(e)}return this}}}),i.MorphObj=i.invent({create:function(e,t){return i.Color.isColor(t)?new i.Color(e).morph(t):i.regex.delimiter.test(e)?i.regex.pathLetters.test(e)?new i.PathArray(e).morph(t):new i.Array(e).morph(t):i.regex.numberAndUnit.test(t)?new i.Number(e).morph(t):(this.value=e,void(this.destination=t))},extend:{at:function(e,t){return t<1?this.value:this.destination},valueOf:function(){return this.value}}}),i.extend(i.FX,{attr:function(e,t,i){if("object"==typeof e)for(var n in e)this.attr(n,e[n]);else this.add(e,t,"attrs");return this},style:function(e,t){if("object"==typeof e)for(var i in e)this.style(i,e[i]);else this.add(e,t,"styles");return this},x:function(e,t){if(this.target()instanceof i.G)return this.transform({x:e},t),this;var n=new i.Number(e);return n.relative=t,this.add("x",n)},y:function(e,t){if(this.target()instanceof i.G)return this.transform({y:e},t),this;var n=new i.Number(e);return n.relative=t,this.add("y",n)},cx:function(e){return this.add("cx",new i.Number(e))},cy:function(e){return this.add("cy",new i.Number(e))},move:function(e,t){return this.x(e).y(t)},center:function(e,t){return this.cx(e).cy(t)},size:function(e,t){var n;this.target()instanceof i.Text?this.attr("font-size",e):(e&&t||(n=this.target().bbox()),e||(e=n.width/n.height*t),t||(t=n.height/n.width*e),this.add("width",new i.Number(e)).add("height",new i.Number(t)));return this},width:function(e){return this.add("width",new i.Number(e))},height:function(e){return this.add("height",new i.Number(e))},plot:function(e,t,i,n){return 4==arguments.length?this.plot([e,t,i,n]):this.add("plot",new(this.target().morphArray)(e))},leading:function(e){return this.target().leading?this.add("leading",new i.Number(e)):this},viewbox:function(e,t,n,s){return this.target()instanceof i.Container&&this.add("viewbox",new i.ViewBox(e,t,n,s)),this},update:function(e){if(this.target()instanceof i.Stop){if("number"==typeof e||e instanceof i.Number)return this.update({offset:arguments[0],color:arguments[1],opacity:arguments[2]});null!=e.opacity&&this.attr("stop-opacity",e.opacity),null!=e.color&&this.attr("stop-color",e.color),null!=e.offset&&this.attr("offset",e.offset)}return this}}),i.Box=i.invent({create:function(e,t,n,s){if(!("object"!=typeof e||e instanceof i.Element))return i.Box.call(this,null!=e.left?e.left:e.x,null!=e.top?e.top:e.y,e.width,e.height);4==arguments.length&&(this.x=e,this.y=t,this.width=n,this.height=s),y(this)},extend:{merge:function(e){var t=new this.constructor;return t.x=Math.min(this.x,e.x),t.y=Math.min(this.y,e.y),t.width=Math.max(this.x+this.width,e.x+e.width)-t.x,t.height=Math.max(this.y+this.height,e.y+e.height)-t.y,y(t)},transform:function(e){var t,n=1/0,s=-1/0,r=1/0,o=-1/0;return[new i.Point(this.x,this.y),new i.Point(this.x2,this.y),new i.Point(this.x,this.y2),new i.Point(this.x2,this.y2)].forEach((function(t){t=t.transform(e),n=Math.min(n,t.x),s=Math.max(s,t.x),r=Math.min(r,t.y),o=Math.max(o,t.y)})),(t=new this.constructor).x=n,t.width=s-n,t.y=r,t.height=o-r,y(t),t}}}),i.BBox=i.invent({create:function(e){if(i.Box.apply(this,[].slice.call(arguments)),e instanceof i.Element){var n;try{if(t.documentElement.contains){if(!t.documentElement.contains(e.node))throw new Exception("Element not in the dom")}else{for(var s=e.node;s.parentNode;)s=s.parentNode;if(s!=t)throw new Exception("Element not in the dom")}n=e.node.getBBox()}catch(t){if(e instanceof i.Shape){var r=e.clone(i.parser.draw.instance).show();n=r.node.getBBox(),r.remove()}else n={x:e.node.clientLeft,y:e.node.clientTop,width:e.node.clientWidth,height:e.node.clientHeight}}i.Box.call(this,n)}},inherit:i.Box,parent:i.Element,construct:{bbox:function(){return new i.BBox(this)}}}),i.BBox.prototype.constructor=i.BBox,i.extend(i.Element,{tbox:function(){return console.warn("Use of TBox is deprecated and mapped to RBox. Use .rbox() instead."),this.rbox(this.doc())}}),i.RBox=i.invent({create:function(e){i.Box.apply(this,[].slice.call(arguments)),e instanceof i.Element&&i.Box.call(this,e.node.getBoundingClientRect())},inherit:i.Box,parent:i.Element,extend:{addOffset:function(){return this.x+=e.pageXOffset,this.y+=e.pageYOffset,this}},construct:{rbox:function(e){return e?new i.RBox(this).transform(e.screenCTM().inverse()):new i.RBox(this).addOffset()}}}),i.RBox.prototype.constructor=i.RBox,i.Matrix=i.invent({create:function(e){var t,n=f([1,0,0,1,0,0]);for(e=e instanceof i.Element?e.matrixify():"string"==typeof e?f(e.split(i.regex.delimiter).map(parseFloat)):6==arguments.length?f([].slice.call(arguments)):Array.isArray(e)?f(e):"object"==typeof e?e:n,t=x.length-1;t>=0;--t)this[x[t]]=null!=e[x[t]]?e[x[t]]:n[x[t]]},extend:{extract:function(){var e=m(this,0,1),t=m(this,1,0),n=180/Math.PI*Math.atan2(e.y,e.x)-90;return{x:this.e,y:this.f,transformedX:(this.e*Math.cos(n*Math.PI/180)+this.f*Math.sin(n*Math.PI/180))/Math.sqrt(this.a*this.a+this.b*this.b),transformedY:(this.f*Math.cos(n*Math.PI/180)+this.e*Math.sin(-n*Math.PI/180))/Math.sqrt(this.c*this.c+this.d*this.d),skewX:-n,skewY:180/Math.PI*Math.atan2(t.y,t.x),scaleX:Math.sqrt(this.a*this.a+this.b*this.b),scaleY:Math.sqrt(this.c*this.c+this.d*this.d),rotation:n,a:this.a,b:this.b,c:this.c,d:this.d,e:this.e,f:this.f,matrix:new i.Matrix(this)}},clone:function(){return new i.Matrix(this)},morph:function(e){return this.destination=new i.Matrix(e),this},at:function(e){return this.destination?new i.Matrix({a:this.a+(this.destination.a-this.a)*e,b:this.b+(this.destination.b-this.b)*e,c:this.c+(this.destination.c-this.c)*e,d:this.d+(this.destination.d-this.d)*e,e:this.e+(this.destination.e-this.e)*e,f:this.f+(this.destination.f-this.f)*e}):this},multiply:function(e){return new i.Matrix(this.native().multiply(function(e){e instanceof i.Matrix||(e=new i.Matrix(e));return e}(e).native()))},inverse:function(){return new i.Matrix(this.native().inverse())},translate:function(e,t){return new i.Matrix(this.native().translate(e||0,t||0))},scale:function(e,t,n,s){return 1==arguments.length?t=e:3==arguments.length&&(s=n,n=t,t=e),this.around(n,s,new i.Matrix(e,0,0,t,0,0))},rotate:function(e,t,n){return e=i.utils.radians(e),this.around(t,n,new i.Matrix(Math.cos(e),Math.sin(e),-Math.sin(e),Math.cos(e),0,0))},flip:function(e,t){return"x"==e?this.scale(-1,1,t,0):"y"==e?this.scale(1,-1,0,t):this.scale(-1,-1,e,null!=t?t:e)},skew:function(e,t,n,s){return 1==arguments.length?t=e:3==arguments.length&&(s=n,n=t,t=e),e=i.utils.radians(e),t=i.utils.radians(t),this.around(n,s,new i.Matrix(1,Math.tan(t),Math.tan(e),1,0,0))},skewX:function(e,t,i){return this.skew(e,0,t,i)},skewY:function(e,t,i){return this.skew(0,e,t,i)},around:function(e,t,n){return this.multiply(new i.Matrix(1,0,0,1,e||0,t||0)).multiply(n).multiply(new i.Matrix(1,0,0,1,-e||0,-t||0))},native:function(){for(var e=i.parser.native.createSVGMatrix(),t=x.length-1;t>=0;t--)e[x[t]]=this[x[t]];return e},toString:function(){return"matrix("+A(this.a)+","+A(this.b)+","+A(this.c)+","+A(this.d)+","+A(this.e)+","+A(this.f)+")"}},parent:i.Element,construct:{ctm:function(){return new i.Matrix(this.node.getCTM())},screenCTM:function(){if(this instanceof i.Nested){var e=this.rect(1,1),t=e.node.getScreenCTM();return e.remove(),new i.Matrix(t)}return new i.Matrix(this.node.getScreenCTM())}}}),i.Point=i.invent({create:function(e,t){var i;i=Array.isArray(e)?{x:e[0],y:e[1]}:"object"==typeof e?{x:e.x,y:e.y}:null!=e?{x:e,y:null!=t?t:e}:{x:0,y:0},this.x=i.x,this.y=i.y},extend:{clone:function(){return new i.Point(this)},morph:function(e,t){return this.destination=new i.Point(e,t),this},at:function(e){return this.destination?new i.Point({x:this.x+(this.destination.x-this.x)*e,y:this.y+(this.destination.y-this.y)*e}):this},native:function(){var e=i.parser.native.createSVGPoint();return e.x=this.x,e.y=this.y,e},transform:function(e){return new i.Point(this.native().matrixTransform(e.native()))}}}),i.extend(i.Element,{point:function(e,t){return new i.Point(e,t).transform(this.screenCTM().inverse())}}),i.extend(i.Element,{attr:function(e,t,n){if(null==e){for(e={},n=(t=this.node.attributes).length-1;n>=0;n--)e[t[n].nodeName]=i.regex.isNumber.test(t[n].nodeValue)?parseFloat(t[n].nodeValue):t[n].nodeValue;return e}if("object"==typeof e)for(t in e)this.attr(t,e[t]);else if(null===t)this.node.removeAttribute(e);else{if(null==t)return null==(t=this.node.getAttribute(e))?i.defaults.attrs[e]:i.regex.isNumber.test(t)?parseFloat(t):t;"stroke-width"==e?this.attr("stroke",parseFloat(t)>0?this._stroke:null):"stroke"==e&&(this._stroke=t),"fill"!=e&&"stroke"!=e||(i.regex.isImage.test(t)&&(t=this.doc().defs().image(t,0,0)),t instanceof i.Image&&(t=this.doc().defs().pattern(0,0,(function(){this.add(t)})))),"number"==typeof t?t=new i.Number(t):i.Color.isColor(t)?t=new i.Color(t):Array.isArray(t)&&(t=new i.Array(t)),"leading"==e?this.leading&&this.leading(t):"string"==typeof n?this.node.setAttributeNS(n,e,t.toString()):this.node.setAttribute(e,t.toString()),!this.rebuild||"font-size"!=e&&"x"!=e||this.rebuild(e,t)}return this}}),i.extend(i.Element,{transform:function(e,t){var n,s,r=this;if("object"!=typeof e)return n=new i.Matrix(r).extract(),"string"==typeof e?n[e]:n;if(n=new i.Matrix(r),t=!!t||!!e.relative,null!=e.a)n=t?n.multiply(new i.Matrix(e)):new i.Matrix(e);else if(null!=e.rotation)g(e,r),n=t?n.rotate(e.rotation,e.cx,e.cy):n.rotate(e.rotation-n.extract().rotation,e.cx,e.cy);else if(null!=e.scale||null!=e.scaleX||null!=e.scaleY){if(g(e,r),e.scaleX=null!=e.scale?e.scale:null!=e.scaleX?e.scaleX:1,e.scaleY=null!=e.scale?e.scale:null!=e.scaleY?e.scaleY:1,!t){var o=n.extract();e.scaleX=1*e.scaleX/o.scaleX,e.scaleY=1*e.scaleY/o.scaleY}n=n.scale(e.scaleX,e.scaleY,e.cx,e.cy)}else if(null!=e.skew||null!=e.skewX||null!=e.skewY){if(g(e,r),e.skewX=null!=e.skew?e.skew:null!=e.skewX?e.skewX:0,e.skewY=null!=e.skew?e.skew:null!=e.skewY?e.skewY:0,!t){o=n.extract();n=n.multiply((new i.Matrix).skew(o.skewX,o.skewY,e.cx,e.cy).inverse())}n=n.skew(e.skewX,e.skewY,e.cx,e.cy)}else e.flip?("x"==e.flip||"y"==e.flip?e.offset=null==e.offset?r.bbox()["c"+e.flip]:e.offset:null==e.offset?(s=r.bbox(),e.flip=s.cx,e.offset=s.cy):e.flip=e.offset,n=(new i.Matrix).flip(e.flip,e.offset)):null==e.x&&null==e.y||(t?n=n.translate(e.x,e.y):(null!=e.x&&(n.e=e.x),null!=e.y&&(n.f=e.y)));return this.attr("transform",n)}}),i.extend(i.FX,{transform:function(e,t){var n,s,r=this.target();return"object"!=typeof e?(n=new i.Matrix(r).extract(),"string"==typeof e?n[e]:n):(t=!!t||!!e.relative,null!=e.a?n=new i.Matrix(e):null!=e.rotation?(g(e,r),n=new i.Rotate(e.rotation,e.cx,e.cy)):null!=e.scale||null!=e.scaleX||null!=e.scaleY?(g(e,r),e.scaleX=null!=e.scale?e.scale:null!=e.scaleX?e.scaleX:1,e.scaleY=null!=e.scale?e.scale:null!=e.scaleY?e.scaleY:1,n=new i.Scale(e.scaleX,e.scaleY,e.cx,e.cy)):null!=e.skewX||null!=e.skewY?(g(e,r),e.skewX=null!=e.skewX?e.skewX:0,e.skewY=null!=e.skewY?e.skewY:0,n=new i.Skew(e.skewX,e.skewY,e.cx,e.cy)):e.flip?("x"==e.flip||"y"==e.flip?e.offset=null==e.offset?r.bbox()["c"+e.flip]:e.offset:null==e.offset?(s=r.bbox(),e.flip=s.cx,e.offset=s.cy):e.flip=e.offset,n=(new i.Matrix).flip(e.flip,e.offset)):null==e.x&&null==e.y||(n=new i.Translate(e.x,e.y)),n?(n.relative=t,this.last().transforms.push(n),this._callStart()):this)}}),i.extend(i.Element,{untransform:function(){return this.attr("transform",null)},matrixify:function(){return(this.attr("transform")||"").split(i.regex.transforms).slice(0,-1).map((function(e){var t=e.trim().split("(");return[t[0],t[1].split(i.regex.delimiter).map((function(e){return parseFloat(e)}))]})).reduce((function(e,t){return"matrix"==t[0]?e.multiply(f(t[1])):e[t[0]].apply(e,t[1])}),new i.Matrix)},toParent:function(e){if(this==e)return this;var t=this.screenCTM(),i=e.screenCTM().inverse();return this.addTo(e).untransform().transform(i.multiply(t)),this},toDoc:function(){return this.toParent(this.doc())}}),i.Transformation=i.invent({create:function(e,t){if(arguments.length>1&&"boolean"!=typeof t)return this.constructor.call(this,[].slice.call(arguments));if(Array.isArray(e))for(var i=0,n=this.arguments.length;i<n;++i)this[this.arguments[i]]=e[i];else if("object"==typeof e)for(i=0,n=this.arguments.length;i<n;++i)this[this.arguments[i]]=e[this.arguments[i]];this.inversed=!1,!0===t&&(this.inversed=!0)},extend:{arguments:[],method:"",at:function(e){for(var t=[],n=0,s=this.arguments.length;n<s;++n)t.push(this[this.arguments[n]]);var r=this._undo||new i.Matrix;return r=(new i.Matrix).morph(i.Matrix.prototype[this.method].apply(r,t)).at(e),this.inversed?r.inverse():r},undo:function(e){for(var t=0,n=this.arguments.length;t<n;++t)e[this.arguments[t]]=void 0===this[this.arguments[t]]?0:e[this.arguments[t]];return e.cx=this.cx,e.cy=this.cy,this._undo=new(i[c(this.method)])(e,!0).at(1),this}}}),i.Translate=i.invent({parent:i.Matrix,inherit:i.Transformation,create:function(e,t){this.constructor.apply(this,[].slice.call(arguments))},extend:{arguments:["transformedX","transformedY"],method:"translate"}}),i.Rotate=i.invent({parent:i.Matrix,inherit:i.Transformation,create:function(e,t){this.constructor.apply(this,[].slice.call(arguments))},extend:{arguments:["rotation","cx","cy"],method:"rotate",at:function(e){var t=(new i.Matrix).rotate((new i.Number).morph(this.rotation-(this._undo?this._undo.rotation:0)).at(e),this.cx,this.cy);return this.inversed?t.inverse():t},undo:function(e){return this._undo=e,this}}}),i.Scale=i.invent({parent:i.Matrix,inherit:i.Transformation,create:function(e,t){this.constructor.apply(this,[].slice.call(arguments))},extend:{arguments:["scaleX","scaleY","cx","cy"],method:"scale"}}),i.Skew=i.invent({parent:i.Matrix,inherit:i.Transformation,create:function(e,t){this.constructor.apply(this,[].slice.call(arguments))},extend:{arguments:["skewX","skewY","cx","cy"],method:"skew"}}),i.extend(i.Element,{style:function(e,t){if(0==arguments.length)return this.node.style.cssText||"";if(arguments.length<2)if("object"==typeof e)for(t in e)this.style(t,e[t]);else{if(!i.regex.isCss.test(e))return this.node.style[d(e)];for(e=e.split(/\s*;\s*/).filter((function(e){return!!e})).map((function(e){return e.split(/\s*:\s*/)}));t=e.pop();)this.style(t[0],t[1])}else this.node.style[d(e)]=null===t||i.regex.isBlank.test(t)?"":t;return this}}),i.Parent=i.invent({create:function(e){this.constructor.call(this,e)},inherit:i.Element,extend:{children:function(){return i.utils.map(i.utils.filterSVGElements(this.node.childNodes),(function(e){return i.adopt(e)}))},add:function(e,t){return null==t?this.node.appendChild(e.node):e.node!=this.node.childNodes[t]&&this.node.insertBefore(e.node,this.node.childNodes[t]),this},put:function(e,t){return this.add(e,t),e},has:function(e){return this.index(e)>=0},index:function(e){return[].slice.call(this.node.childNodes).indexOf(e.node)},get:function(e){return i.adopt(this.node.childNodes[e])},first:function(){return this.get(0)},last:function(){return this.get(this.node.childNodes.length-1)},each:function(e,t){var n,s,r=this.children();for(n=0,s=r.length;n<s;n++)r[n]instanceof i.Element&&e.apply(r[n],[n,r]),t&&r[n]instanceof i.Container&&r[n].each(e,t);return this},removeElement:function(e){return this.node.removeChild(e.node),this},clear:function(){for(;this.node.hasChildNodes();)this.node.removeChild(this.node.lastChild);return delete this._defs,this},defs:function(){return this.doc().defs()}}}),i.extend(i.Parent,{ungroup:function(e,t){return 0===t||this instanceof i.Defs||this.node==i.parser.draw||(e=e||(this instanceof i.Doc?this:this.parent(i.Parent)),t=t||1/0,this.each((function(){return this instanceof i.Defs?this:this instanceof i.Parent?this.ungroup(e,t-1):this.toParent(e)})),this.node.firstChild||this.remove()),this},flatten:function(e,t){return this.ungroup(e,t)}}),i.Container=i.invent({create:function(e){this.constructor.call(this,e)},inherit:i.Parent}),i.ViewBox=i.invent({create:function(e){var t,n,s,r,o,a,h,l=[0,0,0,0],d=1,c=1,u=/[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?/gi;if(e instanceof i.Element){for(a=e,h=e,o=(e.attr("viewBox")||"").match(u),s=new i.Number(e.width()),r=new i.Number(e.height());"%"==s.unit;)d*=s.value,s=new i.Number(a instanceof i.Doc?a.parent().offsetWidth:a.parent().width()),a=a.parent();for(;"%"==r.unit;)c*=r.value,r=new i.Number(h instanceof i.Doc?h.parent().offsetHeight:h.parent().height()),h=h.parent();this.x=0,this.y=0,this.width=s*d,this.height=r*c,this.zoom=1,o&&(t=parseFloat(o[0]),n=parseFloat(o[1]),s=parseFloat(o[2]),r=parseFloat(o[3]),this.zoom=this.width/this.height>s/r?this.height/r:this.width/s,this.x=t,this.y=n,this.width=s,this.height=r)}else e="string"==typeof e?e.match(u).map((function(e){return parseFloat(e)})):Array.isArray(e)?e:"object"==typeof e?[e.x,e.y,e.width,e.height]:4==arguments.length?[].slice.call(arguments):l,this.x=e[0],this.y=e[1],this.width=e[2],this.height=e[3]},extend:{toString:function(){return this.x+" "+this.y+" "+this.width+" "+this.height},morph:function(e,t,n,s){return this.destination=new i.ViewBox(e,t,n,s),this},at:function(e){return this.destination?new i.ViewBox([this.x+(this.destination.x-this.x)*e,this.y+(this.destination.y-this.y)*e,this.width+(this.destination.width-this.width)*e,this.height+(this.destination.height-this.height)*e]):this}},parent:i.Container,construct:{viewbox:function(e,t,n,s){return 0==arguments.length?new i.ViewBox(this):this.attr("viewBox",new i.ViewBox(e,t,n,s))}}}),["click","dblclick","mousedown","mouseup","mouseover","mouseout","mousemove","mouseenter","mouseleave","touchstart","touchmove","touchleave","touchend","touchcancel"].forEach((function(e){i.Element.prototype[e]=function(t){return null==t?i.off(this,e):i.on(this,e,t),this}})),i.listenerId=0,i.on=function(e,t,n,s,r){var o=n.bind(s||e),a=e instanceof i.Element?e.node:e;a.instance=a.instance||{_events:{}};var h=a.instance._events;n._svgjsListenerId||(n._svgjsListenerId=++i.listenerId),t.split(i.regex.delimiter).forEach((function(e){var t=e.split(".")[0],i=e.split(".")[1]||"*";h[t]=h[t]||{},h[t][i]=h[t][i]||{},h[t][i][n._svgjsListenerId]=o,a.addEventListener(t,o,r||!1)}))},i.off=function(e,t,n,s){var r=e instanceof i.Element?e.node:e;if(r.instance&&("function"!=typeof n||(n=n._svgjsListenerId))){var o=r.instance._events;(t||"").split(i.regex.delimiter).forEach((function(e){var t,a,h=e&&e.split(".")[0],l=e&&e.split(".")[1];if(n)o[h]&&o[h][l||"*"]&&(r.removeEventListener(h,o[h][l||"*"][n],s||!1),delete o[h][l||"*"][n]);else if(h&&l){if(o[h]&&o[h][l]){for(a in o[h][l])i.off(r,[h,l].join("."),a);delete o[h][l]}}else if(l)for(e in o)for(t in o[e])l===t&&i.off(r,[e,l].join("."));else if(h){if(o[h]){for(t in o[h])i.off(r,[h,t].join("."));delete o[h]}}else{for(e in o)i.off(r,e);r.instance._events={}}}))}},i.extend(i.Element,{on:function(e,t,n,s){return i.on(this,e,t,n,s),this},off:function(e,t){return i.off(this.node,e,t),this},fire:function(t,n){return t instanceof e.Event?this.node.dispatchEvent(t):this.node.dispatchEvent(t=new i.CustomEvent(t,{detail:n,cancelable:!0})),this._event=t,this},event:function(){return this._event}}),i.Defs=i.invent({create:"defs",inherit:i.Container}),i.G=i.invent({create:"g",inherit:i.Container,extend:{x:function(e){return null==e?this.transform("x"):this.transform({x:e-this.x()},!0)},y:function(e){return null==e?this.transform("y"):this.transform({y:e-this.y()},!0)},cx:function(e){return null==e?this.gbox().cx:this.x(e-this.gbox().width/2)},cy:function(e){return null==e?this.gbox().cy:this.y(e-this.gbox().height/2)},gbox:function(){var e=this.bbox(),t=this.transform();return e.x+=t.x,e.x2+=t.x,e.cx+=t.x,e.y+=t.y,e.y2+=t.y,e.cy+=t.y,e}},construct:{group:function(){return this.put(new i.G)}}}),i.Doc=i.invent({create:function(e){e&&("svg"==(e="string"==typeof e?t.getElementById(e):e).nodeName?this.constructor.call(this,e):(this.constructor.call(this,i.create("svg")),e.appendChild(this.node),this.size("100%","100%")),this.namespace().defs())},inherit:i.Container,extend:{namespace:function(){return this.attr({xmlns:i.ns,version:"1.1"}).attr("xmlns:xlink",i.xlink,i.xmlns).attr("xmlns:svgjs",i.svgjs,i.xmlns)},defs:function(){var e;this._defs||((e=this.node.getElementsByTagName("defs")[0])?this._defs=i.adopt(e):this._defs=new i.Defs,this.node.appendChild(this._defs.node));return this._defs},parent:function(){return this.node.parentNode&&"#document"!=this.node.parentNode.nodeName&&"#document-fragment"!=this.node.parentNode.nodeName?this.node.parentNode:null},spof:function(){var e=this.node.getScreenCTM();return e&&this.style("left",-e.e%1+"px").style("top",-e.f%1+"px"),this},remove:function(){return this.parent()&&this.parent().removeChild(this.node),this},clear:function(){for(;this.node.hasChildNodes();)this.node.removeChild(this.node.lastChild);return delete this._defs,i.parser.draw.parentNode||this.node.appendChild(i.parser.draw),this},clone:function(e){this.writeDataToDom();var t=this.node,i=v(t.cloneNode(!0));return e?(e.node||e).appendChild(i.node):t.parentNode.insertBefore(i.node,t.nextSibling),i}}}),i.extend(i.Element,{siblings:function(){return this.parent().children()},position:function(){return this.parent().index(this)},next:function(){return this.siblings()[this.position()+1]},previous:function(){return this.siblings()[this.position()-1]},forward:function(){var e=this.position()+1,t=this.parent();return t.removeElement(this).add(this,e),t instanceof i.Doc&&t.node.appendChild(t.defs().node),this},backward:function(){var e=this.position();return e>0&&this.parent().removeElement(this).add(this,e-1),this},front:function(){var e=this.parent();return e.node.appendChild(this.node),e instanceof i.Doc&&e.node.appendChild(e.defs().node),this},back:function(){return this.position()>0&&this.parent().removeElement(this).add(this,0),this},before:function(e){e.remove();var t=this.position();return this.parent().add(e,t),this},after:function(e){e.remove();var t=this.position();return this.parent().add(e,t+1),this}}),i.Mask=i.invent({create:function(){this.constructor.call(this,i.create("mask")),this.targets=[]},inherit:i.Container,extend:{remove:function(){for(var e=this.targets.length-1;e>=0;e--)this.targets[e]&&this.targets[e].unmask();return this.targets=[],i.Element.prototype.remove.call(this),this}},construct:{mask:function(){return this.defs().put(new i.Mask)}}}),i.extend(i.Element,{maskWith:function(e){return this.masker=e instanceof i.Mask?e:this.parent().mask().add(e),this.masker.targets.push(this),this.attr("mask",'url("#'+this.masker.attr("id")+'")')},unmask:function(){return delete this.masker,this.attr("mask",null)}}),i.ClipPath=i.invent({create:function(){this.constructor.call(this,i.create("clipPath")),this.targets=[]},inherit:i.Container,extend:{remove:function(){for(var e=this.targets.length-1;e>=0;e--)this.targets[e]&&this.targets[e].unclip();return this.targets=[],this.parent().removeElement(this),this}},construct:{clip:function(){return this.defs().put(new i.ClipPath)}}}),i.extend(i.Element,{clipWith:function(e){return this.clipper=e instanceof i.ClipPath?e:this.parent().clip().add(e),this.clipper.targets.push(this),this.attr("clip-path",'url("#'+this.clipper.attr("id")+'")')},unclip:function(){return delete this.clipper,this.attr("clip-path",null)}}),i.Gradient=i.invent({create:function(e){this.constructor.call(this,i.create(e+"Gradient")),this.type=e},inherit:i.Container,extend:{at:function(e,t,n){return this.put(new i.Stop).update(e,t,n)},update:function(e){return this.clear(),"function"==typeof e&&e.call(this,this),this},fill:function(){return"url(#"+this.id()+")"},toString:function(){return this.fill()},attr:function(e,t,n){return"transform"==e&&(e="gradientTransform"),i.Container.prototype.attr.call(this,e,t,n)}},construct:{gradient:function(e,t){return this.defs().gradient(e,t)}}}),i.extend(i.Gradient,i.FX,{from:function(e,t){return"radial"==(this._target||this).type?this.attr({fx:new i.Number(e),fy:new i.Number(t)}):this.attr({x1:new i.Number(e),y1:new i.Number(t)})},to:function(e,t){return"radial"==(this._target||this).type?this.attr({cx:new i.Number(e),cy:new i.Number(t)}):this.attr({x2:new i.Number(e),y2:new i.Number(t)})}}),i.extend(i.Defs,{gradient:function(e,t){return this.put(new i.Gradient(e)).update(t)}}),i.Stop=i.invent({create:"stop",inherit:i.Element,extend:{update:function(e){return("number"==typeof e||e instanceof i.Number)&&(e={offset:arguments[0],color:arguments[1],opacity:arguments[2]}),null!=e.opacity&&this.attr("stop-opacity",e.opacity),null!=e.color&&this.attr("stop-color",e.color),null!=e.offset&&this.attr("offset",new i.Number(e.offset)),this}}}),i.Pattern=i.invent({create:"pattern",inherit:i.Container,extend:{fill:function(){return"url(#"+this.id()+")"},update:function(e){return this.clear(),"function"==typeof e&&e.call(this,this),this},toString:function(){return this.fill()},attr:function(e,t,n){return"transform"==e&&(e="patternTransform"),i.Container.prototype.attr.call(this,e,t,n)}},construct:{pattern:function(e,t,i){return this.defs().pattern(e,t,i)}}}),i.extend(i.Defs,{pattern:function(e,t,n){return this.put(new i.Pattern).update(n).attr({x:0,y:0,width:e,height:t,patternUnits:"userSpaceOnUse"})}}),i.Shape=i.invent({create:function(e){this.constructor.call(this,e)},inherit:i.Element}),i.Bare=i.invent({create:function(e,t){if(this.constructor.call(this,i.create(e)),t)for(var n in t.prototype)"function"==typeof t.prototype[n]&&(this[n]=t.prototype[n])},inherit:i.Element,extend:{words:function(e){for(;this.node.hasChildNodes();)this.node.removeChild(this.node.lastChild);return this.node.appendChild(t.createTextNode(e)),this}}}),i.extend(i.Parent,{element:function(e,t){return this.put(new i.Bare(e,t))}}),i.Symbol=i.invent({create:"symbol",inherit:i.Container,construct:{symbol:function(){return this.put(new i.Symbol)}}}),i.Use=i.invent({create:"use",inherit:i.Shape,extend:{element:function(e,t){return this.attr("href",(t||"")+"#"+e,i.xlink)}},construct:{use:function(e,t){return this.put(new i.Use).element(e,t)}}}),i.Rect=i.invent({create:"rect",inherit:i.Shape,construct:{rect:function(e,t){return this.put(new i.Rect).size(e,t)}}}),i.Circle=i.invent({create:"circle",inherit:i.Shape,construct:{circle:function(e){return this.put(new i.Circle).rx(new i.Number(e).divide(2)).move(0,0)}}}),i.extend(i.Circle,i.FX,{rx:function(e){return this.attr("r",e)},ry:function(e){return this.rx(e)}}),i.Ellipse=i.invent({create:"ellipse",inherit:i.Shape,construct:{ellipse:function(e,t){return this.put(new i.Ellipse).size(e,t).move(0,0)}}}),i.extend(i.Ellipse,i.Rect,i.FX,{rx:function(e){return this.attr("rx",e)},ry:function(e){return this.attr("ry",e)}}),i.extend(i.Circle,i.Ellipse,{x:function(e){return null==e?this.cx()-this.rx():this.cx(e+this.rx())},y:function(e){return null==e?this.cy()-this.ry():this.cy(e+this.ry())},cx:function(e){return null==e?this.attr("cx"):this.attr("cx",e)},cy:function(e){return null==e?this.attr("cy"):this.attr("cy",e)},width:function(e){return null==e?2*this.rx():this.rx(new i.Number(e).divide(2))},height:function(e){return null==e?2*this.ry():this.ry(new i.Number(e).divide(2))},size:function(e,t){var n=p(this,e,t);return this.rx(new i.Number(n.width).divide(2)).ry(new i.Number(n.height).divide(2))}}),i.Line=i.invent({create:"line",inherit:i.Shape,extend:{array:function(){return new i.PointArray([[this.attr("x1"),this.attr("y1")],[this.attr("x2"),this.attr("y2")]])},plot:function(e,t,n,s){return null==e?this.array():(e=void 0!==t?{x1:e,y1:t,x2:n,y2:s}:new i.PointArray(e).toLine(),this.attr(e))},move:function(e,t){return this.attr(this.array().move(e,t).toLine())},size:function(e,t){var i=p(this,e,t);return this.attr(this.array().size(i.width,i.height).toLine())}},construct:{line:function(e,t,n,s){return i.Line.prototype.plot.apply(this.put(new i.Line),null!=e?[e,t,n,s]:[0,0,0,0])}}}),i.Polyline=i.invent({create:"polyline",inherit:i.Shape,construct:{polyline:function(e){return this.put(new i.Polyline).plot(e||new i.PointArray)}}}),i.Polygon=i.invent({create:"polygon",inherit:i.Shape,construct:{polygon:function(e){return this.put(new i.Polygon).plot(e||new i.PointArray)}}}),i.extend(i.Polyline,i.Polygon,{array:function(){return this._array||(this._array=new i.PointArray(this.attr("points")))},plot:function(e){return null==e?this.array():this.clear().attr("points","string"==typeof e?e:this._array=new i.PointArray(e))},clear:function(){return delete this._array,this},move:function(e,t){return this.attr("points",this.array().move(e,t))},size:function(e,t){var i=p(this,e,t);return this.attr("points",this.array().size(i.width,i.height))}}),i.extend(i.Line,i.Polyline,i.Polygon,{morphArray:i.PointArray,x:function(e){return null==e?this.bbox().x:this.move(e,this.bbox().y)},y:function(e){return null==e?this.bbox().y:this.move(this.bbox().x,e)},width:function(e){var t=this.bbox();return null==e?t.width:this.size(e,t.height)},height:function(e){var t=this.bbox();return null==e?t.height:this.size(t.width,e)}}),i.Path=i.invent({create:"path",inherit:i.Shape,extend:{morphArray:i.PathArray,array:function(){return this._array||(this._array=new i.PathArray(this.attr("d")))},plot:function(e){return null==e?this.array():this.clear().attr("d","string"==typeof e?e:this._array=new i.PathArray(e))},clear:function(){return delete this._array,this},move:function(e,t){return this.attr("d",this.array().move(e,t))},x:function(e){return null==e?this.bbox().x:this.move(e,this.bbox().y)},y:function(e){return null==e?this.bbox().y:this.move(this.bbox().x,e)},size:function(e,t){var i=p(this,e,t);return this.attr("d",this.array().size(i.width,i.height))},width:function(e){return null==e?this.bbox().width:this.size(e,this.bbox().height)},height:function(e){return null==e?this.bbox().height:this.size(this.bbox().width,e)}},construct:{path:function(e){return this.put(new i.Path).plot(e||new i.PathArray)}}}),i.Image=i.invent({create:"image",inherit:i.Shape,extend:{load:function(t){if(!t)return this;var n=this,s=new e.Image;return i.on(s,"load",(function(){i.off(s);var e=n.parent(i.Pattern);null!==e&&(0==n.width()&&0==n.height()&&n.size(s.width,s.height),e&&0==e.width()&&0==e.height()&&e.size(n.width(),n.height()),"function"==typeof n._loaded&&n._loaded.call(n,{width:s.width,height:s.height,ratio:s.width/s.height,url:t}))})),i.on(s,"error",(function(e){i.off(s),"function"==typeof n._error&&n._error.call(n,e)})),this.attr("href",s.src=this.src=t,i.xlink)},loaded:function(e){return this._loaded=e,this},error:function(e){return this._error=e,this}},construct:{image:function(e,t,n){return this.put(new i.Image).load(e).size(t||0,n||t||0)}}}),i.Text=i.invent({create:function(){this.constructor.call(this,i.create("text")),this.dom.leading=new i.Number(1.3),this._rebuild=!0,this._build=!1,this.attr("font-family",i.defaults.attrs["font-family"])},inherit:i.Shape,extend:{x:function(e){return null==e?this.attr("x"):this.attr("x",e)},y:function(e){var t=this.attr("y"),i="number"==typeof t?t-this.bbox().y:0;return null==e?"number"==typeof t?t-i:t:this.attr("y","number"==typeof e.valueOf()?e+i:e)},cx:function(e){return null==e?this.bbox().cx:this.x(e-this.bbox().width/2)},cy:function(e){return null==e?this.bbox().cy:this.y(e-this.bbox().height/2)},text:function(e){if(void 0===e){e="";for(var t=this.node.childNodes,n=0,s=t.length;n<s;++n)0!=n&&3!=t[n].nodeType&&1==i.adopt(t[n]).dom.newLined&&(e+="\n"),e+=t[n].textContent;return e}if(this.clear().build(!0),"function"==typeof e)e.call(this,this);else{n=0;for(var r=(e=e.split("\n")).length;n<r;n++)this.tspan(e[n]).newLine()}return this.build(!1).rebuild()},size:function(e){return this.attr("font-size",e).rebuild()},leading:function(e){return null==e?this.dom.leading:(this.dom.leading=new i.Number(e),this.rebuild())},lines:function(){var e=(this.textPath&&this.textPath()||this).node,t=i.utils.map(i.utils.filterSVGElements(e.childNodes),(function(e){return i.adopt(e)}));return new i.Set(t)},rebuild:function(e){if("boolean"==typeof e&&(this._rebuild=e),this._rebuild){var t=this,n=0,s=this.dom.leading*new i.Number(this.attr("font-size"));this.lines().each((function(){this.dom.newLined&&(t.textPath()||this.attr("x",t.attr("x")),"\n"==this.text()?n+=s:(this.attr("dy",s+n),n=0))})),this.fire("rebuild")}return this},build:function(e){return this._build=!!e,this},setData:function(e){return this.dom=e,this.dom.leading=new i.Number(e.leading||1.3),this}},construct:{text:function(e){return this.put(new i.Text).text(e)},plain:function(e){return this.put(new i.Text).plain(e)}}}),i.Tspan=i.invent({create:"tspan",inherit:i.Shape,extend:{text:function(e){return null==e?this.node.textContent+(this.dom.newLined?"\n":""):("function"==typeof e?e.call(this,this):this.plain(e),this)},dx:function(e){return this.attr("dx",e)},dy:function(e){return this.attr("dy",e)},newLine:function(){var e=this.parent(i.Text);return this.dom.newLined=!0,this.dy(e.dom.leading*e.attr("font-size")).attr("x",e.x())}}}),i.extend(i.Text,i.Tspan,{plain:function(e){return!1===this._build&&this.clear(),this.node.appendChild(t.createTextNode(e)),this},tspan:function(e){var t=(this.textPath&&this.textPath()||this).node,n=new i.Tspan;return!1===this._build&&this.clear(),t.appendChild(n.node),n.text(e)},clear:function(){for(var e=(this.textPath&&this.textPath()||this).node;e.hasChildNodes();)e.removeChild(e.lastChild);return this},length:function(){return this.node.getComputedTextLength()}}),i.TextPath=i.invent({create:"textPath",inherit:i.Parent,parent:i.Text,construct:{morphArray:i.PathArray,path:function(e){for(var t=new i.TextPath,n=this.doc().defs().path(e);this.node.hasChildNodes();)t.node.appendChild(this.node.firstChild);return this.node.appendChild(t.node),t.attr("href","#"+n,i.xlink),this},array:function(){var e=this.track();return e?e.array():null},plot:function(e){var t=this.track(),i=null;return t&&(i=t.plot(e)),null==e?i:this},track:function(){var e=this.textPath();if(e)return e.reference("href")},textPath:function(){if(this.node.firstChild&&"textPath"==this.node.firstChild.nodeName)return i.adopt(this.node.firstChild)}}}),i.Nested=i.invent({create:function(){this.constructor.call(this,i.create("svg")),this.style("overflow","visible")},inherit:i.Container,construct:{nested:function(){return this.put(new i.Nested)}}}),i.A=i.invent({create:"a",inherit:i.Container,extend:{to:function(e){return this.attr("href",e,i.xlink)},show:function(e){return this.attr("show",e,i.xlink)},target:function(e){return this.attr("target",e)}},construct:{link:function(e){return this.put(new i.A).to(e)}}}),i.extend(i.Element,{linkTo:function(e){var t=new i.A;return"function"==typeof e?e.call(t,t):t.to(e),this.parent().put(t).put(this)}}),i.Marker=i.invent({create:"marker",inherit:i.Container,extend:{width:function(e){return this.attr("markerWidth",e)},height:function(e){return this.attr("markerHeight",e)},ref:function(e,t){return this.attr("refX",e).attr("refY",t)},update:function(e){return this.clear(),"function"==typeof e&&e.call(this,this),this},toString:function(){return"url(#"+this.id()+")"}},construct:{marker:function(e,t,i){return this.defs().marker(e,t,i)}}}),i.extend(i.Defs,{marker:function(e,t,n){return this.put(new i.Marker).size(e,t).ref(e/2,t/2).viewbox(0,0,e,t).attr("orient","auto").update(n)}}),i.extend(i.Line,i.Polyline,i.Polygon,i.Path,{marker:function(e,t,n,s){var r=["marker"];return"all"!=e&&r.push(e),r=r.join("-"),e=arguments[1]instanceof i.Marker?arguments[1]:this.doc().marker(t,n,s),this.attr(r,e)}});var a={stroke:["color","width","opacity","linecap","linejoin","miterlimit","dasharray","dashoffset"],fill:["color","opacity","rule"],prefix:function(e,t){return"color"==t?e:e+"-"+t}};function h(e,t,n,s){return n+s.replace(i.regex.dots," .")}function l(e){for(var t=e.slice(0),i=t.length;i--;)Array.isArray(t[i])&&(t[i]=l(t[i]));return t}function d(e){return e.toLowerCase().replace(/-(.)/g,(function(e,t){return t.toUpperCase()}))}function c(e){return e.charAt(0).toUpperCase()+e.slice(1)}function u(e){var t=e.toString(16);return 1==t.length?"0"+t:t}function p(e,t,i){if(null==t||null==i){var n=e.bbox();null==t?t=n.width/n.height*i:null==i&&(i=n.height/n.width*t)}return{width:t,height:i}}function m(e,t,i){return{x:t*e.a+i*e.c+0,y:t*e.b+i*e.d+0}}function f(e){return{a:e[0],b:e[1],c:e[2],d:e[3],e:e[4],f:e[5]}}function g(e,t){e.cx=null==e.cx?t.bbox().cx:e.cx,e.cy=null==e.cy?t.bbox().cy:e.cy}function v(t){for(var n=t.childNodes.length-1;n>=0;n--)t.childNodes[n]instanceof e.SVGElement&&v(t.childNodes[n]);return i.adopt(t).id(i.eid(t.nodeName))}function y(e){return null==e.x&&(e.x=0,e.y=0,e.width=0,e.height=0),e.w=e.width,e.h=e.height,e.x2=e.x+e.width,e.y2=e.y+e.height,e.cx=e.x+e.width/2,e.cy=e.y+e.height/2,e}function A(e){return Math.abs(e)>1e-37?e:0}["fill","stroke"].forEach((function(e){var t,n={};n[e]=function(n){if(void 0===n)return this;if("string"==typeof n||i.Color.isRgb(n)||n&&"function"==typeof n.fill)this.attr(e,n);else for(t=a[e].length-1;t>=0;t--)null!=n[a[e][t]]&&this.attr(a.prefix(e,a[e][t]),n[a[e][t]]);return this},i.extend(i.Element,i.FX,n)})),i.extend(i.Element,i.FX,{rotate:function(e,t,i){return this.transform({rotation:e,cx:t,cy:i})},skew:function(e,t,i,n){return 1==arguments.length||3==arguments.length?this.transform({skew:e,cx:t,cy:i}):this.transform({skewX:e,skewY:t,cx:i,cy:n})},scale:function(e,t,i,n){return 1==arguments.length||3==arguments.length?this.transform({scale:e,cx:t,cy:i}):this.transform({scaleX:e,scaleY:t,cx:i,cy:n})},translate:function(e,t){return this.transform({x:e,y:t})},flip:function(e,t){return t="number"==typeof e?e:t,this.transform({flip:e||"both",offset:t})},matrix:function(e){return this.attr("transform",new i.Matrix(6==arguments.length?[].slice.call(arguments):e))},opacity:function(e){return this.attr("opacity",e)},dx:function(e){return this.x(new i.Number(e).plus(this instanceof i.FX?0:this.x()),!0)},dy:function(e){return this.y(new i.Number(e).plus(this instanceof i.FX?0:this.y()),!0)},dmove:function(e,t){return this.dx(e).dy(t)}}),i.extend(i.Rect,i.Ellipse,i.Circle,i.Gradient,i.FX,{radius:function(e,t){var n=(this._target||this).type;return"radial"==n||"circle"==n?this.attr("r",new i.Number(e)):this.rx(e).ry(null==t?e:t)}}),i.extend(i.Path,{length:function(){return this.node.getTotalLength()},pointAt:function(e){return this.node.getPointAtLength(e)}}),i.extend(i.Parent,i.Text,i.Tspan,i.FX,{font:function(e,t){if("object"==typeof e)for(t in e)this.font(t,e[t]);return"leading"==e?this.leading(t):"anchor"==e?this.attr("text-anchor",t):"size"==e||"family"==e||"weight"==e||"stretch"==e||"variant"==e||"style"==e?this.attr("font-"+e,t):this.attr(e,t)}}),i.Set=i.invent({create:function(e){e instanceof i.Set?this.members=e.members.slice():Array.isArray(e)?this.members=e:this.clear()},extend:{add:function(){var e,t,i=[].slice.call(arguments);for(e=0,t=i.length;e<t;e++)this.members.push(i[e]);return this},remove:function(e){var t=this.index(e);return t>-1&&this.members.splice(t,1),this},each:function(e){for(var t=0,i=this.members.length;t<i;t++)e.apply(this.members[t],[t,this.members]);return this},clear:function(){return this.members=[],this},length:function(){return this.members.length},has:function(e){return this.index(e)>=0},index:function(e){return this.members.indexOf(e)},get:function(e){return this.members[e]},first:function(){return this.get(0)},last:function(){return this.get(this.members.length-1)},valueOf:function(){return this.members},bbox:function(){if(0==this.members.length)return new i.RBox;var e=this.members[0].rbox(this.members[0].doc());return this.each((function(){e=e.merge(this.rbox(this.doc()))})),e}},construct:{set:function(e){return new i.Set(e)}}}),i.FX.Set=i.invent({create:function(e){this.set=e}}),i.Set.inherit=function(){var e=[];for(var t in i.Shape.prototype)"function"==typeof i.Shape.prototype[t]&&"function"!=typeof i.Set.prototype[t]&&e.push(t);for(var t in e.forEach((function(e){i.Set.prototype[e]=function(){for(var t=0,n=this.members.length;t<n;t++)this.members[t]&&"function"==typeof this.members[t][e]&&this.members[t][e].apply(this.members[t],arguments);return"animate"==e?this.fx||(this.fx=new i.FX.Set(this)):this}})),e=[],i.FX.prototype)"function"==typeof i.FX.prototype[t]&&"function"!=typeof i.FX.Set.prototype[t]&&e.push(t);e.forEach((function(e){i.FX.Set.prototype[e]=function(){for(var t=0,i=this.set.members.length;t<i;t++)this.set.members[t].fx[e].apply(this.set.members[t].fx,arguments);return this}}))},i.extend(i.Element,{data:function(e,t,i){if("object"==typeof e)for(t in e)this.data(t,e[t]);else if(arguments.length<2)try{return JSON.parse(this.attr("data-"+e))}catch(t){return this.attr("data-"+e)}else this.attr("data-"+e,null===t?null:!0===i||"string"==typeof t||"number"==typeof t?t:JSON.stringify(t));return this}}),i.extend(i.Element,{remember:function(e,t){if("object"==typeof arguments[0])for(var t in e)this.remember(t,e[t]);else{if(1==arguments.length)return this.memory()[e];this.memory()[e]=t}return this},forget:function(){if(0==arguments.length)this._memory={};else for(var e=arguments.length-1;e>=0;e--)delete this.memory()[arguments[e]];return this},memory:function(){return this._memory||(this._memory={})}}),i.get=function(e){var n=t.getElementById(function(e){var t=(e||"").toString().match(i.regex.reference);if(t)return t[1]}(e)||e);return i.adopt(n)},i.select=function(e,n){return new i.Set(i.utils.map((n||t).querySelectorAll(e),(function(e){return i.adopt(e)})))},i.extend(i.Parent,{select:function(e){return i.select(e,this.node)}});var x="abcdef".split("");if("function"!=typeof e.CustomEvent){var b=function(e,i){i=i||{bubbles:!1,cancelable:!1,detail:void 0};var n=t.createEvent("CustomEvent");return n.initCustomEvent(e,i.bubbles,i.cancelable,i.detail),n};b.prototype=e.Event.prototype,i.CustomEvent=b}else i.CustomEvent=e.CustomEvent;return function(t){for(var i=0,n=["moz","webkit"],s=0;s<n.length&&!e.requestAnimationFrame;++s)t.requestAnimationFrame=t[n[s]+"RequestAnimationFrame"],t.cancelAnimationFrame=t[n[s]+"CancelAnimationFrame"]||t[n[s]+"CancelRequestAnimationFrame"];t.requestAnimationFrame=t.requestAnimationFrame||function(e){var n=(new Date).getTime(),s=Math.max(0,16-(n-i)),r=t.setTimeout((function(){e(n+s)}),s);return i=n+s,r},t.cancelAnimationFrame=t.cancelAnimationFrame||t.clearTimeout}(e),i}))}));
+=======
+***************************************************************************** */ function t(
+  e,
+  t,
+  i,
+  n,
+) {
+  return new (i || (i = Promise))(function (s, r) {
+    function o(e) {
+      try {
+        h(n.next(e));
+      } catch (e) {
+        r(e);
+      }
+    }
+    function a(e) {
+      try {
+        h(n.throw(e));
+      } catch (e) {
+        r(e);
+      }
+    }
+    function h(e) {
+      var t;
+      e.done
+        ? s(e.value)
+        : ((t = e.value),
+          t instanceof i
+            ? t
+            : new i(function (e) {
+                e(t);
+              })).then(o, a);
+    }
+    h((n = n.apply(e, t || [])).next());
+  });
+}
+function i(e, t) {
+  const i = Object.keys(t).map((i) =>
+    (function (e, t, i) {
+      const n = e[t],
+        s = e.hasOwnProperty(t);
+      let r = i(n);
+      n && Object.setPrototypeOf(r, n);
+      return Object.setPrototypeOf(o, r), (e[t] = o), a;
+      function o(...i) {
+        return r === n && e[t] === o && a(), r.apply(this, i);
+      }
+      function a() {
+        e[t] === o && (s ? (e[t] = n) : delete e[t]),
+          r !== n && ((r = n), Object.setPrototypeOf(o, n || Function));
+      }
+    })(e, i, t[i]),
+  );
+  return 1 === i.length
+    ? i[0]
+    : function () {
+        i.forEach((e) => e());
+      };
+}
+var n = {
+  "Open as mindmap board": "Open as mindmap",
+  "Create new mindmap": "Create new mindmap",
+  "New mindmap board": "New mindmap board",
+  "Untitled mindmap": "Untitled mindmap",
+  "Open as markdown": "Open as markdown",
+  "Sub title": "Sub title",
+  "Export to opml": "Export to opml",
+  "Export to image": "Export to image",
+  "Canvas size": "Canvas size",
+  "Canvas size desc": "Width and height of the canvas",
+  "Canvas background": "Canvas background",
+  "Canvas background desc": "Background color of canvas",
+  "Max level of node to markdown head": "Max level of node to create a Heading",
+  "Max level of node to markdown head desc":
+    "Specify which Node Level creates a seperate Heading instead of a List-Item",
+  "Font size": "Font Size",
+  "Font size desc": "Specify the Font Size",
+  "Mind map layout direct": "Mindmap Layout",
+  "Mind map layout direct desc":
+    "Specify the direction the nodes are placed in your Mindmap",
+  Right: "Right",
+  Left: "Left",
+  Centered: "Centered",
+  "Open PDF File": "Open PDF file...",
+  "Save Image error,Please try again": "Save image error,please try again",
+  "Creating Rect Annotate": "Creating rect annotate...",
+  "Cancel Create Rect Annotate": "Cancel create rect annotate",
+  "File Is Not Exist": "File is not exist",
+  "Open File Error": "Open file error",
+  "PDF Cannot Open More Instances": "PDF reader cannot open more instances",
+  "Create Rect Annotate": "Created rect annotate",
+  "Stroke Array": "Stroke Color",
+  "Stroke Array Desc": "Node link color base on this value or random color",
+  "PDFJs Plugin Path": "PDF reader path",
+  "PDFJs Plugin Path Desc":
+    "If you want to use PDF annotation,You need download pdf js plugin and set up this value",
+  "Andriod pdfjs Plugin Path": "Andriod pdf reader path",
+  "Ios pdfjs Plugin Path": "Ios pdf reader path",
+  "Mac pdfjs Plugin Path": "Mac pdfjs Plugin Path",
+  "PDF Path": "PDF store path",
+  "PDF Annotate Path": "PDF annotate store path",
+  "PDF Image Path": "Image store path of PDF rect annotate",
+  "Miss PDF Reader Path":
+    "Miss PDF plugin path,you need download Pdf js plugin,and set up value of PDF reader path",
+  "Please Use Rich Mode": "Please change yaml mindmap-plugin basic to rich",
+  "The probation period has ended":
+    "The probation period has ended or active code has expired",
+  Rect: "Rect",
+  Circle: "Circle",
+  Pointer: "Pointer",
+  "Show MindMap": "Show mind map",
+  "Hide MindMap": "Hide mind map",
+  "Open Protocol": "Support protocol",
+  "Open Protocol Desc":
+    "Support protocol like 'obsidian://{protocol name}' for function of jump to pdf annotate",
+  Protocol: "Protocol",
+  "Protocol Desc": "Protocol name",
+  Open: "Open",
+  Close: "Close",
+  "Open as outline": "Open as outline",
+  "Show Annotate": "Show annotate",
+  "Annotation save type": "PDF annotation save type",
+  "Annotation save type desc":
+    "The type of save pdf annotation,there are two file types:`annos` and `md`，`annos` as default,`annos` is `json` file in fact ",
+  "Export annotate pdf": "Export annotate pdf",
+  "Export annotate pdf tip":
+    "This is a time-consuming operation. Please wait patiently",
+  "Export annotate pdf success": "Export pdf success",
+  "Export annotate pdf error": "Export pdf error",
+  "Active Code": "Active code",
+  "Active Code Desc":
+    "You can active markmind by use this value. Web site:<https://www.markmind.net>",
+  "Active error": "Active code error",
+  "Active success": "Active success",
+  "Annotate PDF": "Annotate PDF",
+  "Annotate EPUB": "Annotate EPUB",
+  "PDF Viewer Theme": "PDF viewer theme",
+  "PDF Viewer Theme desc": "Theme of pdf viewer",
+  "Copy as markdown": "Copy as markdown",
+  "Copy node text": "Copy node text only",
+  "Copy node link": "Copy node link",
+  "Export as opml": "Export as opml",
+  "Mobile app not support": "File not support mobile app",
+  "Not support file type": "The file type is not support,please open pdf file",
+  "Not find md file": "This pdf has not annotations in valut",
+  "Please select another node": "Please select another node",
+  "Change layout to mindmap": "Change layout to mindmap",
+  "Change layout to right": "Change layout to right",
+  "Change layout to left": "Change layout to left",
+  "Change layout to tree": "Change layout to tree",
+  "Copy mindmap node": "Copy selected node",
+  "Paste to node": "Paste to node",
+  "Toggle mardkown/mindmap": "Toggle markdown/mindmap mode",
+  "Copy node id": "Copy node ID",
+  "Mobile Active Code": "Mobile active code",
+  "Mobile Active Code Desc":
+    "You can active mobile markmind by use value , it will create if you input active code",
+  "Mindmap mode": "Mindmap mode",
+  "Mindmap mode desc":
+    "When create mindmap , it will create mode of this value , `basic` mode as default",
+  "Pdf screen short": "Folder to save image",
+  "Pdf screen short desc":
+    "Save image to this folder when use pdf rect annotate",
+  "Set mindmap to center": "Set mindmap to center",
+  save: "Save",
+  cancel: "Cancel",
+  "Remove annotate space": "Remove space of pdf annotate",
+  "Remove annotate space desc":
+    "In environment of chinese , open this and it will remove spaces between text automatic",
+  "Get path of vault": "Get base path of vault",
+  "Smooth movement": "Support smooth movement of mindmap nodes",
+  "Smooth movement desc": "Smooth movement of mindmap nodes",
+  "Support code block": "Support parse code block of mindmap",
+  "Support code block desc":
+    "Support parse code block of mindmap in markdown file",
+  toPng: "Export to PNG",
+  "Set pdf js path": "Set up pdf js plugin path",
+  "Please open a mind map": "Please open a mind map and try this command again",
+  "Set up pdf js path success": "Success,please restart obsidian",
+  "Create new outline": "Create new outline",
+  "Copy node": "Copy",
+  "Paste node": "Paste",
+  "Fill color": "Fill color",
+  "Stroke color": "Stroke color",
+  "Text color": "Text color",
+  "Text align": "Text align",
+  "Stroke width": "Stroke width",
+  "Stroke style": "Stroke style",
+  nodeColor: "Setup board color",
+  nodeColorDesc: "Use this to setup node background/stroke/font color",
+  "Export to html": "Export to html",
+  "Change layout to fishLeft": "Change layout to left fish",
+  "Change layout to fishRight": "Change layout to right fish",
+  "Open as table": "Open as table",
+  "get table html": "Get html code of table",
+  "get table markdown": "Get markdown of table",
+  "Get pdf annotations": "Import pdf highlight annotations",
+  "extract highlight success": "Import pdf highlight success",
+  "Change basic mode to rich mode": "Change basic mode to rich mode",
+  "Change rich mode to basic mode": "Change rich mode to basic mode",
+  "Export pdf annotations": "Export pdf annotations",
+  "Format of pdf highlight": "Format of pdf highlight",
+  "Format of pdf highlight desc":
+    "When export pdf highights , it will generate file in this format",
+  "Use new version of pdfjs": "Toggle to new version of pdfjs",
+  "Use old version of pdfjs": "Toggle to old version of pdfjs",
+  searchResult: "Find {{nodeNumber}} nodes contains this word",
+  "Toggle search box": "Toggle search box",
+  "Fine tune height of annotate": "Fine tune height of annotate",
+  "Fine tune height of annotate desc":
+    "Fine tune height of annotate , adjust upward (px)",
+  "Fine tune height of annotate desc one":
+    "Fine tune height of annotate , adjust downward (px)",
+  "Create hand drawn mindmap": "Create hand drawn mindmap from basic mode",
+  "Decode URI pdf link": "Open decode PDF link",
+  "Decode URI pdf link desc":
+    "If your `annotate-target` is encode by `encodeURI` , you can open this",
+  "Expand to first node level": "Expand to first node level",
+  "Expand to second node level": "Expand to second node level",
+  "Expand to third node level": "Expand to third node level",
+  "Expand to all node level": "Expand to all node level",
+  "Expand to fourth node level": "Expand to fourth node level",
+  "Expand to fifth node level": "Expand to fifth node level",
+  "Auto create node when annotate": "Auto create node when annotate",
+  "Auto create node when annotate desc":
+    "Auto create node when create pdf annotate",
+  "Add child node": "Add child node",
+  "Add brother node": "Add brother node",
+  "Edit node": "Edit node",
+  "Cancel edit node": "Cancel edit node",
+  "Delete node": "Delete node",
+  Undo: "Undo",
+  Redo: "Redo",
+  "Use custom short cut": "Use custom short cut",
+  "Use custom short cut desc":
+    "You can set up custom short cut of mindmap for add node/delete node/undo/redo/edit node/quit edit node commands in `ctrl + p` board",
+  "PDF cache folder": "PDF cache folder",
+  "PDF cache folder desc":
+    "When you open pdf in web by use pdf annotator, the pdf will store to this folder",
+  "Folder of paste image": "Folder of paste image",
+  "Folder of paste image desc":
+    "When paste image , image will store to this folder",
+  "Change basic to table mode": "Change basic mindmap to table mode",
+  "Change basic to outline mode": "Change basic to outline mode",
+  "Saving data": "Saving data ...",
+  Saved: "Saved",
+  "Only copy annotate link": "Only copy annotate link",
+  "Only copy annotate link desc":
+    "Only copy annotate link when click an pdf annotate",
+  "Saving image": "Saving image ...",
+  "Auto set node to center when tab node of mindmap":
+    "Auto set node to center when tab node of mindmap",
+  "Auto set node to center when tab node of mindmap desc":
+    "Auto set node to center when use up/down/left/right key to tab node of mindmap",
+  "Auto open search box": "Auto open mindmap search box",
+  "Auto open search box desc":
+    "If obsidian has search text, auto open mindmap search box",
+  "Export to pdf": "Export mindmap as a pdf file",
+  "Please do this in a separate window":
+    "Please export mindmap to pdf in a independ window",
+  "PDF save success": "Save pdf success",
+  "Add collapse node mark": "Auto add collapse node ID of basic mode",
+  "Add collapse node mark desc":
+    "When save mindmap of basic mode , auto add collapsed node ID in the end of node text",
+  "Change theme": "Open change theme box",
+  "Close change theme": "Close change theme box",
+  "Can not change layout":
+    " Can not change node layout to table because the child of this node have summary, boundary , callout or layout",
+  "Only use obsidian folder for pdfjs plugin":
+    "Put pdfjs plugin to .obsidian folder of vault",
+  "Only use obsidian folder for pdfjs plugin desc":
+    "Put pdfjs plugin to .obsidian folder of vault in android or ios system",
+  "Generate mind maps by chatGTP": "Generate mind maps by chatGTP (outline)",
+  "Get inspiration": "Get inspiration by chatGTP",
+  ChatGTPError: "Get text error from chatGTP,please try again",
+  ChatGTPLoading: "AI is getting data , please wait a minute...",
+  "ChatGTP appkey": "Please input apikey of chatGPT",
+  "ChatGTP appkey desc": "Please input apikey of chatGPT",
+  ProxyServer: "Please input proxy server",
+  "ProxyServer desc":
+    "If you can not access website of openai api, you can use a proxy server",
+  "Generate mind maps by Q&A of chatGTP": "Generate mind maps by chatGPT (Q&A)",
+  "Annotate template": "Annotate template",
+  "Annotate template desc":
+    "When click annotate, it will generate text according to this template to copy to clipboard",
+  "Support translate": "Support for word translation of pdf annotate",
+  "Support translate desc":
+    "When make annotate of pdf, support word translation",
+  "Google translate": "Google tranlate",
+  "Google translate desc": "Google tranlate",
+  "Baidu translate": "Baidu translate",
+  "Baidu translate desc": "Baidu translate",
+  "Youdao translate": "Youdao translate",
+  "Youdao translate desc": "Youdao translate",
+  "Translate appid": "Translate appId or token",
+  "Translate appid desc": "AppId or token of translate",
+  "Translate secret": "Translate secret",
+  "Translate secret desc":
+    "Secret of translate, if you use token, the value may be empty",
+  "Not have translations of pdf full text":
+    "No full-text translation files available",
+  "Translate spend time": "Translating, please be patient and wait...",
+  "Translate success": "Translation successful",
+  "Parsing PDF structure": "Parsing PDF structuring...",
+  "Parsing PDF structure error": "Parsing PDF structure error",
+  "Full text translate": "Full text translation",
+  "Pdf in vault": "Currently only support PDF in vault",
+  "Completed translation": "Completed translation: ",
+  "Translation engine": "Translation engine",
+  baidu: "baidu",
+  "Copy full text translations": "Copy full text translations to clipboard",
+  "Mindmap is in read": "Mind map in read-only mode",
+  "Export to pdf (old version)": "Export mindmap to pdf (v0.15.9)",
+  "Scale speed of mobile version": "Scale speed of mobile version",
+  "Scale speed of mobile version desc": "Scale speed of mobile version",
+  "Cover node": "Cover node text",
+  "Cancel cover node": "Cancel cover node text",
+  "Export to xmind zen": "Export mindmap to xmind zen file",
+  "Export xmind success": "Export to xmind zen file success",
+};
+const s = {
+  ar: {},
+  cs: {},
+  da: {},
+  de: {
+    "Open as mindmap board": "Öffne als Mindmap",
+    "Create new mindmap": "Erstelle neue Mindmap",
+    "New mindmap board": "Neue Mindmap",
+    "Untitled mindmap": "Unbenannte Mindmap",
+    "Open as markdown": "Öffne als Markdown",
+    "Sub title": "Untertitel",
+    "Export to opml": "Exportiere als opml",
+    "Export to image": "Exportiere als Bild",
+    "Canvas size": "Leinwandgröße",
+    "Canvas size desc": "Breite und Höhe der Leinwand",
+    "Canvas background": "Leinwand Hintergrund",
+    "Canvas background desc": "Hintergrundfarbe der Leinwand",
+    "Max level of node to markdown head":
+      "Maximale Knotenebene welche eine Überschrift erstellt",
+    "Max level of node to markdown head desc":
+      "Angeben, welche Knotenebene eine separate Überschrift anstelle eines Listenelements erstellt.",
+    "Font size": "Schriftgröße",
+    "Font size desc": "Gebe die Schriftgröße ans",
+    "Mind map layout direct": "Mindmap Layout",
+    "Mind map layout direct desc":
+      "Geben Sie die Richtung an, in der die Knoten in Ihrer Mindmap platziert werden.",
+    Right: "Rechts",
+    Left: "Links",
+    Centered: "Zentriert",
+  },
+  en: n,
+  "en-gb": {},
+  es: {},
+  fr: {},
+  hi: {},
+  id: {},
+  it: {},
+  ja: {},
+  ko: {},
+  nl: {},
+  nn: {},
+  pl: {},
+  pt: {},
+  "pt-br": {},
+  ro: {},
+  ru: {},
+  tr: {},
+  "zh-cn": {
+    "Open as mindmap board": "打开为思维导图",
+    "Create new mindmap": "创建新思维导图",
+    "New mindmap board": "新建思维导图",
+    "Untitled mindmap": "未命名思维导图",
+    "Open as markdown": "打开为 Markdown 文件",
+    "Sub title": "新节点",
+    "Export to opml": "导出至OPML",
+    "Export to image": "导出至图片",
+    "Canvas size": "画布尺寸",
+    "Canvas size desc": "绘制思维导图画布的宽度和高度",
+    "Canvas background": "背景颜色",
+    "Canvas background desc": "画布的背景颜色",
+    "Max level of node to markdown head": "节点文字转为markdown标题的最大层级",
+    "Max level of node to markdown head desc":
+      "将小于该层级的节点文字转为markdown标题，最大层级为6，因为HTML标题支持最大为6级",
+    "Font size": "文字大小",
+    "Font size desc": "思维导图文字默认大小，单位px",
+    "Mind map layout direct": "思维导图布局方向",
+    "Mind map layout direct desc":
+      "思维导图的布局方向，分为向两侧发散、仅右侧、仅左侧三个方向",
+    "Expand node": "展开节点",
+    "Collapse node": "收缩节点",
+    "Only show this node": "仅显示该节点",
+    "Expand all node": "展开所有节点",
+    "Collapse all node": "收缩所有节点",
+    "Add relate link": "添加联系线",
+    "Remove relate link": "删除联系线",
+    "Add summary node": "添加归纳",
+    "Remove summary node": "删除归纳",
+    "Remove node": "删除节点",
+    "Only remove this node": "仅删除该节点",
+    "Open PDF File": "正在打开PDF文件...",
+    "Save Image error,Please try again": "保存图片失败，请重试",
+    "Creating Rect Annotate": "正在创建矩形标注",
+    "Cancel Create Rect Annotate": "取消创建矩形标注",
+    "File Is Not Exist": "文件不存在",
+    "Open File Error": "打开文件失败",
+    "PDF Cannot Open More Instances": "不支持多开PDF阅读器",
+    "Create Rect Annotate": "创建矩形标注成功",
+    "Stroke Array": "颜色组",
+    "Stroke Array Desc": "节点连线颜色将按照颜色组生成,否则生成随机颜色",
+    "PDFJs Plugin Path": "PDFJs 插件路径",
+    "Andriod pdfjs Plugin Path": "安卓 PDFJs 插件路径",
+    "Ios pdfjs Plugin Path": "IOS PDFJs 插件路径",
+    "Mac pdfjs Plugin Path": "Mac PDFJs 插件路径",
+    "PDFJs Plugin Path Desc":
+      "如果您要使用PDF标注功能，您需要下载PDFJS插件，并设置插件路径",
+    "PDF Path": "PDF 存储路径",
+    "PDF Annotate Path": "PDF 标注存储路径",
+    "PDF Image Path": "PDF 矩形标注生成的图片存储路径",
+    "Miss PDF Reader Path":
+      "缺少PDF插件，您需要下载PDFJS插件，并在设置中设置PDF插件路径(绝对路径)",
+    "Please Use Rich Mode":
+      "目前处于Basic模式或者未激活，无法使用PDF标注功能，请使用Rich模式或者激活软件",
+    "The probation period has ended":
+      "免费版本或者激活码已过期，请至markmind.net购买激活码以激活应用",
+    Rect: "矩形",
+    Circle: "圆",
+    Pointer: "点",
+    "Show MindMap": "显示思维导图",
+    "Hide MindMap": "隐藏思维导图",
+    "Open Protocol": "开启协议支持",
+    "Open Protocol Desc":
+      "支持类似 obsidian://{Protocol name} 的协议,用于跳转至PDF标注",
+    Protocol: "协议名",
+    "Protocol Desc": "协议名称",
+    Open: "开启",
+    Close: "关闭",
+    "Open as outline": "打开为大纲",
+    "Show Annotate": "展示标注",
+    "Annotation save type": "标注保存类型",
+    "Annotation save type desc":
+      "当保存PDF标注时保存的文件类型，目前分为保存为annos和markdown两种，默认扩展名为annos(本质是json文件)",
+    "Export annotate pdf": "导出标注后的PDF文件",
+    "Export annotate pdf tip": "这是一个费时的操作，请耐心等待...",
+    "Export annotate pdf success": "导出PDF文件成功",
+    "Export annotate pdf error": "导出PDF文件失败",
+    "Active Code": "激活码",
+    "Active Code Desc":
+      "可以使用该值激活markmind,网站：<https://www.markmind.net/cn>",
+    "Active error": "激活失败，请检查激活码",
+    "Active success": "已激活",
+    "Annotate PDF": "打开注释PDF",
+    "Annotate EPUB": "打开注释EPUB",
+    "PDF Viewer Theme": "PDF阅读器主题",
+    "PDF Viewer Theme desc": "切换PDF阅读器主题皮肤",
+    "Copy as markdown": "复制为markdown",
+    "Copy node text": "仅复制该节点文本",
+    "Copy node link": "复制节点引用链接",
+    "Export as opml": "导出为OPML",
+    "Mobile app not support": "移动端不支持打开本地PDF文件",
+    "Not support file type": "不支持注释该文件类型，只支持pdf文件",
+    "Not find md file": "这是一个外部pdf文件，在文件夹中尚不存在批注信息",
+    "Please select another node": "请选择另一个节点",
+    "Change layout to mindmap": "切换思维导图布局为默认",
+    "Change layout to right": "切换思维导图布局为右侧",
+    "Change layout to left": "切换思维导图布局为左侧",
+    "Change layout to tree": "切换思维导图布局为树向下布局",
+    "Copy mindmap node": "复制节点",
+    "Paste to node": "粘贴节点",
+    "Toggle mardkown/mindmap": "切换为Markdown或思维导图模式",
+    "Copy node id": "获取节点ID",
+    "Mobile Active Code": "移动端激活码",
+    "Mobile Active Code Desc":
+      "用于激活移动端，当你填入激活码时，该值将自动生成",
+    "Mindmap mode": "思维导图模式",
+    "Mindmap mode desc":
+      "当创建思维导图时，将按照该值创建思维导图的模式，默认是basic模式",
+    "Pdf screen short": "PDF 截图文件夹",
+    "Pdf screen short desc": "用于保存PDF矩形标注所截的图片",
+    "Set mindmap to center": "居中思维导图",
+    save: "保存",
+    cancel: "取消",
+    "Remove annotate space": "自动移除标注文字中的空格",
+    "Remove annotate space desc":
+      "在中文环境下，某些pdf文字标注时，文字之间存在空格，可以开启该选项，将自动移除文字之间的空格",
+    "Get path of vault": "获取库的基础路径",
+    "Smooth movement": "开启支持思维导图节点支持平滑过渡效果",
+    "Smooth movement desc":
+      "当点击引用节点时,节点跳转到同一思维导图的其他节点时的过渡效果",
+    "Support code block": "开启支持图文混排",
+    "Support code block desc": "支持在markdown文档中图文混排效果",
+    toPng: "导出为PNG图片",
+    "Set pdf js path": "设置 pdfjs 插件路径",
+    "Please open a mind map": "请打开一个思维导图并重新执行此命令",
+    "Set up pdf js path success":
+      "设置 pdfjs 插件路径成功，请重新启动 obsidian",
+    "Create new outline": "创建大纲",
+    "Copy node": "复制",
+    "Paste node": "粘贴",
+    "Fill color": "背景颜色",
+    "Stroke color": "外框颜色",
+    "Text color": "文字颜色",
+    "Text align": "对齐方式",
+    "Stroke width": "外框粗细",
+    "Stroke style": "外框样式",
+    nodeColor: "节点设置面板颜色组",
+    nodeColorDesc: "用于改变节点设置面板颜色组",
+    "Export to html": "导出思维导图为html文件",
+    "Change layout to fishLeft": "切换思维导图布局为左侧鱼骨图",
+    "Change layout to fishRight": "切换思维导图布局为右侧鱼骨图",
+    "Open as table": "打开为表格",
+    "get table html": "获取表格的HTML源码",
+    "get table markdown": "获取表格的 markdown 文本",
+    "Get pdf annotations": "导入PDF高亮标注",
+    "extract highlight success": "导入PDF高亮成功",
+    "Change basic mode to rich mode": "将 basic 模式转为 rich 模式",
+    "Change rich mode to basic mode": "将 rich 模式转为 basic 模式",
+    "Export pdf annotations": "导出 PDF 注释",
+    "Format of pdf highlight": "PDF 注释格式设置",
+    "Format of pdf highlight desc": "当导出 PDF 注释时，将按照该格式生成文件",
+    "Use new version of pdfjs": "切换至新版 pdfjs 插件",
+    "Use old version of pdfjs": "切换至旧版 pdfjs 插件",
+    searchResult: "发现到 {{nodeNumber}} 个节点包含该关键字",
+    "Toggle search box": "打开或关闭搜索框",
+    "Fine tune height of annotate": "微调 PDF 标注高度",
+    "Fine tune height of annotate desc": "向上调整的距离 (px)",
+    "Fine tune height of annotate desc one": "向下调整的距离 (px)",
+    "Create hand drawn mindmap": "生成手绘模式的思维导图",
+    "Decode URI pdf link": "是否打开解码PDF链接",
+    "Decode URI pdf link desc":
+      "如果你的 `annotate-target`被 `encodeURI`编码 , 可以打开该选项",
+    "Expand to first node level": "展开至第一级节点",
+    "Expand to second node level": "展开至第二级节点",
+    "Expand to third node level": "展开至第三级节点",
+    "Expand to all node level": "展开所有节点",
+    "Expand to fourth node level": "展开至第四级节点",
+    "Expand to fifth node level": "展开至第五级节点",
+    "Auto create node when annotate": "标注时自动生成思维导图节点",
+    "Auto create node when annotate desc":
+      "当创建 pdf 标注时自动是否自动创建思维导图节点",
+    "Add child node": "添加子节点",
+    "Add brother node": "添加兄弟节点",
+    "Edit node": "编辑节点",
+    "Cancel edit node": "退出编辑节点",
+    "Delete node": "删除节点",
+    Undo: "撤销",
+    Redo: "恢复",
+    "Use custom short cut": "开启自定义快捷键",
+    "Use custom short cut desc":
+      "支持思维导图设置自定义快捷键，目前支持如下命令（在 Ctrl + P 面板里）：添加节点、删除节点、编辑节点、取消编辑节点、撤销、恢复",
+    "PDF cache folder": "PDF 缓存目录",
+    "PDF cache folder desc":
+      "当使用 PDF 标注工具打开在线 PDF 时，该 PDF 将自动缓存至该文件夹中，下次打开时将优先从该目录中读取数据",
+    "Folder of paste image": "粘贴图片文件夹",
+    "Folder of paste image desc":
+      "设置文件夹路径，指向库中的某一文件夹，粘贴的图片将存入该文件夹中",
+    "Change basic to table mode": "打开 Basic 模式的思维导图为表格",
+    "Change basic to outline mode": "打开 Basic 模式为大纲",
+    "Saving data": "正在保存 ...",
+    Saved: "已保存",
+    "Only copy annotate link": "开启支持只复制标注链接",
+    "Only copy annotate link desc": "当点击一个 PDF 标注时，只会复制链接",
+    "Saving image": "正在保存图片...",
+    "Auto set node to center when tab node of mindmap":
+      "切换思维导图时自动居中节点",
+    "Auto set node to center when tab node of mindmap desc":
+      "当使用上、下、左、右键切换节点时，自动居中节点",
+    "Auto open search box": "自动打开思维导图搜索框",
+    "Auto open search box desc":
+      "当 obsidian 搜索中存在搜索条件，打开思维导图时自动打开搜索框，并触发思维导图搜索",
+    "Export to pdf": "导出思维导图为 PDF 文件",
+    "Please do this in a separate window":
+      "请在独立窗口进行此操作，无法在主窗口执行",
+    "PDF save success": "PDF 保存成功",
+    "Add collapse node mark": "Basic 模式下自动添加折叠节点标记",
+    "Add collapse node mark desc":
+      "Basic 模式下，保存思维导图时，自动在折叠的节点最后加入ID,用于下次打开可以恢复折叠原状",
+    "Change theme": "打开主题切换框",
+    "Close change theme": "关闭主题切换框",
+    "Can not change layout":
+      "由于该节点的子节点存在归纳、外框、标注或者布局，所以无法转换为表格布局，防止数据丢失",
+    "Only use obsidian folder for pdfjs plugin":
+      "支持 pdfjs 插件放在.obsidian 文件夹",
+    "Only use obsidian folder for pdfjs plugin desc":
+      "在安卓或者ios系统支持将 pdfjs 插件放在库内的 .obsidian 文件夹",
+    "Generate mind maps by chatGTP": "智能生成思维导图(AI 大纲)",
+    "Get inspiration": "获取灵感(AI)",
+    ChatGTPError: "AI 获取文本失败，请检查网络，重新尝试！",
+    ChatGTPLoading: "AI 正在获取数据，请稍等...",
+    "ChatGTP appkey": "请输入 ChatGPT 的 apikey",
+    "ChatGTP appkey desc": "如果您没有这个Apikey 请至 ChatGPT 官网申请",
+    ProxyServer: "网络代理",
+    "ProxyServer desc": "如果无法直接访问 OpenAI 的 api,可以使用网络代理",
+    "Generate mind maps by Q&A of chatGTP": "智能生成思维导图(AI 问答)",
+    "Annotate template": "标注格式",
+    "Annotate template desc":
+      "当标注自动生成节点或者点击标注时，将以此格式生成标注，并复制到粘贴板",
+    "Support translate": "支持标注划词翻译",
+    "Support translate desc": "当做 pdf 标注时，划词时自动翻译",
+    "Google translate": "谷歌翻译",
+    "Google translate desc": "谷歌翻译设置",
+    "Baidu translate": "百度翻译",
+    "Baidu translate desc": "百度翻译设置",
+    "Youdao translate": "有道翻译",
+    "Youdao translate desc": "有道翻译设置",
+    "Translate appid": "翻译 Appid 或者 token",
+    "Translate appid desc": "请输入翻译的 AppId 或者 token",
+    "Translate secret": "翻译秘钥 secret",
+    "Translate secret desc":
+      "请输入翻译秘钥 secret, 如果您是使用 token 之类的请求api，则该值可能不需要填写",
+    "Not have translations of pdf full text":
+      "没有全文翻译文件，请重新翻译 PDF",
+    "Translate spend time": "正在翻译中，请等待，总共 （条数）： ",
+    "Translate success": "翻译完成",
+    "Parsing PDF structure": "正在解析 PDF 结构...",
+    "Parsing PDF structure error": "解析 PDF 出错",
+    "Full text translate": "全文翻译",
+    "Pdf in vault": "全文翻译暂时只支持库内的 pdf",
+    "Completed translation": "翻译已完成: ",
+    "Translation engine": "翻译引擎",
+    baidu: "百度",
+    "Copy full text translations": "复制全文翻译到剪贴板",
+    "Mindmap is in read": "导图处于只读模式",
+    "Export to pdf (old version)": "导出导图为 PDF (v0.15.9)",
+    "Scale speed of mobile version": "移动端缩放速率",
+    "Scale speed of mobile version desc":
+      "可以调整该值，使得移动端双指放大或者缩小变换流畅",
+    "Cover node": "遮挡节点文字",
+    "Cancel cover node": "取消遮挡节点文字",
+    "Export to xmind zen": "导出导图为 xmind zen 文件",
+    "Export xmind success": "导出 xmind zen 文件成功",
+  },
+  "zh-tw": {},
+}[e.moment.locale()];
+function r(t) {
+  return (
+    s || console.error("Error: mindmap locale not found", e.moment.locale()),
+    (s && s[t]) || n[t]
+  );
+}
+const o = /^(---)$.+?^(---)$.+?/ims,
+  a = ["---", "", "mindmap-plugin: basic", "", "---", "", ""].join("\n"),
+  h = ["---", "", "mindmap-plugin: rich", "", "---", "", ""].join("\n"),
+  l = [
+    "---",
+    "",
+    "mindmap-plugin: basic",
+    "display-mode: outline",
+    "",
+    "---",
+    "",
+    "",
+  ].join("\n");
+function d(e, i, n, s, r, a, h, l, d, c) {
+  var u, p;
+  return t(this, void 0, void 0, function* () {
+    var t = yield i.vault.adapter.read(n.path),
+      d = s.querySelector(".markdown-embed");
+    if (d) {
+      if ((t = t.trim().replace(o, ""))) {
+        const { root: e } = ds.transform(t);
+        (m = ls(e)).isRoot = !0;
+      } else var m = { id: os(), text: "Basic root", isRoot: !0, main: !0 };
+      var f = document.createElement("div");
+      f.classList.add("mm-mindmap-container"),
+        (f.style.visibility = "hidden"),
+        null === (u = s.querySelector(".markdown-embed-content")) ||
+          void 0 === u ||
+          (u.style.display = "none"),
+        null === (p = s.querySelector(".markdown-embed-link")) ||
+          void 0 === p ||
+          (p.style.zIndex = "20"),
+        d.appendChild(f),
+        (m.useScale = !1);
+      var g = new Bi(m, f, h, !1);
+      if (
+        ((g.path = n.path),
+        (g._mode = "basic"),
+        (g.colors = a),
+        (g.parent = r),
+        (g._plugin = e),
+        c ? g.initTable(m) : (g.init(), g.refresh()),
+        !r)
+      )
+        s.findAll(".internal-embed").forEach((e) => {
+          const t = e.getAttribute("src"),
+            s =
+              "string" == typeof t &&
+              i.metadataCache.getFirstLinkpathDest(t, n.path);
+          if (s && "md" !== s.extension && g) {
+            e.innerText = "";
+            var r = i.vault.getResourcePath(s);
+            e.createEl("img", { attr: { src: r } }, (t) => {
+              e.hasAttribute("width") &&
+                t.setAttribute("width", e.getAttribute("width")),
+                e.hasAttribute("alt") &&
+                  t.setAttribute("alt", e.getAttribute("alt"));
+            }),
+              e.addClasses(["image-embed", "is-loaded"]);
+          }
+        }),
+          s.querySelectorAll("img").forEach((e) => {
+            (e.onload = () => {
+              var t,
+                i =
+                  null === (t = e.closest(".mm-node")) || void 0 === t
+                    ? void 0
+                    : t.getAttribute("data-id");
+              if (i) {
+                var n = g.getNodeById(i);
+                null == n || n.clearCacheData(),
+                  null == n || n.refreshBox(),
+                  g.timeOut && clearTimeout(g.timeOut),
+                  (g.timeOut = setTimeout(() => {
+                    g.refresh();
+                  }, 300));
+              }
+            }),
+              e.setAttribute("draggble", "false");
+          });
+      setTimeout(() => {
+        r ||
+          (g.refresh(),
+          g.toDiv(!0),
+          (f.style.visibility = "visible"),
+          g.center(),
+          g.root.unSelect()),
+          l && l(g);
+      }, 900);
+    }
+  });
+}
+function c(e, i, n, s, r, o, a, h, l) {
+  var d, c;
+  return t(this, void 0, void 0, function* () {
+    var t = yield i.vault.adapter.read(n.path);
+    if ((p = s.querySelector(".markdown-embed"))) {
+      var l = t.match(/^(\`\`\` json)$.+?^(\`\`\`)$.+?/ims);
+      if (l && l.length > 0) var u = l[0].substring(8, l[0].length - 4).trim();
+      else
+        u = JSON.stringify({
+          mindData: [
+            [
+              {
+                id: os(),
+                text: "Root",
+                isRoot: !0,
+                main: !0,
+                x: 4e3,
+                y: 4e3,
+                isExpand: !0,
+                layout: { layoutName: "mindmap2", direct: "mindmap" },
+              },
+            ],
+          ],
+        });
+      var p,
+        m = document.createElement("div");
+      if (
+        (m.classList.add("mm-mindmap-container"),
+        (m.style.visibility = "hidden"),
+        null === (d = s.querySelector(".markdown-embed-content")) ||
+          void 0 === d ||
+          (d.style.display = "none"),
+        null === (c = s.querySelector(".markdown-embed-link")) ||
+          void 0 === c ||
+          (c.style.zIndex = "20"),
+        (p = s.querySelector(".markdown-embed")))
+      ) {
+        p.appendChild(m);
+        var f = JSON.parse(u);
+        f.useScale = !1;
+        var g = new Bi(f, m, a, !1);
+        if (
+          ((g.path = n.path),
+          (g.colors = o),
+          (g.parent = r),
+          (g._mode = "rich"),
+          (g._plugin = e),
+          g.initRich(f, {}),
+          !r)
+        )
+          s.findAll(".internal-embed").forEach((e) => {
+            const t = e.getAttribute("src"),
+              s =
+                "string" == typeof t &&
+                i.metadataCache.getFirstLinkpathDest(t, n.path);
+            if (s && "md" !== s.extension && g) {
+              e.innerText = "";
+              var r = i.vault.getResourcePath(s);
+              e.createEl("img", { attr: { src: r } }, (t) => {
+                e.hasAttribute("width") &&
+                  t.setAttribute("width", e.getAttribute("width")),
+                  e.hasAttribute("alt") &&
+                    t.setAttribute("alt", e.getAttribute("alt"));
+              }),
+                e.addClasses(["image-embed", "is-loaded"]);
+            }
+          }),
+            s.querySelectorAll("img").forEach((e) => {
+              (e.onload = () => {
+                var t,
+                  i =
+                    null === (t = e.closest(".mm-node")) || void 0 === t
+                      ? void 0
+                      : t.getAttribute("data-id");
+                if (i) {
+                  var n = g.getNodeById(i);
+                  n && (n.clearCacheData(), n.refreshBox()),
+                    g.timeOut && clearTimeout(g.timeOut),
+                    (g.timeOut = setTimeout(() => {
+                      g.refresh();
+                    }, 300));
+                }
+              }),
+                e.setAttribute("draggble", "false");
+            });
+        setTimeout(() => {
+          r ||
+            (g.refresh(),
+            g.toDiv(!0),
+            (m.style.visibility = "visible"),
+            g.center(),
+            g.root.unSelect()),
+            h && h(g);
+        }, 900);
+      }
+    }
+  });
+}
+function u(e, t, i) {
+  if (e && e.length) {
+    const [n, s] = t,
+      r = (Math.PI / 180) * i,
+      o = Math.cos(r),
+      a = Math.sin(r);
+    e.forEach((e) => {
+      const [t, i] = e;
+      (e[0] = (t - n) * o - (i - s) * a + n),
+        (e[1] = (t - n) * a + (i - s) * o + s);
+    });
+  }
+}
+function p(e) {
+  const t = e[0],
+    i = e[1];
+  return Math.sqrt(Math.pow(t[0] - i[0], 2) + Math.pow(t[1] - i[1], 2));
+}
+function m(e, t) {
+  const i = t.hachureAngle + 90;
+  let n = t.hachureGap;
+  n < 0 && (n = 4 * t.strokeWidth), (n = Math.max(n, 0.1));
+  const s = [0, 0];
+  if (i) for (const t of e) u(t, s, i);
+  const r = (function (e, t) {
+    const i = [];
+    for (const t of e) {
+      const e = [...t];
+      e[0].join(",") !== e[e.length - 1].join(",") &&
+        e.push([e[0][0], e[0][1]]),
+        e.length > 2 && i.push(e);
+    }
+    const n = [];
+    t = Math.max(t, 0.1);
+    const s = [];
+    for (const e of i)
+      for (let t = 0; t < e.length - 1; t++) {
+        const i = e[t],
+          n = e[t + 1];
+        if (i[1] !== n[1]) {
+          const e = Math.min(i[1], n[1]);
+          s.push({
+            ymin: e,
+            ymax: Math.max(i[1], n[1]),
+            x: e === i[1] ? i[0] : n[0],
+            islope: (n[0] - i[0]) / (n[1] - i[1]),
+          });
+        }
+      }
+    if (
+      (s.sort((e, t) =>
+        e.ymin < t.ymin
+          ? -1
+          : e.ymin > t.ymin
+            ? 1
+            : e.x < t.x
+              ? -1
+              : e.x > t.x
+                ? 1
+                : e.ymax === t.ymax
+                  ? 0
+                  : (e.ymax - t.ymax) / Math.abs(e.ymax - t.ymax),
+      ),
+      !s.length)
+    )
+      return n;
+    let r = [],
+      o = s[0].ymin;
+    for (; r.length || s.length; ) {
+      if (s.length) {
+        let e = -1;
+        for (let t = 0; t < s.length && !(s[t].ymin > o); t++) e = t;
+        s.splice(0, e + 1).forEach((e) => {
+          r.push({ s: o, edge: e });
+        });
+      }
+      if (
+        ((r = r.filter((e) => !(e.edge.ymax <= o))),
+        r.sort((e, t) =>
+          e.edge.x === t.edge.x
+            ? 0
+            : (e.edge.x - t.edge.x) / Math.abs(e.edge.x - t.edge.x),
+        ),
+        r.length > 1)
+      )
+        for (let e = 0; e < r.length; e += 2) {
+          const t = e + 1;
+          if (t >= r.length) break;
+          const i = r[e].edge,
+            s = r[t].edge;
+          n.push([
+            [Math.round(i.x), o],
+            [Math.round(s.x), o],
+          ]);
+        }
+      (o += t),
+        r.forEach((e) => {
+          e.edge.x = e.edge.x + t * e.edge.islope;
+        });
+    }
+    return n;
+  })(e, n);
+  if (i) {
+    for (const t of e) u(t, s, -i);
+    !(function (e, t, i) {
+      const n = [];
+      e.forEach((e) => n.push(...e)), u(n, t, i);
+    })(r, s, -i);
+  }
+  return r;
+}
+class f {
+  constructor(e) {
+    this.helper = e;
+  }
+  fillPolygons(e, t) {
+    return this._fillPolygons(e, t);
+  }
+  _fillPolygons(e, t) {
+    const i = m(e, t);
+    return { type: "fillSketch", ops: this.renderLines(i, t) };
+  }
+  renderLines(e, t) {
+    const i = [];
+    for (const n of e)
+      i.push(
+        ...this.helper.doubleLineOps(n[0][0], n[0][1], n[1][0], n[1][1], t),
+      );
+    return i;
+  }
+}
+class g extends f {
+  fillPolygons(e, t) {
+    let i = t.hachureGap;
+    i < 0 && (i = 4 * t.strokeWidth), (i = Math.max(i, 0.1));
+    const n = m(e, Object.assign({}, t, { hachureGap: i })),
+      s = (Math.PI / 180) * t.hachureAngle,
+      r = [],
+      o = 0.5 * i * Math.cos(s),
+      a = 0.5 * i * Math.sin(s);
+    for (const [e, t] of n)
+      p([e, t]) &&
+        r.push([[e[0] - o, e[1] + a], [...t]], [[e[0] + o, e[1] - a], [...t]]);
+    return { type: "fillSketch", ops: this.renderLines(r, t) };
+  }
+}
+class v extends f {
+  fillPolygons(e, t) {
+    const i = this._fillPolygons(e, t),
+      n = Object.assign({}, t, { hachureAngle: t.hachureAngle + 90 }),
+      s = this._fillPolygons(e, n);
+    return (i.ops = i.ops.concat(s.ops)), i;
+  }
+}
+class y {
+  constructor(e) {
+    this.helper = e;
+  }
+  fillPolygons(e, t) {
+    const i = m(e, (t = Object.assign({}, t, { hachureAngle: 0 })));
+    return this.dotsOnLines(i, t);
+  }
+  dotsOnLines(e, t) {
+    const i = [];
+    let n = t.hachureGap;
+    n < 0 && (n = 4 * t.strokeWidth), (n = Math.max(n, 0.1));
+    let s = t.fillWeight;
+    s < 0 && (s = t.strokeWidth / 2);
+    const r = n / 4;
+    for (const o of e) {
+      const e = p(o),
+        a = e / n,
+        h = Math.ceil(a) - 1,
+        l = e - h * n,
+        d = (o[0][0] + o[1][0]) / 2 - n / 4,
+        c = Math.min(o[0][1], o[1][1]);
+      for (let e = 0; e < h; e++) {
+        const o = c + l + e * n,
+          a = d - r + 2 * Math.random() * r,
+          h = o - r + 2 * Math.random() * r,
+          u = this.helper.ellipse(a, h, s, s, t);
+        i.push(...u.ops);
+      }
+    }
+    return { type: "fillSketch", ops: i };
+  }
+}
+class A {
+  constructor(e) {
+    this.helper = e;
+  }
+  fillPolygons(e, t) {
+    const i = m(e, t);
+    return { type: "fillSketch", ops: this.dashedLine(i, t) };
+  }
+  dashedLine(e, t) {
+    const i =
+        t.dashOffset < 0
+          ? t.hachureGap < 0
+            ? 4 * t.strokeWidth
+            : t.hachureGap
+          : t.dashOffset,
+      n =
+        t.dashGap < 0
+          ? t.hachureGap < 0
+            ? 4 * t.strokeWidth
+            : t.hachureGap
+          : t.dashGap,
+      s = [];
+    return (
+      e.forEach((e) => {
+        const r = p(e),
+          o = Math.floor(r / (i + n)),
+          a = (r + n - o * (i + n)) / 2;
+        let h = e[0],
+          l = e[1];
+        h[0] > l[0] && ((h = e[1]), (l = e[0]));
+        const d = Math.atan((l[1] - h[1]) / (l[0] - h[0]));
+        for (let e = 0; e < o; e++) {
+          const r = e * (i + n),
+            o = r + i,
+            l = [
+              h[0] + r * Math.cos(d) + a * Math.cos(d),
+              h[1] + r * Math.sin(d) + a * Math.sin(d),
+            ],
+            c = [
+              h[0] + o * Math.cos(d) + a * Math.cos(d),
+              h[1] + o * Math.sin(d) + a * Math.sin(d),
+            ];
+          s.push(...this.helper.doubleLineOps(l[0], l[1], c[0], c[1], t));
+        }
+      }),
+      s
+    );
+  }
+}
+class x {
+  constructor(e) {
+    this.helper = e;
+  }
+  fillPolygons(e, t) {
+    const i = t.hachureGap < 0 ? 4 * t.strokeWidth : t.hachureGap,
+      n = t.zigzagOffset < 0 ? i : t.zigzagOffset,
+      s = m(e, (t = Object.assign({}, t, { hachureGap: i + n })));
+    return { type: "fillSketch", ops: this.zigzagLines(s, n, t) };
+  }
+  zigzagLines(e, t, i) {
+    const n = [];
+    return (
+      e.forEach((e) => {
+        const s = p(e),
+          r = Math.round(s / (2 * t));
+        let o = e[0],
+          a = e[1];
+        o[0] > a[0] && ((o = e[1]), (a = e[0]));
+        const h = Math.atan((a[1] - o[1]) / (a[0] - o[0]));
+        for (let e = 0; e < r; e++) {
+          const s = 2 * e * t,
+            r = 2 * (e + 1) * t,
+            a = Math.sqrt(2 * Math.pow(t, 2)),
+            l = [o[0] + s * Math.cos(h), o[1] + s * Math.sin(h)],
+            d = [o[0] + r * Math.cos(h), o[1] + r * Math.sin(h)],
+            c = [
+              l[0] + a * Math.cos(h + Math.PI / 4),
+              l[1] + a * Math.sin(h + Math.PI / 4),
+            ];
+          n.push(
+            ...this.helper.doubleLineOps(l[0], l[1], c[0], c[1], i),
+            ...this.helper.doubleLineOps(c[0], c[1], d[0], d[1], i),
+          );
+        }
+      }),
+      n
+    );
+  }
+}
+const b = {};
+class w {
+  constructor(e) {
+    this.seed = e;
+  }
+  next() {
+    return this.seed
+      ? ((2 ** 31 - 1) & (this.seed = Math.imul(48271, this.seed))) / 2 ** 31
+      : Math.random();
+  }
+}
+const k = {
+  A: 7,
+  a: 7,
+  C: 6,
+  c: 6,
+  H: 1,
+  h: 1,
+  L: 2,
+  l: 2,
+  M: 2,
+  m: 2,
+  Q: 4,
+  q: 4,
+  S: 4,
+  s: 4,
+  T: 2,
+  t: 2,
+  V: 1,
+  v: 1,
+  Z: 0,
+  z: 0,
+};
+function C(e, t) {
+  return e.type === t;
+}
+function E(e) {
+  const t = [],
+    i = (function (e) {
+      const t = new Array();
+      for (; "" !== e; )
+        if (e.match(/^([ \t\r\n,]+)/)) e = e.substr(RegExp.$1.length);
+        else if (e.match(/^([aAcChHlLmMqQsStTvVzZ])/))
+          (t[t.length] = { type: 0, text: RegExp.$1 }),
+            (e = e.substr(RegExp.$1.length));
+        else {
+          if (
+            !e.match(
+              /^(([-+]?[0-9]+(\.[0-9]*)?|[-+]?\.[0-9]+)([eE][-+]?[0-9]+)?)/,
+            )
+          )
+            return [];
+          (t[t.length] = { type: 1, text: `${parseFloat(RegExp.$1)}` }),
+            (e = e.substr(RegExp.$1.length));
+        }
+      return (t[t.length] = { type: 2, text: "" }), t;
+    })(e);
+  let n = "BOD",
+    s = 0,
+    r = i[s];
+  for (; !C(r, 2); ) {
+    let o = 0;
+    const a = [];
+    if ("BOD" === n) {
+      if ("M" !== r.text && "m" !== r.text) return E("M0,0" + e);
+      s++, (o = k[r.text]), (n = r.text);
+    } else C(r, 1) ? (o = k[n]) : (s++, (o = k[r.text]), (n = r.text));
+    if (!(s + o < i.length)) throw new Error("Path data ended short");
+    for (let e = s; e < s + o; e++) {
+      const t = i[e];
+      if (!C(t, 1)) throw new Error("Param not a number: " + n + "," + t.text);
+      a[a.length] = +t.text;
+    }
+    if ("number" != typeof k[n]) throw new Error("Bad segment: " + n);
+    {
+      const e = { key: n, data: a };
+      t.push(e),
+        (s += o),
+        (r = i[s]),
+        "M" === n && (n = "L"),
+        "m" === n && (n = "l");
+    }
+  }
+  return t;
+}
+function D(e) {
+  let t = 0,
+    i = 0,
+    n = 0,
+    s = 0;
+  const r = [];
+  for (const { key: o, data: a } of e)
+    switch (o) {
+      case "M":
+        r.push({ key: "M", data: [...a] }), ([t, i] = a), ([n, s] = a);
+        break;
+      case "m":
+        (t += a[0]),
+          (i += a[1]),
+          r.push({ key: "M", data: [t, i] }),
+          (n = t),
+          (s = i);
+        break;
+      case "L":
+        r.push({ key: "L", data: [...a] }), ([t, i] = a);
+        break;
+      case "l":
+        (t += a[0]), (i += a[1]), r.push({ key: "L", data: [t, i] });
+        break;
+      case "C":
+        r.push({ key: "C", data: [...a] }), (t = a[4]), (i = a[5]);
+        break;
+      case "c": {
+        const e = a.map((e, n) => (n % 2 ? e + i : e + t));
+        r.push({ key: "C", data: e }), (t = e[4]), (i = e[5]);
+        break;
+      }
+      case "Q":
+        r.push({ key: "Q", data: [...a] }), (t = a[2]), (i = a[3]);
+        break;
+      case "q": {
+        const e = a.map((e, n) => (n % 2 ? e + i : e + t));
+        r.push({ key: "Q", data: e }), (t = e[2]), (i = e[3]);
+        break;
+      }
+      case "A":
+        r.push({ key: "A", data: [...a] }), (t = a[5]), (i = a[6]);
+        break;
+      case "a":
+        (t += a[5]),
+          (i += a[6]),
+          r.push({ key: "A", data: [a[0], a[1], a[2], a[3], a[4], t, i] });
+        break;
+      case "H":
+        r.push({ key: "H", data: [...a] }), (t = a[0]);
+        break;
+      case "h":
+        (t += a[0]), r.push({ key: "H", data: [t] });
+        break;
+      case "V":
+        r.push({ key: "V", data: [...a] }), (i = a[0]);
+        break;
+      case "v":
+        (i += a[0]), r.push({ key: "V", data: [i] });
+        break;
+      case "S":
+        r.push({ key: "S", data: [...a] }), (t = a[2]), (i = a[3]);
+        break;
+      case "s": {
+        const e = a.map((e, n) => (n % 2 ? e + i : e + t));
+        r.push({ key: "S", data: e }), (t = e[2]), (i = e[3]);
+        break;
+      }
+      case "T":
+        r.push({ key: "T", data: [...a] }), (t = a[0]), (i = a[1]);
+        break;
+      case "t":
+        (t += a[0]), (i += a[1]), r.push({ key: "T", data: [t, i] });
+        break;
+      case "Z":
+      case "z":
+        r.push({ key: "Z", data: [] }), (t = n), (i = s);
+    }
+  return r;
+}
+function N(e) {
+  const t = [];
+  let i = "",
+    n = 0,
+    s = 0,
+    r = 0,
+    o = 0,
+    a = 0,
+    h = 0;
+  for (const { key: l, data: d } of e) {
+    switch (l) {
+      case "M":
+        t.push({ key: "M", data: [...d] }), ([n, s] = d), ([r, o] = d);
+        break;
+      case "C":
+        t.push({ key: "C", data: [...d] }),
+          (n = d[4]),
+          (s = d[5]),
+          (a = d[2]),
+          (h = d[3]);
+        break;
+      case "L":
+        t.push({ key: "L", data: [...d] }), ([n, s] = d);
+        break;
+      case "H":
+        (n = d[0]), t.push({ key: "L", data: [n, s] });
+        break;
+      case "V":
+        (s = d[0]), t.push({ key: "L", data: [n, s] });
+        break;
+      case "S": {
+        let e = 0,
+          r = 0;
+        "C" === i || "S" === i
+          ? ((e = n + (n - a)), (r = s + (s - h)))
+          : ((e = n), (r = s)),
+          t.push({ key: "C", data: [e, r, ...d] }),
+          (a = d[0]),
+          (h = d[1]),
+          (n = d[2]),
+          (s = d[3]);
+        break;
+      }
+      case "T": {
+        const [e, r] = d;
+        let o = 0,
+          l = 0;
+        "Q" === i || "T" === i
+          ? ((o = n + (n - a)), (l = s + (s - h)))
+          : ((o = n), (l = s));
+        const c = n + (2 * (o - n)) / 3,
+          u = s + (2 * (l - s)) / 3,
+          p = e + (2 * (o - e)) / 3,
+          m = r + (2 * (l - r)) / 3;
+        t.push({ key: "C", data: [c, u, p, m, e, r] }),
+          (a = o),
+          (h = l),
+          (n = e),
+          (s = r);
+        break;
+      }
+      case "Q": {
+        const [e, i, r, o] = d,
+          l = n + (2 * (e - n)) / 3,
+          c = s + (2 * (i - s)) / 3,
+          u = r + (2 * (e - r)) / 3,
+          p = o + (2 * (i - o)) / 3;
+        t.push({ key: "C", data: [l, c, u, p, r, o] }),
+          (a = e),
+          (h = i),
+          (n = r),
+          (s = o);
+        break;
+      }
+      case "A": {
+        const e = Math.abs(d[0]),
+          i = Math.abs(d[1]),
+          r = d[2],
+          o = d[3],
+          a = d[4],
+          h = d[5],
+          l = d[6];
+        if (0 === e || 0 === i)
+          t.push({ key: "C", data: [n, s, h, l, h, l] }), (n = h), (s = l);
+        else if (n !== h || s !== l) {
+          S(n, s, h, l, e, i, r, o, a).forEach(function (e) {
+            t.push({ key: "C", data: e });
+          }),
+            (n = h),
+            (s = l);
+        }
+        break;
+      }
+      case "Z":
+        t.push({ key: "Z", data: [] }), (n = r), (s = o);
+    }
+    i = l;
+  }
+  return t;
+}
+function I(e, t, i) {
+  return [e * Math.cos(i) - t * Math.sin(i), e * Math.sin(i) + t * Math.cos(i)];
+}
+function S(e, t, i, n, s, r, o, a, h, l) {
+  const d = ((c = o), (Math.PI * c) / 180);
+  var c;
+  let u = [],
+    p = 0,
+    m = 0,
+    f = 0,
+    g = 0;
+  if (l) [p, m, f, g] = l;
+  else {
+    ([e, t] = I(e, t, -d)), ([i, n] = I(i, n, -d));
+    const o = (e - i) / 2,
+      l = (t - n) / 2;
+    let c = (o * o) / (s * s) + (l * l) / (r * r);
+    c > 1 && ((c = Math.sqrt(c)), (s *= c), (r *= c));
+    const u = s * s,
+      v = r * r,
+      y = u * v - u * l * l - v * o * o,
+      A = u * l * l + v * o * o,
+      x = (a === h ? -1 : 1) * Math.sqrt(Math.abs(y / A));
+    (f = (x * s * l) / r + (e + i) / 2),
+      (g = (x * -r * o) / s + (t + n) / 2),
+      (p = Math.asin(parseFloat(((t - g) / r).toFixed(9)))),
+      (m = Math.asin(parseFloat(((n - g) / r).toFixed(9)))),
+      e < f && (p = Math.PI - p),
+      i < f && (m = Math.PI - m),
+      p < 0 && (p = 2 * Math.PI + p),
+      m < 0 && (m = 2 * Math.PI + m),
+      h && p > m && (p -= 2 * Math.PI),
+      !h && m > p && (m -= 2 * Math.PI);
+  }
+  let v = m - p;
+  if (Math.abs(v) > (120 * Math.PI) / 180) {
+    const e = m,
+      t = i,
+      a = n;
+    (m =
+      h && m > p
+        ? p + ((120 * Math.PI) / 180) * 1
+        : p + ((120 * Math.PI) / 180) * -1),
+      (u = S(
+        (i = f + s * Math.cos(m)),
+        (n = g + r * Math.sin(m)),
+        t,
+        a,
+        s,
+        r,
+        o,
+        0,
+        h,
+        [m, e, f, g],
+      ));
+  }
+  v = m - p;
+  const y = Math.cos(p),
+    A = Math.sin(p),
+    x = Math.cos(m),
+    b = Math.sin(m),
+    w = Math.tan(v / 4),
+    k = (4 / 3) * s * w,
+    C = (4 / 3) * r * w,
+    E = [e, t],
+    D = [e + k * A, t - C * y],
+    N = [i + k * b, n - C * x],
+    B = [i, n];
+  if (((D[0] = 2 * E[0] - D[0]), (D[1] = 2 * E[1] - D[1]), l))
+    return [D, N, B].concat(u);
+  {
+    u = [D, N, B].concat(u);
+    const e = [];
+    for (let t = 0; t < u.length; t += 3) {
+      const i = I(u[t][0], u[t][1], d),
+        n = I(u[t + 1][0], u[t + 1][1], d),
+        s = I(u[t + 2][0], u[t + 2][1], d);
+      e.push([i[0], i[1], n[0], n[1], s[0], s[1]]);
+    }
+    return e;
+  }
+}
+const B = {
+  randOffset: function (e, t) {
+    return j(e, t);
+  },
+  randOffsetWithRange: function (e, t, i) {
+    return H(e, t, i);
+  },
+  ellipse: function (e, t, i, n, s) {
+    const r = O(i, n, s);
+    return R(e, t, s, r).opset;
+  },
+  doubleLineOps: function (e, t, i, n, s) {
+    return q(e, t, i, n, s, !0);
+  },
+};
+function T(e, t, i, n, s) {
+  return { type: "path", ops: q(e, t, i, n, s) };
+}
+function M(e, t, i) {
+  const n = (e || []).length;
+  if (n > 2) {
+    const s = [];
+    for (let t = 0; t < n - 1; t++)
+      s.push(...q(e[t][0], e[t][1], e[t + 1][0], e[t + 1][1], i));
+    return (
+      t && s.push(...q(e[n - 1][0], e[n - 1][1], e[0][0], e[0][1], i)),
+      { type: "path", ops: s }
+    );
+  }
+  return 2 === n
+    ? T(e[0][0], e[0][1], e[1][0], e[1][1], i)
+    : { type: "path", ops: [] };
+}
+function L(e, t, i, n, s) {
+  return (function (e, t) {
+    return M(e, !0, t);
+  })(
+    [
+      [e, t],
+      [e + i, t],
+      [e + i, t + n],
+      [e, t + n],
+    ],
+    s,
+  );
+}
+function P(e, t) {
+  let i = U(e, 1 * (1 + 0.2 * t.roughness), t);
+  if (!t.disableMultiStroke) {
+    const n = U(
+      e,
+      1.5 * (1 + 0.22 * t.roughness),
+      (function (e) {
+        const t = Object.assign({}, e);
+        (t.randomizer = void 0), e.seed && (t.seed = e.seed + 1);
+        return t;
+      })(t),
+    );
+    i = i.concat(n);
+  }
+  return { type: "path", ops: i };
+}
+function O(e, t, i) {
+  const n = Math.sqrt(
+      2 * Math.PI * Math.sqrt((Math.pow(e / 2, 2) + Math.pow(t / 2, 2)) / 2),
+    ),
+    s = Math.ceil(
+      Math.max(i.curveStepCount, (i.curveStepCount / Math.sqrt(200)) * n),
+    ),
+    r = (2 * Math.PI) / s;
+  let o = Math.abs(e / 2),
+    a = Math.abs(t / 2);
+  const h = 1 - i.curveFitting;
+  return (o += j(o * h, i)), (a += j(a * h, i)), { increment: r, rx: o, ry: a };
+}
+function R(e, t, i, n) {
+  const [s, r] = X(
+    n.increment,
+    e,
+    t,
+    n.rx,
+    n.ry,
+    1,
+    n.increment * H(0.1, H(0.4, 1, i), i),
+    i,
+  );
+  let o = W(s, null, i);
+  if (!i.disableMultiStroke && 0 !== i.roughness) {
+    const [s] = X(n.increment, e, t, n.rx, n.ry, 1.5, 0, i),
+      r = W(s, null, i);
+    o = o.concat(r);
+  }
+  return { estimatedPoints: r, opset: { type: "path", ops: o } };
+}
+function F(e, t, i, n, s, r, o, a, h) {
+  const l = e,
+    d = t;
+  let c = Math.abs(i / 2),
+    u = Math.abs(n / 2);
+  (c += j(0.01 * c, h)), (u += j(0.01 * u, h));
+  let p = s,
+    m = r;
+  for (; p < 0; ) (p += 2 * Math.PI), (m += 2 * Math.PI);
+  m - p > 2 * Math.PI && ((p = 0), (m = 2 * Math.PI));
+  const f = (2 * Math.PI) / h.curveStepCount,
+    g = Math.min(f / 2, (m - p) / 2),
+    v = G(g, l, d, c, u, p, m, 1, h);
+  if (!h.disableMultiStroke) {
+    const e = G(g, l, d, c, u, p, m, 1.5, h);
+    v.push(...e);
+  }
+  return (
+    o &&
+      (a
+        ? v.push(
+            ...q(l, d, l + c * Math.cos(p), d + u * Math.sin(p), h),
+            ...q(l, d, l + c * Math.cos(m), d + u * Math.sin(m), h),
+          )
+        : v.push(
+            { op: "lineTo", data: [l, d] },
+            { op: "lineTo", data: [l + c * Math.cos(p), d + u * Math.sin(p)] },
+          )),
+    { type: "path", ops: v }
+  );
+}
+function _(e, t) {
+  const i = [];
+  for (const n of e)
+    if (n.length) {
+      const e = t.maxRandomnessOffset || 0,
+        s = n.length;
+      if (s > 2) {
+        i.push({ op: "move", data: [n[0][0] + j(e, t), n[0][1] + j(e, t)] });
+        for (let r = 1; r < s; r++)
+          i.push({
+            op: "lineTo",
+            data: [n[r][0] + j(e, t), n[r][1] + j(e, t)],
+          });
+      }
+    }
+  return { type: "fillPath", ops: i };
+}
+function z(e, t) {
+  return (function (e, t) {
+    let i = e.fillStyle || "hachure";
+    if (!b[i])
+      switch (i) {
+        case "zigzag":
+          b[i] || (b[i] = new g(t));
+          break;
+        case "cross-hatch":
+          b[i] || (b[i] = new v(t));
+          break;
+        case "dots":
+          b[i] || (b[i] = new y(t));
+          break;
+        case "dashed":
+          b[i] || (b[i] = new A(t));
+          break;
+        case "zigzag-line":
+          b[i] || (b[i] = new x(t));
+          break;
+        case "hachure":
+        default:
+          (i = "hachure"), b[i] || (b[i] = new f(t));
+      }
+    return b[i];
+  })(t, B).fillPolygons(e, t);
+}
+function Q(e) {
+  return (
+    e.randomizer || (e.randomizer = new w(e.seed || 0)), e.randomizer.next()
+  );
+}
+function H(e, t, i, n = 1) {
+  return i.roughness * n * (Q(i) * (t - e) + e);
+}
+function j(e, t, i = 1) {
+  return H(-e, e, t, i);
+}
+function q(e, t, i, n, s, r = !1) {
+  const o = r ? s.disableMultiStrokeFill : s.disableMultiStroke,
+    a = V(e, t, i, n, s, !0, !1);
+  if (o) return a;
+  const h = V(e, t, i, n, s, !0, !0);
+  return a.concat(h);
+}
+function V(e, t, i, n, s, r, o) {
+  const a = Math.pow(e - i, 2) + Math.pow(t - n, 2),
+    h = Math.sqrt(a);
+  let l = 1;
+  l = h < 200 ? 1 : h > 500 ? 0.4 : -0.0016668 * h + 1.233334;
+  let d = s.maxRandomnessOffset || 0;
+  d * d * 100 > a && (d = h / 10);
+  const c = d / 2,
+    u = 0.2 + 0.2 * Q(s);
+  let p = (s.bowing * s.maxRandomnessOffset * (n - t)) / 200,
+    m = (s.bowing * s.maxRandomnessOffset * (e - i)) / 200;
+  (p = j(p, s, l)), (m = j(m, s, l));
+  const f = [],
+    g = () => j(c, s, l),
+    v = () => j(d, s, l),
+    y = s.preserveVertices;
+  return (
+    r &&
+      (o
+        ? f.push({ op: "move", data: [e + (y ? 0 : g()), t + (y ? 0 : g())] })
+        : f.push({
+            op: "move",
+            data: [e + (y ? 0 : j(d, s, l)), t + (y ? 0 : j(d, s, l))],
+          })),
+    o
+      ? f.push({
+          op: "bcurveTo",
+          data: [
+            p + e + (i - e) * u + g(),
+            m + t + (n - t) * u + g(),
+            p + e + 2 * (i - e) * u + g(),
+            m + t + 2 * (n - t) * u + g(),
+            i + (y ? 0 : g()),
+            n + (y ? 0 : g()),
+          ],
+        })
+      : f.push({
+          op: "bcurveTo",
+          data: [
+            p + e + (i - e) * u + v(),
+            m + t + (n - t) * u + v(),
+            p + e + 2 * (i - e) * u + v(),
+            m + t + 2 * (n - t) * u + v(),
+            i + (y ? 0 : v()),
+            n + (y ? 0 : v()),
+          ],
+        }),
+    f
+  );
+}
+function U(e, t, i) {
+  const n = [];
+  n.push([e[0][0] + j(t, i), e[0][1] + j(t, i)]),
+    n.push([e[0][0] + j(t, i), e[0][1] + j(t, i)]);
+  for (let s = 1; s < e.length; s++)
+    n.push([e[s][0] + j(t, i), e[s][1] + j(t, i)]),
+      s === e.length - 1 && n.push([e[s][0] + j(t, i), e[s][1] + j(t, i)]);
+  return W(n, null, i);
+}
+function W(e, t, i) {
+  const n = e.length,
+    s = [];
+  if (n > 3) {
+    const r = [],
+      o = 1 - i.curveTightness;
+    s.push({ op: "move", data: [e[1][0], e[1][1]] });
+    for (let t = 1; t + 2 < n; t++) {
+      const i = e[t];
+      (r[0] = [i[0], i[1]]),
+        (r[1] = [
+          i[0] + (o * e[t + 1][0] - o * e[t - 1][0]) / 6,
+          i[1] + (o * e[t + 1][1] - o * e[t - 1][1]) / 6,
+        ]),
+        (r[2] = [
+          e[t + 1][0] + (o * e[t][0] - o * e[t + 2][0]) / 6,
+          e[t + 1][1] + (o * e[t][1] - o * e[t + 2][1]) / 6,
+        ]),
+        (r[3] = [e[t + 1][0], e[t + 1][1]]),
+        s.push({
+          op: "bcurveTo",
+          data: [r[1][0], r[1][1], r[2][0], r[2][1], r[3][0], r[3][1]],
+        });
+    }
+    if (t && 2 === t.length) {
+      const e = i.maxRandomnessOffset;
+      s.push({ op: "lineTo", data: [t[0] + j(e, i), t[1] + j(e, i)] });
+    }
+  } else
+    3 === n
+      ? (s.push({ op: "move", data: [e[1][0], e[1][1]] }),
+        s.push({
+          op: "bcurveTo",
+          data: [e[1][0], e[1][1], e[2][0], e[2][1], e[2][0], e[2][1]],
+        }))
+      : 2 === n && s.push(...q(e[0][0], e[0][1], e[1][0], e[1][1], i));
+  return s;
+}
+function X(e, t, i, n, s, r, o, a) {
+  const h = [],
+    l = [];
+  if (0 === a.roughness) {
+    (e /= 4), l.push([t + n * Math.cos(-e), i + s * Math.sin(-e)]);
+    for (let r = 0; r <= 2 * Math.PI; r += e) {
+      const e = [t + n * Math.cos(r), i + s * Math.sin(r)];
+      h.push(e), l.push(e);
+    }
+    l.push([t + n * Math.cos(0), i + s * Math.sin(0)]),
+      l.push([t + n * Math.cos(e), i + s * Math.sin(e)]);
+  } else {
+    const d = j(0.5, a) - Math.PI / 2;
+    l.push([
+      j(r, a) + t + 0.9 * n * Math.cos(d - e),
+      j(r, a) + i + 0.9 * s * Math.sin(d - e),
+    ]);
+    const c = 2 * Math.PI + d - 0.01;
+    for (let o = d; o < c; o += e) {
+      const e = [j(r, a) + t + n * Math.cos(o), j(r, a) + i + s * Math.sin(o)];
+      h.push(e), l.push(e);
+    }
+    l.push([
+      j(r, a) + t + n * Math.cos(d + 2 * Math.PI + 0.5 * o),
+      j(r, a) + i + s * Math.sin(d + 2 * Math.PI + 0.5 * o),
+    ]),
+      l.push([
+        j(r, a) + t + 0.98 * n * Math.cos(d + o),
+        j(r, a) + i + 0.98 * s * Math.sin(d + o),
+      ]),
+      l.push([
+        j(r, a) + t + 0.9 * n * Math.cos(d + 0.5 * o),
+        j(r, a) + i + 0.9 * s * Math.sin(d + 0.5 * o),
+      ]);
+  }
+  return [l, h];
+}
+function G(e, t, i, n, s, r, o, a, h) {
+  const l = r + j(0.1, h),
+    d = [];
+  d.push([
+    j(a, h) + t + 0.9 * n * Math.cos(l - e),
+    j(a, h) + i + 0.9 * s * Math.sin(l - e),
+  ]);
+  for (let r = l; r <= o; r += e)
+    d.push([j(a, h) + t + n * Math.cos(r), j(a, h) + i + s * Math.sin(r)]);
+  return (
+    d.push([t + n * Math.cos(o), i + s * Math.sin(o)]),
+    d.push([t + n * Math.cos(o), i + s * Math.sin(o)]),
+    W(d, null, h)
+  );
+}
+function Y(e, t, i, n, s, r, o, a) {
+  const h = [],
+    l = [a.maxRandomnessOffset || 1, (a.maxRandomnessOffset || 1) + 0.3];
+  let d = [0, 0];
+  const c = a.disableMultiStroke ? 1 : 2,
+    u = a.preserveVertices;
+  for (let p = 0; p < c; p++)
+    0 === p
+      ? h.push({ op: "move", data: [o[0], o[1]] })
+      : h.push({
+          op: "move",
+          data: [o[0] + (u ? 0 : j(l[0], a)), o[1] + (u ? 0 : j(l[0], a))],
+        }),
+      (d = u ? [s, r] : [s + j(l[p], a), r + j(l[p], a)]),
+      h.push({
+        op: "bcurveTo",
+        data: [
+          e + j(l[p], a),
+          t + j(l[p], a),
+          i + j(l[p], a),
+          n + j(l[p], a),
+          d[0],
+          d[1],
+        ],
+      });
+  return h;
+}
+function K(e) {
+  return [...e];
+}
+function Z(e, t) {
+  return Math.pow(e[0] - t[0], 2) + Math.pow(e[1] - t[1], 2);
+}
+function J(e, t, i) {
+  const n = Z(t, i);
+  if (0 === n) return Z(e, t);
+  let s = ((e[0] - t[0]) * (i[0] - t[0]) + (e[1] - t[1]) * (i[1] - t[1])) / n;
+  return (s = Math.max(0, Math.min(1, s))), Z(e, $(t, i, s));
+}
+function $(e, t, i) {
+  return [e[0] + (t[0] - e[0]) * i, e[1] + (t[1] - e[1]) * i];
+}
+function ee(e, t, i, n) {
+  const s = n || [];
+  if (
+    (function (e, t) {
+      const i = e[t + 0],
+        n = e[t + 1],
+        s = e[t + 2],
+        r = e[t + 3];
+      let o = 3 * n[0] - 2 * i[0] - r[0];
+      o *= o;
+      let a = 3 * n[1] - 2 * i[1] - r[1];
+      a *= a;
+      let h = 3 * s[0] - 2 * r[0] - i[0];
+      h *= h;
+      let l = 3 * s[1] - 2 * r[1] - i[1];
+      return (l *= l), o < h && (o = h), a < l && (a = l), o + a;
+    })(e, t) < i
+  ) {
+    const i = e[t + 0];
+    if (s.length) {
+      ((r = s[s.length - 1]), (o = i), Math.sqrt(Z(r, o))) > 1 && s.push(i);
+    } else s.push(i);
+    s.push(e[t + 3]);
+  } else {
+    const n = 0.5,
+      r = e[t + 0],
+      o = e[t + 1],
+      a = e[t + 2],
+      h = e[t + 3],
+      l = $(r, o, n),
+      d = $(o, a, n),
+      c = $(a, h, n),
+      u = $(l, d, n),
+      p = $(d, c, n),
+      m = $(u, p, n);
+    ee([r, l, u, m], 0, i, s), ee([m, p, c, h], 0, i, s);
+  }
+  var r, o;
+  return s;
+}
+function te(e, t) {
+  return ie(e, 0, e.length, t);
+}
+function ie(e, t, i, n, s) {
+  const r = s || [],
+    o = e[t],
+    a = e[i - 1];
+  let h = 0,
+    l = 1;
+  for (let n = t + 1; n < i - 1; ++n) {
+    const t = J(e[n], o, a);
+    t > h && ((h = t), (l = n));
+  }
+  return (
+    Math.sqrt(h) > n
+      ? (ie(e, t, l + 1, n, r), ie(e, l, i, n, r))
+      : (r.length || r.push(o), r.push(a)),
+    r
+  );
+}
+function ne(e, t = 0.15, i) {
+  const n = [],
+    s = (e.length - 1) / 3;
+  for (let i = 0; i < s; i++) {
+    ee(e, 3 * i, t, n);
+  }
+  return i && i > 0 ? ie(n, 0, n.length, i) : n;
+}
+const se = "none";
+class re {
+  constructor(e) {
+    (this.defaultOptions = {
+      maxRandomnessOffset: 2,
+      roughness: 1,
+      bowing: 1,
+      stroke: "#000",
+      strokeWidth: 1,
+      curveTightness: 0,
+      curveFitting: 0.95,
+      curveStepCount: 9,
+      fillStyle: "hachure",
+      fillWeight: -1,
+      hachureAngle: -41,
+      hachureGap: -1,
+      dashOffset: -1,
+      dashGap: -1,
+      zigzagOffset: -1,
+      seed: 0,
+      disableMultiStroke: !1,
+      disableMultiStrokeFill: !1,
+      preserveVertices: !1,
+    }),
+      (this.config = e || {}),
+      this.config.options &&
+        (this.defaultOptions = this._o(this.config.options));
+  }
+  static newSeed() {
+    return Math.floor(Math.random() * 2 ** 31);
+  }
+  _o(e) {
+    return e ? Object.assign({}, this.defaultOptions, e) : this.defaultOptions;
+  }
+  _d(e, t, i) {
+    return { shape: e, sets: t || [], options: i || this.defaultOptions };
+  }
+  line(e, t, i, n, s) {
+    const r = this._o(s);
+    return this._d("line", [T(e, t, i, n, r)], r);
+  }
+  rectangle(e, t, i, n, s) {
+    const r = this._o(s),
+      o = [],
+      a = L(e, t, i, n, r);
+    if (r.fill) {
+      const s = [
+        [e, t],
+        [e + i, t],
+        [e + i, t + n],
+        [e, t + n],
+      ];
+      "solid" === r.fillStyle ? o.push(_([s], r)) : o.push(z([s], r));
+    }
+    return r.stroke !== se && o.push(a), this._d("rectangle", o, r);
+  }
+  ellipse(e, t, i, n, s) {
+    const r = this._o(s),
+      o = [],
+      a = O(i, n, r),
+      h = R(e, t, r, a);
+    if (r.fill)
+      if ("solid" === r.fillStyle) {
+        const i = R(e, t, r, a).opset;
+        (i.type = "fillPath"), o.push(i);
+      } else o.push(z([h.estimatedPoints], r));
+    return r.stroke !== se && o.push(h.opset), this._d("ellipse", o, r);
+  }
+  circle(e, t, i, n) {
+    const s = this.ellipse(e, t, i, i, n);
+    return (s.shape = "circle"), s;
+  }
+  linearPath(e, t) {
+    const i = this._o(t);
+    return this._d("linearPath", [M(e, !1, i)], i);
+  }
+  arc(e, t, i, n, s, r, o = !1, a) {
+    const h = this._o(a),
+      l = [],
+      d = F(e, t, i, n, s, r, o, !0, h);
+    if (o && h.fill)
+      if ("solid" === h.fillStyle) {
+        const o = Object.assign({}, h);
+        o.disableMultiStroke = !0;
+        const a = F(e, t, i, n, s, r, !0, !1, o);
+        (a.type = "fillPath"), l.push(a);
+      } else
+        l.push(
+          (function (e, t, i, n, s, r, o) {
+            const a = e,
+              h = t;
+            let l = Math.abs(i / 2),
+              d = Math.abs(n / 2);
+            (l += j(0.01 * l, o)), (d += j(0.01 * d, o));
+            let c = s,
+              u = r;
+            for (; c < 0; ) (c += 2 * Math.PI), (u += 2 * Math.PI);
+            u - c > 2 * Math.PI && ((c = 0), (u = 2 * Math.PI));
+            const p = (u - c) / o.curveStepCount,
+              m = [];
+            for (let e = c; e <= u; e += p)
+              m.push([a + l * Math.cos(e), h + d * Math.sin(e)]);
+            return (
+              m.push([a + l * Math.cos(u), h + d * Math.sin(u)]),
+              m.push([a, h]),
+              z([m], o)
+            );
+          })(e, t, i, n, s, r, h),
+        );
+    return h.stroke !== se && l.push(d), this._d("arc", l, h);
+  }
+  curve(e, t) {
+    const i = this._o(t),
+      n = [],
+      s = P(e, i);
+    if (i.fill && i.fill !== se && e.length >= 3) {
+      const t = ne(
+        (function (e, t = 0) {
+          const i = e.length;
+          if (i < 3)
+            throw new Error("A curve must have at least three points.");
+          const n = [];
+          if (3 === i) n.push(K(e[0]), K(e[1]), K(e[2]), K(e[2]));
+          else {
+            const i = [];
+            i.push(e[0], e[0]);
+            for (let t = 1; t < e.length; t++)
+              i.push(e[t]), t === e.length - 1 && i.push(e[t]);
+            const s = [],
+              r = 1 - t;
+            n.push(K(i[0]));
+            for (let e = 1; e + 2 < i.length; e++) {
+              const t = i[e];
+              (s[0] = [t[0], t[1]]),
+                (s[1] = [
+                  t[0] + (r * i[e + 1][0] - r * i[e - 1][0]) / 6,
+                  t[1] + (r * i[e + 1][1] - r * i[e - 1][1]) / 6,
+                ]),
+                (s[2] = [
+                  i[e + 1][0] + (r * i[e][0] - r * i[e + 2][0]) / 6,
+                  i[e + 1][1] + (r * i[e][1] - r * i[e + 2][1]) / 6,
+                ]),
+                (s[3] = [i[e + 1][0], i[e + 1][1]]),
+                n.push(s[1], s[2], s[3]);
+            }
+          }
+          return n;
+        })(e),
+        10,
+        (1 + i.roughness) / 2,
+      );
+      "solid" === i.fillStyle ? n.push(_([t], i)) : n.push(z([t], i));
+    }
+    return i.stroke !== se && n.push(s), this._d("curve", n, i);
+  }
+  polygon(e, t) {
+    const i = this._o(t),
+      n = [],
+      s = M(e, !0, i);
+    return (
+      i.fill &&
+        ("solid" === i.fillStyle ? n.push(_([e], i)) : n.push(z([e], i))),
+      i.stroke !== se && n.push(s),
+      this._d("polygon", n, i)
+    );
+  }
+  path(e, t) {
+    const i = this._o(t),
+      n = [];
+    if (!e) return this._d("path", n, i);
+    e = (e || "")
+      .replace(/\n/g, " ")
+      .replace(/(-\s)/g, "-")
+      .replace("/(ss)/g", " ");
+    const s = i.fill && "transparent" !== i.fill && i.fill !== se,
+      r = i.stroke !== se,
+      o = !!(i.simplification && i.simplification < 1),
+      a = (function (e, t, i) {
+        const n = N(D(E(e))),
+          s = [];
+        let r = [],
+          o = [0, 0],
+          a = [];
+        const h = () => {
+            a.length >= 4 && r.push(...ne(a, t)), (a = []);
+          },
+          l = () => {
+            h(), r.length && (s.push(r), (r = []));
+          };
+        for (const { key: e, data: t } of n)
+          switch (e) {
+            case "M":
+              l(), (o = [t[0], t[1]]), r.push(o);
+              break;
+            case "L":
+              h(), r.push([t[0], t[1]]);
+              break;
+            case "C":
+              if (!a.length) {
+                const e = r.length ? r[r.length - 1] : o;
+                a.push([e[0], e[1]]);
+              }
+              a.push([t[0], t[1]]), a.push([t[2], t[3]]), a.push([t[4], t[5]]);
+              break;
+            case "Z":
+              h(), r.push([o[0], o[1]]);
+          }
+        if ((l(), !i)) return s;
+        const d = [];
+        for (const e of s) {
+          const t = te(e, i);
+          t.length && d.push(t);
+        }
+        return d;
+      })(e, 1, o ? 4 - 4 * i.simplification : (1 + i.roughness) / 2);
+    return (
+      s && ("solid" === i.fillStyle ? n.push(_(a, i)) : n.push(z(a, i))),
+      r &&
+        (o
+          ? a.forEach((e) => {
+              n.push(M(e, !1, i));
+            })
+          : n.push(
+              (function (e, t) {
+                const i = N(D(E(e))),
+                  n = [];
+                let s = [0, 0],
+                  r = [0, 0];
+                for (const { key: e, data: o } of i)
+                  switch (e) {
+                    case "M": {
+                      const e = 1 * (t.maxRandomnessOffset || 0),
+                        i = t.preserveVertices;
+                      n.push({
+                        op: "move",
+                        data: o.map((n) => n + (i ? 0 : j(e, t))),
+                      }),
+                        (r = [o[0], o[1]]),
+                        (s = [o[0], o[1]]);
+                      break;
+                    }
+                    case "L":
+                      n.push(...q(r[0], r[1], o[0], o[1], t)),
+                        (r = [o[0], o[1]]);
+                      break;
+                    case "C": {
+                      const [e, i, s, a, h, l] = o;
+                      n.push(...Y(e, i, s, a, h, l, r, t)), (r = [h, l]);
+                      break;
+                    }
+                    case "Z":
+                      n.push(...q(r[0], r[1], s[0], s[1], t)),
+                        (r = [s[0], s[1]]);
+                  }
+                return { type: "path", ops: n };
+              })(e, i),
+            )),
+      this._d("path", n, i)
+    );
+  }
+  opsToPath(e, t) {
+    let i = "";
+    for (const n of e.ops) {
+      const e =
+        "number" == typeof t && t >= 0
+          ? n.data.map((e) => +e.toFixed(t))
+          : n.data;
+      switch (n.op) {
+        case "move":
+          i += `M${e[0]} ${e[1]} `;
+          break;
+        case "bcurveTo":
+          i += `C${e[0]} ${e[1]}, ${e[2]} ${e[3]}, ${e[4]} ${e[5]} `;
+          break;
+        case "lineTo":
+          i += `L${e[0]} ${e[1]} `;
+      }
+    }
+    return i.trim();
+  }
+  toPaths(e) {
+    const t = e.sets || [],
+      i = e.options || this.defaultOptions,
+      n = [];
+    for (const e of t) {
+      let t = null;
+      switch (e.type) {
+        case "path":
+          t = {
+            d: this.opsToPath(e),
+            stroke: i.stroke,
+            strokeWidth: i.strokeWidth,
+            fill: se,
+          };
+          break;
+        case "fillPath":
+          t = {
+            d: this.opsToPath(e),
+            stroke: se,
+            strokeWidth: 0,
+            fill: i.fill || se,
+          };
+          break;
+        case "fillSketch":
+          t = this.fillSketch(e, i);
+      }
+      t && n.push(t);
+    }
+    return n;
+  }
+  fillSketch(e, t) {
+    let i = t.fillWeight;
+    return (
+      i < 0 && (i = t.strokeWidth / 2),
+      { d: this.opsToPath(e), stroke: t.fill || se, strokeWidth: i, fill: se }
+    );
+  }
+}
+class oe {
+  constructor(e, t) {
+    (this.canvas = e),
+      (this.ctx = this.canvas.getContext("2d")),
+      (this.gen = new re(t));
+  }
+  draw(e) {
+    const t = e.sets || [],
+      i = e.options || this.getDefaultOptions(),
+      n = this.ctx,
+      s = e.options.fixedDecimalPlaceDigits;
+    for (const r of t)
+      switch (r.type) {
+        case "path":
+          n.save(),
+            (n.strokeStyle = "none" === i.stroke ? "transparent" : i.stroke),
+            (n.lineWidth = i.strokeWidth),
+            i.strokeLineDash && n.setLineDash(i.strokeLineDash),
+            i.strokeLineDashOffset &&
+              (n.lineDashOffset = i.strokeLineDashOffset),
+            this._drawToContext(n, r, s),
+            n.restore();
+          break;
+        case "fillPath": {
+          n.save(), (n.fillStyle = i.fill || "");
+          const t =
+            "curve" === e.shape || "polygon" === e.shape || "path" === e.shape
+              ? "evenodd"
+              : "nonzero";
+          this._drawToContext(n, r, s, t), n.restore();
+          break;
+        }
+        case "fillSketch":
+          this.fillSketch(n, r, i);
+      }
+  }
+  fillSketch(e, t, i) {
+    let n = i.fillWeight;
+    n < 0 && (n = i.strokeWidth / 2),
+      e.save(),
+      i.fillLineDash && e.setLineDash(i.fillLineDash),
+      i.fillLineDashOffset && (e.lineDashOffset = i.fillLineDashOffset),
+      (e.strokeStyle = i.fill || ""),
+      (e.lineWidth = n),
+      this._drawToContext(e, t, i.fixedDecimalPlaceDigits),
+      e.restore();
+  }
+  _drawToContext(e, t, i, n = "nonzero") {
+    e.beginPath();
+    for (const n of t.ops) {
+      const t =
+        "number" == typeof i && i >= 0
+          ? n.data.map((e) => +e.toFixed(i))
+          : n.data;
+      switch (n.op) {
+        case "move":
+          e.moveTo(t[0], t[1]);
+          break;
+        case "bcurveTo":
+          e.bezierCurveTo(t[0], t[1], t[2], t[3], t[4], t[5]);
+          break;
+        case "lineTo":
+          e.lineTo(t[0], t[1]);
+      }
+    }
+    "fillPath" === t.type ? e.fill(n) : e.stroke();
+  }
+  get generator() {
+    return this.gen;
+  }
+  getDefaultOptions() {
+    return this.gen.defaultOptions;
+  }
+  line(e, t, i, n, s) {
+    const r = this.gen.line(e, t, i, n, s);
+    return this.draw(r), r;
+  }
+  rectangle(e, t, i, n, s) {
+    const r = this.gen.rectangle(e, t, i, n, s);
+    return this.draw(r), r;
+  }
+  ellipse(e, t, i, n, s) {
+    const r = this.gen.ellipse(e, t, i, n, s);
+    return this.draw(r), r;
+  }
+  circle(e, t, i, n) {
+    const s = this.gen.circle(e, t, i, n);
+    return this.draw(s), s;
+  }
+  linearPath(e, t) {
+    const i = this.gen.linearPath(e, t);
+    return this.draw(i), i;
+  }
+  polygon(e, t) {
+    const i = this.gen.polygon(e, t);
+    return this.draw(i), i;
+  }
+  arc(e, t, i, n, s, r, o = !1, a) {
+    const h = this.gen.arc(e, t, i, n, s, r, o, a);
+    return this.draw(h), h;
+  }
+  curve(e, t) {
+    const i = this.gen.curve(e, t);
+    return this.draw(i), i;
+  }
+  path(e, t) {
+    const i = this.gen.path(e, t);
+    return this.draw(i), i;
+  }
+}
+const ae = "http://www.w3.org/2000/svg";
+class he {
+  constructor(e, t) {
+    (this.svg = e), (this.gen = new re(t));
+  }
+  draw(e) {
+    const t = e.sets || [],
+      i = e.options || this.getDefaultOptions(),
+      n = this.svg.ownerDocument || window.document,
+      s = n.createElementNS(ae, "g"),
+      r = e.options.fixedDecimalPlaceDigits;
+    for (const o of t) {
+      let t = null;
+      switch (o.type) {
+        case "path":
+          (t = n.createElementNS(ae, "path")),
+            t.setAttribute("d", this.opsToPath(o, r)),
+            t.setAttribute("stroke", i.stroke),
+            t.setAttribute("stroke-width", i.strokeWidth + ""),
+            t.setAttribute("fill", "none"),
+            i.strokeLineDash &&
+              t.setAttribute(
+                "stroke-dasharray",
+                i.strokeLineDash.join(" ").trim(),
+              ),
+            i.strokeLineDashOffset &&
+              t.setAttribute("stroke-dashoffset", `${i.strokeLineDashOffset}`);
+          break;
+        case "fillPath":
+          (t = n.createElementNS(ae, "path")),
+            t.setAttribute("d", this.opsToPath(o, r)),
+            t.setAttribute("stroke", "none"),
+            t.setAttribute("stroke-width", "0"),
+            t.setAttribute("fill", i.fill || ""),
+            ("curve" !== e.shape && "polygon" !== e.shape) ||
+              t.setAttribute("fill-rule", "evenodd");
+          break;
+        case "fillSketch":
+          t = this.fillSketch(n, o, i);
+      }
+      t && s.appendChild(t);
+    }
+    return s;
+  }
+  fillSketch(e, t, i) {
+    let n = i.fillWeight;
+    n < 0 && (n = i.strokeWidth / 2);
+    const s = e.createElementNS(ae, "path");
+    return (
+      s.setAttribute("d", this.opsToPath(t, i.fixedDecimalPlaceDigits)),
+      s.setAttribute("stroke", i.fill || ""),
+      s.setAttribute("stroke-width", n + ""),
+      s.setAttribute("fill", "none"),
+      i.fillLineDash &&
+        s.setAttribute("stroke-dasharray", i.fillLineDash.join(" ").trim()),
+      i.fillLineDashOffset &&
+        s.setAttribute("stroke-dashoffset", `${i.fillLineDashOffset}`),
+      s
+    );
+  }
+  get generator() {
+    return this.gen;
+  }
+  getDefaultOptions() {
+    return this.gen.defaultOptions;
+  }
+  opsToPath(e, t) {
+    return this.gen.opsToPath(e, t);
+  }
+  line(e, t, i, n, s) {
+    const r = this.gen.line(e, t, i, n, s);
+    return this.draw(r);
+  }
+  rectangle(e, t, i, n, s) {
+    const r = this.gen.rectangle(e, t, i, n, s);
+    return this.draw(r);
+  }
+  ellipse(e, t, i, n, s) {
+    const r = this.gen.ellipse(e, t, i, n, s);
+    return this.draw(r);
+  }
+  circle(e, t, i, n) {
+    const s = this.gen.circle(e, t, i, n);
+    return this.draw(s);
+  }
+  linearPath(e, t) {
+    const i = this.gen.linearPath(e, t);
+    return this.draw(i);
+  }
+  polygon(e, t) {
+    const i = this.gen.polygon(e, t);
+    return this.draw(i);
+  }
+  arc(e, t, i, n, s, r, o = !1, a) {
+    const h = this.gen.arc(e, t, i, n, s, r, o, a);
+    return this.draw(h);
+  }
+  curve(e, t) {
+    const i = this.gen.curve(e, t);
+    return this.draw(i);
+  }
+  path(e, t) {
+    const i = this.gen.path(e, t);
+    return this.draw(i);
+  }
+}
+var le = {
+  canvas: (e, t) => new oe(e, t),
+  svg: (e, t) => new he(e, t),
+  generator: (e) => new re(e),
+  newSeed: () => re.newSeed(),
+};
+function de(e) {
+  if (window.getSelection) {
+    e.focus();
+    var t = e.win.getSelection();
+    try {
+      t.selectAllChildren(e), t.collapseToEnd();
+    } catch (e) {}
+  }
+}
+class ce {
+  constructor(e, t) {
+    (this.box = { x: 0, y: 0, width: 0, height: 0 }),
+      (this.name = "node"),
+      (this.isExpand = !0),
+      (this.isSelect = !1),
+      (this.children = []),
+      (this.isHide = !1),
+      (this.isEdit = !1),
+      (this._barDom = null),
+      (this.callout = null),
+      (this.wireFrames = []),
+      (this.summaries = []),
+      (this.induce = null),
+      (this.wireFrame = null),
+      (this.layout = null),
+      (this.wfs = []),
+      (this.induces = []),
+      (this.belongInduce = null),
+      (this._wireFrames = []),
+      (this._summaries = []),
+      (this._removeLink = null),
+      (this.shouldRender = !0),
+      (this.containBar = !1),
+      (this.tNode = null),
+      (this._shapeDom = null),
+      (this._mathTime = null),
+      (this._noteTab = null),
+      (this.coverDom = null),
+      (this._hasImage = null),
+      (this._hasLink = ""),
+      (this.data = e),
+      (this.mindmap = t),
+      this.data.stroke && (this.stroke = this.data.stroke),
+      this.data.style &&
+        (this.style = Object.assign({}, this.style, this.data.style)),
+      this.initDom();
+  }
+  getId() {
+    return this.data.id;
+  }
+  getParent() {
+    return this.parent || null;
+  }
+  initDom() {
+    (this.containEl = document.createElement("div")),
+      this.containEl.classList.add("mm-node"),
+      this.containEl.setAttribute("contentEditable", "false"),
+      this.containEl.setAttribute("tabIndex", "-1"),
+      this.containEl.setAttribute("data-id", this.data.id),
+      this.containEl.setAttribute("draggable", "false"),
+      (this.assistDom = document.createElement("div")),
+      this.assistDom.classList.add("mm-node-assist"),
+      (this.contentEl = document.createElement("div")),
+      this.contentEl.classList.add("mm-node-content"),
+      this.containEl.appendChild(this.contentEl),
+      this.contentEl.appendChild(this.assistDom),
+      (this.editDom = document.createElement("div")),
+      this.editDom.classList.add("mm-node-edit"),
+      this.contentEl.appendChild(this.editDom),
+      (this.plgDom = document.createElement("div")),
+      this.plgDom.classList.add("mm-note-dom"),
+      this.contentEl.appendChild(this.plgDom),
+      this.initNodeBar(),
+      this.updateAnnotate(),
+      this.data.note && this.updateNote(),
+      this.data.isRoot &&
+        (this.containEl.classList.add("mm-root"), (this.isRoot = !0)),
+      this.setStyle(),
+      this.parseText(),
+      this.data.cover && this.createCoverDom();
+  }
+  createCoverDom() {
+    var e = document.createElement("div");
+    this.containEl.appendChild(e),
+      e.classList.add("mm-node-cover"),
+      (this.coverDom = e);
+  }
+  setCoverText(e) {
+    e
+      ? ((this.data.cover = !0), this.coverDom || this.createCoverDom())
+      : ((this.data.cover = !1),
+        this.containEl.contains(this.coverDom) &&
+          (this.containEl.removeChild(this.coverDom), (this.coverDom = null)));
+  }
+  initNodeBar() {
+    (this._barDom = document.createElement("div")),
+      this._barDom.classList.add("mm-node-bar"),
+      this.containEl.appendChild(this._barDom);
+  }
+  parseText() {
+    var t;
+    e.MarkdownRenderer.renderMarkdown(
+      this.data.text,
+      this.editDom,
+      this.mindmap.path || "",
+      this.mindmap._plugin ||
+        (null === (t = this.mindmap.view) || void 0 === t ? void 0 : t.plugin),
+    ).then(() => {
+      (this.data.mdText = this.editDom.innerHTML),
+        this.refreshBox(),
+        this.mindmap && this.mindmap.emit("initNode", {}),
+        this._delay();
+    });
+  }
+  isMindmap(e) {
+    if (e && e.frontmatter) {
+      var t = e.frontmatter["mindmap-plugin"];
+      return "rich" == t || "basic" == t;
+    }
+    return !1;
+  }
+  isMindmapRichMode(e) {
+    return !!(
+      e &&
+      e.frontmatter &&
+      e.frontmatter["mindmap-plugin"] &&
+      "rich" == e.frontmatter["mindmap-plugin"]
+    );
+  }
+  _deleyRefreshLayout(e, t) {
+    if (e && t) {
+      var i = (e = e.tNode ? e.tNode : e).getRootLayout() || t.mmLayout,
+        n = t._delayRefresh.filter((e) => e.layout == i);
+      if (n && n.length)
+        n[0].timeOut && clearTimeout(n[0].timeOut),
+          (n[0].timeOut = setTimeout(() => {
+            t.emit("renderEditNode", { node: e });
+          }, 800));
+      else {
+        if (!i) return;
+        t._delayRefresh.push({
+          node: e,
+          layout: i,
+          timeOut: setTimeout(() => {
+            t.emit("renderEditNode", { node: e });
+          }, 800),
+        });
+      }
+      t._delayRefresh.length > 20 && (t._delayRefresh = []);
+    }
+  }
+  _refreshImage(e, t) {
+    var i = this;
+    e.findAll(".internal-embed").forEach((e) => {
+      const n = e.getAttribute("src");
+      if (n.startsWith("http")) return;
+      const s =
+        "string" == typeof n &&
+        this.mindmap.view &&
+        this.mindmap.view.app &&
+        this.mindmap.view.app.metadataCache.getFirstLinkpathDest(
+          n,
+          this.mindmap.path,
+        );
+      if (s && "md" !== s.extension && t) {
+        e.innerText = "";
+        var r = this.mindmap.view.app.vault.getResourcePath(s);
+        e.createEl("img", { attr: { src: r } }, (t) => {
+          (i._hasImage = t),
+            e.hasAttribute("width") &&
+              t.setAttribute("width", e.getAttribute("width")),
+            e.hasAttribute("alt") &&
+              t.setAttribute("alt", e.getAttribute("alt"));
+        }),
+          e.addClasses(["image-embed", "is-loaded"]);
+      }
+    }),
+      e.querySelectorAll("img").forEach((e) => {
+        var i;
+        e.onload ||
+          (e.onload = () => {
+            var i,
+              n =
+                null === (i = e.closest(".mm-node")) || void 0 === i
+                  ? void 0
+                  : i.getAttribute("data-id");
+            if (n) {
+              var s = t.getNodeById(n);
+              s &&
+                (s.clearCacheData(),
+                s.refreshBox(),
+                this._deleyRefreshLayout(s, t));
+            }
+          }),
+          e.setAttribute("draggble", "false");
+        var n =
+          null === (i = e.closest(".mm-node")) || void 0 === i
+            ? void 0
+            : i.getAttribute("data-id");
+        if (n) {
+          var s = t.getNodeById(n);
+          s &&
+            (s.clearCacheData(),
+            s.refreshBox(),
+            this._deleyRefreshLayout(s, t));
+        }
+      });
+  }
+  _createHandDrawFill() {
+    var e = this.getLevel();
+    if (this.mindmap && this.mindmap.useHandMode && e <= 1) {
+      var t = this.mindmap._rc || le.svg(this.mindmap.draw),
+        i = !!document.querySelector(".theme-dark") || !1;
+      this.shapeSvg && this.mindmap.draw.node.removeChild(this.shapeSvg);
+      var n = this.getBox(),
+        s = 0 == e ? "solid" : "sunburst",
+        r = 0 == e ? "1" : "2",
+        o = i ? "#fff" : "rgb(0, 170, 255)",
+        a = i ? "#333" : "#000";
+      (this.shapeSvg = t.rectangle(n.x, n.y, n.width, n.height, {
+        fill: this.stroke || this.data.stroke || o,
+        fillStyle: s,
+        stroke: this.stroke || this.data.stroke || a,
+        fillWeight: r,
+      })),
+        this.mindmap.draw.node.appendChild(this.shapeSvg);
+    }
+  }
+  getImage() {
+    return this._hasImage;
+  }
+  getLink() {
+    var e = "",
+      i = !1;
+    return (
+      this.editDom.findAll("a").forEach((n) =>
+        t(this, void 0, void 0, function* () {
+          (e = n.getAttribute("href")),
+            (i = !(
+              !n.getAttribute("class") ||
+              "internal-link" != n.getAttribute("class")
+            ));
+        }),
+      ),
+      { isMd: i, link: e }
+    );
+  }
+  _delay() {
+    var i = this;
+    (this.editDom.style.overflow = ""),
+      this.editDom.findAll(".internal-embed").forEach((n) =>
+        t(this, void 0, void 0, function* () {
+          var t, s;
+          const r = n.getAttribute("src");
+          if ("string" == typeof r) {
+            var o = e.parseLinktext(r);
+            if (!o) return;
+            var a = "";
+            if (this.mindmap && this.mindmap.view) {
+              var h = this.mindmap.view.app.metadataCache.getFirstLinkpathDest(
+                o.path,
+                this.mindmap.path,
+              );
+              if (h instanceof e.TFile && "md" === h.extension) {
+                if (
+                  this.editDom.querySelector(
+                    `.markdown-embed[data-name="${h.path}"]`,
+                  )
+                )
+                  return;
+                var l = this.mindmap.view.app.metadataCache.getFileCache(h);
+                if (this.isMindmap(l)) {
+                  if (
+                    ((m = document.createElement("div")).classList.add(
+                      "markdown-embed",
+                    ),
+                    n.appendChild(m),
+                    m.setAttribute("data-name", h.path),
+                    (f = document.createElement("div")).classList.add(
+                      "markdown-embed-content",
+                    ),
+                    (g = document.createElement("div")).classList.add(
+                      "markdown-preview-view",
+                    ),
+                    f.appendChild(g),
+                    (v = document.createElement("div")).classList.add(
+                      "markdown-embed-link",
+                    ),
+                    v.setAttribute("aria-label", "Open link"),
+                    (v.innerHTML = `<a data-href="${r}" href="${r}" class="internal-link" target="_blank" rel="noopener"><svg viewBox="0 0 100 100" class="link" width="20" height="20"><path fill="currentColor" stroke="currentColor" d="M74,8c-4.8,0-9.3,1.9-12.7,5.3l-10,10c-2.9,2.9-4.7,6.6-5.1,10.6C46,34.6,46,35.3,46,36c0,2.7,0.6,5.4,1.8,7.8l3.1-3.1 C50.3,39.2,50,37.6,50,36c0-3.7,1.5-7.3,4.1-9.9l10-10c2.6-2.6,6.2-4.1,9.9-4.1s7.3,1.5,9.9,4.1c2.6,2.6,4.1,6.2,4.1,9.9 s-1.5,7.3-4.1,9.9l-10,10C71.3,48.5,67.7,50,64,50c-1.6,0-3.2-0.3-4.7-0.8l-3.1,3.1c2.4,1.1,5,1.8,7.8,1.8c4.8,0,9.3-1.9,12.7-5.3 l10-10C90.1,35.3,92,30.8,92,26s-1.9-9.3-5.3-12.7C83.3,9.9,78.8,8,74,8L74,8z M62,36c-0.5,0-1,0.2-1.4,0.6l-24,24 c-0.5,0.5-0.7,1.2-0.6,1.9c0.2,0.7,0.7,1.2,1.4,1.4c0.7,0.2,1.4,0,1.9-0.6l24-24c0.6-0.6,0.8-1.5,0.4-2.2C63.5,36.4,62.8,36,62,36 z M36,46c-4.8,0-9.3,1.9-12.7,5.3l-10,10c-3.1,3.1-5,7.2-5.2,11.6c0,0.4,0,0.8,0,1.2c0,4.8,1.9,9.3,5.3,12.7 C16.7,90.1,21.2,92,26,92s9.3-1.9,12.7-5.3l10-10C52.1,73.3,54,68.8,54,64c0-2.7-0.6-5.4-1.8-7.8l-3.1,3.1 c0.5,1.5,0.8,3.1,0.8,4.7c0,3.7-1.5,7.3-4.1,9.9l-10,10C33.3,86.5,29.7,88,26,88s-7.3-1.5-9.9-4.1S12,77.7,12,74 c0-3.7,1.5-7.3,4.1-9.9l10-10c2.6-2.6,6.2-4.1,9.9-4.1c1.6,0,3.2,0.3,4.7,0.8l3.1-3.1C41.4,46.6,38.7,46,36,46L36,46z"></path></svg></a>`),
+                    (this.editDom.style.overflow = "auto"),
+                    m.appendChild(f),
+                    m.appendChild(v),
+                    this.isMindmapRichMode(l))
+                  )
+                    yield c(
+                      null === (t = this.mindmap.view) || void 0 === t
+                        ? void 0
+                        : t.plugin,
+                      this.mindmap.view.app,
+                      h,
+                      n,
+                      this,
+                      this.mindmap.colors,
+                      this.mindmap.setting,
+                      (e) => {
+                        this._refreshImage(n, e),
+                          setTimeout(() => {
+                            e.toDiv(!0),
+                              (e.containerEL.style.visibility = "visible"),
+                              e.center(),
+                              e.root.unSelect(),
+                              this.clearCacheData(),
+                              this.refreshBox(),
+                              this.mindmap &&
+                                this.mindmap.emit("renderEditNode", {
+                                  node: i.tNode ? i.tNode : i,
+                                }),
+                              this._createHandDrawFill();
+                          }, 900);
+                      },
+                    );
+                  else {
+                    var u = l && l.frontmatter;
+                    if (u)
+                      var p =
+                        !!u["display-mode"] && "table" == u["display-mode"];
+                    yield d(
+                      null === (s = this.mindmap.view) || void 0 === s
+                        ? void 0
+                        : s.plugin,
+                      this.mindmap.view.app,
+                      h,
+                      n,
+                      this,
+                      this.mindmap.colors,
+                      this.mindmap.setting,
+                      (e) => {
+                        this._refreshImage(n, e),
+                          setTimeout(() => {
+                            e.toDiv(!0),
+                              (e.containerEL.style.visibility = "visible"),
+                              e.center(),
+                              e.root.unSelect(),
+                              this.clearCacheData(),
+                              this.refreshBox(),
+                              this.mindmap &&
+                                this.mindmap.emit("renderEditNode", {
+                                  node: i.tNode ? i.tNode : i,
+                                }),
+                              this._createHandDrawFill();
+                          }, 900);
+                      },
+                      0,
+                      p,
+                    );
+                  }
+                } else {
+                  if (
+                    !(a = yield this.mindmap.view.app.vault.adapter.read(
+                      h.path,
+                    )).trim()
+                  )
+                    return;
+                  var m, f, g, v;
+                  if (
+                    ((m = document.createElement("div")).classList.add(
+                      "markdown-embed",
+                    ),
+                    m.setAttribute("data-name", h.path),
+                    (f = document.createElement("div")).classList.add(
+                      "markdown-embed-content",
+                    ),
+                    (g = document.createElement("div")).classList.add(
+                      "markdown-preview-view",
+                    ),
+                    f.appendChild(g),
+                    (v = document.createElement("div")).classList.add(
+                      "markdown-embed-link",
+                    ),
+                    v.setAttribute("aria-label", "Open link"),
+                    (v.innerHTML = `<a data-href="${r}" href="${r}" class="internal-link" target="_blank" rel="noopener"><svg viewBox="0 0 100 100" class="link" width="20" height="20"><path fill="currentColor" stroke="currentColor" d="M74,8c-4.8,0-9.3,1.9-12.7,5.3l-10,10c-2.9,2.9-4.7,6.6-5.1,10.6C46,34.6,46,35.3,46,36c0,2.7,0.6,5.4,1.8,7.8l3.1-3.1 C50.3,39.2,50,37.6,50,36c0-3.7,1.5-7.3,4.1-9.9l10-10c2.6-2.6,6.2-4.1,9.9-4.1s7.3,1.5,9.9,4.1c2.6,2.6,4.1,6.2,4.1,9.9 s-1.5,7.3-4.1,9.9l-10,10C71.3,48.5,67.7,50,64,50c-1.6,0-3.2-0.3-4.7-0.8l-3.1,3.1c2.4,1.1,5,1.8,7.8,1.8c4.8,0,9.3-1.9,12.7-5.3 l10-10C90.1,35.3,92,30.8,92,26s-1.9-9.3-5.3-12.7C83.3,9.9,78.8,8,74,8L74,8z M62,36c-0.5,0-1,0.2-1.4,0.6l-24,24 c-0.5,0.5-0.7,1.2-0.6,1.9c0.2,0.7,0.7,1.2,1.4,1.4c0.7,0.2,1.4,0,1.9-0.6l24-24c0.6-0.6,0.8-1.5,0.4-2.2C63.5,36.4,62.8,36,62,36 z M36,46c-4.8,0-9.3,1.9-12.7,5.3l-10,10c-3.1,3.1-5,7.2-5.2,11.6c0,0.4,0,0.8,0,1.2c0,4.8,1.9,9.3,5.3,12.7 C16.7,90.1,21.2,92,26,92s9.3-1.9,12.7-5.3l10-10C52.1,73.3,54,68.8,54,64c0-2.7-0.6-5.4-1.8-7.8l-3.1,3.1 c0.5,1.5,0.8,3.1,0.8,4.7c0,3.7-1.5,7.3-4.1,9.9l-10,10C33.3,86.5,29.7,88,26,88s-7.3-1.5-9.9-4.1S12,77.7,12,74 c0-3.7,1.5-7.3,4.1-9.9l10-10c2.6-2.6,6.2-4.1,9.9-4.1c1.6,0,3.2,0.3,4.7,0.8l3.1-3.1C41.4,46.6,38.7,46,36,46L36,46z"></path></svg></a>`),
+                    n.appendChild(m),
+                    m.appendChild(f),
+                    m.appendChild(v),
+                    o.subpath)
+                  ) {
+                    var y = this.mindmap.view.app.metadataCache.getFileCache(h),
+                      A = e.resolveSubpath(y, o.subpath);
+                    if (A && A.start && A.end)
+                      var x = a.substring(A.start.offset, A.end.offset);
+                    else if (A && A.start && !A.end)
+                      x = a.substr(A.start.offset);
+                    else x = a || "";
+                  } else x = a || "";
+                  x &&
+                    e.MarkdownRenderer.renderMarkdown(
+                      x,
+                      g,
+                      this.mindmap.path || "",
+                      null,
+                    ).then(() => {
+                      this.refreshBox(),
+                        this.mindmap &&
+                          this.mindmap.emit("renderEditNode", {
+                            node: i.tNode ? i.tNode : i,
+                          }),
+                        this._createHandDrawFill();
+                    });
+                }
+              }
+            }
+          }
+        }),
+      ),
+      setTimeout(() => {
+        this._refreshImage(this.editDom, this.mindmap),
+          (this.editDom.querySelector("code") ||
+            this.editDom.querySelector(".MathJax") ||
+            this.editDom.querySelector(".callout")) &&
+            setTimeout(() => {
+              this.clearCacheData(),
+                this.refreshBox(),
+                this._deleyRefreshLayout(i, this.mindmap),
+                this._createHandDrawFill();
+            }, 200),
+          this.editDom.findAll("a.external-link").length &&
+            setTimeout(() => {
+              this.clearCacheData(),
+                this.refreshBox(),
+                this._createHandDrawFill(),
+                this.mindmap &&
+                  (this.mindmap._initTime &&
+                    clearTimeout(this.mindmap._initTime),
+                  (this.mindmap._initTime = setTimeout(() => {
+                    this._deleyRefreshLayout(i, this.mindmap);
+                  }, 600)));
+            }, 300),
+          setTimeout(() => {
+            this.refreshBox(), this._createHandDrawFill();
+          }, 1500);
+      }, 280);
+  }
+  _delayRefresh() {}
+  getRootLayout() {
+    for (var e = this, t = null; e; )
+      (t = e.layout), (e = e.belongInduce ? e.belongInduce.node : e.parent);
+    return t;
+  }
+  select() {
+    (this.isSelect = !0),
+      "relateLink" == this.nodeType || "callout" == this.nodeType
+        ? this.containEl.setAttribute("draggable", "false")
+        : this.containEl.setAttribute("draggable", "true"),
+      Object.assign(window, { myNode: this }),
+      this.containEl.classList.contains("mm-node-select") ||
+        this.containEl.classList.add("mm-node-select"),
+      (this.mindmap.selectNode = this),
+      this.tNode && this.tNode.select();
+  }
+  unSelect() {
+    (this.isSelect = !1),
+      this.containEl.setAttribute("draggable", "false"),
+      this.containEl.classList.contains("mm-node-select") &&
+        this.containEl.classList.remove("mm-node-select");
+  }
+  edit() {
+    (this.editDom.innerText = ""),
+      (this._oldText = this.data.text),
+      (this.editDom.innerText = this._oldText),
+      this.editDom.setAttribute("contentEditable", "true"),
+      this.containEl.setAttribute("draggable", "false"),
+      this.editDom.focus(),
+      (this.mindmap.editNode = this),
+      (this.isEdit = !0),
+      this.data.cover &&
+        this.coverDom &&
+        (this.coverDom.style.display = "none"),
+      de(this.editDom),
+      (this.editDom.innerText != r("Sub title") &&
+        "callout" != this.editDom.innerText) ||
+        this.selectText(),
+      this.containEl.classList.contains("mm-edit-node") ||
+        this.containEl.classList.add("mm-edit-node");
+  }
+  selectText() {
+    var e = this.editDom;
+    if (this.editDom.win.getSelection) {
+      var t = this.editDom.win.getSelection(),
+        i = this.editDom.doc.createRange();
+      i.selectNodeContents(e), t.removeAllRanges(), t.addRange(i);
+    }
+  }
+  cancelEdit() {
+    var t;
+    if (this.shouldRender) {
+      var i = this.editDom.innerText.trim() || "";
+      (this.data.text = i),
+        (this.editDom.innerText = ""),
+        this.data.cover && this.coverDom && (this.coverDom.style.display = ""),
+        e.MarkdownRenderer.renderMarkdown(
+          i,
+          this.editDom,
+          this.mindmap.path || "",
+          null === (t = this.mindmap.view) || void 0 === t ? void 0 : t.plugin,
+        ).then(() => {
+          (this.data.mdText = this.editDom.innerHTML),
+            this.refreshBox(),
+            this._delay();
+        }),
+        i != this._oldText &&
+          (this.mindmap.execute("changeNodeText", {
+            node: this.tNode ? this.tNode : this,
+            text: i,
+            oldText: this._oldText,
+          }),
+          this.callout && this.callout.refresh()),
+        this.editDom.setAttribute("contentEditable", "false"),
+        (this.isEdit = !1),
+        this.containEl.classList.contains("mm-edit-node") &&
+          this.containEl.classList.remove("mm-edit-node"),
+        this.mindmap.appEl.focus(),
+        (this.mindmap.editNode = null);
+    }
+  }
+  getLevel() {
+    for (var e = 0, t = this.parent; t; ) e++, (t = t.parent);
+    return e;
+  }
+  getChildren() {
+    return this.children;
+  }
+  setPosition(e, t) {
+    (this.box.x = e),
+      (this.box.y = t),
+      (this.containEl.style.left = e + "px"),
+      (this.containEl.style.top = t + "px"),
+      (this.data.x = e),
+      (this.data.y = t);
+  }
+  getPosition() {
+    return { x: this.box.x, y: this.box.y };
+  }
+  move(e, t) {
+    var i = this.getPosition();
+    this.setPosition(i.x + e, i.y + t);
+  }
+  getStyle() {
+    return Object.assign({}, this.style);
+  }
+  setStyle(e, t) {
+    t && e
+      ? (this.style = e)
+      : e && (this.style = Object.assign({}, this.style, e));
+    var i = this.style,
+      n = "";
+    for (var s in this.style)
+      n +=
+        "font-size" == s || "border-width" == s
+          ? `${s}:${i[s]}px;`
+          : `${s}:${i[s]};`;
+    this.contentEl.setAttribute("style", n),
+      this.nodeType &&
+        "callout" == this.nodeType &&
+        this.callout &&
+        ((this.callout.color =
+          this.style["background-color"] || this.callout.color),
+        this.callout.refresh());
+  }
+  isEmptyObject(e) {
+    for (var t in e) return !1;
+    return !0;
+  }
+  getData() {
+    var e = Object.assign({}, this.data);
+    if (
+      (e.mdText && delete e.mdText,
+      this.layout
+        ? (e.layout = {
+            layoutName: this.layout.layoutName,
+            direct: this.layout.direct,
+          })
+        : (e.layout = null),
+      "freeNode" == this.nodeType)
+    ) {
+      e.main = !1;
+      var t = this.getPosition();
+      (e.x = t.x), (e.y = t.y);
+    }
+    return (
+      this.isExpand && (e.isExpand = !0),
+      this.parent && (e.pid = this.parent.getId()),
+      e.children && delete e.children,
+      (e.stroke = this.stroke || ""),
+      this.isEmptyObject(this.style) ||
+        (e.style = Object.assign({}, this.style)),
+      this.belongInduce && (e.direct = this.direct),
+      JSON.parse(JSON.stringify(e))
+    );
+  }
+  refreshBox() {
+    this.box = this.getDomBox();
+  }
+  getBox() {
+    return Object.assign({}, this.box);
+  }
+  refreshCBox() {
+    this.box = this.getCBox();
+  }
+  getContainBox() {
+    return this.containBar ? this.containBox : this.box;
+  }
+  getCBox(e) {
+    var t = this.getBox(),
+      i = 0,
+      n = 0;
+    if (this.callout) {
+      var s = this.callout.getBox();
+      s.y < t.y && (i = t.y - s.y),
+        s.y + s.height > t.y + t.height &&
+          (n = s.y + s.height - t.y - t.height);
+    }
+    if (e && this.wfs.length) {
+      var r = 0;
+      this.wfs.forEach((e) => {
+        if (e.data && e.data.text) {
+          var t = e.getTextBox().height;
+          r += t;
+        }
+      }),
+        (i += r + 3),
+        (n += 3);
+    }
+    return Object.assign(Object.assign({}, t), { th: i, bh: n });
+  }
+  getContainDomBox() {
+    var e = parseInt(this.containEl.style.top);
+    return {
+      x: parseInt(this.containEl.style.left),
+      y: e,
+      width: Math.ceil(this.containEl.offsetWidth),
+      height: Math.ceil(this.containEl.offsetHeight),
+      th: 0,
+      bh: 0,
+    };
+  }
+  getDomBox() {
+    var e = parseInt(this.containEl.style.top);
+    return {
+      x: parseInt(this.containEl.style.left) || 0,
+      y: e || 0,
+      width: Math.ceil(this.contentEl.offsetWidth),
+      height: Math.ceil(this.contentEl.offsetHeight),
+      th: 0,
+      bh: 0,
+    };
+  }
+  getNodeList() {
+    var e = [];
+    return (
+      (function t(i) {
+        e.push(i),
+          i.children.forEach((e) => {
+            t(e);
+          });
+      })(this),
+      e
+    );
+  }
+  getShowNodeList() {
+    var e = [];
+    return (
+      (function t(i) {
+        i.isShow() && e.push(i),
+          i.children.forEach((e) => {
+            t(e);
+          });
+      })(this),
+      e
+    );
+  }
+  getSiblings() {
+    return this.parent ? this.parent.children.filter((e) => e != this) : [];
+  }
+  isLeaf() {
+    return !this.children.length;
+  }
+  isShow() {
+    return "none" != this.containEl.style.display;
+  }
+  show() {
+    (this.containEl.style.display = "block"), (this.isHide = !1);
+  }
+  hide() {
+    (this.containEl.style.display = "none"), (this.isHide = !0);
+  }
+  clearCacheData() {
+    for (var e = this; e; )
+      (e.boundingRect = null),
+        (e = e.parent || (e.belongInduce && e.belongInduce.node));
+  }
+  addChild(e, t) {
+    -1 == this.children.indexOf(e) &&
+      (t > -1
+        ? (t > this.children.length && (t = this.children.length),
+          this.children.splice(t, 0, e))
+        : this.children.push(e),
+      (e.parent = this));
+  }
+  removeChild(e) {
+    var t = this.children.indexOf(e);
+    return t > -1 && this.children.splice(t, 1), t;
+  }
+  setText(e) {
+    (this.data.text = e), (this.editDom.innerHTML = ""), this.parseText();
+  }
+  expand() {
+    (this.isExpand = !0),
+      (this.data.isExpand = !0),
+      (function e(t) {
+        t.show(),
+          (t.boundingRect = null),
+          t.induces.length &&
+            t.induces.forEach((t) => {
+              e(t.root);
+            }),
+          t.isExpand &&
+            (t.layout &&
+              (t.layout.svgDom &&
+                (t.layout.svgDom.show(), (t.layout.isShow = !0)),
+              t.layout.group && (t.layout.group.show(), (t.layout.isShow = !0)),
+              t.layout.tableDom && (t.layout.tableDom.style.display = "")),
+            t.children.forEach((t) => {
+              e(t);
+            }));
+      })(this),
+      (function e(t) {
+        t.isShow() || t.show(),
+          t.refreshBox(),
+          t.isExpand &&
+            t.children.forEach((t) => {
+              e(t);
+            }),
+          t.wfs.length &&
+            t.wfs.forEach((e) => {
+              e.show(), e.refreshItems();
+            }),
+          t.induces.length &&
+            t.induces.forEach((t) => {
+              t.show(), t.refreshItems(), e(t.root);
+            });
+      })(this),
+      this.containEl.classList.contains("mm-node-collapse") &&
+        this.containEl.classList.remove("mm-node-collapse");
+  }
+  collapse() {
+    function e(t) {
+      t.hide(),
+        t.setPosition(10, 10),
+        t.induces.length &&
+          t.induces.forEach((t) => {
+            e(t.root);
+          }),
+        t.layout &&
+          (t.layout.tableDom && (t.layout.tableDom.style.display = "none"),
+          t.layout.svgDom && (t.layout.svgDom.hide(), (t.layout.isShow = !1)),
+          t.layout.group && (t.layout.group.hide(), (t.layout.isShow = !1))),
+        t.isExpand &&
+          t.children.forEach((t) => {
+            e(t);
+          });
+    }
+    this.children.forEach((t) => {
+      e(t);
+    }),
+      (this.isExpand = !1),
+      (this.data.isExpand = !1),
+      this.containEl.classList.contains("mm-node-collapse") ||
+        this.containEl.classList.add("mm-node-collapse"),
+      this.layout &&
+        (this.layout.tableDom && (this.layout.tableDom.style.display = "none"),
+        this.layout.svgDom &&
+          (this.layout.svgDom.hide(), (this.layout.isShow = !1)),
+        this.layout.group &&
+          (this.layout.group.hide(), (this.layout.isShow = !1))),
+      this.getMind().updateAllAssist();
+  }
+  isFirst() {
+    if (this.parent) {
+      var e = this.parent.getChildren();
+      return e && 0 == e.indexOf(this);
+    }
+    return !0;
+  }
+  isLast() {
+    if (this.parent) {
+      var e = this.parent.getChildren();
+      return e.length && e.indexOf(this) == e.length - 1;
+    }
+    return !0;
+  }
+  getNodeLayout() {
+    return this.layout;
+  }
+  getLayout() {
+    for (var e = this, t = null; e; ) {
+      if (e.layout) {
+        t = e.layout;
+        break;
+      }
+      e = e.parent;
+    }
+    return t;
+  }
+  getTopLayout() {
+    if (!this.parent) return this.layout || null;
+    var e = this,
+      t = null,
+      i = this.layout;
+    for (this.layout = null; e; ) {
+      if (e.layout) {
+        t = e.layout;
+        break;
+      }
+      e = e.parent;
+    }
+    return (this.layout = i), (this.topLayout = t), t;
+  }
+  getMind() {
+    return this.mindmap || null;
+  }
+  setAnnotate(e) {
+    "highlight" == e.type
+      ? ((this.editDom.innerHTML = e.selectText),
+        this.editDom.focus(),
+        de(this.editDom))
+      : ((this.editDom.innerHTML = `![[${e.path}]]`),
+        this.editDom.focus(),
+        de(this.editDom)),
+      (this.data.annotate = e),
+      this.updateAnnotate();
+  }
+  updateAnnotate() {
+    !this.annotateDom &&
+      this.data.annotate &&
+      ((this.annotateDom = document.createElement("div")),
+      (this.annotateDom.innerHTML =
+        '<svg t="1629010944160" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12916" width="16" height="16"><path d="M672.711111 662.670222L361.329778 351.232l266.979555-222.464 266.951111 266.951111-222.492444 266.951111z" fill="#FF445F" p-id="12917"></path><path d="M984.177778 395.719111a125.724444 125.724444 0 0 1-177.92 0l-177.976889-177.948444a125.895111 125.895111 0 0 1 177.976889-178.005334L984.177778 217.770667a125.838222 125.838222 0 0 1 0 177.948444z" fill="#EF5350" p-id="12918"></path><path d="M398.222222 506.965333S-16.867556 996.380444 5.347556 1018.680889C27.591111 1040.952889 517.034667 625.777778 517.034667 625.777778L398.222222 506.965333z" fill="#C4C6CF" p-id="12919"></path><path d="M717.226667 796.188444a125.838222 125.838222 0 0 1-178.005334 0L227.811556 484.721778a125.866667 125.866667 0 0 1 178.005333-177.948445l311.409778 311.438223a125.866667 125.866667 0 0 1 0 177.976888z" fill="#EF5350" p-id="12920"></path></svg>'),
+      this.annotateDom.classList.add("mm-node-annotate"),
+      this.assistDom.appendChild(this.annotateDom));
+  }
+  deleteAnnotate() {
+    this.annotateDom &&
+      (this.assistDom.removeChild(this.annotateDom),
+      (this.annotateDom = null),
+      (this.data.annotate = null));
+  }
+  getAnnotateId() {
+    return this.data.annotate ? this.data.annotate.id : null;
+  }
+  getAnnotate() {
+    return this.data.annotate
+      ? JSON.parse(JSON.stringify(this.data.annotate))
+      : null;
+  }
+  updateNote() {
+    if (((this.plgDom.innerHTML = ""), this.data.note)) {
+      var e = document.createElement("span");
+      this.plgDom.appendChild(e),
+        (e.innerHTML =
+          '<svg t="1635666821412" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="20498" width="16" height="16"><path d="M832 64 192 64C121.6 64 64 121.6 64 192l0 512c0 70.4 57.6 128 128 128l128 0 132.096 120.448C459.072 957.632 466.88 960 474.432 960 493.824 960 512 944.704 512 922.496L512 832l320 0c70.4 0 128-57.6 128-128L960 192C960 121.6 902.4 64 832 64zM896 704c0 35.328-28.672 64-64 64L512 768c-16.96 0-33.28 6.72-45.248 18.752S448 815.04 448 832l0 30.08-84.864-77.376C351.296 773.952 335.936 768 320 768L192 768c-35.328 0-64-28.672-64-64L128 192c0-35.328 28.672-64 64-64l640 0c35.328 0 64 28.672 64 64L896 704zM736 320l-448 0C270.336 320 256 334.336 256 352S270.336 384 288 384l448 0C753.664 384 768 369.664 768 352S753.664 320 736 320zM736 512l-448 0C270.336 512 256 526.336 256 544S270.336 576 288 576l448 0C753.664 576 768 561.664 768 544S753.664 512 736 512z" p-id="20499"></path></svg>'),
+        (e.style.display = "flex"),
+        (e.style.alignItems = "center"),
+        (e.style.margin = "0 4px"),
+        (e.style.cursor = "pointer"),
+        e.classList.add("mm-note-span");
+    }
+  }
+  setNote(e) {
+    (this.data.note = e), this.updateNote();
+  }
+}
+class ue {
+  constructor(e, t) {
+    (this.children = []),
+      (this.hasInit = !1),
+      (this.isSelect = !1),
+      (this.isExpand = !0),
+      (this.isEdit = !1),
+      (this.layout = null),
+      (this.induces = []),
+      (this.wireFrames = []),
+      (this.wfs = []),
+      (this.summaries = []),
+      (this.callout = null),
+      (this._tableDom = null),
+      (this.style = {}),
+      (this.isHide = !1),
+      (this.nodeType = ""),
+      (this.data = e),
+      t && (this.mindmap = t),
+      e.style && (this.style = e.style),
+      (this.iNode = new ce(e, t)),
+      (this.iNode.tNode = this);
+  }
+  init(e) {
+    this.hasInit ||
+      (0 == this.getLevel()
+        ? ((this.tdDom = document.createElement("th")),
+          this.tdDom.setAttribute("colspan", e))
+        : (this.tdDom = document.createElement("td")),
+      this.tdDom.appendChild(this.iNode.containEl),
+      this.tdDom.setAttribute("data-id", this.data.id),
+      (this.hasInit = !0),
+      this.setStyle());
+  }
+  _initTdDom(e) {
+    this.hasInit ||
+      (0 == this.getLevel()
+        ? ((this.tdDom = document.createElement("th")),
+          this.tdDom.setAttribute("colspan", e))
+        : (this.tdDom = document.createElement("td")),
+      (this.tdDom.innerText = this.data.text),
+      this.tdDom.setAttribute("data-id", this.data.id),
+      (this.hasInit = !0));
+  }
+  getLevel() {
+    for (var e = 0, t = this.parent; t; ) e++, (t = t.parent);
+    return e;
+  }
+  isLeaf() {
+    return !this.children.length;
+  }
+  isFirst() {
+    if (this.parent) {
+      var e = this.parent.getChildren();
+      return e && 0 == e.indexOf(this);
+    }
+    return !0;
+  }
+  isLast() {
+    if (this.parent) {
+      var e = this.parent.getChildren();
+      return e.length && e.indexOf(this) == e.length - 1;
+    }
+    return !0;
+  }
+  getChildren() {
+    return this.children;
+  }
+  getId() {
+    return this.data.id;
+  }
+  unSelect() {
+    this.isSelect = !1;
+  }
+  select() {
+    (this.isSelect = !0), (this.mindmap.selectNode = this);
+  }
+  getOffset(e, t) {
+    for (var i = 0, n = 0; e && e != t; )
+      (i += e.offsetLeft),
+        (n += e.offsetTop),
+        (e = e.offsetParent || e.parentElement || e.parentNode);
+    return { x: i, y: n };
+  }
+  getBox(e) {
+    if (this._tableDom)
+      var t = parseInt(this._tableDom.style.left),
+        i = parseInt(this._tableDom.style.top),
+        n = this.getOffset(this.iNode.containEl, this._tableDom);
+    else
+      (t = parseInt(this.mindmap.tableDom.style.left)),
+        (i = parseInt(this.mindmap.tableDom.style.top)),
+        (n = this.getOffset(this.iNode.containEl, this.mindmap.tableDom));
+    return {
+      x: n.x + t,
+      y: n.y + i,
+      width: this.iNode.containEl.clientWidth,
+      height: this.iNode.containEl.clientHeight,
+    };
+  }
+  getDomBox() {
+    return this.getBox();
+  }
+  clearCacheData() {
+    for (var e = this; e; )
+      (e.boundingRect = null),
+        (e = e.parent || (e.belongInduce && e.belongInduce.node));
+  }
+  expand() {
+    (this.isExpand = !0),
+      (this.data.isExpand = !0),
+      this.layout &&
+        this.layout.tableDom &&
+        (this.layout.tableDom.style.display = "");
+  }
+  hide() {
+    (this.isHide = !0),
+      this.layout &&
+        this.layout.tableDom &&
+        (this.layout.tableDom.style.display = "none");
+  }
+  show() {
+    (this.isHide = !1),
+      this.layout &&
+        this.layout.tableDom &&
+        (this.layout.tableDom.style.display = "");
+  }
+  isShow() {
+    return !this.isHide;
+  }
+  collapse() {
+    (this.isExpand = !1),
+      (this.data.isExpand = !1),
+      this.layout &&
+        this.layout.tableDom &&
+        (this.layout.tableDom.style.display = "none");
+  }
+  refreshBox() {}
+  getAnnotateId() {}
+  addChild(e, t) {
+    -1 == this.children.indexOf(e) &&
+      (t > -1
+        ? (t > this.children.length && (t = this.children.length),
+          this.children.splice(t, 0, e))
+        : this.children.push(e),
+      (e.parent = this));
+  }
+  removeChild(e) {
+    var t = this.children.indexOf(e);
+    return t > -1 && this.children.splice(t, 1), t;
+  }
+  getData() {
+    var e = Object.assign({}, this.data);
+    return (
+      e.mdText && delete e.mdText,
+      (e.isExpand = this.isExpand),
+      this.parent && (e.pid = this.parent.getId()),
+      e.children && delete e.children,
+      this.style && (e.style = Object.assign({}, this.style)),
+      this.layout && (e.layout = { layoutName: "table", direct: "" }),
+      JSON.parse(JSON.stringify(e))
+    );
+  }
+  setStyle(e, t) {
+    t && e
+      ? (this.style = e)
+      : e && (this.style = Object.assign(Object.assign({}, this.style), e));
+    var i = this.style,
+      n = "";
+    for (var s in this.style)
+      n +=
+        "font-size" == s || "border-width" == s
+          ? `${s}:${i[s]}px;`
+          : `${s}:${i[s]};`;
+    this.tdDom.setAttribute("style", n),
+      this.iNode.setStyle(this.style),
+      this.nodeType &&
+        "callout" == this.nodeType &&
+        this.callout &&
+        ((this.callout.color =
+          this.style["background-color"] || this.callout.color),
+        this.callout.refresh());
+  }
+  getStyle() {
+    return this.style;
+  }
+  setNote(e) {
+    (this.data.note = e), this.iNode.setNote(e);
+  }
+  edit() {
+    (this.isEdit = !0), this.iNode.edit();
+  }
+  cancelEdit() {
+    (this.isEdit = !1), this.iNode.cancelEdit();
+  }
+  setText(e) {
+    this.data.text = e;
+  }
+  selectText() {
+    this.iNode.selectText();
+  }
+  getMind() {
+    return this.mindmap;
+  }
+  getShowNodeList() {
+    var e = [];
+    return this.layout && "table" == this.layout.layoutName && e.push(this), e;
+  }
+  setPosition(e, t) {
+    (this.data.x = e),
+      (this.data.y = t),
+      this.layout && this.layout.setPosition(e, t);
+  }
+  getPosition() {
+    return this.getBox();
+  }
+  move(e, t) {
+    var i = this.getPosition();
+    this.setPosition(i.x + e, i.y + t);
+  }
+  getLayout() {
+    for (var e = this, t = null; e; ) {
+      if (e.layout) {
+        t = e.layout;
+        break;
+      }
+      e = e.parent;
+    }
+    return t;
+  }
+  getNodeLayout() {
+    return this.layout;
+  }
+  getRootLayout() {
+    for (var e = this, t = null; e; )
+      (t = e.layout), (e = e.belongInduce ? e.belongInduce.node : e.parent);
+    return t;
+  }
+  getTopLayout() {
+    if (!this.parent) return this.layout || null;
+    var e = this,
+      t = null,
+      i = this.layout;
+    for (this.layout = null; e; ) {
+      if (e.layout) {
+        t = e.layout;
+        break;
+      }
+      e = e.parent;
+    }
+    return (this.layout = i), (this.topLayout = t), t;
+  }
+  refreshCBox() {
+    this.box = this.getCBox();
+  }
+  getContainBox() {
+    return this.containBar ? this.containBox : this.box;
+  }
+  getCBox(e) {
+    var t = this.getBox(),
+      i = 0,
+      n = 0;
+    if (this.callout) {
+      var s = this.callout.getBox();
+      s.y < t.y && (i = t.y - s.y),
+        s.y + s.height > t.y + t.height &&
+          (n = s.y + s.height - t.y - t.height);
+    }
+    if (e && this.wfs.length) {
+      var r = 0;
+      this.wfs.forEach((e) => {
+        if (e.data && e.data.text) {
+          var t = e.getTextBox().height;
+          r < t && (r = t);
+        }
+      }),
+        (i += r + 3),
+        (n += 3);
+    }
+    return Object.assign(Object.assign({}, t), { th: i, bh: n });
+  }
+  getSiblings() {
+    return this.parent ? this.parent.children.filter((e) => e != this) : [];
+  }
+  getLink() {
+    return this.iNode ? this.iNode.getLink() : "";
+  }
+  getImage() {
+    return this.iNode ? this.iNode.getImage() : "";
+  }
+}
+var pe =
+  "undefined" != typeof globalThis
+    ? globalThis
+    : "undefined" != typeof window
+      ? window
+      : "undefined" != typeof global
+        ? global
+        : "undefined" != typeof self
+          ? self
+          : {};
+function me(e) {
+  var t = { exports: {} };
+  return e(t, t.exports), t.exports;
+}
+function fe(e) {
+  throw new Error(
+    'Could not dynamically require "' +
+      e +
+      '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.',
+  );
+}
+var ge = me(function (e, t) {
+  !(function (i, n) {
+    var s = (function () {
+      var e = null,
+        t = {};
+      f();
+      var i = [],
+        n = function (t) {
+          if (
+            void 0 !== (t = t || {}).seed &&
+            null !== t.seed &&
+            t.seed === parseInt(t.seed, 10)
+          )
+            e = t.seed;
+          else if ("string" == typeof t.seed) e = A(t.seed);
+          else {
+            if (void 0 !== t.seed && null !== t.seed)
+              throw new TypeError(
+                "The seed value must be an integer or string",
+              );
+            e = null;
+          }
+          var h, l;
+          if (null !== t.count && void 0 !== t.count) {
+            for (var d = t.count, c = [], u = 0; u < t.count; u++) i.push(!1);
+            for (t.count = null; d > c.length; ) {
+              var p = n(t);
+              null !== e && (t.seed = e), c.push(p);
+            }
+            return (t.count = d), c;
+          }
+          return a([(h = s(t)), (l = r(h, t)), o(h, l, t)], t);
+        };
+      function s(e) {
+        if (i.length > 0) {
+          var t = u((r = x(e.hue))),
+            n = (r[1] - r[0]) / i.length,
+            s = parseInt((t - r[0]) / n);
+          return (
+            !0 === i[s] ? (s = (s + 2) % i.length) : (i[s] = !0),
+            (t = u((r = [(r[0] + s * n) % 359, (r[0] + (s + 1) * n) % 359]))) <
+              0 && (t = 360 + t),
+            t
+          );
+        }
+        var r;
+        return (t = u((r = l(e.hue)))) < 0 && (t = 360 + t), t;
+      }
+      function r(e, t) {
+        if ("monochrome" === t.hue) return 0;
+        if ("random" === t.luminosity) return u([0, 100]);
+        var i = d(e),
+          n = i[0],
+          s = i[1];
+        switch (t.luminosity) {
+          case "bright":
+            n = 55;
+            break;
+          case "dark":
+            n = s - 10;
+            break;
+          case "light":
+            s = 55;
+        }
+        return u([n, s]);
+      }
+      function o(e, t, i) {
+        var n = h(e, t),
+          s = 100;
+        switch (i.luminosity) {
+          case "dark":
+            s = n + 20;
+            break;
+          case "light":
+            n = (s + n) / 2;
+            break;
+          case "random":
+            (n = 0), (s = 100);
+        }
+        return u([n, s]);
+      }
+      function a(e, t) {
+        switch (t.format) {
+          case "hsvArray":
+            return e;
+          case "hslArray":
+            return y(e);
+          case "hsl":
+            var i = y(e);
+            return "hsl(" + i[0] + ", " + i[1] + "%, " + i[2] + "%)";
+          case "hsla":
+            var n = y(e),
+              s = t.alpha || Math.random();
+            return (
+              "hsla(" + n[0] + ", " + n[1] + "%, " + n[2] + "%, " + s + ")"
+            );
+          case "rgbArray":
+            return g(e);
+          case "rgb":
+            return "rgb(" + g(e).join(", ") + ")";
+          case "rgba":
+            var r = g(e);
+            s = t.alpha || Math.random();
+            return "rgba(" + r.join(", ") + ", " + s + ")";
+          default:
+            return p(e);
+        }
+      }
+      function h(e, t) {
+        for (var i = c(e).lowerBounds, n = 0; n < i.length - 1; n++) {
+          var s = i[n][0],
+            r = i[n][1],
+            o = i[n + 1][0],
+            a = i[n + 1][1];
+          if (t >= s && t <= o) {
+            var h = (a - r) / (o - s);
+            return h * t + (r - h * s);
+          }
+        }
+        return 0;
+      }
+      function l(e) {
+        if ("number" == typeof parseInt(e)) {
+          var i = parseInt(e);
+          if (i < 360 && i > 0) return [i, i];
+        }
+        if ("string" == typeof e)
+          if (t[e]) {
+            var n = t[e];
+            if (n.hueRange) return n.hueRange;
+          } else if (e.match(/^#?([0-9A-F]{3}|[0-9A-F]{6})$/i)) {
+            var s = v(e)[0];
+            return [s, s];
+          }
+        return [0, 360];
+      }
+      function d(e) {
+        return c(e).saturationRange;
+      }
+      function c(e) {
+        for (var i in (e >= 334 && e <= 360 && (e -= 360), t)) {
+          var n = t[i];
+          if (n.hueRange && e >= n.hueRange[0] && e <= n.hueRange[1])
+            return t[i];
+        }
+        return "Color not found";
+      }
+      function u(t) {
+        if (null === e) {
+          var i = 0.618033988749895,
+            n = Math.random();
+          return (n += i), (n %= 1), Math.floor(t[0] + n * (t[1] + 1 - t[0]));
+        }
+        var s = t[1] || 1,
+          r = t[0] || 0,
+          o = (e = (9301 * e + 49297) % 233280) / 233280;
+        return Math.floor(r + o * (s - r));
+      }
+      function p(e) {
+        var t = g(e);
+        function i(e) {
+          var t = e.toString(16);
+          return 1 == t.length ? "0" + t : t;
+        }
+        return "#" + i(t[0]) + i(t[1]) + i(t[2]);
+      }
+      function m(e, i, n) {
+        var s = n[0][0],
+          r = n[n.length - 1][0],
+          o = n[n.length - 1][1],
+          a = n[0][1];
+        t[e] = {
+          hueRange: i,
+          lowerBounds: n,
+          saturationRange: [s, r],
+          brightnessRange: [o, a],
+        };
+      }
+      function f() {
+        m("monochrome", null, [
+          [0, 0],
+          [100, 0],
+        ]),
+          m(
+            "red",
+            [-26, 18],
+            [
+              [20, 100],
+              [30, 92],
+              [40, 89],
+              [50, 85],
+              [60, 78],
+              [70, 70],
+              [80, 60],
+              [90, 55],
+              [100, 50],
+            ],
+          ),
+          m(
+            "orange",
+            [18, 46],
+            [
+              [20, 100],
+              [30, 93],
+              [40, 88],
+              [50, 86],
+              [60, 85],
+              [70, 70],
+              [100, 70],
+            ],
+          ),
+          m(
+            "yellow",
+            [46, 62],
+            [
+              [25, 100],
+              [40, 94],
+              [50, 89],
+              [60, 86],
+              [70, 84],
+              [80, 82],
+              [90, 80],
+              [100, 75],
+            ],
+          ),
+          m(
+            "green",
+            [62, 178],
+            [
+              [30, 100],
+              [40, 90],
+              [50, 85],
+              [60, 81],
+              [70, 74],
+              [80, 64],
+              [90, 50],
+              [100, 40],
+            ],
+          ),
+          m(
+            "blue",
+            [178, 257],
+            [
+              [20, 100],
+              [30, 86],
+              [40, 80],
+              [50, 74],
+              [60, 60],
+              [70, 52],
+              [80, 44],
+              [90, 39],
+              [100, 35],
+            ],
+          ),
+          m(
+            "purple",
+            [257, 282],
+            [
+              [20, 100],
+              [30, 87],
+              [40, 79],
+              [50, 70],
+              [60, 65],
+              [70, 59],
+              [80, 52],
+              [90, 45],
+              [100, 42],
+            ],
+          ),
+          m(
+            "pink",
+            [282, 334],
+            [
+              [20, 100],
+              [30, 90],
+              [40, 86],
+              [60, 84],
+              [80, 80],
+              [90, 75],
+              [100, 73],
+            ],
+          );
+      }
+      function g(e) {
+        var t = e[0];
+        0 === t && (t = 1), 360 === t && (t = 359), (t /= 360);
+        var i = e[1] / 100,
+          n = e[2] / 100,
+          s = Math.floor(6 * t),
+          r = 6 * t - s,
+          o = n * (1 - i),
+          a = n * (1 - r * i),
+          h = n * (1 - (1 - r) * i),
+          l = 256,
+          d = 256,
+          c = 256;
+        switch (s) {
+          case 0:
+            (l = n), (d = h), (c = o);
+            break;
+          case 1:
+            (l = a), (d = n), (c = o);
+            break;
+          case 2:
+            (l = o), (d = n), (c = h);
+            break;
+          case 3:
+            (l = o), (d = a), (c = n);
+            break;
+          case 4:
+            (l = h), (d = o), (c = n);
+            break;
+          case 5:
+            (l = n), (d = o), (c = a);
+        }
+        return [Math.floor(255 * l), Math.floor(255 * d), Math.floor(255 * c)];
+      }
+      function v(e) {
+        e =
+          3 === (e = e.replace(/^#/, "")).length
+            ? e.replace(/(.)/g, "$1$1")
+            : e;
+        var t = parseInt(e.substr(0, 2), 16) / 255,
+          i = parseInt(e.substr(2, 2), 16) / 255,
+          n = parseInt(e.substr(4, 2), 16) / 255,
+          s = Math.max(t, i, n),
+          r = s - Math.min(t, i, n),
+          o = s ? r / s : 0;
+        switch (s) {
+          case t:
+            return [(((i - n) / r) % 6) * 60 || 0, o, s];
+          case i:
+            return [60 * ((n - t) / r + 2) || 0, o, s];
+          case n:
+            return [60 * ((t - i) / r + 4) || 0, o, s];
+        }
+      }
+      function y(e) {
+        var t = e[0],
+          i = e[1] / 100,
+          n = e[2] / 100,
+          s = (2 - i) * n;
+        return [
+          t,
+          Math.round(((i * n) / (s < 1 ? s : 2 - s)) * 1e4) / 100,
+          (s / 2) * 100,
+        ];
+      }
+      function A(e) {
+        for (
+          var t = 0, i = 0;
+          i !== e.length && !(t >= Number.MAX_SAFE_INTEGER);
+          i++
+        )
+          t += e.charCodeAt(i);
+        return t;
+      }
+      function x(e) {
+        if (isNaN(e)) {
+          if ("string" == typeof e)
+            if (t[e]) {
+              var i = t[e];
+              if (i.hueRange) return i.hueRange;
+            } else if (e.match(/^#?([0-9A-F]{3}|[0-9A-F]{6})$/i)) {
+              return c(v(e)[0]).hueRange;
+            }
+        } else {
+          var n = parseInt(e);
+          if (n < 360 && n > 0) return c(e).hueRange;
+        }
+        return [0, 360];
+      }
+      return n;
+    })();
+    e && e.exports && (t = e.exports = s), (t.randomColor = s);
+  })();
+});
+class ve {
+  constructor(e) {
+    (this.edges = []),
+      (this.isShow = !0),
+      (this.lineWeight = !0),
+      (this.svgDom = null),
+      (this.name = e);
+  }
+  layout(e, t) {}
+  refresh() {}
+  addEdge(e) {
+    this.edges.push(e);
+  }
+  removeEdge(e) {
+    var t = this.edges.indexOf(e);
+    t > -1 && this.edges.splice(t, t);
+  }
+  moveNode(e, t, i) {
+    e && e.move(t, i),
+      e.callout && e.callout.refresh(),
+      e.wfs &&
+        e.wfs.forEach((e) => {
+          e.move(t, i);
+        }),
+      e.induces &&
+        e.induces.forEach((e) => {
+          e.move(t, i), this.moveNode(e.root, t, i);
+        }),
+      e &&
+        e.children.forEach((e) => {
+          this.moveNode(e, t, i);
+        });
+  }
+  linePoint(e, t) {
+    let i = 0;
+    var n = Math.ceil;
+    return (
+      t % 2 == 1 && ((i = 0.5), (n = parseInt)),
+      e.map((e) => [n(e[0]) + i, n(e[1]) + i])
+    );
+  }
+  _updateNodeAssist(e, t) {
+    for (var i = e; i; ) {
+      i.callout && i.callout.refresh();
+      var n = i.wireFrames,
+        s = i.summaries;
+      if (
+        (n.length &&
+          n.forEach((t) => {
+            t.items.indexOf(e) > -1 && (t.refreshNode(), t.refresh());
+          }),
+        s.length &&
+          s.forEach((t) => {
+            t.items.indexOf(e) > -1 && (t.refreshNode(), t.refresh());
+          }),
+        t)
+      ) {
+        if (i == t) break;
+        i = i.parent;
+      } else i = i.parent;
+    }
+  }
+  _updateRootAssist() {
+    this.root.induce &&
+      (this.root.induce.refreshItems(), this.root.induce.refresh()),
+      this.root.wireFrame &&
+        (this.root.wireFrame.refreshItems(), this.root.wireFrame.refresh());
+  }
+}
+class ye extends ve {
+  constructor(e, t, i) {
+    super("minder"),
+      (this.layoutName = "mindmap"),
+      (this.direct = ""),
+      (this.levelDis = 40),
+      (this.nodeDis = 8),
+      (this.firstLevelDis = 80),
+      (this.firstNodeDis = 20),
+      (this.isCache = !0),
+      (this.lefts = []),
+      (this.rights = []),
+      (this.colors = []),
+      (this.lineWidth = 2),
+      (this.root = e),
+      (this.mind = this.root.mindmap),
+      (this.direct = t || "mindmap"),
+      (this.colors = i || []),
+      (this.svgDom = this.mind.edgeGroup.group());
+  }
+  layout(e, t) {
+    e && (this.root = e),
+      this.root.isExpand &&
+        (this.svgDom || (this.svgDom = this.root.mindmap.edgeGroup.group()),
+        (this.root.layout = this),
+        t && (this.direct = t),
+        this.root.nodeType &&
+          "induce" == this.root.nodeType &&
+          ((this.firstLevelDis = 20), (this.firstNodeDis = 10)),
+        this.root.nodeType &&
+          "freeNode" == this.root.nodeType &&
+          (this.root.containEl.classList.contains("mm-root") ||
+            this.root.containEl.classList.add("mm-root")),
+        (this.lefts = []),
+        (this.rights = []),
+        this.root.isShow() &&
+          (this.setDirect(), this._layoutSecondLevelNode(this.root)),
+        this.createLink());
+  }
+  setDirect() {
+    var e = this,
+      t = this.root.children.length,
+      i = this.root;
+    "right" == this.direct
+      ? ((this.rights = i.children),
+        this.rights.forEach((e) => {
+          this._setDirect(e, "right");
+        }))
+      : "left" == this.direct
+        ? ((this.lefts = i.children),
+          this.lefts.forEach((e) => {
+            this._setDirect(e, "left");
+          }))
+        : i.children.forEach(function (i, n) {
+            n < t / 2
+              ? (e.rights.push(i), e._setDirect(i, "right"))
+              : (e.lefts.push(i), e._setDirect(i, "left"));
+          });
+  }
+  _setDirect(e, t) {
+    if (((e.direct = t), e.containEl)) {
+      var i = e.containEl.classList.contains("mm-node-second");
+      e.containEl.setAttribute("class", ""),
+        e.containEl.classList.add("mm-node"),
+        e.containEl.classList.add("mm-node-" + t),
+        e.containEl.classList.add(`mm-${this.layoutName}-node`),
+        e.isLeaf() && !e.containEl.classList.contains("mm-node-leaf")
+          ? e.containEl.classList.add("mm-node-leaf")
+          : e.containEl.classList.contains("mm-node-leaf") &&
+            e.containEl.classList.remove("mm-node-leaf"),
+        1 == e.getLevel() &&
+          "induce" != this.root.nodeType &&
+          (e.containEl.classList.add("mm-node-second"), e.refreshBox()),
+        i && e.refreshBox(),
+        e.isExpand || e.containEl.classList.add("mm-node-collapse"),
+        e.isSelect && e.containEl.classList.add("mm-node-select");
+    }
+    !e.layout &&
+      e.isExpand &&
+      e.children.forEach((e) => {
+        this._setDirect(e, t);
+      });
+  }
+  _layoutSecondLevelNode(e) {
+    this._layoutMinder(),
+      "induce" != this.root.nodeType && this._doRefresh(),
+      this._updateRootAssist();
+  }
+  _doRefresh() {
+    var e = this.root,
+      t = e.getPosition(),
+      i = e.getBox(),
+      n = t.y + i.height / 2,
+      s = e.getChildren(),
+      r = s.filter((e) => "right" == e.direct),
+      o = s.filter((e) => "left" == e.direct);
+    if (r.length >= 2) {
+      var a = r[0],
+        h = r[r.length - 1],
+        l = a.getPosition(),
+        d = h.getPosition(),
+        c = h.getBox(),
+        u = d.y + c.height - n,
+        p = n - l.y;
+      if (Math.abs(u) != Math.abs(p)) {
+        var m = Math.abs(Math.abs(u) - Math.abs(p)) / 2;
+        Math.abs(u) > Math.abs(p)
+          ? r.forEach((e) => {
+              this.moveNode(e, 0, -parseInt(m + ""));
+            })
+          : r.forEach((e) => {
+              this.moveNode(e, 0, parseInt(m + ""));
+            });
+      }
+    }
+    if (o.length >= 2) {
+      (a = o[0]),
+        (h = o[o.length - 1]),
+        (l = a.getPosition()),
+        (d = h.getPosition()),
+        (c = h.getBox()),
+        (u = d.y + c.height - n),
+        (p = n - l.y);
+      if (Math.abs(u) != Math.abs(p)) {
+        m = Math.abs(Math.abs(u) - Math.abs(p)) / 2;
+        Math.abs(u) > Math.abs(p)
+          ? o.forEach((e) => {
+              this.moveNode(e, 0, -parseInt(m + ""));
+            })
+          : o.forEach((e) => {
+              this.moveNode(e, 0, parseInt(m + ""));
+            });
+      }
+    }
+  }
+  updateRight() {
+    var e = this.root.getPosition(),
+      t = this.root.getBox(),
+      i = this.rights,
+      n = this._getNodesHeight(i),
+      s = [
+        parseInt(e.x + t.width + this.firstLevelDis + ""),
+        parseInt(e.y + t.height / 2 - n / 2 + ""),
+      ];
+    i.forEach((e) => {
+      e.setPosition(s[0], s[1]);
+      var t = e.getBox();
+      s[1] += parseInt(t.height + this.firstNodeDis + "");
+    }),
+      i.forEach((e) => {
+        this._layoutRight(e);
+      });
+  }
+  updateLeft() {
+    var e = this.root.getPosition(),
+      t = this.root.getBox(),
+      i = this.lefts,
+      n = this._getNodesHeight(i),
+      s = [
+        parseInt(e.x - this.firstLevelDis + ""),
+        parseInt(e.y + t.height / 2 - n / 2 + ""),
+      ];
+    i.forEach((e) => {
+      var t = e.getBox();
+      e.setPosition(parseInt(s[0] - t.width + ""), parseInt(s[1] + "")),
+        (s[1] += t.height + this.firstNodeDis);
+    }),
+      i.forEach((e) => {
+        this._layoutLeft(e);
+      });
+  }
+  _layoutMinder() {
+    this.updateRight(), this.updateLeft(), this._doLayout(this.root);
+  }
+  _getNodesHeight(e) {
+    if (e[0] && 1 == e[0].getLevel()) var t = this.firstNodeDis;
+    else t = this.nodeDis;
+    var i = 0;
+    return (
+      e.forEach((n, s) => {
+        (i += n.getBox().height), s != e.length - 1 && (i += t);
+      }),
+      i
+    );
+  }
+  _layoutRight(e) {
+    if (e.isExpand) {
+      var t = e.getPosition(),
+        i = e.getBox(),
+        n = this._getNodesHeight(e.children);
+      e.callout && e.callout.refresh();
+      var s = [t.x + i.width + this.levelDis, i.y + i.height / 2 - n / 2];
+      if (
+        (e.children.forEach((e) => {
+          e.setPosition(s[0], s[1]);
+          var t = e.getBox();
+          s[1] += t.height + this.nodeDis;
+        }),
+        e.layout)
+      )
+        if ("table" != e.layout.layoutName) {
+          e.layout.layout(e, e.layout.direct || "");
+          t = e.getPosition();
+          i = e.mindmap.getBBox(e);
+          var r = parseInt(Math.abs(t.x - i.x) + "");
+          this.moveNode(e, r, 0), (e.boundingRect = null), (e.direct = "right");
+        } else (e.boundingRect = null), (e.direct = "right");
+      else
+        e.children.forEach((e) => {
+          this._layoutRight(e);
+        });
+    }
+  }
+  _updateNodeAssist(e) {
+    e.callout && e.callout.refresh();
+    var t = e.parent,
+      i = {};
+    if (t) {
+      var n = t.wireFrames,
+        s = t.summaries;
+      n.length &&
+        n.forEach((t) => {
+          if (t.node == e && (t.refresh(), t.data && t.data.text))
+            if (i[e.getId()])
+              (i[e.getId()].rangeNode = i[e.getId()].rangeNode.concat(
+                t.rangeNode.slice(),
+              )),
+                i[e.getId()].rangeNode.unique();
+            else {
+              var n = t.getTextBox().height,
+                s = t.rangeNode.slice();
+              i[e.getId()] = { node: e, wf: t, topDy: n + 4, rangeNode: s };
+            }
+        }),
+        s.length &&
+          s.forEach((t) => {
+            t.node == e && t.refresh();
+          });
+    }
+    this.topInfo = i;
+  }
+  _doLayout(e) {
+    var t = this,
+      i = e.mindmap;
+    i.traverseDF((e) => {
+      if (e != t.root && e.isShow()) {
+        if (e.layout) {
+          if (e.layout != t && e.getTopLayout() != t) return;
+        } else if (e.getLayout() != t) return;
+        t._updateNodeAssist(e);
+        var n = e.getCBox();
+        if (t.isCache && e.boundingRect) var s = e.boundingRect;
+        else {
+          var r = e.getShowNodeList(),
+            o = [],
+            a = [],
+            h = [],
+            l = [];
+          if (
+            (r.forEach((e) => {
+              e.callout && e.callout.isShow && h.push(e.callout);
+              var t = e.wireFrames;
+              e.summaries.forEach((e) => {
+                e.isShow() && -1 == a.indexOf(e) && a.push(e);
+              }),
+                t.forEach((e) => {
+                  e.isHide || (-1 == o.indexOf(e) && o.push(e));
+                });
+            }),
+            (r = r.concat(o)),
+            a.forEach((e) => {
+              (r = r.concat(e.getAllItem())), (l = l.concat(e.groups));
+            }),
+            (r = r.concat(h)).length)
+          )
+            s = i.getBoundingRect(r);
+        }
+        var d = e.parent;
+        if (d)
+          var c = d.wireFrames,
+            u = d.summaries;
+        if (e.boundingRect)
+          var p = e.boundingRect.topDy,
+            m = e.boundingRect.downDy;
+        else
+          (p = Math.abs(s.y - n.y)),
+            (m = Math.abs(s.y + s.height - n.y - n.height)),
+            c &&
+              c.length &&
+              c.forEach((i) => {
+                var n = i.topNode.getCBox();
+                if (
+                  (i.node == e &&
+                    ((p += Math.abs(6 + n.th)),
+                    t.topInfo[e.getId()] && (p += t.topInfo[e.getId()].topDy)),
+                  i.endNode && i.endNode == e)
+                ) {
+                  var s = i.bottomNode.getCBox();
+                  m += Math.abs(6 + s.bh);
+                }
+              }),
+            (s.topDy = p),
+            (s.downDy = m),
+            (e.boundingRect = s);
+        t._adjustNode(e, 0, p, m),
+          c &&
+            c.length &&
+            c.forEach((t) => {
+              t.endNode == e && t.refresh();
+            }),
+          u &&
+            u.length &&
+            u.forEach((t) => {
+              t.endNode == e && t.refresh();
+            });
+      }
+    }, e);
+  }
+  _layoutLeft(e) {
+    if (e.isExpand) {
+      var t = e.getPosition(),
+        i = e.getBox(),
+        n = this._getNodesHeight(e.children);
+      e.callout && e.callout.refresh();
+      var s = [t.x - this.levelDis, t.y + i.height / 2 - n / 2];
+      if (
+        (e.children.forEach((e) => {
+          var t = e.getBox();
+          e.setPosition(s[0] - t.width, s[1]),
+            (s[1] += t.height + this.nodeDis);
+        }),
+        e.layout)
+      )
+        if ("table" != e.layout.layoutName) {
+          e.layout.layout(e, e.layout.direct || "");
+          t = e.getPosition();
+          var r = e.mindmap.getBBox(e),
+            o = Math.abs(t.x + i.width - r.x - r.width);
+          this.moveNode(e, -o, 0), (e.direct = "left"), (e.boundingRect = null);
+        } else (e.direct = "left"), (e.boundingRect = null);
+      else
+        e.children.forEach((e) => {
+          this._layoutLeft(e);
+        });
+    }
+  }
+  _adjustDoNode(e, t, i) {
+    if (e)
+      for (var n = e.direct; e && e != this.root; ) {
+        var s = e.getSiblings(),
+          r = e.getPosition();
+        s.forEach((e) => {
+          e.direct == n &&
+            (e.getPosition().y > r.y
+              ? this.moveNode(e, 0, i)
+              : this.moveNode(e, 0, -t));
+        }),
+          (e = e.parent);
+      }
+  }
+  _adjustNode(e, t, i, n) {
+    if (e) {
+      var s = e.direct;
+      if (e && e != this.root) {
+        var r = e.getSiblings(),
+          o = e.getPosition();
+        r.forEach((e) => {
+          e.direct == s &&
+            (e.getPosition().y > o.y
+              ? this.moveNode(e, t, n)
+              : this.moveNode(e, t, -i));
+        });
+      }
+    }
+  }
+  refresh(e) {
+    this.layout(this.root, e || this.direct), this.createLink();
+  }
+  createLink() {
+    var e = this,
+      t = this.root.mindmap;
+    if (
+      (this.svgDom && this.svgDom.clear(),
+      0 != this.root.getChildren().length && this.svgDom && this.root.isShow())
+    ) {
+      var i = this.lineWidth;
+      t.traverseBF((t) => {
+        if (t.isExpand) {
+          var n = t.getChildren(),
+            s = t.getBox(),
+            r = t.getPosition(),
+            o = t.getLevel(),
+            a = n.length,
+            h = 2,
+            l = 1,
+            d = 2,
+            c = 1;
+          1 == a && ((h = 4), (l = 1), (d = 4), (c = 3)),
+            n.forEach((n) => {
+              var u = n.direct,
+                p = n.getBox(),
+                m = n.getPosition();
+              let f = t.stroke ? t.stroke : n.stroke ? n.stroke : ge();
+              if ("right" == u) {
+                if (0 == o || 1 == o) {
+                  var g = [s.width + r.x, s.height / 2 + r.y];
+                  if (0 == o) var v = [m.x, p.height / 2 + m.y];
+                  else v = [p.width + m.x, p.height + m.y];
+                } else
+                  (g = [s.width + r.x, s.height + r.y]),
+                    (v = [p.width + m.x, p.height + m.y]);
+                if (0 == o)
+                  var y = [
+                    (A = [g[0] + (this.firstLevelDis / h) * l, g[1]])[0],
+                    v[1],
+                  ];
+                else {
+                  var A = [g[0] + (this.levelDis / h) * l, g[1]];
+                  y = [g[0] + (this.levelDis / d) * c, v[1]];
+                }
+              } else {
+                if (0 == o || 1 == o) {
+                  g = [r.x, s.height / 2 + r.y];
+                  if (0 == o) v = [m.x + p.width, p.height / 2 + m.y];
+                  else v = [m.x, p.height + m.y];
+                } else (g = [r.x, s.height + r.y]), (v = [m.x, p.height + m.y]);
+                if (0 == o)
+                  y = [
+                    (A = [g[0] - (this.firstLevelDis / h) * l, g[1]])[0],
+                    v[1],
+                  ];
+                else
+                  (A = [g[0] - (this.levelDis / h) * l, g[1]]),
+                    (y = [g[0] - (this.levelDis / d) * c, v[1]]);
+              }
+              if (1 == a)
+                if (1 == o) var x = [g, A, y, v];
+                else if (Math.abs(g[1] - v[1]) > 2) x = [g, y, v];
+                else x = [g, v];
+              else if (0 == t.getLevel()) {
+                var b = [],
+                  w = [];
+                if (
+                  (t.getChildren().forEach((e) => {
+                    "right" == e.direct ? b.push(e) : w.push(e);
+                  }),
+                  (b.length >= 2 && 0 == b.indexOf(n)) ||
+                    (b.length >= 2 && b.indexOf(n) == b.length - 1))
+                )
+                  if ("right" == u) {
+                    if (v[1] > g[1])
+                      var k = [A[0], v[1] - 2],
+                        C = [A[0] + 2, v[1]];
+                    else (k = [A[0], v[1] + 2]), (C = [A[0] + 2, v[1]]);
+                    x = [g, A, k, C, v];
+                  } else {
+                    if (v[1] > g[1])
+                      (k = [A[0], v[1] - 2]), (C = [A[0] - 2, v[1]]);
+                    else (k = [A[0], v[1] + 2]), (C = [A[0] - 2, v[1]]);
+                    x = [g, A, k, C, v];
+                  }
+                else if (
+                  (w.length >= 2 && 0 == w.indexOf(n)) ||
+                  (w.length >= 2 && w.indexOf(n) == w.length - 1)
+                )
+                  if ("right" == u) {
+                    if (v[1] > g[1])
+                      (k = [A[0], v[1] - 2]), (C = [A[0] + 2, v[1]]);
+                    else (k = [A[0], v[1] + 2]), (C = [A[0] + 2, v[1]]);
+                    x = [g, A, k, C, v];
+                  } else {
+                    if (v[1] > g[1])
+                      (k = [A[0], v[1] - 2]), (C = [A[0] - 2, v[1]]);
+                    else (k = [A[0], v[1] + 2]), (C = [A[0] - 2, v[1]]);
+                    x = [g, A, k, C, v];
+                  }
+                else if (
+                  (b.length >= 2 && 0 != b.indexOf(n)) ||
+                  (b.length >= 2 && b.indexOf(n) != b.length - 1) ||
+                  (w.length >= 2 && 0 != w.indexOf(n)) ||
+                  (w.length >= 2 && w.indexOf(n) != w.length - 1)
+                )
+                  x = [y, v];
+                if (1 == b.length && 1 == w.length) x = [g, v];
+                if (b.length > 1 && 1 == w.length)
+                  if ("right" == u) x = [g, y, v];
+                  else x = [g, v];
+              } else if ("right" == u)
+                if (n.isFirst() || n.isLast()) {
+                  if (v[1] > g[1])
+                    (k = [A[0], v[1] - 2]), (C = [A[0] + 2, v[1]]);
+                  else (k = [A[0], v[1] + 2]), (C = [A[0] + 2, v[1]]);
+                  x = [g, A, k, C, v];
+                } else x = [y, v];
+              else if (n.isFirst() || n.isLast()) {
+                if (v[1] > g[1]) (k = [A[0], v[1] - 2]), (C = [A[0] - 2, v[1]]);
+                else (k = [A[0], v[1] + 2]), (C = [A[0] - 2, v[1]]);
+                x = [g, A, k, C, v];
+              } else x = [y, v];
+              var E = e.svgDom.polyline(e.linePoint(x, i));
+              E.fill("none"),
+                E.stroke({
+                  color: f,
+                  width: i,
+                  linecap: "round",
+                  linejoin: "round",
+                }),
+                (E.source = t),
+                (E.target = n);
+            });
+        }
+      }, this.root);
+    }
+  }
+}
+class Ae extends ye {
+  constructor(e, t, i) {
+    super(e, t, i),
+      (this.firstLevelDis = 50),
+      (this.levelDis = 30),
+      (this.nodeDis = 10),
+      (this.layoutName = "mindmap1");
+  }
+  createLink() {
+    var e = this,
+      t = this.levelDis,
+      i = this.direct;
+    this.svgDom && this.svgDom.clear();
+    var n = this.root;
+    if (this.svgDom && this.root.isShow()) {
+      var s = this.root.getLevel();
+      n.children.forEach((e, t) => {
+        e.stroke || (e.stroke = this.colors[t] || ge());
+      }),
+        (function n(r) {
+          if (r == e.root);
+          else if (r.layout) return;
+          if (r.isExpand) {
+            var o = r.getChildren(),
+              a = o.length,
+              h = r.getPosition(),
+              l = r.getBox(),
+              d = r.getLevel();
+            o.length &&
+              o.forEach(function (o) {
+                var c = o.direct,
+                  u = o.getPosition(),
+                  p = o.getBox();
+                let m = r.stroke ? r.stroke : o.stroke ? o.stroke : ge();
+                if (
+                  (o.stroke || (o.stroke = m),
+                  o._barDom &&
+                    ((o._barDom.style.backgroundColor = m),
+                    (o._barDom.style.borderColor = m)),
+                  d == s)
+                )
+                  if ("minder" == i)
+                    if ("right" == c)
+                      var f = { x: h.x + l.width / 2, y: h.y + l.height / 2 },
+                        g = { x: u.x, y: p.height / 2 + u.y };
+                    else
+                      (f = { x: h.x + l.width / 2, y: h.y + l.height / 2 }),
+                        (g = {
+                          x: Number.parseInt(u.x + p.width + ""),
+                          y: Number.parseInt(p.height / 2 + u.y + ""),
+                        });
+                  else {
+                    f = { x: h.x + l.width / 2, y: h.y + l.height / 2 };
+                    if ("right" == c) g = { x: u.x, y: p.height / 2 + u.y };
+                    else g = { x: u.x + p.width, y: p.height / 2 + u.y };
+                  }
+                else if ("right" == c)
+                  (f = { x: h.x + l.width, y: h.y + l.height / 2 }),
+                    (g = { x: u.x, y: p.height / 2 + u.y });
+                else
+                  (f = { x: h.x, y: h.y + l.height / 2 }),
+                    (g = { x: u.x + p.width, y: p.height / 2 + u.y });
+                if (d == s) var v = e.svgDom.path();
+                else v = e.svgDom.polyline();
+                if (
+                  (v.fill("none"),
+                  v.stroke({
+                    color: m,
+                    width: e.lineWidth,
+                    linecap: "round",
+                    linejoin: "round",
+                  }),
+                  d == s)
+                )
+                  if ("right" == c) {
+                    var y = parseInt((f.x + g.x) / 2 - 30 + ""),
+                      A = parseInt(f.y + (g.y - f.y) / 1.1 + ""),
+                      x = `M ${f.x} ${f.y} Q ${y} ${A},${g.x} ${g.y} `;
+                    v.plot(x);
+                  } else {
+                    (y = parseInt((f.x + g.x) / 2 + 30 + "")),
+                      (A = parseInt(f.y + (g.y - f.y) / 1.1 + "")),
+                      (x = `M ${f.x} ${f.y} Q ${y} ${A},${g.x} ${g.y} `);
+                    v.plot(x);
+                  }
+                else {
+                  var b = g.y < f.y ? "top" : "bottom";
+                  if (1 == a)
+                    var w = [
+                      [f.x, f.y],
+                      [g.x, g.y],
+                    ];
+                  else if ("right" == c)
+                    if ("top" == b) {
+                      var k = [f.x, f.y],
+                        C = [f.x + t / 2, f.y],
+                        E = [g.x, g.y];
+                      if (o.isFirst())
+                        w = [
+                          k,
+                          C,
+                          (D = [f.x + t / 2, g.y + 5]),
+                          (N = [f.x + t / 2 + 5, g.y]),
+                          E,
+                        ];
+                      else if (Math.abs(g.y - f.y) < 3)
+                        w = [k, C, (N = [f.x + t / 2, g.y]), E];
+                      else
+                        w = [
+                          k,
+                          C,
+                          (D = [f.x + t / 2, g.y + 5]),
+                          (N = [f.x + t / 2 + 5, g.y]),
+                          E,
+                        ];
+                    } else {
+                      (k = [f.x, f.y]),
+                        (C = [f.x + t / 2, f.y]),
+                        (E = [g.x, g.y]);
+                      if (o.isLast())
+                        w = [
+                          k,
+                          C,
+                          (D = [f.x + t / 2, g.y - 5]),
+                          (N = [f.x + t / 2 + 5, g.y]),
+                          E,
+                        ];
+                      else if (Math.abs(g.y - f.y) < 3)
+                        w = [k, C, (N = [f.x + t / 2, g.y]), E];
+                      else {
+                        var D, N;
+                        w = [
+                          k,
+                          C,
+                          (D = [f.x + t / 2, g.y - 5]),
+                          (N = [f.x + t / 2 + 5, g.y]),
+                          E,
+                        ];
+                      }
+                    }
+                  else if ("top" == b) {
+                    (k = [f.x, f.y]),
+                      (C = [f.x - t / 2, f.y]),
+                      (E = [g.x, g.y]);
+                    if (o.isFirst())
+                      w = [
+                        k,
+                        C,
+                        (D = [f.x - t / 2, g.y + 5]),
+                        (N = [f.x - t / 2 - 5, g.y]),
+                        E,
+                      ];
+                    else if (Math.abs(g.y - f.y) < 3)
+                      w = [k, C, (N = [f.x - t / 2, g.y]), E];
+                    else
+                      w = [
+                        k,
+                        C,
+                        (D = [f.x - t / 2, g.y + 5]),
+                        (N = [f.x - t / 2 - 5, g.y]),
+                        E,
+                      ];
+                  } else {
+                    (k = [f.x + 1, f.y]),
+                      (C = [f.x - t / 2, f.y]),
+                      (E = [g.x, g.y]);
+                    if (o.isLast())
+                      w = [
+                        k,
+                        C,
+                        (D = [f.x - t / 2, g.y - 5]),
+                        (N = [f.x - t / 2 - 5, g.y]),
+                        E,
+                      ];
+                    else if (Math.abs(g.y - f.y) < 3)
+                      w = [k, C, (N = [f.x - t / 2, g.y]), E];
+                    else
+                      w = [
+                        k,
+                        C,
+                        (D = [f.x - t / 2, g.y - 5]),
+                        (N = [f.x - t / 2 - 5, g.y]),
+                        E,
+                      ];
+                  }
+                  if (D) {
+                    (v = e.svgDom.polyline(
+                      e.linePoint([k, C, D], e.lineWidth),
+                    )).fill("none"),
+                      v.stroke({
+                        color: m,
+                        width: e.lineWidth,
+                        linecap: "round",
+                        linejoin: "round",
+                      });
+                    var I = e.linePoint([D], e.lineWidth)[0],
+                      S = e.linePoint([N], e.lineWidth)[0],
+                      B = `M${I[0]} ${I[1]},Q${I[0]} ${S[1]},${S[0]} ${S[1]}`,
+                      T = e.svgDom.path().stroke({
+                        color: m,
+                        width: e.lineWidth,
+                        linecap: "round",
+                        linejoin: "round",
+                      });
+                    T.plot(B),
+                      T.fill("none"),
+                      (v = e.svgDom.line(
+                        e.linePoint([N, E], e.lineWidth),
+                      )).fill("none"),
+                      v.stroke({
+                        color: m,
+                        width: e.lineWidth,
+                        linecap: "round",
+                        linejoin: "round",
+                      });
+                  } else {
+                    (v = e.svgDom.polyline(e.linePoint(w, e.lineWidth))).fill(
+                      "none",
+                    ),
+                      v.stroke({
+                        color: m,
+                        width: e.lineWidth,
+                        linecap: "round",
+                        linejoin: "round",
+                      });
+                  }
+                }
+                n(o);
+              });
+          }
+        })(n),
+        n.children.forEach((e) => {
+          r(e);
+        });
+    }
+    function r(e) {
+      if (e.isExpand) {
+        if (e.layout) return void e.layout.createLink();
+        e.children.forEach((e) => {
+          r(e);
+        });
+      }
+    }
+  }
+}
+var xe = {
+    mindmap1: Ae,
+    mindmap2: class extends ye {
+      constructor(e, t, i) {
+        super(e, t, i),
+          (this.firstLevelDis = 40),
+          (this.levelDis = 30),
+          (this.nodeDis = 10),
+          (this.type = "minder"),
+          (this.layoutName = "mindmap2");
+      }
+      createLink() {
+        var e = this,
+          t = this.levelDis,
+          i = this.root;
+        if (
+          (this.svgDom && this.svgDom.clear(),
+          this.svgDom && this.root.isExpand && this.root.isShow())
+        ) {
+          var n = this.lineWidth,
+            s = this.rights,
+            r = this.lefts,
+            o = i.getBox(),
+            a = i.getPosition();
+          s.length,
+            r.length,
+            i.children.forEach((e, t) => {
+              e.stroke || (e.stroke = this.colors[t] || ge());
+            }),
+            (function () {
+              var t = [],
+                h = [];
+              s.forEach((e) => {
+                e.getPosition().y + e.getBox().height / 2 > o.height / 2 + a.y
+                  ? h.push(e)
+                  : t.push(e);
+              });
+              var l = t.length,
+                d = h.length,
+                c = parseInt((o.width / 2 - 6) / l + ""),
+                u = parseInt((o.width / 2 - 6) / d + "");
+              t.forEach((t, s) => {
+                var r = t.getBox(),
+                  h = t.getPosition(),
+                  l = r.height / 2 + h.y,
+                  d = l - (o.height / 2 + a.y),
+                  u = [a.x + o.width / 2 + 6 + c * s, a.y + o.height / 2];
+                if (Math.abs(d) > 2)
+                  var p = [u[0], l - (5 * d) / Math.abs(d)],
+                    m = [u[0] + 5, l];
+                else (p = [u[0], l - d / 2]), (m = [u[0] + Math.abs(d) / 2, l]);
+                var f = [h.x, l];
+                let g = i.stroke ? i.stroke : t.stroke || ge();
+                t.stroke || (t.stroke = g),
+                  t._barDom &&
+                    ((t._barDom.style.backgroundColor = g),
+                    (t._barDom.style.borderColor = g));
+                var v = e.linePoint([p], n)[0],
+                  y = e.linePoint([m], n)[0],
+                  A = `M${v[0]} ${v[1]},Q${v[0]} ${y[1]},${y[0]} ${y[1]}`,
+                  x = e.svgDom.path().stroke({
+                    color: g,
+                    width: n + 2,
+                    linecap: "round",
+                    linejoin: "round",
+                  });
+                x.plot(A),
+                  x.fill("none"),
+                  e.svgDom
+                    .line(e.linePoint([u, p], n + 2))
+                    .stroke({
+                      color: g,
+                      width: n + 2,
+                      linecap: "round",
+                      linejoin: "round",
+                    })
+                    .fill("none"),
+                  e.svgDom
+                    .line(e.linePoint([m, f], n + 2))
+                    .stroke({
+                      color: g,
+                      width: n + 2,
+                      linecap: "round",
+                      linejoin: "round",
+                    })
+                    .fill("none");
+              }),
+                h.reverse().forEach((t, s) => {
+                  var r = t.getBox(),
+                    h = t.getPosition(),
+                    l = r.height / 2 + h.y,
+                    d = l - (o.height / 2 + a.y),
+                    c = [a.x + o.width / 2 + 6 + u * s, a.y + o.height / 2];
+                  if (Math.abs(d) > 2)
+                    var p = [c[0], l - (5 * d) / Math.abs(d)],
+                      m = [c[0] + 5, l];
+                  else
+                    (p = [c[0], l - d / 2]), (m = [c[0] + Math.abs(d) / 2, l]);
+                  var f = [h.x, l];
+                  let g = i.stroke ? i.stroke : t.stroke || ge();
+                  t.stroke || (t.stroke = g),
+                    t._barDom &&
+                      ((t._barDom.style.backgroundColor = g),
+                      (t._barDom.style.borderColor = g));
+                  var v = e.linePoint([p], n)[0],
+                    y = e.linePoint([m], n)[0],
+                    A = `M${v[0]} ${v[1]},Q${v[0]} ${y[1]},${y[0]} ${y[1]}`,
+                    x = e.svgDom.path().stroke({
+                      color: g,
+                      width: n + 2,
+                      linecap: "round",
+                      linejoin: "round",
+                    });
+                  x.plot(A),
+                    x.fill("none"),
+                    e.svgDom
+                      .line(e.linePoint([c, p], n + 2))
+                      .stroke({
+                        color: g,
+                        width: n + 2,
+                        linecap: "round",
+                        linejoin: "round",
+                      })
+                      .fill("none"),
+                    e.svgDom
+                      .line(e.linePoint([m, f], n + 2))
+                      .stroke({
+                        color: g,
+                        width: n + 2,
+                        linecap: "round",
+                        linejoin: "round",
+                      })
+                      .fill("none");
+                });
+              var p = [],
+                m = [];
+              r.forEach((e) => {
+                e.getPosition().y + e.getBox().height / 2 > o.height / 2 + a.y
+                  ? m.push(e)
+                  : p.push(e);
+              });
+              var f = p.length,
+                g = m.length,
+                v = parseInt((o.width / 2 - 12) / f + ""),
+                y = parseInt((o.width / 2 - 12) / g + "");
+              p.forEach((t, s) => {
+                var r = t.getBox(),
+                  h = t.getPosition(),
+                  l = r.height / 2 + h.y,
+                  d = l - (o.height / 2 + a.y),
+                  c = [a.x + o.width / 2 - 6 - v * s, a.y + o.height / 2];
+                if (Math.abs(d) > 2)
+                  var u = [c[0], l - (5 * d) / Math.abs(d)],
+                    p = [c[0] - 5, l];
+                else (u = [c[0], l - d / 2]), (p = [c[0] - Math.abs(d) / 2, l]);
+                var m = [h.x + r.width, l];
+                let f = i.stroke ? i.stroke : t.stroke || ge();
+                t.stroke || (t.stroke = f),
+                  t._barDom &&
+                    ((t._barDom.style.backgroundColor = f),
+                    (t._barDom.style.borderColor = f));
+                var g = e.linePoint([u], n)[0],
+                  y = e.linePoint([p], n)[0],
+                  A = `M${g[0]} ${g[1]},Q${g[0]} ${y[1]},${y[0]} ${y[1]}`,
+                  x = e.svgDom.path().stroke({
+                    color: f,
+                    width: n + 2,
+                    linecap: "round",
+                    linejoin: "round",
+                  });
+                x.plot(A),
+                  x.fill("none"),
+                  e.svgDom
+                    .line(e.linePoint([c, u], n + 2))
+                    .stroke({
+                      color: f,
+                      width: n + 2,
+                      linecap: "round",
+                      linejoin: "round",
+                    })
+                    .fill("none"),
+                  e.svgDom
+                    .line(e.linePoint([p, m], n + 2))
+                    .stroke({
+                      color: f,
+                      width: n + 2,
+                      linecap: "round",
+                      linejoin: "round",
+                    })
+                    .fill("none");
+              }),
+                m.reverse().forEach((t, s) => {
+                  var r = t.getBox(),
+                    h = t.getPosition(),
+                    l = r.height / 2 + h.y,
+                    d = l - (o.height / 2 + a.y),
+                    c = [a.x + o.width / 2 - 6 - y * s, a.y + o.height / 2];
+                  if (Math.abs(d) > 2)
+                    var u = [c[0], l - (5 * d) / Math.abs(d)],
+                      p = [c[0] - 5, l];
+                  else
+                    (u = [c[0], l - d / 2]), (p = [c[0] - Math.abs(d) / 2, l]);
+                  var m = [h.x + r.width, l];
+                  let f = i.stroke ? i.stroke : t.stroke || ge();
+                  t.stroke || (t.stroke = f),
+                    t._barDom &&
+                      ((t._barDom.style.backgroundColor = f),
+                      (t._barDom.style.borderColor = f));
+                  var g = e.linePoint([u], n)[0],
+                    v = e.linePoint([p], n)[0],
+                    A = `M${g[0]} ${g[1]},Q${g[0]} ${v[1]},${v[0]} ${v[1]}`,
+                    x = e.svgDom.path().stroke({
+                      color: f,
+                      width: n + 2,
+                      linecap: "round",
+                      linejoin: "round",
+                    });
+                  x.plot(A),
+                    x.fill("none"),
+                    e.svgDom
+                      .line(e.linePoint([c, u], n + 2))
+                      .stroke({
+                        color: f,
+                        width: n + 2,
+                        linecap: "round",
+                        linejoin: "round",
+                      })
+                      .fill("none"),
+                    e.svgDom
+                      .line(e.linePoint([p, m], n + 2))
+                      .stroke({
+                        color: f,
+                        width: n + 2,
+                        linecap: "round",
+                        linejoin: "round",
+                      })
+                      .fill("none");
+                });
+            })(),
+            i.children.forEach((e, t) => {
+              h(e), l(e);
+            });
+        }
+        function h(i) {
+          if (!i.layout && i.isExpand) {
+            var s = i.getChildren(),
+              r = s.length,
+              o = i.getPosition(),
+              a = i.getBox();
+            s.length &&
+              s.forEach(function (s) {
+                var l = s.direct,
+                  d = s.getPosition(),
+                  c = s.getBox();
+                let u = i.stroke ? i.stroke : s.stroke ? s.stroke : ge();
+                if (
+                  (s.stroke || (s.stroke = u),
+                  s._barDom &&
+                    ((s._barDom.style.backgroundColor = u),
+                    (s._barDom.style.borderColor = u)),
+                  "right" == l)
+                )
+                  var p = { x: o.x + a.width, y: o.y + a.height / 2 },
+                    m = { x: d.x, y: c.height / 2 + d.y };
+                else
+                  (p = { x: o.x, y: o.y + a.height / 2 }),
+                    (m = { x: d.x + c.width, y: c.height / 2 + d.y });
+                if (1 == r)
+                  var f = [
+                    [p.x, p.y],
+                    [m.x, m.y],
+                  ];
+                else {
+                  var g = m.y < p.y ? "top" : "bottom";
+                  if ("right" == l)
+                    if ("top" == g) {
+                      var v = [p.x, p.y],
+                        y = [p.x + t / 2, p.y],
+                        A = [m.x, m.y];
+                      if (s.isFirst())
+                        f = [
+                          v,
+                          y,
+                          (x = [p.x + t / 2, m.y + 5]),
+                          (b = [p.x + t / 2 + 5, m.y]),
+                          A,
+                        ];
+                      else if (Math.abs(m.y - p.y) < 3)
+                        f = [v, y, (b = [p.x + t / 2, m.y]), A];
+                      else
+                        f = [
+                          v,
+                          y,
+                          (x = [p.x + t / 2, m.y + 5]),
+                          (b = [p.x + t / 2 + 5, m.y]),
+                          A,
+                        ];
+                    } else {
+                      (v = [p.x, p.y]),
+                        (y = [p.x + t / 2, p.y]),
+                        (A = [m.x, m.y]);
+                      if (s.isLast())
+                        f = [
+                          v,
+                          y,
+                          (x = [p.x + t / 2, m.y - 5]),
+                          (b = [p.x + t / 2 + 5, m.y]),
+                          A,
+                        ];
+                      else if (Math.abs(m.y - p.y) < 3)
+                        f = [v, y, (b = [p.x + t / 2, m.y]), A];
+                      else
+                        f = [
+                          v,
+                          y,
+                          (x = [p.x + t / 2, m.y - 5]),
+                          (b = [p.x + t / 2 + 5, m.y]),
+                          A,
+                        ];
+                    }
+                  else if ("top" == g) {
+                    (v = [p.x, p.y]),
+                      (y = [p.x - t / 2, p.y]),
+                      (A = [m.x, m.y]);
+                    if (s.isFirst())
+                      f = [
+                        v,
+                        y,
+                        (x = [p.x - t / 2, m.y + 5]),
+                        (b = [p.x - t / 2 - 5, m.y]),
+                        A,
+                      ];
+                    else if (Math.abs(m.y - p.y) < 3)
+                      f = [v, y, (b = [p.x - t / 2, m.y]), A];
+                    else
+                      f = [
+                        v,
+                        y,
+                        (x = [p.x - t / 2, m.y + 5]),
+                        (b = [p.x - t / 2 - 5, m.y]),
+                        A,
+                      ];
+                  } else {
+                    (v = [p.x + 1, p.y]),
+                      (y = [p.x - t / 2, p.y]),
+                      (A = [m.x, m.y]);
+                    if (s.isLast())
+                      f = [
+                        v,
+                        y,
+                        (x = [p.x - t / 2, m.y - 5]),
+                        (b = [p.x - t / 2 - 5, m.y]),
+                        A,
+                      ];
+                    else if (Math.abs(m.y - p.y) < 3)
+                      f = [v, y, (b = [p.x - t / 2, m.y]), A];
+                    else {
+                      var x, b;
+                      f = [
+                        v,
+                        y,
+                        (x = [p.x - t / 2, m.y - 5]),
+                        (b = [p.x - t / 2 - 5, m.y]),
+                        A,
+                      ];
+                    }
+                  }
+                }
+                if (x) {
+                  (D = e.svgDom.polyline(e.linePoint([v, y, x], n))).fill(
+                    "none",
+                  ),
+                    D.stroke({
+                      color: u,
+                      width: n,
+                      linecap: "round",
+                      linejoin: "round",
+                    });
+                  var w = e.linePoint([x], n)[0],
+                    k = e.linePoint([b], n)[0],
+                    C = `M${w[0]} ${w[1]},Q${w[0]} ${k[1]},${k[0]} ${k[1]}`,
+                    E = e.svgDom.path().stroke({
+                      color: u,
+                      width: n,
+                      linecap: "round",
+                      linejoin: "round",
+                    });
+                  E.plot(C),
+                    E.fill("none"),
+                    (D = e.svgDom.line(e.linePoint([b, A], n))).fill("none"),
+                    D.stroke({
+                      color: u,
+                      width: n,
+                      linecap: "round",
+                      linejoin: "round",
+                    });
+                } else {
+                  var D;
+                  (D = e.svgDom.polyline(e.linePoint(f, n))).fill("none"),
+                    D.stroke({
+                      color: u,
+                      width: n,
+                      linecap: "round",
+                      linejoin: "round",
+                    });
+                }
+                h(s);
+              });
+          }
+        }
+        function l(e) {
+          if (e.isExpand) {
+            if (e.layout) return void e.layout.createLink();
+            e.children.forEach((e) => {
+              l(e);
+            });
+          }
+        }
+      }
+    },
+    mindmap: class extends ve {
+      constructor(e, t, i) {
+        super("mindmap"),
+          (this.layoutName = "mindmap"),
+          (this.direct = ""),
+          (this.levelDis = 50),
+          (this.nodeDis = 6),
+          (this.firstLevelDis = 80),
+          (this.firstNodeDis = 20),
+          (this.isCache = !0),
+          (this.lefts = []),
+          (this.rights = []),
+          (this.colors = []),
+          (this.lineWidth = 2),
+          (this.root = e || null),
+          (this.mind = (null == e ? void 0 : e.mindmap) || null),
+          (this.direct = t || "mindmap"),
+          (this.colors = i || []),
+          this.svgDom || (this.svgDom = this.mind.edgeGroup.group()),
+          this.layout();
+      }
+      setDirect() {
+        var e = this,
+          t = this.root.children.length,
+          i = this.root;
+        (this.rights = []),
+          (this.lefts = []),
+          "right" == this.direct
+            ? ((this.rights = i.children),
+              this.rights.forEach((e) => {
+                this._setDirect(e, "right");
+              }))
+            : "left" == this.direct
+              ? ((this.lefts = i.children),
+                this.lefts.forEach((e) => {
+                  this._setDirect(e, "left");
+                }))
+              : i.children.forEach(function (i, n) {
+                  n < t / 2
+                    ? (e.rights.push(i), e._setDirect(i, "right"))
+                    : (e.lefts.push(i), e._setDirect(i, "left"));
+                });
+      }
+      _setDirect(e, t) {
+        (e.stroke = ""), (e.direct = t);
+        var i = e.containEl.classList.contains("mm-node-second");
+        e.containEl.setAttribute("class", ""),
+          e.containEl.classList.add("mm-node"),
+          e.containEl.classList.add("mm-node-" + t),
+          e.isLeaf() && !e.containEl.classList.contains("mm-node-leaf")
+            ? e.containEl.classList.add("mm-node-leaf")
+            : e.containEl.classList.contains("mm-node-leaf") &&
+              e.containEl.classList.remove("mm-node-leaf"),
+          1 == e.getLevel() &&
+            (e.containEl.classList.add("mm-node-second"), e.refreshBox()),
+          i && e.refreshBox(),
+          e.isExpand || e.containEl.classList.add("mm-node-collapse"),
+          e.children.forEach((e) => {
+            this._setDirect(e, t);
+          });
+      }
+      layout(e, t) {
+        e && (this.root = e),
+          t && (this.direct = t),
+          this.setDirect(),
+          "right" == this.direct
+            ? this.layoutRight()
+            : "left" == this.direct
+              ? this.layoutLeft()
+              : this.layoutMindMap(),
+          this._dolayout(),
+          this._doRefresh(),
+          this.root && this.root.mindmap.useHandMode
+            ? this.createHandDrawLink()
+            : this.createLink();
+      }
+      layoutMindMap() {
+        this.layoutRight(), this.layoutLeft();
+      }
+      layoutRight(e, t) {
+        var i = e || this.rights,
+          n = t || this.root,
+          s = n.getPosition(),
+          r = n.getBox(),
+          o = n.getLevel();
+        if (0 == o)
+          var a = this.firstLevelDis,
+            h = this.firstNodeDis;
+        else (a = this.levelDis), (h = this.nodeDis);
+        var { disHeight: l, height: d } = this._getNodesHeight(i),
+          c = d / i.length;
+        if (0 == o)
+          var u = [
+            parseInt(s.x + r.width + a + ""),
+            parseInt(s.y + r.height / 2 - l / 2 + ""),
+          ];
+        else if (1 == o)
+          u = [
+            parseInt(s.x + r.width + a + ""),
+            parseInt(
+              s.y + r.height / 2 - l / 2 - c / 2 - this.lineWidth / 2 + "",
+            ),
+          ];
+        else
+          u = [
+            parseInt(s.x + r.width + a + ""),
+            parseInt(s.y + r.height - l / 2 - c / 2 + ""),
+          ];
+        i.forEach((e) => {
+          e.setPosition(u[0], u[1]);
+          var t = e.getBox();
+          u[1] += parseInt(t.height + h + "");
+        }),
+          i.forEach((e) => {
+            e.isExpand && this.layoutRight(e.children, e);
+          });
+      }
+      layoutLeft(e, t) {
+        var i = e || this.lefts,
+          n = t || this.root,
+          s = n.getPosition(),
+          r = n.getBox(),
+          o = n.getLevel();
+        if (0 == o)
+          var a = this.firstLevelDis,
+            h = this.firstNodeDis;
+        else (a = this.levelDis), (h = this.nodeDis);
+        var { disHeight: l, height: d } = this._getNodesHeight(i),
+          c = d / i.length;
+        if (0 == o)
+          var u = [
+            parseInt(s.x - a + ""),
+            parseInt(s.y + r.height / 2 - l / 2 + ""),
+          ];
+        else if (1 == o)
+          u = [
+            parseInt(s.x - a + ""),
+            parseInt(
+              s.y + r.height / 2 - l / 2 - c / 2 - this.lineWidth / 2 + "",
+            ),
+          ];
+        else
+          u = [
+            parseInt(s.x - a + ""),
+            parseInt(s.y + r.height - l / 2 - c / 2 + ""),
+          ];
+        i.forEach((e) => {
+          var t = e.getBox();
+          e.setPosition(parseInt(u[0] - t.width + ""), parseInt(u[1] + "")),
+            (u[1] += t.height + h);
+        }),
+          i.forEach((e) => {
+            e.isExpand && this.layoutLeft(e.children, e);
+          });
+      }
+      _getNodesHeight(e) {
+        if (e[0] && 1 == e[0].getLevel()) var t = this.firstNodeDis;
+        else t = this.nodeDis;
+        var i = 0,
+          n = 0;
+        return 1 == e.length
+          ? { disHeight: (i = e[0].getBox().height), height: i }
+          : (e.forEach((s, r) => {
+              var o = s.getBox().height;
+              (i += o), (n += o), r != e.length - 1 && (i += t);
+            }),
+            { disHeight: i, height: n });
+      }
+      _doRefresh() {
+        var e = this.root,
+          t = e.getPosition(),
+          i = e.getBox(),
+          n = t.y + i.height / 2,
+          s = this.rights,
+          r = this.lefts;
+        if (s.length >= 2) {
+          var o = s[0],
+            a = s[s.length - 1],
+            h = o.getPosition(),
+            l = a.getPosition(),
+            d = a.getBox(),
+            c = l.y + d.height - n,
+            u = n - h.y;
+          if (Math.abs(c) != Math.abs(u)) {
+            var p = Math.abs(Math.abs(c) - Math.abs(u)) / 2 + "";
+            Math.abs(c) > Math.abs(u)
+              ? s.forEach((e) => {
+                  this.moveNode(e, 0, -parseInt(p));
+                })
+              : s.forEach((e) => {
+                  this.moveNode(e, 0, parseInt(p));
+                });
+          }
+        }
+        if (r.length >= 2) {
+          (o = r[0]),
+            (a = r[r.length - 1]),
+            (h = o.getPosition()),
+            (l = a.getPosition()),
+            (d = a.getBox()),
+            (c = l.y + d.height - n),
+            (u = n - h.y);
+          if (Math.abs(c) != Math.abs(u)) {
+            p = Math.abs(Math.abs(c) - Math.abs(u)) / 2 + "";
+            Math.abs(c) > Math.abs(u)
+              ? r.forEach((e) => {
+                  this.moveNode(e, 0, -parseInt(p));
+                })
+              : r.forEach((e) => {
+                  this.moveNode(e, 0, parseInt(p));
+                });
+          }
+        }
+      }
+      moveNode(e, t, i) {
+        e.move(t, i),
+          e &&
+            e.children &&
+            e.children.forEach((e) => {
+              this.moveNode(e, t, i);
+            });
+      }
+      linePoint(e, t) {
+        let i = 0;
+        var n;
+        return (
+          t % 2 == 1 ? ((i = 0.5), (n = parseInt)) : (n = Math.ceil),
+          e.map((e) => [n(e[0]) + i, n(e[1]) + i])
+        );
+      }
+      _dolayout() {
+        var e = this,
+          t = this.mind;
+        t.traverseDF((i) => {
+          if (i != e.root && i.isExpand) {
+            var n = i.getCBox();
+            if (e.isCache && i.boundingRect) var s = i.boundingRect;
+            else {
+              var r = i.getShowNodeList();
+              r.length && (s = t.getBoundingRect(r));
+            }
+            if (s) {
+              if (i.boundingRect && e.isCache)
+                var o = s.topDy,
+                  a = s.downDy;
+              else
+                (o = Math.abs(s.y - n.y)),
+                  (a = Math.abs(s.y + s.height - n.y - n.height)),
+                  (s.topDy = o),
+                  (s.downDy = a),
+                  (i.boundingRect = s);
+              e._adjustNode(i, 0, o, a);
+            }
+          }
+        });
+      }
+      _adjustNode(e, t, i, n) {
+        if (e) {
+          var s = e.direct;
+          if (e && e != this.root) {
+            var r = e.getSiblings(),
+              o = e.getPosition();
+            r.forEach((e) => {
+              e.direct == s &&
+                (e.getPosition().y > o.y
+                  ? this.moveNode(e, t, n)
+                  : this.moveNode(e, t, -i));
+            });
+          }
+        }
+      }
+      refresh(e, t) {
+        this.layout(e, t);
+      }
+      createHandDrawLink() {
+        var e = this;
+        this.svgDom && this.svgDom.clear();
+        var t = le.svg(this.root.mindmap.draw);
+        if (0 != this.root.getChildren().length) {
+          var i = this.levelDis,
+            n = this.root,
+            s = this.lineWidth,
+            r = this.root.getLevel();
+          this.root.children.forEach((e, t) => {
+            e.stroke = this.colors[t] || ge();
+          }),
+            (function n(o) {
+              if (o.isExpand) {
+                var a = o.getChildren(),
+                  h = o.getPosition(),
+                  l = o.getBox();
+                l.height = l.height + s;
+                var d = o.getLevel();
+                a.length &&
+                  a.forEach(function (a) {
+                    var c = a.direct,
+                      u = a.getPosition(),
+                      p = Object.assign({}, a.getBox());
+                    p.height = p.height + s;
+                    let m = o.stroke ? o.stroke : a.stroke ? a.stroke : ge();
+                    if (
+                      (a.stroke || (a.stroke = m),
+                      a._barDom &&
+                        ((a._barDom.style.backgroundColor = m),
+                        (a._barDom.style.borderColor = m)),
+                      d == r)
+                    )
+                      var f = { x: h.x + l.width / 2, y: h.y + l.height / 2 };
+                    else
+                      f =
+                        d == 1 + r
+                          ? "right" == c
+                            ? { x: h.x + l.width, y: h.y + l.height / 2 }
+                            : { x: h.x, y: h.y + l.height / 2 }
+                          : "right" == c
+                            ? { x: h.x + l.width, y: h.y + l.height }
+                            : { x: h.x, y: h.y + l.height };
+                    if (d == r)
+                      if ("right" == c)
+                        var g = { x: u.x, y: p.height / 2 + u.y };
+                      else g = { x: u.x + p.width, y: p.height / 2 + u.y };
+                    else
+                      g =
+                        "right" == c
+                          ? { x: u.x, y: p.height + u.y }
+                          : { x: u.x + p.width, y: p.height + u.y };
+                    if (s % 2 == 1)
+                      var v = parseInt(f.x + "") - 0.5,
+                        y = parseInt(g.x + "") - 0.5,
+                        A = parseInt(f.y + "") - 0.5,
+                        x = parseInt(g.y + "") - 0.5;
+                    else
+                      (v = parseInt(f.x + "")),
+                        (A = parseInt(f.y + "")),
+                        (y = parseInt(g.x + "")),
+                        (x = parseInt(g.y + ""));
+                    if (s % 2 == 1)
+                      var b = parseInt(u.x + "") - 0.5,
+                        w = parseInt(u.x + p.width + "") - 0.5,
+                        k = x,
+                        C = x;
+                    else
+                      (b = parseInt(u.x + "")),
+                        (k = parseInt(p.height + u.y + "")),
+                        (w = parseInt(u.x + p.width + "")),
+                        (C = parseInt(p.height + u.y + ""));
+                    if (d == r) {
+                      var E = `M${v} ${A}  C ${parseInt(f.x + "") + (g.x - f.x) / 9} ${parseInt(f.y + "") + ((g.y - f.y) / 9) * 8}, ${parseInt(f.x + ((g.x - f.x) / 9) * 8 + "")} ${parseInt(g.y + "")}, ${y} ${x}`,
+                        D = t.path(E, {
+                          stroke: m,
+                          strokeWidth: s + 1,
+                          fill: "none",
+                        });
+                      e.svgDom.node.appendChild(D);
+                    } else {
+                      var N = { x: f.x + i / 2, y: f.y },
+                        I = { x: f.x + i / 2, y: g.y };
+                      "left" == c && ((N.x = f.x - i / 2), (I.x = f.x - i / 2)),
+                        (N.x = parseInt(N.x + "")),
+                        (N.y = parseInt(N.y + "")),
+                        (I.x = parseInt(I.x + "")),
+                        (I.y = parseInt(I.y + ""));
+                      var S = `M${v} ${A}  C${N.x} ${N.y}, ${I.x} ${I.y}, ${y} ${x}`,
+                        B = t.path(S, {
+                          stroke: m,
+                          strokeWidth: d == r ? s + 1 : s,
+                          fill: "none",
+                          roughness: 0.4,
+                        });
+                      D = t.line(b - 1, k, w + 1, C, {
+                        stroke: m,
+                        strokeWidth: d == r ? s + 1 : s,
+                        fill: "none",
+                        roughness: 0.8,
+                      });
+                      e.svgDom.node.appendChild(D),
+                        e.svgDom.node.appendChild(B);
+                    }
+                    n(a);
+                  });
+              }
+            })(n);
+        }
+      }
+      createLink() {
+        var e = this;
+        if (
+          (this.svgDom && this.svgDom.clear(),
+          0 != this.root.getChildren().length)
+        ) {
+          var t = this.levelDis,
+            i = this.root,
+            n = this.lineWidth,
+            s = this.root.getLevel();
+          this.root.children.forEach((e, t) => {
+            e.stroke = this.colors[t] || ge();
+          }),
+            (function i(r) {
+              if (r.isExpand) {
+                var o = r.getChildren(),
+                  a = r.getPosition(),
+                  h = r.getBox();
+                h.height = h.height + n;
+                var l = r.getLevel();
+                o.length &&
+                  o.forEach(function (o) {
+                    var d = o.direct,
+                      c = o.getPosition(),
+                      u = Object.assign({}, o.getBox());
+                    u.height = u.height + n;
+                    let p = r.stroke ? r.stroke : o.stroke ? o.stroke : ge();
+                    if (
+                      (o.stroke || (o.stroke = p),
+                      o._barDom &&
+                        ((o._barDom.style.backgroundColor = p),
+                        (o._barDom.style.borderColor = p)),
+                      l == s)
+                    )
+                      var m = { x: a.x + h.width / 2, y: a.y + h.height / 2 };
+                    else
+                      m =
+                        l == 1 + s
+                          ? "right" == d
+                            ? { x: a.x + h.width, y: a.y + h.height / 2 }
+                            : { x: a.x, y: a.y + h.height / 2 }
+                          : "right" == d
+                            ? { x: a.x + h.width, y: a.y + h.height }
+                            : { x: a.x, y: a.y + h.height };
+                    if (l == s)
+                      if ("right" == d)
+                        var f = { x: c.x, y: u.height / 2 + c.y };
+                      else f = { x: c.x + u.width, y: u.height / 2 + c.y };
+                    else
+                      f =
+                        "right" == d
+                          ? { x: c.x, y: u.height + c.y }
+                          : { x: c.x + u.width, y: u.height + c.y };
+                    if (n % 2 == 1)
+                      var g = parseInt(m.x + "") - 0.5,
+                        v = parseInt(f.x + "") - 0.5,
+                        y = parseInt(m.y + "") - 0.5,
+                        A = parseInt(f.y + "") - 0.5;
+                    else
+                      (g = parseInt(m.x + "")),
+                        (y = parseInt(m.y + "")),
+                        (v = parseInt(f.x + "")),
+                        (A = parseInt(f.y + ""));
+                    if (l == s)
+                      var x = e.svgDom
+                        .path()
+                        .stroke({
+                          color: p,
+                          width: n + 1,
+                          linecap: "round",
+                          linejoin: "round",
+                        })
+                        .fill("none");
+                    else
+                      x = e.svgDom
+                        .path()
+                        .stroke({
+                          color: p,
+                          width: n,
+                          linecap: "round",
+                          linejoin: "round",
+                        })
+                        .fill("none");
+                    if (n % 2 == 1)
+                      var b = parseInt(c.x + "") - 0.5,
+                        w = parseInt(c.x + u.width + "") - 0.5,
+                        k = A,
+                        C = A;
+                    else
+                      (b = parseInt(c.x + "")),
+                        (k = parseInt(u.height + c.y + "")),
+                        (w = parseInt(c.x + u.width + "")),
+                        (C = parseInt(u.height + c.y + ""));
+                    if (l == s) {
+                      var E = `M${g} ${y}  C ${parseInt(m.x + "") + (f.x - m.x) / 9} ${parseInt(m.y + "") + ((f.y - m.y) / 9) * 8}, ${parseInt(m.x + ((f.x - m.x) / 9) * 8 + "")} ${parseInt(f.y + "")}, ${v} ${A}`;
+                      x.plot(E);
+                    } else {
+                      e.svgDom
+                        .line(b, k, w, C)
+                        .stroke({
+                          color: p,
+                          width: n,
+                          linecap: "miter",
+                          linejoin: "miter",
+                        })
+                        .fill("none");
+                      var D = { x: m.x + t / 2, y: m.y },
+                        N = { x: m.x + t / 2, y: f.y };
+                      "left" == d && ((D.x = m.x - t / 2), (N.x = m.x - t / 2)),
+                        (D.x = parseInt(D.x + "")),
+                        (D.y = parseInt(D.y + "")),
+                        (N.x = parseInt(N.x + "")),
+                        (N.y = parseInt(N.y + ""));
+                      var I = `M${g} ${y}  C ${D.x} ${D.y}, ${N.x} ${N.y}, ${v} ${A}`;
+                      x.plot(I);
+                    }
+                    i(o);
+                  });
+              }
+            })(i);
+        }
+      }
+    },
+    fish: class extends ve {
+      constructor(e, t, i) {
+        super("fish"),
+          (this.root = null),
+          (this.tops = []),
+          (this.bottoms = []),
+          (this.dis = 10),
+          (this.levelDis = 20),
+          (this.firstLevelDis = 20),
+          (this.layoutName = "fish"),
+          (this.type = "fish"),
+          (this.angle = (7 * Math.PI) / 18),
+          (this.isCache = !1),
+          (this.colors = []),
+          (this.fishTail = null),
+          (this.stroke = ""),
+          (this.root = e),
+          (this.direct = t || "right"),
+          (this.colors = i || []),
+          (this.stroke = ge()),
+          this.svgDom || (this.svgDom = this.root.getMind().edgeGroup.group());
+      }
+      layout(e, t) {
+        if (
+          ((this.direct = t || "right"),
+          (this.tops = []),
+          (this.bottoms = []),
+          (this.root = e || this.root),
+          this.root.isExpand)
+        ) {
+          this.svgDom || (this.svgDom = this.root.getMind().edgeGroup.group()),
+            (this.root.layout = this),
+            this.root.parent ||
+              "induce" == this.root.nodeType ||
+              this.root.containEl.classList.add("mm-root");
+          var i = this.root.children.length;
+          this.root.getChildren().forEach((e, t) => {
+            t < Math.ceil(i / 2)
+              ? (this.tops.push(e),
+                e.getNodeList().forEach((e) => {
+                  (e.mark = "up"),
+                    (e.containEl.classList = []),
+                    e.containEl.classList.add("mm-node"),
+                    e.containEl.classList.add("mm-node-" + this.direct),
+                    e.containEl.classList.add(`mm-${this.layoutName}-node`),
+                    (e.direct = this.direct),
+                    e.isExpand || e.containEl.classList.add("mm-node-collapse"),
+                    e.isLeaf() &&
+                    !e.containEl.classList.contains("mm-node-leaf")
+                      ? e.containEl.classList.add("mm-node-leaf")
+                      : e.containEl.classList.contains("mm-node-leaf") &&
+                        e.containEl.classList.remove("mm-node-leaf");
+                }))
+              : (this.bottoms.push(e),
+                e.getNodeList().forEach((e) => {
+                  (e.mark = "down"),
+                    (e.containEl.classList = []),
+                    e.containEl.classList.add("mm-node"),
+                    e.containEl.classList.add("mm-node-" + this.direct),
+                    e.containEl.classList.add(`mm-${this.layoutName}-node`),
+                    (e.direct = this.direct),
+                    e.isExpand || e.containEl.classList.add("mm-node-collapse"),
+                    e.isLeaf() &&
+                    !e.containEl.classList.contains("mm-node-leaf")
+                      ? e.containEl.classList.add("mm-node-leaf")
+                      : e.containEl.classList.contains("mm-node-leaf") &&
+                        e.containEl.classList.remove("mm-node-leaf");
+                })),
+              e.containEl.classList.add("mm-node-second"),
+              e.refreshBox();
+          }),
+            "left" == this.direct
+              ? this._layoutRight()
+              : "right" == this.direct && this._layoutLeft(),
+            this.root.mindmap.useHandMode
+              ? this.createHandDrawLink()
+              : this.createLink();
+        }
+      }
+      _layoutLeft() {
+        var e = this,
+          t = this.root,
+          i = t.getMind(),
+          n = t.getBox(),
+          s = t.getPosition(),
+          r = s.y + n.height / 2,
+          o = [];
+        this.tops.forEach((t, i) => {
+          t.direct = "up";
+          var a = t.getCBox();
+          0 == i
+            ? (t.setPosition(
+                n.width + s.x + 40 + e.dis / Math.tan(e.angle),
+                r - e.dis - a.height,
+              ),
+              (o = [
+                n.width +
+                  s.x +
+                  40 +
+                  e.dis / Math.tan(e.angle) +
+                  a.width +
+                  e.dis,
+                0,
+              ]))
+            : (t.setPosition(
+                o[0] + e.dis / Math.tan(e.angle),
+                r - e.dis - a.height,
+              ),
+              (o = [o[0] + a.width + e.dis + 40, 0])),
+            e._layout(t, "top");
+        }),
+          this.bottoms.forEach((t, i) => {
+            t.direct = "down";
+            var a = t.getBox();
+            if (0 == i) {
+              var h =
+                n.width + 50 + (e.dis + a.height) / Math.tan(e.angle) + e.dis;
+              t.setPosition(h + s.x, r + e.dis),
+                (o = [h + a.width + e.dis + 40, 0]);
+            } else
+              t.setPosition(
+                o[0] + (e.dis + a.height) / Math.tan(e.angle) + e.dis,
+                r + e.dis,
+              ),
+                (o = [o[0] + a.width + e.dis, 0]);
+            e._layout(t, "bottom");
+          }),
+          this.tops.forEach((e, t) => {
+            if (t > 0) {
+              var n = i.getBBox(this.tops[t - 1]),
+                s = e.getPosition(),
+                r = n.right - s.x + this.dis + 40;
+              this.moveNode(e, r, 0);
+            }
+          }),
+          this.bottoms.forEach((e, t) => {
+            if (t > 0) {
+              var n = i.getBBox(this.bottoms[t - 1]),
+                s = e.getPosition(),
+                r = n.right - s.x + this.dis + 40;
+              this.moveNode(e, r, 0);
+            }
+          }),
+          this.tops.forEach((e) => {
+            this._updateNodeAssist(e, this.root);
+          }),
+          this.bottoms.forEach((e) => {
+            this._updateNodeAssist(e, this.root);
+          }),
+          this._updateRootAssist();
+      }
+      _layoutRight() {
+        var e = this,
+          t = this.root,
+          i = t.getMind(),
+          n = t.getBox(),
+          s = t.getPosition(),
+          r = s.y + n.height / 2,
+          o = [];
+        this.tops.forEach((t, i) => {
+          t.direct = "up";
+          var n = t.getBox();
+          0 == i
+            ? (t.setPosition(
+                s.x - n.width - e.dis - e.dis / Math.tan(e.angle) - 40,
+                r - e.dis - n.height,
+              ),
+              (o = [s.x - n.width - e.dis - e.dis / Math.tan(e.angle) - 40, 0]))
+            : (t.setPosition(
+                o[0] - n.width - e.dis - e.dis / Math.tan(e.angle) - 40,
+                r - e.dis - n.height,
+              ),
+              (o = [
+                o[0] - n.width - e.dis - e.dis / Math.tan(e.angle) - 40,
+                0,
+              ])),
+            e._layout1(t, "top");
+        }),
+          this.bottoms.forEach((t, i) => {
+            t.direct = "down";
+            var n = t.getBox();
+            if (0 == i) {
+              var a =
+                s.x -
+                n.width -
+                e.dis -
+                (e.dis + n.height) / Math.tan(e.angle) -
+                40;
+              t.setPosition(a, r + e.dis), (o = [a, 0]);
+            } else
+              t.setPosition(
+                o[0] -
+                  n.width -
+                  (e.dis + n.height) / Math.tan(e.angle) -
+                  e.dis -
+                  40,
+                r + e.dis,
+              ),
+                (o = [
+                  o[0] - (e.dis + n.height) / Math.tan(e.angle) - e.dis - 40,
+                  0,
+                ]);
+            e._layout1(t, "bottom");
+          }),
+          this.tops.forEach((e, t) => {
+            if (t > 0) {
+              var n = i.getBBox(this.tops[t - 1]),
+                s = e.getPosition(),
+                r = e.getBox(),
+                o = s.x - n.x + this.dis + r.width + 40;
+              this.moveNode(e, -o, 0);
+            }
+          }),
+          this.bottoms.forEach((e, t) => {
+            if (t > 0) {
+              var n = i.getBBox(this.bottoms[t - 1]),
+                s = e.getPosition(),
+                r = e.getBox(),
+                o = s.x - n.x + this.dis + r.width + 40;
+              this.moveNode(e, -o, 0);
+            }
+          }),
+          this.tops.forEach((e) => {
+            this._updateNodeAssist(e);
+          }),
+          this.bottoms.forEach((e) => {
+            this._updateNodeAssist(e);
+          }),
+          this._updateRootAssist();
+      }
+      _layout(e, t) {
+        if (e.isExpand) {
+          e.layout &&
+            (e.layout.group &&
+              (e.layout.group.clear(),
+              e.layout.group.remove(),
+              (e.layout.group = null)),
+            e.layout.svgDom &&
+              (e.layout.svgDom.clear(),
+              e.layout.svgDom.remove(),
+              (e.layout.svgDom = null)));
+          var i = this,
+            n = e.getMind();
+          if ("top" == t) {
+            var s = e.getBox(),
+              r = e.getPosition(),
+              o = s.width + r.x + i.dis,
+              a = e.getChildren(),
+              h = 0,
+              l = 0;
+            a.forEach((e, d) => {
+              if (e.isShow()) {
+                e.callout && e.callout.refresh();
+                var c = e.getCBox();
+                if (0 == d)
+                  (l = o + (i.dis + s.height + c.bh) / Math.tan(i.angle)),
+                    (h = r.y - c.height - c.bh - i.dis),
+                    e.setPosition(l, h);
+                else {
+                  var u = n.getBBox(a[d - 1]),
+                    p = a[d - 1].getCBox(),
+                    m =
+                      (p.y - u.y + i.dis + c.bh + p.height) / Math.tan(i.angle),
+                    f = p.x + m,
+                    g = u.y - i.dis - c.height - c.bh;
+                  e.setPosition(f, g);
+                }
+                i._updateNodeAssist(e, i.root), i._layout(e, t);
+              }
+            });
+          } else {
+            (s = e.getBox()),
+              (r = e.getPosition()),
+              (o = s.width + r.x + i.dis),
+              (h = 0),
+              (l = 0),
+              (a = e.getChildren());
+            e.getChildren().forEach((e, d) => {
+              if (e.isShow()) {
+                e.callout && e.callout.refresh();
+                var c = e.getCBox();
+                if (0 == d) {
+                  var u = (i.dis + c.th + c.height) / Math.tan(i.angle);
+                  (l = o + u),
+                    (h = r.y + s.height + i.dis + c.th + 0),
+                    e.setPosition(l, h);
+                } else {
+                  var p = n.getBBox(a[d - 1]),
+                    m = a[d - 1].getCBox(),
+                    f =
+                      ((u =
+                        (i.dis +
+                          c.th +
+                          c.height +
+                          p.y +
+                          p.height -
+                          m.y -
+                          m.height) /
+                        Math.tan(i.angle)),
+                      m.x + u),
+                    g = p.y + p.height + i.dis + c.th;
+                  e.setPosition(f, g);
+                }
+                i._updateNodeAssist(e, i.root), i._layout(e, t);
+              }
+            });
+          }
+        }
+      }
+      _layout1(e, t) {
+        if (e.isExpand) {
+          e.layout &&
+            (e.layout.group &&
+              (e.layout.group.clear(),
+              e.layout.group.remove(),
+              (e.layout.group = null)),
+            e.layout.svgDom &&
+              (e.layout.svgDom.clear(),
+              e.layout.svgDom.remove(),
+              (e.layout.svgDom = null)));
+          var i = this,
+            n = e.getMind(),
+            s = e.getChildren();
+          if ("top" == t) {
+            var r = e.getBox(),
+              o = (a = e.getPosition()).x - i.dis;
+            s.forEach((e, h) => {
+              if (e.isShow()) {
+                e.callout && e.callout.refresh();
+                var l = e.getCBox();
+                if (0 == h) {
+                  var d =
+                      o -
+                      l.width -
+                      (r.height + i.dis + l.bh) / Math.tan(i.angle),
+                    c = a.y - l.height - l.bh - i.dis;
+                  e.setPosition(d, c);
+                } else {
+                  var u = n.getBBox(s[h - 1]),
+                    p = s[h - 1].getBox(),
+                    m =
+                      (p.y - u.y + i.dis + p.height + l.bh + 0) /
+                      Math.tan(i.angle),
+                    f = p.x + p.width - l.width - m,
+                    g = u.y - i.dis - l.height - l.bh - 0;
+                  e.setPosition(f, g);
+                }
+                i._updateNodeAssist(e, i.root), i._layout1(e, t);
+              }
+            });
+          } else {
+            var a;
+            (r = e.getBox()), (o = (a = e.getPosition()).x - i.dis);
+            e.getChildren().forEach((e, h) => {
+              if (e.isShow()) {
+                e.callout && e.callout.refresh();
+                var l = e.getCBox();
+                if (0 == h) {
+                  var d =
+                      o -
+                      l.width -
+                      (l.height + i.dis + l.th + 0) / Math.tan(i.angle),
+                    c = a.y + r.height + i.dis + l.th + 0;
+                  e.setPosition(d, c);
+                } else {
+                  var u = n.getBBox(s[h - 1]),
+                    p = s[h - 1].getBox(),
+                    m = u.y + u.height - p.y - p.height,
+                    f = (m + i.dis + l.th + 0 + l.height) / Math.tan(i.angle),
+                    g = p.x + p.width - l.width - f,
+                    v = p.y + i.dis + m + l.th + 0 + p.height;
+                  e.setPosition(g, v);
+                }
+                i._updateNodeAssist(e, i.root), i._layout1(e, t);
+              }
+            });
+          }
+        }
+      }
+      adjustNode(e, t) {
+        var i = e.getPosition(),
+          n = e.getBBox(),
+          s = e.getParent(),
+          r = s.getPosition(),
+          o = s.getBBox();
+        if ("top" == t) var a = r.y - i.y;
+        else a = i.y - r.y - o.height + n.height;
+        for (var h = a / Math.tan(this.angle); s.getLevel() > 1; ) {
+          (r = s.getPosition()),
+            s.getSiblings().forEach((e) => {
+              var i = e.getPosition();
+              "top" == t
+                ? i.y < r.y && this.moveNode(e, h, -a)
+                : "bottom" == t && i.y > r.y && this.moveNode(e, h, a);
+            }),
+            (s = s.getParent());
+        }
+      }
+      adjustNode1(e, t) {
+        var i = e.getPosition(),
+          n = e.getBBox(),
+          s = e.getParent(),
+          r = s.getPosition(),
+          o = s.getBBox();
+        if ("top" == t) var a = r.y - i.y;
+        else a = i.y - r.y - o.height + n.height;
+        for (var h = a / Math.tan(this.angle); s.getLevel() > 1; ) {
+          (r = s.getPosition()),
+            s.getSiblings().forEach((e) => {
+              var i = e.getPosition();
+              "top" == t
+                ? i.y < r.y && this.moveNode(e, -h, -a)
+                : "bottom" == t && i.y > r.y && this.moveNode(e, -h, a);
+            }),
+            (s = s.getParent());
+        }
+      }
+      createHandDrawLink() {
+        if ((this.svgDom && this.svgDom.clear(), !this.svgDom)) return;
+        if (0 == this.root.getChildren().length) return;
+        if ("left" == this.direct) return void this.createHandDrawLink1();
+        var e = le.svg(this.root.mindmap.draw),
+          t = this;
+        this.dis;
+        var i = this.root.getLevel();
+        function n(s, r) {
+          var o = s.getBox(),
+            a = s.getPosition();
+          let h = s.parent.stroke
+            ? s.parent.stroke
+            : s.stroke
+              ? s.stroke
+              : ge();
+          if (
+            (s.stroke || (s.stroke = h),
+            s._barDom &&
+              ((s._barDom.style.backgroundColor = h),
+              (s._barDom.style.borderColor = h)),
+            s.getLevel() == i + 1)
+          ) {
+            if ("top" == r) {
+              var l = [
+                  a.x - t.dis / Math.tan(t.angle),
+                  parseInt(a.y + o.height + t.dis),
+                ],
+                d = [(c = [a.x, a.y + o.height + 1])[0] + o.width + 1, c[1]];
+              t.svgDom.node.appendChild(
+                e.linearPath(t.linePoint([l, c, d], 1), {
+                  stroke: h,
+                  strokeWidth: 1,
+                  fill: "none",
+                  roughness: 0.6,
+                }),
+              );
+            } else if ("bottom" == r) {
+              var c;
+              (l = [
+                a.x - (t.dis + o.height) / Math.tan(t.angle),
+                parseInt(a.y - t.dis),
+              ]),
+                (d = [(c = [a.x, a.y + o.height + 1])[0] + o.width + 1, c[1]]);
+              t.svgDom.node.appendChild(
+                e.linearPath(t.linePoint([l, c, d], 1), {
+                  stroke: h,
+                  strokeWidth: 1,
+                  fill: "none",
+                  roughness: 0.6,
+                }),
+              );
+            }
+          } else {
+            var u = s.getParent(),
+              p = u.getPosition(),
+              m = u.getBox();
+            if (s.isLast())
+              var f = [
+                (l = [p.x + m.width - 1, p.y + m.height + 1]),
+                [l[0] + t.dis, l[1]],
+                (g = [a.x, a.y + o.height + 1]),
+                (d = [g[0] + o.width, g[1]]),
+              ];
+            else {
+              var g;
+              f = [
+                (g = [a.x, a.y + o.height + 1]),
+                (d = [g[0] + o.width, g[1]]),
+              ];
+            }
+            t.svgDom.node.appendChild(
+              e.linearPath(t.linePoint(f, 1), {
+                stroke: h,
+                strokeWidth: 1,
+                fill: "none",
+                roughness: 0.6,
+              }),
+            );
+          }
+          s.isExpand &&
+            s.getChildren().forEach((e) => {
+              n(e, r);
+            });
+        }
+        this.root.children.forEach((e, t) => {
+          e.stroke || (e.stroke = this.colors[t] || ge());
+        }),
+          this.tops.forEach((e) => {
+            n(e, "top");
+          }),
+          this.bottoms.forEach((e) => {
+            n(e, "bottom");
+          }),
+          this.createHandDrawBone();
+      }
+      createLink() {
+        if ((this.svgDom && this.svgDom.clear(), !this.svgDom)) return;
+        if (0 == this.root.getChildren().length) return;
+        if ("left" == this.direct) return void this.createLink1();
+        var e = this;
+        this.dis;
+        var t = this.root.getLevel();
+        function i(n, s) {
+          var r = n.getBox(),
+            o = n.getPosition();
+          let a = n.parent.stroke
+            ? n.parent.stroke
+            : n.stroke
+              ? n.stroke
+              : ge();
+          if (
+            (n.stroke || (n.stroke = a),
+            n._barDom &&
+              ((n._barDom.style.backgroundColor = a),
+              (n._barDom.style.borderColor = a)),
+            n.getLevel() == t + 1)
+          ) {
+            if ("top" == s) {
+              var h = [
+                  o.x - e.dis / Math.tan(e.angle),
+                  parseInt(o.y + r.height + e.dis),
+                ],
+                l = [(d = [o.x, o.y + r.height + 1])[0] + r.width + 1, d[1]];
+              (c = e.svgDom.polyline(e.linePoint([h, d, l], 2))).fill("none"),
+                c.stroke({
+                  color: a,
+                  width: 2,
+                  linecap: "round",
+                  linejoin: "round",
+                });
+            } else if ("bottom" == s) {
+              var d;
+              (h = [
+                o.x - (e.dis + r.height) / Math.tan(e.angle),
+                parseInt(o.y - e.dis),
+              ]),
+                (l = [(d = [o.x, o.y + r.height + 1])[0] + r.width + 1, d[1]]);
+              (c = e.svgDom.polyline(e.linePoint([h, d, l], 2))).fill("none"),
+                c.stroke({
+                  color: a,
+                  width: 2,
+                  linecap: "round",
+                  linejoin: "round",
+                });
+            }
+          } else {
+            var c,
+              u = n.getParent(),
+              p = u.getPosition(),
+              m = u.getBox();
+            if (n.isLast())
+              var f = [
+                (h = [p.x + m.width - 1, p.y + m.height + 1]),
+                [h[0] + e.dis, h[1]],
+                (g = [o.x, o.y + r.height + 1]),
+                (l = [g[0] + r.width, g[1]]),
+              ];
+            else {
+              var g;
+              f = [
+                (g = [o.x, o.y + r.height + 1]),
+                (l = [g[0] + r.width, g[1]]),
+              ];
+            }
+            (c = e.svgDom.polyline(e.linePoint(f, 2))).fill("none"),
+              c.stroke({
+                color: a,
+                width: 2,
+                linecap: "round",
+                linejoin: "round",
+              });
+          }
+          n.isExpand &&
+            n.getChildren().forEach((e) => {
+              i(e, s);
+            });
+        }
+        this.root.children.forEach((e, t) => {
+          e.stroke || (e.stroke = this.colors[t] || ge());
+        }),
+          this.tops.forEach((e) => {
+            i(e, "top");
+          }),
+          this.bottoms.forEach((e) => {
+            i(e, "bottom");
+          }),
+          this.creatBone();
+      }
+      createHandDrawLink1() {
+        var e = this;
+        if ((this.dis, !this.svgDom)) return;
+        if (
+          (this.svgDom && this.svgDom.clear(),
+          0 == this.root.getChildren().length)
+        )
+          return;
+        var t = le.svg(this.root.mindmap.draw);
+        var i = this.root.getLevel();
+        function n(s, r) {
+          var o = s.getBox(),
+            a = s.getPosition();
+          let h = s.parent.stroke
+            ? s.parent.stroke
+            : s.stroke
+              ? s.stroke
+              : ge();
+          if (
+            (s.stroke || (s.stroke = h),
+            s._barDom &&
+              ((s._barDom.style.backgroundColor = h),
+              (s._barDom.style.borderColor = h)),
+            s.getChildren().length,
+            s.getLevel() == i + 1)
+          ) {
+            if ("top" == r) {
+              var l = [
+                  a.x + o.width + e.dis / Math.tan(e.angle),
+                  parseInt(a.y + o.height + e.dis),
+                ],
+                d = [a.x + o.width, a.y + o.height + 1],
+                c = [a.x - 1, d[1]];
+              e.svgDom.node.appendChild(
+                t.linearPath(e.linePoint([l, d, c], 1), {
+                  stroke: h,
+                  strokeWidth: 1,
+                  fill: "none",
+                  roughness: 0.6,
+                }),
+              );
+            } else if ("bottom" == r) {
+              (l = [
+                a.x + o.width + (e.dis + o.height) / Math.tan(e.angle),
+                parseInt(a.y - e.dis),
+              ]),
+                (d = [a.x + o.width, a.y + o.height + 1]),
+                (c = [a.x - 1, d[1]]);
+              e.svgDom.node.appendChild(
+                t.linearPath(e.linePoint([l, d, c], 1), {
+                  stroke: h,
+                  strokeWidth: 1,
+                  fill: "none",
+                  roughness: 0.6,
+                }),
+              );
+            }
+          } else {
+            var u = s.getParent(),
+              p = u.getPosition(),
+              m = u.getBox();
+            if (s.isLast())
+              var f = [
+                (l = [p.x + 1, p.y + m.height + 1]),
+                [l[0] - e.dis, l[1]],
+                (g = [a.x + o.width, a.y + o.height + 1]),
+                (c = [a.x, g[1]]),
+              ];
+            else {
+              var g;
+              f = [
+                (g = [a.x + o.width, a.y + o.height + 1]),
+                (c = [a.x, g[1]]),
+              ];
+            }
+            e.svgDom.node.appendChild(
+              t.linearPath(e.linePoint(f, 1), {
+                stroke: h,
+                strokeWidth: 1,
+                fill: "none",
+                roughness: 0.6,
+              }),
+            );
+          }
+          s.isExpand &&
+            s.getChildren().forEach((e) => {
+              n(e, r);
+            });
+        }
+        this.root.children.forEach((e, t) => {
+          e.stroke || (e.stroke = this.colors[t] || ge());
+        }),
+          this.tops.forEach((e) => {
+            n(e, "top");
+          }),
+          this.bottoms.forEach((e) => {
+            n(e, "bottom");
+          }),
+          this.createHandDrawBone1();
+      }
+      createLink1() {
+        var e = this;
+        if ((this.dis, !this.svgDom)) return;
+        if (
+          (this.svgDom && this.svgDom.clear(),
+          0 == this.root.getChildren().length)
+        )
+          return;
+        var t = this.root.getLevel();
+        function i(n, s) {
+          var r = n.getBox(),
+            o = n.getPosition();
+          let a = n.parent.stroke
+            ? n.parent.stroke
+            : n.stroke
+              ? n.stroke
+              : ge();
+          if (
+            (n.stroke || (n.stroke = a),
+            n._barDom &&
+              ((n._barDom.style.backgroundColor = a),
+              (n._barDom.style.borderColor = a)),
+            n.getChildren().length,
+            n.getLevel() == t + 1)
+          ) {
+            if ("top" == s) {
+              var h = [
+                  o.x + r.width + e.dis / Math.tan(e.angle),
+                  parseInt(o.y + r.height + e.dis),
+                ],
+                l = [o.x + r.width, o.y + r.height + 1],
+                d = [o.x - 1, l[1]];
+              (c = e.svgDom.polyline(e.linePoint([h, l, d], 2))).fill("none"),
+                c.stroke({
+                  color: a,
+                  width: 2,
+                  linecap: "round",
+                  linejoin: "round",
+                });
+            } else if ("bottom" == s) {
+              (h = [
+                o.x + r.width + (e.dis + r.height) / Math.tan(e.angle),
+                parseInt(o.y - e.dis),
+              ]),
+                (l = [o.x + r.width, o.y + r.height + 1]),
+                (d = [o.x - 1, l[1]]);
+              (c = e.svgDom.polyline(e.linePoint([h, l, d], 2))).fill("none"),
+                c.stroke({
+                  color: a,
+                  width: 2,
+                  linecap: "round",
+                  linejoin: "round",
+                });
+            }
+          } else {
+            var c,
+              u = n.getParent(),
+              p = u.getPosition(),
+              m = u.getBox();
+            if (n.isLast())
+              var f = [
+                (h = [p.x + 1, p.y + m.height + 1]),
+                [h[0] - e.dis, h[1]],
+                (g = [o.x + r.width, o.y + r.height + 1]),
+                (d = [o.x, g[1]]),
+              ];
+            else {
+              var g;
+              f = [
+                (g = [o.x + r.width, o.y + r.height + 1]),
+                (d = [o.x, g[1]]),
+              ];
+            }
+            (c = e.svgDom.polyline(e.linePoint(f, 2))).fill("none"),
+              c.stroke({
+                color: a,
+                width: 2,
+                linecap: "round",
+                linejoin: "round",
+              });
+          }
+          n.isExpand &&
+            n.getChildren().forEach((e) => {
+              i(e, s);
+            });
+        }
+        this.root.children.forEach((e, t) => {
+          e.stroke || (e.stroke = this.colors[t] || ge());
+        }),
+          this.tops.forEach((e) => {
+            i(e, "top");
+          }),
+          this.bottoms.forEach((e) => {
+            i(e, "bottom");
+          }),
+          this.creatBone1();
+      }
+      createHandDrawBone() {
+        var e = this;
+        if (!this.isShow) return;
+        if (!this.svgDom) return;
+        var t = le.svg(this.root.mindmap.draw),
+          i = this.root.getMind(),
+          n = this.root,
+          s = n.getBox(),
+          r = n.getPosition(),
+          o = i.getBoundingRect(n.getShowNodeList());
+        let a = this.stroke;
+        var h = parseInt(r.x + s.width) + 0.5,
+          l = parseInt(r.y + s.height / 2) + 0.5,
+          d = parseInt(r.x + o.width + 30) + 0.5,
+          c = l;
+        e.svgDom.node.appendChild(
+          t.polygon(
+            [
+              [h, l - 3],
+              [d, c],
+              [h, l + 3],
+            ],
+            { stroke: a, strokeWidth: 1, fill: a, roughness: 0.4 },
+          ),
+        );
+        var u = [r.x + o.width + 30, l],
+          p = [u[0] + 60, u[1] - 30],
+          m = [u[0] + 60, u[1] + 30];
+        (e.fishTail = t.polygon([u, p, m], {
+          stroke: a,
+          strokeWidth: 1,
+          fill: a,
+          roughness: 0.6,
+        })),
+          e.svgDom.node.appendChild(e.fishTail);
+      }
+      creatBone() {
+        var e = this;
+        if (!this.isShow) return;
+        if (!this.svgDom) return;
+        var t = this.root.getMind(),
+          i = this.root,
+          n = i.getBox(),
+          s = i.getPosition(),
+          r = t.getBoundingRect(i.getShowNodeList());
+        let o = this.root.stroke || this.stroke;
+        this.stroke;
+        var a = parseInt(s.x + n.width),
+          h = parseInt(s.y + n.height / 2),
+          l = parseInt(s.x + r.width + 30),
+          d = h;
+        e.svgDom
+          .line(a, h, l, d)
+          .stroke({ color: o, width: 2, linecap: "round", linejoin: "round" });
+        var c = [s.x + r.width + 30, h],
+          u = [c[0] + 60, c[1] - 30],
+          p = [c[0] + 60, c[1] + 30];
+        e.fishTail = e.svgDom
+          .polygon([c, u, p])
+          .fill("lightskyblue")
+          .stroke({ color: o, width: 2, linecap: "round", linejoin: "round" });
+      }
+      createHandDrawBone1() {
+        var e = this;
+        if (!this.svgDom) return;
+        var t = le.svg(this.root.mindmap.draw),
+          i = this.root,
+          n = i.getMind(),
+          s = i.getBox(),
+          r = i.getPosition(),
+          o = n.getBoundingRect(i.getShowNodeList());
+        let a = this.stroke;
+        var h = parseInt(r.x) + 0.5,
+          l = parseInt(r.y + s.height / 2) + 0.5,
+          d = parseInt(o.x - 40) + 0.5,
+          c = l;
+        e.svgDom.node.appendChild(
+          t.polygon(
+            [
+              [h, l - 3],
+              [d, c],
+              [h, l + 3],
+            ],
+            { stroke: a, strokeWidth: 1, fill: a, roughness: 0.4 },
+          ),
+        );
+        var u = [o.x - 40, l],
+          p = [u[0] - 60, u[1] - 30],
+          m = [u[0] - 60, u[1] + 30];
+        (e.fishTail = t.polygon([u, p, m], {
+          stroke: a,
+          strokeWidth: 1,
+          fill: a,
+          roughness: 0.6,
+        })),
+          e.svgDom.node.appendChild(e.fishTail);
+      }
+      creatBone1() {
+        var e = this;
+        if (!this.svgDom) return;
+        var t = this.root,
+          i = t.getMind(),
+          n = t.getBox(),
+          s = t.getPosition(),
+          r = i.getBoundingRect(t.getShowNodeList());
+        let o = this.root.stroke || this.stroke;
+        var a = parseInt(s.x),
+          h = parseInt(s.y + n.height / 2),
+          l = parseInt(r.x - 40),
+          d = h;
+        e.svgDom
+          .line(a, h, l, d)
+          .stroke({ color: o, width: 2, linecap: "round", linejoin: "round" });
+        var c = [r.x - 40, h],
+          u = [c[0] - 60, c[1] - 30],
+          p = [c[0] - 60, c[1] + 30];
+        e.fishTail = e.svgDom
+          .polygon([c, u, p])
+          .fill("lightskyblue")
+          .stroke({ color: o, width: 2, linecap: "round", linejoin: "round" });
+      }
+      refresh() {
+        (this.tops = []),
+          (this.bottoms = []),
+          this.layout(this.root, this.direct);
+      }
+    },
+    tree: class extends ve {
+      constructor(e, t, i) {
+        super("tree"),
+          (this.layoutName = "tree"),
+          (this.direct = "down"),
+          (this.levelDis = 20),
+          (this.dis = 10),
+          (this.firstLevel = 60),
+          (this.firstNodeDis = 20),
+          (this.isCache = !0),
+          (this.lefts = []),
+          (this.rights = []),
+          (this.colors = []),
+          (this.lineWidth = 2),
+          (this.cache = {}),
+          (this.group = null),
+          (this.root = e),
+          ("down" != t && "up" != t) || (this.direct = t),
+          (this.colors = i || []),
+          (this.mind = this.root.mindmap),
+          this.group || (this.group = this.mind.edgeGroup.group());
+      }
+      layout(e, t) {
+        e && (this.root = e),
+          (this.direct = t && ("down" == t || "up" == t) ? t : "down"),
+          (e.layout = this),
+          this.group || (this.group = this.root.getMind().edgeGroup.group()),
+          (this.svgDom = this.group),
+          this.root.isShow() &&
+            (e.children.forEach((e) => {
+              this.setDirect(e);
+            }),
+            this._doLayout(e),
+            this.doLayout(e),
+            this.root.nodeType &&
+              "induce" != this.root.nodeType &&
+              this.refreshLayout(),
+            this._updateRootAssist()),
+          this.createLink();
+      }
+      setDirect(e) {
+        if (((e.direct = this.direct), e.containEl)) {
+          var t = e.containEl.classList.contains("mm-node-second");
+          e.containEl.setAttribute("class", ""),
+            e.containEl.classList.add("mm-node"),
+            e.containEl.classList.add("mm-node-" + this.direct),
+            e.belongInduce && e.containEl.classList.add("mm-node-induce"),
+            e.isLeaf() && !e.containEl.classList.contains("mm-node-leaf")
+              ? e.containEl.classList.add("mm-node-leaf")
+              : e.containEl.classList.contains("mm-node-leaf") &&
+                e.containEl.classList.remove("mm-node-leaf"),
+            0 == e.getLevel() &&
+              this.root.nodeType &&
+              "induce" != this.root.nodeType &&
+              e.containEl.classList.add("mm-root"),
+            1 == e.getLevel() &&
+              this.root.nodeType &&
+              "induce" != this.root.nodeType &&
+              (e.containEl.classList.add("mm-node-second"), e.refreshBox()),
+            t && e.refreshBox(),
+            e.isExpand || e.containEl.classList.add("mm-node-collapse"),
+            e.isSelect && e.containEl.classList.add("mm-node-select"),
+            (e === this.root || (!e.layout && e.isExpand)) &&
+              e.children.forEach((e) => {
+                this.setDirect(e);
+              });
+        }
+      }
+      _doLayout(e) {
+        var t = this,
+          i = this.levelDis,
+          n = this.dis,
+          s = e.getBox(),
+          r = e.getPosition();
+        0 == e.getLevel() && ((i = this.firstLevel), (n = this.firstNodeDis));
+        var o = e.getChildren().length - 1;
+        let a = 0;
+        if (
+          (e.getChildren().forEach(function (e, t) {
+            let i = e.getBox();
+            (a += i.width), t != o && (a += n);
+          }),
+          "down" == this.direct)
+        ) {
+          let t = r.y + s.height + i,
+            o = r.x + s.width / 2 - a / 2,
+            h = 0;
+          e.getChildren().forEach(function (e, i) {
+            e.callout && e.callout.refresh();
+            let s = e.getCBox();
+            var r = t + s.th;
+            0 == i
+              ? (e.setPosition(o, r), (h = o + s.width + n))
+              : (e.setPosition(h, r), (h = h + s.width + n));
+          });
+        } else {
+          let t = r.y - i,
+            o = r.x + s.width / 2 - a / 2,
+            h = 0;
+          e.getChildren().forEach(function (e, i) {
+            e.callout && e.callout.refresh(),
+              e.wireFrame && e.wireFrame.refresh();
+            let s = e.getCBox();
+            0 == i
+              ? (e.setPosition(o, t - s.height - s.bh), (h = o + s.width + n))
+              : (e.setPosition(h, t - s.height - s.bh), (h = h + s.width + n));
+          });
+        }
+        if ("down" == this.direct && e.layout && e != this.root)
+          if ("table" != e.layout.layoutName) {
+            e.layout.layout(e, e.layout.direct || ""),
+              (s = e.getMind().getBBox(e));
+            var h = e.getCBox().th,
+              l = Math.abs(Math.abs(r.y - s.y) - h);
+            this.moveNode(e, 0, l),
+              (e.boundingRect = null),
+              (e.direct = "down");
+          } else (e.direct = "down"), (e.boundingRect = null);
+        else
+          e.isExpand &&
+            e.getChildren().forEach(function (e, i) {
+              t._doLayout(e);
+            });
+      }
+      doLayout(e) {
+        if (e && e.isExpand) {
+          var t = this,
+            i = e.getMind();
+          i.traverseDF(
+            (e) => {
+              if (e != t.root && e.isShow()) {
+                if (e.layout) {
+                  if (e.layout != t && e.getTopLayout() != t) return;
+                } else if (e.getLayout() != t && "down" == t.direct) return;
+                e.callout && e.callout.isShow && e.callout.refresh();
+                var n = {},
+                  s = e.parent;
+                if (s) {
+                  var r = s.wireFrames,
+                    o = s.summaries;
+                  r.length &&
+                    r.forEach((t) => {
+                      if (
+                        t.node == e &&
+                        (t.refreshNode(), t.refresh(), t.data && t.data.text)
+                      )
+                        if (n[e.getId()])
+                          (n[e.getId()].rangeNode = n[
+                            e.getId()
+                          ].rangeNode.concat(t.rangeNode.slice())),
+                            n[e.getId()].rangeNode.unique();
+                        else {
+                          var i = t.getTextBox().height,
+                            s = t.rangeNode.slice();
+                          n[e.getId()] = {
+                            node: e,
+                            wf: t,
+                            topDy: i + 4,
+                            rangeNode: s,
+                          };
+                        }
+                    }),
+                    o.length &&
+                      o.forEach((t) => {
+                        t.node == e && (t.refreshNode(), t.refresh());
+                      });
+                }
+                var a = e.getBox();
+                if (t.isCache && e.boundingRect) var h = e.boundingRect;
+                else {
+                  var l = e.getShowNodeList(),
+                    d = [],
+                    c = [],
+                    u = [],
+                    p = [];
+                  if (
+                    (l.forEach((e) => {
+                      e.callout &&
+                        e.callout.isShow &&
+                        -1 == u.indexOf(e) &&
+                        u.push(e.callout),
+                        e.layout &&
+                          e.layout.isShow &&
+                          -1 == p.indexOf(e.layout) &&
+                          p.push(e.layout);
+                      var t = e.wireFrames;
+                      e.summaries.forEach((e) => {
+                        e.isShow() && -1 == c.indexOf(e) && c.push(e);
+                      }),
+                        t.forEach((e) => {
+                          e.isHide || (-1 == d.indexOf(e) && d.push(e));
+                        });
+                    }),
+                    (l = l.concat(d).concat(u)),
+                    c.forEach((e) => {
+                      l = l.concat(e.getAllItem());
+                    }),
+                    l.length)
+                  ) {
+                    h = i.getBoundingRect(l);
+                    p.length &&
+                      p.forEach((e) => {
+                        if (
+                          "fish" == e.layoutName &&
+                          "down" == t.direct &&
+                          ("right" == e.direct ? e.creatBone() : e.creatBone1(),
+                          e.fishTail)
+                        ) {
+                          var i = e.fishTail.bbox();
+                          i.x < h.x && (h.x = i.x),
+                            i.y < h.y && (h.y = i.y),
+                            i.x + i.width > h.right &&
+                              (h.right = i.x + i.width),
+                            i.y + i.height > h.bottom &&
+                              (h.bottom = i.y + i.height),
+                            (h.width = h.right - h.x),
+                            (h.height = h.bottom - h.y);
+                        }
+                      });
+                  }
+                }
+                if (t.isCache && e.boundingRect)
+                  var m = e.boundingRect.leftDx,
+                    f = e.boundingRect.rightDx;
+                else {
+                  (m = Math.abs(h.x - a.x)),
+                    (f = Math.abs(h.right - a.x - a.width));
+                  var g = {},
+                    v = {};
+                  r &&
+                    r.length &&
+                    r.forEach((t) => {
+                      var i = t.leftNode;
+                      if (t.node == e) {
+                        if (g[i]) return;
+                        (g[i] = !0), (m += 6);
+                      }
+                      if (t.endNode && t.endNode == e) {
+                        var n = t.rightNode;
+                        if (v[n]) return;
+                        (v[n] = !0), (f += 6);
+                      }
+                    }),
+                    (h.leftDx = m),
+                    (h.rightDx = f),
+                    (e.boundingRect = h);
+                }
+                if ((t.adjustNode(e, m, f, 0), "top" !== e.direct))
+                  for (let e in n)
+                    t.adjustNode(n[e].node, 0, 0, n[e].topDy, n[e]);
+                r &&
+                  r.length &&
+                  r.forEach((t) => {
+                    t.endNode == e && t.refresh();
+                  }),
+                  o &&
+                    o.length &&
+                    o.forEach((t) => {
+                      t.endNode == e && t.refresh();
+                    });
+              }
+            },
+            e,
+            !1,
+          );
+        }
+      }
+      adjustNode(e, t, i, n, s) {
+        var r = this;
+        if (s)
+          s.rangeNode.forEach((e) => {
+            "down" == r.direct ? r.moveNode(e, 0, n) : r.moveNode(e, 0, -n);
+          });
+        else if (e && e != this.root) {
+          var o = e.getPosition();
+          e.getSiblings().forEach(function (e) {
+            let n = e.getPosition();
+            if (o.x > n.x) {
+              if (0 == t) return;
+              r.moveNode(e, -t, 0);
+            } else {
+              if (0 == i) return;
+              r.moveNode(e, i, 0);
+            }
+          });
+        }
+      }
+      refreshLayout() {
+        var e = this.root,
+          t = e.getPosition(),
+          i = e.getBox(),
+          n = t.x + i.width / 2,
+          s = e.getChildren();
+        if (s.length >= 2) {
+          var r = s[0],
+            o = s[s.length - 1],
+            a = r.getPosition(),
+            h = o.getPosition(),
+            l = o.getBox(),
+            d = h.x + l.width - n,
+            c = n - a.x;
+          if (Math.abs(d) != Math.abs(c)) {
+            var u = Math.abs(Math.abs(d) - Math.abs(c)) / 2;
+            Math.abs(d) > Math.abs(c)
+              ? s.forEach((e) => {
+                  this.moveNode(e, -u, 0);
+                })
+              : s.forEach((e) => {
+                  this.moveNode(e, u, 0);
+                });
+          }
+        }
+      }
+      createLink() {
+        "down" == this.direct ? this.createDownLink() : this.createUpLink();
+      }
+      createDownLink() {
+        var e = this,
+          t = this.root;
+        if (
+          (this.group && this.group.clear(),
+          0 == this.root.getChildren().length)
+        )
+          return;
+        if (!this.group || !this.root.isShow()) return;
+        let i = this.lineWidth;
+        function n(e) {
+          if (e.isExpand) {
+            if (e.layout) return void e.layout.createLink();
+            e.children.forEach((e) => {
+              n(e);
+            });
+          }
+        }
+        !(function t(n) {
+          if ((!n.layout || n == e.root) && n.isExpand) {
+            var s = n.getPosition(),
+              r = n.getBox();
+            n == e.root && (r.height += 1),
+              n.getChildren().forEach(function (o, a) {
+                let h = o.getBox(),
+                  l = o.getPosition(),
+                  d = { x: s.x + r.width / 2, y: s.y + r.height },
+                  c = l.x + h.width / 2,
+                  u = l.y,
+                  p = n.stroke
+                    ? n.stroke
+                    : o.stroke
+                      ? o.stroke
+                      : e.colors[a] || ge();
+                if (
+                  (o.stroke || (o.stroke = p),
+                  o._barDom &&
+                    ((o._barDom.style.backgroundColor = p),
+                    (o._barDom.style.borderColor = p)),
+                  1 == n.getChildren().length)
+                ) {
+                  if (i % 2 == 1)
+                    var m = parseInt(d.x + "") + 0.5,
+                      f = d.y,
+                      g = parseInt(c + "") + 0.5,
+                      v = parseInt(u + "") + 0.5;
+                  else
+                    (m = parseInt(d.x + "")),
+                      (f = d.y),
+                      (g = parseInt(c + "")),
+                      (v = parseInt(u + ""));
+                  var y = e.group.line(m, f, g, v).stroke({
+                    color: p,
+                    width: i,
+                    linecap: "round",
+                    linejoin: "round",
+                  });
+                } else {
+                  var A = [s.x + r.width / 2, s.y + r.height],
+                    x = [l.x + h.width / 2, l.y];
+                  if (0 == n.getLevel())
+                    var b = [A[0], A[1] + e.firstLevel / 2];
+                  else b = [A[0], A[1] + e.levelDis / 2];
+                  if (l.x + h.width / 2 > s.x + r.width / 2)
+                    var w = [x[0] - 4, b[1]],
+                      k = [x[0], b[1] + 4];
+                  else (w = [x[0] + 4, b[1]]), (k = [x[0], b[1] + 4]);
+                  var C = [A, b, w],
+                    E = [k, x];
+                  if (C.length > 2) {
+                    (y = e.group.polyline(e.linePoint(C, i))).fill("none"),
+                      y.stroke({
+                        color: p,
+                        width: i,
+                        linecap: "round",
+                        linejoin: "round",
+                      });
+                    var D = e.linePoint([k], i)[0],
+                      N = e.linePoint([w], i)[0],
+                      I = `M${D[0]} ${D[1]},Q${D[0]} ${N[1]},${N[0]} ${N[1]}`,
+                      S = e.group.path().stroke({
+                        color: p,
+                        width: i,
+                        linecap: "round",
+                        linejoin: "round",
+                      });
+                    S.plot(I),
+                      S.fill("none"),
+                      (y = e.group.polyline(e.linePoint(E, i))).fill("none"),
+                      y.stroke({
+                        color: p,
+                        width: i,
+                        linecap: "round",
+                        linejoin: "round",
+                      });
+                  } else {
+                    (y = e.group.polyline(e.linePoint(C, i))).fill("none"),
+                      y.stroke({
+                        color: p,
+                        width: i,
+                        linecap: "round",
+                        linejoin: "round",
+                      });
+                  }
+                }
+                t(o);
+              });
+          }
+        })(t),
+          t.children.forEach((e, t) => {
+            n(e);
+          });
+      }
+      createUpLink() {
+        var e = this,
+          t = this.root;
+        if (
+          (this.group && this.group.clear(),
+          0 == this.root.getChildren().length)
+        )
+          return;
+        if (!this.group || !this.root.isShow()) return;
+        let i = this.lineWidth;
+        (t = this.root).children.forEach((e, t) => {
+          e.stroke || (e.stroke = this.colors[t] || ge());
+        }),
+          (function t(n) {
+            if (
+              (n.layout &&
+                n != e.root &&
+                n.layout.group &&
+                n.layout.group.clear(),
+              n.isExpand)
+            ) {
+              var s = n.getPosition(),
+                r = n.getBox();
+              n.getLevel(),
+                n.getChildren().forEach(function (o, a) {
+                  let h = o.getCBox(),
+                    l = o.getPosition(),
+                    d = parseInt(s.x + r.width / 2 + ""),
+                    c = parseInt(s.y + ""),
+                    u = parseInt(l.x + h.width / 2 + ""),
+                    p = parseInt(l.y + h.height + ""),
+                    m = n.stroke ? n.stroke : o.stroke ? o.stroke : ge();
+                  if (
+                    (o.stroke || (o.stroke = m),
+                    o._barDom &&
+                      ((o._barDom.style.backgroundColor = m),
+                      (o._barDom.style.borderColor = m)),
+                    1 == n.getChildren().length)
+                  ) {
+                    if (i % 2 == 1)
+                      var f = parseInt(d + "") + 0.5,
+                        g = parseInt(c + "") + 0.5,
+                        v = parseInt(u + "") + 0.5,
+                        y = parseInt(p + "") + 0.5;
+                    else
+                      (f = parseInt(d + "")),
+                        (g = parseInt(c + "")),
+                        (v = parseInt(u + "")),
+                        (y = parseInt(p + ""));
+                    var A = e.group.line(f, g, v, y).stroke({
+                      color: m,
+                      width: i,
+                      linecap: "round",
+                      linejoin: "round",
+                    });
+                  } else {
+                    var x = [s.x + r.width / 2, s.y],
+                      b = [l.x + h.width / 2, l.y + h.height],
+                      w = [x[0], x[1] - e.levelDis / 2];
+                    if (o.isFirst() || o.isLast()) {
+                      if (l.x + h.width / 2 > s.x + r.width / 2)
+                        var k = [b[0] - 4, w[1]],
+                          C = [b[0], w[1] - 4];
+                      else (k = [b[0] + 4, w[1]]), (C = [b[0], w[1] - 4]);
+                      var E = [x, w, k],
+                        D = [C, b];
+                    } else E = [(k = [b[0], w[1]]), b];
+                    if (E.length > 2) {
+                      (A = e.group.polyline(e.linePoint(E, i))).fill("none"),
+                        A.stroke({
+                          color: m,
+                          width: i,
+                          linecap: "round",
+                          linejoin: "round",
+                        });
+                      var N = e.linePoint([C], i)[0],
+                        I = e.linePoint([k], i)[0],
+                        S = `M${N[0]} ${N[1]},Q${N[0]} ${I[1]},${I[0]} ${I[1]}`,
+                        B = e.group.path().stroke({
+                          color: m,
+                          width: i,
+                          linecap: "round",
+                          linejoin: "round",
+                        });
+                      B.plot(S),
+                        B.fill("none"),
+                        (A = e.group.polyline(e.linePoint(D, i))).fill("none"),
+                        A.stroke({
+                          color: m,
+                          width: i,
+                          linecap: "round",
+                          linejoin: "round",
+                        });
+                    } else {
+                      (A = e.group.polyline(e.linePoint(E, i))).fill("none"),
+                        A.stroke({
+                          color: m,
+                          width: i,
+                          linecap: "round",
+                          linejoin: "round",
+                        });
+                    }
+                  }
+                  t(o);
+                });
+            }
+          })(t);
+      }
+      refresh() {
+        var e = this.root;
+        this.layout(e, this.direct), this.createLink();
+      }
+    },
+    multipleTree: class extends ve {
+      constructor(e, t, i) {
+        super("multipleTree"),
+          (this.mind = null),
+          (this.colors = []),
+          (this.layoutName = "multipleTree"),
+          (this.type = "multipleTree"),
+          (this.levelDis = 20),
+          (this.firstLevelDis = 40),
+          (this.nodeDis = 18),
+          (this.root = null),
+          (this.rootLevel = 0),
+          (this.rights = []),
+          (this.lefts = []),
+          (this.isCache = !1),
+          (this.name = "multipleTree"),
+          (this.lineWidth = 2),
+          (this.root = e),
+          (this.mind = this.root.mindmap),
+          (this.colors = i || []),
+          (this.direct = t || "multipleTree"),
+          this.svgDom || (this.svgDom = this.mind.edgeGroup.group());
+      }
+      layout(e, t) {
+        if (
+          ((this.rights = []),
+          (this.lefts = []),
+          (this.root = e || this.root),
+          (this.rootLevel = this.root.getLevel()),
+          (this.root.layout = this),
+          (this.direct = t),
+          this.root.containEl.classList.contains("mm-multipleTree-node") ||
+            (this.root.containEl.classList.add("mm-node-down"),
+            this.root.containEl.classList.add("mm-multipleTree-node")),
+          this.svgDom || (this.svgDom = this.root.mindmap.edgeGroup.group()),
+          "right" == this.direct)
+        )
+          this.root.children.forEach((e) => {
+            this.rights.push(e), this.setDirect(e, "right");
+          });
+        else if ("left" == this.direct)
+          this.root.children.forEach((e) => {
+            this.lefts.push(e), this.setDirect(e, "left");
+          });
+        else {
+          var i = this.root.children.length;
+          this.root.children.forEach((e, t) => {
+            t < Math.ceil(i / 2)
+              ? (this.rights.push(e), this.setDirect(e, "right"))
+              : (this.lefts.push(e), this.setDirect(e, "left"));
+          });
+        }
+        this._layoutTow(), this._updateRootAssist(), this.createLink();
+      }
+      setDirect(e, t) {
+        if (((e.direct = t), e.containEl)) {
+          var i = e.containEl.classList.contains("mm-node-second");
+          if (
+            (e.containEl.setAttribute("class", ""),
+            e.containEl.classList.add("mm-node"),
+            e.containEl.classList.add("mm-node-down"),
+            e.containEl.classList.add(`mm-${this.layoutName}-node`),
+            e.isLeaf() && !e.containEl.classList.contains("mm-node-leaf")
+              ? e.containEl.classList.add("mm-node-leaf")
+              : e.containEl.classList.contains("mm-node-leaf") &&
+                e.containEl.classList.remove("mm-node-leaf"),
+            e.layout)
+          )
+            return;
+          1 == e.getLevel() &&
+            "induce" != this.root.nodeType &&
+            (e.containEl.classList.add("mm-node-second"), e.refreshBox()),
+            i && e.refreshBox(),
+            e.isSelect && e.containEl.classList.add("mm-node-select"),
+            e.isExpand || e.containEl.classList.add("mm-node-collapse"),
+            e.children.forEach((e) => {
+              this.setDirect(e, t);
+            });
+        }
+      }
+      _layoutTow() {
+        this.root.isExpand &&
+          this.root.isShow() &&
+          (this._layoutRight(), this._layoutLeft());
+      }
+      _layoutRight() {
+        var e = this.root.getCBox();
+        this.rights.forEach((t, i) => {
+          t.callout && t.callout.refresh(),
+            this._layoutRightNode(t, i, e, !0, t.getLevel() - 1);
+        });
+      }
+      getParentPos(e) {
+        e.getLevel();
+        var t = e.getDomBox();
+        return { x: t.x + t.width / 2, y: t.y + t.height };
+      }
+      _layoutRightNode(e, t, i, n, s) {
+        var r = this.root.getMind(),
+          o = i.x + i.width / 2,
+          a = i.y + i.height;
+        if (0 == t) {
+          var h = e.getCBox(!0);
+          e.setPosition(o + this.levelDis, a + this.nodeDis + h.th + i.bh);
+        } else {
+          var l = e.getCBox(!0);
+          if (n) {
+            let i = this.rights[t - 1];
+            if (this.isCache && i.boundingRect) var d = i.boundingRect;
+            else {
+              d = r.getBBox(i);
+              i.boundingRect = d;
+            }
+            var c = i.getPosition();
+            if (i.layout) {
+              var { x: u } = this.getParentPos(i.parent);
+              e.setPosition(
+                u + this.levelDis,
+                d.y + d.height + this.nodeDis + l.th,
+              );
+            } else e.setPosition(c.x, d.y + d.height + this.nodeDis + l.th);
+          } else {
+            var p = e.parent.children[t - 1];
+            let i = p.getPosition();
+            if (this.isCache && p.boundingRect) d = p.boundingRect;
+            else {
+              d = r.getBBox(p);
+              p.boundingRect = d;
+            }
+            if (p.layout) {
+              var { x: u } = this.getParentPos(p.parent);
+              e.setPosition(
+                u + this.levelDis,
+                d.y + d.height + this.nodeDis + l.th,
+              );
+            } else e.setPosition(i.x, d.y + d.height + this.nodeDis + l.th);
+          }
+        }
+        if (e.layout) {
+          if ("table" != e.layout.layoutName) {
+            e.layout.layout(e, e.layout.direct || "");
+            let t = e.getPosition();
+            i = r.getBBox(e);
+            e.boundingRect = i;
+            var m = Math.abs(t.x - i.x);
+            if (h) var f = Math.abs(t.y - i.y) - h.th;
+            else f = Math.abs(t.y - i.y);
+            return (
+              this.moveNode(e, m, f),
+              (e.direct = "right"),
+              void this._updateNodeAssist(e)
+            );
+          }
+          return (
+            (e.boundingRect = null),
+            (e.direct = "right"),
+            void this._updateNodeAssist(e)
+          );
+        }
+        if ((this._updateNodeAssist(e), e.isExpand)) {
+          var g = e.getCBox(!0);
+          e.children.forEach((e, t) => {
+            e.callout && e.callout.refresh(), this._layoutRightNode(e, t, g);
+          });
+        }
+      }
+      _layoutLeft() {
+        var e = this.root.getCBox();
+        this.lefts.forEach((t, i) => {
+          t.callout && t.callout.refresh(),
+            this._layoutLeftNode(t, i, e, !0, t.getLevel() - 1);
+        });
+      }
+      _layoutLeftNode(e, t, i, n, s) {
+        var r = this.root.getMind(),
+          o = i.x + i.width / 2,
+          a = i.y + i.height,
+          { width: h, th: l } = e.getCBox(!0);
+        if (0 == t) {
+          var d = 0;
+          s == this.rootLevel && (d = 20),
+            e.setPosition(
+              o - h - this.levelDis,
+              a + this.nodeDis + d + l + i.bh,
+            );
+        } else {
+          var c = e.getCBox(!0);
+          if (n) {
+            var u = this.lefts[t - 1];
+            if (this.isCache && u.boundingRect) var p = u.boundingRect;
+            else {
+              p = r.getBBox(u);
+              u.boundingRect = p;
+            }
+            if (u.layout) {
+              var { x: m } = this.getParentPos(u.parent);
+              e.setPosition(
+                m - this.levelDis - h,
+                p.y + p.height + this.nodeDis + c.th,
+              );
+            } else {
+              var f = u.getCBox(!0);
+              e.setPosition(
+                f.x + f.width - h,
+                p.y + p.height + this.nodeDis + c.th,
+              );
+            }
+          } else {
+            let i = e.parent.children[t - 1];
+            p = r.getBBox(i);
+            if (this.isCache && i.boundingRect) p = i.boundingRect;
+            else {
+              p = r.getBBox(i);
+              i.boundingRect = p;
+            }
+            if (i.layout) {
+              var { x: m } = this.getParentPos(i.parent);
+              e.setPosition(
+                m - this.levelDis - h,
+                p.y + p.height + this.nodeDis + c.th,
+              );
+            } else {
+              let t = i.getCBox(!0);
+              e.setPosition(
+                t.x + t.width - h,
+                p.y + p.height + this.nodeDis + c.th,
+              );
+            }
+          }
+        }
+        if (e.layout) {
+          if ("table" != e.layout.layoutName) {
+            e.layout.layout(e, e.layout.direct || "");
+            var g = e.getPosition(),
+              v = ((i = r.getBBox(e)), Math.abs(g.x + h - i.x - i.width)),
+              y = Math.abs(g.y - i.y) - l;
+            return (
+              this.moveNode(e, -v, y),
+              (e.direct = "left"),
+              void this._updateNodeAssist(e)
+            );
+          }
+          (g = e.getPosition()),
+            (i = r.getBBox(e)),
+            (v = Math.abs(g.x + h - i.x - i.width)),
+            (y = Math.abs(g.y - i.y) - l);
+          return (
+            this.moveNode(e, -v, y),
+            (e.direct = "left"),
+            (e.boundingRect = null),
+            void this._updateNodeAssist(e)
+          );
+        }
+        if ((this._updateNodeAssist(e), e.isExpand)) {
+          var A = e.getCBox(!0);
+          e.children.forEach((e, t) => {
+            e.callout && e.callout.refresh(), this._layoutLeftNode(e, t, A);
+          });
+        }
+      }
+      createLink() {
+        var e = this;
+        if (
+          (this.svgDom && this.svgDom.clear(),
+          this.svgDom &&
+            this.root.isShow() &&
+            0 != this.root.getChildren().length)
+        ) {
+          var t = this.lineWidth;
+          ge(),
+            this.root.children.forEach((e, t) => {
+              e.stroke || (e.stroke = this.colors[t] || ge());
+            }),
+            (function i(n) {
+              if (n.isExpand) {
+                var s = Object.assign({}, n.getBox());
+                n != e.root && (s.height += 1);
+                var r = [s.x + s.width / 2, s.y + s.height];
+                n.children.forEach((s) => {
+                  var o = Object.assign({}, s.getBox());
+                  o.height += 1;
+                  var a = n.stroke ? n.stroke : s.stroke ? s.stroke : ge();
+                  if (
+                    (s.stroke || (s.stroke = a),
+                    s._barDom &&
+                      ((s._barDom.style.backgroundColor = a),
+                      (s._barDom.style.borderColor = a)),
+                    "right" == s.direct)
+                  )
+                    var h = e.linePoint([[r[0], o.y + o.height - 6]], t)[0],
+                      l = e.linePoint([[o.x + o.width, o.y + o.height]], t)[0],
+                      d = e.linePoint([[h[0] + 6, l[1]]], t)[0],
+                      c = `M${h[0]} ${h[1]},Q${h[0]} ${h[1] + 6},${d[0]} ${d[1]}`;
+                  else
+                    (h = e.linePoint([[r[0], o.y + o.height - 6]], t)[0]),
+                      (l = e.linePoint([[o.x, o.y + o.height]], t)[0]),
+                      (d = e.linePoint([[h[0] - 6, l[1]]], t)[0]),
+                      (c = `M${h[0]} ${h[1]},Q${h[0]} ${h[1] + 6},${d[0]} ${d[1]} `);
+                  var u = e.svgDom.path().stroke({
+                    color: a,
+                    width: t,
+                    linecap: "round",
+                    linejoin: "round",
+                  });
+                  u.plot(c), u.fill("none");
+                  var p = e.svgDom.line(e.linePoint([r, h], t));
+                  p.fill("none"),
+                    p.stroke({
+                      color: a,
+                      width: t,
+                      linecap: "round",
+                      linejoin: "round",
+                    });
+                  var m = e.svgDom.line(e.linePoint([d, l], t));
+                  m.fill("none"),
+                    m.stroke({
+                      color: a,
+                      width: t,
+                      linecap: "round",
+                      linejoin: "round",
+                    }),
+                    s.layout || i(s);
+                });
+              }
+            })(this.root),
+            this.root.children.forEach((e, t) => {
+              i(e);
+            });
+        }
+        function i(e) {
+          if (e.isExpand) {
+            if (e.layout) return void e.layout.createLink();
+            e.children.forEach((e) => {
+              i(e);
+            });
+          }
+        }
+      }
+      refresh() {
+        this.layout(this.root, this.direct), this.createLink();
+      }
+    },
+    vertical: class extends ve {
+      constructor(e, t, i) {
+        if (
+          (super("vertical"),
+          (this.layoutName = "vertical"),
+          (this.type = "vertical"),
+          (this.dis = 40),
+          (this.direct = "vertical"),
+          (this.isCache = !0),
+          (this.root = null),
+          (this.colors = []),
+          (this.svgDom = null),
+          (this.root = e),
+          (this.direct = t || "vertical"),
+          (this.colors = i || []),
+          !e.stroke)
+        ) {
+          var n = ge();
+          (e.data.stroke = n), (e.stroke = n);
+        }
+      }
+      layout(e, t) {
+        (this.direct = t || "vertical"),
+          (this.root = e || this.root),
+          this.root.parent ||
+            this.root.containEl.classList.contains("mm-root") ||
+            this.root.containEl.classList.add("mm-root"),
+          this.svgDom || (this.svgDom = this.root.getMind().edgeGroup.group()),
+          (this.root.layout = this),
+          this._layout(this.root, this.direct),
+          this._updateRootAssist(),
+          this.createLink();
+      }
+      _layout(e, t) {
+        var i = this;
+        (this.root = e), (this.direct = t || "vertical");
+        var n = this.root.mindmap,
+          s = this.root.getPosition(),
+          r = this.root.getBox(),
+          o = s.x + r.width / 2,
+          a = s.y + r.height;
+        this.root.isExpand &&
+          (this.root.children.forEach((e, t) => {
+            var s = "right";
+            t % 2 == 0 && (s = "left");
+            var r;
+            if (e.stroke) var h = e.stroke;
+            else
+              (h = this.colors[t] || ge()), (e.data.stroke = h), (e.stroke = h);
+            (r = new Array(100).fill(h)),
+              !e.layout && (e.layout = new Ae(e, s, r)),
+              (e.layout.root = e);
+            var l = e.getBox();
+            if (0 == t) e.setPosition(o - l.width / 2, a + this.dis);
+            else {
+              var d = this.root.children[t - 1],
+                c = n.getBBox(d);
+              e.boundingRect = c;
+              var u = c.bottom;
+              e.setPosition(o - l.width / 2, u + this.dis);
+            }
+            e.layout.layout(e, s || this.direct || ""),
+              e.callout && e.callout.refresh();
+            var p = e.getPosition(),
+              m = ((l = n.getBBox(e)), Math.abs(p.y - l.y));
+            this.moveNode(e, 0, m),
+              (e.containEl.classList = []),
+              e.containEl.classList.add("mm-node"),
+              e.containEl.classList.add("mm-node-" + s),
+              e.containEl.classList.add("mm-node-second"),
+              e.containEl.classList.add("mm-vertical-node"),
+              e.isLeaf()
+                ? e.containEl.classList.contains("mm-node-leaf") ||
+                  e.containEl.classList.add("mm-node-leaf")
+                : e.containEl.classList.contains("mm-node-leaf") &&
+                  e.containEl.classList.remove("mm-node-leaf"),
+              this._updateNodeAssist(e, i.root);
+          }),
+          this._updateNodeAssist(this.root, this.root));
+      }
+      createLink() {
+        var e = this.root.children,
+          t = e.length;
+        if (
+          (this.svgDom && this.svgDom.clear(),
+          !this.svgDom || !this.root.isShow())
+        )
+          return;
+        if (0 == t) return;
+        let i = this.root.stroke ? this.root.stroke : ge();
+        var n = e[t - 1];
+        var s = this.root.getPosition(),
+          r = this.root.getCBox();
+        n.getCBox();
+        var o = n.getPosition(),
+          a = s.x + r.width / 2,
+          h = a,
+          l = s.y + r.height,
+          d = o.y;
+        this.svgDom
+          .line(a, l, h, d)
+          .stroke({ color: i, width: 2, linecap: "round", linejoin: "round" }),
+          e.forEach((e) => {
+            e.layout.createLink();
+          });
+      }
+      refresh() {
+        this.layout(this.root, this.direct);
+      }
+    },
+    table: class extends ve {
+      constructor(e, t) {
+        super("table"),
+          (this.layoutName = "table"),
+          (this.direct = ""),
+          (this.data = null),
+          (this.levelDis = 50),
+          (this.nodeDis = 6),
+          (this.firstLevelDis = 80),
+          (this.firstNodeDis = 20),
+          (this.isCache = !0),
+          (this.lefts = []),
+          (this.rights = []),
+          (this.colors = []),
+          (this.lineWidth = 2),
+          (this.tableDom = null),
+          (this.lastNode = null),
+          (this.x = 0),
+          (this.y = 0),
+          (this.root = e),
+          (this.direct = t || "right"),
+          (this.mind = this.root.getMind());
+        var i = this.getData(e),
+          { x: n, y: s } = e.getPosition();
+        (this.x = n),
+          (this.y = s),
+          this.initTableDom(),
+          this.initTableNode(i),
+          this.layout();
+      }
+      layout(e, t) {
+        var i = document.createElement("table");
+        i.classList.add("mm-table"),
+          i.classList.add("mm-table-bordered"),
+          (this.tableDom.innerHTML = ""),
+          this.tableDom.appendChild(i);
+        var n = this.getMaxlevel(),
+          s = document.createElement("thead"),
+          r = document.createElement("tr");
+        i.appendChild(s),
+          this.root.init(n),
+          this.root.tdDom.setAttribute("colspan", n),
+          r.appendChild(this.root.tdDom),
+          s.appendChild(r);
+        var o = [];
+        this.root.children.forEach((e) => {
+          this.mind.traverseDF((e) => {
+            if ((e.init(), e.isLeaf() && 1 != e.getLevel())) {
+              var t = document.createElement("tr");
+              (e.trDom = t),
+                i.appendChild(t),
+                t.appendChild(e.tdDom),
+                o.push(e),
+                e.tdDom.setAttribute("colspan", n - e.getLevel() + 1),
+                e.tdDom.setAttribute("rowspan", 1);
+            }
+          }, e);
+        }),
+          o.forEach((e) => {
+            for (
+              var t = e.parent;
+              t &&
+              t != this.root &&
+              !i.querySelector(`[data-id='${t.data.id}']`);
+
+            ) {
+              t.tdDom.setAttribute("colspan", 1);
+              var n = t.children[0].trDom;
+              n.insertBefore(t.tdDom, n.firstChild), (t.trDom = n);
+              var s = this.getRowspan(t);
+              t.tdDom.setAttribute("rowspan", s), (t = t.parent);
+            }
+          }),
+          this.root.children.forEach((e, t) => {
+            if (!i.querySelector(`[data-id='${e.data.id}']`)) {
+              var r = document.createElement("tr");
+              if (
+                (r.appendChild(e.tdDom),
+                e.tdDom.setAttribute("colspan", n),
+                e.tdDom.setAttribute("rowspan", 1),
+                (e.trDom = r),
+                0 == t)
+              )
+                Di(r, s);
+              else {
+                var o = this.getLastNode(this.root.children[t - 1]);
+                o && Di(r, o.trDom);
+              }
+            }
+          });
+      }
+      initTableDom() {
+        if (!this.tableDom) {
+          var e = document.createElement("div");
+          e.classList.add("mm-table-content"),
+            (e.style.position = "absolute"),
+            (e.style.left = this.x + "px"),
+            (e.style.top = this.y + "px"),
+            (this.tableDom = e),
+            this.mind.contentEL.appendChild(e);
+        }
+      }
+      initTableNode(e) {
+        var t = this;
+        !(function e(i, n, s) {
+          var r = new ue(i, t.mind);
+          (r._tableDom = t.tableDom),
+            n
+              ? ((t.root = r), (r.layout = t))
+              : (s.children.push(r), (r.parent = s)),
+            (r.direct = t.direct),
+            (t.lastNode = r),
+            i.children &&
+              i.children.length &&
+              i.children.forEach((t) => {
+                e(t, !1, r);
+              });
+        })(e, !0),
+          this.initTableDom();
+      }
+      getLastNode(e) {
+        return (function e(t) {
+          var i = t.children.length;
+          return i ? e(t.children[i - 1]) : t;
+        })(e);
+      }
+      getMaxlevel(e) {
+        var t = 0;
+        return (
+          this.mind.traverseDF((e) => {
+            var i = e.getLevel();
+            t < i && (t = i);
+          }, e || this.root),
+          t
+        );
+      }
+      getRowspan(e) {
+        return (function e(t) {
+          var i = t.children.length,
+            n = t.children.filter((e) => e.children && e.children.length);
+          if (n.length) {
+            var s = [i];
+            n.forEach((t) => {
+              var i = e(t);
+              s.push(i);
+            });
+            var r = 0;
+            return (
+              s.forEach((e) => {
+                r += e;
+              }),
+              r - n.length
+            );
+          }
+          return i;
+        })(e);
+      }
+      getData(e) {
+        var t = e.getData();
+        return (
+          e.getChildren().length &&
+            ((t.children = []),
+            e.getChildren().forEach((e) => {
+              t.children.push(this.getData(e));
+            })),
+          t
+        );
+      }
+      createLink() {}
+      refresh() {
+        this.layout();
+      }
+      setPosition(e, t) {
+        (this.x = e),
+          (this.y = t),
+          this.tableDom &&
+            ((this.tableDom.style.left = e + "px"),
+            (this.tableDom.style.top = t + "px"));
+      }
+      getBox() {
+        return this.tableDom
+          ? {
+              x: this.x,
+              y: this.y,
+              width: this.tableDom.clientWidth,
+              height: this.tableDom.clientHeight,
+            }
+          : { x: this.x, y: this.y, width: 0, height: 0 };
+      }
+    },
+  },
+  be = me(function (e, t) {
+    !(function (t, i) {
+      e.exports = t.document
+        ? i(t, t.document)
+        : function (e) {
+            return i(e, e.document);
+          };
+    })("undefined" != typeof window ? window : pe, function (e, t) {
+      var i = ((void 0 !== this ? this : e).SVG = function (e) {
+        if (i.supported)
+          return (e = new i.Doc(e)), i.parser.draw || i.prepare(), e;
+      });
+      if (
+        ((i.ns = "http://www.w3.org/2000/svg"),
+        (i.xmlns = "http://www.w3.org/2000/xmlns/"),
+        (i.xlink = "http://www.w3.org/1999/xlink"),
+        (i.svgjs = "http://svgjs.com/svgjs"),
+        (i.supported =
+          !!t.createElementNS &&
+          !!t.createElementNS(i.ns, "svg").createSVGRect),
+        !i.supported)
+      )
+        return !1;
+      (i.did = 1e3),
+        (i.eid = function (e) {
+          return "Svgjs" + c(e) + i.did++;
+        }),
+        (i.create = function (e) {
+          var i = t.createElementNS(this.ns, e);
+          return i.setAttribute("id", this.eid(e)), i;
+        }),
+        (i.extend = function () {
+          var e, t, n, s;
+          for (
+            t = (e = [].slice.call(arguments)).pop(), s = e.length - 1;
+            s >= 0;
+            s--
+          )
+            if (e[s]) for (n in t) e[s].prototype[n] = t[n];
+          i.Set && i.Set.inherit && i.Set.inherit();
+        }),
+        (i.invent = function (e) {
+          var t =
+            "function" == typeof e.create
+              ? e.create
+              : function () {
+                  this.constructor.call(this, i.create(e.create));
+                };
+          return (
+            e.inherit && (t.prototype = new e.inherit()),
+            e.extend && i.extend(t, e.extend),
+            e.construct && i.extend(e.parent || i.Container, e.construct),
+            t
+          );
+        }),
+        (i.adopt = function (t) {
+          return t
+            ? t.instance
+              ? t.instance
+              : (((n =
+                  "svg" == t.nodeName
+                    ? t.parentNode instanceof e.SVGElement
+                      ? new i.Nested()
+                      : new i.Doc()
+                    : "linearGradient" == t.nodeName
+                      ? new i.Gradient("linear")
+                      : "radialGradient" == t.nodeName
+                        ? new i.Gradient("radial")
+                        : i[c(t.nodeName)]
+                          ? new i[c(t.nodeName)]()
+                          : new i.Element(t)).type = t.nodeName),
+                (n.node = t),
+                (t.instance = n),
+                n instanceof i.Doc && n.namespace().defs(),
+                n.setData(JSON.parse(t.getAttribute("svgjs:data")) || {}),
+                n)
+            : null;
+          var n;
+        }),
+        (i.prepare = function () {
+          var e = t.getElementsByTagName("body")[0],
+            n = (e ? new i.Doc(e) : i.adopt(t.documentElement).nested()).size(
+              2,
+              0,
+            );
+          i.parser = {
+            body: e || t.documentElement,
+            draw: n
+              .style(
+                "opacity:0;position:absolute;left:-100%;top:-100%;overflow:hidden",
+              )
+              .attr("focusable", "false").node,
+            poly: n.polyline().node,
+            path: n.path().node,
+            native: i.create("svg"),
+          };
+        }),
+        (i.parser = { native: i.create("svg") }),
+        t.addEventListener(
+          "DOMContentLoaded",
+          function () {
+            i.parser.draw || i.prepare();
+          },
+          !1,
+        ),
+        (i.regex = {
+          numberAndUnit: /^([+-]?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?)([a-z%]*)$/i,
+          hex: /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i,
+          rgb: /rgb\((\d+),(\d+),(\d+)\)/,
+          reference: /#([a-z0-9\-_]+)/i,
+          transforms: /\)\s*,?\s*/,
+          whitespace: /\s/g,
+          isHex: /^#[a-f0-9]{3,6}$/i,
+          isRgb: /^rgb\(/,
+          isCss: /[^:]+:[^;]+;?/,
+          isBlank: /^(\s+)?$/,
+          isNumber: /^[+-]?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i,
+          isPercent: /^-?[\d\.]+%$/,
+          isImage: /\.(jpg|jpeg|png|gif|svg)(\?[^=]+.*)?/i,
+          delimiter: /[\s,]+/,
+          hyphen: /([^e])\-/gi,
+          pathLetters: /[MLHVCSQTAZ]/gi,
+          isPathLetter: /[MLHVCSQTAZ]/i,
+          numbersWithDots:
+            /((\d?\.\d+(?:e[+-]?\d+)?)((?:\.\d+(?:e[+-]?\d+)?)+))+/gi,
+          dots: /\./g,
+        }),
+        (i.utils = {
+          map: function (e, t) {
+            var i,
+              n = e.length,
+              s = [];
+            for (i = 0; i < n; i++) s.push(t(e[i]));
+            return s;
+          },
+          filter: function (e, t) {
+            var i,
+              n = e.length,
+              s = [];
+            for (i = 0; i < n; i++) t(e[i]) && s.push(e[i]);
+            return s;
+          },
+          radians: function (e) {
+            return ((e % 360) * Math.PI) / 180;
+          },
+          degrees: function (e) {
+            return ((180 * e) / Math.PI) % 360;
+          },
+          filterSVGElements: function (t) {
+            return this.filter(t, function (t) {
+              return t instanceof e.SVGElement;
+            });
+          },
+        }),
+        (i.defaults = {
+          attrs: {
+            "fill-opacity": 1,
+            "stroke-opacity": 1,
+            "stroke-width": 0,
+            "stroke-linejoin": "miter",
+            "stroke-linecap": "butt",
+            fill: "#000000",
+            stroke: "#000000",
+            opacity: 1,
+            x: 0,
+            y: 0,
+            cx: 0,
+            cy: 0,
+            width: 0,
+            height: 0,
+            r: 0,
+            rx: 0,
+            ry: 0,
+            offset: 0,
+            "stop-opacity": 1,
+            "stop-color": "#000000",
+            "font-size": 16,
+            "font-family": "Helvetica, Arial, sans-serif",
+            "text-anchor": "start",
+          },
+        }),
+        (i.Color = function (e) {
+          var t, n;
+          ((this.r = 0), (this.g = 0), (this.b = 0), e) &&
+            ("string" == typeof e
+              ? i.regex.isRgb.test(e)
+                ? ((t = i.regex.rgb.exec(e.replace(i.regex.whitespace, ""))),
+                  (this.r = parseInt(t[1])),
+                  (this.g = parseInt(t[2])),
+                  (this.b = parseInt(t[3])))
+                : i.regex.isHex.test(e) &&
+                  ((t = i.regex.hex.exec(
+                    4 == (n = e).length
+                      ? [
+                          "#",
+                          n.substring(1, 2),
+                          n.substring(1, 2),
+                          n.substring(2, 3),
+                          n.substring(2, 3),
+                          n.substring(3, 4),
+                          n.substring(3, 4),
+                        ].join("")
+                      : n,
+                  )),
+                  (this.r = parseInt(t[1], 16)),
+                  (this.g = parseInt(t[2], 16)),
+                  (this.b = parseInt(t[3], 16)))
+              : "object" == typeof e &&
+                ((this.r = e.r), (this.g = e.g), (this.b = e.b)));
+        }),
+        i.extend(i.Color, {
+          toString: function () {
+            return this.toHex();
+          },
+          toHex: function () {
+            return "#" + u(this.r) + u(this.g) + u(this.b);
+          },
+          toRgb: function () {
+            return "rgb(" + [this.r, this.g, this.b].join() + ")";
+          },
+          brightness: function () {
+            return (
+              (this.r / 255) * 0.3 +
+              (this.g / 255) * 0.59 +
+              (this.b / 255) * 0.11
+            );
+          },
+          morph: function (e) {
+            return (this.destination = new i.Color(e)), this;
+          },
+          at: function (e) {
+            return this.destination
+              ? ((e = e < 0 ? 0 : e > 1 ? 1 : e),
+                new i.Color({
+                  r: ~~(this.r + (this.destination.r - this.r) * e),
+                  g: ~~(this.g + (this.destination.g - this.g) * e),
+                  b: ~~(this.b + (this.destination.b - this.b) * e),
+                }))
+              : this;
+          },
+        }),
+        (i.Color.test = function (e) {
+          return (e += ""), i.regex.isHex.test(e) || i.regex.isRgb.test(e);
+        }),
+        (i.Color.isRgb = function (e) {
+          return (
+            e &&
+            "number" == typeof e.r &&
+            "number" == typeof e.g &&
+            "number" == typeof e.b
+          );
+        }),
+        (i.Color.isColor = function (e) {
+          return i.Color.isRgb(e) || i.Color.test(e);
+        }),
+        (i.Array = function (e, t) {
+          0 == (e = (e || []).valueOf()).length && t && (e = t.valueOf()),
+            (this.value = this.parse(e));
+        }),
+        i.extend(i.Array, {
+          morph: function (e) {
+            if (
+              ((this.destination = this.parse(e)),
+              this.value.length != this.destination.length)
+            ) {
+              for (
+                var t = this.value[this.value.length - 1],
+                  i = this.destination[this.destination.length - 1];
+                this.value.length > this.destination.length;
+
+              )
+                this.destination.push(i);
+              for (; this.value.length < this.destination.length; )
+                this.value.push(t);
+            }
+            return this;
+          },
+          settle: function () {
+            for (var e = 0, t = this.value.length, i = []; e < t; e++)
+              -1 == i.indexOf(this.value[e]) && i.push(this.value[e]);
+            return (this.value = i);
+          },
+          at: function (e) {
+            if (!this.destination) return this;
+            for (var t = 0, n = this.value.length, s = []; t < n; t++)
+              s.push(this.value[t] + (this.destination[t] - this.value[t]) * e);
+            return new i.Array(s);
+          },
+          toString: function () {
+            return this.value.join(" ");
+          },
+          valueOf: function () {
+            return this.value;
+          },
+          parse: function (e) {
+            return (e = e.valueOf()), Array.isArray(e) ? e : this.split(e);
+          },
+          split: function (e) {
+            return e.trim().split(i.regex.delimiter).map(parseFloat);
+          },
+          reverse: function () {
+            return this.value.reverse(), this;
+          },
+          clone: function () {
+            var e = new this.constructor();
+            return (e.value = l(this.value)), e;
+          },
+        }),
+        (i.PointArray = function (e, t) {
+          i.Array.call(this, e, t || [[0, 0]]);
+        }),
+        (i.PointArray.prototype = new i.Array()),
+        (i.PointArray.prototype.constructor = i.PointArray),
+        i.extend(i.PointArray, {
+          toString: function () {
+            for (var e = 0, t = this.value.length, i = []; e < t; e++)
+              i.push(this.value[e].join(","));
+            return i.join(" ");
+          },
+          toLine: function () {
+            return {
+              x1: this.value[0][0],
+              y1: this.value[0][1],
+              x2: this.value[1][0],
+              y2: this.value[1][1],
+            };
+          },
+          at: function (e) {
+            if (!this.destination) return this;
+            for (var t = 0, n = this.value.length, s = []; t < n; t++)
+              s.push([
+                this.value[t][0] +
+                  (this.destination[t][0] - this.value[t][0]) * e,
+                this.value[t][1] +
+                  (this.destination[t][1] - this.value[t][1]) * e,
+              ]);
+            return new i.PointArray(s);
+          },
+          parse: function (e) {
+            var t = [];
+            if (((e = e.valueOf()), Array.isArray(e))) {
+              if (Array.isArray(e[0]))
+                return e.map(function (e) {
+                  return e.slice();
+                });
+              if (null != e[0].x)
+                return e.map(function (e) {
+                  return [e.x, e.y];
+                });
+            } else e = e.trim().split(i.regex.delimiter).map(parseFloat);
+            e.length % 2 != 0 && e.pop();
+            for (var n = 0, s = e.length; n < s; n += 2)
+              t.push([e[n], e[n + 1]]);
+            return t;
+          },
+          move: function (e, t) {
+            var i = this.bbox();
+            if (((e -= i.x), (t -= i.y), !isNaN(e) && !isNaN(t)))
+              for (var n = this.value.length - 1; n >= 0; n--)
+                this.value[n] = [this.value[n][0] + e, this.value[n][1] + t];
+            return this;
+          },
+          size: function (e, t) {
+            var i,
+              n = this.bbox();
+            for (i = this.value.length - 1; i >= 0; i--)
+              n.width &&
+                (this.value[i][0] =
+                  ((this.value[i][0] - n.x) * e) / n.width + n.x),
+                n.height &&
+                  (this.value[i][1] =
+                    ((this.value[i][1] - n.y) * t) / n.height + n.y);
+            return this;
+          },
+          bbox: function () {
+            return (
+              i.parser.poly.setAttribute("points", this.toString()),
+              i.parser.poly.getBBox()
+            );
+          },
+        });
+      for (
+        var n = {
+            M: function (e, t, i) {
+              return (t.x = i.x = e[0]), (t.y = i.y = e[1]), ["M", t.x, t.y];
+            },
+            L: function (e, t) {
+              return (t.x = e[0]), (t.y = e[1]), ["L", e[0], e[1]];
+            },
+            H: function (e, t) {
+              return (t.x = e[0]), ["H", e[0]];
+            },
+            V: function (e, t) {
+              return (t.y = e[0]), ["V", e[0]];
+            },
+            C: function (e, t) {
+              return (
+                (t.x = e[4]),
+                (t.y = e[5]),
+                ["C", e[0], e[1], e[2], e[3], e[4], e[5]]
+              );
+            },
+            S: function (e, t) {
+              return (t.x = e[2]), (t.y = e[3]), ["S", e[0], e[1], e[2], e[3]];
+            },
+            Q: function (e, t) {
+              return (t.x = e[2]), (t.y = e[3]), ["Q", e[0], e[1], e[2], e[3]];
+            },
+            T: function (e, t) {
+              return (t.x = e[0]), (t.y = e[1]), ["T", e[0], e[1]];
+            },
+            Z: function (e, t, i) {
+              return (t.x = i.x), (t.y = i.y), ["Z"];
+            },
+            A: function (e, t) {
+              return (
+                (t.x = e[5]),
+                (t.y = e[6]),
+                ["A", e[0], e[1], e[2], e[3], e[4], e[5], e[6]]
+              );
+            },
+          },
+          s = "mlhvqtcsaz".split(""),
+          r = 0,
+          o = s.length;
+        r < o;
+        ++r
+      )
+        n[s[r]] = (function (e) {
+          return function (t, i, s) {
+            if ("H" == e) t[0] = t[0] + i.x;
+            else if ("V" == e) t[0] = t[0] + i.y;
+            else if ("A" == e) (t[5] = t[5] + i.x), (t[6] = t[6] + i.y);
+            else
+              for (var r = 0, o = t.length; r < o; ++r)
+                t[r] = t[r] + (r % 2 ? i.y : i.x);
+            return n[e](t, i, s);
+          };
+        })(s[r].toUpperCase());
+      (i.PathArray = function (e, t) {
+        i.Array.call(this, e, t || [["M", 0, 0]]);
+      }),
+        (i.PathArray.prototype = new i.Array()),
+        (i.PathArray.prototype.constructor = i.PathArray),
+        i.extend(i.PathArray, {
+          toString: function () {
+            return (function (e) {
+              for (var t = 0, i = e.length, n = ""; t < i; t++)
+                (n += e[t][0]),
+                  null != e[t][1] &&
+                    ((n += e[t][1]),
+                    null != e[t][2] &&
+                      ((n += " "),
+                      (n += e[t][2]),
+                      null != e[t][3] &&
+                        ((n += " "),
+                        (n += e[t][3]),
+                        (n += " "),
+                        (n += e[t][4]),
+                        null != e[t][5] &&
+                          ((n += " "),
+                          (n += e[t][5]),
+                          (n += " "),
+                          (n += e[t][6]),
+                          null != e[t][7] && ((n += " "), (n += e[t][7]))))));
+              return n + " ";
+            })(this.value);
+          },
+          move: function (e, t) {
+            var i = this.bbox();
+            if (((e -= i.x), (t -= i.y), !isNaN(e) && !isNaN(t)))
+              for (var n, s = this.value.length - 1; s >= 0; s--)
+                "M" == (n = this.value[s][0]) || "L" == n || "T" == n
+                  ? ((this.value[s][1] += e), (this.value[s][2] += t))
+                  : "H" == n
+                    ? (this.value[s][1] += e)
+                    : "V" == n
+                      ? (this.value[s][1] += t)
+                      : "C" == n || "S" == n || "Q" == n
+                        ? ((this.value[s][1] += e),
+                          (this.value[s][2] += t),
+                          (this.value[s][3] += e),
+                          (this.value[s][4] += t),
+                          "C" == n &&
+                            ((this.value[s][5] += e), (this.value[s][6] += t)))
+                        : "A" == n &&
+                          ((this.value[s][6] += e), (this.value[s][7] += t));
+            return this;
+          },
+          size: function (e, t) {
+            var i,
+              n,
+              s = this.bbox();
+            for (i = this.value.length - 1; i >= 0; i--)
+              "M" == (n = this.value[i][0]) || "L" == n || "T" == n
+                ? ((this.value[i][1] =
+                    ((this.value[i][1] - s.x) * e) / s.width + s.x),
+                  (this.value[i][2] =
+                    ((this.value[i][2] - s.y) * t) / s.height + s.y))
+                : "H" == n
+                  ? (this.value[i][1] =
+                      ((this.value[i][1] - s.x) * e) / s.width + s.x)
+                  : "V" == n
+                    ? (this.value[i][1] =
+                        ((this.value[i][1] - s.y) * t) / s.height + s.y)
+                    : "C" == n || "S" == n || "Q" == n
+                      ? ((this.value[i][1] =
+                          ((this.value[i][1] - s.x) * e) / s.width + s.x),
+                        (this.value[i][2] =
+                          ((this.value[i][2] - s.y) * t) / s.height + s.y),
+                        (this.value[i][3] =
+                          ((this.value[i][3] - s.x) * e) / s.width + s.x),
+                        (this.value[i][4] =
+                          ((this.value[i][4] - s.y) * t) / s.height + s.y),
+                        "C" == n &&
+                          ((this.value[i][5] =
+                            ((this.value[i][5] - s.x) * e) / s.width + s.x),
+                          (this.value[i][6] =
+                            ((this.value[i][6] - s.y) * t) / s.height + s.y)))
+                      : "A" == n &&
+                        ((this.value[i][1] = (this.value[i][1] * e) / s.width),
+                        (this.value[i][2] = (this.value[i][2] * t) / s.height),
+                        (this.value[i][6] =
+                          ((this.value[i][6] - s.x) * e) / s.width + s.x),
+                        (this.value[i][7] =
+                          ((this.value[i][7] - s.y) * t) / s.height + s.y));
+            return this;
+          },
+          equalCommands: function (e) {
+            var t, n, s;
+            for (
+              e = new i.PathArray(e),
+                s = this.value.length === e.value.length,
+                t = 0,
+                n = this.value.length;
+              s && t < n;
+              t++
+            )
+              s = this.value[t][0] === e.value[t][0];
+            return s;
+          },
+          morph: function (e) {
+            return (
+              (e = new i.PathArray(e)),
+              this.equalCommands(e)
+                ? (this.destination = e)
+                : (this.destination = null),
+              this
+            );
+          },
+          at: function (e) {
+            if (!this.destination) return this;
+            var t,
+              n,
+              s,
+              r,
+              o = this.value,
+              a = this.destination.value,
+              h = [],
+              l = new i.PathArray();
+            for (t = 0, n = o.length; t < n; t++) {
+              for (h[t] = [o[t][0]], s = 1, r = o[t].length; s < r; s++)
+                h[t][s] = o[t][s] + (a[t][s] - o[t][s]) * e;
+              "A" === h[t][0] &&
+                ((h[t][4] = +(0 != h[t][4])), (h[t][5] = +(0 != h[t][5])));
+            }
+            return (l.value = h), l;
+          },
+          parse: function (e) {
+            if (e instanceof i.PathArray) return e.valueOf();
+            var t,
+              s = {
+                M: 2,
+                L: 2,
+                H: 1,
+                V: 1,
+                C: 6,
+                S: 4,
+                Q: 4,
+                T: 2,
+                A: 7,
+                Z: 0,
+              };
+            e =
+              "string" == typeof e
+                ? e
+                    .replace(i.regex.numbersWithDots, h)
+                    .replace(i.regex.pathLetters, " $& ")
+                    .replace(i.regex.hyphen, "$1 -")
+                    .trim()
+                    .split(i.regex.delimiter)
+                : e.reduce(function (e, t) {
+                    return [].concat.call(e, t);
+                  }, []);
+            var r = [],
+              o = new i.Point(),
+              a = new i.Point(),
+              l = 0,
+              d = e.length;
+            do {
+              i.regex.isPathLetter.test(e[l])
+                ? ((t = e[l]), ++l)
+                : "M" == t
+                  ? (t = "L")
+                  : "m" == t && (t = "l"),
+                r.push(
+                  n[t].call(
+                    null,
+                    e.slice(l, (l += s[t.toUpperCase()])).map(parseFloat),
+                    o,
+                    a,
+                  ),
+                );
+            } while (d > l);
+            return r;
+          },
+          bbox: function () {
+            return (
+              i.parser.path.setAttribute("d", this.toString()),
+              i.parser.path.getBBox()
+            );
+          },
+        }),
+        (i.Number = i.invent({
+          create: function (e, t) {
+            (this.value = 0),
+              (this.unit = t || ""),
+              "number" == typeof e
+                ? (this.value = isNaN(e)
+                    ? 0
+                    : isFinite(e)
+                      ? e
+                      : e < 0
+                        ? -34e37
+                        : 34e37)
+                : "string" == typeof e
+                  ? (t = e.match(i.regex.numberAndUnit)) &&
+                    ((this.value = parseFloat(t[1])),
+                    "%" == t[5]
+                      ? (this.value /= 100)
+                      : "s" == t[5] && (this.value *= 1e3),
+                    (this.unit = t[5]))
+                  : e instanceof i.Number &&
+                    ((this.value = e.valueOf()), (this.unit = e.unit));
+          },
+          extend: {
+            toString: function () {
+              return (
+                ("%" == this.unit
+                  ? ~~(1e8 * this.value) / 1e6
+                  : "s" == this.unit
+                    ? this.value / 1e3
+                    : this.value) + this.unit
+              );
+            },
+            toJSON: function () {
+              return this.toString();
+            },
+            valueOf: function () {
+              return this.value;
+            },
+            plus: function (e) {
+              return (
+                (e = new i.Number(e)),
+                new i.Number(this + e, this.unit || e.unit)
+              );
+            },
+            minus: function (e) {
+              return (
+                (e = new i.Number(e)),
+                new i.Number(this - e, this.unit || e.unit)
+              );
+            },
+            times: function (e) {
+              return (
+                (e = new i.Number(e)),
+                new i.Number(this * e, this.unit || e.unit)
+              );
+            },
+            divide: function (e) {
+              return (
+                (e = new i.Number(e)),
+                new i.Number(this / e, this.unit || e.unit)
+              );
+            },
+            to: function (e) {
+              var t = new i.Number(this);
+              return "string" == typeof e && (t.unit = e), t;
+            },
+            morph: function (e) {
+              return (
+                (this.destination = new i.Number(e)),
+                e.relative && (this.destination.value += this.value),
+                this
+              );
+            },
+            at: function (e) {
+              return this.destination
+                ? new i.Number(this.destination).minus(this).times(e).plus(this)
+                : this;
+            },
+          },
+        })),
+        (i.Element = i.invent({
+          create: function (e) {
+            (this._stroke = i.defaults.attrs.stroke),
+              (this._event = null),
+              (this._events = {}),
+              (this.dom = {}),
+              (this.node = e) &&
+                ((this.type = e.nodeName),
+                (this.node.instance = this),
+                (this._events = e._events || {}),
+                (this._stroke = e.getAttribute("stroke") || this._stroke));
+          },
+          extend: {
+            x: function (e) {
+              return this.attr("x", e);
+            },
+            y: function (e) {
+              return this.attr("y", e);
+            },
+            cx: function (e) {
+              return null == e
+                ? this.x() + this.width() / 2
+                : this.x(e - this.width() / 2);
+            },
+            cy: function (e) {
+              return null == e
+                ? this.y() + this.height() / 2
+                : this.y(e - this.height() / 2);
+            },
+            move: function (e, t) {
+              return this.x(e).y(t);
+            },
+            center: function (e, t) {
+              return this.cx(e).cy(t);
+            },
+            width: function (e) {
+              return this.attr("width", e);
+            },
+            height: function (e) {
+              return this.attr("height", e);
+            },
+            size: function (e, t) {
+              var n = p(this, e, t);
+              return this.width(new i.Number(n.width)).height(
+                new i.Number(n.height),
+              );
+            },
+            clone: function (e) {
+              this.writeDataToDom();
+              var t = v(this.node.cloneNode(!0));
+              return e ? e.add(t) : this.after(t), t;
+            },
+            remove: function () {
+              return this.parent() && this.parent().removeElement(this), this;
+            },
+            replace: function (e) {
+              return this.after(e).remove(), e;
+            },
+            addTo: function (e) {
+              return e.put(this);
+            },
+            putIn: function (e) {
+              return e.add(this);
+            },
+            id: function (e) {
+              return this.attr("id", e);
+            },
+            inside: function (e, t) {
+              var i = this.bbox();
+              return (
+                e > i.x && t > i.y && e < i.x + i.width && t < i.y + i.height
+              );
+            },
+            show: function () {
+              return this.style("display", "");
+            },
+            hide: function () {
+              return this.style("display", "none");
+            },
+            visible: function () {
+              return "none" != this.style("display");
+            },
+            toString: function () {
+              return this.attr("id");
+            },
+            classes: function () {
+              var e = this.attr("class");
+              return null == e ? [] : e.trim().split(i.regex.delimiter);
+            },
+            hasClass: function (e) {
+              return -1 != this.classes().indexOf(e);
+            },
+            addClass: function (e) {
+              if (!this.hasClass(e)) {
+                var t = this.classes();
+                t.push(e), this.attr("class", t.join(" "));
+              }
+              return this;
+            },
+            removeClass: function (e) {
+              return (
+                this.hasClass(e) &&
+                  this.attr(
+                    "class",
+                    this.classes()
+                      .filter(function (t) {
+                        return t != e;
+                      })
+                      .join(" "),
+                  ),
+                this
+              );
+            },
+            toggleClass: function (e) {
+              return this.hasClass(e) ? this.removeClass(e) : this.addClass(e);
+            },
+            reference: function (e) {
+              return i.get(this.attr(e));
+            },
+            parent: function (t) {
+              var n = this;
+              if (!n.node.parentNode) return null;
+              if (((n = i.adopt(n.node.parentNode)), !t)) return n;
+              for (; n && n.node instanceof e.SVGElement; ) {
+                if ("string" == typeof t ? n.matches(t) : n instanceof t)
+                  return n;
+                if (
+                  !n.node.parentNode ||
+                  "#document" == n.node.parentNode.nodeName ||
+                  "#document-fragment" == n.node.parentNode.nodeName
+                )
+                  return null;
+                n = i.adopt(n.node.parentNode);
+              }
+            },
+            doc: function () {
+              return this instanceof i.Doc ? this : this.parent(i.Doc);
+            },
+            parents: function (e) {
+              var t = [],
+                i = this;
+              do {
+                if (!(i = i.parent(e)) || !i.node) break;
+                t.push(i);
+              } while (i.parent);
+              return t;
+            },
+            matches: function (e) {
+              return (function (e, t) {
+                return (
+                  e.matches ||
+                  e.matchesSelector ||
+                  e.msMatchesSelector ||
+                  e.mozMatchesSelector ||
+                  e.webkitMatchesSelector ||
+                  e.oMatchesSelector
+                ).call(e, t);
+              })(this.node, e);
+            },
+            native: function () {
+              return this.node;
+            },
+            svg: function (e) {
+              var n = t.createElement("svg");
+              if (!(e && this instanceof i.Parent))
+                return (
+                  n.appendChild((e = t.createElement("svg"))),
+                  this.writeDataToDom(),
+                  e.appendChild(this.node.cloneNode(!0)),
+                  n.innerHTML.replace(/^<svg>/, "").replace(/<\/svg>$/, "")
+                );
+              n.innerHTML =
+                "<svg>" +
+                e
+                  .replace(/\n/, "")
+                  .replace(/<([\w:-]+)([^<]+?)\/>/g, "<$1$2></$1>") +
+                "</svg>";
+              for (var s = 0, r = n.firstChild.childNodes.length; s < r; s++)
+                this.node.appendChild(n.firstChild.firstChild);
+              return this;
+            },
+            writeDataToDom: function () {
+              (this.each || this.lines) &&
+                (this.each ? this : this.lines()).each(function () {
+                  this.writeDataToDom();
+                });
+              return (
+                this.node.removeAttribute("svgjs:data"),
+                Object.keys(this.dom).length &&
+                  this.node.setAttribute(
+                    "svgjs:data",
+                    JSON.stringify(this.dom),
+                  ),
+                this
+              );
+            },
+            setData: function (e) {
+              return (this.dom = e), this;
+            },
+            is: function (e) {
+              return (function (e, t) {
+                return e instanceof t;
+              })(this, e);
+            },
+          },
+        })),
+        (i.easing = {
+          "-": function (e) {
+            return e;
+          },
+          "<>": function (e) {
+            return -Math.cos(e * Math.PI) / 2 + 0.5;
+          },
+          ">": function (e) {
+            return Math.sin((e * Math.PI) / 2);
+          },
+          "<": function (e) {
+            return 1 - Math.cos((e * Math.PI) / 2);
+          },
+        }),
+        (i.morph = function (e) {
+          return function (t, n) {
+            return new i.MorphObj(t, n).at(e);
+          };
+        }),
+        (i.Situation = i.invent({
+          create: function (e) {
+            (this.init = !1),
+              (this.reversed = !1),
+              (this.reversing = !1),
+              (this.duration = new i.Number(e.duration).valueOf()),
+              (this.delay = new i.Number(e.delay).valueOf()),
+              (this.start = +new Date() + this.delay),
+              (this.finish = this.start + this.duration),
+              (this.ease = e.ease),
+              (this.loop = 0),
+              (this.loops = !1),
+              (this.animations = {}),
+              (this.attrs = {}),
+              (this.styles = {}),
+              (this.transforms = []),
+              (this.once = {});
+          },
+        })),
+        (i.FX = i.invent({
+          create: function (e) {
+            (this._target = e),
+              (this.situations = []),
+              (this.active = !1),
+              (this.situation = null),
+              (this.paused = !1),
+              (this.lastPos = 0),
+              (this.pos = 0),
+              (this.absPos = 0),
+              (this._speed = 1);
+          },
+          extend: {
+            animate: function (e, t, n) {
+              "object" == typeof e &&
+                ((t = e.ease), (n = e.delay), (e = e.duration));
+              var s = new i.Situation({
+                duration: e || 1e3,
+                delay: n || 0,
+                ease: i.easing[t || "-"] || t,
+              });
+              return this.queue(s), this;
+            },
+            delay: function (e) {
+              var t = new i.Situation({
+                duration: e,
+                delay: 0,
+                ease: i.easing["-"],
+              });
+              return this.queue(t);
+            },
+            target: function (e) {
+              return e && e instanceof i.Element
+                ? ((this._target = e), this)
+                : this._target;
+            },
+            timeToAbsPos: function (e) {
+              return (
+                (e - this.situation.start) /
+                (this.situation.duration / this._speed)
+              );
+            },
+            absPosToTime: function (e) {
+              return (
+                (this.situation.duration / this._speed) * e +
+                this.situation.start
+              );
+            },
+            startAnimFrame: function () {
+              this.stopAnimFrame(),
+                (this.animationFrame = e.requestAnimationFrame(
+                  function () {
+                    this.step();
+                  }.bind(this),
+                ));
+            },
+            stopAnimFrame: function () {
+              e.cancelAnimationFrame(this.animationFrame);
+            },
+            start: function () {
+              return (
+                !this.active &&
+                  this.situation &&
+                  ((this.active = !0), this.startCurrent()),
+                this
+              );
+            },
+            startCurrent: function () {
+              return (
+                (this.situation.start =
+                  +new Date() + this.situation.delay / this._speed),
+                (this.situation.finish =
+                  this.situation.start + this.situation.duration / this._speed),
+                this.initAnimations().step()
+              );
+            },
+            queue: function (e) {
+              return (
+                ("function" == typeof e || e instanceof i.Situation) &&
+                  this.situations.push(e),
+                this.situation || (this.situation = this.situations.shift()),
+                this
+              );
+            },
+            dequeue: function () {
+              return (
+                this.stop(),
+                (this.situation = this.situations.shift()),
+                this.situation &&
+                  (this.situation instanceof i.Situation
+                    ? this.start()
+                    : this.situation.call(this)),
+                this
+              );
+            },
+            initAnimations: function () {
+              var e,
+                t,
+                n,
+                s = this.situation;
+              if (s.init) return this;
+              for (e in s.animations)
+                for (
+                  n = this.target()[e](),
+                    Array.isArray(n) || (n = [n]),
+                    Array.isArray(s.animations[e]) ||
+                      (s.animations[e] = [s.animations[e]]),
+                    t = n.length;
+                  t--;
+
+                )
+                  s.animations[e][t] instanceof i.Number &&
+                    (n[t] = new i.Number(n[t])),
+                    (s.animations[e][t] = n[t].morph(s.animations[e][t]));
+              for (e in s.attrs)
+                s.attrs[e] = new i.MorphObj(this.target().attr(e), s.attrs[e]);
+              for (e in s.styles)
+                s.styles[e] = new i.MorphObj(
+                  this.target().style(e),
+                  s.styles[e],
+                );
+              return (
+                (s.initialTransformation = this.target().matrixify()),
+                (s.init = !0),
+                this
+              );
+            },
+            clearQueue: function () {
+              return (this.situations = []), this;
+            },
+            clearCurrent: function () {
+              return (this.situation = null), this;
+            },
+            stop: function (e, t) {
+              var i = this.active;
+              return (
+                (this.active = !1),
+                t && this.clearQueue(),
+                e &&
+                  this.situation &&
+                  (!i && this.startCurrent(), this.atEnd()),
+                this.stopAnimFrame(),
+                this.clearCurrent()
+              );
+            },
+            reset: function () {
+              if (this.situation) {
+                var e = this.situation;
+                this.stop(), (this.situation = e), this.atStart();
+              }
+              return this;
+            },
+            finish: function () {
+              for (
+                this.stop(!0, !1);
+                this.dequeue().situation && this.stop(!0, !1);
+
+              );
+              return this.clearQueue().clearCurrent(), this;
+            },
+            atStart: function () {
+              return this.at(0, !0);
+            },
+            atEnd: function () {
+              return (
+                !0 === this.situation.loops &&
+                  (this.situation.loops = this.situation.loop + 1),
+                "number" == typeof this.situation.loops
+                  ? this.at(this.situation.loops, !0)
+                  : this.at(1, !0)
+              );
+            },
+            at: function (e, t) {
+              var i = this.situation.duration / this._speed;
+              return (
+                (this.absPos = e),
+                t ||
+                  (this.situation.reversed && (this.absPos = 1 - this.absPos),
+                  (this.absPos += this.situation.loop)),
+                (this.situation.start = +new Date() - this.absPos * i),
+                (this.situation.finish = this.situation.start + i),
+                this.step(!0)
+              );
+            },
+            speed: function (e) {
+              return 0 === e
+                ? this.pause()
+                : e
+                  ? ((this._speed = e), this.at(this.absPos, !0))
+                  : this._speed;
+            },
+            loop: function (e, t) {
+              var i = this.last();
+              return (
+                (i.loops = null == e || e),
+                (i.loop = 0),
+                t && (i.reversing = !0),
+                this
+              );
+            },
+            pause: function () {
+              return (this.paused = !0), this.stopAnimFrame(), this;
+            },
+            play: function () {
+              return this.paused
+                ? ((this.paused = !1), this.at(this.absPos, !0))
+                : this;
+            },
+            reverse: function (e) {
+              var t = this.last();
+              return (t.reversed = void 0 === e ? !t.reversed : e), this;
+            },
+            progress: function (e) {
+              return e ? this.situation.ease(this.pos) : this.pos;
+            },
+            after: function (e) {
+              var t = this.last();
+              return (
+                this.target().on("finished.fx", function i(n) {
+                  n.detail.situation == t &&
+                    (e.call(this, t), this.off("finished.fx", i));
+                }),
+                this._callStart()
+              );
+            },
+            during: function (e) {
+              var t = this.last(),
+                n = function (n) {
+                  n.detail.situation == t &&
+                    e.call(
+                      this,
+                      n.detail.pos,
+                      i.morph(n.detail.pos),
+                      n.detail.eased,
+                      t,
+                    );
+                };
+              return (
+                this.target().off("during.fx", n).on("during.fx", n),
+                this.after(function () {
+                  this.off("during.fx", n);
+                }),
+                this._callStart()
+              );
+            },
+            afterAll: function (e) {
+              var t = function t(i) {
+                e.call(this), this.off("allfinished.fx", t);
+              };
+              return (
+                this.target().off("allfinished.fx", t).on("allfinished.fx", t),
+                this._callStart()
+              );
+            },
+            duringAll: function (e) {
+              var t = function (t) {
+                e.call(
+                  this,
+                  t.detail.pos,
+                  i.morph(t.detail.pos),
+                  t.detail.eased,
+                  t.detail.situation,
+                );
+              };
+              return (
+                this.target().off("during.fx", t).on("during.fx", t),
+                this.afterAll(function () {
+                  this.off("during.fx", t);
+                }),
+                this._callStart()
+              );
+            },
+            last: function () {
+              return this.situations.length
+                ? this.situations[this.situations.length - 1]
+                : this.situation;
+            },
+            add: function (e, t, i) {
+              return (this.last()[i || "animations"][e] = t), this._callStart();
+            },
+            step: function (e) {
+              var t, i, n;
+              (e || (this.absPos = this.timeToAbsPos(+new Date())),
+              !1 !== this.situation.loops)
+                ? ((t = Math.max(this.absPos, 0)),
+                  (i = Math.floor(t)),
+                  !0 === this.situation.loops || i < this.situation.loops
+                    ? ((this.pos = t - i),
+                      (n = this.situation.loop),
+                      (this.situation.loop = i))
+                    : ((this.absPos = this.situation.loops),
+                      (this.pos = 1),
+                      (n = this.situation.loop - 1),
+                      (this.situation.loop = this.situation.loops)),
+                  this.situation.reversing &&
+                    (this.situation.reversed =
+                      this.situation.reversed !=
+                      Boolean((this.situation.loop - n) % 2)))
+                : ((this.absPos = Math.min(this.absPos, 1)),
+                  (this.pos = this.absPos));
+              this.pos < 0 && (this.pos = 0),
+                this.situation.reversed && (this.pos = 1 - this.pos);
+              var s = this.situation.ease(this.pos);
+              for (var r in this.situation.once)
+                r > this.lastPos &&
+                  r <= s &&
+                  (this.situation.once[r].call(this.target(), this.pos, s),
+                  delete this.situation.once[r]);
+              return (
+                this.active &&
+                  this.target().fire("during", {
+                    pos: this.pos,
+                    eased: s,
+                    fx: this,
+                    situation: this.situation,
+                  }),
+                this.situation
+                  ? (this.eachAt(),
+                    (1 == this.pos && !this.situation.reversed) ||
+                    (this.situation.reversed && 0 == this.pos)
+                      ? (this.stopAnimFrame(),
+                        this.target().fire("finished", {
+                          fx: this,
+                          situation: this.situation,
+                        }),
+                        this.situations.length ||
+                          (this.target().fire("allfinished"),
+                          this.situations.length ||
+                            (this.target().off(".fx"), (this.active = !1))),
+                        this.active ? this.dequeue() : this.clearCurrent())
+                      : !this.paused && this.active && this.startAnimFrame(),
+                    (this.lastPos = s),
+                    this)
+                  : this
+              );
+            },
+            eachAt: function () {
+              var e,
+                t,
+                n,
+                s = this,
+                r = this.target(),
+                o = this.situation;
+              for (e in o.animations)
+                (n = [].concat(o.animations[e]).map(function (e) {
+                  return "string" != typeof e && e.at
+                    ? e.at(o.ease(s.pos), s.pos)
+                    : e;
+                })),
+                  r[e].apply(r, n);
+              for (e in o.attrs)
+                (n = [e].concat(o.attrs[e]).map(function (e) {
+                  return "string" != typeof e && e.at
+                    ? e.at(o.ease(s.pos), s.pos)
+                    : e;
+                })),
+                  r.attr.apply(r, n);
+              for (e in o.styles)
+                (n = [e].concat(o.styles[e]).map(function (e) {
+                  return "string" != typeof e && e.at
+                    ? e.at(o.ease(s.pos), s.pos)
+                    : e;
+                })),
+                  r.style.apply(r, n);
+              if (o.transforms.length) {
+                for (
+                  n = o.initialTransformation, e = 0, t = o.transforms.length;
+                  e < t;
+                  e++
+                ) {
+                  var a = o.transforms[e];
+                  a instanceof i.Matrix
+                    ? (n = a.relative
+                        ? n.multiply(
+                            new i.Matrix().morph(a).at(o.ease(this.pos)),
+                          )
+                        : n.morph(a).at(o.ease(this.pos)))
+                    : (a.relative || a.undo(n.extract()),
+                      (n = n.multiply(a.at(o.ease(this.pos)))));
+                }
+                r.matrix(n);
+              }
+              return this;
+            },
+            once: function (e, t, i) {
+              var n = this.last();
+              return i || (e = n.ease(e)), (n.once[e] = t), this;
+            },
+            _callStart: function () {
+              return (
+                setTimeout(
+                  function () {
+                    this.start();
+                  }.bind(this),
+                  0,
+                ),
+                this
+              );
+            },
+          },
+          parent: i.Element,
+          construct: {
+            animate: function (e, t, n) {
+              return (this.fx || (this.fx = new i.FX(this))).animate(e, t, n);
+            },
+            delay: function (e) {
+              return (this.fx || (this.fx = new i.FX(this))).delay(e);
+            },
+            stop: function (e, t) {
+              return this.fx && this.fx.stop(e, t), this;
+            },
+            finish: function () {
+              return this.fx && this.fx.finish(), this;
+            },
+            pause: function () {
+              return this.fx && this.fx.pause(), this;
+            },
+            play: function () {
+              return this.fx && this.fx.play(), this;
+            },
+            speed: function (e) {
+              if (this.fx) {
+                if (null == e) return this.fx.speed();
+                this.fx.speed(e);
+              }
+              return this;
+            },
+          },
+        })),
+        (i.MorphObj = i.invent({
+          create: function (e, t) {
+            return i.Color.isColor(t)
+              ? new i.Color(e).morph(t)
+              : i.regex.delimiter.test(e)
+                ? i.regex.pathLetters.test(e)
+                  ? new i.PathArray(e).morph(t)
+                  : new i.Array(e).morph(t)
+                : i.regex.numberAndUnit.test(t)
+                  ? new i.Number(e).morph(t)
+                  : ((this.value = e), void (this.destination = t));
+          },
+          extend: {
+            at: function (e, t) {
+              return t < 1 ? this.value : this.destination;
+            },
+            valueOf: function () {
+              return this.value;
+            },
+          },
+        })),
+        i.extend(i.FX, {
+          attr: function (e, t, i) {
+            if ("object" == typeof e) for (var n in e) this.attr(n, e[n]);
+            else this.add(e, t, "attrs");
+            return this;
+          },
+          style: function (e, t) {
+            if ("object" == typeof e) for (var i in e) this.style(i, e[i]);
+            else this.add(e, t, "styles");
+            return this;
+          },
+          x: function (e, t) {
+            if (this.target() instanceof i.G)
+              return this.transform({ x: e }, t), this;
+            var n = new i.Number(e);
+            return (n.relative = t), this.add("x", n);
+          },
+          y: function (e, t) {
+            if (this.target() instanceof i.G)
+              return this.transform({ y: e }, t), this;
+            var n = new i.Number(e);
+            return (n.relative = t), this.add("y", n);
+          },
+          cx: function (e) {
+            return this.add("cx", new i.Number(e));
+          },
+          cy: function (e) {
+            return this.add("cy", new i.Number(e));
+          },
+          move: function (e, t) {
+            return this.x(e).y(t);
+          },
+          center: function (e, t) {
+            return this.cx(e).cy(t);
+          },
+          size: function (e, t) {
+            var n;
+            this.target() instanceof i.Text
+              ? this.attr("font-size", e)
+              : ((e && t) || (n = this.target().bbox()),
+                e || (e = (n.width / n.height) * t),
+                t || (t = (n.height / n.width) * e),
+                this.add("width", new i.Number(e)).add(
+                  "height",
+                  new i.Number(t),
+                ));
+            return this;
+          },
+          width: function (e) {
+            return this.add("width", new i.Number(e));
+          },
+          height: function (e) {
+            return this.add("height", new i.Number(e));
+          },
+          plot: function (e, t, i, n) {
+            return 4 == arguments.length
+              ? this.plot([e, t, i, n])
+              : this.add("plot", new (this.target().morphArray)(e));
+          },
+          leading: function (e) {
+            return this.target().leading
+              ? this.add("leading", new i.Number(e))
+              : this;
+          },
+          viewbox: function (e, t, n, s) {
+            return (
+              this.target() instanceof i.Container &&
+                this.add("viewbox", new i.ViewBox(e, t, n, s)),
+              this
+            );
+          },
+          update: function (e) {
+            if (this.target() instanceof i.Stop) {
+              if ("number" == typeof e || e instanceof i.Number)
+                return this.update({
+                  offset: arguments[0],
+                  color: arguments[1],
+                  opacity: arguments[2],
+                });
+              null != e.opacity && this.attr("stop-opacity", e.opacity),
+                null != e.color && this.attr("stop-color", e.color),
+                null != e.offset && this.attr("offset", e.offset);
+            }
+            return this;
+          },
+        }),
+        (i.Box = i.invent({
+          create: function (e, t, n, s) {
+            if (!("object" != typeof e || e instanceof i.Element))
+              return i.Box.call(
+                this,
+                null != e.left ? e.left : e.x,
+                null != e.top ? e.top : e.y,
+                e.width,
+                e.height,
+              );
+            4 == arguments.length &&
+              ((this.x = e), (this.y = t), (this.width = n), (this.height = s)),
+              y(this);
+          },
+          extend: {
+            merge: function (e) {
+              var t = new this.constructor();
+              return (
+                (t.x = Math.min(this.x, e.x)),
+                (t.y = Math.min(this.y, e.y)),
+                (t.width = Math.max(this.x + this.width, e.x + e.width) - t.x),
+                (t.height =
+                  Math.max(this.y + this.height, e.y + e.height) - t.y),
+                y(t)
+              );
+            },
+            transform: function (e) {
+              var t,
+                n = 1 / 0,
+                s = -1 / 0,
+                r = 1 / 0,
+                o = -1 / 0;
+              return (
+                [
+                  new i.Point(this.x, this.y),
+                  new i.Point(this.x2, this.y),
+                  new i.Point(this.x, this.y2),
+                  new i.Point(this.x2, this.y2),
+                ].forEach(function (t) {
+                  (t = t.transform(e)),
+                    (n = Math.min(n, t.x)),
+                    (s = Math.max(s, t.x)),
+                    (r = Math.min(r, t.y)),
+                    (o = Math.max(o, t.y));
+                }),
+                ((t = new this.constructor()).x = n),
+                (t.width = s - n),
+                (t.y = r),
+                (t.height = o - r),
+                y(t),
+                t
+              );
+            },
+          },
+        })),
+        (i.BBox = i.invent({
+          create: function (e) {
+            if (
+              (i.Box.apply(this, [].slice.call(arguments)),
+              e instanceof i.Element)
+            ) {
+              var n;
+              try {
+                if (t.documentElement.contains) {
+                  if (!t.documentElement.contains(e.node))
+                    throw new Exception("Element not in the dom");
+                } else {
+                  for (var s = e.node; s.parentNode; ) s = s.parentNode;
+                  if (s != t) throw new Exception("Element not in the dom");
+                }
+                n = e.node.getBBox();
+              } catch (t) {
+                if (e instanceof i.Shape) {
+                  var r = e.clone(i.parser.draw.instance).show();
+                  (n = r.node.getBBox()), r.remove();
+                } else
+                  n = {
+                    x: e.node.clientLeft,
+                    y: e.node.clientTop,
+                    width: e.node.clientWidth,
+                    height: e.node.clientHeight,
+                  };
+              }
+              i.Box.call(this, n);
+            }
+          },
+          inherit: i.Box,
+          parent: i.Element,
+          construct: {
+            bbox: function () {
+              return new i.BBox(this);
+            },
+          },
+        })),
+        (i.BBox.prototype.constructor = i.BBox),
+        i.extend(i.Element, {
+          tbox: function () {
+            return (
+              console.warn(
+                "Use of TBox is deprecated and mapped to RBox. Use .rbox() instead.",
+              ),
+              this.rbox(this.doc())
+            );
+          },
+        }),
+        (i.RBox = i.invent({
+          create: function (e) {
+            i.Box.apply(this, [].slice.call(arguments)),
+              e instanceof i.Element &&
+                i.Box.call(this, e.node.getBoundingClientRect());
+          },
+          inherit: i.Box,
+          parent: i.Element,
+          extend: {
+            addOffset: function () {
+              return (this.x += e.pageXOffset), (this.y += e.pageYOffset), this;
+            },
+          },
+          construct: {
+            rbox: function (e) {
+              return e
+                ? new i.RBox(this).transform(e.screenCTM().inverse())
+                : new i.RBox(this).addOffset();
+            },
+          },
+        })),
+        (i.RBox.prototype.constructor = i.RBox),
+        (i.Matrix = i.invent({
+          create: function (e) {
+            var t,
+              n = f([1, 0, 0, 1, 0, 0]);
+            for (
+              e =
+                e instanceof i.Element
+                  ? e.matrixify()
+                  : "string" == typeof e
+                    ? f(e.split(i.regex.delimiter).map(parseFloat))
+                    : 6 == arguments.length
+                      ? f([].slice.call(arguments))
+                      : Array.isArray(e)
+                        ? f(e)
+                        : "object" == typeof e
+                          ? e
+                          : n,
+                t = x.length - 1;
+              t >= 0;
+              --t
+            )
+              this[x[t]] = null != e[x[t]] ? e[x[t]] : n[x[t]];
+          },
+          extend: {
+            extract: function () {
+              var e = m(this, 0, 1),
+                t = m(this, 1, 0),
+                n = (180 / Math.PI) * Math.atan2(e.y, e.x) - 90;
+              return {
+                x: this.e,
+                y: this.f,
+                transformedX:
+                  (this.e * Math.cos((n * Math.PI) / 180) +
+                    this.f * Math.sin((n * Math.PI) / 180)) /
+                  Math.sqrt(this.a * this.a + this.b * this.b),
+                transformedY:
+                  (this.f * Math.cos((n * Math.PI) / 180) +
+                    this.e * Math.sin((-n * Math.PI) / 180)) /
+                  Math.sqrt(this.c * this.c + this.d * this.d),
+                skewX: -n,
+                skewY: (180 / Math.PI) * Math.atan2(t.y, t.x),
+                scaleX: Math.sqrt(this.a * this.a + this.b * this.b),
+                scaleY: Math.sqrt(this.c * this.c + this.d * this.d),
+                rotation: n,
+                a: this.a,
+                b: this.b,
+                c: this.c,
+                d: this.d,
+                e: this.e,
+                f: this.f,
+                matrix: new i.Matrix(this),
+              };
+            },
+            clone: function () {
+              return new i.Matrix(this);
+            },
+            morph: function (e) {
+              return (this.destination = new i.Matrix(e)), this;
+            },
+            at: function (e) {
+              return this.destination
+                ? new i.Matrix({
+                    a: this.a + (this.destination.a - this.a) * e,
+                    b: this.b + (this.destination.b - this.b) * e,
+                    c: this.c + (this.destination.c - this.c) * e,
+                    d: this.d + (this.destination.d - this.d) * e,
+                    e: this.e + (this.destination.e - this.e) * e,
+                    f: this.f + (this.destination.f - this.f) * e,
+                  })
+                : this;
+            },
+            multiply: function (e) {
+              return new i.Matrix(
+                this.native().multiply(
+                  (function (e) {
+                    e instanceof i.Matrix || (e = new i.Matrix(e));
+                    return e;
+                  })(e).native(),
+                ),
+              );
+            },
+            inverse: function () {
+              return new i.Matrix(this.native().inverse());
+            },
+            translate: function (e, t) {
+              return new i.Matrix(this.native().translate(e || 0, t || 0));
+            },
+            scale: function (e, t, n, s) {
+              return (
+                1 == arguments.length
+                  ? (t = e)
+                  : 3 == arguments.length && ((s = n), (n = t), (t = e)),
+                this.around(n, s, new i.Matrix(e, 0, 0, t, 0, 0))
+              );
+            },
+            rotate: function (e, t, n) {
+              return (
+                (e = i.utils.radians(e)),
+                this.around(
+                  t,
+                  n,
+                  new i.Matrix(
+                    Math.cos(e),
+                    Math.sin(e),
+                    -Math.sin(e),
+                    Math.cos(e),
+                    0,
+                    0,
+                  ),
+                )
+              );
+            },
+            flip: function (e, t) {
+              return "x" == e
+                ? this.scale(-1, 1, t, 0)
+                : "y" == e
+                  ? this.scale(1, -1, 0, t)
+                  : this.scale(-1, -1, e, null != t ? t : e);
+            },
+            skew: function (e, t, n, s) {
+              return (
+                1 == arguments.length
+                  ? (t = e)
+                  : 3 == arguments.length && ((s = n), (n = t), (t = e)),
+                (e = i.utils.radians(e)),
+                (t = i.utils.radians(t)),
+                this.around(
+                  n,
+                  s,
+                  new i.Matrix(1, Math.tan(t), Math.tan(e), 1, 0, 0),
+                )
+              );
+            },
+            skewX: function (e, t, i) {
+              return this.skew(e, 0, t, i);
+            },
+            skewY: function (e, t, i) {
+              return this.skew(0, e, t, i);
+            },
+            around: function (e, t, n) {
+              return this.multiply(new i.Matrix(1, 0, 0, 1, e || 0, t || 0))
+                .multiply(n)
+                .multiply(new i.Matrix(1, 0, 0, 1, -e || 0, -t || 0));
+            },
+            native: function () {
+              for (
+                var e = i.parser.native.createSVGMatrix(), t = x.length - 1;
+                t >= 0;
+                t--
+              )
+                e[x[t]] = this[x[t]];
+              return e;
+            },
+            toString: function () {
+              return (
+                "matrix(" +
+                A(this.a) +
+                "," +
+                A(this.b) +
+                "," +
+                A(this.c) +
+                "," +
+                A(this.d) +
+                "," +
+                A(this.e) +
+                "," +
+                A(this.f) +
+                ")"
+              );
+            },
+          },
+          parent: i.Element,
+          construct: {
+            ctm: function () {
+              return new i.Matrix(this.node.getCTM());
+            },
+            screenCTM: function () {
+              if (this instanceof i.Nested) {
+                var e = this.rect(1, 1),
+                  t = e.node.getScreenCTM();
+                return e.remove(), new i.Matrix(t);
+              }
+              return new i.Matrix(this.node.getScreenCTM());
+            },
+          },
+        })),
+        (i.Point = i.invent({
+          create: function (e, t) {
+            var i;
+            (i = Array.isArray(e)
+              ? { x: e[0], y: e[1] }
+              : "object" == typeof e
+                ? { x: e.x, y: e.y }
+                : null != e
+                  ? { x: e, y: null != t ? t : e }
+                  : { x: 0, y: 0 }),
+              (this.x = i.x),
+              (this.y = i.y);
+          },
+          extend: {
+            clone: function () {
+              return new i.Point(this);
+            },
+            morph: function (e, t) {
+              return (this.destination = new i.Point(e, t)), this;
+            },
+            at: function (e) {
+              return this.destination
+                ? new i.Point({
+                    x: this.x + (this.destination.x - this.x) * e,
+                    y: this.y + (this.destination.y - this.y) * e,
+                  })
+                : this;
+            },
+            native: function () {
+              var e = i.parser.native.createSVGPoint();
+              return (e.x = this.x), (e.y = this.y), e;
+            },
+            transform: function (e) {
+              return new i.Point(this.native().matrixTransform(e.native()));
+            },
+          },
+        })),
+        i.extend(i.Element, {
+          point: function (e, t) {
+            return new i.Point(e, t).transform(this.screenCTM().inverse());
+          },
+        }),
+        i.extend(i.Element, {
+          attr: function (e, t, n) {
+            if (null == e) {
+              for (
+                e = {}, n = (t = this.node.attributes).length - 1;
+                n >= 0;
+                n--
+              )
+                e[t[n].nodeName] = i.regex.isNumber.test(t[n].nodeValue)
+                  ? parseFloat(t[n].nodeValue)
+                  : t[n].nodeValue;
+              return e;
+            }
+            if ("object" == typeof e) for (t in e) this.attr(t, e[t]);
+            else if (null === t) this.node.removeAttribute(e);
+            else {
+              if (null == t)
+                return null == (t = this.node.getAttribute(e))
+                  ? i.defaults.attrs[e]
+                  : i.regex.isNumber.test(t)
+                    ? parseFloat(t)
+                    : t;
+              "stroke-width" == e
+                ? this.attr("stroke", parseFloat(t) > 0 ? this._stroke : null)
+                : "stroke" == e && (this._stroke = t),
+                ("fill" != e && "stroke" != e) ||
+                  (i.regex.isImage.test(t) &&
+                    (t = this.doc().defs().image(t, 0, 0)),
+                  t instanceof i.Image &&
+                    (t = this.doc()
+                      .defs()
+                      .pattern(0, 0, function () {
+                        this.add(t);
+                      }))),
+                "number" == typeof t
+                  ? (t = new i.Number(t))
+                  : i.Color.isColor(t)
+                    ? (t = new i.Color(t))
+                    : Array.isArray(t) && (t = new i.Array(t)),
+                "leading" == e
+                  ? this.leading && this.leading(t)
+                  : "string" == typeof n
+                    ? this.node.setAttributeNS(n, e, t.toString())
+                    : this.node.setAttribute(e, t.toString()),
+                !this.rebuild ||
+                  ("font-size" != e && "x" != e) ||
+                  this.rebuild(e, t);
+            }
+            return this;
+          },
+        }),
+        i.extend(i.Element, {
+          transform: function (e, t) {
+            var n,
+              s,
+              r = this;
+            if ("object" != typeof e)
+              return (
+                (n = new i.Matrix(r).extract()), "string" == typeof e ? n[e] : n
+              );
+            if (((n = new i.Matrix(r)), (t = !!t || !!e.relative), null != e.a))
+              n = t ? n.multiply(new i.Matrix(e)) : new i.Matrix(e);
+            else if (null != e.rotation)
+              g(e, r),
+                (n = t
+                  ? n.rotate(e.rotation, e.cx, e.cy)
+                  : n.rotate(e.rotation - n.extract().rotation, e.cx, e.cy));
+            else if (null != e.scale || null != e.scaleX || null != e.scaleY) {
+              if (
+                (g(e, r),
+                (e.scaleX =
+                  null != e.scale ? e.scale : null != e.scaleX ? e.scaleX : 1),
+                (e.scaleY =
+                  null != e.scale ? e.scale : null != e.scaleY ? e.scaleY : 1),
+                !t)
+              ) {
+                var o = n.extract();
+                (e.scaleX = (1 * e.scaleX) / o.scaleX),
+                  (e.scaleY = (1 * e.scaleY) / o.scaleY);
+              }
+              n = n.scale(e.scaleX, e.scaleY, e.cx, e.cy);
+            } else if (null != e.skew || null != e.skewX || null != e.skewY) {
+              if (
+                (g(e, r),
+                (e.skewX =
+                  null != e.skew ? e.skew : null != e.skewX ? e.skewX : 0),
+                (e.skewY =
+                  null != e.skew ? e.skew : null != e.skewY ? e.skewY : 0),
+                !t)
+              ) {
+                o = n.extract();
+                n = n.multiply(
+                  new i.Matrix().skew(o.skewX, o.skewY, e.cx, e.cy).inverse(),
+                );
+              }
+              n = n.skew(e.skewX, e.skewY, e.cx, e.cy);
+            } else
+              e.flip
+                ? ("x" == e.flip || "y" == e.flip
+                    ? (e.offset =
+                        null == e.offset ? r.bbox()["c" + e.flip] : e.offset)
+                    : null == e.offset
+                      ? ((s = r.bbox()), (e.flip = s.cx), (e.offset = s.cy))
+                      : (e.flip = e.offset),
+                  (n = new i.Matrix().flip(e.flip, e.offset)))
+                : (null == e.x && null == e.y) ||
+                  (t
+                    ? (n = n.translate(e.x, e.y))
+                    : (null != e.x && (n.e = e.x), null != e.y && (n.f = e.y)));
+            return this.attr("transform", n);
+          },
+        }),
+        i.extend(i.FX, {
+          transform: function (e, t) {
+            var n,
+              s,
+              r = this.target();
+            return "object" != typeof e
+              ? ((n = new i.Matrix(r).extract()),
+                "string" == typeof e ? n[e] : n)
+              : ((t = !!t || !!e.relative),
+                null != e.a
+                  ? (n = new i.Matrix(e))
+                  : null != e.rotation
+                    ? (g(e, r), (n = new i.Rotate(e.rotation, e.cx, e.cy)))
+                    : null != e.scale || null != e.scaleX || null != e.scaleY
+                      ? (g(e, r),
+                        (e.scaleX =
+                          null != e.scale
+                            ? e.scale
+                            : null != e.scaleX
+                              ? e.scaleX
+                              : 1),
+                        (e.scaleY =
+                          null != e.scale
+                            ? e.scale
+                            : null != e.scaleY
+                              ? e.scaleY
+                              : 1),
+                        (n = new i.Scale(e.scaleX, e.scaleY, e.cx, e.cy)))
+                      : null != e.skewX || null != e.skewY
+                        ? (g(e, r),
+                          (e.skewX = null != e.skewX ? e.skewX : 0),
+                          (e.skewY = null != e.skewY ? e.skewY : 0),
+                          (n = new i.Skew(e.skewX, e.skewY, e.cx, e.cy)))
+                        : e.flip
+                          ? ("x" == e.flip || "y" == e.flip
+                              ? (e.offset =
+                                  null == e.offset
+                                    ? r.bbox()["c" + e.flip]
+                                    : e.offset)
+                              : null == e.offset
+                                ? ((s = r.bbox()),
+                                  (e.flip = s.cx),
+                                  (e.offset = s.cy))
+                                : (e.flip = e.offset),
+                            (n = new i.Matrix().flip(e.flip, e.offset)))
+                          : (null == e.x && null == e.y) ||
+                            (n = new i.Translate(e.x, e.y)),
+                n
+                  ? ((n.relative = t),
+                    this.last().transforms.push(n),
+                    this._callStart())
+                  : this);
+          },
+        }),
+        i.extend(i.Element, {
+          untransform: function () {
+            return this.attr("transform", null);
+          },
+          matrixify: function () {
+            return (this.attr("transform") || "")
+              .split(i.regex.transforms)
+              .slice(0, -1)
+              .map(function (e) {
+                var t = e.trim().split("(");
+                return [
+                  t[0],
+                  t[1].split(i.regex.delimiter).map(function (e) {
+                    return parseFloat(e);
+                  }),
+                ];
+              })
+              .reduce(function (e, t) {
+                return "matrix" == t[0]
+                  ? e.multiply(f(t[1]))
+                  : e[t[0]].apply(e, t[1]);
+              }, new i.Matrix());
+          },
+          toParent: function (e) {
+            if (this == e) return this;
+            var t = this.screenCTM(),
+              i = e.screenCTM().inverse();
+            return this.addTo(e).untransform().transform(i.multiply(t)), this;
+          },
+          toDoc: function () {
+            return this.toParent(this.doc());
+          },
+        }),
+        (i.Transformation = i.invent({
+          create: function (e, t) {
+            if (arguments.length > 1 && "boolean" != typeof t)
+              return this.constructor.call(this, [].slice.call(arguments));
+            if (Array.isArray(e))
+              for (var i = 0, n = this.arguments.length; i < n; ++i)
+                this[this.arguments[i]] = e[i];
+            else if ("object" == typeof e)
+              for (i = 0, n = this.arguments.length; i < n; ++i)
+                this[this.arguments[i]] = e[this.arguments[i]];
+            (this.inversed = !1), !0 === t && (this.inversed = !0);
+          },
+          extend: {
+            arguments: [],
+            method: "",
+            at: function (e) {
+              for (var t = [], n = 0, s = this.arguments.length; n < s; ++n)
+                t.push(this[this.arguments[n]]);
+              var r = this._undo || new i.Matrix();
+              return (
+                (r = new i.Matrix()
+                  .morph(i.Matrix.prototype[this.method].apply(r, t))
+                  .at(e)),
+                this.inversed ? r.inverse() : r
+              );
+            },
+            undo: function (e) {
+              for (var t = 0, n = this.arguments.length; t < n; ++t)
+                e[this.arguments[t]] =
+                  void 0 === this[this.arguments[t]] ? 0 : e[this.arguments[t]];
+              return (
+                (e.cx = this.cx),
+                (e.cy = this.cy),
+                (this._undo = new i[c(this.method)](e, !0).at(1)),
+                this
+              );
+            },
+          },
+        })),
+        (i.Translate = i.invent({
+          parent: i.Matrix,
+          inherit: i.Transformation,
+          create: function (e, t) {
+            this.constructor.apply(this, [].slice.call(arguments));
+          },
+          extend: {
+            arguments: ["transformedX", "transformedY"],
+            method: "translate",
+          },
+        })),
+        (i.Rotate = i.invent({
+          parent: i.Matrix,
+          inherit: i.Transformation,
+          create: function (e, t) {
+            this.constructor.apply(this, [].slice.call(arguments));
+          },
+          extend: {
+            arguments: ["rotation", "cx", "cy"],
+            method: "rotate",
+            at: function (e) {
+              var t = new i.Matrix().rotate(
+                new i.Number()
+                  .morph(this.rotation - (this._undo ? this._undo.rotation : 0))
+                  .at(e),
+                this.cx,
+                this.cy,
+              );
+              return this.inversed ? t.inverse() : t;
+            },
+            undo: function (e) {
+              return (this._undo = e), this;
+            },
+          },
+        })),
+        (i.Scale = i.invent({
+          parent: i.Matrix,
+          inherit: i.Transformation,
+          create: function (e, t) {
+            this.constructor.apply(this, [].slice.call(arguments));
+          },
+          extend: {
+            arguments: ["scaleX", "scaleY", "cx", "cy"],
+            method: "scale",
+          },
+        })),
+        (i.Skew = i.invent({
+          parent: i.Matrix,
+          inherit: i.Transformation,
+          create: function (e, t) {
+            this.constructor.apply(this, [].slice.call(arguments));
+          },
+          extend: { arguments: ["skewX", "skewY", "cx", "cy"], method: "skew" },
+        })),
+        i.extend(i.Element, {
+          style: function (e, t) {
+            if (0 == arguments.length) return this.node.style.cssText || "";
+            if (arguments.length < 2)
+              if ("object" == typeof e) for (t in e) this.style(t, e[t]);
+              else {
+                if (!i.regex.isCss.test(e)) return this.node.style[d(e)];
+                for (
+                  e = e
+                    .split(/\s*;\s*/)
+                    .filter(function (e) {
+                      return !!e;
+                    })
+                    .map(function (e) {
+                      return e.split(/\s*:\s*/);
+                    });
+                  (t = e.pop());
+
+                )
+                  this.style(t[0], t[1]);
+              }
+            else
+              this.node.style[d(e)] =
+                null === t || i.regex.isBlank.test(t) ? "" : t;
+            return this;
+          },
+        }),
+        (i.Parent = i.invent({
+          create: function (e) {
+            this.constructor.call(this, e);
+          },
+          inherit: i.Element,
+          extend: {
+            children: function () {
+              return i.utils.map(
+                i.utils.filterSVGElements(this.node.childNodes),
+                function (e) {
+                  return i.adopt(e);
+                },
+              );
+            },
+            add: function (e, t) {
+              return (
+                null == t
+                  ? this.node.appendChild(e.node)
+                  : e.node != this.node.childNodes[t] &&
+                    this.node.insertBefore(e.node, this.node.childNodes[t]),
+                this
+              );
+            },
+            put: function (e, t) {
+              return this.add(e, t), e;
+            },
+            has: function (e) {
+              return this.index(e) >= 0;
+            },
+            index: function (e) {
+              return [].slice.call(this.node.childNodes).indexOf(e.node);
+            },
+            get: function (e) {
+              return i.adopt(this.node.childNodes[e]);
+            },
+            first: function () {
+              return this.get(0);
+            },
+            last: function () {
+              return this.get(this.node.childNodes.length - 1);
+            },
+            each: function (e, t) {
+              var n,
+                s,
+                r = this.children();
+              for (n = 0, s = r.length; n < s; n++)
+                r[n] instanceof i.Element && e.apply(r[n], [n, r]),
+                  t && r[n] instanceof i.Container && r[n].each(e, t);
+              return this;
+            },
+            removeElement: function (e) {
+              return this.node.removeChild(e.node), this;
+            },
+            clear: function () {
+              for (; this.node.hasChildNodes(); )
+                this.node.removeChild(this.node.lastChild);
+              return delete this._defs, this;
+            },
+            defs: function () {
+              return this.doc().defs();
+            },
+          },
+        })),
+        i.extend(i.Parent, {
+          ungroup: function (e, t) {
+            return (
+              0 === t ||
+                this instanceof i.Defs ||
+                this.node == i.parser.draw ||
+                ((e =
+                  e || (this instanceof i.Doc ? this : this.parent(i.Parent))),
+                (t = t || 1 / 0),
+                this.each(function () {
+                  return this instanceof i.Defs
+                    ? this
+                    : this instanceof i.Parent
+                      ? this.ungroup(e, t - 1)
+                      : this.toParent(e);
+                }),
+                this.node.firstChild || this.remove()),
+              this
+            );
+          },
+          flatten: function (e, t) {
+            return this.ungroup(e, t);
+          },
+        }),
+        (i.Container = i.invent({
+          create: function (e) {
+            this.constructor.call(this, e);
+          },
+          inherit: i.Parent,
+        })),
+        (i.ViewBox = i.invent({
+          create: function (e) {
+            var t,
+              n,
+              s,
+              r,
+              o,
+              a,
+              h,
+              l = [0, 0, 0, 0],
+              d = 1,
+              c = 1,
+              u = /[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?/gi;
+            if (e instanceof i.Element) {
+              for (
+                a = e,
+                  h = e,
+                  o = (e.attr("viewBox") || "").match(u),
+                  s = new i.Number(e.width()),
+                  r = new i.Number(e.height());
+                "%" == s.unit;
+
+              )
+                (d *= s.value),
+                  (s = new i.Number(
+                    a instanceof i.Doc
+                      ? a.parent().offsetWidth
+                      : a.parent().width(),
+                  )),
+                  (a = a.parent());
+              for (; "%" == r.unit; )
+                (c *= r.value),
+                  (r = new i.Number(
+                    h instanceof i.Doc
+                      ? h.parent().offsetHeight
+                      : h.parent().height(),
+                  )),
+                  (h = h.parent());
+              (this.x = 0),
+                (this.y = 0),
+                (this.width = s * d),
+                (this.height = r * c),
+                (this.zoom = 1),
+                o &&
+                  ((t = parseFloat(o[0])),
+                  (n = parseFloat(o[1])),
+                  (s = parseFloat(o[2])),
+                  (r = parseFloat(o[3])),
+                  (this.zoom =
+                    this.width / this.height > s / r
+                      ? this.height / r
+                      : this.width / s),
+                  (this.x = t),
+                  (this.y = n),
+                  (this.width = s),
+                  (this.height = r));
+            } else
+              (e =
+                "string" == typeof e
+                  ? e.match(u).map(function (e) {
+                      return parseFloat(e);
+                    })
+                  : Array.isArray(e)
+                    ? e
+                    : "object" == typeof e
+                      ? [e.x, e.y, e.width, e.height]
+                      : 4 == arguments.length
+                        ? [].slice.call(arguments)
+                        : l),
+                (this.x = e[0]),
+                (this.y = e[1]),
+                (this.width = e[2]),
+                (this.height = e[3]);
+          },
+          extend: {
+            toString: function () {
+              return (
+                this.x + " " + this.y + " " + this.width + " " + this.height
+              );
+            },
+            morph: function (e, t, n, s) {
+              return (this.destination = new i.ViewBox(e, t, n, s)), this;
+            },
+            at: function (e) {
+              return this.destination
+                ? new i.ViewBox([
+                    this.x + (this.destination.x - this.x) * e,
+                    this.y + (this.destination.y - this.y) * e,
+                    this.width + (this.destination.width - this.width) * e,
+                    this.height + (this.destination.height - this.height) * e,
+                  ])
+                : this;
+            },
+          },
+          parent: i.Container,
+          construct: {
+            viewbox: function (e, t, n, s) {
+              return 0 == arguments.length
+                ? new i.ViewBox(this)
+                : this.attr("viewBox", new i.ViewBox(e, t, n, s));
+            },
+          },
+        })),
+        [
+          "click",
+          "dblclick",
+          "mousedown",
+          "mouseup",
+          "mouseover",
+          "mouseout",
+          "mousemove",
+          "mouseenter",
+          "mouseleave",
+          "touchstart",
+          "touchmove",
+          "touchleave",
+          "touchend",
+          "touchcancel",
+        ].forEach(function (e) {
+          i.Element.prototype[e] = function (t) {
+            return null == t ? i.off(this, e) : i.on(this, e, t), this;
+          };
+        }),
+        (i.listenerId = 0),
+        (i.on = function (e, t, n, s, r) {
+          var o = n.bind(s || e),
+            a = e instanceof i.Element ? e.node : e;
+          a.instance = a.instance || { _events: {} };
+          var h = a.instance._events;
+          n._svgjsListenerId || (n._svgjsListenerId = ++i.listenerId),
+            t.split(i.regex.delimiter).forEach(function (e) {
+              var t = e.split(".")[0],
+                i = e.split(".")[1] || "*";
+              (h[t] = h[t] || {}),
+                (h[t][i] = h[t][i] || {}),
+                (h[t][i][n._svgjsListenerId] = o),
+                a.addEventListener(t, o, r || !1);
+            });
+        }),
+        (i.off = function (e, t, n, s) {
+          var r = e instanceof i.Element ? e.node : e;
+          if (
+            r.instance &&
+            ("function" != typeof n || (n = n._svgjsListenerId))
+          ) {
+            var o = r.instance._events;
+            (t || "").split(i.regex.delimiter).forEach(function (e) {
+              var t,
+                a,
+                h = e && e.split(".")[0],
+                l = e && e.split(".")[1];
+              if (n)
+                o[h] &&
+                  o[h][l || "*"] &&
+                  (r.removeEventListener(h, o[h][l || "*"][n], s || !1),
+                  delete o[h][l || "*"][n]);
+              else if (h && l) {
+                if (o[h] && o[h][l]) {
+                  for (a in o[h][l]) i.off(r, [h, l].join("."), a);
+                  delete o[h][l];
+                }
+              } else if (l)
+                for (e in o)
+                  for (t in o[e]) l === t && i.off(r, [e, l].join("."));
+              else if (h) {
+                if (o[h]) {
+                  for (t in o[h]) i.off(r, [h, t].join("."));
+                  delete o[h];
+                }
+              } else {
+                for (e in o) i.off(r, e);
+                r.instance._events = {};
+              }
+            });
+          }
+        }),
+        i.extend(i.Element, {
+          on: function (e, t, n, s) {
+            return i.on(this, e, t, n, s), this;
+          },
+          off: function (e, t) {
+            return i.off(this.node, e, t), this;
+          },
+          fire: function (t, n) {
+            return (
+              t instanceof e.Event
+                ? this.node.dispatchEvent(t)
+                : this.node.dispatchEvent(
+                    (t = new i.CustomEvent(t, { detail: n, cancelable: !0 })),
+                  ),
+              (this._event = t),
+              this
+            );
+          },
+          event: function () {
+            return this._event;
+          },
+        }),
+        (i.Defs = i.invent({ create: "defs", inherit: i.Container })),
+        (i.G = i.invent({
+          create: "g",
+          inherit: i.Container,
+          extend: {
+            x: function (e) {
+              return null == e
+                ? this.transform("x")
+                : this.transform({ x: e - this.x() }, !0);
+            },
+            y: function (e) {
+              return null == e
+                ? this.transform("y")
+                : this.transform({ y: e - this.y() }, !0);
+            },
+            cx: function (e) {
+              return null == e
+                ? this.gbox().cx
+                : this.x(e - this.gbox().width / 2);
+            },
+            cy: function (e) {
+              return null == e
+                ? this.gbox().cy
+                : this.y(e - this.gbox().height / 2);
+            },
+            gbox: function () {
+              var e = this.bbox(),
+                t = this.transform();
+              return (
+                (e.x += t.x),
+                (e.x2 += t.x),
+                (e.cx += t.x),
+                (e.y += t.y),
+                (e.y2 += t.y),
+                (e.cy += t.y),
+                e
+              );
+            },
+          },
+          construct: {
+            group: function () {
+              return this.put(new i.G());
+            },
+          },
+        })),
+        (i.Doc = i.invent({
+          create: function (e) {
+            e &&
+              ("svg" ==
+              (e = "string" == typeof e ? t.getElementById(e) : e).nodeName
+                ? this.constructor.call(this, e)
+                : (this.constructor.call(this, i.create("svg")),
+                  e.appendChild(this.node),
+                  this.size("100%", "100%")),
+              this.namespace().defs());
+          },
+          inherit: i.Container,
+          extend: {
+            namespace: function () {
+              return this.attr({ xmlns: i.ns, version: "1.1" })
+                .attr("xmlns:xlink", i.xlink, i.xmlns)
+                .attr("xmlns:svgjs", i.svgjs, i.xmlns);
+            },
+            defs: function () {
+              var e;
+              this._defs ||
+                ((e = this.node.getElementsByTagName("defs")[0])
+                  ? (this._defs = i.adopt(e))
+                  : (this._defs = new i.Defs()),
+                this.node.appendChild(this._defs.node));
+              return this._defs;
+            },
+            parent: function () {
+              return this.node.parentNode &&
+                "#document" != this.node.parentNode.nodeName &&
+                "#document-fragment" != this.node.parentNode.nodeName
+                ? this.node.parentNode
+                : null;
+            },
+            spof: function () {
+              var e = this.node.getScreenCTM();
+              return (
+                e &&
+                  this.style("left", (-e.e % 1) + "px").style(
+                    "top",
+                    (-e.f % 1) + "px",
+                  ),
+                this
+              );
+            },
+            remove: function () {
+              return (
+                this.parent() && this.parent().removeChild(this.node), this
+              );
+            },
+            clear: function () {
+              for (; this.node.hasChildNodes(); )
+                this.node.removeChild(this.node.lastChild);
+              return (
+                delete this._defs,
+                i.parser.draw.parentNode ||
+                  this.node.appendChild(i.parser.draw),
+                this
+              );
+            },
+            clone: function (e) {
+              this.writeDataToDom();
+              var t = this.node,
+                i = v(t.cloneNode(!0));
+              return (
+                e
+                  ? (e.node || e).appendChild(i.node)
+                  : t.parentNode.insertBefore(i.node, t.nextSibling),
+                i
+              );
+            },
+          },
+        })),
+        i.extend(i.Element, {
+          siblings: function () {
+            return this.parent().children();
+          },
+          position: function () {
+            return this.parent().index(this);
+          },
+          next: function () {
+            return this.siblings()[this.position() + 1];
+          },
+          previous: function () {
+            return this.siblings()[this.position() - 1];
+          },
+          forward: function () {
+            var e = this.position() + 1,
+              t = this.parent();
+            return (
+              t.removeElement(this).add(this, e),
+              t instanceof i.Doc && t.node.appendChild(t.defs().node),
+              this
+            );
+          },
+          backward: function () {
+            var e = this.position();
+            return (
+              e > 0 &&
+                this.parent()
+                  .removeElement(this)
+                  .add(this, e - 1),
+              this
+            );
+          },
+          front: function () {
+            var e = this.parent();
+            return (
+              e.node.appendChild(this.node),
+              e instanceof i.Doc && e.node.appendChild(e.defs().node),
+              this
+            );
+          },
+          back: function () {
+            return (
+              this.position() > 0 &&
+                this.parent().removeElement(this).add(this, 0),
+              this
+            );
+          },
+          before: function (e) {
+            e.remove();
+            var t = this.position();
+            return this.parent().add(e, t), this;
+          },
+          after: function (e) {
+            e.remove();
+            var t = this.position();
+            return this.parent().add(e, t + 1), this;
+          },
+        }),
+        (i.Mask = i.invent({
+          create: function () {
+            this.constructor.call(this, i.create("mask")), (this.targets = []);
+          },
+          inherit: i.Container,
+          extend: {
+            remove: function () {
+              for (var e = this.targets.length - 1; e >= 0; e--)
+                this.targets[e] && this.targets[e].unmask();
+              return (
+                (this.targets = []), i.Element.prototype.remove.call(this), this
+              );
+            },
+          },
+          construct: {
+            mask: function () {
+              return this.defs().put(new i.Mask());
+            },
+          },
+        })),
+        i.extend(i.Element, {
+          maskWith: function (e) {
+            return (
+              (this.masker =
+                e instanceof i.Mask ? e : this.parent().mask().add(e)),
+              this.masker.targets.push(this),
+              this.attr("mask", 'url("#' + this.masker.attr("id") + '")')
+            );
+          },
+          unmask: function () {
+            return delete this.masker, this.attr("mask", null);
+          },
+        }),
+        (i.ClipPath = i.invent({
+          create: function () {
+            this.constructor.call(this, i.create("clipPath")),
+              (this.targets = []);
+          },
+          inherit: i.Container,
+          extend: {
+            remove: function () {
+              for (var e = this.targets.length - 1; e >= 0; e--)
+                this.targets[e] && this.targets[e].unclip();
+              return (
+                (this.targets = []), this.parent().removeElement(this), this
+              );
+            },
+          },
+          construct: {
+            clip: function () {
+              return this.defs().put(new i.ClipPath());
+            },
+          },
+        })),
+        i.extend(i.Element, {
+          clipWith: function (e) {
+            return (
+              (this.clipper =
+                e instanceof i.ClipPath ? e : this.parent().clip().add(e)),
+              this.clipper.targets.push(this),
+              this.attr("clip-path", 'url("#' + this.clipper.attr("id") + '")')
+            );
+          },
+          unclip: function () {
+            return delete this.clipper, this.attr("clip-path", null);
+          },
+        }),
+        (i.Gradient = i.invent({
+          create: function (e) {
+            this.constructor.call(this, i.create(e + "Gradient")),
+              (this.type = e);
+          },
+          inherit: i.Container,
+          extend: {
+            at: function (e, t, n) {
+              return this.put(new i.Stop()).update(e, t, n);
+            },
+            update: function (e) {
+              return (
+                this.clear(), "function" == typeof e && e.call(this, this), this
+              );
+            },
+            fill: function () {
+              return "url(#" + this.id() + ")";
+            },
+            toString: function () {
+              return this.fill();
+            },
+            attr: function (e, t, n) {
+              return (
+                "transform" == e && (e = "gradientTransform"),
+                i.Container.prototype.attr.call(this, e, t, n)
+              );
+            },
+          },
+          construct: {
+            gradient: function (e, t) {
+              return this.defs().gradient(e, t);
+            },
+          },
+        })),
+        i.extend(i.Gradient, i.FX, {
+          from: function (e, t) {
+            return "radial" == (this._target || this).type
+              ? this.attr({ fx: new i.Number(e), fy: new i.Number(t) })
+              : this.attr({ x1: new i.Number(e), y1: new i.Number(t) });
+          },
+          to: function (e, t) {
+            return "radial" == (this._target || this).type
+              ? this.attr({ cx: new i.Number(e), cy: new i.Number(t) })
+              : this.attr({ x2: new i.Number(e), y2: new i.Number(t) });
+          },
+        }),
+        i.extend(i.Defs, {
+          gradient: function (e, t) {
+            return this.put(new i.Gradient(e)).update(t);
+          },
+        }),
+        (i.Stop = i.invent({
+          create: "stop",
+          inherit: i.Element,
+          extend: {
+            update: function (e) {
+              return (
+                ("number" == typeof e || e instanceof i.Number) &&
+                  (e = {
+                    offset: arguments[0],
+                    color: arguments[1],
+                    opacity: arguments[2],
+                  }),
+                null != e.opacity && this.attr("stop-opacity", e.opacity),
+                null != e.color && this.attr("stop-color", e.color),
+                null != e.offset && this.attr("offset", new i.Number(e.offset)),
+                this
+              );
+            },
+          },
+        })),
+        (i.Pattern = i.invent({
+          create: "pattern",
+          inherit: i.Container,
+          extend: {
+            fill: function () {
+              return "url(#" + this.id() + ")";
+            },
+            update: function (e) {
+              return (
+                this.clear(), "function" == typeof e && e.call(this, this), this
+              );
+            },
+            toString: function () {
+              return this.fill();
+            },
+            attr: function (e, t, n) {
+              return (
+                "transform" == e && (e = "patternTransform"),
+                i.Container.prototype.attr.call(this, e, t, n)
+              );
+            },
+          },
+          construct: {
+            pattern: function (e, t, i) {
+              return this.defs().pattern(e, t, i);
+            },
+          },
+        })),
+        i.extend(i.Defs, {
+          pattern: function (e, t, n) {
+            return this.put(new i.Pattern()).update(n).attr({
+              x: 0,
+              y: 0,
+              width: e,
+              height: t,
+              patternUnits: "userSpaceOnUse",
+            });
+          },
+        }),
+        (i.Shape = i.invent({
+          create: function (e) {
+            this.constructor.call(this, e);
+          },
+          inherit: i.Element,
+        })),
+        (i.Bare = i.invent({
+          create: function (e, t) {
+            if ((this.constructor.call(this, i.create(e)), t))
+              for (var n in t.prototype)
+                "function" == typeof t.prototype[n] &&
+                  (this[n] = t.prototype[n]);
+          },
+          inherit: i.Element,
+          extend: {
+            words: function (e) {
+              for (; this.node.hasChildNodes(); )
+                this.node.removeChild(this.node.lastChild);
+              return this.node.appendChild(t.createTextNode(e)), this;
+            },
+          },
+        })),
+        i.extend(i.Parent, {
+          element: function (e, t) {
+            return this.put(new i.Bare(e, t));
+          },
+        }),
+        (i.Symbol = i.invent({
+          create: "symbol",
+          inherit: i.Container,
+          construct: {
+            symbol: function () {
+              return this.put(new i.Symbol());
+            },
+          },
+        })),
+        (i.Use = i.invent({
+          create: "use",
+          inherit: i.Shape,
+          extend: {
+            element: function (e, t) {
+              return this.attr("href", (t || "") + "#" + e, i.xlink);
+            },
+          },
+          construct: {
+            use: function (e, t) {
+              return this.put(new i.Use()).element(e, t);
+            },
+          },
+        })),
+        (i.Rect = i.invent({
+          create: "rect",
+          inherit: i.Shape,
+          construct: {
+            rect: function (e, t) {
+              return this.put(new i.Rect()).size(e, t);
+            },
+          },
+        })),
+        (i.Circle = i.invent({
+          create: "circle",
+          inherit: i.Shape,
+          construct: {
+            circle: function (e) {
+              return this.put(new i.Circle())
+                .rx(new i.Number(e).divide(2))
+                .move(0, 0);
+            },
+          },
+        })),
+        i.extend(i.Circle, i.FX, {
+          rx: function (e) {
+            return this.attr("r", e);
+          },
+          ry: function (e) {
+            return this.rx(e);
+          },
+        }),
+        (i.Ellipse = i.invent({
+          create: "ellipse",
+          inherit: i.Shape,
+          construct: {
+            ellipse: function (e, t) {
+              return this.put(new i.Ellipse()).size(e, t).move(0, 0);
+            },
+          },
+        })),
+        i.extend(i.Ellipse, i.Rect, i.FX, {
+          rx: function (e) {
+            return this.attr("rx", e);
+          },
+          ry: function (e) {
+            return this.attr("ry", e);
+          },
+        }),
+        i.extend(i.Circle, i.Ellipse, {
+          x: function (e) {
+            return null == e ? this.cx() - this.rx() : this.cx(e + this.rx());
+          },
+          y: function (e) {
+            return null == e ? this.cy() - this.ry() : this.cy(e + this.ry());
+          },
+          cx: function (e) {
+            return null == e ? this.attr("cx") : this.attr("cx", e);
+          },
+          cy: function (e) {
+            return null == e ? this.attr("cy") : this.attr("cy", e);
+          },
+          width: function (e) {
+            return null == e
+              ? 2 * this.rx()
+              : this.rx(new i.Number(e).divide(2));
+          },
+          height: function (e) {
+            return null == e
+              ? 2 * this.ry()
+              : this.ry(new i.Number(e).divide(2));
+          },
+          size: function (e, t) {
+            var n = p(this, e, t);
+            return this.rx(new i.Number(n.width).divide(2)).ry(
+              new i.Number(n.height).divide(2),
+            );
+          },
+        }),
+        (i.Line = i.invent({
+          create: "line",
+          inherit: i.Shape,
+          extend: {
+            array: function () {
+              return new i.PointArray([
+                [this.attr("x1"), this.attr("y1")],
+                [this.attr("x2"), this.attr("y2")],
+              ]);
+            },
+            plot: function (e, t, n, s) {
+              return null == e
+                ? this.array()
+                : ((e =
+                    void 0 !== t
+                      ? { x1: e, y1: t, x2: n, y2: s }
+                      : new i.PointArray(e).toLine()),
+                  this.attr(e));
+            },
+            move: function (e, t) {
+              return this.attr(this.array().move(e, t).toLine());
+            },
+            size: function (e, t) {
+              var i = p(this, e, t);
+              return this.attr(this.array().size(i.width, i.height).toLine());
+            },
+          },
+          construct: {
+            line: function (e, t, n, s) {
+              return i.Line.prototype.plot.apply(
+                this.put(new i.Line()),
+                null != e ? [e, t, n, s] : [0, 0, 0, 0],
+              );
+            },
+          },
+        })),
+        (i.Polyline = i.invent({
+          create: "polyline",
+          inherit: i.Shape,
+          construct: {
+            polyline: function (e) {
+              return this.put(new i.Polyline()).plot(e || new i.PointArray());
+            },
+          },
+        })),
+        (i.Polygon = i.invent({
+          create: "polygon",
+          inherit: i.Shape,
+          construct: {
+            polygon: function (e) {
+              return this.put(new i.Polygon()).plot(e || new i.PointArray());
+            },
+          },
+        })),
+        i.extend(i.Polyline, i.Polygon, {
+          array: function () {
+            return (
+              this._array ||
+              (this._array = new i.PointArray(this.attr("points")))
+            );
+          },
+          plot: function (e) {
+            return null == e
+              ? this.array()
+              : this.clear().attr(
+                  "points",
+                  "string" == typeof e
+                    ? e
+                    : (this._array = new i.PointArray(e)),
+                );
+          },
+          clear: function () {
+            return delete this._array, this;
+          },
+          move: function (e, t) {
+            return this.attr("points", this.array().move(e, t));
+          },
+          size: function (e, t) {
+            var i = p(this, e, t);
+            return this.attr("points", this.array().size(i.width, i.height));
+          },
+        }),
+        i.extend(i.Line, i.Polyline, i.Polygon, {
+          morphArray: i.PointArray,
+          x: function (e) {
+            return null == e ? this.bbox().x : this.move(e, this.bbox().y);
+          },
+          y: function (e) {
+            return null == e ? this.bbox().y : this.move(this.bbox().x, e);
+          },
+          width: function (e) {
+            var t = this.bbox();
+            return null == e ? t.width : this.size(e, t.height);
+          },
+          height: function (e) {
+            var t = this.bbox();
+            return null == e ? t.height : this.size(t.width, e);
+          },
+        }),
+        (i.Path = i.invent({
+          create: "path",
+          inherit: i.Shape,
+          extend: {
+            morphArray: i.PathArray,
+            array: function () {
+              return (
+                this._array || (this._array = new i.PathArray(this.attr("d")))
+              );
+            },
+            plot: function (e) {
+              return null == e
+                ? this.array()
+                : this.clear().attr(
+                    "d",
+                    "string" == typeof e
+                      ? e
+                      : (this._array = new i.PathArray(e)),
+                  );
+            },
+            clear: function () {
+              return delete this._array, this;
+            },
+            move: function (e, t) {
+              return this.attr("d", this.array().move(e, t));
+            },
+            x: function (e) {
+              return null == e ? this.bbox().x : this.move(e, this.bbox().y);
+            },
+            y: function (e) {
+              return null == e ? this.bbox().y : this.move(this.bbox().x, e);
+            },
+            size: function (e, t) {
+              var i = p(this, e, t);
+              return this.attr("d", this.array().size(i.width, i.height));
+            },
+            width: function (e) {
+              return null == e
+                ? this.bbox().width
+                : this.size(e, this.bbox().height);
+            },
+            height: function (e) {
+              return null == e
+                ? this.bbox().height
+                : this.size(this.bbox().width, e);
+            },
+          },
+          construct: {
+            path: function (e) {
+              return this.put(new i.Path()).plot(e || new i.PathArray());
+            },
+          },
+        })),
+        (i.Image = i.invent({
+          create: "image",
+          inherit: i.Shape,
+          extend: {
+            load: function (t) {
+              if (!t) return this;
+              var n = this,
+                s = new e.Image();
+              return (
+                i.on(s, "load", function () {
+                  i.off(s);
+                  var e = n.parent(i.Pattern);
+                  null !== e &&
+                    (0 == n.width() &&
+                      0 == n.height() &&
+                      n.size(s.width, s.height),
+                    e &&
+                      0 == e.width() &&
+                      0 == e.height() &&
+                      e.size(n.width(), n.height()),
+                    "function" == typeof n._loaded &&
+                      n._loaded.call(n, {
+                        width: s.width,
+                        height: s.height,
+                        ratio: s.width / s.height,
+                        url: t,
+                      }));
+                }),
+                i.on(s, "error", function (e) {
+                  i.off(s),
+                    "function" == typeof n._error && n._error.call(n, e);
+                }),
+                this.attr("href", (s.src = this.src = t), i.xlink)
+              );
+            },
+            loaded: function (e) {
+              return (this._loaded = e), this;
+            },
+            error: function (e) {
+              return (this._error = e), this;
+            },
+          },
+          construct: {
+            image: function (e, t, n) {
+              return this.put(new i.Image())
+                .load(e)
+                .size(t || 0, n || t || 0);
+            },
+          },
+        })),
+        (i.Text = i.invent({
+          create: function () {
+            this.constructor.call(this, i.create("text")),
+              (this.dom.leading = new i.Number(1.3)),
+              (this._rebuild = !0),
+              (this._build = !1),
+              this.attr("font-family", i.defaults.attrs["font-family"]);
+          },
+          inherit: i.Shape,
+          extend: {
+            x: function (e) {
+              return null == e ? this.attr("x") : this.attr("x", e);
+            },
+            y: function (e) {
+              var t = this.attr("y"),
+                i = "number" == typeof t ? t - this.bbox().y : 0;
+              return null == e
+                ? "number" == typeof t
+                  ? t - i
+                  : t
+                : this.attr("y", "number" == typeof e.valueOf() ? e + i : e);
+            },
+            cx: function (e) {
+              return null == e
+                ? this.bbox().cx
+                : this.x(e - this.bbox().width / 2);
+            },
+            cy: function (e) {
+              return null == e
+                ? this.bbox().cy
+                : this.y(e - this.bbox().height / 2);
+            },
+            text: function (e) {
+              if (void 0 === e) {
+                e = "";
+                for (
+                  var t = this.node.childNodes, n = 0, s = t.length;
+                  n < s;
+                  ++n
+                )
+                  0 != n &&
+                    3 != t[n].nodeType &&
+                    1 == i.adopt(t[n]).dom.newLined &&
+                    (e += "\n"),
+                    (e += t[n].textContent);
+                return e;
+              }
+              if ((this.clear().build(!0), "function" == typeof e))
+                e.call(this, this);
+              else {
+                n = 0;
+                for (var r = (e = e.split("\n")).length; n < r; n++)
+                  this.tspan(e[n]).newLine();
+              }
+              return this.build(!1).rebuild();
+            },
+            size: function (e) {
+              return this.attr("font-size", e).rebuild();
+            },
+            leading: function (e) {
+              return null == e
+                ? this.dom.leading
+                : ((this.dom.leading = new i.Number(e)), this.rebuild());
+            },
+            lines: function () {
+              var e = ((this.textPath && this.textPath()) || this).node,
+                t = i.utils.map(
+                  i.utils.filterSVGElements(e.childNodes),
+                  function (e) {
+                    return i.adopt(e);
+                  },
+                );
+              return new i.Set(t);
+            },
+            rebuild: function (e) {
+              if (
+                ("boolean" == typeof e && (this._rebuild = e), this._rebuild)
+              ) {
+                var t = this,
+                  n = 0,
+                  s = this.dom.leading * new i.Number(this.attr("font-size"));
+                this.lines().each(function () {
+                  this.dom.newLined &&
+                    (t.textPath() || this.attr("x", t.attr("x")),
+                    "\n" == this.text()
+                      ? (n += s)
+                      : (this.attr("dy", s + n), (n = 0)));
+                }),
+                  this.fire("rebuild");
+              }
+              return this;
+            },
+            build: function (e) {
+              return (this._build = !!e), this;
+            },
+            setData: function (e) {
+              return (
+                (this.dom = e),
+                (this.dom.leading = new i.Number(e.leading || 1.3)),
+                this
+              );
+            },
+          },
+          construct: {
+            text: function (e) {
+              return this.put(new i.Text()).text(e);
+            },
+            plain: function (e) {
+              return this.put(new i.Text()).plain(e);
+            },
+          },
+        })),
+        (i.Tspan = i.invent({
+          create: "tspan",
+          inherit: i.Shape,
+          extend: {
+            text: function (e) {
+              return null == e
+                ? this.node.textContent + (this.dom.newLined ? "\n" : "")
+                : ("function" == typeof e ? e.call(this, this) : this.plain(e),
+                  this);
+            },
+            dx: function (e) {
+              return this.attr("dx", e);
+            },
+            dy: function (e) {
+              return this.attr("dy", e);
+            },
+            newLine: function () {
+              var e = this.parent(i.Text);
+              return (
+                (this.dom.newLined = !0),
+                this.dy(e.dom.leading * e.attr("font-size")).attr("x", e.x())
+              );
+            },
+          },
+        })),
+        i.extend(i.Text, i.Tspan, {
+          plain: function (e) {
+            return (
+              !1 === this._build && this.clear(),
+              this.node.appendChild(t.createTextNode(e)),
+              this
+            );
+          },
+          tspan: function (e) {
+            var t = ((this.textPath && this.textPath()) || this).node,
+              n = new i.Tspan();
+            return (
+              !1 === this._build && this.clear(),
+              t.appendChild(n.node),
+              n.text(e)
+            );
+          },
+          clear: function () {
+            for (
+              var e = ((this.textPath && this.textPath()) || this).node;
+              e.hasChildNodes();
+
+            )
+              e.removeChild(e.lastChild);
+            return this;
+          },
+          length: function () {
+            return this.node.getComputedTextLength();
+          },
+        }),
+        (i.TextPath = i.invent({
+          create: "textPath",
+          inherit: i.Parent,
+          parent: i.Text,
+          construct: {
+            morphArray: i.PathArray,
+            path: function (e) {
+              for (
+                var t = new i.TextPath(), n = this.doc().defs().path(e);
+                this.node.hasChildNodes();
+
+              )
+                t.node.appendChild(this.node.firstChild);
+              return (
+                this.node.appendChild(t.node),
+                t.attr("href", "#" + n, i.xlink),
+                this
+              );
+            },
+            array: function () {
+              var e = this.track();
+              return e ? e.array() : null;
+            },
+            plot: function (e) {
+              var t = this.track(),
+                i = null;
+              return t && (i = t.plot(e)), null == e ? i : this;
+            },
+            track: function () {
+              var e = this.textPath();
+              if (e) return e.reference("href");
+            },
+            textPath: function () {
+              if (
+                this.node.firstChild &&
+                "textPath" == this.node.firstChild.nodeName
+              )
+                return i.adopt(this.node.firstChild);
+            },
+          },
+        })),
+        (i.Nested = i.invent({
+          create: function () {
+            this.constructor.call(this, i.create("svg")),
+              this.style("overflow", "visible");
+          },
+          inherit: i.Container,
+          construct: {
+            nested: function () {
+              return this.put(new i.Nested());
+            },
+          },
+        })),
+        (i.A = i.invent({
+          create: "a",
+          inherit: i.Container,
+          extend: {
+            to: function (e) {
+              return this.attr("href", e, i.xlink);
+            },
+            show: function (e) {
+              return this.attr("show", e, i.xlink);
+            },
+            target: function (e) {
+              return this.attr("target", e);
+            },
+          },
+          construct: {
+            link: function (e) {
+              return this.put(new i.A()).to(e);
+            },
+          },
+        })),
+        i.extend(i.Element, {
+          linkTo: function (e) {
+            var t = new i.A();
+            return (
+              "function" == typeof e ? e.call(t, t) : t.to(e),
+              this.parent().put(t).put(this)
+            );
+          },
+        }),
+        (i.Marker = i.invent({
+          create: "marker",
+          inherit: i.Container,
+          extend: {
+            width: function (e) {
+              return this.attr("markerWidth", e);
+            },
+            height: function (e) {
+              return this.attr("markerHeight", e);
+            },
+            ref: function (e, t) {
+              return this.attr("refX", e).attr("refY", t);
+            },
+            update: function (e) {
+              return (
+                this.clear(), "function" == typeof e && e.call(this, this), this
+              );
+            },
+            toString: function () {
+              return "url(#" + this.id() + ")";
+            },
+          },
+          construct: {
+            marker: function (e, t, i) {
+              return this.defs().marker(e, t, i);
+            },
+          },
+        })),
+        i.extend(i.Defs, {
+          marker: function (e, t, n) {
+            return this.put(new i.Marker())
+              .size(e, t)
+              .ref(e / 2, t / 2)
+              .viewbox(0, 0, e, t)
+              .attr("orient", "auto")
+              .update(n);
+          },
+        }),
+        i.extend(i.Line, i.Polyline, i.Polygon, i.Path, {
+          marker: function (e, t, n, s) {
+            var r = ["marker"];
+            return (
+              "all" != e && r.push(e),
+              (r = r.join("-")),
+              (e =
+                arguments[1] instanceof i.Marker
+                  ? arguments[1]
+                  : this.doc().marker(t, n, s)),
+              this.attr(r, e)
+            );
+          },
+        });
+      var a = {
+        stroke: [
+          "color",
+          "width",
+          "opacity",
+          "linecap",
+          "linejoin",
+          "miterlimit",
+          "dasharray",
+          "dashoffset",
+        ],
+        fill: ["color", "opacity", "rule"],
+        prefix: function (e, t) {
+          return "color" == t ? e : e + "-" + t;
+        },
+      };
+      function h(e, t, n, s) {
+        return n + s.replace(i.regex.dots, " .");
+      }
+      function l(e) {
+        for (var t = e.slice(0), i = t.length; i--; )
+          Array.isArray(t[i]) && (t[i] = l(t[i]));
+        return t;
+      }
+      function d(e) {
+        return e.toLowerCase().replace(/-(.)/g, function (e, t) {
+          return t.toUpperCase();
+        });
+      }
+      function c(e) {
+        return e.charAt(0).toUpperCase() + e.slice(1);
+      }
+      function u(e) {
+        var t = e.toString(16);
+        return 1 == t.length ? "0" + t : t;
+      }
+      function p(e, t, i) {
+        if (null == t || null == i) {
+          var n = e.bbox();
+          null == t
+            ? (t = (n.width / n.height) * i)
+            : null == i && (i = (n.height / n.width) * t);
+        }
+        return { width: t, height: i };
+      }
+      function m(e, t, i) {
+        return { x: t * e.a + i * e.c + 0, y: t * e.b + i * e.d + 0 };
+      }
+      function f(e) {
+        return { a: e[0], b: e[1], c: e[2], d: e[3], e: e[4], f: e[5] };
+      }
+      function g(e, t) {
+        (e.cx = null == e.cx ? t.bbox().cx : e.cx),
+          (e.cy = null == e.cy ? t.bbox().cy : e.cy);
+      }
+      function v(t) {
+        for (var n = t.childNodes.length - 1; n >= 0; n--)
+          t.childNodes[n] instanceof e.SVGElement && v(t.childNodes[n]);
+        return i.adopt(t).id(i.eid(t.nodeName));
+      }
+      function y(e) {
+        return (
+          null == e.x && ((e.x = 0), (e.y = 0), (e.width = 0), (e.height = 0)),
+          (e.w = e.width),
+          (e.h = e.height),
+          (e.x2 = e.x + e.width),
+          (e.y2 = e.y + e.height),
+          (e.cx = e.x + e.width / 2),
+          (e.cy = e.y + e.height / 2),
+          e
+        );
+      }
+      function A(e) {
+        return Math.abs(e) > 1e-37 ? e : 0;
+      }
+      ["fill", "stroke"].forEach(function (e) {
+        var t,
+          n = {};
+        (n[e] = function (n) {
+          if (void 0 === n) return this;
+          if (
+            "string" == typeof n ||
+            i.Color.isRgb(n) ||
+            (n && "function" == typeof n.fill)
+          )
+            this.attr(e, n);
+          else
+            for (t = a[e].length - 1; t >= 0; t--)
+              null != n[a[e][t]] && this.attr(a.prefix(e, a[e][t]), n[a[e][t]]);
+          return this;
+        }),
+          i.extend(i.Element, i.FX, n);
+      }),
+        i.extend(i.Element, i.FX, {
+          rotate: function (e, t, i) {
+            return this.transform({ rotation: e, cx: t, cy: i });
+          },
+          skew: function (e, t, i, n) {
+            return 1 == arguments.length || 3 == arguments.length
+              ? this.transform({ skew: e, cx: t, cy: i })
+              : this.transform({ skewX: e, skewY: t, cx: i, cy: n });
+          },
+          scale: function (e, t, i, n) {
+            return 1 == arguments.length || 3 == arguments.length
+              ? this.transform({ scale: e, cx: t, cy: i })
+              : this.transform({ scaleX: e, scaleY: t, cx: i, cy: n });
+          },
+          translate: function (e, t) {
+            return this.transform({ x: e, y: t });
+          },
+          flip: function (e, t) {
+            return (
+              (t = "number" == typeof e ? e : t),
+              this.transform({ flip: e || "both", offset: t })
+            );
+          },
+          matrix: function (e) {
+            return this.attr(
+              "transform",
+              new i.Matrix(
+                6 == arguments.length ? [].slice.call(arguments) : e,
+              ),
+            );
+          },
+          opacity: function (e) {
+            return this.attr("opacity", e);
+          },
+          dx: function (e) {
+            return this.x(
+              new i.Number(e).plus(this instanceof i.FX ? 0 : this.x()),
+              !0,
+            );
+          },
+          dy: function (e) {
+            return this.y(
+              new i.Number(e).plus(this instanceof i.FX ? 0 : this.y()),
+              !0,
+            );
+          },
+          dmove: function (e, t) {
+            return this.dx(e).dy(t);
+          },
+        }),
+        i.extend(i.Rect, i.Ellipse, i.Circle, i.Gradient, i.FX, {
+          radius: function (e, t) {
+            var n = (this._target || this).type;
+            return "radial" == n || "circle" == n
+              ? this.attr("r", new i.Number(e))
+              : this.rx(e).ry(null == t ? e : t);
+          },
+        }),
+        i.extend(i.Path, {
+          length: function () {
+            return this.node.getTotalLength();
+          },
+          pointAt: function (e) {
+            return this.node.getPointAtLength(e);
+          },
+        }),
+        i.extend(i.Parent, i.Text, i.Tspan, i.FX, {
+          font: function (e, t) {
+            if ("object" == typeof e) for (t in e) this.font(t, e[t]);
+            return "leading" == e
+              ? this.leading(t)
+              : "anchor" == e
+                ? this.attr("text-anchor", t)
+                : "size" == e ||
+                    "family" == e ||
+                    "weight" == e ||
+                    "stretch" == e ||
+                    "variant" == e ||
+                    "style" == e
+                  ? this.attr("font-" + e, t)
+                  : this.attr(e, t);
+          },
+        }),
+        (i.Set = i.invent({
+          create: function (e) {
+            e instanceof i.Set
+              ? (this.members = e.members.slice())
+              : Array.isArray(e)
+                ? (this.members = e)
+                : this.clear();
+          },
+          extend: {
+            add: function () {
+              var e,
+                t,
+                i = [].slice.call(arguments);
+              for (e = 0, t = i.length; e < t; e++) this.members.push(i[e]);
+              return this;
+            },
+            remove: function (e) {
+              var t = this.index(e);
+              return t > -1 && this.members.splice(t, 1), this;
+            },
+            each: function (e) {
+              for (var t = 0, i = this.members.length; t < i; t++)
+                e.apply(this.members[t], [t, this.members]);
+              return this;
+            },
+            clear: function () {
+              return (this.members = []), this;
+            },
+            length: function () {
+              return this.members.length;
+            },
+            has: function (e) {
+              return this.index(e) >= 0;
+            },
+            index: function (e) {
+              return this.members.indexOf(e);
+            },
+            get: function (e) {
+              return this.members[e];
+            },
+            first: function () {
+              return this.get(0);
+            },
+            last: function () {
+              return this.get(this.members.length - 1);
+            },
+            valueOf: function () {
+              return this.members;
+            },
+            bbox: function () {
+              if (0 == this.members.length) return new i.RBox();
+              var e = this.members[0].rbox(this.members[0].doc());
+              return (
+                this.each(function () {
+                  e = e.merge(this.rbox(this.doc()));
+                }),
+                e
+              );
+            },
+          },
+          construct: {
+            set: function (e) {
+              return new i.Set(e);
+            },
+          },
+        })),
+        (i.FX.Set = i.invent({
+          create: function (e) {
+            this.set = e;
+          },
+        })),
+        (i.Set.inherit = function () {
+          var e = [];
+          for (var t in i.Shape.prototype)
+            "function" == typeof i.Shape.prototype[t] &&
+              "function" != typeof i.Set.prototype[t] &&
+              e.push(t);
+          for (var t in (e.forEach(function (e) {
+            i.Set.prototype[e] = function () {
+              for (var t = 0, n = this.members.length; t < n; t++)
+                this.members[t] &&
+                  "function" == typeof this.members[t][e] &&
+                  this.members[t][e].apply(this.members[t], arguments);
+              return "animate" == e
+                ? this.fx || (this.fx = new i.FX.Set(this))
+                : this;
+            };
+          }),
+          (e = []),
+          i.FX.prototype))
+            "function" == typeof i.FX.prototype[t] &&
+              "function" != typeof i.FX.Set.prototype[t] &&
+              e.push(t);
+          e.forEach(function (e) {
+            i.FX.Set.prototype[e] = function () {
+              for (var t = 0, i = this.set.members.length; t < i; t++)
+                this.set.members[t].fx[e].apply(
+                  this.set.members[t].fx,
+                  arguments,
+                );
+              return this;
+            };
+          });
+        }),
+        i.extend(i.Element, {
+          data: function (e, t, i) {
+            if ("object" == typeof e) for (t in e) this.data(t, e[t]);
+            else if (arguments.length < 2)
+              try {
+                return JSON.parse(this.attr("data-" + e));
+              } catch (t) {
+                return this.attr("data-" + e);
+              }
+            else
+              this.attr(
+                "data-" + e,
+                null === t
+                  ? null
+                  : !0 === i || "string" == typeof t || "number" == typeof t
+                    ? t
+                    : JSON.stringify(t),
+              );
+            return this;
+          },
+        }),
+        i.extend(i.Element, {
+          remember: function (e, t) {
+            if ("object" == typeof arguments[0])
+              for (var t in e) this.remember(t, e[t]);
+            else {
+              if (1 == arguments.length) return this.memory()[e];
+              this.memory()[e] = t;
+            }
+            return this;
+          },
+          forget: function () {
+            if (0 == arguments.length) this._memory = {};
+            else
+              for (var e = arguments.length - 1; e >= 0; e--)
+                delete this.memory()[arguments[e]];
+            return this;
+          },
+          memory: function () {
+            return this._memory || (this._memory = {});
+          },
+        }),
+        (i.get = function (e) {
+          var n = t.getElementById(
+            (function (e) {
+              var t = (e || "").toString().match(i.regex.reference);
+              if (t) return t[1];
+            })(e) || e,
+          );
+          return i.adopt(n);
+        }),
+        (i.select = function (e, n) {
+          return new i.Set(
+            i.utils.map((n || t).querySelectorAll(e), function (e) {
+              return i.adopt(e);
+            }),
+          );
+        }),
+        i.extend(i.Parent, {
+          select: function (e) {
+            return i.select(e, this.node);
+          },
+        });
+      var x = "abcdef".split("");
+      if ("function" != typeof e.CustomEvent) {
+        var b = function (e, i) {
+          i = i || { bubbles: !1, cancelable: !1, detail: void 0 };
+          var n = t.createEvent("CustomEvent");
+          return n.initCustomEvent(e, i.bubbles, i.cancelable, i.detail), n;
+        };
+        (b.prototype = e.Event.prototype), (i.CustomEvent = b);
+      } else i.CustomEvent = e.CustomEvent;
+      return (
+        (function (t) {
+          for (
+            var i = 0, n = ["moz", "webkit"], s = 0;
+            s < n.length && !e.requestAnimationFrame;
+            ++s
+          )
+            (t.requestAnimationFrame = t[n[s] + "RequestAnimationFrame"]),
+              (t.cancelAnimationFrame =
+                t[n[s] + "CancelAnimationFrame"] ||
+                t[n[s] + "CancelRequestAnimationFrame"]);
+          (t.requestAnimationFrame =
+            t.requestAnimationFrame ||
+            function (e) {
+              var n = new Date().getTime(),
+                s = Math.max(0, 16 - (n - i)),
+                r = t.setTimeout(function () {
+                  e(n + s);
+                }, s);
+              return (i = n + s), r;
+            }),
+            (t.cancelAnimationFrame = t.cancelAnimationFrame || t.clearTimeout);
+        })(e),
+        i
+      );
+    });
+  });
+>>>>>>> origin/main
 /*!
 * svg.js - A lightweight library for manipulating and animating SVG.
 * @version 2.7.1
