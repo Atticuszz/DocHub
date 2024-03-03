@@ -30,7 +30,8 @@ wsl --shutdown
 ```
 
 #### proxy
-
+[WSL2 网络的最终解决方案 - 知乎](https://zhuanlan.zhihu.com/p/593263088?utm_id=0)
+[Advanced settings configuration in WSL | Microsoft Learn](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
 > set .wslconfig to enable share proxy
 
 😊best one for latest wsl

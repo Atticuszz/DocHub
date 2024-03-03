@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md",
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/configs.md"
+                "file": "docs/OS/Ubuntu/wsl.md"
               }
             }
           },
@@ -190,17 +190,17 @@
   },
   "active": "231d0ecdf777027f",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/wsl.md",
+    "docs/OS/Ubuntu/system.md",
+    "docs/OS/Ubuntu/shell.md",
+    "docs/OS/Ubuntu/net.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/bugs.md",
-    "docs/OS/Ubuntu/wsl.md",
-    "docs/OS/Ubuntu/net.md",
-    "docs/OS/Ubuntu/shell.md",
     "conflict-files-obsidian-git.md",
     "docs/schedule/TODO.md",
     "docs/OS/Ubuntu/install_via_usb.md",
     "docs/OS/Ubuntu/code_env.md",
     "docs/OS/GPU-wsl.md",
-    "docs/OS/Ubuntu/system.md",
     "docs/papers/SCI_paper.md",
     "docs/VCS/git.md",
     "docs/device/camera.md",
