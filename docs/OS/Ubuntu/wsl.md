@@ -101,12 +101,12 @@ no_proxy="localhost,127.0.0.1,::1"
 source /etc/environment
 ```
 
-
 ### Fixed permission issues that occurred when wsl pushed code
 
 解决在 wsl 中普通的网页令牌认证，推送代码的过程中出现了权限问题，使用 ssh 配 https 转发解决推送的身份验证问题
 
-git ssh命令详见 [SSH](docs/VCS/git.md)，具体操作如下
+git ssh命令详见 [SSH](../../../docs/VCS/git.md)，具体操作如下
+
 ### 1. 添加SSH密钥
 
 首先，将SSH私钥添加到wsl中,在bash中执行以下命令：
@@ -118,15 +118,16 @@ ssh-keygen -t ed25519 -C "1831768457@qq.com"
 请确保将`1831768457@qq.com`邮箱替换为你GitHub账户的实际邮箱。
 
 用vscode连接wsl访问文件`cat /root/.ssh/id_ed25519.pub`或使用命令行
+
 ```bash
 cat /root/.ssh/id_ed25519.pub
 ```
 
 在GitHub中添加ssh密匙
-![[assets/Pasted image 20240303125256.png]]
-![[assets/Pasted image 20240303125354.png]]
-![[assets/Pasted image 20240303125518.png]]
-![[assets/Pasted image 20240303125609.png]]
+![../../../assets/Pasted_image_20240303125256.png](../../../assets/Pasted_image_20240303125256.png)
+![../../../assets/Pasted_image_20240303125354.png](../../../assets/Pasted_image_20240303125354.png)
+![../../../assets/Pasted_image_20240303125518.png](../../../assets/Pasted_image_20240303125518.png)
+![../../../assets/Pasted_image_20240303125609.png](../../../assets/Pasted_image_20240303125609.png)
 添加`id_ed25519.pub`的内容到2的框中
 
 ### 2. 通过HTTPS测试SSH连接
@@ -148,7 +149,6 @@ ssh -T -p 443 git@ssh.github.com
 ```bash
 nano ~/.ssh/config
 ```
-
 
 然后，将以下内容添加到配置文件中：
 
@@ -174,7 +174,9 @@ ssh -T git@github.com
 ### 5. 尝试提交
 
 使用ssh克隆仓库
+
 ```
 git@github.com:SupaVision/AutoDrive_backend.git
 ```
+
 使用gateway的pycharm连接wsl，对仓库中的某个代码添加注释按Ctrl+K，点击commit and push，尝试提交，如果提交成功，说明配置正常，可以进行愉快的代码协作啦
