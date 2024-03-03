@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "1c59ee9f1815c3be",
+        "id": "cd7e552da8f78440",
         "type": "tabs",
         "children": [
           {
-            "id": "07946424d16aa677",
+            "id": "5a2c8f1b8fe59d8c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "docs/OS/Ubuntu/wsl.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -130,7 +136,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "docs/OS/Ubuntu/wsl.md"
+              }
             }
           },
           {
@@ -180,53 +188,53 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "07946424d16aa677",
+  "active": "5a2c8f1b8fe59d8c",
   "lastOpenFiles": [
-    "docs/OS/Ubuntu/wsl.md",
-    "docs/schedule/TODO.md",
-    "docs/device/camera.md",
-    "conflict-files-obsidian-git.md",
-    "assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png",
-    "assets/Pasted_image_20240303125609.png",
-    "assets/Pasted_image_20240303125518.png",
-    "assets/Pasted_image_20240303125354.png",
-    "assets/Pasted_image_20240303125319.png",
-    "assets/Pasted_image_20240303125256.png",
-    "assets/Pasted_image_20240303121857.png",
-    "docs/VCS/git.md",
-    "assets/Pasted image 20240303125256.png",
-    "assets/Pasted image 20240303121857.png",
-    "assets/1f1f2a4fcbae0ba55e6d37a5a3aadf6.png",
-    "README.md",
-    "Excalidraw/Drawing 2024-03-03 13.07.53.excalidraw.md",
-    "Excalidraw",
-    "docs/VCS/github/How_to_connect_ssh.md",
-    "docs/tools/git-install-instruction.md",
-    "docs/OS/Ubuntu/configs.md",
-    "docs/OS/Ubuntu/system.md",
-    "docs/OS/Ubuntu/shell.md",
-    "docs/OS/Ubuntu/net.md",
-    "docs/OS/Ubuntu/code_env.md",
-    "docs/OS/Ubuntu/bugs.md",
-    "docs/schedule/meetings/2024-1-24.md",
-    "docs/schedule/Free_time.md",
-    "docs/schedule/meetings/standard.md",
-    "docs/schedule/meetings/2024-2-28.md",
-    "assets/AstraPro_SDK_install.pdf",
     "docs/papers/read-dairy.md",
     "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
     "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
+    "assets/Pasted image 20240216144139.png",
+    "assets/Pasted image 20240216143622.png",
     "2024-02-16.md",
     "docs/papers/gpt-chats-history.md",
     "docs/papers/nopo-nerf.pdf",
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
     "docs/papers/neuralrecon.pdf",
     "docs/OS/GPU-wsl.md",
+    "assets/c68058356f448e566b6677b9455f17a_1.png",
+    "assets/Pasted_image_20240204144722.png",
+    "assets/530bcd1287b9daae311bd6a7d0d8f6e_1.png",
+    "assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png",
+    "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
+    "docs/VCS/github/How_to_connect_ssh.md",
     "docs/VCS/github",
+    "docs/VCS/git.md",
     "docs/VCS",
+    "docs/Language/python/third_party_lib/pyqt6.md",
+    "docs/Language/python/third_party_lib/Numpy.md",
+    "docs/Language/python/third_party_lib/Milvus.md",
+    "docs/Language/python/third_party_lib/django.md",
+    "docs/Language/python/PyPI/PyPI-recovery-Codes.md",
+    "docs/Language/python/py-env/Poetry.md",
+    "docs/Language/python/PyPI/Account_settings.md",
+    "docs/Language/python/py-env/Pip.md",
+    "docs/Language/python/py-env/conda.md",
+    "docs/Language/python/standard_lib/Pathlib.md",
     "docs/Language/python/third_party_lib",
     "docs/Language/python/PyPI",
     "docs/Language/python/standard_lib",
+    "docs/Language/python/py-env",
+    "docs/Language/python",
+    "docs/Language/C++/STL/vector.md",
+    "docs/Language/C++/STL/unordered_set.md",
+    "docs/Language/C++/STL/unordered_map.md",
+    "docs/Language/C++/STL/String.md",
+    "docs/Language/C++/STL/stack.md",
+    "docs/Language/C++/STL/set.md",
+    "assets/Pasted_image_20240211170112.png",
+    "assets/Pasted_image_20240211163343.png",
+    "assets/cookbook 2.md/Exported image 20231211121254-0.png",
+    "assets/cookbook 1.md/Exported image 20231211121234-5.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
