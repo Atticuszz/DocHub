@@ -4,35 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "414e9632750a09aa",
+        "id": "e56dd614afa56e53",
         "type": "tabs",
         "children": [
           {
-            "id": "231d0ecdf777027f",
+            "id": "eba8a2d521c8c2cf",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "49cc640becaaa990",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/OS/Windows/CMD.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Windows/CMD.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Windows/CMD.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,9 +130,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "docs/OS/Windows/CMD.md"
-              }
+              "state": {}
             }
           },
           {
@@ -179,7 +158,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -187,6 +166,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -194,61 +174,60 @@
       "random-note:开始漫游笔记": false,
       "workspaces:管理工作区布局": false,
       "publish:发布更改": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "oz-clear-unused-images:Clear Unused Images": false,
-      "obsidian-importer:Open Importer": false,
+      "omnisearch:Omnisearch": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "omnisearch:Omnisearch": false
+      "obsidian-importer:Open Importer": false
     }
   },
-  "active": "49cc640becaaa990",
+  "active": "eba8a2d521c8c2cf",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
-    "README.md",
-    "docs/VCS/git.md",
-    "docs/OS/Windows/CMD.md",
-    "docs/papers/SCI paper.md",
-    "docs/OS/Ubuntu/configs.md",
-    "docs/Language/python/py-env/conda.md",
-    "docs/tools/IDE/activate_code.md",
-    "docs/account.md",
-    "docs/tools/IDE/plugin.md",
-    "docs/tools/IDE/activate code.md",
-    "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
-    "docs/VCS/github/How_to_connect_ssh.md",
-    "docs/tutorials/KnowledgeHub.md",
-    "docs/schedule/meetings/2024-2-28.md",
-    "docs/schedule/meetings/standard.md",
-    "docs/schedule/meetings/2024-1-24.md",
-    "docs/OS/GPU-wsl.md",
-    "docs/OS/Windows/Powersehll.md",
-    "docs/OS/Ubuntu/install_via_usb.md",
-    "docs/schedule/TODO.md",
-    "docs/schedule/Free_time.md",
-    "docs/papers/IEEE_模板.docx",
-    "assets/Pasted_image_20240228171953.png",
-    "assets/Pasted image 20240228171953.png",
+    "assets/AstraPro_SDK_install.pdf",
+    "docs/device/camera.md",
+    "docs/papers/read-dairy.md",
     "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
     "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
-    "docs/baidu_driver.md",
-    "assets/Pasted_image_20240226204859.png",
-    "assets/Pasted image 20240226204859.png",
-    "assets/7047cf28aead44112d2857bfaa194ed.jpg",
-    "DocHub",
-    "AutoDrive_frontend",
-    "assets/Pasted_image_20240226165051.png",
-    "assets/Pasted image 20240226165051.png",
-    "assets/Pasted_image_20240226155318.png",
-    "assets/Pasted_image_20240226155240.png",
-    "assets/Pasted_image_20240226155154.png",
-    "docs/schedule/Free time.md",
+    "assets/Pasted image 20240216144139.png",
+    "assets/Pasted image 20240216143622.png",
+    "2024-02-16.md",
+    "docs/papers/gpt-chats-history.md",
     "docs/papers/nopo-nerf.pdf",
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
     "docs/papers/neuralrecon.pdf",
+    "docs/OS/GPU-wsl.md",
+    "assets/c68058356f448e566b6677b9455f17a_1.png",
+    "assets/Pasted_image_20240204144722.png",
+    "assets/530bcd1287b9daae311bd6a7d0d8f6e_1.png",
+    "assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png",
+    "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
+    "docs/VCS/github/How_to_connect_ssh.md",
     "docs/VCS/github",
+    "docs/VCS/git.md",
     "docs/VCS",
+    "docs/Language/python/third_party_lib/pyqt6.md",
+    "docs/Language/python/third_party_lib/Numpy.md",
+    "docs/Language/python/third_party_lib/Milvus.md",
+    "docs/Language/python/third_party_lib/django.md",
+    "docs/Language/python/PyPI/PyPI-recovery-Codes.md",
+    "docs/Language/python/py-env/Poetry.md",
+    "docs/Language/python/PyPI/Account_settings.md",
+    "docs/Language/python/py-env/Pip.md",
+    "docs/Language/python/py-env/conda.md",
+    "docs/Language/python/standard_lib/Pathlib.md",
     "docs/Language/python/third_party_lib",
     "docs/Language/python/PyPI",
+    "docs/Language/python/standard_lib",
+    "docs/Language/python/py-env",
+    "docs/Language/python",
+    "docs/Language/C++/STL/vector.md",
+    "docs/Language/C++/STL/unordered_set.md",
+    "docs/Language/C++/STL/unordered_map.md",
+    "docs/Language/C++/STL/String.md",
+    "docs/Language/C++/STL/stack.md",
+    "assets/Pasted_image_20240211170112.png",
+    "assets/Pasted_image_20240211163343.png",
+    "assets/cookbook 2.md/Exported image 20231211121254-0.png",
+    "assets/cookbook 1.md/Exported image 20231211121234-5.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
