@@ -185,7 +185,7 @@ ssh -T git@github.com
 使用ssh克隆仓库
 
 ```
-git@github.com:SupaVision/AutoDrive_backend.git
+git clone git@github.com:SupaVision/AutoDrive_backend.git
 ```
 
 使用gateway的pycharm连接wsl，对仓库中的某个代码添加注释按Ctrl+K，点击commit and push，尝试提交，如果提交成功，说明配置正常，可以进行愉快的代码协作啦
