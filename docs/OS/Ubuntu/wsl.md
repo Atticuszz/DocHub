@@ -71,7 +71,7 @@ sudo nano /etc/wsl.conf
 
 # add it
 [boot]
-systemd=false
+systemd=true
 ```
 
 2. add wget .sh for auto start with set proxies

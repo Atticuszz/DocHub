@@ -11,9 +11,11 @@
             "id": "231d0ecdf777027f",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "docs/schedule/TODO.md"
+                "file": "docs/OS/Ubuntu/wsl.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/schedule/TODO.md",
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/schedule/TODO.md",
+                "file": "docs/OS/Ubuntu/wsl.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/schedule/TODO.md"
+                "file": "docs/OS/Ubuntu/wsl.md"
               }
             }
           },
@@ -188,16 +190,19 @@
   },
   "active": "231d0ecdf777027f",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/net.md",
+    "docs/OS/Ubuntu/wsl.md",
+    "docs/VCS/git.md",
+    "docs/Language/python/py-env/Poetry.md",
+    "docs/schedule/TODO.md",
     "docs/tools/git-install-instruction.md",
     "docs/tools/IDE/plugin.md",
-    "docs/OS/Ubuntu/wsl.md",
     "docs/schedule/meetings/2024-2-28.md",
     "docs/schedule/meetings/standard.md",
     "docs/Language/python/py-env/Pip.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/shell.md",
     "docs/OS/Ubuntu/system.md",
-    "docs/OS/Ubuntu/net.md",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
     "docs/schedule/Free_time.md",
     "conflict-files-obsidian-git.md",
@@ -211,16 +216,13 @@
     "docs/OS/Windows/Powersehll.md",
     "docs/device/purchase.md",
     "README.md",
-    "docs/schedule/TODO.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/install_via_usb.md",
     "docs/OS/Ubuntu/code_env.md",
     "docs/OS/GPU-wsl.md",
     "docs/papers/SCI_paper.md",
-    "docs/VCS/git.md",
     "docs/device/camera.md",
     "docs/device/controller/STM32.md",
-    "docs/tools/IDE/activate code.md",
     "docs/papers/IEEE_模板.docx",
     "assets/Pasted_image_20240228171953.png",
     "assets/Pasted image 20240228171953.png",
