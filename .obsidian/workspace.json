@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "97ceaeef7f7a4de6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/OS/Ubuntu/wsl.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,15 +196,17 @@
       "switcher:Open quick switcher": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "oz-clear-unused-images:Clear Unused Images": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "obsidian-importer:Open Importer": false,
-      "omnisearch:Omnisearch": false
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "231d0ecdf777027f",
+  "active": "97ceaeef7f7a4de6",
   "lastOpenFiles": [
     "docs/OS/Ubuntu/net.md",
     "docs/OS/Ubuntu/wsl.md",
+    "conflict-files-obsidian-git.md",
+    "未命名.canvas",
+    "Excalidraw/Drawing_2024-03-03_13.07.53.excalidraw.md",
+    "Excalidraw",
     "docs/VCS/git.md",
     "docs/Language/python/py-env/Poetry.md",
     "docs/schedule/TODO.md",
@@ -205,7 +220,6 @@
     "docs/OS/Ubuntu/system.md",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
     "docs/schedule/Free_time.md",
-    "conflict-files-obsidian-git.md",
     "assets/Pasted_image_20240303125609.png",
     "assets/Pasted_image_20240303125518.png",
     "assets/Pasted_image_20240303125354.png",
@@ -221,8 +235,6 @@
     "docs/OS/Ubuntu/code_env.md",
     "docs/OS/GPU-wsl.md",
     "docs/papers/SCI_paper.md",
-    "docs/device/camera.md",
-    "docs/device/controller/STM32.md",
     "docs/papers/IEEE_模板.docx",
     "assets/Pasted_image_20240228171953.png",
     "assets/Pasted image 20240228171953.png",
@@ -235,8 +247,6 @@
     "docs/VCS/github",
     "docs/VCS",
     "docs/Language/python/third_party_lib",
-    "docs/Language/python/PyPI",
-    "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",

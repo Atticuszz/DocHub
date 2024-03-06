@@ -104,9 +104,11 @@ class s extends e.PluginSettingTab {
         );
     const i = t.createDiv("coffee");
     i.addClass("oz-coffee-div");
-    i.createEl("a", { href: "https://ko-fi.com/L3L356V6Q" }).createEl("img", {
-      attr: { src: "https://cdn.ko-fi.com/cdn/kofi2.png?v=3" },
-    }).height = 45;
+    i
+      .createEl("a", { href: "https://ko-fi.com/L3L356V6Q" })
+      .createEl("img", {
+        attr: { src: "https://cdn.ko-fi.com/cdn/kofi2.png?v=3" },
+      }).height = 45;
   }
 }
 class n extends e.Modal {

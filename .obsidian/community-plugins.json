@@ -4,9 +4,9 @@
   "obsidian-auto-link-title",
   "oz-clear-unused-images",
   "editing-toolbar",
+  "obsidian-enhancing-export",
   "obsidian-excalidraw-plugin",
   "execute-code",
-  "obsidian-enhancing-export",
   "obsidian-git",
   "obsidian-image-toolkit",
   "obsidian-importer",
@@ -17,6 +17,5 @@
   "obsidian-pandoc",
   "url-into-selection",
   "quick-explorer",
-  "quick-latex",
-  "various-complements"
+  "quick-latex"
 ]

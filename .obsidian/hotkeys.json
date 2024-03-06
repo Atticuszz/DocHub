@@ -30,11 +30,5 @@
       "modifiers": ["Alt", "Mod"],
       "key": "T"
     }
-  ],
-  "obsidian-git:commit": [
-    {
-      "modifiers": ["Alt", "Mod"],
-      "key": "A"
-    }
   ]
 }
