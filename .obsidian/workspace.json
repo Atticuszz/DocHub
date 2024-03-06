@@ -179,7 +179,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -196,11 +196,22 @@
       "switcher:Open quick switcher": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "oz-clear-unused-images:Clear Unused Images": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "obsidian-importer:Open Importer": false,
+      "omnisearch:Omnisearch": false
     }
   },
   "active": "97ceaeef7f7a4de6",
   "lastOpenFiles": [
+    "assets/Pasted image 20240306200159.png",
+    "assets/Pasted image 20240306200124.png",
+    "assets/Pasted image 20240306195957.png",
+    "assets/Pasted image 20240306142902.png",
+    "assets/Pasted image 20240306122129.png",
+    "assets/Pasted image 20240306121452.png",
+    "assets/Pasted image 20240306121432.png",
+    "assets/Pasted image 20240306115828.png",
+    "assets/Pasted image 20240306105953.png",
     "docs/OS/Ubuntu/net.md",
     "docs/OS/Ubuntu/wsl.md",
     "conflict-files-obsidian-git.md",
@@ -222,11 +233,6 @@
     "docs/schedule/Free_time.md",
     "assets/Pasted_image_20240303125609.png",
     "assets/Pasted_image_20240303125518.png",
-    "assets/Pasted_image_20240303125354.png",
-    "assets/Pasted_image_20240303125319.png",
-    "assets/Pasted_image_20240303125256.png",
-    "assets/Pasted_image_20240303121857.png",
-    "assets/1f1f2a4fcbae0ba55e6d37a5a3aadf6.png",
     "docs/OS/Windows/Powersehll.md",
     "docs/device/purchase.md",
     "README.md",
@@ -236,9 +242,6 @@
     "docs/OS/GPU-wsl.md",
     "docs/papers/SCI_paper.md",
     "docs/papers/IEEE_模板.docx",
-    "assets/Pasted_image_20240228171953.png",
-    "assets/Pasted image 20240228171953.png",
-    "assets/Pasted_image_20240226204859.png",
     "DocHub",
     "AutoDrive_frontend",
     "docs/papers/nopo-nerf.pdf",
