@@ -16,7 +16,8 @@ git ls-remote --tags --heads https://github.com/strapi/ts-zen.git
 pip check
 ```
 
-uninstall 
+uninstall
+
 ```bash
 pip uninstall -r requirements.txt -y
 ```

@@ -8,7 +8,7 @@ kanban-plugin: basic
 
 - [ ] _all_<br> 尝试使用jet Brians的gate way的pycharm连接wsl,打开自己克隆的[GitHub - SupaVision/AutoDrive_backend](https://github.com/SupaVision/AutoDrive_backend.git)项目到本地<br> 使用命令行安装`/../AutoDrive_backend/src/localization`项目路径下的conda环境，并且在该目录下面运行`python3 ReplicaLoader.py`,运行之前记得下载meta的数据集`/AutoDrive_backend/scripts/download_replica.sh`<br> 实际效果![../../assets/Pasted_image_20240226204859.png](../../assets/Pasted_image_20240226204859.png)
 - [x] _zzy_ 2024-03-02 尝试使用windows平台的SDK软件包连接相机并做一些简单的尝试 2024-03-03 更新了关于 wsl 中身份验证问题的文档
-- [ ] _zzy_ 2024-03-03 
+- [ ] _zzy_ 2024-03-03
 - [ ] _zz_ 2024-03-02 尝试连接树莓派
 
 ## Done
