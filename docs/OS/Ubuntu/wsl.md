@@ -137,6 +137,7 @@ netsh interface portproxy add v4tov4 listenport=5000 listenaddress=0.0.0.0 conne
 ### install wsl-linux kernel to enable access to usb device
 
 > [WSL/Connect USB devices/USB Camera.md at main · phuoctan4141/WSL · GitHub](https://github.com/phuoctan4141/WSL/blob/main/Connect%20USB%20devices/USB%20Camera.md) update from
+> [WSL support · dorssel/usbipd-win Wiki · GitHub](https://github.com/dorssel/usbipd-win/wiki/WSL-support)
 
 #### download kernel
 
@@ -287,8 +288,10 @@ usbipd list
 ```
 
 > i have two camera now, 2-1 and 2-7
-> ![../../../assets/Pasted_image_20240306115828.png](../../../assets/Pasted_image_20240306115828.png) 2. bind and attach device
+> ![../../../assets/Pasted_image_20240306115828.png](../../../assets/Pasted_image_20240306115828.png) 
 
+ 2. bind and attach device
+> unattached occasionally, remember to `sudo chmod 777 /dev/video0`
 ```powershell
 usbipd bind --busid 2-1
 usbipd attach --wsl --busid 2-1

@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md"
+                "file": "docs/device/controller/Raspberry_PI_4B.md"
               }
             }
           },
@@ -179,7 +179,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -203,17 +203,19 @@
   },
   "active": "97ceaeef7f7a4de6",
   "lastOpenFiles": [
-    "assets/Pasted image 20240306200159.png",
-    "assets/Pasted image 20240306200124.png",
-    "assets/Pasted image 20240306195957.png",
-    "assets/Pasted image 20240306142902.png",
-    "assets/Pasted image 20240306122129.png",
-    "assets/Pasted image 20240306121452.png",
-    "assets/Pasted image 20240306121432.png",
-    "assets/Pasted image 20240306115828.png",
-    "assets/Pasted image 20240306105953.png",
-    "docs/OS/Ubuntu/net.md",
+    "assets/Pasted image 20240307214407.png",
+    "assets/Pasted image 20240307214212.png",
+    "assets/Pasted image 20240307200419.png",
     "docs/OS/Ubuntu/wsl.md",
+    "assets/Pasted_image_20240306200159.png",
+    "assets/Pasted_image_20240306200124.png",
+    "assets/Pasted_image_20240306195957.png",
+    "assets/Pasted_image_20240306142902.png",
+    "assets/Pasted_image_20240306122129.png",
+    "assets/Pasted_image_20240306121452.png",
+    "assets/Pasted_image_20240306121432.png",
+    "assets/Pasted_image_20240306115828.png",
+    "docs/OS/Ubuntu/net.md",
     "conflict-files-obsidian-git.md",
     "未命名.canvas",
     "Excalidraw/Drawing_2024-03-03_13.07.53.excalidraw.md",
@@ -231,8 +233,6 @@
     "docs/OS/Ubuntu/system.md",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
     "docs/schedule/Free_time.md",
-    "assets/Pasted_image_20240303125609.png",
-    "assets/Pasted_image_20240303125518.png",
     "docs/OS/Windows/Powersehll.md",
     "docs/device/purchase.md",
     "README.md",
