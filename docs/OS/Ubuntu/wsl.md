@@ -288,10 +288,11 @@ usbipd list
 ```
 
 > i have two camera now, 2-1 and 2-7
-> ![../../../assets/Pasted_image_20240306115828.png](../../../assets/Pasted_image_20240306115828.png) 
+> ![../../../assets/Pasted_image_20240306115828.png](../../../assets/Pasted_image_20240306115828.png)
 
- 2. bind and attach device
-> unattached occasionally, remember to `sudo chmod 777 /dev/video0`
+2.  bind and attach device
+    > unattached occasionally, remember to `sudo chmod 777 /dev/video0`
+
 ```powershell
 usbipd bind --busid 2-1
 usbipd attach --wsl --busid 2-1
