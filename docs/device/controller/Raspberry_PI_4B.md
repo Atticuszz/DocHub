@@ -3,16 +3,10 @@
 使用vscode连接之前无比配置好 电脑热点，就相当于自动连接了
 vscode连接之前要在c盘的ssh配置添加vscode连接的初始配置
 然后vscode就可以直接连接了，注意clash开启allow lan
-
-
-
-
-
-
-
-
-
-
+**断电不是直接拔掉！！！**
+```bash
+sudo shutdown -h now
+```
 
 [ROSMASTER X3](https://www.yahboom.com/study/ROSMASTER-X3)
 ### 烧录系统
