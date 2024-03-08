@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "98a886e7e72555e4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -188,29 +201,34 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "231d0ecdf777027f",
+  "active": "98a886e7e72555e4",
   "lastOpenFiles": [
+    "docs/device/controller/Raspberry_PI_4B.md",
+    "conflict-files-obsidian-git.md",
+    "assets/Pasted_image_20240308164303.png",
+    "assets/Pasted_image_20240308163830.png",
+    "assets/Pasted_image_20240308163716.png",
+    "assets/Pasted_image_20240308162607.png",
+    "assets/Pasted_image_20240307214407.png",
+    "assets/Pasted_image_20240307214212.png",
+    "assets/Pasted_image_20240307200419.png",
+    "assets/Pasted_image_20240306200159.png",
+    "assets/Pasted_image_20240306200124.png",
+    "assets/Pasted_image_20240306195957.png",
     "docs/OS/Ubuntu/wsl.md",
     "docs/schedule/Free_time.md",
     "docs/schedule/TODO.md",
     "docs/account.md",
     "Excalidraw/Drawing_2024-03-03_13.07.53.excalidraw.md",
     "docs/papers/read-dairy.md",
-    "conflict-files-obsidian-git.md",
     "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
     "docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md",
-    "assets/Pasted image 20240216144139.png",
-    "assets/Pasted image 20240216143622.png",
     "2024-02-16.md",
     "docs/papers/gpt-chats-history.md",
     "docs/papers/nopo-nerf.pdf",
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
     "docs/papers/neuralrecon.pdf",
     "docs/OS/GPU-wsl.md",
-    "assets/c68058356f448e566b6677b9455f17a_1.png",
-    "assets/Pasted_image_20240204144722.png",
-    "assets/530bcd1287b9daae311bd6a7d0d8f6e_1.png",
-    "assets/1ffa2d81edf7f1dece8d86f71f4b57f_2.png",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
     "docs/VCS/github/How_to_connect_ssh.md",
     "docs/VCS/github",
@@ -231,11 +249,6 @@
     "docs/Language/python/standard_lib",
     "docs/Language/python/py-env",
     "docs/Language/python",
-    "docs/Language/C++/STL/vector.md",
-    "assets/Pasted_image_20240211170112.png",
-    "assets/Pasted_image_20240211163343.png",
-    "assets/cookbook 2.md/Exported image 20231211121254-0.png",
-    "assets/cookbook 1.md/Exported image 20231211121234-5.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",

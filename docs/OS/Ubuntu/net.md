@@ -132,13 +132,3 @@ phddns enable
 
 - set local port forwarding in `Termius`
 - ![../../../assets/Pasted_image_20240204144722.png](../../../assets/Pasted_image_20240204144722.png)
-
-#### wifi
-
-> no test
-
-```bash
-sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
-# add wifi info
-network={ ssid="your_network_name" psk="your_network_password" }
-```

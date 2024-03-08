@@ -1,21 +1,26 @@
 [
-  "obsidian-excalidraw-plugin",
-  "editing-toolbar",
-  "url-into-selection",
-  "quick-latex",
-  "obsidian-auto-link-title",
-  "quick-explorer",
-  "obsidian-markmind",
-  "oz-clear-unused-images",
-  "obsidian-importer",
   "table-editor-obsidian",
   "obsidian-annotator",
-  "obsidian-image-toolkit",
+  "obsidian-auto-link-title",
+  "oz-clear-unused-images",
+  "editing-toolbar",
   "obsidian-enhancing-export",
-  "obsidian-pandoc",
-  "obsidian-git",
+  "obsidian-excalidraw-plugin",
   "execute-code",
-  "omnisearch",
+  "obsidian-git",
+  "obsidian-image-toolkit",
+  "obsidian-importer",
   "obsidian-kanban",
+<<<<<<< HEAD
   "nldates-obsidian"
 ]
+=======
+  "obsidian-markmind",
+  "nldates-obsidian",
+  "omnisearch",
+  "obsidian-pandoc",
+  "url-into-selection",
+  "quick-explorer",
+  "quick-latex"
+]
+>>>>>>> origin/main
