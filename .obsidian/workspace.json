@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md"
+                "file": "docs/device/controller/Raspberry_PI_4B.md"
               }
             }
           },
@@ -190,6 +190,11 @@
   },
   "active": "231d0ecdf777027f",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/wsl.md",
+    "docs/schedule/Free_time.md",
+    "docs/schedule/TODO.md",
+    "docs/account.md",
+    "Excalidraw/Drawing_2024-03-03_13.07.53.excalidraw.md",
     "docs/papers/read-dairy.md",
     "conflict-files-obsidian-git.md",
     "docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md",
@@ -227,11 +232,6 @@
     "docs/Language/python/py-env",
     "docs/Language/python",
     "docs/Language/C++/STL/vector.md",
-    "docs/Language/C++/STL/unordered_set.md",
-    "docs/Language/C++/STL/unordered_map.md",
-    "docs/Language/C++/STL/String.md",
-    "docs/Language/C++/STL/stack.md",
-    "docs/Language/C++/STL/set.md",
     "assets/Pasted_image_20240211170112.png",
     "assets/Pasted_image_20240211163343.png",
     "assets/cookbook 2.md/Exported image 20231211121254-0.png",
