@@ -132,4 +132,3 @@ phddns enable
 
 - set local port forwarding in `Termius`
 - ![../../../assets/Pasted_image_20240204144722.png](../../../assets/Pasted_image_20240204144722.png)
-
