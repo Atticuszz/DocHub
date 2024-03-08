@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/wsl.md",
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,14 +25,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "docs/OS/Ubuntu/bugs.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -201,21 +200,27 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "97ceaeef7f7a4de6",
+  "active": "231d0ecdf777027f",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/bugs.md",
+    "docs/OS/Ubuntu/code_env.md",
+    "docs/OS/Ubuntu/net.md",
+    "docs/OS/Ubuntu/configs.md",
+    "docs/device/controller/Raspberry_PI_4B.md",
+    "docs/OS/Ubuntu/system.md",
+    "docs/OS/Ubuntu/shell.md",
+    "assets/Pasted image 20240308164303.png",
+    "docs/Language/python/py-env/conda.md",
+    "assets/Pasted image 20240308163830.png",
+    "assets/Pasted image 20240308163716.png",
+    "assets/Pasted image 20240308162607.png",
+    "docs/OS/Ubuntu/wsl.md",
+    "assets/Pasted_image_20240307214407.png",
+    "assets/Pasted_image_20240307214212.png",
+    "assets/Pasted_image_20240307200419.png",
     "assets/Pasted image 20240307214407.png",
     "assets/Pasted image 20240307214212.png",
     "assets/Pasted image 20240307200419.png",
-    "docs/OS/Ubuntu/wsl.md",
-    "assets/Pasted_image_20240306200159.png",
-    "assets/Pasted_image_20240306200124.png",
-    "assets/Pasted_image_20240306195957.png",
-    "assets/Pasted_image_20240306142902.png",
-    "assets/Pasted_image_20240306122129.png",
-    "assets/Pasted_image_20240306121452.png",
-    "assets/Pasted_image_20240306121432.png",
-    "assets/Pasted_image_20240306115828.png",
-    "docs/OS/Ubuntu/net.md",
     "conflict-files-obsidian-git.md",
     "未命名.canvas",
     "Excalidraw/Drawing_2024-03-03_13.07.53.excalidraw.md",
@@ -228,19 +233,12 @@
     "docs/schedule/meetings/2024-2-28.md",
     "docs/schedule/meetings/standard.md",
     "docs/Language/python/py-env/Pip.md",
-    "docs/OS/Ubuntu/configs.md",
-    "docs/OS/Ubuntu/shell.md",
-    "docs/OS/Ubuntu/system.md",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
     "docs/schedule/Free_time.md",
     "docs/OS/Windows/Powersehll.md",
     "docs/device/purchase.md",
     "README.md",
-    "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/install_via_usb.md",
-    "docs/OS/Ubuntu/code_env.md",
-    "docs/OS/GPU-wsl.md",
-    "docs/papers/SCI_paper.md",
     "docs/papers/IEEE_模板.docx",
     "DocHub",
     "AutoDrive_frontend",

@@ -60,7 +60,7 @@ fc-cache -fv
 git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-- add theme config `~/.zshrc`
+- add theme config `~/.zshrc`,then remember to source it
 
 ```bash
 # correct the old ZSH_THEME or can not find p10k command
