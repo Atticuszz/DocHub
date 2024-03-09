@@ -86,6 +86,44 @@
     - [gpt-chats-history.md](docs/papers/gpt-chats-history.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-09 by Atticuszz - 添加docker部分
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
+- 🔨 [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
+### 2024-03-08 by Atticuszz - Ci workflows Update README.md
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
 ### 2024-03-08 by zzyss-marker - vault backup: 2024-03-08 20:02:47
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
@@ -175,41 +213,6 @@
 - 🚚 [Pasted_image_20240307214407.png](assets/Pasted_image_20240307214407.png) <- Pasted image 20240307214407.png
 - 🔨 [wsl.md](docs/OS/Ubuntu/wsl.md)
 - 🔨 [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
-### 2024-03-07 by Atticuszz - 树莓派命令行连接方式
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- ✨ [Pasted image 20240307200419.png](assets/Pasted_image_20240307200419.png)
-- ✨ [Pasted image 20240307214212.png](assets/Pasted_image_20240307214212.png)
-- ✨ [Pasted image 20240307214407.png](assets/Pasted_image_20240307214407.png)
-- 🔨 [wsl.md](docs/OS/Ubuntu/wsl.md)
-- 🔨 [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
-### 2024-03-06 by Atticuszz - Ci workflows Update README.md
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [README.md](README.md)
-- 🚚 [Pasted_image_20240306105953.png](assets/Pasted_image_20240306105953.png) <- Pasted image 20240306105953.png
-- 🚚 [Pasted_image_20240306115828.png](assets/Pasted_image_20240306115828.png) <- Pasted image 20240306115828.png
-- 🚚 [Pasted_image_20240306121432.png](assets/Pasted_image_20240306121432.png) <- Pasted image 20240306121432.png
-- 🚚 [Pasted_image_20240306121452.png](assets/Pasted_image_20240306121452.png) <- Pasted image 20240306121452.png
-- 🚚 [Pasted_image_20240306122129.png](assets/Pasted_image_20240306122129.png) <- Pasted image 20240306122129.png
-- 🚚 [Pasted_image_20240306142902.png](assets/Pasted_image_20240306142902.png) <- Pasted image 20240306142902.png
-- 🚚 [Pasted_image_20240306195957.png](assets/Pasted_image_20240306195957.png) <- Pasted image 20240306195957.png
-- 🚚 [Pasted_image_20240306200124.png](assets/Pasted_image_20240306200124.png) <- Pasted image 20240306200124.png
-- 🚚 [Pasted_image_20240306200159.png](assets/Pasted_image_20240306200159.png) <- Pasted image 20240306200159.png
-- 🔨 [wsl.md](docs/OS/Ubuntu/wsl.md)
-### 2024-03-06 by Atticuszz - 添加wsl访问usb设备的方法，和子网访问wsl端口的办法
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- ✨ [Pasted image 20240306105953.png](assets/Pasted_image_20240306105953.png)
-- ✨ [Pasted image 20240306115828.png](assets/Pasted_image_20240306115828.png)
-- ✨ [Pasted image 20240306121432.png](assets/Pasted_image_20240306121432.png)
-- ✨ [Pasted image 20240306121452.png](assets/Pasted_image_20240306121452.png)
-- ✨ [Pasted image 20240306122129.png](assets/Pasted_image_20240306122129.png)
-- ✨ [Pasted image 20240306142902.png](assets/Pasted_image_20240306142902.png)
-- ✨ [Pasted image 20240306195957.png](assets/Pasted_image_20240306195957.png)
-- ✨ [Pasted image 20240306200124.png](assets/Pasted_image_20240306200124.png)
-- ✨ [Pasted image 20240306200159.png](assets/Pasted_image_20240306200159.png)
-- 🔨 [wsl.md](docs/OS/Ubuntu/wsl.md)
 ## 其他仓库
 
 ### 论文速览
