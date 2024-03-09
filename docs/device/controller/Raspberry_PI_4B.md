@@ -91,6 +91,7 @@ network:
 ```bash
 sudo netplan apply
 ```
+
 ### 建立链接
 
 如果上面都配置好了，那么打开热点，接上电，用默认用户就可以ssh登陆了
@@ -108,8 +109,8 @@ Host 192.168.137.10
     ForwardX11 yes
 ```
 
-
 #### docker
+
 ```bash
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common

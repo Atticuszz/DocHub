@@ -24,4 +24,5 @@ ls -la | grep "apt_pkg.cpython"
 # then cp that apt_pkg.cpython-310-x86_64-linux-gnu.so
  sudo cp apt_pkg.cpython-310-x86_64-linux-gnu.so apt_pkg.so
 ```
- sudo cp apt_pkg.cpython-310-aarch64-linux-gnu.so apt_pkg.so
+
+sudo cp apt_pkg.cpython-310-aarch64-linux-gnu.so apt_pkg.so
