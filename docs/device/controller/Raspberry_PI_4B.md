@@ -1,4 +1,4 @@
-> 基本配置完毕，zsh，poetry，python 3.10
+> 基本配置完毕，zsh，poetry，python 3.11,docker,vscode server和它的基本内置插件
 
 使用vscode连接之前无比配置好 电脑热点，就相当于自动连接了
 vscode连接之前要在c盘的ssh配置添加vscode连接的初始配置
@@ -88,6 +88,9 @@ network:
       optional: true
 ```
 
+```bash
+sudo netplan apply
+```
 ### 建立链接
 
 如果上面都配置好了，那么打开热点，接上电，用默认用户就可以ssh登陆了
@@ -102,4 +105,25 @@ Host 192.168.137.10
     HostName 192.168.137.10
     User root
     IdentityFile C:\Users\<改成你的用户名>\.ssh\id_ed25519
+    ForwardX11 yes
 ```
+
+
+#### docker
+```bash
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo "deb [arch=arm64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu jammy stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+```
+
+#### ROS2

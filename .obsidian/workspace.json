@@ -20,6 +20,30 @@
             }
           },
           {
+            "id": "8736f02d8c8b4720",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1c97de35d479c164",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "97ceaeef7f7a4de6",
             "type": "leaf",
             "state": {
@@ -31,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -200,33 +225,33 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "231d0ecdf777027f",
+  "active": "1c97de35d479c164",
   "lastOpenFiles": [
-    "docs/device/controller/Raspberry_PI_4B.md",
-    "docs/OS/Ubuntu/bugs.md",
-    "docs/OS/Ubuntu/code_env.md",
-    "docs/OS/Ubuntu/net.md",
     "docs/OS/Ubuntu/configs.md",
-    "docs/OS/Ubuntu/system.md",
+    "docs/OS/Ubuntu/bugs.md",
+    "docs/VCS/git.md",
+    "docs/device/controller/Raspberry_PI_4B.md",
     "docs/OS/Ubuntu/shell.md",
+    "docs/OS/Ubuntu/net.md",
+    "docs/OS/Ubuntu/code_env.md",
+    "docs/OS/Ubuntu/system.md",
+    "docs/Language/python/py-env/Poetry.md",
+    "docs/OS/Ubuntu/wsl.md",
+    "conflict-files-obsidian-git.md",
     "assets/Pasted image 20240308164303.png",
     "docs/Language/python/py-env/conda.md",
     "assets/Pasted image 20240308163830.png",
     "assets/Pasted image 20240308163716.png",
     "assets/Pasted image 20240308162607.png",
-    "docs/OS/Ubuntu/wsl.md",
     "assets/Pasted_image_20240307214407.png",
     "assets/Pasted_image_20240307214212.png",
     "assets/Pasted_image_20240307200419.png",
     "assets/Pasted image 20240307214407.png",
     "assets/Pasted image 20240307214212.png",
     "assets/Pasted image 20240307200419.png",
-    "conflict-files-obsidian-git.md",
     "未命名.canvas",
     "Excalidraw/Drawing_2024-03-03_13.07.53.excalidraw.md",
     "Excalidraw",
-    "docs/VCS/git.md",
-    "docs/Language/python/py-env/Poetry.md",
     "docs/schedule/TODO.md",
     "docs/tools/git-install-instruction.md",
     "docs/tools/IDE/plugin.md",
