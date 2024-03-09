@@ -1,6 +1,6 @@
 > 基本配置完毕，zsh，poetry，python 3.11,docker,vscode server和它的基本内置插件
 
-使用vscode连接之前无比配置好 电脑热点，就相当于自动连接了
+使用vscode连接之前务必配置好 电脑热点，就相当于自动连接了
 vscode连接之前要在c盘的ssh配置添加vscode连接的初始配置
 然后vscode就可以直接连接了，注意clash开启allow lan
 **断电不是直接拔掉！！！**

@@ -44,6 +44,30 @@
             }
           },
           {
+            "id": "4c62a4cf5ea3a491",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f321f1756f92969d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "97ceaeef7f7a4de6",
             "type": "leaf",
             "state": {
@@ -56,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -122,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -139,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -225,19 +249,19 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "1c97de35d479c164",
+  "active": "f321f1756f92969d",
   "lastOpenFiles": [
+    "docs/device/controller/Raspberry_PI_4B.md",
+    "conflict-files-obsidian-git.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/VCS/git.md",
-    "docs/device/controller/Raspberry_PI_4B.md",
     "docs/OS/Ubuntu/shell.md",
     "docs/OS/Ubuntu/net.md",
     "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/system.md",
     "docs/Language/python/py-env/Poetry.md",
     "docs/OS/Ubuntu/wsl.md",
-    "conflict-files-obsidian-git.md",
     "assets/Pasted image 20240308164303.png",
     "docs/Language/python/py-env/conda.md",
     "assets/Pasted image 20240308163830.png",

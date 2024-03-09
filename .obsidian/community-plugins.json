@@ -11,6 +11,10 @@
   "obsidian-image-toolkit",
   "obsidian-importer",
   "obsidian-kanban",
+<<<<<<< HEAD
+  "nldates-obsidian"
+]
+=======
   "obsidian-markmind",
   "nldates-obsidian",
   "omnisearch",
@@ -18,4 +22,9 @@
   "url-into-selection",
   "quick-explorer",
   "quick-latex"
+<<<<<<< HEAD
 ]
+=======
+]
+>>>>>>> origin/main
+>>>>>>> origin/main
