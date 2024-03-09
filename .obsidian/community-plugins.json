@@ -6,25 +6,13 @@
   "editing-toolbar",
   "obsidian-enhancing-export",
   "obsidian-excalidraw-plugin",
-  "execute-code",
   "obsidian-git",
   "obsidian-image-toolkit",
   "obsidian-importer",
   "obsidian-kanban",
-<<<<<<< HEAD
-  "nldates-obsidian"
-]
-=======
-  "obsidian-markmind",
   "nldates-obsidian",
   "omnisearch",
-  "obsidian-pandoc",
   "url-into-selection",
   "quick-explorer",
   "quick-latex"
-<<<<<<< HEAD
 ]
-=======
-]
->>>>>>> origin/main
->>>>>>> origin/main
