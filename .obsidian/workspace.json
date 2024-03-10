@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "docs/VCS/git.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "docs/VCS/git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "docs/VCS/git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md"
+                "file": "docs/VCS/git.md"
               }
             }
           },
@@ -239,17 +239,17 @@
   },
   "active": "4c62a4cf5ea3a491",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/bugs.md",
+    "docs/OS/Ubuntu/code_env.md",
+    "docs/OS/Ubuntu/configs.md",
+    "docs/OS/Ubuntu/net.md",
+    "docs/OS/Ubuntu/shell.md",
+    "docs/OS/Ubuntu/system.md",
+    "docs/VCS/git.md",
+    "docs/device/controller/Raspberry_PI_4B.md",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf.crdownload",
     "conflict-files-obsidian-git.md",
-    "docs/device/controller/Raspberry_PI_4B.md",
-    "docs/OS/Ubuntu/configs.md",
-    "docs/OS/Ubuntu/bugs.md",
-    "docs/VCS/git.md",
-    "docs/OS/Ubuntu/shell.md",
-    "docs/OS/Ubuntu/net.md",
-    "docs/OS/Ubuntu/code_env.md",
-    "docs/OS/Ubuntu/system.md",
     "docs/Language/python/py-env/Poetry.md",
     "docs/OS/Ubuntu/wsl.md",
     "assets/Pasted image 20240308164303.png",
@@ -285,7 +285,6 @@
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
     "docs/papers/neuralrecon.pdf",
     "docs/VCS/github",
-    "docs/VCS",
     "未命名 3.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",
