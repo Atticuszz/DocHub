@@ -27,9 +27,9 @@ ls -la | grep "apt_pkg.cpython"
 
 sudo cp apt_pkg.cpython-310-aarch64-linux-gnu.so apt_pkg.so
 
-
 #### open3d
-me/atticuszz/miniconda3/envs/localization/bin/python /home/atticuszz/DevSpace/AutoDrive_backend/src/localization/ReplicaLoader.py libGL error: MESA-LOADER: failed to open radeonsi: /usr/lib/dri/radeonsi_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri, suffix _dri) libGL error: failed to load driver: radeonsi libGL error: MESA-LOADER: failed to open swrast: /usr/lib/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri, suffix _dri) libGL error: failed to load driver: swrast [Open3D WARNING] GLFW Error: GLX: Failed to create context: GLXBadFBConfig [Open3D WARNING] Failed to create window [Open3D WARNING] [DrawGeometries] Failed creating OpenGL window. what should i to install to fix it?
+
+me/atticuszz/miniconda3/envs/localization/bin/python /home/atticuszz/DevSpace/AutoDrive_backend/src/localization/ReplicaLoader.py libGL error: MESA-LOADER: failed to open radeonsi: /usr/lib/dri/radeonsi_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri, suffix _dri) libGL error: failed to load driver: radeonsi libGL error: MESA-LOADER: failed to open swrast: /usr/lib/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri, suffix \_dri) libGL error: failed to load driver: swrast [Open3D WARNING] GLFW Error: GLX: Failed to create context: GLXBadFBConfig [Open3D WARNING] Failed to create window [Open3D WARNING] [DrawGeometries] Failed creating OpenGL window. what should i to install to fix it?
 Grimoire
 
 The errors you're encountering are related to the OpenGL drivers on your Linux system, specifically with Mesa drivers for Radeon graphics (`radeonsi`) and the software rasterizer fallback (`swrast`). These issues typically occur due to missing or misconfigured graphics drivers, or because the application or library (in this case, Open3D) is unable to correctly locate or use the OpenGL libraries. Here's how you can address these issues:
