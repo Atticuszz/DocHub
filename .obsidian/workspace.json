@@ -56,6 +56,18 @@
             }
           },
           {
+            "id": "6444c7074d77a427",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "97ceaeef7f7a4de6",
             "type": "leaf",
             "state": {
@@ -68,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -134,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/VCS/git.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -151,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/VCS/git.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/VCS/git.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -237,20 +249,21 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "4c62a4cf5ea3a491",
+  "active": "6444c7074d77a427",
   "lastOpenFiles": [
+    "docs/VCS/git.md",
+    "conflict-files-obsidian-git.md",
+    "docs/tools/clash.yaml",
     "docs/OS/Ubuntu/net.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/shell.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/OS/GPU.md",
-    "docs/VCS/git.md",
     "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/system.md",
     "docs/device/controller/Raspberry_PI_4B.md",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf.crdownload",
-    "conflict-files-obsidian-git.md",
     "docs/Language/python/py-env/Poetry.md",
     "docs/OS/Ubuntu/wsl.md",
     "assets/Pasted image 20240308164303.png",
@@ -278,14 +291,12 @@
     "docs/OS/Windows/Powersehll.md",
     "docs/device/purchase.md",
     "README.md",
-    "docs/OS/Ubuntu/install_via_usb.md",
     "docs/papers/IEEE_模板.docx",
     "DocHub",
     "AutoDrive_frontend",
     "docs/papers/nopo-nerf.pdf",
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
     "docs/papers/neuralrecon.pdf",
-    "docs/VCS/github",
     "未命名 3.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",

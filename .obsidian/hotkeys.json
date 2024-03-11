@@ -30,5 +30,12 @@
       "modifiers": ["Alt", "Mod"],
       "key": "T"
     }
-  ]
+  ],
+  "obsidian-git:commit": [
+    {
+      "modifiers": ["Mod", "Shift"],
+      "key": "M"
+    }
+  ],
+  "quick-latex:addBlockMath": []
 }
