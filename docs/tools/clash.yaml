@@ -13,23 +13,219 @@ dns:
   default-nameserver: [180.184.1.1, 119.29.29.29, 223.5.5.5]
   ipv6: true
   use-hosts: true
-  fake-ip-filter: ["*.n.n.srv.nintendo.net", +.stun.playstation.net, xbox.*.*.microsoft.com, "*.msftncsi.com", "*.msftconnecttest.com", WORKGROUP, "*.lan", stun.*.*.*, stun.*.*, time.windows.com, time.nist.gov, time.apple.com, time.asia.apple.com, "*.ntp.org.cn", "*.openwrt.pool.ntp.org", time1.cloud.tencent.com, time.ustc.edu.cn, pool.ntp.org, ntp.ubuntu.com, "*.*.xboxlive.com", speedtest.cros.wr.pvp.net]
-  nameserver: [tls://223.5.5.5:853, https://223.6.6.6/dns-query, https://120.53.53.53/dns-query]
-  nameserver-policy: {+.tmall.com: 223.5.5.5, +.taobao.com: 223.5.5.5, +.alicdn.com: 223.5.5.5, +.aliyun.com: 223.5.5.5, +.alipay.com: 223.5.5.5, +.alibaba.com: 223.5.5.5, +.qq.com: 119.29.29.29, +.tencent.com: 119.29.29.29, +.weixin.com: 119.29.29.29, +.qpic.cn: 119.29.29.29, +.jd.com: 119.29.29.29, +.bilibili.com: 119.29.29.29, +.hdslb.com: 119.29.29.29, +.163.com: 119.29.29.29, +.126.com: 119.29.29.29, +.126.net: 119.29.29.29, +.127.net: 119.29.29.29, +.netease.com: 119.29.29.29, +.baidu.com: 223.5.5.5, +.bdstatic.com: 223.5.5.5, +.bilivideo.+: 119.29.29.29, +.iqiyi.com: 119.29.29.29, +.douyinvod.com: 180.184.1.1, +.douyin.com: 180.184.1.1, +.douyincdn.com: 180.184.1.1, +.douyinpic.com: 180.184.1.1, +.feishu.cn: 180.184.1.1}
-  fallback: [https://101.101.101.101/dns-query, https://public.dns.iij.jp/dns-query, https://208.67.220.220/dns-query]
-  fallback-filter: {geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32, 223.75.236.241/32, 182.43.124.6/32, 106.74.25.198/32], domain: [+.bianyuan.xyz, +.happynothings031.xyz, +.jsdelivr.net, +.proton.me]}
+  fake-ip-filter:
+    [
+      "*.n.n.srv.nintendo.net",
+      +.stun.playstation.net,
+      xbox.*.*.microsoft.com,
+      "*.msftncsi.com",
+      "*.msftconnecttest.com",
+      WORKGROUP,
+      "*.lan",
+      stun.*.*.*,
+      stun.*.*,
+      time.windows.com,
+      time.nist.gov,
+      time.apple.com,
+      time.asia.apple.com,
+      "*.ntp.org.cn",
+      "*.openwrt.pool.ntp.org",
+      time1.cloud.tencent.com,
+      time.ustc.edu.cn,
+      pool.ntp.org,
+      ntp.ubuntu.com,
+      "*.*.xboxlive.com",
+      speedtest.cros.wr.pvp.net,
+    ]
+  nameserver:
+    [
+      tls://223.5.5.5:853,
+      https://223.6.6.6/dns-query,
+      https://120.53.53.53/dns-query,
+    ]
+  nameserver-policy:
+    {
+      +.tmall.com: 223.5.5.5,
+      +.taobao.com: 223.5.5.5,
+      +.alicdn.com: 223.5.5.5,
+      +.aliyun.com: 223.5.5.5,
+      +.alipay.com: 223.5.5.5,
+      +.alibaba.com: 223.5.5.5,
+      +.qq.com: 119.29.29.29,
+      +.tencent.com: 119.29.29.29,
+      +.weixin.com: 119.29.29.29,
+      +.qpic.cn: 119.29.29.29,
+      +.jd.com: 119.29.29.29,
+      +.bilibili.com: 119.29.29.29,
+      +.hdslb.com: 119.29.29.29,
+      +.163.com: 119.29.29.29,
+      +.126.com: 119.29.29.29,
+      +.126.net: 119.29.29.29,
+      +.127.net: 119.29.29.29,
+      +.netease.com: 119.29.29.29,
+      +.baidu.com: 223.5.5.5,
+      +.bdstatic.com: 223.5.5.5,
+      +.bilivideo.+: 119.29.29.29,
+      +.iqiyi.com: 119.29.29.29,
+      +.douyinvod.com: 180.184.1.1,
+      +.douyin.com: 180.184.1.1,
+      +.douyincdn.com: 180.184.1.1,
+      +.douyinpic.com: 180.184.1.1,
+      +.feishu.cn: 180.184.1.1,
+    }
+  fallback:
+    [
+      https://101.101.101.101/dns-query,
+      https://public.dns.iij.jp/dns-query,
+      https://208.67.220.220/dns-query,
+    ]
+  fallback-filter:
+    {
+      geoip: true,
+      ipcidr:
+        [
+          240.0.0.0/4,
+          0.0.0.0/32,
+          223.75.236.241/32,
+          182.43.124.6/32,
+          106.74.25.198/32,
+        ],
+      domain:
+        [+.bianyuan.xyz, +.happynothings031.xyz, +.jsdelivr.net, +.proton.me],
+    }
 proxies:
-- {name: 🎅San Francisco vmess, server: atticuszhou.xyz, port: 42329, type: vmess, uuid: 0c494c00-5d46-42eb-bf95-edadfe79db83, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
-- {name: 🌹San Francisco vmess2, server: atticuszhou.xyz, port: 18449, type: vmess, uuid: 08142b46-acf1-46a2-bd8c-e1bc7ddd4c57, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
-- {name: ⚡San Francisco vmess3, server: atticuszhou.xyz, port: 49444, type: vmess, uuid: 9e068eda-846e-46e1-a369-06e2fd1b5bce, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
-- {name: 🗽San Francisco vmess4, server: atticuszhou.xyz, port: 31958, type: vmess, uuid: ce7a8384-08d4-488c-a04b-b3df76effe38, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
-- {name: 🚀San Francisco vmess5, server: atticuszhou.xyz, port: 35092, type: vmess, uuid: f695bfd2-8f9e-4456-a816-b4fa1e30497c, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
-- {name: 🌟San Francisco vmess6, server: atticuszhou.xyz, port: 10880, type: vmess, uuid: 88029ae4-aed1-49d8-b2f4-4e2aa23bc06f, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
-- {name: 🌌San Francisco vmess7, server: atticuszhou.xyz, port: 44431, type: vmess, uuid: 8d8d9ea9-9ce3-41db-a7aa-835c1c0e5223, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
-- {name: 🛸San Francisco vmess8, server: atticuszhou.xyz, port: 10246, type: vmess, uuid: 8f91fc3f-4c5c-414b-b378-2857b6d26e2f, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
-- {name: 🌈San Francisco vmess9, server: atticuszhou.xyz, port: 33880, type: vmess, uuid: ffbdbc63-cb23-4a73-9354-196a3a31e1a5, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
-- {name: 🎇San Francisco vmess10, server: atticuszhou.xyz, port: 27314, type: vmess, uuid: 4149f230-0180-454f-a4b1-551f3f188e86, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
-- {name: 💫San Francisco vmess11, server: atticuszhou.xyz, port: 10794, type: vmess, uuid: d03b0575-9bc8-41d1-b085-c2cd4a679fdf, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
+  - {
+      name: 🎅San Francisco vmess,
+      server: atticuszhou.xyz,
+      port: 42329,
+      type: vmess,
+      uuid: 0c494c00-5d46-42eb-bf95-edadfe79db83,
+      alterId: 0,
+      cipher: auto,
+      tls: true,
+      skip-cert-verify: false,
+      udp: true,
+    }
+  - {
+      name: 🌹San Francisco vmess2,
+      server: atticuszhou.xyz,
+      port: 18449,
+      type: vmess,
+      uuid: 08142b46-acf1-46a2-bd8c-e1bc7ddd4c57,
+      alterId: 0,
+      cipher: auto,
+      tls: true,
+      skip-cert-verify: false,
+      udp: true,
+    }
+  - {
+      name: ⚡San Francisco vmess3,
+      server: atticuszhou.xyz,
+      port: 49444,
+      type: vmess,
+      uuid: 9e068eda-846e-46e1-a369-06e2fd1b5bce,
+      alterId: 0,
+      cipher: auto,
+      tls: true,
+      skip-cert-verify: false,
+      udp: true,
+    }
+  - {
+      name: 🗽San Francisco vmess4,
+      server: atticuszhou.xyz,
+      port: 31958,
+      type: vmess,
+      uuid: ce7a8384-08d4-488c-a04b-b3df76effe38,
+      alterId: 0,
+      cipher: auto,
+      tls: true,
+      skip-cert-verify: false,
+      udp: true,
+    }
+  - {
+      name: 🚀San Francisco vmess5,
+      server: atticuszhou.xyz,
+      port: 35092,
+      type: vmess,
+      uuid: f695bfd2-8f9e-4456-a816-b4fa1e30497c,
+      alterId: 0,
+      cipher: auto,
+      tls: true,
+      skip-cert-verify: false,
+      udp: true,
+    }
+  - {
+      name: 🌟San Francisco vmess6,
+      server: atticuszhou.xyz,
+      port: 10880,
+      type: vmess,
+      uuid: 88029ae4-aed1-49d8-b2f4-4e2aa23bc06f,
+      alterId: 0,
+      cipher: auto,
+      tls: true,
+      skip-cert-verify: false,
+      udp: true,
+    }
+  - {
+      name: 🌌San Francisco vmess7,
+      server: atticuszhou.xyz,
+      port: 44431,
+      type: vmess,
+      uuid: 8d8d9ea9-9ce3-41db-a7aa-835c1c0e5223,
+      alterId: 0,
+      cipher: auto,
+      tls: true,
+      skip-cert-verify: false,
+      udp: true,
+    }
+  - {
+      name: 🛸San Francisco vmess8,
+      server: atticuszhou.xyz,
+      port: 10246,
+      type: vmess,
+      uuid: 8f91fc3f-4c5c-414b-b378-2857b6d26e2f,
+      alterId: 0,
+      cipher: auto,
+      tls: true,
+      skip-cert-verify: false,
+      udp: true,
+    }
+  - {
+      name: 🌈San Francisco vmess9,
+      server: atticuszhou.xyz,
+      port: 33880,
+      type: vmess,
+      uuid: ffbdbc63-cb23-4a73-9354-196a3a31e1a5,
+      alterId: 0,
+      cipher: auto,
+      tls: true,
+      skip-cert-verify: false,
+      udp: true,
+    }
+  - {
+      name: 🎇San Francisco vmess10,
+      server: atticuszhou.xyz,
+      port: 27314,
+      type: vmess,
+      uuid: 4149f230-0180-454f-a4b1-551f3f188e86,
+      alterId: 0,
+      cipher: auto,
+      tls: true,
+      skip-cert-verify: false,
+      udp: true,
+    }
+  - {
+      name: 💫San Francisco vmess11,
+      server: atticuszhou.xyz,
+      port: 10794,
+      type: vmess,
+      uuid: d03b0575-9bc8-41d1-b085-c2cd4a679fdf,
+      alterId: 0,
+      cipher: auto,
+      tls: true,
+      skip-cert-verify: false,
+      udp: true,
+    }
 
 proxy-groups:
   - name: 🔰 节点选择
