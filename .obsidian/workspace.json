@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/VCS/git.md",
+                "file": "docs/OS/Ubuntu/net.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/VCS/git.md",
+                "file": "docs/OS/Ubuntu/net.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/VCS/git.md",
+                "file": "docs/OS/Ubuntu/net.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/VCS/git.md"
+                "file": "docs/OS/Ubuntu/net.md"
               }
             }
           },
@@ -239,13 +239,14 @@
   },
   "active": "4c62a4cf5ea3a491",
   "lastOpenFiles": [
-    "docs/OS/Ubuntu/bugs.md",
-    "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/net.md",
     "docs/OS/Ubuntu/shell.md",
-    "docs/OS/Ubuntu/system.md",
+    "docs/OS/Ubuntu/bugs.md",
+    "docs/OS/GPU.md",
     "docs/VCS/git.md",
+    "docs/OS/Ubuntu/code_env.md",
+    "docs/OS/Ubuntu/system.md",
     "docs/device/controller/Raspberry_PI_4B.md",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf.crdownload",

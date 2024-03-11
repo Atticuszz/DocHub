@@ -24,7 +24,7 @@
     - **Windows/:**
       - [Powersehll.md](docs/OS/Windows/Powersehll.md)
       - [CMD.md](docs/OS/Windows/CMD.md)
-    - [GPU-wsl.md](docs/OS/GPU-wsl.md)
+    - [GPU-wsl.md](docs/OS/GPU.md)
   - **device/:**
     - [camera.md](docs/device/camera.md)
     - [Tutorial_Comparison.md](docs/device/Tutorial_Comparison.md)

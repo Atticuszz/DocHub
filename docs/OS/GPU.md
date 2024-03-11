@@ -1,3 +1,5 @@
+
+## wsl
 > WSL== Linux Ubuntu 22.04 x86_64
 
 ### Preconditions
@@ -145,3 +147,6 @@ cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 ```bash
 docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 ```
+
+
+## Ubuntu

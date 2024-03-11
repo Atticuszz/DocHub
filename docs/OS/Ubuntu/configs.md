@@ -27,6 +27,20 @@ _optional: if docker installed ,set default wsl distro as ubuntu 22 by [set defa
 
 #### native ubuntu
 
+*upgrade power*
+1. add into `sudo` group
+```bash
+sudo usermod -aG sudo yourusername
+# check it
+groups yourusername
+```
+2. avoid be asked input passwd call `sudo` everytime
+```bash
+sudo visudo
+# fine the line begin with %sudo and replace it 
+%sudo ALL=(ALL) NOPASSWD: ALL
+```
+
 [ssh](docs/OS/Ubuntu/net#install ssh)
 connect by ssh ,enter password first time and try to connect by ssh-key
 
