@@ -87,6 +87,46 @@
     - [gpt-chats-history.md](docs/papers/gpt-chats-history.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-10 by atticuszz - add bugs fix solution in open3d and remarks on conda init
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
+- 🔨 [code_env.md](docs/OS/Ubuntu/code_env.md)
+- 🔨 [net.md](docs/OS/Ubuntu/net.md)
+### 2024-03-09 by Atticuszz - Ci workflows Update README.md
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [main.js](.obsidian/plugins/obsidian-git/main.js)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
 ### 2024-03-09 by Atticuszz - add RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation paper
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
@@ -212,9 +252,6 @@
 ### 2024-03-08 by zzyss-marker - vault backup: 2024-03-08 17:59:55
 - 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
-### 2024-03-08 by Atticuszz - 断电不要直接拔掉
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
 ## 其他仓库
 
 ### 论文速览

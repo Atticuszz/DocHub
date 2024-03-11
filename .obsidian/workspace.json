@@ -56,6 +56,18 @@
             }
           },
           {
+            "id": "6de2e1caac41ca40",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "97ceaeef7f7a4de6",
             "type": "leaf",
             "state": {
@@ -68,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -134,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -151,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -237,14 +249,14 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "e5fb1abf4287bce9",
+  "active": "6de2e1caac41ca40",
   "lastOpenFiles": [
+    "docs/device/controller/Raspberry_PI_4B.md",
+    "conflict-files-obsidian-git.md",
     "docs/tools/clash.yaml",
     "docs/tools/New Text Document.txt",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf.crdownload",
-    "conflict-files-obsidian-git.md",
-    "docs/device/controller/Raspberry_PI_4B.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/VCS/git.md",
@@ -285,7 +297,6 @@
     "AutoDrive_frontend",
     "docs/papers/nopo-nerf.pdf",
     "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
-    "docs/papers/neuralrecon.pdf",
     "未命名 3.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",

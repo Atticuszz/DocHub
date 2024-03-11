@@ -55,9 +55,9 @@ chmod 600 ~/.ssh/authorized_keys
 
 - add config
 
-```
+```bash
 sudo mkdir ~/.config/clash
-nano /root/.config/clash/config.yaml
+wget https://github.com/SupaVision/DocHub/releases/download/clash/clash_proxies_config.yml -O /root/.config/clash/config.yaml
 ```
 
 - run
