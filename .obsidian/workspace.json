@@ -56,18 +56,6 @@
             }
           },
           {
-            "id": "6de2e1caac41ca40",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "97ceaeef7f7a4de6",
             "type": "leaf",
             "state": {
@@ -80,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -146,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -163,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "docs/device/controller/Raspberry_PI_4B.md"
               }
             }
           },
@@ -249,10 +237,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "6de2e1caac41ca40",
+  "active": "4c62a4cf5ea3a491",
   "lastOpenFiles": [
-    "docs/device/controller/Raspberry_PI_4B.md",
     "conflict-files-obsidian-git.md",
+    "docs/device/controller/Raspberry_PI_4B.md",
     "docs/tools/clash.yaml",
     "docs/tools/New Text Document.txt",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
