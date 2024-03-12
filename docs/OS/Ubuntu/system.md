@@ -43,8 +43,9 @@ sudo chown -R %username%  %filepath%
 ```
 
 #### use eye protection mode
+
 ```bash
-sudo apt update 
+sudo apt update
 sudo apt install redshift redshift-gtk
 redshift -O 4000
 ```
