@@ -108,5 +108,3 @@ If you continue to experience issues after following these steps:
 - Consider reporting your issue there with detailed information about your system, the steps you've taken, and the exact error messages.
 
 This approach addresses the most common causes of OpenGL driver issues on Linux. However, if your setup is highly customized or you're using less common hardware, additional steps may be necessary.
-
-
