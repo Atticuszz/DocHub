@@ -149,3 +149,7 @@ docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 ```
 
 ## Ubuntu
+#### gpu monitor
+```bash
+conda install -c conda-forge nvitop
+```
