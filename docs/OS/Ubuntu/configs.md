@@ -86,3 +86,28 @@ sudo apt-get install unzip
 [code_env](../../../docs/OS/Ubuntu/code_env.md)
 
 - python, conda ,pip, poetry ,cmake...
+
+
+
+
+
+
+
+
+
+
+
+
+
+### basic tools for desktop
+####  screenshot
+[Snipaste Downloads](https://www.snipaste.com/download.html)
+```bash
+sudo apt-get update
+sudo apt-get install fuse
+chmod +x /home/atticuszz/Downloads/Snipaste-2.8.9-Beta-x86_64.AppImage
+/home/atticuszz/Downloads/Snipaste-2.8.9-Beta-x86_64.AppImage --appimage-extract
+# create desktop app then
+mkdir -p ~/.config/autostart/
+cp ~/Desktop/Snipaste.desktop ~/.config/autostart/
+```

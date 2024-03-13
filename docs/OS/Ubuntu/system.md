@@ -43,9 +43,24 @@ sudo chown -R %username%  %filepath%
 ```
 
 #### use eye protection mode
+setting-> display-> night light
 
+
+
+#### snap shop update
 ```bash
-sudo apt update
-sudo apt install redshift redshift-gtk
-redshift -O 4000
+sudo snap refresh snap-store
+sudo snap refresh
+```
+
+#### keyboard
+```bash
+sudo apt-get update
+sudo apt-get install ibus ibus-pinyin ibus-libpinyin
+```
+
+#### system backup
+```bash
+sudo apt-get update
+sudo apt-get install timeshift
 ```

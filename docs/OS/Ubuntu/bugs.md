@@ -27,7 +27,7 @@ ls -la | grep "apt_pkg.cpython"
 
 sudo cp apt_pkg.cpython-310-aarch64-linux-gnu.so apt_pkg.so
 
-#### open3d
+## open3d
 
 me/atticuszz/miniconda3/envs/localization/bin/python /home/atticuszz/DevSpace/AutoDrive_backend/src/localization/ReplicaLoader.py libGL error: MESA-LOADER: failed to open radeonsi: /usr/lib/dri/radeonsi_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri, suffix _dri) libGL error: failed to load driver: radeonsi libGL error: MESA-LOADER: failed to open swrast: /usr/lib/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri, suffix \_dri) libGL error: failed to load driver: swrast [Open3D WARNING] GLFW Error: GLX: Failed to create context: GLXBadFBConfig [Open3D WARNING] Failed to create window [Open3D WARNING] [DrawGeometries] Failed creating OpenGL window. what should i to install to fix it?
 Grimoire
@@ -108,3 +108,16 @@ If you continue to experience issues after following these steps:
 - Consider reporting your issue there with detailed information about your system, the steps you've taken, and the exact error messages.
 
 This approach addresses the most common causes of OpenGL driver issues on Linux. However, if your setup is highly customized or you're using less common hardware, additional steps may be necessary.
+
+
+
+## settings disappper
+
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt full-upgrade
+
+sudo apt update
+sudo apt install --reinstall gnome-control-center
+```

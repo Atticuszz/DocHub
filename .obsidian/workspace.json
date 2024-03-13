@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/system.md",
+                "file": "docs/OS/Ubuntu/bugs.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,49 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Docker.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1c97de35d479c164",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4c62a4cf5ea3a491",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/OS/Ubuntu/shell.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "97ceaeef7f7a4de6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/OS/Ubuntu/bugs.md",
+                "file": "docs/OS/Ubuntu/system.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -236,17 +201,22 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "231d0ecdf777027f",
+  "active": "8736f02d8c8b4720",
   "lastOpenFiles": [
-    "docs/OS/Ubuntu/configs.md",
-    "docs/OS/Docker.md",
-    "docs/OS/Ubuntu/net.md",
-    "docs/OS/Ubuntu/shell.md",
+    "docs/papers/method.md",
+    "docs/OS/Ubuntu/code_env.md",
+    "docs/device/controller/Raspberry_PI_4B.md",
+    "docs/OS/Ubuntu/bugs.md",
     "docs/OS/GPU.md",
     "docs/OS/Ubuntu/system.md",
-    "docs/device/controller/Raspberry_PI_4B.md",
-    "docs/OS/Ubuntu/code_env.md",
-    "docs/OS/Ubuntu/bugs.md",
+    "docs/OS/Ubuntu/configs.md",
+    "assets/Snipaste 2.desktop",
+    "assets/Snipaste 1.desktop",
+    "assets/Snipaste.desktop",
+    "docs/OS/Docker.md",
+    "docs/tools/IDE/activate_code.md",
+    "docs/OS/Ubuntu/net.md",
+    "docs/OS/Ubuntu/shell.md",
     "docs/VCS/git.md",
     "conflict-files-obsidian-git.md",
     "docs/tools/clash.yaml",
@@ -277,14 +247,9 @@
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
     "docs/schedule/Free_time.md",
     "docs/OS/Windows/Powersehll.md",
-    "docs/device/purchase.md",
-    "README.md",
     "docs/papers/IEEE_模板.docx",
     "DocHub",
     "AutoDrive_frontend",
-    "docs/papers/nopo-nerf.pdf",
-    "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
-    "docs/papers/neuralrecon.pdf",
     "未命名 3.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",
