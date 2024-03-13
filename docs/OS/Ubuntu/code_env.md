@@ -71,7 +71,7 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
 ```bash
 PATH="/root/miniconda3/bin:"
 source /etc/environment
-# or 
+# or
 export PATH="/root/miniconda3/bin:$PATH"
 ```
 

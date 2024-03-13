@@ -109,8 +109,6 @@ If you continue to experience issues after following these steps:
 
 This approach addresses the most common causes of OpenGL driver issues on Linux. However, if your setup is highly customized or you're using less common hardware, additional steps may be necessary.
 
-
-
 ## settings disappper
 
 ```bash

@@ -87,21 +87,12 @@ sudo apt-get install unzip
 
 - python, conda ,pip, poetry ,cmake...
 
-
-
-
-
-
-
-
-
-
-
-
-
 ### basic tools for desktop
-####  screenshot
+
+#### screenshot
+
 [Snipaste Downloads](https://www.snipaste.com/download.html)
+
 ```bash
 sudo apt-get update
 sudo apt-get install fuse
