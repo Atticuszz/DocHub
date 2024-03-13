@@ -42,6 +42,7 @@ sudo chown -R %username%  %filepath%
 
 ```
 
+### basic system tools
 #### use eye protection mode
 
 setting-> display-> night light
@@ -65,4 +66,15 @@ sudo apt-get install ibus ibus-pinyin ibus-libpinyin
 ```bash
 sudo apt-get update
 sudo apt-get install timeshift
+```
+
+#### clipboard
+```bash
+sudo apt update
+sudo apt install copyQ
+```
+
+#### gpu monitor
+```bash
+conda install -c conda-forge nvitop
 ```
