@@ -42,7 +42,7 @@ sudo chown -R %username%  %filepath%
 
 ```
 
-### basic system tools
+### basic tools for desktop
 
 #### use eye protection mode
 
@@ -85,3 +85,19 @@ conda install -c conda-forge nvitop
 #### fan mode
 
 use `Legion` in windows to set mode
+
+
+
+#### screenshot
+
+[Snipaste Downloads](https://www.snipaste.com/download.html)
+
+```bash
+sudo apt-get update
+sudo apt-get install fuse
+chmod +x /home/atticuszz/Downloads/Snipaste-2.8.9-Beta-x86_64.AppImage
+/home/atticuszz/Downloads/Snipaste-2.8.9-Beta-x86_64.AppImage --appimage-extract
+# create desktop app then
+mkdir -p ~/.config/autostart/
+cp ~/Desktop/Snipaste.desktop ~/.config/autostart/
+```

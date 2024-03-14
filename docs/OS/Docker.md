@@ -1,5 +1,5 @@
 ### install docker and - compose
-
+*amd_x64*
 ```bash
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
@@ -19,7 +19,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 # check
 docker-compose --version
 ```
-
+#### use docker by user without `sudo`
 ```bash
 sudo usermod -aG docker username
 ```
