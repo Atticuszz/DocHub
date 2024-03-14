@@ -1,7 +1,6 @@
 ## 快捷导航
 - **Excalidraw/:**
   - [Drawing_2024-03-03_13.07.53.excalidraw.md](Excalidraw/Drawing_2024-03-03_13.07.53.excalidraw.md)
-- **AutoDrive_backend/:**
 - **docs/:**
   - **tools/:**
     - [git-install-instruction.md](docs/tools/git-install-instruction.md)
@@ -91,6 +90,64 @@
     - [method.md](docs/papers/method.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-14 by atticuszz - remove trash
+- 🗑️ AutoDrive_backend
+- 🗑️ Pasted-image-20230718153908.png
+- 🗑️ Pasted-image-20230720163254.png
+- 🗑️ Pasted-image-20230805074218.png
+- 🗑️ Pasted-image-20231120202204.png
+- 🗑️ Pasted-image-20231207140546.png
+- 🗑️ Pasted-image-20231207140606.png
+- 🗑️ Pasted-image-20231207140646.png
+- 🗑️ Pasted-image-20231225160345.png
+- 🗑️ Pasted-image-20231225160406.png
+- 🗑️ Pasted-image-20231225160433.png
+- 🗑️ Pasted-image-20231225160550.png
+- 🗑️ Pasted-image-20231225160608.png
+- 🗑️ Pasted-image-20231225160633.png
+- 🗑️ Pasted-image-20231225160934.png
+- 🗑️ Pasted-image-20231225161207.png
+- 🗑️ Pasted-image-20231225161331.png
+- 🗑️ Pasted_image_20240126222059.png
+- 🗑️ Pasted_image_20240126222702.png
+- 🗑️ Pasted_image_20240126222742.png
+- 🗑️ Pasted_image_20240126223025.png
+- 🗑️ Pasted_image_20240126223140.png
+- 🗑️ Pasted_image_20240203205308.png
+- 🗑️ Pasted_image_20240226155154.png
+- 🗑️ Pasted_image_20240226155240.png
+- 🗑️ Pasted_image_20240226155318.png
+- 🗑️ Pasted_image_20240226165051.png
+- 🗑️ Pasted_image_20240303121857.png
+- 🗑️ Pasted_image_20240303125319.png
+- 🗑️ Pasted_image_20240306105953.png
+- 🗑️ Pasted_image_20240306121452.png
+- 🗑️ Pasted_image_20240306195957.png
+- 🗑️ Pasted_image_20240306200124.png
+- 🗑️ Pasted_image_20240307200419.png
+- 🗑️ Pasted_image_20240307214212.png
+- 🗑️ Pasted_image_20240307214407.png
+### 2024-03-14 by Atticuszz - Ci workflows Update README.md
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🔨 [GPU.md](docs/OS/GPU.md)
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
 ### 2024-03-14 by atticuszz - add fan control tips
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
@@ -230,34 +287,6 @@
 - 🔨 [GPU.md](docs/OS/GPU.md)
 - 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-03-11 by atticuszz - vault backup: 2024-03-11 19:58:25
-- 🔨 [workspace.json](.obsidian/workspace.json)
-### 2024-03-11 by atticuszz - vault backup: 2024-03-11 19:58:11
-- 🔨 [app.json](.obsidian/app.json)
-- 🔨 [appearance.json](.obsidian/appearance.json)
-- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
-- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
-- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
-- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
-- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
-- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
-- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
-- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
-- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
-- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
-- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
-- 🔨 [types.json](.obsidian/types.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- ✨ [AutoDrive_backend](AutoDrive_backend)
-- 🔨 [README.md](README.md)
-- 🚚 [GPU.md](docs/OS/GPU.md) <- GPU-wsl.md
-- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
-- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
-### 2024-03-11 by Atticuszz - Ci workflows Update README.md
-- 🔨 [hotkeys.json](.obsidian/hotkeys.json)
-- 🔨 [README.md](README.md)
 ## 其他仓库
 
 ### 论文速览
