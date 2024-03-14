@@ -86,8 +86,6 @@ conda install -c conda-forge nvitop
 
 use `Legion` in windows to set mode
 
-
-
 #### screenshot
 
 [Snipaste Downloads](https://www.snipaste.com/download.html)
