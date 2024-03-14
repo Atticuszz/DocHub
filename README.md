@@ -90,6 +90,32 @@
     - [method.md](docs/papers/method.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-14 by atticuszz - vault backup: 2024-03-14 16:27:05
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
+### 2024-03-14 by Atticuszz - Ci workflows Update README.md
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🔨 [Docker.md](docs/OS/Docker.md)
+- 🔨 [code_env.md](docs/OS/Ubuntu/code_env.md)
+- 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
 ### 2024-03-14 by atticuszz - vault backup: 2024-03-14 10:28:21
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
@@ -280,15 +306,6 @@
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 - 🔨 [system.md](docs/OS/Ubuntu/system.md)
 - ✨ [method.md](docs/papers/method.md)
-### 2024-03-12 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-- 🔨 [Docker.md](docs/OS/Docker.md)
-- 🔨 [system.md](docs/OS/Ubuntu/system.md)
-### 2024-03-12 by atticuszz - add eye protect
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- ✨ [Docker.md](docs/OS/Docker.md)
-- 🔨 [net.md](docs/OS/Ubuntu/net.md)
-- 🔨 [system.md](docs/OS/Ubuntu/system.md)
 ## 其他仓库
 
 ### 论文速览
