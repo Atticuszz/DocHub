@@ -81,3 +81,6 @@ sudo apt install copyQ
 ```bash
 conda install -c conda-forge nvitop
 ```
+
+#### fan mode
+use `Legion` in windows to set mode

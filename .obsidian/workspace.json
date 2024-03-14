@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/GPU.md",
+                "file": "docs/OS/Ubuntu/system.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/GPU.md",
+                "file": "docs/OS/Ubuntu/system.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/GPU.md",
+                "file": "docs/OS/Ubuntu/system.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/GPU.md"
+                "file": "docs/OS/Ubuntu/system.md"
               }
             }
           },
@@ -203,12 +203,12 @@
   },
   "active": "8736f02d8c8b4720",
   "lastOpenFiles": [
+    "docs/OS/GPU.md",
     "docs/OS/Ubuntu/system.md",
     "docs/papers/method.md",
     "docs/OS/Ubuntu/code_env.md",
     "docs/device/controller/Raspberry_PI_4B.md",
     "docs/OS/Ubuntu/bugs.md",
-    "docs/OS/GPU.md",
     "docs/OS/Ubuntu/configs.md",
     "assets/Snipaste 2.desktop",
     "assets/Snipaste 1.desktop",
