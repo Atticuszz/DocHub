@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/bugs.md",
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,14 +25,50 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1c97de35d479c164",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4c62a4cf5ea3a491",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "docs/OS/Ubuntu/system.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "97ceaeef7f7a4de6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/OS/Ubuntu/bugs.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -155,14 +191,6 @@
             }
           },
           {
-            "id": "6c7a22ce9a44906b",
-            "type": "leaf",
-            "state": {
-              "type": "code-execute-manage-executors",
-              "state": {}
-            }
-          },
-          {
             "id": "b02e2e30d05790c3",
             "type": "leaf",
             "state": {
@@ -179,7 +207,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -201,28 +229,25 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "8736f02d8c8b4720",
+  "active": "4c62a4cf5ea3a491",
   "lastOpenFiles": [
-    "docs/OS/Ubuntu/bugs.md",
-    "docs/OS/Ubuntu/system.md",
-    "docs/OS/Ubuntu/configs.md",
     "docs/OS/GPU.md",
-    "docs/OS/Docker.md",
-    "docs/OS/Ubuntu/wsl.md",
-    "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/net.md",
+    "docs/OS/Ubuntu/bugs.md",
+    "docs/OS/Ubuntu/code_env.md",
+    "docs/OS/Ubuntu/configs.md",
+    "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/shell.md",
-    "docs/papers/method.md",
-    "docs/device/controller/Raspberry_PI_4B.md",
-    "assets/Snipaste 2.desktop",
-    "assets/Snipaste 1.desktop",
-    "assets/Snipaste.desktop",
-    "docs/tools/IDE/activate_code.md",
+    "docs/URLs.md",
+    "docs/OS/Ubuntu/wsl.md",
     "docs/VCS/git.md",
-    "conflict-files-obsidian-git.md",
     "docs/tools/clash.yaml",
+    "docs/papers/method.md",
+    "docs/OS/Docker.md",
+    "docs/device/controller/Raspberry_PI_4B.md",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf.crdownload",
+    "conflict-files-obsidian-git.md",
     "docs/Language/python/py-env/Poetry.md",
     "assets/Pasted image 20240308164303.png",
     "docs/Language/python/py-env/conda.md",
@@ -250,6 +275,9 @@
     "docs/papers/IEEE_模板.docx",
     "DocHub",
     "AutoDrive_frontend",
+    "docs/papers/nopo-nerf.pdf",
+    "docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf",
+    "docs/papers/neuralrecon.pdf",
     "未命名 3.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",
