@@ -90,6 +90,14 @@
     - [method.md](docs/papers/method.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-15 by atticuszz - 今日研究进度
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
+### 2024-03-15 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
 ### 2024-03-15 by atticuszz - add essays
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
@@ -237,8 +245,6 @@
 - 🔨 [code_env.md](docs/OS/Ubuntu/code_env.md)
 - 🔨 [configs.md](docs/OS/Ubuntu/configs.md)
 - 🔨 [system.md](docs/OS/Ubuntu/system.md)
-### 2024-03-14 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
 ## 其他仓库
 
 ### 论文速览

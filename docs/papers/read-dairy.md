@@ -1,20 +1,20 @@
-
 ## idea
+
 2024-03-15
 最终应该完成在3D高斯splat 场景表示法下的，动态修正地图，可以实现紧急避障碍（修正地图从而自动修正路径）自主空间导航
 
-[[docs/papers/SplaTAM.pdf|SplaTAM]]的方法，基本上已经完成高性能的，空间建图并且可以实时的获取姿态数据
+[SplaTAM](../../docs/papers/SplaTAM.pdf)的方法，基本上已经完成高性能的，空间建图并且可以实时的获取姿态数据
 在此基础之上，配合规划算法进行空间导航
 
 ## Innovation
+
 2024-03-15
 重点应该关注实时的性能和资源问题，空间搜索的性能，定位和建图的性能
+
 1. 比如建图应该是最开始就基本完成，采用一种 **缓冲**的做法，因为大部分时候不需要实现全额功率的建图，**创造一种高斯建图中相似性的判断方法，就比如大部分时候仅仅是相似性比对，达到阈值才唤醒全额功率的建图**，这个应该是对 **建图和修图的性能的优化**，也就是**选择什么时机进行**修正地图
 2. 规划空间搜索也应该是类似的想法，如果能**够记住上次规划的结果**，只在**修正地图的时候进行重新规划**
 
-
 ## daily
-
 
 ## representation
 
@@ -28,16 +28,15 @@
 
 1. **彩色图像**：NeRF通过对一系列从不同视角拍摄的彩色图像进行训练，学习场景的3D表示。
 2. **相机参数**：传统的NeRF模型训练需要知道每张图像对应的相机参数，包括相机的位置、朝向（姿态）和内参（焦距、光心等）。这些参数用于将3D场景映射到2D图像平面，帮助模型理解不同视角下观察到的场景变化。
+
 ### 3DGS
-
-
 
 ## solution
 
 ### 3-d reconstruction
 
 2024-02-16
-*场景表示法选什么？*
+_场景表示法选什么？_
 _怎么重建？_
 有深度图像就可以直接生成点云，重点关注19年时候英特尔开源的点云处理库`open3d`这是现有的正常维护中的库，有深度图就可以实现点云的三维重建了
 _没有深度图像咋办？或者深度图像质量不高咋办?_
@@ -46,15 +45,17 @@ _没有深度图像咋办？或者深度图像质量不高咋办?_
 现在已经有了直接从`RPG`转化成深度图像的模型了，根据他的模型参数，性能是非常好的，可以直接接近实时
 
 2024-03-15
-- [x] 目前流行的是 *nerf* 和 *3DGS*,但是nerf的性能不咋地，根据深度图进行点云重建这都算最基本的了，*3DGS*应该是首选的场景表示法
 
->[[docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf#page=2&selection=81,45,89,2|In this paper, we set out to explore this option and develop Marigold, a la- tent diffusion model (LDM) based on Stable Diffusion [36 ],]]
+- [x] 目前流行的是 _nerf_ 和 _3DGS_,但是nerf的性能不咋地，根据深度图进行点云重建这都算最基本的了，*3DGS*应该是首选的场景表示法
+
+> [In this paper, we set out to explore this option and develop Marigold, a la- tent diffusion model (LDM) based on Stable Diffusion [36 ],](../../docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf)
 
 - [x] `Depth-Anything`的深度估计精度应该还不行，但是性能不错,这篇文章对输入输出和基于流行的扩散模型进行微调，RGP生成深度图，精度貌似看他点云重建的效果还不错
 
-*怎么进行重建得看[[docs/papers/SplaTAM.pdf|SplaTAM]],他的重建的pipeline需要搞清楚，代码也需要重构，写的太随意了*
+_怎么进行重建得看[SplaTAM](../../docs/papers/SplaTAM.pdf),他的重建的pipeline需要搞清楚，代码也需要重构，写的太随意了_
 
-*当然，首先得明白，3DGS究竟是如何进行场景表示的？*
+_当然，首先得明白，3DGS究竟是如何进行场景表示的？_
+
 ### loaclization
 
 2024-02-16
@@ -67,17 +68,19 @@ _怎么解决定位问题？_
 初始全局定位可能会麻烦一点，要全局搜索？或者开始粗略几个初始点，然后根据移动，后续连续帧的一系列信息才开始定位，精确空间定位需要仔细设计
 
 2024-03-15
+
 - [x] 定位方法需要测试选择最优的
-貌似使用点云对齐的性能没有那么理想[[docs/papers/splat_nav.pdf|splat_nav]]，
-这篇论文是用传统的点云对齐算法，比如 *open3d*的那个，来估计机器人姿态
-> re-planning at 5 Hz and pose estimation at 20 Hz
-[[docs/papers/splat_nav.pdf#page=1&selection=34,5,34,53|splat_nav, page 1]]
+      貌似使用点云对齐的性能没有那么理想[splat_nav](../../docs/papers/splat_nav.pdf)，
+      这篇论文是用传统的点云对齐算法，比如 *open3d*的那个，来估计机器人姿态
+  > re-planning at 5 Hz and pose estimation at 20 Hz
+  > [splat_nav, page 1](../../docs/papers/splat_nav.pdf)
 
 使用cpu计算的，路径规划性能不咋地，这种频率不能做到实时的避开障碍
 ，并且姿态估计的速度也一般
 
-*如果假设地图已经建图完成，那么传统的点云对齐运算的精度和性能和[[docs/papers/SplaTAM.pdf|SplaTAM]]谁更好？* 当然也可以用3DGS中提到的
->[[docs/papers/3DGS.pdf#page=4&selection=313,0,334,1|仅使⽤ SfM 点作为输⼊就获得了⾼质量的结果]]
+_如果假设地图已经建图完成，那么传统的点云对齐运算的精度和性能和[SplaTAM](../../docs/papers/SplaTAM.pdf)谁更好？_ 当然也可以用3DGS中提到的
+
+> [仅使⽤ SfM 点作为输⼊就获得了⾼质量的结果](../../docs/papers/3DGS.pdf)
 
 计算性能很差的，使用图片估计出空间点云的办法SfM
 
@@ -90,7 +93,8 @@ _导航的地图怎么办，以及导航方法？_
 2. 或者至今在三维空间实现空间路径规划，可能要找找最新的，香港科技大学，GitHub仓库里面好像是有类似的，是关于无人机的
 
 2024-03-15
-- [x] 导航的地图基本确定为[[docs/papers/3DGS.pdf|3DGS]]的场景表示法，非常优异的性能
-- [x] 导航的方法目打算先参考[[docs/papers/splat_nav.pdf|splat_nav]]中采用这些，`A*`之类的
 
-*规划算法怎么在3DGS中进行空间搜索还是个问题？*
+- [x] 导航的地图基本确定为[3DGS](../../docs/papers/3DGS.pdf)的场景表示法，非常优异的性能
+- [x] 导航的方法目打算先参考[splat_nav](../../docs/papers/splat_nav.pdf)中采用这些，`A*`之类的
+
+_规划算法怎么在3DGS中进行空间搜索还是个问题？_
