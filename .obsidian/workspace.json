@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/URLs.md",
+                "file": "docs/VCS/git.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/URLs.md",
+                "file": "docs/VCS/git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/URLs.md",
+                "file": "docs/VCS/git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/URLs.md"
+                "file": "docs/VCS/git.md"
               }
             }
           },
@@ -203,12 +203,18 @@
   },
   "active": "8736f02d8c8b4720",
   "lastOpenFiles": [
+    "docs/papers/SplaTAM_.pdf",
+    "docs/papers/SplaTAM.pdf",
+    "docs/papers/3DGS.pdf",
+    "docs/papers/splat_nav.pdf",
+    "docs/papers/nerf_nav.pdf",
+    "docs/papers/3D Gaussian Splatting for Real-Time Radiance Field Rendering - 3d_gaussian_splatting_high.pdf",
+    "docs/VCS/git.md",
+    "docs/OS/Ubuntu/bugs.md",
+    "docs/OS/Ubuntu/system.md",
+    "docs/URLs.md",
     "docs/OS/GPU.md",
     "conflict-files-obsidian-git.md",
-    "docs/URLs.md",
-    "docs/VCS/git.md",
-    "docs/OS/Ubuntu/system.md",
-    "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/Docker.md",
     "docs/OS/Ubuntu/wsl.md",
@@ -223,7 +229,6 @@
     "docs/tools/IDE/activate_code.md",
     "docs/tools/clash.yaml",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
-    "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf.crdownload",
     "docs/Language/python/py-env/Poetry.md",
     "assets/Pasted image 20240308164303.png",
     "docs/Language/python/py-env/conda.md",
@@ -238,7 +243,6 @@
     "assets/Pasted image 20240307200419.png",
     "未命名.canvas",
     "Excalidraw/Drawing_2024-03-03_13.07.53.excalidraw.md",
-    "Excalidraw",
     "docs/schedule/TODO.md",
     "docs/tools/git-install-instruction.md",
     "docs/tools/IDE/plugin.md",
@@ -246,10 +250,6 @@
     "docs/schedule/meetings/standard.md",
     "docs/Language/python/py-env/Pip.md",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
-    "docs/schedule/Free_time.md",
-    "docs/papers/IEEE_模板.docx",
-    "DocHub",
-    "AutoDrive_frontend",
     "未命名 3.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",

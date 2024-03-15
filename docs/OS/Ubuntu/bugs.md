@@ -119,3 +119,10 @@ sudo apt full-upgrade
 sudo apt update
 sudo apt install --reinstall gnome-control-center
 ```
+
+
+[solved: Could not load the Qt platform plugin "xcb" · NVlabs/instant-ngp · Discussion #300 · GitHub](https://github.com/NVlabs/instant-ngp/discussions/300)
+```bash
+pip uninstall opencv-python
+pip install opencv-python-headless
+```
