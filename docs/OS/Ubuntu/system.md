@@ -103,14 +103,13 @@ cp ~/Desktop/Snipaste.desktop ~/.config/autostart/
 <<<<<<< HEAD
 
 #### install .tar.gz
+
 ```bash
 tar -xzf filepath
 ```
 
-
-
-
 =======
+
 #### apt source change
 
 ```bash
@@ -119,4 +118,5 @@ sudo apt update
 sudo apt upgrade
 
 ```
->>>>>>> origin/main
+
+> > > > > > > origin/main
