@@ -24,11 +24,14 @@ sudo apt install --no-install-recommends xinit
 sudo apt install raspberrypi-ui-mods
 sudo apt install --no-install-recommends lightdm
 ```
+
 #### qt
+
 ```bash
 sudo apt-get update
 sudo apt-get install qtbase5-dev
 ```
+
 #### change password
 
 ```powershell
