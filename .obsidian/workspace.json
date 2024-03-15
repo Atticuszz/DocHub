@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/system.md",
+                "file": "docs/OS/GPU.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/system.md",
+                "file": "docs/OS/GPU.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/system.md",
+                "file": "docs/OS/GPU.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/system.md"
+                "file": "docs/OS/GPU.md"
               }
             }
           },
@@ -203,8 +203,9 @@
   },
   "active": "8736f02d8c8b4720",
   "lastOpenFiles": [
-    "docs/OS/Ubuntu/bugs.md",
+    "docs/VCS/git.md",
     "docs/OS/Ubuntu/system.md",
+    "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/GPU.md",
     "docs/OS/Docker.md",
@@ -218,7 +219,6 @@
     "assets/Snipaste 1.desktop",
     "assets/Snipaste.desktop",
     "docs/tools/IDE/activate_code.md",
-    "docs/VCS/git.md",
     "conflict-files-obsidian-git.md",
     "docs/tools/clash.yaml",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",

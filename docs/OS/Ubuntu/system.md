@@ -99,3 +99,13 @@ chmod +x /home/atticuszz/Downloads/Snipaste-2.8.9-Beta-x86_64.AppImage
 mkdir -p ~/.config/autostart/
 cp ~/Desktop/Snipaste.desktop ~/.config/autostart/
 ```
+
+
+#### install .tar.gz
+```bash
+tar -xzf filepath
+```
+
+
+
+
