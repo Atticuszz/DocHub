@@ -100,6 +100,7 @@ mkdir -p ~/.config/autostart/
 cp ~/Desktop/Snipaste.desktop ~/.config/autostart/
 ```
 
+<<<<<<< HEAD
 
 #### install .tar.gz
 ```bash
@@ -109,3 +110,13 @@ tar -xzf filepath
 
 
 
+=======
+#### apt source change
+
+```bash
+sudo nano /etc/apt/sources.list
+sudo apt update
+sudo apt upgrade
+
+```
+>>>>>>> origin/main

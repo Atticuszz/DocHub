@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "cca5047c0109eef7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/GPU.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/GPU.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/GPU.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -201,13 +213,15 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "8736f02d8c8b4720",
+  "active": "cca5047c0109eef7",
   "lastOpenFiles": [
+    "docs/OS/GPU.md",
+    "conflict-files-obsidian-git.md",
+    "docs/URLs.md",
     "docs/VCS/git.md",
     "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/configs.md",
-    "docs/OS/GPU.md",
     "docs/OS/Docker.md",
     "docs/OS/Ubuntu/wsl.md",
     "docs/OS/Ubuntu/code_env.md",
@@ -219,7 +233,6 @@
     "assets/Snipaste 1.desktop",
     "assets/Snipaste.desktop",
     "docs/tools/IDE/activate_code.md",
-    "conflict-files-obsidian-git.md",
     "docs/tools/clash.yaml",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf.crdownload",
@@ -246,7 +259,6 @@
     "docs/Language/python/py-env/Pip.md",
     "docs/VCS/github/SSH_keypair_setup_for_GitHub.md",
     "docs/schedule/Free_time.md",
-    "docs/OS/Windows/Powersehll.md",
     "docs/papers/IEEE_模板.docx",
     "DocHub",
     "AutoDrive_frontend",
