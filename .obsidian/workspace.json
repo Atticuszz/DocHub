@@ -25,26 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/GPU.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "cca5047c0109eef7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/URLs.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/URLs.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -127,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/URLs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "docs/URLs.md"
               }
             }
           },
@@ -213,7 +201,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "cca5047c0109eef7",
+  "active": "8736f02d8c8b4720",
   "lastOpenFiles": [
     "docs/OS/GPU.md",
     "conflict-files-obsidian-git.md",
