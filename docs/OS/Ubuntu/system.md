@@ -100,8 +100,8 @@ mkdir -p ~/.config/autostart/
 cp ~/Desktop/Snipaste.desktop ~/.config/autostart/
 ```
 
-
 #### apt source change
+
 ```bash
 sudo nano /etc/apt/sources.list
 sudo apt update
