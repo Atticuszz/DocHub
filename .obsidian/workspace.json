@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "13fc5d0901253978",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "8c5ebc92c4672cbe",
             "type": "leaf",
             "state": {
@@ -39,7 +51,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -105,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/papers/read-dairy.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -122,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/papers/read-dairy.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/papers/read-dairy.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -208,11 +221,12 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "8d24042d12cdeb4e",
+  "active": "13fc5d0901253978",
   "lastOpenFiles": [
+    "docs/papers/read-dairy.md",
+    "conflict-files-obsidian-git.md",
     "docs/OS/Ubuntu/system.md",
     "docs/schedule/TODO.md",
-    "docs/papers/read-dairy.md",
     "docs/papers/3DGS.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/splat_nav.pdf",
@@ -227,7 +241,6 @@
     "docs/papers/3D Gaussian Splatting for Real-Time Radiance Field Rendering - 3d_gaussian_splatting_high.pdf",
     "docs/URLs.md",
     "docs/OS/GPU.md",
-    "conflict-files-obsidian-git.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/Docker.md",
     "docs/OS/Ubuntu/wsl.md",

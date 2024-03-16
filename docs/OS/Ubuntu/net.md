@@ -57,7 +57,11 @@ chmod 600 ~/.ssh/authorized_keys
 
 ```bash
 sudo mkdir ~/.config/clash
+<<<<<<< HEAD
+wget https://raw.githubusercontent.com/SupaVision/DocHub/main/docs/tools/clash.yaml -O /root/.config/clash/config.yaml
+=======
 wget https://raw.githubusercontent.com/SupaVision/DocHub/main/docs/tools/clash.yaml -O ~/.config/clash/config.yaml
+>>>>>>> origin/main
 ```
 
 - run
