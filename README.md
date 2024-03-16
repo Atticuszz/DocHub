@@ -2,93 +2,141 @@
 - **Excalidraw/:**
   - [Drawing_2024-03-03_13.07.53.excalidraw.md](Excalidraw/Drawing_2024-03-03_13.07.53.excalidraw.md)
 - **docs/:**
-  - [account.md](docs/account.md)
-  - [baidu_driver.md](docs/baidu_driver.md)
-  - **Excalidraw/:**
-    - [Drawing_2024-01-24_15.34.27.excalidraw.md](docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md)
-    - [Drawing-2024-01-24-11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md)
-  - **VCS/:**
-    - [git.md](docs/VCS/git.md)
-    - **github/:**
-      - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
-      - [SSH_keypair_setup_for_GitHub.md](docs/VCS/github/SSH_keypair_setup_for_GitHub.md)
-  - **OS/:**
-    - **Ubuntu/:**
-      - [net.md](docs/OS/Ubuntu/net.md)
-      - [system.md](docs/OS/Ubuntu/system.md)
-      - [wsl.md](docs/OS/Ubuntu/wsl.md)
-      - [shell.md](docs/OS/Ubuntu/shell.md)
-      - [bugs.md](docs/OS/Ubuntu/bugs.md)
-      - [configs.md](docs/OS/Ubuntu/configs.md)
-      - [code_env.md](docs/OS/Ubuntu/code_env.md)
-    - **Windows/:**
-      - [Powersehll.md](docs/OS/Windows/Powersehll.md)
-      - [CMD.md](docs/OS/Windows/CMD.md)
-    - [GPU-wsl.md](docs/OS/GPU-wsl.md)
-  - **device/:**
-    - [camera.md](docs/device/camera.md)
-    - [Tutorial_Comparison.md](docs/device/Tutorial_Comparison.md)
-    - **controller/:**
-      - [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
-      - [STM32.md](docs/device/controller/STM32.md)
-    - [purchase.md](docs/device/purchase.md)
-  - **Language/:**
-    - **C++/:**
-      - **STL/:**
-        - [unordered_set.md](docs/Language/C++/STL/unordered_set.md)
-        - [vector.md](docs/Language/C++/STL/vector.md)
-        - [stack.md](docs/Language/C++/STL/stack.md)
-        - [map.md](docs/Language/C++/STL/map.md)
-        - [String.md](docs/Language/C++/STL/String.md)
-        - [unordered_map.md](docs/Language/C++/STL/unordered_map.md)
-        - [Queue.md](docs/Language/C++/STL/Queue.md)
-        - [set.md](docs/Language/C++/STL/set.md)
-        - [algorithm.md](docs/Language/C++/STL/algorithm.md)
-      - [syntax.md](docs/Language/C++/syntax.md)
-    - **python/:**
-      - **third_party_lib/:**
-        - [pyqt6.md](docs/Language/python/third_party_lib/pyqt6.md)
-        - [Numpy.md](docs/Language/python/third_party_lib/Numpy.md)
-      - **py-env/:**
-        - [conda.md](docs/Language/python/py-env/conda.md)
-        - [Pip.md](docs/Language/python/py-env/Pip.md)
-        - [Poetry.md](docs/Language/python/py-env/Poetry.md)
-      - **standard_lib/:**
-        - [Pathlib.md](docs/Language/python/standard_lib/Pathlib.md)
-    - **js_ts/:**
-      - **vue.js/:**
-        - [nuxt.js.md](docs/Language/js_ts/vue.js/nuxt.js.md)
-      - [npm_yarn.md](docs/Language/js_ts/npm_yarn.md)
-      - [react.md](docs/Language/js_ts/react.md)
+  - **tools/:**
+    - [git-install-instruction.md](docs/tools/git-install-instruction.md)
+    - [clash.yaml](docs/tools/clash.yaml)
+    - **IDE/:**
+      - [activate_code.md](docs/tools/IDE/activate_code.md)
+      - [plugin.md](docs/tools/IDE/plugin.md)
   - **tutorials/:**
     - [Clash_installer.ps1](docs/tutorials/Clash_installer.ps1)
     - [KnowledgeHub.md](docs/tutorials/KnowledgeHub.md)
     - [dochub_installer.ps1](docs/tutorials/dochub_installer.ps1)
+  - **Excalidraw/:**
+    - [Drawing-2024-01-24-11.42.08.excalidraw.md](docs/Excalidraw/Drawing-2024-01-24-11.42.08.excalidraw.md)
+    - [Drawing_2024-01-24_15.34.27.excalidraw.md](docs/Excalidraw/Drawing_2024-01-24_15.34.27.excalidraw.md)
+  - **VCS/:**
+    - [git.md](docs/VCS/git.md)
+    - **github/:**
+      - [SSH_keypair_setup_for_GitHub.md](docs/VCS/github/SSH_keypair_setup_for_GitHub.md)
+      - [How_to_connect_ssh.md](docs/VCS/github/How_to_connect_ssh.md)
+  - **Language/:**
+    - **C++/:**
+      - [syntax.md](docs/Language/C++/syntax.md)
+      - **STL/:**
+        - [map.md](docs/Language/C++/STL/map.md)
+        - [set.md](docs/Language/C++/STL/set.md)
+        - [algorithm.md](docs/Language/C++/STL/algorithm.md)
+        - [vector.md](docs/Language/C++/STL/vector.md)
+        - [Queue.md](docs/Language/C++/STL/Queue.md)
+        - [String.md](docs/Language/C++/STL/String.md)
+        - [unordered_map.md](docs/Language/C++/STL/unordered_map.md)
+        - [stack.md](docs/Language/C++/STL/stack.md)
+        - [unordered_set.md](docs/Language/C++/STL/unordered_set.md)
+    - **js_ts/:**
+      - [react.md](docs/Language/js_ts/react.md)
+      - [npm_yarn.md](docs/Language/js_ts/npm_yarn.md)
+      - **vue.js/:**
+        - [nuxt.js.md](docs/Language/js_ts/vue.js/nuxt.js.md)
+    - **python/:**
+      - **standard_lib/:**
+        - [Pathlib.md](docs/Language/python/standard_lib/Pathlib.md)
+      - **third_party_lib/:**
+        - [pyqt6.md](docs/Language/python/third_party_lib/pyqt6.md)
+        - [Numpy.md](docs/Language/python/third_party_lib/Numpy.md)
+      - **py-env/:**
+        - [Pip.md](docs/Language/python/py-env/Pip.md)
+        - [Poetry.md](docs/Language/python/py-env/Poetry.md)
+        - [conda.md](docs/Language/python/py-env/conda.md)
+  - **OS/:**
+    - **Ubuntu/:**
+      - [system.md](docs/OS/Ubuntu/system.md)
+      - [wsl.md](docs/OS/Ubuntu/wsl.md)
+      - [net.md](docs/OS/Ubuntu/net.md)
+      - [shell.md](docs/OS/Ubuntu/shell.md)
+      - [code_env.md](docs/OS/Ubuntu/code_env.md)
+      - [bugs.md](docs/OS/Ubuntu/bugs.md)
+      - [configs.md](docs/OS/Ubuntu/configs.md)
+    - [GPU.md](docs/OS/GPU.md)
+    - **Windows/:**
+      - [CMD.md](docs/OS/Windows/CMD.md)
+      - [Powersehll.md](docs/OS/Windows/Powersehll.md)
+    - [Docker.md](docs/OS/Docker.md)
+  - [baidu_driver.md](docs/baidu_driver.md)
+  - **device/:**
+    - [purchase.md](docs/device/purchase.md)
+    - **controller/:**
+      - [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
+      - [STM32.md](docs/device/controller/STM32.md)
+    - [Tutorial_Comparison.md](docs/device/Tutorial_Comparison.md)
+    - [camera.md](docs/device/camera.md)
+  - [account.md](docs/account.md)
   - **schedule/:**
     - **meetings/:**
       - [standard.md](docs/schedule/meetings/standard.md)
       - [2024-2-28.md](docs/schedule/meetings/2024-2-28.md)
       - [2024-1-24.md](docs/schedule/meetings/2024-1-24.md)
-    - [TODO.md](docs/schedule/TODO.md)
     - [Free_time.md](docs/schedule/Free_time.md)
-  - **tools/:**
-    - [clash.yaml](docs/tools/clash.yaml)
-    - **IDE/:**
-      - [plugin.md](docs/tools/IDE/plugin.md)
-      - [activate_code.md](docs/tools/IDE/activate_code.md)
-    - [git-install-instruction.md](docs/tools/git-install-instruction.md)
+    - [TODO.md](docs/schedule/TODO.md)
+  - [URLs.md](docs/URLs.md)
   - **papers/:**
-    - [read-dairy.md](docs/papers/read-dairy.md)
     - [RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf](docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf)
+    - [read-dairy.md](docs/papers/read-dairy.md)
+    - [SplaTAM.pdf](docs/papers/SplaTAM.pdf)
+    - [3DGS.pdf](docs/papers/3DGS.pdf)
     - [SCI_paper.md](docs/papers/SCI_paper.md)
-    - [nopo-nerf.pdf](docs/papers/nopo-nerf.pdf)
-    - [Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf](docs/papers/Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf)
-    - [neuralrecon.pdf](docs/papers/neuralrecon.pdf)
-    - [IEEE_模板.docx](docs/papers/IEEE_模板.docx)
-    - [gpt-chats-history.md](docs/papers/gpt-chats-history.md)
+    - [splat_nav.pdf](docs/papers/splat_nav.pdf)
+    - [nerf_nav.pdf](docs/papers/nerf_nav.pdf)
+    - [method.md](docs/papers/method.md)
 - **node_modules/:**
 ## 最近修改
-### 2024-03-11 by Atticuszz - add clash proxy file
+### 2024-03-16 by atticuszz - update kanban
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [hotkeys.json](.obsidian/hotkeys.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
+- 🔨 [TODO.md](docs/schedule/TODO.md)
+### 2024-03-15 by Atticuszz - Ci workflows Update README.md
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
+### 2024-03-15 by atticuszz - 今日研究进度
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
+### 2024-03-15 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
+### 2024-03-15 by atticuszz - add essays
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
+- ✨ [3DGS.pdf](docs/papers/3DGS.pdf)
+- 🗑️ IEEE_\346\250\241\346\235\277.docx"
+- ✨ [SplaTAM.pdf](docs/papers/SplaTAM.pdf)
+- 🗑️ gpt-chats-history.md
+- ✨ [nerf_nav.pdf](docs/papers/nerf_nav.pdf)
+- 🗑️ neuralrecon.pdf
+- 🗑️ nopo-nerf.pdf
+- 🚚 [splat_nav.pdf](docs/papers/splat_nav.pdf) <- Point-SLAM-Dense-Neural-Point-Cloud-based-SLAM.pdf
+### 2024-03-15 by Atticuszz - Ci workflows Update README.md
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
 - 🔨 [community-plugins.json](.obsidian/community-plugins.json)
@@ -106,146 +154,14 @@
 - 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
 - 🔨 [types.json](.obsidian/types.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
-- ✨ [clash.yaml](docs/tools/clash.yaml)
-### 2024-03-10 by Atticuszz - Ci workflows Update README.md
-- 🔨 [app.json](.obsidian/app.json)
-- 🔨 [appearance.json](.obsidian/appearance.json)
-- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
-- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
-- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
-- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
-- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
-- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
-- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
-- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
-- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
-- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
-- 🔨 [types.json](.obsidian/types.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [README.md](README.md)
-- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
-- 🔨 [code_env.md](docs/OS/Ubuntu/code_env.md)
-### 2024-03-10 by atticuszz - add bugs fix solution in open3d and remarks on conda init
-- 🔨 [app.json](.obsidian/app.json)
-- 🔨 [appearance.json](.obsidian/appearance.json)
-- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
-- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
-- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
-- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
-- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
-- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
-- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
-- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
-- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
-- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
-- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
+- 🔨 [URLs.md](docs/URLs.md)
+### 2024-03-15 by atticuszz - 更新常用资源链接
 - 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
-- 🔨 [code_env.md](docs/OS/Ubuntu/code_env.md)
-- 🔨 [net.md](docs/OS/Ubuntu/net.md)
-### 2024-03-09 by Atticuszz - Ci workflows Update README.md
-- 🔨 [app.json](.obsidian/app.json)
-- 🔨 [appearance.json](.obsidian/appearance.json)
-- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
-- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
-- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
-- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
-- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
-- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
-- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
-- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
-- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
-- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [main.js](.obsidian/plugins/obsidian-git/main.js)
-- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
-- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
-- 🔨 [types.json](.obsidian/types.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [README.md](README.md)
-### 2024-03-09 by Atticuszz - add RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation paper
-- 🔨 [app.json](.obsidian/app.json)
-- 🔨 [appearance.json](.obsidian/appearance.json)
-- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
-- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
-- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
-- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
-- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
-- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
-- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
-- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
-- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
-- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
-- 🔨 [types.json](.obsidian/types.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- ✨ [RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf](docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf)
-### 2024-03-09 by Atticuszz - Ci workflows Update README.md
-- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
-- 🔨 [main.js](.obsidian/plugins/obsidian-enhancing-export/main.js)
-- 🔨 [manifest.json](.obsidian/plugins/obsidian-enhancing-export/manifest.json)
-- 🔨 [styles.css](.obsidian/plugins/obsidian-enhancing-export/styles.css)
-- 🔨 [data.json](.obsidian/plugins/obsidian-excalidraw-plugin/data.json)
-- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
-- 🔨 [manifest.json](.obsidian/plugins/obsidian-excalidraw-plugin/manifest.json)
-- 🔨 [styles.css](.obsidian/plugins/obsidian-excalidraw-plugin/styles.css)
-- 🔨 [main.js](.obsidian/plugins/obsidian-git/main.js)
-- 🔨 [manifest.json](.obsidian/plugins/obsidian-git/manifest.json)
-- 🔨 [styles.css](.obsidian/plugins/obsidian-git/styles.css)
-- 🔨 [README.md](README.md)
-- 🔨 [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
-### 2024-03-09 by Atticuszz - update plugins
-- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
-- 🗑️ data.json
-- 🗑️ main.js
-- 🗑️ manifest.json
-- 🗑️ styles.css
-- 🔨 [main.js](.obsidian/plugins/obsidian-enhancing-export/main.js)
-- 🔨 [manifest.json](.obsidian/plugins/obsidian-enhancing-export/manifest.json)
-- 🔨 [styles.css](.obsidian/plugins/obsidian-enhancing-export/styles.css)
-- 🔨 [data.json](.obsidian/plugins/obsidian-excalidraw-plugin/data.json)
-- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
-- 🔨 [manifest.json](.obsidian/plugins/obsidian-excalidraw-plugin/manifest.json)
-- 🔨 [styles.css](.obsidian/plugins/obsidian-excalidraw-plugin/styles.css)
-- 🔨 [main.js](.obsidian/plugins/obsidian-git/main.js)
-- 🔨 [manifest.json](.obsidian/plugins/obsidian-git/manifest.json)
-- 🔨 [styles.css](.obsidian/plugins/obsidian-git/styles.css)
-- 🗑️ data.json
-- 🗑️ main.js
-- 🗑️ manifest.json
-- 🗑️ styles.css
-- 🗑️ data.json
-- 🗑️ main.js
-- 🗑️ manifest.json
-- 🗑️ styles.css
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
-### 2024-03-09 by Atticuszz - Ci workflows Update README.md
-- 🔨 [app.json](.obsidian/app.json)
-- 🔨 [appearance.json](.obsidian/appearance.json)
-- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
-- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
-- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
-- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
-- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
-- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
-- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
-- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
-- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
-- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
-- 🔨 [types.json](.obsidian/types.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [README.md](README.md)
-- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
-- 🔨 [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
-### 2024-03-09 by Atticuszz - 添加docker部分
+- 🔨 [URLs.md](docs/URLs.md)
+### 2024-03-15 by atticuszz - vault backup: 2024-03-15 12:59:20
+- 🔨 [.gitignore](.idea/.gitignore)
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
 - 🔨 [community-plugins.json](.obsidian/community-plugins.json)
@@ -263,11 +179,11 @@
 - 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
 - 🔨 [types.json](.obsidian/types.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
-- 🔨 [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
-### 2024-03-08 by Atticuszz - Ci workflows Update README.md
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
+### 2024-03-15 by Atticuszz - Ci workflows Update README.md
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
 - 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
 - 🔨 [core-plugins.json](.obsidian/core-plugins.json)
 - 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
@@ -283,9 +199,33 @@
 - 🔨 [types.json](.obsidian/types.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [README.md](README.md)
-### 2024-03-08 by zzyss-marker - vault backup: 2024-03-08 20:02:47
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
+- 🔨 [URLs.md](docs/URLs.md)
+### 2024-03-15 by atticuszz - add apt source change
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [Raspberry_PI_4B.md](docs/device/controller/Raspberry_PI_4B.md)
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
+- ✨ [URLs.md](docs/URLs.md)
+### 2024-03-14 by Atticuszz - Ci workflows Update README.md
+- 🔨 [README.md](README.md)
+### 2024-03-14 by atticuszz - vault backup: 2024-03-14 16:27:05
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
 ## 其他仓库
 
 ### 论文速览

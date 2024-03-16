@@ -25,6 +25,13 @@ sudo apt install raspberrypi-ui-mods
 sudo apt install --no-install-recommends lightdm
 ```
 
+#### qt
+
+```bash
+sudo apt-get update
+sudo apt-get install qtbase5-dev
+```
+
 #### change password
 
 ```powershell
@@ -41,3 +48,82 @@ sudo chown -R %username%  %filepath%
 # sudo chown -R atticuszz /etc/
 
 ```
+
+### basic tools for desktop
+
+#### use eye protection mode
+
+setting-> display-> night light
+
+#### snap shop update
+
+```bash
+sudo snap refresh snap-store
+sudo snap refresh
+```
+
+#### keyboard
+
+```bash
+sudo apt-get update
+sudo apt-get install ibus ibus-pinyin ibus-libpinyin
+```
+
+#### system backup
+
+```bash
+sudo apt-get update
+sudo apt-get install timeshift
+```
+
+#### clipboard
+
+```bash
+sudo apt update
+sudo apt install copyQ
+```
+
+#### gpu monitor
+
+```bash
+conda install -c conda-forge nvitop
+```
+
+#### fan mode
+
+use `Legion` in windows to set mode
+
+#### screenshot
+
+[Snipaste Downloads](https://www.snipaste.com/download.html)
+
+```bash
+sudo apt-get update
+sudo apt-get install fuse
+chmod +x /home/atticuszz/Downloads/Snipaste-2.8.9-Beta-x86_64.AppImage
+/home/atticuszz/Downloads/Snipaste-2.8.9-Beta-x86_64.AppImage --appimage-extract
+# create desktop app then
+mkdir -p ~/.config/autostart/
+cp ~/Desktop/Snipaste.desktop ~/.config/autostart/
+```
+
+<<<<<<< HEAD
+
+#### install .tar.gz
+
+```bash
+tar -xzf filepath
+```
+
+=======
+
+#### apt source change
+
+```bash
+sudo nano /etc/apt/sources.list
+sudo apt update
+sudo apt upgrade
+
+```
+
+> > > > > > > origin/main
