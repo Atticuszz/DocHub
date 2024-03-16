@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "826af5e19f87e838",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "6b7889c07bd81970",
             "type": "leaf",
             "state": {
@@ -29,7 +41,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -95,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/papers/read-dairy.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -112,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/papers/read-dairy.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/papers/read-dairy.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -198,11 +211,11 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "8c5ebc92c4672cbe",
+  "active": "826af5e19f87e838",
   "lastOpenFiles": [
-    "docs/papers/3DGS.pdf",
     "docs/papers/read-dairy.md",
     "conflict-files-obsidian-git.md",
+    "docs/papers/3DGS.pdf",
     "docs/OS/Ubuntu/system.md",
     "docs/schedule/TODO.md",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
