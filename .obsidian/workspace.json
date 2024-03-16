@@ -11,9 +11,11 @@
             "id": "8d24042d12cdeb4e",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "docs/schedule/TODO.md"
+                "file": "docs/OS/Ubuntu/system.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -103,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/schedule/TODO.md",
+                "file": "docs/OS/Ubuntu/system.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -120,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/schedule/TODO.md",
+                "file": "docs/OS/Ubuntu/system.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +157,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/schedule/TODO.md"
+                "file": "docs/OS/Ubuntu/system.md"
               }
             }
           },
@@ -208,6 +210,7 @@
   },
   "active": "8d24042d12cdeb4e",
   "lastOpenFiles": [
+    "docs/schedule/TODO.md",
     "docs/papers/read-dairy.md",
     "docs/papers/3DGS.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
@@ -250,7 +253,6 @@
     "assets/Pasted image 20240307200419.png",
     "未命名.canvas",
     "Excalidraw/Drawing_2024-03-03_13.07.53.excalidraw.md",
-    "docs/schedule/TODO.md",
     "docs/tools/git-install-instruction.md",
     "docs/tools/IDE/plugin.md",
     "docs/schedule/meetings/2024-2-28.md",

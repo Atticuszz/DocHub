@@ -107,15 +107,11 @@ mkdir -p ~/.config/autostart/
 cp ~/Desktop/Snipaste.desktop ~/.config/autostart/
 ```
 
-<<<<<<< HEAD
-
 #### install .tar.gz
 
 ```bash
 tar -xzf filepath
 ```
-
-=======
 
 #### apt source change
 
@@ -126,4 +122,9 @@ sudo apt upgrade
 
 ```
 
-> > > > > > > origin/main
+### flathub
+[Ubuntu Flathub Setup | Flathub](https://flathub.org/setup/Ubuntu)
+#### Linux System Optimizer & Monitoring
+```bash
+flatpak install flathub net.nokyan.Resources
+```
