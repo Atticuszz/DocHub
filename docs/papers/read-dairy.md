@@ -107,4 +107,5 @@ _导航的地图怎么办，以及导航方法？_
 _规划算法怎么在3DGS中进行空间搜索还是个问题？_
 
 2024-03-16
-- [x]  使用[habitat-sim](https://github.com/facebookresearch/habitat-sim)进行仿真地图，预先加载地图，并且根据渲染的相机视角的RGP-D图像作为splaTAM进行定位
+
+- [x] 使用[habitat-sim](https://github.com/facebookresearch/habitat-sim)进行仿真地图，预先加载地图，并且根据渲染的相机视角的RGP-D图像作为splaTAM进行定位
