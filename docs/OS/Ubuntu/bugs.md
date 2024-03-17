@@ -127,8 +127,8 @@ pip uninstall opencv-python
 pip install opencv-python-headless
 ```
 
-
 #### time wrong in dul system
+
 要在Windows中更改RTC设置为UTC，你需要编辑注册表：
 a. 按下 `Win + R` 键入 `regedit`，然后按回车。
 b. 导航到 `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation`。
