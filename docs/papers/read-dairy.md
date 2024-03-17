@@ -105,3 +105,6 @@ _导航的地图怎么办，以及导航方法？_
 - [x] 导航的方法目打算先参考[splat_nav](../../docs/papers/splat_nav.pdf)中采用这些，`A*`之类的
 
 _规划算法怎么在3DGS中进行空间搜索还是个问题？_
+
+2024-03-16
+- [x]  使用[habitat-sim](https://github.com/facebookresearch/habitat-sim)进行仿真地图，预先加载地图，并且根据渲染的相机视角的RGP-D图像作为splaTAM进行定位
