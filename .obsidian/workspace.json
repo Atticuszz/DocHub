@@ -8,24 +8,14 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8c5ebc92c4672cbe",
+            "id": "6b7889c07bd81970",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/bugs.md",
+                "file": "docs/papers/read-dairy.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "6b7889c07bd81970",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf"
               }
             }
           }
@@ -95,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/bugs.md",
+                "file": "docs/papers/read-dairy.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -112,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/bugs.md",
+                "file": "docs/papers/read-dairy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/bugs.md"
+                "file": "docs/papers/read-dairy.md"
               }
             }
           },
@@ -198,33 +188,33 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "8c5ebc92c4672cbe",
+  "active": "6b7889c07bd81970",
   "lastOpenFiles": [
+    "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
+    "docs/papers/read-dairy.md",
+    "docs/papers/method.md",
+    "docs/OS/Ubuntu/code_env.md",
+    "docs/OS/Ubuntu/configs.md",
+    "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/system.md",
     "conflict-files-obsidian-git.md",
-    "docs/papers/read-dairy.md",
     "docs/papers/nerf_nav.pdf",
     "docs/papers/splat_nav.pdf",
     "docs/papers/SplaTAM.pdf",
     "docs/papers/3DGS.pdf",
     "docs/schedule/TODO.md",
-    "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/Webs/Untitled.md",
     "docs/Webs",
     "docs/Untitled.md",
     "docs/VCS/git.md",
-    "docs/OS/Ubuntu/bugs.md",
     "docs/papers/SplaTAM_.pdf",
     "docs/papers/3D Gaussian Splatting for Real-Time Radiance Field Rendering - 3d_gaussian_splatting_high.pdf",
     "docs/URLs.md",
     "docs/OS/GPU.md",
-    "docs/OS/Ubuntu/configs.md",
     "docs/OS/Docker.md",
     "docs/OS/Ubuntu/wsl.md",
-    "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/net.md",
     "docs/OS/Ubuntu/shell.md",
-    "docs/papers/method.md",
     "docs/device/controller/Raspberry_PI_4B.md",
     "assets/Snipaste 2.desktop",
     "assets/Snipaste 1.desktop",
