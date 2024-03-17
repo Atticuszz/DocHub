@@ -135,6 +135,7 @@ flatpak install flathub net.nokyan.Resources
 
 #### increase swap space via swap file
 *extend to 16gb for example*
+[How to increase swap space? - Ask Ubuntu](https://askubuntu.com/questions/178712/how-to-increase-swap-space)
 ```bash
 sudo swapoff -a
 sudo fallocate -l 16G /swapfile
