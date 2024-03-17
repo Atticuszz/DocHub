@@ -126,3 +126,13 @@ sudo apt install --reinstall gnome-control-center
 pip uninstall opencv-python
 pip install opencv-python-headless
 ```
+
+#### time wrong in dul system
+
+要在Windows中更改RTC设置为UTC，你需要编辑注册表：
+a. 按下 `Win + R` 键入 `regedit`，然后按回车。
+b. 导航到 `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation`。
+c. 右键单击空白区域，选择 `新建` -> `DWORD (32位) 值`。
+d. 将新值命名为 `RealTimeIsUniversal`。
+e. 双击新创建的 `RealTimeIsUniversal`，在“值数据”框中输入 `1`，然后点击“确定”。
+f. 重启Windows。F。重新启动Windows。

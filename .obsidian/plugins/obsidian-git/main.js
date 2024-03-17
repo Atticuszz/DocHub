@@ -38691,7 +38691,7 @@ var LineAuthoringFeature = class {
   }
   activateFeature() {
     try {
-      if (!this.isAvailableOnCurrentPlatform()) return;
+      if (!this.isAvailableOnCurrentPlatform().available) return;
       setTextColorCssBasedOnSetting(this.plg.settings.lineAuthor);
       this.lineAuthorInfoProvider = new LineAuthorProvider(this.plg);
       this.createEventHandlers();
@@ -50183,11 +50183,10 @@ var ObsidianGit = class extends import_obsidian31.Plugin {
     dispatchEvent(new CustomEvent("git-refresh"));
     return true;
   }
-  //
-  // Used for internals
-  // Returns whether the pull added a commit or not.
-  //
-  // See {@link pullChangesFromRemote} for the command version.
+  /** Used for internals
+      Returns whether the pull added a commit or not.
+
+      See {@link pullChangesFromRemote} for the command version. */
   async pull() {
     if (!(await this.remotesAreSet())) {
       return false;
