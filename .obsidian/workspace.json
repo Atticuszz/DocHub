@@ -47,10 +47,11 @@
             "id": "4c62a4cf5ea3a491",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": "docs/papers/read-dairy.md",
-                "staged": false
+                "file": "docs/OS/Ubuntu/configs.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -133,6 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "docs/OS/Ubuntu/configs.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -149,6 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "docs/OS/Ubuntu/configs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -182,7 +185,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "docs/OS/Ubuntu/configs.md"
+              }
             }
           },
           {
@@ -234,6 +239,13 @@
   },
   "active": "4c62a4cf5ea3a491",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/system.md",
+    "docs/OS/Ubuntu/code_env.md",
+    "docs/OS/Ubuntu/configs.md",
+    "docs/tools/git-install-instruction.md",
+    "docs/OS/Ubuntu/shell.md",
+    "docs/OS/Ubuntu/wsl.md",
+    "docs/OS/GPU.md",
     "docs/papers/read-dairy.md",
     "conflict-files-obsidian-git.md",
     "docs/papers/splat_nav.pdf",
@@ -242,15 +254,9 @@
     "docs/papers/SplaTAM.pdf",
     "docs/papers/3DGS.pdf",
     "docs/URLs.md",
-    "docs/OS/GPU.md",
     "docs/OS/Docker.md",
-    "docs/OS/Ubuntu/configs.md",
-    "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/net.md",
-    "docs/OS/Ubuntu/system.md",
-    "docs/OS/Ubuntu/shell.md",
-    "docs/OS/Ubuntu/wsl.md",
     "docs/device/controller/Raspberry_PI_4B.md",
     "docs/tools/clash.yaml",
     "docs/tools/New Text Document.txt",
@@ -273,7 +279,6 @@
     "Excalidraw/Drawing_2024-03-03_13.07.53.excalidraw.md",
     "Excalidraw",
     "docs/schedule/TODO.md",
-    "docs/tools/git-install-instruction.md",
     "docs/tools/IDE/plugin.md",
     "docs/schedule/meetings/2024-2-28.md",
     "docs/schedule/meetings/standard.md",
