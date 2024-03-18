@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/papers/read-dairy.md",
+                "file": "docs/OS/Ubuntu/code_env.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/papers/read-dairy.md",
+                "file": "docs/OS/Ubuntu/code_env.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/papers/read-dairy.md",
+                "file": "docs/OS/Ubuntu/code_env.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/papers/read-dairy.md"
+                "file": "docs/OS/Ubuntu/code_env.md"
               }
             }
           },
@@ -190,11 +190,12 @@
   },
   "active": "6b7889c07bd81970",
   "lastOpenFiles": [
-    "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
+    "docs/OS/Ubuntu/configs.md",
+    "docs/OS/Ubuntu/shell.md",
     "docs/papers/read-dairy.md",
+    "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/method.md",
     "docs/OS/Ubuntu/code_env.md",
-    "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/system.md",
     "conflict-files-obsidian-git.md",
@@ -214,7 +215,6 @@
     "docs/OS/Docker.md",
     "docs/OS/Ubuntu/wsl.md",
     "docs/OS/Ubuntu/net.md",
-    "docs/OS/Ubuntu/shell.md",
     "docs/device/controller/Raspberry_PI_4B.md",
     "assets/Snipaste 2.desktop",
     "assets/Snipaste 1.desktop",
