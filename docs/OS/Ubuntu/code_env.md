@@ -89,8 +89,8 @@ conda config --set auto_activate_base true
 
 > repeat to warn `conda init` ,try `conda init <shell>`
 
-
 #### install node-js
+
 ```bash
 cd ~/Downloads
 mkdir ~/node
