@@ -83,14 +83,39 @@
     - [RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf](docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf)
     - [read-dairy.md](docs/papers/read-dairy.md)
     - [SplaTAM.pdf](docs/papers/SplaTAM.pdf)
+    - [Dynamic_3D_Gaussians_dul.pdf](docs/papers/Dynamic_3D_Gaussians_dul.pdf)
     - [3DGS.pdf](docs/papers/3DGS.pdf)
-    - [Dynamic 3D Gaussians_dul.pdf](docs/papers/Dynamic_3D_Gaussians_dul.pdf)
     - [SCI_paper.md](docs/papers/SCI_paper.md)
     - [splat_nav.pdf](docs/papers/splat_nav.pdf)
     - [nerf_nav.pdf](docs/papers/nerf_nav.pdf)
     - [method.md](docs/papers/method.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-19 by Atticuszz - add c++  vector insert api
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [vector.md](docs/Language/C++/STL/vector.md)
+### 2024-03-19 by Atticuszz - vault backup: 2024-03-19 15:49:56
+- 🔨 [workspace.json](.obsidian/workspace.json)
+### 2024-03-19 by Atticuszz - Ci workflows Update README.md
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🚚 [Dynamic_3D_Gaussians_dul.pdf](docs/papers/Dynamic_3D_Gaussians_dul.pdf) <- Dynamic 3D Gaussians_dul.pdf
 ### 2024-03-19 by atticuszz - add paper
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
@@ -119,6 +144,8 @@
 - 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [code_env.md](docs/OS/Ubuntu/code_env.md)
+### 2024-03-18 by Atticuszz - vault backup: 2024-03-18 15:48:04
+- 🔨 [workspace.json](.obsidian/workspace.json)
 ### 2024-03-17 by Atticuszz - Ci workflows Update README.md
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
@@ -158,20 +185,7 @@
 - 🔨 [types.json](.obsidian/types.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [read-dairy.md](docs/papers/read-dairy.md)
-### 2024-03-17 by Atticuszz - Ci workflows Update README.md
-- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
-- 🔨 [main.js](.obsidian/plugins/obsidian-git/main.js)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [README.md](README.md)
-- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
-- 🔨 [system.md](docs/OS/Ubuntu/system.md)
-### 2024-03-17 by atticuszz - dul system wrong time
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
-- 🔨 [system.md](docs/OS/Ubuntu/system.md)
-### 2024-03-17 by atticuszz - vault backup: 2024-03-17 15:00:11
-- 🔨 [system.md](docs/OS/Ubuntu/system.md)
-### 2024-03-17 by Atticuszz - Ci workflows Update README.md
+### 2024-03-17 by Atticuszz - vault backup: 2024-03-17 17:24:49
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
 - 🔨 [community-plugins.json](.obsidian/community-plugins.json)
@@ -184,34 +198,22 @@
 - 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
 - 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
 - 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
-- 🔨 [data.json](.obsidian/plugins/obsidian-excalidraw-plugin/data.json)
-- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
-- 🔨 [manifest.json](.obsidian/plugins/obsidian-excalidraw-plugin/manifest.json)
-- 🔨 [styles.css](.obsidian/plugins/obsidian-excalidraw-plugin/styles.css)
 - 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [main.js](.obsidian/plugins/obsidian-git/main.js)
-- 🔨 [manifest.json](.obsidian/plugins/obsidian-git/manifest.json)
-- 🔨 [styles.css](.obsidian/plugins/obsidian-git/styles.css)
 - 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
 - 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
 - 🔨 [types.json](.obsidian/types.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [README.md](README.md)
-- 🔨 [system.md](docs/OS/Ubuntu/system.md)
-- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
-### 2024-03-17 by atticuszz - extend
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [system.md](docs/OS/Ubuntu/system.md)
-- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
-### 2024-03-16 by atticuszz - vault backup: 2024-03-16 13:25:19
-- 🔨 [workspace.json](.obsidian/workspace.json)
-### 2024-03-16 by Atticuszz - Ci workflows Update README.md
+### 2024-03-17 by Atticuszz - Ci workflows Update README.md
+- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
+- 🔨 [main.js](.obsidian/plugins/obsidian-git/main.js)
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [README.md](README.md)
-- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
-### 2024-03-16 by Atticuszz - vault backup: 2024-03-16 13:23:33
+- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
+### 2024-03-17 by atticuszz - dul system wrong time
 - 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
+- 🔨 [bugs.md](docs/OS/Ubuntu/bugs.md)
+- 🔨 [system.md](docs/OS/Ubuntu/system.md)
 ## 其他仓库
 
 ### 论文速览
