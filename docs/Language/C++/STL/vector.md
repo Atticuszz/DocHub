@@ -36,6 +36,11 @@
   ```cpp
   vec.insert(vec.begin() + 1, 4);
   ```
+- **append vector**
+
+```cpp
+vec.insert(vec.end(),vec_2.begin(),vec_2.end())
+```
 
 ## Access Elements
 

@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ad001fca6c4de40a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Language/C++/STL/Queue.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Language/C++/STL/Queue.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Language/C++/STL/Queue.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -201,8 +213,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "1d76177a9c7d2329",
+  "active": "ad001fca6c4de40a",
   "lastOpenFiles": [
+    "docs/Language/C++/STL/Queue.md",
+    "conflict-files-obsidian-git.md",
     "docs/OS/Ubuntu/code_env.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/OS/Ubuntu/configs.md",
@@ -212,7 +226,6 @@
     "docs/papers/method.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/system.md",
-    "conflict-files-obsidian-git.md",
     "docs/papers/nerf_nav.pdf",
     "docs/papers/splat_nav.pdf",
     "docs/papers/SplaTAM.pdf",
