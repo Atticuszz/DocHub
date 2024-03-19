@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "1d76177a9c7d2329",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Language/C++/STL/Queue.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/code_env.md",
+                "file": "docs/Language/C++/STL/Queue.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/code_env.md",
+                "file": "docs/Language/C++/STL/Queue.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/code_env.md"
+                "file": "docs/Language/C++/STL/Queue.md"
               }
             }
           },
@@ -188,15 +201,15 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "6b7889c07bd81970",
+  "active": "1d76177a9c7d2329",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/code_env.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/shell.md",
     "docs/papers/read-dairy.md",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/method.md",
-    "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/system.md",
     "conflict-files-obsidian-git.md",
@@ -218,7 +231,6 @@
     "docs/OS/Ubuntu/net.md",
     "docs/device/controller/Raspberry_PI_4B.md",
     "assets/Snipaste 2.desktop",
-    "assets/Snipaste 1.desktop",
     "docs/tools/IDE/activate_code.md",
     "docs/Language/python/py-env/Poetry.md",
     "assets/Pasted image 20240308164303.png",
