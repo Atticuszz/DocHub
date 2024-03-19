@@ -84,12 +84,37 @@
     - [read-dairy.md](docs/papers/read-dairy.md)
     - [SplaTAM.pdf](docs/papers/SplaTAM.pdf)
     - [3DGS.pdf](docs/papers/3DGS.pdf)
+    - [Dynamic 3D Gaussians_dul.pdf](docs/papers/Dynamic_3D_Gaussians_dul.pdf)
     - [SCI_paper.md](docs/papers/SCI_paper.md)
     - [splat_nav.pdf](docs/papers/splat_nav.pdf)
     - [nerf_nav.pdf](docs/papers/nerf_nav.pdf)
     - [method.md](docs/papers/method.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-19 by atticuszz - add paper
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- ✨ [Dynamic 3D Gaussians_dul.pdf](docs/papers/Dynamic_3D_Gaussians_dul.pdf)
+### 2024-03-18 by Atticuszz - Ci workflows Update README.md
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🔨 [code_env.md](docs/OS/Ubuntu/code_env.md)
 ### 2024-03-18 by atticuszz - add node install
 - 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
@@ -187,8 +212,6 @@
 ### 2024-03-16 by Atticuszz - vault backup: 2024-03-16 13:23:33
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [read-dairy.md](docs/papers/read-dairy.md)
-### 2024-03-16 by atticuszz - vault backup: 2024-03-16 13:18:43
-- 🔨 [workspace.json](.obsidian/workspace.json)
 ## 其他仓库
 
 ### 论文速览
