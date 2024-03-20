@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "64489bb7be86bb37",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Language/C++/STL/Queue.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Language/C++/STL/Queue.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Language/C++/STL/Queue.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -179,7 +191,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -201,10 +213,12 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "1d76177a9c7d2329",
+  "active": "64489bb7be86bb37",
   "lastOpenFiles": [
-    "docs/Language/C++/STL/vector.md",
     "docs/Language/C++/STL/Queue.md",
+    "conflict-files-obsidian-git.md",
+    "docs/schedule/report.md",
+    "docs/Language/C++/STL/vector.md",
     "docs/Language/C++/STL/stack.md",
     "docs/Language/C++/STL/String.md",
     "docs/Language/C++/STL/map.md",
@@ -212,7 +226,6 @@
     "docs/Language/C++/STL/unordered_set.md",
     "docs/Language/C++/STL/unordered_map.md",
     "docs/Language/C++/STL/set.md",
-    "conflict-files-obsidian-git.md",
     "docs/OS/Ubuntu/code_env.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/OS/Ubuntu/configs.md",
@@ -237,7 +250,6 @@
     "docs/OS/GPU.md",
     "docs/OS/Docker.md",
     "docs/OS/Ubuntu/wsl.md",
-    "docs/OS/Ubuntu/net.md",
     "assets/Snipaste 2.desktop",
     "assets/Pasted image 20240308164303.png",
     "assets/Pasted image 20240308163830.png",
