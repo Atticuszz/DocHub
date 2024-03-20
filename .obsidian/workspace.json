@@ -11,11 +11,9 @@
             "id": "6b7889c07bd81970",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "docs/OS/Ubuntu/code_env.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/papers/SplaTAM.pdf"
               }
             }
           },
@@ -25,26 +23,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Language/C++/STL/Queue.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "64489bb7be86bb37",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/papers/main.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/papers/main.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -127,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/papers/main.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "docs/papers/main.md"
               }
             }
           },
@@ -213,31 +199,32 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "64489bb7be86bb37",
+  "active": "1d76177a9c7d2329",
   "lastOpenFiles": [
+    "docs/papers/SplaTAM.pdf",
+    "docs/papers/main.md",
+    "docs/OS/Ubuntu/code_env.md",
+    "docs/papers/read-dairy.md",
+    "docs/Language/C++/STL/vector.md",
+    "docs/Language/C++/STL/unordered_set.md",
+    "docs/Language/C++/STL/unordered_map.md",
+    "docs/URLs.md",
     "docs/Language/C++/STL/Queue.md",
     "conflict-files-obsidian-git.md",
     "docs/schedule/report.md",
-    "docs/Language/C++/STL/vector.md",
     "docs/Language/C++/STL/stack.md",
     "docs/Language/C++/STL/String.md",
     "docs/Language/C++/STL/map.md",
     "docs/Language/C++/STL/algorithm.md",
-    "docs/Language/C++/STL/unordered_set.md",
-    "docs/Language/C++/STL/unordered_map.md",
     "docs/Language/C++/STL/set.md",
-    "docs/OS/Ubuntu/code_env.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/shell.md",
-    "docs/papers/read-dairy.md",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
-    "docs/papers/method.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/system.md",
     "docs/papers/nerf_nav.pdf",
     "docs/papers/splat_nav.pdf",
-    "docs/papers/SplaTAM.pdf",
     "docs/papers/3DGS.pdf",
     "docs/schedule/TODO.md",
     "docs/Webs/Untitled.md",
@@ -246,10 +233,8 @@
     "docs/VCS/git.md",
     "docs/papers/SplaTAM_.pdf",
     "docs/papers/3D Gaussian Splatting for Real-Time Radiance Field Rendering - 3d_gaussian_splatting_high.pdf",
-    "docs/URLs.md",
     "docs/OS/GPU.md",
     "docs/OS/Docker.md",
-    "docs/OS/Ubuntu/wsl.md",
     "assets/Snipaste 2.desktop",
     "assets/Pasted image 20240308164303.png",
     "assets/Pasted image 20240308163830.png",

@@ -89,7 +89,7 @@
     - [SCI_paper.md](docs/papers/SCI_paper.md)
     - [splat_nav.pdf](docs/papers/splat_nav.pdf)
     - [nerf_nav.pdf](docs/papers/nerf_nav.pdf)
-    - [method.md](docs/papers/method.md)
+    - [method.md](docs/papers/main.md)
 - **node_modules/:**
 ## 最近修改
 ### 2024-03-20 by Atticuszz - vault backup: 2024-03-20 14:06:20
