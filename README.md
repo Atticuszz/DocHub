@@ -92,6 +92,13 @@
     - [method.md](docs/papers/method.md)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-20 by Atticuszz - vault backup: 2024-03-20 14:06:20
+- 🔨 [report.md](docs/schedule/report.md)
+### 2024-03-20 by Atticuszz - Ci workflows Update README.md
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🔨 [report.md](docs/schedule/report.md)
 ### 2024-03-20 by Atticuszz - vault backup: 2024-03-20 14:02:31
 - 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
@@ -191,43 +198,6 @@
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [README.md](README.md)
 - 🔨 [read-dairy.md](docs/papers/read-dairy.md)
-### 2024-03-17 by atticuszz - 更新idea
-- 🔨 [app.json](.obsidian/app.json)
-- 🔨 [appearance.json](.obsidian/appearance.json)
-- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
-- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
-- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
-- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
-- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
-- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
-- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
-- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
-- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
-- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
-- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
-- 🔨 [types.json](.obsidian/types.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
-### 2024-03-17 by Atticuszz - vault backup: 2024-03-17 17:24:49
-- 🔨 [app.json](.obsidian/app.json)
-- 🔨 [appearance.json](.obsidian/appearance.json)
-- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
-- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
-- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
-- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
-- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
-- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
-- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
-- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
-- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
-- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
-- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
-- 🔨 [types.json](.obsidian/types.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
 ## 其他仓库
 
 ### 论文速览
