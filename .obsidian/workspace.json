@@ -28,9 +28,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "34660ff925820909",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.11"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -199,7 +209,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "1d76177a9c7d2329",
+  "active": "34660ff925820909",
   "lastOpenFiles": [
     "docs/papers/SplaTAM.pdf",
     "docs/papers/main.md",
