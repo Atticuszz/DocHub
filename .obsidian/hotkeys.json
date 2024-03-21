@@ -13,12 +13,6 @@
       "key": "K"
     }
   ],
-  "obsidian-git:pull": [
-    {
-      "modifiers": ["Alt", "Mod"],
-      "key": "P"
-    }
-  ],
   "obsidian-git:open-git-view": [
     {
       "modifiers": ["Alt", "Mod"],
@@ -36,6 +30,12 @@
     {
       "modifiers": ["Alt", "Mod"],
       "key": "K"
+    }
+  ],
+  "obsidian-git:pull": [
+    {
+      "modifiers": ["Alt", "Shift"],
+      "key": "P"
     }
   ]
 }

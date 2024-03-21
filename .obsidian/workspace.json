@@ -56,6 +56,18 @@
             }
           },
           {
+            "id": "71e977150de502bd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "97ceaeef7f7a4de6",
             "type": "leaf",
             "state": {
@@ -68,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -134,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -151,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -237,19 +249,20 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "4c62a4cf5ea3a491",
+  "active": "71e977150de502bd",
   "lastOpenFiles": [
+    "docs/device/controller/Raspberry_PI_4B.md",
+    "conflict-files-obsidian-git.md",
+    "docs/papers/main.md",
     "docs/device/controller/STM32.md",
     "docs/device/camera.md",
     "docs/device/Tutorial_Comparison.md",
     "docs/device/purchase.md",
-    "docs/device/controller/Raspberry_PI_4B.md",
     "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/schedule/report.md",
     "docs/Language/C++/STL/vector.md",
     "docs/Language/C++/STL/map.md",
-    "conflict-files-obsidian-git.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/Language/C++/STL/algorithm.md",
     "docs/OS/Ubuntu/bugs.md",
@@ -274,7 +287,6 @@
     "docs/VCS/git.md",
     "docs/Language/python/py-env/Poetry.md",
     "assets/Pasted image 20240308164303.png",
-    "docs/Language/python/py-env/conda.md",
     "assets/Pasted image 20240308163830.png",
     "assets/Pasted image 20240308163716.png",
     "assets/Pasted image 20240308162607.png",
