@@ -23,24 +23,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/papers/main.md",
+                "file": "docs/OS/Ubuntu/code_env.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "34660ff925820909",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.11"
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -106,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/papers/main.md",
+                "file": "docs/OS/Ubuntu/code_env.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -123,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/papers/main.md",
+                "file": "docs/OS/Ubuntu/code_env.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/papers/main.md"
+                "file": "docs/OS/Ubuntu/code_env.md"
               }
             }
           },
@@ -209,13 +199,19 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "34660ff925820909",
+  "active": "1d76177a9c7d2329",
   "lastOpenFiles": [
-    "docs/papers/SplaTAM.pdf",
-    "docs/papers/main.md",
+    "docs/OS/Ubuntu/bugs.md",
     "docs/OS/Ubuntu/code_env.md",
-    "docs/papers/read-dairy.md",
+    "docs/Language/C++/STL/algorithm.md",
     "docs/Language/C++/STL/vector.md",
+    "docs/device/camera.md",
+    "assets/AstraPro_SDK_install.pdf",
+    "docs/OS/Ubuntu/system.md",
+    "docs/OS/Ubuntu/configs.md",
+    "docs/papers/main.md",
+    "docs/papers/SplaTAM.pdf",
+    "docs/papers/read-dairy.md",
     "docs/Language/C++/STL/unordered_set.md",
     "docs/Language/C++/STL/unordered_map.md",
     "docs/URLs.md",
@@ -225,14 +221,10 @@
     "docs/Language/C++/STL/stack.md",
     "docs/Language/C++/STL/String.md",
     "docs/Language/C++/STL/map.md",
-    "docs/Language/C++/STL/algorithm.md",
     "docs/Language/C++/STL/set.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
-    "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/shell.md",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
-    "docs/OS/Ubuntu/bugs.md",
-    "docs/OS/Ubuntu/system.md",
     "docs/papers/nerf_nav.pdf",
     "docs/papers/splat_nav.pdf",
     "docs/papers/3DGS.pdf",
@@ -244,8 +236,6 @@
     "docs/papers/SplaTAM_.pdf",
     "docs/papers/3D Gaussian Splatting for Real-Time Radiance Field Rendering - 3d_gaussian_splatting_high.pdf",
     "docs/OS/GPU.md",
-    "docs/OS/Docker.md",
-    "assets/Snipaste 2.desktop",
     "assets/Pasted image 20240308164303.png",
     "assets/Pasted image 20240308163830.png",
     "assets/Pasted image 20240308163716.png",
