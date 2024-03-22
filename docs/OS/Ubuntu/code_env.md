@@ -9,7 +9,8 @@ cmake --version
 #### install python
 
 - python 3
-> do not change system python !!!
+
+  > do not change system python !!!
 
 - python venv
 
