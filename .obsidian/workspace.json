@@ -49,19 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "71e977150de502bd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/device/camera.md",
                 "mode": "source",
                 "source": false
               }
@@ -80,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -146,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/device/camera.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -163,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/device/camera.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "docs/device/camera.md"
               }
             }
           },
@@ -249,16 +237,18 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "71e977150de502bd",
+  "active": "4c62a4cf5ea3a491",
   "lastOpenFiles": [
     "docs/device/controller/Raspberry_PI_4B.md",
+    "docs/OS/Ubuntu/code_env.md",
+    "docs/OS/Ubuntu/system.md",
+    "docs/OS/Ubuntu/wsl.md",
     "conflict-files-obsidian-git.md",
     "docs/papers/main.md",
     "docs/device/controller/STM32.md",
     "docs/device/camera.md",
     "docs/device/Tutorial_Comparison.md",
     "docs/device/purchase.md",
-    "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/schedule/report.md",
     "docs/Language/C++/STL/vector.md",
@@ -266,10 +256,8 @@
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/Language/C++/STL/algorithm.md",
     "docs/OS/Ubuntu/bugs.md",
-    "docs/OS/Ubuntu/code_env.md",
     "docs/tools/git-install-instruction.md",
     "docs/OS/Ubuntu/shell.md",
-    "docs/OS/Ubuntu/wsl.md",
     "docs/OS/GPU.md",
     "docs/papers/read-dairy.md",
     "docs/papers/splat_nav.pdf",
