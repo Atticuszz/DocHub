@@ -10,25 +10,7 @@ cmake --version
 
 - python 3
 
-```bash
-sudo apt update
-sudo apt install software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install python3.11
-sudo apt-get update
-sudo apt-get install python3.11-dev
-python3.11 --version
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
-sudo update-alternatives --config python3
-```
-
-- python pip
-
-```bash
-sudo apt update
-sudo apt install python3-pip
-```
+  > do not change system python !!!
 
 - python venv
 
