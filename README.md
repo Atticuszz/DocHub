@@ -93,6 +93,17 @@
     - [nerf_nav.pdf](docs/papers/nerf_nav.pdf)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-28 by atticuszz - 添加splatam公式
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- ✨ [Pasted image 20240328211138.png](assets/Pasted_image_20240328211138.png)
+- ✨ [Pasted image 20240328211200.png](assets/Pasted_image_20240328211200.png)
+- 🗑️ traj.txt
+- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
+### 2024-03-28 by Atticuszz - Ci workflows Update README.md
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🔨 [Knowledge.md](docs/papers/Knowledge.md)
 ### 2024-03-28 by atticuszz - 添加相机模型
 - 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
@@ -227,13 +238,6 @@
 - 🔨 [hotkeys.json](.obsidian/hotkeys.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
 ### 2024-03-20 by Atticuszz - Ci workflows Update README.md
-- 🔨 [README.md](README.md)
-- 🔨 [report.md](docs/schedule/report.md)
-### 2024-03-20 by Atticuszz - vault backup: 2024-03-20 14:06:20
-- 🔨 [report.md](docs/schedule/report.md)
-### 2024-03-20 by Atticuszz - Ci workflows Update README.md
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [README.md](README.md)
 - 🔨 [report.md](docs/schedule/report.md)
 ## 其他仓库
