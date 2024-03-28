@@ -47,7 +47,7 @@ conda env create -f environment.yml
 - output current env deps to environment.yml
 
 ```bash
-conda env export --no-builds >environment.yml
+conda env export --from-history > environment.yml
 ```
 
 - update from environment.yml `--prune` for auto update deps

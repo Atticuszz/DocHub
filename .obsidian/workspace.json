@@ -4,11 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "414e9632750a09aa",
+        "id": "250d0c2daf1284e4",
         "type": "tabs",
         "children": [
           {
-            "id": "6b7889c07bd81970",
+            "id": "6903dc45c5b9dec5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/papers/Knowledge.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "26f859f3c83a290b",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -16,21 +28,8 @@
                 "file": "docs/papers/SplaTAM.pdf"
               }
             }
-          },
-          {
-            "id": "1d76177a9c7d2329",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/OS/Ubuntu/code_env.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -96,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/code_env.md",
+                "file": "docs/papers/Knowledge.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -113,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/code_env.md",
+                "file": "docs/papers/Knowledge.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/code_env.md"
+                "file": "docs/papers/Knowledge.md"
               }
             }
           },
@@ -199,10 +198,20 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "1d76177a9c7d2329",
+  "active": "6903dc45c5b9dec5",
   "lastOpenFiles": [
-    "docs/OS/Ubuntu/bugs.md",
+    "docs/papers/read-dairy.md",
+    "docs/papers/Knowledge.md",
+    "docs/OS/GPU.md",
+    "docs/papers/SplaTAM.pdf",
+    "docs/VCS/git.md",
+    "docs/Language/python/py-env/conda.md",
+    "docs/baidu_driver.md",
+    "assets/Pasted image 20240322131639.png",
+    "assets/Pasted image 20240322131335.png",
+    "assets/Pasted image 20240322131022.png",
     "docs/OS/Ubuntu/code_env.md",
+    "docs/OS/Ubuntu/bugs.md",
     "docs/Language/C++/STL/algorithm.md",
     "docs/Language/C++/STL/vector.md",
     "docs/device/camera.md",
@@ -210,8 +219,6 @@
     "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/papers/main.md",
-    "docs/papers/SplaTAM.pdf",
-    "docs/papers/read-dairy.md",
     "docs/Language/C++/STL/unordered_set.md",
     "docs/Language/C++/STL/unordered_map.md",
     "docs/URLs.md",
@@ -229,13 +236,9 @@
     "docs/papers/splat_nav.pdf",
     "docs/papers/3DGS.pdf",
     "docs/schedule/TODO.md",
-    "docs/Webs/Untitled.md",
     "docs/Webs",
-    "docs/Untitled.md",
-    "docs/VCS/git.md",
     "docs/papers/SplaTAM_.pdf",
     "docs/papers/3D Gaussian Splatting for Real-Time Radiance Field Rendering - 3d_gaussian_splatting_high.pdf",
-    "docs/OS/GPU.md",
     "assets/Pasted image 20240308164303.png",
     "assets/Pasted image 20240308163830.png",
     "assets/Pasted image 20240308163716.png",
@@ -243,9 +246,6 @@
     "assets/Pasted_image_20240307214407.png",
     "assets/Pasted_image_20240307214212.png",
     "assets/Pasted_image_20240307200419.png",
-    "assets/Pasted image 20240307214407.png",
-    "assets/Pasted image 20240307214212.png",
-    "assets/Pasted image 20240307200419.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
