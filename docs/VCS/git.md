@@ -190,6 +190,14 @@ git submodule add <repository-url> <sub_repo_relative_path_to_root>
 git submodule update --init --recursive
 ```
 
+3. remove
+
+```bash
+rm -rf thirdparty/gradslam
+rm -rf .git/modules/thirdparty/gradslam
+git config --remove-section submodule.thirdparty/gradslam
+```
+
 ## LFS
 
 ```
