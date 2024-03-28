@@ -56,18 +56,6 @@
             }
           },
           {
-            "id": "583826c1c4803117",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "97ceaeef7f7a4de6",
             "type": "leaf",
             "state": {
@@ -80,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -146,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/device/camera.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -163,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/device/camera.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "docs/device/camera.md"
               }
             }
           },
@@ -249,10 +237,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "583826c1c4803117",
+  "active": "4c62a4cf5ea3a491",
   "lastOpenFiles": [
-    "docs/device/camera.md",
     "conflict-files-obsidian-git.md",
+    "docs/device/camera.md",
     "docs/device/controller/Raspberry_PI_4B.md",
     "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/system.md",
