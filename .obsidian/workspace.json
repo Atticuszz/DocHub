@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/papers/read-dairy.md",
                 "mode": "source",
                 "source": false
               }
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/papers/read-dairy.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/papers/read-dairy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/papers/Knowledge.md"
+                "file": "docs/papers/read-dairy.md"
               }
             }
           },
@@ -200,12 +200,14 @@
   },
   "active": "6903dc45c5b9dec5",
   "lastOpenFiles": [
+    "assets/Pasted image 20240328211200.png",
+    "assets/Pasted image 20240328211138.png",
+    "docs/papers/Knowledge.md",
     "assets/traj.txt",
     "assets/Pasted_image_20240322131639.png",
     "assets/Pasted_image_20240322131335.png",
     "assets/Pasted_image_20240322131022.png",
     "docs/papers/read-dairy.md",
-    "docs/papers/Knowledge.md",
     "docs/OS/GPU.md",
     "docs/papers/SplaTAM.pdf",
     "docs/VCS/git.md",
@@ -241,11 +243,9 @@
     "docs/papers/3DGS.pdf",
     "docs/Webs",
     "docs/papers/SplaTAM_.pdf",
-    "docs/papers/3D Gaussian Splatting for Real-Time Radiance Field Rendering - 3d_gaussian_splatting_high.pdf",
     "assets/Pasted image 20240308164303.png",
     "assets/Pasted image 20240308163830.png",
     "assets/Pasted image 20240308163716.png",
-    "assets/Pasted image 20240308162607.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
