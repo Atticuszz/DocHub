@@ -1,15 +1,13 @@
 [百度网盘 请输入提取码](https://pan.baidu.com/s/120ZaYaNjla6QTt0akfhlgA#list/path=%2F&parentPath=%2Fsharelink3801767154-208551631180336)
 
-人脸检测模型，我们用的是2.5g的那个[insightface/model\_zoo at master · deepinsight/insightface · GitHub](https://github.com/deepinsight/insightface/tree/master/model_zoo)
-![[assets/Pasted image 20240322131022.png]]
+人脸检测模型，我们用的是2.5g的那个[insightface/model_zoo at master · deepinsight/insightface · GitHub](https://github.com/deepinsight/insightface/tree/master/model_zoo)
+![../assets/Pasted_image_20240322131022.png](../assets/Pasted_image_20240322131022.png)
 人脸特征提取器在不同数据集上的表现
-![[assets/Pasted image 20240322131335.png]]
+![../assets/Pasted_image_20240322131335.png](../assets/Pasted_image_20240322131335.png)
 [insightface/python-package at master · deepinsight/insightface · GitHub](https://github.com/deepinsight/insightface/tree/master/python-package)
 
-
-![[assets/Pasted image 20240322131639.png]]训练速度
+![../assets/Pasted_image_20240322131639.png](../assets/Pasted_image_20240322131639.png)训练速度
 Arcface-Torch 是一种训练大规模人脸识别训练集的高效工具。当训练集中的类数超过一百万时，部分 FC 采样策略既能保持相同的准确率，又能提供数倍的训练性能和更低的 GPU 内存使用率。部分 FC 是大规模人脸识别模型并行架构的稀疏变体，它利用稀疏软最大值（sparse softmax）为每个训练批次动态采样类中心子集。在每次迭代过程中，只更新参数的稀疏部分，从而显著降低了 GPU 内存需求和计算需求。利用部分 FC 方法，可以训练多达 2900 万个身份集，这是迄今为止最大的训练集。此外，部分 FC 方法还支持多机分布式训练和混合精度训练。
-
 
 ### 引言
 
@@ -40,11 +38,10 @@ BoostFace的后端构建在[FastAPI](https://fastapi.tiangolo.com/)之上。Fast
 BoostFace的设计重点在于实现实时面部识别、高可扩展性和低延迟。
 
 - **实时面部识别**：通过利用先进的面部检测和跟踪算法，BoostFace能够在视频流中实时识别和跟踪人脸。这一能力对于需要实时反馈的应用场景（如安全监控）至关重要。
-    
+
 - **高可扩展性**：借助FastAPI和Milvus的高性能特性，BoostFace能够轻松扩展以支持大量并发请求。这保证了即使在用户基数大幅增加的情况下，系统的性能也不会受到影响。
-    
+
 - **低延迟**：通过在后端采用CUDA和cuDNN加速的ONNX Runtime，以及前端通过Websockets实现的实时数据传输，BoostFace最大限度地减少了响应时间，为用户提供了快速且流畅的体验。
-    
 
 ### 实现和部署
 
