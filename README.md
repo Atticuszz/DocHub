@@ -41,6 +41,7 @@
     - **python/:**
       - **standard_lib/:**
         - [Pathlib.md](docs/Language/python/standard_lib/Pathlib.md)
+        - [Pytorch.md](docs/Language/python/standard_lib/Pytorch.md)
       - **third_party_lib/:**
         - [pyqt6.md](docs/Language/python/third_party_lib/pyqt6.md)
         - [Numpy.md](docs/Language/python/third_party_lib/Numpy.md)
@@ -93,6 +94,50 @@
     - [nerf_nav.pdf](docs/papers/nerf_nav.pdf)
 - **node_modules/:**
 ## 最近修改
+### 2024-03-29 by atticuszz - 修正其次坐标变换矩阵
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- ✨ [Pytorch.md](docs/Language/python/standard_lib/Pytorch.md)
+- 🔨 [Knowledge.md](docs/papers/Knowledge.md)
+### 2024-03-29 by Atticuszz - Ci workflows Update README.md
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🚚 [Pasted_image_20240329151455.png](assets/Pasted_image_20240329151455.png) <- Pasted image 20240329151455.png
+- 🚚 [Pasted_image_20240329151607.png](assets/Pasted_image_20240329151607.png) <- Pasted image 20240329151607.png
+- 🚚 [Pasted_image_20240329152030.png](assets/Pasted_image_20240329152030.png) <- Pasted image 20240329152030.png
+- 🚚 [Pasted_image_20240329154710.png](assets/Pasted_image_20240329154710.png) <- Pasted image 20240329154710.png
+- 🔨 [Knowledge.md](docs/papers/Knowledge.md)
 ### 2024-03-29 by atticuszz - 添加相机成像坐标变换
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
@@ -257,12 +302,6 @@
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [README.md](README.md)
 - 🔨 [main.md](docs/papers/main.md)
-- 🔨 [read-dairy.md](docs/papers/read-dairy.md)
-### 2024-03-20 by atticuszz - 开始着手论文
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [README.md](README.md)
-- ✨ [main.md](docs/papers/main.md)
-- 🗑️ method.md
 - 🔨 [read-dairy.md](docs/papers/read-dairy.md)
 ## 其他仓库
 

@@ -1,4 +1,3 @@
-
 ### image
 
 _format in disk_
@@ -95,24 +94,23 @@ shape->(1,h,w)
 
 **齐次坐标变换矩阵**
 $$\mathbf{M}_{\mathrm{c2w}}=\begin{bmatrix}R&T\\0&1\end{bmatrix}$$
+
 - **$R$（旋转矩阵）**：描述了相机坐标系的基向量（即相机的前向、上方和右侧方向）如何相对于世界坐标系进行旋转对齐。因此，$R$实际上定义了相机坐标系的朝向相对于世界坐标系的朝向。
-	
+
 - **$T$（平移向量）**：表示相机坐标系的原点（可以理解为相机的光心或中心）在世界坐标系中的位置。换言之，$T$描述了从世界坐标系的原点到相机坐标系原点（相机的位置）的直线距离和方向。
-	
+
 因此可以把相机坐标系中的任意一点转换为世界坐标系中的对应点，该过程包括将点首先通过$R$旋转到正确的朝向，然后通过$T$平移到正确的位置。
 
 对于把$P_w$转化为 $P_c$，依赖于$\mathbf{M}_{\mathrm{w2c}}$,而且可以通过逆变换得到$\mathbf{M}_{\mathrm{w2c}}=\mathbf{M}_{\mathrm{c2w}}^{-1}$
 
+> 轨迹文件`traj.txt`,每行是一个`4*4`的变换矩阵，变量名常作`c2w`
 
->轨迹文件`traj.txt`,每行是一个`4*4`的变换矩阵，变量名常作`c2w`
 ```text
 R11 R12 R13 Tx
 R21 R22 R23 Ty
 R31 R32 R33 Tz
  0   0   0  1
 ```
-
-
 
 #### Coordinate transformation during imaging
 
@@ -124,6 +122,5 @@ R31 R32 R33 Tz
 2. $$\mathbf{P}_c=\mathbf{M}_{\mathrm{w2c}}\cdot\mathbf{P}_w$$
 3. **从相机坐标系到图像平面**：这一步使用内参矩阵$K$，将$\begin{aligned}\mathbf{P}_c=(X_c,Y_c,Z_c)^T\end{aligned}$投影到二维图像平面像素点$P_i=(u,v)$
    $$\mathbf{P}_i=\mathbf{K}\cdot\begin{bmatrix}X_c\\Y_c\\Z_c\end{bmatrix}/Z_c$$
-
 
 ### 3DGS
