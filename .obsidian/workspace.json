@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/papers/read-dairy.md",
                 "mode": "source",
                 "source": false
               }
@@ -28,8 +28,31 @@
                 "file": "docs/papers/SplaTAM.pdf"
               }
             }
+          },
+          {
+            "id": "e8f944abd9107714",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "docs/papers/Gaussian-SLAM.pdf"
+              }
+            }
+          },
+          {
+            "id": "eb173621bf8f8cee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/papers/Knowledge.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -176,7 +199,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -198,27 +221,28 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "6903dc45c5b9dec5",
+  "active": "eb173621bf8f8cee",
   "lastOpenFiles": [
+    "docs/Language/python/standard_lib/Pytorch.md",
+    "docs/papers/read-dairy.md",
+    "docs/papers/Knowledge.md",
+    "docs/papers/SCI_paper.md",
+    "docs/papers/Gaussian-SLAM.pdf",
+    "docs/papers/SplaTAM.pdf",
+    "assets/Pasted_image_20240329154710.png",
+    "assets/Pasted_image_20240329152030.png",
+    "assets/Pasted_image_20240329151607.png",
+    "assets/Pasted_image_20240329151455.png",
     "assets/Pasted image 20240329154710.png",
     "assets/Pasted image 20240329152030.png",
     "assets/Pasted image 20240329151607.png",
     "assets/Pasted image 20240329151455.png",
-    "docs/papers/read-dairy.md",
-    "docs/papers/SplaTAM.pdf",
     "docs/papers/3d_gaussian_splatting.pdf",
     "docs/papers/3d_gaussian_splatting_high-dual-translated.pdf",
-    "docs/papers/Gaussian-SLAM.pdf",
     "docs/papers/3DGS.pdf",
     "assets/Pasted_image_20240328211200.png",
     "assets/Pasted_image_20240328211138.png",
-    "assets/Pasted image 20240328211200.png",
-    "assets/Pasted image 20240328211138.png",
-    "docs/papers/Knowledge.md",
     "assets/traj.txt",
-    "assets/Pasted_image_20240322131639.png",
-    "assets/Pasted_image_20240322131335.png",
-    "assets/Pasted_image_20240322131022.png",
     "docs/OS/GPU.md",
     "docs/VCS/git.md",
     "docs/Language/python/py-env/conda.md",
@@ -243,7 +267,6 @@
     "docs/Language/C++/STL/map.md",
     "docs/Language/C++/STL/set.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
-    "docs/OS/Ubuntu/shell.md",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/nerf_nav.pdf",
     "未命名.canvas",

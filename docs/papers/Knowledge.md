@@ -1,4 +1,3 @@
-## basic
 
 ### image
 
@@ -95,10 +94,17 @@ shape->(1,h,w)
 #### Homogeneous coordinate transformation matrix
 
 **齐次坐标变换矩阵**
-$$\mathbf{M}_\mathrm{ext}=\begin{bmatrix}R&T\\0&1\end{bmatrix}$$
+$$\mathbf{M}_{\mathrm{c2w}}=\begin{bmatrix}R&T\\0&1\end{bmatrix}$$
+- **$R$（旋转矩阵）**：描述了相机坐标系的基向量（即相机的前向、上方和右侧方向）如何相对于世界坐标系进行旋转对齐。因此，$R$实际上定义了相机坐标系的朝向相对于世界坐标系的朝向。
+	
+- **$T$（平移向量）**：表示相机坐标系的原点（可以理解为相机的光心或中心）在世界坐标系中的位置。换言之，$T$描述了从世界坐标系的原点到相机坐标系原点（相机的位置）的直线距离和方向。
+	
+因此可以把相机坐标系中的任意一点转换为世界坐标系中的对应点，该过程包括将点首先通过$R$旋转到正确的朝向，然后通过$T$平移到正确的位置。
 
-1. 轨迹文件`traj.txt`,每行是一个`4*4`的变换矩阵
+对于把$P_w$转化为 $P_c$，依赖于$\mathbf{M}_{\mathrm{w2c}}$,而且可以通过逆变换得到$\mathbf{M}_{\mathrm{w2c}}=\mathbf{M}_{\mathrm{c2w}}^{-1}$
 
+
+>轨迹文件`traj.txt`,每行是一个`4*4`的变换矩阵，变量名常作`c2w`
 ```text
 R11 R12 R13 Tx
 R21 R22 R23 Ty
@@ -106,7 +112,7 @@ R31 R32 R33 Tz
  0   0   0  1
 ```
 
-- **齐次坐标（Homogeneous coordinates）**：使用齐次坐标可以将旋转、平移（甚至缩放）操作合并为单一的矩阵乘法操作。这种表示方法增加了一个额外的维度（齐次维度），使得各种变换可以更加一致和简洁地处理。
+
 
 #### Coordinate transformation during imaging
 
@@ -114,7 +120,10 @@ R31 R32 R33 Tz
 ![../../assets/Pasted_image_20240329152030.png](../../assets/Pasted_image_20240329152030.png)
 当我们讨论将三维世界坐标系中的点投影到二维图像平面时，需要进行坐标变换，包括：
 
-1. **从世界坐标系到相机坐标系**：这一步使用齐次坐标形式的外参矩阵$\mathbf{M}_\mathrm{ext}=\begin{bmatrix}R&T\\0&1\end{bmatrix}$，给定$P_w=(X_w,Y_w,Z_w,1)^T$ 变换$\begin{aligned}\mathbf{P}_c=(X_c,Y_c,Z_c)^T\end{aligned}$
-2. $$\mathbf{P}_c=\mathbf{M}_{\mathrm{ext}}\cdot\mathbf{P}_w$$
+1. **从世界坐标系到相机坐标系**：这一步使用齐次坐标形式的外参矩阵$\mathbf{M}_\mathrm{w2c}=\begin{bmatrix}R&T\\0&1\end{bmatrix}$，给定$P_w=(X_w,Y_w,Z_w,1)^T$ 变换$\begin{aligned}\mathbf{P}_c=(X_c,Y_c,Z_c)^T\end{aligned}$
+2. $$\mathbf{P}_c=\mathbf{M}_{\mathrm{w2c}}\cdot\mathbf{P}_w$$
 3. **从相机坐标系到图像平面**：这一步使用内参矩阵$K$，将$\begin{aligned}\mathbf{P}_c=(X_c,Y_c,Z_c)^T\end{aligned}$投影到二维图像平面像素点$P_i=(u,v)$
    $$\mathbf{P}_i=\mathbf{K}\cdot\begin{bmatrix}X_c\\Y_c\\Z_c\end{bmatrix}/Z_c$$
+
+
+### 3DGS
