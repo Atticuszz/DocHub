@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/papers/read-dairy.md",
+                "file": "docs/papers/Knowledge.md",
                 "mode": "source",
                 "source": false
               }
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/papers/read-dairy.md",
+                "file": "docs/papers/Knowledge.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/papers/read-dairy.md",
+                "file": "docs/papers/Knowledge.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/papers/read-dairy.md"
+                "file": "docs/papers/Knowledge.md"
               }
             }
           },
@@ -176,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -200,6 +200,18 @@
   },
   "active": "6903dc45c5b9dec5",
   "lastOpenFiles": [
+    "assets/Pasted image 20240329154710.png",
+    "assets/Pasted image 20240329152030.png",
+    "assets/Pasted image 20240329151607.png",
+    "assets/Pasted image 20240329151455.png",
+    "docs/papers/read-dairy.md",
+    "docs/papers/SplaTAM.pdf",
+    "docs/papers/3d_gaussian_splatting.pdf",
+    "docs/papers/3d_gaussian_splatting_high-dual-translated.pdf",
+    "docs/papers/Gaussian-SLAM.pdf",
+    "docs/papers/3DGS.pdf",
+    "assets/Pasted_image_20240328211200.png",
+    "assets/Pasted_image_20240328211138.png",
     "assets/Pasted image 20240328211200.png",
     "assets/Pasted image 20240328211138.png",
     "docs/papers/Knowledge.md",
@@ -207,15 +219,10 @@
     "assets/Pasted_image_20240322131639.png",
     "assets/Pasted_image_20240322131335.png",
     "assets/Pasted_image_20240322131022.png",
-    "docs/papers/read-dairy.md",
     "docs/OS/GPU.md",
-    "docs/papers/SplaTAM.pdf",
     "docs/VCS/git.md",
     "docs/Language/python/py-env/conda.md",
     "docs/baidu_driver.md",
-    "assets/Pasted image 20240322131639.png",
-    "assets/Pasted image 20240322131335.png",
-    "assets/Pasted image 20240322131022.png",
     "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/Language/C++/STL/algorithm.md",
@@ -239,13 +246,6 @@
     "docs/OS/Ubuntu/shell.md",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/nerf_nav.pdf",
-    "docs/papers/splat_nav.pdf",
-    "docs/papers/3DGS.pdf",
-    "docs/Webs",
-    "docs/papers/SplaTAM_.pdf",
-    "assets/Pasted image 20240308164303.png",
-    "assets/Pasted image 20240308163830.png",
-    "assets/Pasted image 20240308163716.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
