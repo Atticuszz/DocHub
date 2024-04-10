@@ -49,19 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/schedule/report.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f1e5dd7e06cc87c5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/papers/Knowledge.md",
                 "mode": "source",
                 "source": false
               }
@@ -80,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -146,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/papers/Knowledge.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -163,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/papers/Knowledge.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "docs/papers/Knowledge.md"
               }
             }
           },
@@ -249,8 +237,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "f1e5dd7e06cc87c5",
+  "active": "4c62a4cf5ea3a491",
   "lastOpenFiles": [
+    "docs/papers/main.md",
+    "docs/papers/read-dairy.md",
     "docs/schedule/report.md",
     "conflict-files-obsidian-git.md",
     "docs/papers/Knowledge.md",
@@ -262,7 +252,6 @@
     "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/wsl.md",
-    "docs/papers/main.md",
     "docs/device/controller/STM32.md",
     "docs/device/Tutorial_Comparison.md",
     "docs/device/purchase.md",
@@ -275,7 +264,6 @@
     "docs/tools/git-install-instruction.md",
     "docs/OS/Ubuntu/shell.md",
     "docs/OS/GPU.md",
-    "docs/papers/read-dairy.md",
     "docs/papers/splat_nav.pdf",
     "docs/papers/nerf_nav.pdf",
     "docs/papers/method.md",
