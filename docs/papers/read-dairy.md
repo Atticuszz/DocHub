@@ -6,6 +6,11 @@
 
 [SplaTAM](../../docs/papers/SplaTAM.pdf)
 2024-03-28
+$$f(\mathbf{x})=o\exp\left(-\frac{\|\mathbf{x}-\mathbf{\mu}\|^2}{2r^2}\right).$$
+$$C(\mathbf{p})=\sum_{i=1}^n\mathbf{c}_if_i(\mathbf{p})\prod_{j=1}^{i-1}(1-f_j(\mathbf{p}))$$
+$$D(\mathbf{p})=\sum_{i=1}^{n}d_{i}f_{i}(\mathbf{p})\prod_{j=1}^{i-1}(1-f_{j}(\mathbf{p}))$$
+$$S(\mathbf{p})=\sum_{i=1}^{n}f_i(\mathbf{p})\prod_{j=1}^{i-1}(1-f_j(\mathbf{p})).$$
+$$L_{\mathrm{t}}=\sum\limits_{\mathbf{p}}\left(S(\mathbf{p})>0.99\right)\left(\mathrm{L}_{\mathrm{l}}\left(D(\mathbf{p})\right)+0.5\mathrm{L}_{\mathrm{l}}\left(C(\mathbf{p})\right)\right)$$
 
 ## idea
 
