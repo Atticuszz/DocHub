@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/schedule/report.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/schedule/report.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/schedule/report.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/papers/Knowledge.md"
+                "file": "docs/schedule/report.md"
               }
             }
           },
@@ -239,11 +239,22 @@
   },
   "active": "4c62a4cf5ea3a491",
   "lastOpenFiles": [
-    "docs/papers/main.md",
-    "docs/papers/read-dairy.md",
+    "docs/schedule/TODO.md",
     "docs/schedule/report.md",
-    "conflict-files-obsidian-git.md",
+    "docs/schedule/Free_time.md",
     "docs/papers/Knowledge.md",
+    "docs/papers/main.md",
+    "docs/schedule/meetings/standard.md",
+    "docs/schedule/meetings/2024-2-28.md",
+    "docs/schedule/meetings/2024-1-24.md",
+    "docs/tools/git-install-instruction.md",
+    "docs/tutorials/KnowledgeHub.md",
+    "docs/VCS/github/How_to_connect_ssh.md",
+    "docs/URLs.md",
+    "docs/baidu_driver.md",
+    "docs/account.md",
+    "docs/papers/read-dairy.md",
+    "conflict-files-obsidian-git.md",
     "assets/Pasted_image_20240322131639.png",
     "assets/Pasted_image_20240322131335.png",
     "assets/Pasted_image_20240322131022.png",
@@ -257,26 +268,15 @@
     "docs/device/purchase.md",
     "docs/OS/Ubuntu/configs.md",
     "docs/Language/C++/STL/vector.md",
-    "docs/Language/C++/STL/map.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
-    "docs/Language/C++/STL/algorithm.md",
-    "docs/OS/Ubuntu/bugs.md",
-    "docs/tools/git-install-instruction.md",
-    "docs/OS/Ubuntu/shell.md",
-    "docs/OS/GPU.md",
     "docs/papers/splat_nav.pdf",
     "docs/papers/nerf_nav.pdf",
-    "docs/papers/method.md",
     "docs/papers/SplaTAM.pdf",
     "docs/papers/3DGS.pdf",
-    "docs/URLs.md",
-    "docs/OS/Docker.md",
-    "docs/OS/Ubuntu/net.md",
     "docs/tools/clash.yaml",
     "docs/tools/New Text Document.txt",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf.crdownload",
-    "docs/VCS/git.md",
     "assets/Pasted image 20240308164303.png",
     "assets/Pasted image 20240308163830.png",
     "assets/Pasted image 20240308163716.png",
