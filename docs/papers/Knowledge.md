@@ -63,7 +63,9 @@ shape->(1,h,w)
 ```
 
 ### camera
+
 > [cameras · PyTorch3D](https://pytorch3d.org/docs/cameras)
+
 #### camera coordinate system
 
 **相机坐标系**：
@@ -111,6 +113,7 @@ R21 R22 R23 Ty
 R31 R32 R33 Tz
  0   0   0  1
 ```
+
 $\mathbf{M}_{\mathrm{w2c}}$ 变量名常作`w2c`
 
 #### Projection Transform Matrix
@@ -122,7 +125,7 @@ $\mathbf{M}_{\mathrm{w2c}}$ 变量名常作`w2c`
 当我们讨论将三维世界坐标系中的点投影到二维图像平面时，需要进行坐标变换，包括：
 
 1. **从世界坐标系到相机坐标系**：这一步使用齐次坐标形式的外参矩阵$\mathbf{M}_\mathrm{w2c}=\begin{bmatrix}R&T\\0&1\end{bmatrix}$，给定$P_w=(X_w,Y_w,Z_w,1)^T$ 变换$\begin{aligned}\mathbf{P}_c=(X_c,Y_c,Z_c)^T\end{aligned}$
-$$\mathbf{P}_c=\mathbf{M}_{\mathrm{w2c}}\cdot\mathbf{P}_w$$
+   $$\mathbf{P}_c=\mathbf{M}_{\mathrm{w2c}}\cdot\mathbf{P}_w$$
 2. **从相机坐标系到图像平面**：这一步使用内参矩阵$K$，将$\begin{aligned}\mathbf{P}_c=(X_c,Y_c,Z_c)^T\end{aligned}$投影到二维图像平面像素点$P_i=(u,v)$
    $$\mathbf{P}_i=\mathbf{K}\cdot\begin{bmatrix}X_c\\Y_c\\Z_c\end{bmatrix}/Z_c$$
 
