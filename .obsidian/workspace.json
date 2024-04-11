@@ -45,7 +45,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/tools/IDE/activate_code.md",
                 "mode": "source",
                 "source": false
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/tools/IDE/activate_code.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/tools/IDE/activate_code.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/papers/Knowledge.md"
+                "file": "docs/tools/IDE/activate_code.md"
               }
             }
           },
@@ -223,9 +223,12 @@
   },
   "active": "eb173621bf8f8cee",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/code_env.md",
+    "docs/OS/Ubuntu/bugs.md",
+    "docs/Language/python/standard_lib/Pathlib.md",
+    "docs/papers/Knowledge.md",
     "docs/Language/python/standard_lib/Pytorch.md",
     "docs/papers/read-dairy.md",
-    "docs/papers/Knowledge.md",
     "docs/papers/SCI_paper.md",
     "docs/papers/Gaussian-SLAM.pdf",
     "docs/papers/SplaTAM.pdf",
@@ -247,8 +250,6 @@
     "docs/VCS/git.md",
     "docs/Language/python/py-env/conda.md",
     "docs/baidu_driver.md",
-    "docs/OS/Ubuntu/code_env.md",
-    "docs/OS/Ubuntu/bugs.md",
     "docs/Language/C++/STL/algorithm.md",
     "docs/Language/C++/STL/vector.md",
     "docs/device/camera.md",
@@ -265,7 +266,6 @@
     "docs/Language/C++/STL/stack.md",
     "docs/Language/C++/STL/String.md",
     "docs/Language/C++/STL/map.md",
-    "docs/Language/C++/STL/set.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/nerf_nav.pdf",
