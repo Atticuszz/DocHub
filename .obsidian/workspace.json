@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/papers/read-dairy.md",
+                "file": "docs/VCS/git.md",
                 "mode": "source",
                 "source": false
               }
@@ -45,14 +45,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/tools/IDE/activate_code.md",
+                "file": "docs/OS/GPU.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -118,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/tools/IDE/activate_code.md",
+                "file": "docs/VCS/git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -135,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/tools/IDE/activate_code.md",
+                "file": "docs/VCS/git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +169,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/tools/IDE/activate_code.md"
+                "file": "docs/VCS/git.md"
               }
             }
           },
@@ -221,14 +220,20 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "eb173621bf8f8cee",
+  "active": "e5fb1abf4287bce9",
   "lastOpenFiles": [
+    "docs/papers/Knowledge.md",
+    "docs/Language/python/py-env/conda.md",
+    "docs/OS/GPU.md",
+    "assets/Pasted image 20240412154259.png",
+    "assets/Pasted image 20240412154252.png",
+    "docs/papers/read-dairy.md",
+    "docs/OS/Ubuntu/configs.md",
     "docs/OS/Ubuntu/code_env.md",
+    "docs/tools/IDE/activate_code.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/Language/python/standard_lib/Pathlib.md",
-    "docs/papers/Knowledge.md",
     "docs/Language/python/standard_lib/Pytorch.md",
-    "docs/papers/read-dairy.md",
     "docs/papers/SCI_paper.md",
     "docs/papers/Gaussian-SLAM.pdf",
     "docs/papers/SplaTAM.pdf",
@@ -243,19 +248,14 @@
     "docs/papers/3d_gaussian_splatting.pdf",
     "docs/papers/3d_gaussian_splatting_high-dual-translated.pdf",
     "docs/papers/3DGS.pdf",
-    "assets/Pasted_image_20240328211200.png",
-    "assets/Pasted_image_20240328211138.png",
     "assets/traj.txt",
-    "docs/OS/GPU.md",
     "docs/VCS/git.md",
-    "docs/Language/python/py-env/conda.md",
     "docs/baidu_driver.md",
     "docs/Language/C++/STL/algorithm.md",
     "docs/Language/C++/STL/vector.md",
     "docs/device/camera.md",
     "assets/AstraPro_SDK_install.pdf",
     "docs/OS/Ubuntu/system.md",
-    "docs/OS/Ubuntu/configs.md",
     "docs/papers/main.md",
     "docs/Language/C++/STL/unordered_set.md",
     "docs/Language/C++/STL/unordered_map.md",
@@ -264,8 +264,6 @@
     "conflict-files-obsidian-git.md",
     "docs/schedule/report.md",
     "docs/Language/C++/STL/stack.md",
-    "docs/Language/C++/STL/String.md",
-    "docs/Language/C++/STL/map.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/nerf_nav.pdf",

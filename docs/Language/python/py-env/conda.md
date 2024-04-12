@@ -36,6 +36,10 @@ conda config --set channel_priority strict
 conda config --show channels
 ```
 
+- search
+```bash
+conda search cudnn --channel conda-forge 
+```
 ### install deps
 
 - install from environment.yml
@@ -87,3 +91,4 @@ conda list
 ```bash
 conda list -n <env>
 ```
+
