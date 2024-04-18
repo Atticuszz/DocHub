@@ -150,6 +150,22 @@ docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 
 ## Ubuntu
 
+### install gpu driver ![../../assets/Pasted_image_20240412154259.png](../../assets/Pasted_image_20240412154259.png)
+
+#### install via conda
+
+```yaml
+name: your env
+channels:
+  - conda-forge
+  - nvidia
+  - defaults
+dependencies:
+  - python=3.10
+  - cudatoolkit=11.8
+  - cudnn=8.9.2.26
+```
+
 #### gpu monitor
 
 ```bash

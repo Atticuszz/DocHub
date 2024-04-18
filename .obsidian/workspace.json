@@ -56,6 +56,18 @@
             }
           },
           {
+            "id": "2738efe81638b8af",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "97ceaeef7f7a4de6",
             "type": "leaf",
             "state": {
@@ -68,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -134,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/schedule/Free_time.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -151,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/schedule/Free_time.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/schedule/Free_time.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -237,11 +249,14 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "4c62a4cf5ea3a491",
+  "active": "2738efe81638b8af",
   "lastOpenFiles": [
+    "docs/schedule/Free_time.md",
+    "conflict-files-obsidian-git.md",
+    "assets/Pasted_image_20240412154259.png",
+    "assets/Pasted_image_20240412154252.png",
     "docs/schedule/TODO.md",
     "docs/schedule/report.md",
-    "conflict-files-obsidian-git.md",
     "docs/papers/Gaussian-SLAM.pdf",
     "docs/Language/python/standard_lib/Pytorch.md",
     "assets/Pasted_image_20240329154710.png",
@@ -250,7 +265,6 @@
     "assets/Pasted_image_20240329151455.png",
     "assets/Pasted_image_20240328211200.png",
     "assets/Pasted_image_20240328211138.png",
-    "docs/schedule/Free_time.md",
     "docs/papers/Knowledge.md",
     "docs/papers/main.md",
     "docs/schedule/meetings/standard.md",
@@ -265,7 +279,6 @@
     "docs/papers/read-dairy.md",
     "assets/Pasted_image_20240322131639.png",
     "assets/Pasted_image_20240322131335.png",
-    "assets/Pasted_image_20240322131022.png",
     "docs/device/camera.md",
     "docs/device/controller/Raspberry_PI_4B.md",
     "docs/OS/Ubuntu/code_env.md",
@@ -283,7 +296,6 @@
     "docs/tools/New Text Document.txt",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf.crdownload",
-    "assets/Pasted image 20240308164303.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",

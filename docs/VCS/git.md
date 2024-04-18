@@ -148,6 +148,12 @@ git remote add origin <remote_repo_URL>
 git push -u origin main
 ```
 
+4. set https to ssh
+
+```bash
+git remote set-url origin <remote_repo_URL>
+```
+
 ### remove track
 
 ```bash
