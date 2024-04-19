@@ -4733,17 +4733,15 @@ From previous: `);
               let i = ep(n.keys, n.trans._cache, n.cache === "clone");
               return i
                 ? Q.resolve(i)
-                : r
-                    .getMany(n)
-                    .then(
-                      (a) => (
-                        (n.trans._cache = {
-                          keys: n.keys,
-                          values: n.cache === "clone" ? Ts(a) : a,
-                        }),
-                        a
-                      ),
-                    );
+                : r.getMany(n).then(
+                    (a) => (
+                      (n.trans._cache = {
+                        keys: n.keys,
+                        values: n.cache === "clone" ? Ts(a) : a,
+                      }),
+                      a
+                    ),
+                  );
             },
             mutate: (n) => (
               n.type !== "add" && (n.trans._cache = null), r.mutate(n)

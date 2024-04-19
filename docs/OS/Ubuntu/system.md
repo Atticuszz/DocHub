@@ -165,12 +165,13 @@ NAME      TYPE SIZE USED PRIO
 /swapfile file  16G   0B   -2
 ```
 
-
-
 #### zip file
+
 Note:
+
 - The `-r` option stands for "recursive" and tells `zip` to include all files and `subfolders` in the specified folder.
 - If you want to exclude certain files or folders, you can use the `-x` option followed by the file or folder name. For example:
+
 ```bash
 zip -r myfolder.zip myfolder -x myfolder/excluded_file.txt
 ```
