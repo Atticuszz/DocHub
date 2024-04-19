@@ -4,71 +4,54 @@
     "type": "split",
     "children": [
       {
-        "id": "414e9632750a09aa",
+        "id": "250d0c2daf1284e4",
         "type": "tabs",
         "children": [
           {
-            "id": "231d0ecdf777027f",
+            "id": "6903dc45c5b9dec5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
+                "file": "docs/OS/Ubuntu/system.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "8736f02d8c8b4720",
+            "id": "26f859f3c83a290b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/papers/SplaTAM.pdf"
               }
             }
           },
           {
-            "id": "1c97de35d479c164",
+            "id": "e8f944abd9107714",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "docs/device/controller/Raspberry_PI_4B.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/papers/Gaussian-SLAM.pdf"
               }
             }
           },
           {
-            "id": "4c62a4cf5ea3a491",
+            "id": "eb173621bf8f8cee",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/schedule/Free_time.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "97ceaeef7f7a4de6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/OS/Ubuntu/bugs.md",
+                "file": "docs/OS/GPU.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -134,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/schedule/Free_time.md",
+                "file": "docs/OS/Ubuntu/system.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -151,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/schedule/Free_time.md",
+                "file": "docs/OS/Ubuntu/system.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +169,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/schedule/Free_time.md"
+                "file": "docs/OS/Ubuntu/system.md"
               }
             }
           },
@@ -237,53 +220,54 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "4c62a4cf5ea3a491",
+  "active": "6903dc45c5b9dec5",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
-    "docs/schedule/Free_time.md",
+    "docs/OS/Ubuntu/shell.md",
+    "docs/papers/Knowledge.md",
+    "docs/papers/main.md",
+    "docs/tools/IDE/plugin.md",
+    "docs/tools/IDE/activate_code.md",
+    "docs/VCS/git.md",
     "assets/Pasted_image_20240412154259.png",
     "assets/Pasted_image_20240412154252.png",
-    "docs/schedule/TODO.md",
-    "docs/schedule/report.md",
-    "docs/papers/Gaussian-SLAM.pdf",
+    "docs/Language/python/py-env/conda.md",
+    "docs/OS/GPU.md",
+    "assets/Pasted image 20240412154259.png",
+    "assets/Pasted image 20240412154252.png",
+    "docs/papers/read-dairy.md",
+    "docs/OS/Ubuntu/configs.md",
+    "docs/OS/Ubuntu/code_env.md",
+    "docs/OS/Ubuntu/bugs.md",
+    "docs/Language/python/standard_lib/Pathlib.md",
     "docs/Language/python/standard_lib/Pytorch.md",
+    "docs/papers/SCI_paper.md",
+    "docs/papers/Gaussian-SLAM.pdf",
+    "docs/papers/SplaTAM.pdf",
     "assets/Pasted_image_20240329154710.png",
     "assets/Pasted_image_20240329152030.png",
     "assets/Pasted_image_20240329151607.png",
     "assets/Pasted_image_20240329151455.png",
-    "assets/Pasted_image_20240328211200.png",
-    "assets/Pasted_image_20240328211138.png",
-    "docs/papers/Knowledge.md",
-    "docs/papers/main.md",
-    "docs/schedule/meetings/standard.md",
-    "docs/schedule/meetings/2024-2-28.md",
-    "docs/schedule/meetings/2024-1-24.md",
-    "docs/tools/git-install-instruction.md",
-    "docs/tutorials/KnowledgeHub.md",
-    "docs/VCS/github/How_to_connect_ssh.md",
-    "docs/URLs.md",
-    "docs/baidu_driver.md",
-    "docs/account.md",
-    "docs/papers/read-dairy.md",
-    "assets/Pasted_image_20240322131639.png",
-    "assets/Pasted_image_20240322131335.png",
-    "docs/device/camera.md",
-    "docs/device/controller/Raspberry_PI_4B.md",
-    "docs/OS/Ubuntu/code_env.md",
-    "docs/OS/Ubuntu/system.md",
-    "docs/OS/Ubuntu/wsl.md",
-    "docs/device/controller/STM32.md",
-    "docs/device/Tutorial_Comparison.md",
-    "docs/device/purchase.md",
-    "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
-    "docs/papers/splat_nav.pdf",
-    "docs/papers/nerf_nav.pdf",
-    "docs/papers/SplaTAM.pdf",
+    "assets/Pasted image 20240329154710.png",
+    "assets/Pasted image 20240329152030.png",
+    "docs/papers/3d_gaussian_splatting.pdf",
+    "docs/papers/3d_gaussian_splatting_high-dual-translated.pdf",
     "docs/papers/3DGS.pdf",
-    "docs/tools/clash.yaml",
-    "docs/tools/New Text Document.txt",
+    "assets/traj.txt",
+    "docs/baidu_driver.md",
+    "docs/Language/C++/STL/algorithm.md",
+    "docs/Language/C++/STL/vector.md",
+    "docs/device/camera.md",
+    "assets/AstraPro_SDK_install.pdf",
+    "docs/OS/Ubuntu/system.md",
+    "docs/Language/C++/STL/unordered_set.md",
+    "docs/Language/C++/STL/unordered_map.md",
+    "docs/URLs.md",
+    "docs/Language/C++/STL/Queue.md",
+    "conflict-files-obsidian-git.md",
+    "docs/schedule/report.md",
+    "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
-    "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf.crdownload",
+    "docs/papers/nerf_nav.pdf",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
