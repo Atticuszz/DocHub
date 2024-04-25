@@ -18,7 +18,7 @@ Ensure that the `poetry.exe` file is located in `C:\Users\18317\AppData\Local\Pr
 
 ```powershell
 
-$Env:Path += ";C:\Users\18317\AppData\Roaming\Python\Scripts"; setx PATH "$Env:Path"
+$Env:Path += ";C:\Users\35238\AppData\Roaming\Python\Scripts"; setx PATH "$Env:Path"
 
 ```
 
