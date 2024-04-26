@@ -8,24 +8,14 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6903dc45c5b9dec5",
+            "id": "26f859f3c83a290b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/Language/C++/packages.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "26f859f3c83a290b",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/papers/SplaTAM.pdf"
               }
             }
           },
@@ -117,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/Language/C++/packages.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -134,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/Language/C++/packages.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -169,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/papers/Knowledge.md"
+                "file": "docs/Language/C++/packages.md"
               }
             }
           },
@@ -220,17 +210,19 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "6903dc45c5b9dec5",
+  "active": "26f859f3c83a290b",
   "lastOpenFiles": [
+    "docs/papers/SplaTAM.pdf",
+    "docs/Language/C++/packages.md",
+    "docs/VCS/git.md",
+    "docs/papers/Knowledge.md",
     "docs/tools/IDE/JetBrains.md",
     "docs/tools/IDE/plugin.md",
     "assets/Pasted image 20240420105746.png",
     "docs/tools/git-install-instruction.md",
     "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/shell.md",
-    "docs/papers/Knowledge.md",
     "docs/papers/main.md",
-    "docs/VCS/git.md",
     "assets/Pasted_image_20240412154259.png",
     "assets/Pasted_image_20240412154252.png",
     "docs/Language/python/py-env/conda.md",
@@ -245,7 +237,6 @@
     "docs/Language/python/standard_lib/Pytorch.md",
     "docs/papers/SCI_paper.md",
     "docs/papers/Gaussian-SLAM.pdf",
-    "docs/papers/SplaTAM.pdf",
     "assets/Pasted_image_20240329154710.png",
     "assets/Pasted_image_20240329152030.png",
     "assets/Pasted_image_20240329151607.png",
@@ -263,7 +254,6 @@
     "docs/Language/C++/STL/unordered_set.md",
     "docs/Language/C++/STL/unordered_map.md",
     "docs/URLs.md",
-    "docs/Language/C++/STL/Queue.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/nerf_nav.pdf",
