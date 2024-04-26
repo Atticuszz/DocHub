@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "d58e5ef633ca9bb4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "e8f944abd9107714",
             "type": "leaf",
             "state": {
@@ -41,7 +53,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -107,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Language/C++/packages.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -124,7 +137,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Language/C++/packages.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Language/C++/packages.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -210,10 +223,11 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "26f859f3c83a290b",
+  "active": "d58e5ef633ca9bb4",
   "lastOpenFiles": [
-    "docs/papers/SplaTAM.pdf",
     "docs/Language/C++/packages.md",
+    "conflict-files-obsidian-git.md",
+    "docs/papers/SplaTAM.pdf",
     "docs/VCS/git.md",
     "docs/papers/Knowledge.md",
     "docs/tools/IDE/JetBrains.md",
