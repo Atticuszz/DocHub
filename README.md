@@ -7,7 +7,7 @@
     - [clash.yaml](docs/tools/clash.yaml)
     - [git-install-instruction.md](docs/tools/git-install-instruction.md)
     - **IDE/:**
-      - [activate_code.md](docs/tools/IDE/activate_code.md)
+      - [activate_code.md](docs/tools/IDE/JetBrains.md)
       - [plugin.md](docs/tools/IDE/plugin.md)
   - **Language/:**
     - **js_ts/:**
@@ -113,7 +113,7 @@
 - 🔨 [types.json](.obsidian/types.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [system.md](docs/OS/Ubuntu/system.md)
-- 🔨 [activate_code.md](docs/tools/IDE/activate_code.md)
+- 🔨 [activate_code.md](docs/tools/IDE/JetBrains.md)
 ### 2024-04-18 by Atticuszz - Ci workflows Update README.md
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
@@ -236,7 +236,7 @@
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [README.md](README.md)
 - 🔨 [Knowledge.md](docs/papers/Knowledge.md)
-- 🔨 [activate_code.md](docs/tools/IDE/activate_code.md)
+- 🔨 [activate_code.md](docs/tools/IDE/JetBrains.md)
 ### 2024-04-11 by atticuszz - 添加激活码
 - 🔨 [app.json](.obsidian/app.json)
 - 🔨 [appearance.json](.obsidian/appearance.json)
@@ -256,7 +256,7 @@
 - 🔨 [types.json](.obsidian/types.json)
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - 🔨 [Knowledge.md](docs/papers/Knowledge.md)
-- 🔨 [activate_code.md](docs/tools/IDE/activate_code.md)
+- 🔨 [activate_code.md](docs/tools/IDE/JetBrains.md)
 ### 2024-04-10 by Atticuszz - vault backup: 2024-04-10 11:35:28
 - 🔨 [workspace.json](.obsidian/workspace.json)
 ### 2024-04-10 by Atticuszz - vault backup: 2024-04-10 11:31:44

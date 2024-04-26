@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/system.md",
+                "file": "docs/papers/Knowledge.md",
                 "mode": "source",
                 "source": false
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/system.md",
+                "file": "docs/papers/Knowledge.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -134,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/system.md",
+                "file": "docs/papers/Knowledge.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -169,7 +169,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/system.md"
+                "file": "docs/papers/Knowledge.md"
               }
             }
           },
@@ -222,11 +222,14 @@
   },
   "active": "6903dc45c5b9dec5",
   "lastOpenFiles": [
+    "docs/tools/IDE/JetBrains.md",
+    "docs/tools/IDE/plugin.md",
+    "assets/Pasted image 20240420105746.png",
+    "docs/tools/git-install-instruction.md",
+    "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/shell.md",
     "docs/papers/Knowledge.md",
     "docs/papers/main.md",
-    "docs/tools/IDE/plugin.md",
-    "docs/tools/IDE/activate_code.md",
     "docs/VCS/git.md",
     "assets/Pasted_image_20240412154259.png",
     "assets/Pasted_image_20240412154252.png",
@@ -248,7 +251,6 @@
     "assets/Pasted_image_20240329151607.png",
     "assets/Pasted_image_20240329151455.png",
     "assets/Pasted image 20240329154710.png",
-    "assets/Pasted image 20240329152030.png",
     "docs/papers/3d_gaussian_splatting.pdf",
     "docs/papers/3d_gaussian_splatting_high-dual-translated.pdf",
     "docs/papers/3DGS.pdf",
@@ -258,13 +260,10 @@
     "docs/Language/C++/STL/vector.md",
     "docs/device/camera.md",
     "assets/AstraPro_SDK_install.pdf",
-    "docs/OS/Ubuntu/system.md",
     "docs/Language/C++/STL/unordered_set.md",
     "docs/Language/C++/STL/unordered_map.md",
     "docs/URLs.md",
     "docs/Language/C++/STL/Queue.md",
-    "conflict-files-obsidian-git.md",
-    "docs/schedule/report.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
     "docs/papers/nerf_nav.pdf",
