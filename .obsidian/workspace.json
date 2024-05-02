@@ -44,30 +44,6 @@
             }
           },
           {
-            "id": "4c62a4cf5ea3a491",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/Language/python/py-env/Poetry.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "81d63b6daae6c944",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "97ceaeef7f7a4de6",
             "type": "leaf",
             "state": {
@@ -80,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -146,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/OS/Ubuntu/bugs.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -163,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "docs/OS/Ubuntu/bugs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "docs/OS/Ubuntu/bugs.md"
               }
             }
           },
@@ -249,8 +225,10 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "81d63b6daae6c944",
+  "active": "97ceaeef7f7a4de6",
   "lastOpenFiles": [
+    "docs/device/controller/Raspberry_PI_4B.md",
+    "docs/papers/GICP_slam.pdf",
     "docs/Language/python/py-env/Poetry.md",
     "conflict-files-obsidian-git.md",
     "docs/tools/IDE/activate_code.md",
@@ -283,11 +261,9 @@
     "assets/Pasted_image_20240322131639.png",
     "assets/Pasted_image_20240322131335.png",
     "docs/device/camera.md",
-    "docs/device/controller/Raspberry_PI_4B.md",
     "docs/OS/Ubuntu/code_env.md",
     "docs/OS/Ubuntu/system.md",
     "docs/OS/Ubuntu/wsl.md",
-    "docs/device/controller/STM32.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/papers/splat_nav.pdf",
     "docs/papers/nerf_nav.pdf",
@@ -296,7 +272,6 @@
     "docs/tools/clash.yaml",
     "docs/tools/New Text Document.txt",
     "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf",
-    "docs/papers/RepurposingDiffusion-BasedImageGeneratorsforMonocularDepthEstimation.pdf.crdownload",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
