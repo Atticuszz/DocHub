@@ -49,8 +49,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/bugs.md",
-                "mode": "source",
+                "file": "docs/papers/Knowledge.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/bugs.md",
+                "file": "docs/papers/Knowledge.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/bugs.md",
+                "file": "docs/papers/Knowledge.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/bugs.md"
+                "file": "docs/papers/Knowledge.md"
               }
             }
           },
@@ -227,6 +227,7 @@
   },
   "active": "97ceaeef7f7a4de6",
   "lastOpenFiles": [
+    "docs/OS/Ubuntu/bugs.md",
     "docs/device/controller/Raspberry_PI_4B.md",
     "docs/papers/GICP_slam.pdf",
     "docs/Language/python/py-env/Poetry.md",

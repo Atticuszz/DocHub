@@ -76,7 +76,7 @@ shape->(1,h,w)
 #### Intrinsic Matrix
 
 **内参矩阵**
-
+[Camera Intrinsic Matrix with Example in Python | by Neeraj Krishna | Towards Data Science](https://towardsdatascience.com/camera-intrinsic-matrix-with-example-in-python-d79bf2478c12)
 - **`fx​`** 和 **`fy`​**：分别是相机在图像平面x轴和y轴方向上的焦距，用像素值表示。焦距反映了镜头对场景的放大程度。在理想情况下，对于方形像素，`fx​` 和 `fy`​ 应该是相同的，但由于镜头畸变和制造公差，它们可能略有不同。
 - **`cx`​** 和 **`cy`​**：是图像的主点（principal point）坐标，也就是图像坐标系统原点在图像平面上的位置。通常，这个点被假定为图像的中心，但实际上可能会由于镜头制造和装配不精确而有所偏移。
   通常作为相机内参矩阵`K`
@@ -85,7 +85,7 @@ shape->(1,h,w)
 #### Extrinsic Matrix
 
 **外参矩阵**
-
+[Camera Extrinsic Matrix with Example in Python | by Neeraj Krishna | Towards Data Science](https://towardsdatascience.com/camera-extrinsic-matrix-with-example-in-python-cfe80acab8dd)
 - 描述了相机在全局空间（或称为世界坐标系）中的位置和方向。
   $$E_t=\begin{bmatrix}R&\mathbf{t}\end{bmatrix}$$
 - **旋转（Rotation）**：通过`3x3`的旋转矩阵部分，可以围绕原点执行物体的旋转操作。旋转可以是绕`X`轴、`Y`轴或`Z`轴的单轴旋转，也可以是这些旋转的任意组合。
@@ -129,4 +129,99 @@ $\mathbf{M}_{\mathrm{w2c}}$ 变量名常作`w2c`
 2. **从相机坐标系到图像平面**：这一步使用内参矩阵$K$，将$\begin{aligned}\mathbf{P}_c=(X_c,Y_c,Z_c)^T\end{aligned}$投影到二维图像平面像素点$P_i=(u,v)$
    $$\mathbf{P}_i=\mathbf{K}\cdot\begin{bmatrix}X_c\\Y_c\\Z_c\end{bmatrix}/Z_c$$
 
-### 3DGS
+### Point Cloud
+
+#### estimate c2w
+
+**估计相机坐标系到世界坐标系的姿态变换矩阵**
+##### ICP(p2p)
+*迭代最近点-point to point*
+*数学模型*
+- **目标函数**：
+  - ICP 旨在最小化点云间的欧氏距离之和，通常通过解决最小二乘问题实现：
+  - $$ \min_T \sum_{i=1}^N \| R p_i + \mathbf{t} - q_{\text{closest}(i)} \|^2 $$
+- **求解方法**：
+  - 使用 SVD (奇异值分解) 或其他数值方法求解 $R$ 和 $\mathbf{t}$。
+*算法流程*
+1. **初始化**：
+   - 设定初始变换$T^{(0)}$。若无先验信息，则 $T^{(0)} = I$（单位矩阵）
+2. **最近点搜索**：
+   - 对于源点云 $\mathbf{P}$ 中的每个点 $p_i$，找到目标点云$\mathbf{Q}$ 中最近的点 $q_j$。
+   - $$ \forall p_i \in \mathbf{P}, \quad q_{\text{closest}} = \arg \min_{q_j \in \mathbf{Q}} \| p_i - q_j \|^2 $$
+3. **变换矩阵求解**：
+   - 计算最优变换 $T$ 以最小化配准误差：
+   - $$ T^{(k+1)} = \arg \min_T \sum_{i=1}^N \| T p_i - q_{\text{closest}(i)} \|^2 $$
+   - 其中$T$ 包含旋转$R$ 和平移$\mathbf{t}$。
+4. **迭代更新**：
+   - 应用变换 $T^{(k+1)}$ 更新点云 $\mathbf{P}$：
+   - $$ \mathbf{P}^{(k+1)} = T^{(k+1)} \mathbf{P}^{(k)} $$
+   - 重复步骤2-3，直到满足收敛条件（如迭代次数、变换更新阈值等）。
+
+##### GICP
+**GICP (Generalized Iterative Closest Point) 算法** 是一种改进的迭代最近点算法，通过分布到分布的比对来增强点云的匹配精度。它主要用于三维空间中的点云数据对齐。下面是GICP算法的数学表达和详细解释：
+#### 数学表达
+1. **点的高斯表示**：
+   每个点不仅表示为一个位置向量，而是一个带有高斯分布的模型。这意味着，源点云中的每个点$a_i$ 和目标点云中的每个点 $b_i$ 均关联一个高斯分布，其均值分别为 $\hat{a}_i$ 和 $\hat{b}_i$，协方差分别为 $C_{A_i}$ 和 $C_{B_i}$。
+   $$
+   a_i \sim \mathcal{N}(\hat{a}_i, C_{A_i}), \quad b_i \sim \mathcal{N}(\hat{b}_i, C_{B_i})
+   $$
+2. **变换误差的定义**：
+   定义从 $a_i$ 到 $b_i$ 的变换误差为$hat{d}_i$：
+   $$
+   \hat{d}_i = \hat{b}_i - T\hat{a}_i
+   $$
+   其中 $T$ 是待优化的变换矩阵。
+
+3. **误差的高斯分布**：
+   误差 $d_i$ 也假设为高斯分布，利用高斯分布的性质，变换后的点的误差分布为：
+   $$
+   d_i \sim \mathcal{N}(0, C_{B_i} + T C_{A_i} T^T)
+   $$
+   这里的 $C_{B_i} + T C_{A_i} T^T$ 表示考虑到源点和目标点协方差的变换点的协方差。
+
+4. **优化目标**：
+   GICP 的目标是找到变换 $T$，使得转换后的源点云在目标点云分布下的似然性最大化，等同于最小化马氏距离：
+   $$
+   T = \arg \min_T \sum_i d_i^T (C_{B_i} + T C_{A_i} T^T)^{-1} d_i
+   $$
+5. **协方差的规范化**：
+   为了提高GICP的鲁棒性和避免退化解，通常会对协方差矩阵进行规范化处理。通常在协方差矩阵的对角线元素上添加一个小常数 \(\epsilon\) 来确保它们是良态的。
+
+
+
+### mapping
+#### build heat_map and binary_map
+**生成热度和二值化地图**
+##### 1. 点云数据转换
+- **原始数据**：
+  - 输入的点云数据通常是一个`Nx3`的NumPy数组，每行表示一个点的世界坐标（X, Y, Z）。
+- **坐标变换**：
+  - 为了将点云数据映射到二维地图上，需要忽略Z坐标，并将X和Y坐标转换为地图的像素索引。
+  - 转换公式为：
+    $$
+    \text{index}_x = \left(\frac{X}{\text{resolution}} + \text{origin}_x\right) \text{（取整）}
+    $$
+    $$
+    \text{index}_y = \left(\frac{Y}{\text{resolution}} + \text{origin}_y\right) \text{（取整）}
+    $$
+    其中，$\text{resolution}$ 是地图的分辨率，$\text{origin}_x$ 和 $\text{origin}_y$ 是地图原点在地图像素坐标中的位置。
+##### 2. 热度图构建
+- **热度更新**：
+  - 使用累加的方式更新地图上对应像素的值，每当一个点被映射到某个像素时，该像素的值增加1。
+  - 这样可以得到每个像素被点云中的点覆盖的次数，从而生成热度图。
+- **数学表达**：
+  - 对于每个有效的点索引$(i, j)$，执行更新操作：
+    $$
+    \text{heat\_map}[i, j] += 1
+    $$
+##### 3. 二维占用网格的构建
+- **阈值处理**：
+  - 根据设定的阈值（$\text{occupancy\_threshold}$），将热度图转换成二维占用网格。
+  - 如果某个像素的热度值小于阈值，则该像素标记为可通行（0），否则标记为障碍（1）。
+- **转换公式**：
+  $$
+  \text{binary\_map} = \begin{cases}
+    0, & \text{if }\text{heat\_map}[i, j] < \text{occupancy\_threshold} \\
+    1, & \text{otherwise}
+  \end{cases}
+  $$
