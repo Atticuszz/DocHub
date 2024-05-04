@@ -49,8 +49,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/papers/Knowledge.md",
-                "mode": "preview",
+                "file": "docs/papers/SCI_paper.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/papers/SCI_paper.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/papers/Knowledge.md",
+                "file": "docs/papers/SCI_paper.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/papers/Knowledge.md"
+                "file": "docs/papers/SCI_paper.md"
               }
             }
           },
@@ -227,6 +227,10 @@
   },
   "active": "97ceaeef7f7a4de6",
   "lastOpenFiles": [
+    "assets/Pasted image 20240504112823.png",
+    "docs/papers/main.md",
+    "docs/papers/SCI_paper.md",
+    "docs/papers/Knowledge.md",
     "docs/OS/Ubuntu/bugs.md",
     "docs/device/controller/Raspberry_PI_4B.md",
     "docs/papers/GICP_slam.pdf",
@@ -248,8 +252,6 @@
     "assets/Pasted_image_20240329151455.png",
     "assets/Pasted_image_20240328211200.png",
     "assets/Pasted_image_20240328211138.png",
-    "docs/papers/Knowledge.md",
-    "docs/papers/main.md",
     "docs/schedule/meetings/standard.md",
     "docs/schedule/meetings/2024-2-28.md",
     "docs/schedule/meetings/2024-1-24.md",
@@ -263,8 +265,6 @@
     "assets/Pasted_image_20240322131335.png",
     "docs/device/camera.md",
     "docs/OS/Ubuntu/code_env.md",
-    "docs/OS/Ubuntu/system.md",
-    "docs/OS/Ubuntu/wsl.md",
     "docs/papers/Dynamic_3D_Gaussians_dul.pdf",
     "docs/papers/splat_nav.pdf",
     "docs/papers/nerf_nav.pdf",
