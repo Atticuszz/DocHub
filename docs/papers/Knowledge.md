@@ -14,7 +14,7 @@ _format in disk_
 - 优点是保留原始图像的完整质量，支持透明度。
 - 缺点是文件大小通常比JPEG大。
 
- _format in RAM_
+_format in RAM_
 
 #### Image coordinate system
 
