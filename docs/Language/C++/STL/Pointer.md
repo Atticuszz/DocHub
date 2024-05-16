@@ -5,12 +5,14 @@
 #### 智能指针类型
 
 1. **`std::unique_ptr`**
+
    - **特性**：提供对内存的独占所有权，即同一时间内只有一个 `std::unique_ptr` 可以拥有资源。
    - **典型用途**：用于需要明确单一所有权的情况，例如在函数内部创建临时对象。
    - **不可复制**：只能移动，确保所有权的唯一性。
    - **引入版本**：C++11。
 
 2. **`std::shared_ptr`**
+
    - **特性**：支持多重所有权概念，即多个 `std::shared_ptr` 对象可以共享同一个资源。
    - **典型用途**：用于对象生命周期需要由多个所有者共同管理的情况，例如在多个数据结构之间共享数据。
    - **引入版本**：C++11。
@@ -42,7 +44,7 @@ class Child {
 public:
     std::weak_ptr<Parent> parent;  // 使用 weak_ptr 避免循环引用
     ~Child() { std::cout << "Child destroyed\n"; }
-    
+
     void setParent(std::shared_ptr<Parent> p) {
         parent = p;  // 设置 parent 为传入的 shared_ptr
     }
@@ -58,13 +60,16 @@ int main() {
 }
 
 ```
+
 #### 创建和使用智能指针
 
 - **`std::make_shared`**
+
   - **描述**：用于构造 `std::shared_ptr` 的优选方法，因为它可以在单一操作中分配内存，提高效率并减少异常风险。
   - **引入版本**：C++11。
 
 - **`std::make_unique`**
+
   - **描述**：用于构造 `std::unique_ptr` 的方法。类似于 `std::make_shared`，但专为 `std::unique_ptr` 设计。
   - **引入版本**：C++14。
 
