@@ -16,3 +16,10 @@ _提取码：zsdf_
 #### 常见问题解决方案wiki · 语雀
 
 [ROSMASTER-X3](https://www.yuque.com/yahboomtechnology/yahboom_support/qoggx5?)
+
+[Scientific Python -](https://scientific-python.org/)
+
+[Home - Scientific Python Development Guide](https://learn.scientific-python.org/development/)
+
+
+[Version Control with Git: Summary and Setup](https://swcarpentry.github.io/git-novice/)
