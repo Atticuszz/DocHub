@@ -24,6 +24,12 @@
 | `unsigned long`      | 0      | 4,294,967,295              | 至少 32 位，但可能更长 |
 | `unsigned long long` | 0      | 18,446,744,073,709,551,615 | 至少 64 位             |
 
+## Uniform Initialization
+```cpp
+int a{5}; // 直接初始化
+std::vector<int> v{1, 2, 3}; // 统一初始化
+
+```
 ## Auto Keyword for Type Inference
 
 ```cpp
