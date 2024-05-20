@@ -1,0 +1,872 @@
+Original Paper
+Optimized GICP registration algorithm based on principal component analysis for point cloud edge extraction
+
+Measurement and Control 2024, Vol. 57(1) 77–89 Ó The Author(s) 2023 Article reuse guidelines: sagepub.com/journals-permissions DOI: 10.1177/00202940231193022 journals.sagepub.com/home/mac
+
+Weidong Zhao, Dandan Zhang , Dan Li, Yao Zhang and Qiang Ling
+
+Abstract For iterative closest point (ICP) algorithm, the initial position and the number of iterations are needed in registration. At the same time, the ICP algorithm is easy to fall into local convergence and convergence speed is slow. By constructing K-D tree to search neighborhood points and artificially set threshold, plane fitting is carried out, the on-time point cloud to be deployed is separated from the complex background, and statistical analysis is used to calculate the distance between the point cloud and the neighborhood point to quickly remove the invalid point cloud. The surface equation is set to calculate the tangent plane of point cloud normal vector and each normal vector, and the local coordinate system is constructed. The angle between adjacent vectors and the local coordinate system is calculated to determine the feature point set of edge contour. According to the covariance matrix of the feature points set, the principal feature component is obtained, the principal axis direction of the two sets of point clouds is found, and the rotation matrix and the displacement vector are obtained. Finally, GICP precise registration of point cloud is carried out according to initial pose parameters and rigid body transformation matrix obtained by maximum likelihood estimation method. The results show that the optimized algorithm can effectively avoid local convergence. Compared with the traditional ICP algorithm, when the algorithm achieves the same registration accuracy in the public dataset experiment, the registration speed is on average 44.82% faster and the overlap rate is on average 15.26% higher. In the real dataset experiment, the registration speed is on average 59.04% faster, the registration accuracy is on average 30.24% higher and the overlap rate is on average 10.61% higher. This shows that the optimization algorithm is superior to the traditional ICP algorithm in registration accuracy and convergence speed.
+Keywords Point cloud registration, extraction of edges, traditional ICP algorithm, PCA registration
+Date received: 11 April 2023; accepted: 17 July 2023
+
+Introduction
+Motivation
+As the application field of three-dimensional point cloud1 becomes more and more extensive, the processing technology related to it has also become a hot research topic, such as point cloud filtering,2 point cloud segmentation,3 point cloud feature extraction,4,5 point cloud registration,6–8 point cloud recognition,9,10 surface reconstruction,11 etc. Point cloud registration is one of the key technologies for three-dimensional measurement of large forgings.12 Due to the high requirement on the forging process and precision of large forgings the accuracy and speed of point cloud registration is particularly important for the quality control of large forgings.
+
+So far, the most widely used registration algorithms are based on point set to point set and geometric features.13 The ICP proposed by Besl and McKay.14 belongs to the classical registration algorithm of point-set to point-set. However, this algorithm is prone to local convergence due to its heavy computation and low efficiency in the process of searching corresponding points and its dependence on initial pose.15 Over the
+School of Electrical and Information Engineering, Anhui University of Technology, Ma’anshan, China
+Corresponding author: Dandan Zhang, School of Electrical and Information Engineering, Anhui University of Technology, Anhui Ma’anshan, Ma’anshan 243032, China. Email: 492351600@qq.com
+
+Creative Commons CC BY: This article is distributed under the terms of the Creative Commons Attribution 4.0 License (https://creativecommons.org/licenses/by/4.0/) which permits any use, reproduction and distribution of the work without further permission provided the original work is attributed as specified on the SAGE and Open Access pages (https://us.sagepub.com/en-us/nam/ open-access-at-sage).
+
+78
+
+Measurement and Control 57(1)
+
+years, researchers have worked to solve the shortcomings of ICP algorithms and improve them. The registration speed of ICP algorithm is improved by simplifying the number of matching points, improving the search speed of neighborhood points and reducing the number of iterations.16 The common methods are downsampling,17 random sampling,18 and feature-based sampling.19,20 Compared with the methods used in the above paper, the voxel grid downsampling algorithm21 is popular because of its high efficiency, uniform distribution of sampling points, and indirect control of the distance of sampling points by controlling the size of voxels. To optimize the registration accuracy of the algorithm, the method of solving the rigid body transformation matrix, and eliminating the wrong matching point pairs is studied. The methods of Weighted Least Squares (WLS),22 Total Least Squares (TLS),23 and Iterative Reweighted Least are proposed Squares (IRLS),24 etc. Compared with the above algorithms, Least Squares (LS)25 is widely used because of its simple calculation and high efficiency, while the planar fitting algorithm based on Random Sample Consensus (RANSAC)26 can not only eliminate complex backgrounds, but also eliminate complex backgrounds. It can also maintain the geometric relationship corresponding to the point cloud and remove the anomaly. To solve the problem of ICP falling into local optimal solution, the most effective method is to divide the registration process into two stages: rough registration and fine registration. The feature-based registration method is used to extract points,27 lines,28 and surfaces29 for rough registration, providing good initial pose for subsequent ICP fine registration. This method effectively avoids the algorithm falling into local convergence. Among them, the feature-based registration algorithm has the widest application field. Common key point extraction is based on curvature change,30 covariance matrix,31 Gaussian difference, and scale space.32 Such as Intrinsic Shape Signatur (ISS),33 Normal Aligned Radial Feature (NARF),34 Scale-invariant feature transform (SIFT),35,36 3D Harris,37 and other algorithms. However, the feature point algorithm with single information has some problems, such as low robustness, easy to be affected by noise, and large time complexity. Therefore, how to add more effective information to feature points to improve the accuracy of matching point pairs is of great significance.
+Related work
+In recent years, researchers have proposed many optimization algorithms for the speed and accuracy of point cloud registration, such as the point-to-point affine transformation registration algorithm proposed by Makovetskii et al.,38 which reduces the computation and iteration times and can quickly converge to a given threshold. Meng et al.39 adopted the K-D tree data structure to speed up the search of neighborhood points. The robustness of these methods is poor, and the search efficiency decreases in the case of large data
+
+volume. Generalized Iterative Closest Point (GICP) algorithm proposed by Segal et al.40 introduces probabilistic information and effectively eliminates incorrect correspondence through covariance matrix to improve registration accuracy. Zhan et al.41 adopted the Random Sample Consensus (RANSAC) algorithm to search for the correct corresponding points and remove the abnormal point cloud, which appropriately improved the registration accuracy. However, in the case of noise and outliers, the registration effect would be affected. Yao et al.42 proposed a method to complete point cloud registration by extracting feature points through principal curvature, and the registration accuracy was higher when the features at the sharp corners of the point cloud were obvious. Manish et al.43 proposed to use SURF (speeded up robust features) algorithm to extract image feature points and obtain initial matching point pairs of point clouds by matching pixel pairs. This algorithm relies too much on the gradient direction of pixels in a local region, which is prone to large errors in feature matching. Due to the problem that the above algorithms may not be able to fully describe feature information, researchers proposed the concept of descriptors, such as Signature of Histogram of Orien Tations (SHOT),44 Descriptors such as 3D Shape Context (3DSC),45 and Fast Point Feature Histogram (FPFH).46 It is worth mentioning that point cloud fine registration according to the initial pose provided by rough registration has become the mainstream. For example, Yin et al.32 extracted feature points through SIFT algorithm for rough registration, and then combined with K-D tree for ICP algorithm for fine registration. Yang et al.47 proposed a local feature statistics histogram (LFSH) and introduced Optimized sample consistency (OSAC) to estimate the optimal transformation matrix, which realized the coarse to fine registration algorithm. However, the above method still has some problems, such as slow registration speed and incomplete description of characteristic information, resulting in low registration accuracy.
+Contribution
+Based on the above Analysis, this paper proposes a point cloud edge extraction based Principal Component Analysis (PCA)48 to optimize GICP registration algorithm, which solves the problem of traditional ICP algorithm falling into local convergence and improves the accuracy, speed and robustness of point cloud registration. The main contributions are as follows.
+(1) Although feature points are described in Yin et al.,32 and Yang et al.,47 there is still a problem that noise points lead to incomplete feature description information. In addition, Makovetskii et al.,38 Meng et al.,39 and Zhan et al.41 are only optimized in terms of speed or accuracy, and the two are not combined. Therefore, the optimization
+
+Zhao et al.
+
+79
+
+algorithm in this paper segmentation interference background by plane fitting before registration. Statistical analysis is used to remove noise point,49 voxel grid downsampling is used, and K-D tree is used to search the nearest point to improve the registration speed, and accuracy of the improved algorithm. (2) Different from the monogeneity of feature point information in literature,33–37 the algorithm determines feature contour points50–52 by calculating edge point clouds, and carries out rough registration of contour point clouds with edge information. (3) The main feature component of the data is extracted by PCA algorithm through linear transformation, and the approximate registration pose is obtained by rough registration of the edge contour point cloud, and then the GICP point cloud fine registration is completed by the initial pose.
+Method
+
+neighbors and the angle relationship between lines between points. Its essence is to find K neighborhood points of points and calculate normal vectors, construct local coordinate system, and obtain Simple Point Feature Histograms (SPFH). The overall complexity of the algorithm is low, and it is more common in practical applications. PCA algorithm can reduce the dimensionality of the sample, reduce the high-dimensional vector mapping to the low-dimensional space, and ensure that the information loss between dimensions is as small as possible, which not only alleviates the complexity of the calculation, but also has the effect of noise reduction. It is one of the algorithms widely used in point cloud coarse collocation time.
+To verify the performance of this method, the public data set and the real data set of simulated forgings are tested and demonstrated, and the registration algorithms mentioned in references14,46,48 are compared with the improved algorithm in this paper in terms of recognition accuracy, registration speed and iteration times.
+
+The flowchart of the scheme for optimizing the GICP registration algorithm based on principal component analysis of point cloud edge feature extraction is shown in Figure 1. In this paper, we calculate the corresponding normal vectors and the tangent planes of each normal vector by setting the surface equation to the point cloud, project the point set onto the tangent plane, and construct a local coordinate system based on the projection of one of the points. Then the angle between the projected point set and the vector of the original point cloud and the local coordinate system is calculated, and when the angle is greater than a given threshold, it is an edge point. The PCA algorithm coarse registration is performed on the edge contour point set, and the principal eigen components and principal axis directions are obtained by calculating the covariance matrix of the two point sets, and the principal axis directions of the highly symmetric point cloud are corrected to avoid reverse registration, and then the point cloud rotation matrix and translation vector are derived to complete the coarse registration of the point cloud. The point cloud distribution is established on the Gaussian model, so that the distance between the point clouds presents a Gaussian distribution, the registration error function is obtained by calculating the covariance matrix of the edge contour point set, and the rigid body transformation matrix and the corresponding Gaussian probability are calculated by the maximum likelihood estimation method. The transformation matrix corresponding to the maximum Gaussian probability is the optimal coordinate transformation, and the fine registration is completed by the optimal transformation matrix.
+The FPFH descriptor algorithm in Wu et al.46 and the PCA algorithm in Sanchez et al.48 PCA are both popular algorithms for point cloud registration in recent years. FPFH algorithm is a feature descriptor based on the normal angle between points and their
+
+Point cloud data preprocessing
+Since the external environment, noise interference and point cloud density affect the speed and accuracy of the algorithm, this paper preprocesses the point cloud before registration to improve the speed and efficiency of the improved algorithm. Background removal can be achieved by point cloud plane fitting technology. And RANSAC algorithm is adopted to segment the workpiece from the background point cloud. The specific steps are as follows:
+
+(1) Three points are randomly selected from the workpiece point cloud, denoted as P0ðx0, y0, z0Þ, P1ðx1, y1, z1Þ, P2ðx2, y2, z2Þ.
+(2) Set plane equation A Á x + B Á y + C Á z = 0. And substitute points P0, P1, and P2 into the equation of the plane, it means that
+
+8
+
+< Aðx À x0Þ + Bðy À y0Þ + Cðz À z0Þ = 0
+
+:
+
+Aðx Aðx
+
+À À
+
+x1 x2
+
+Þ Þ
+
++ +
+
+Bðy Bðy
+
+À À
+
+y1 y2
+
+Þ Þ
+
++ +
+
+Cðz Cðz
+
+À À
+
+z1 z2
+
+Þ Þ
+
+= =
+
+0 0
+
+ð1Þ
+
+(3) The distance from point Pi to the plane
+
+di
+
+=
+
+Axp0 +ﬃﬃﬃﬃﬃBﬃﬃﬃyﬃﬃ0ﬃﬃ+ﬃﬃﬃﬃﬃﬃCﬃﬃﬃzﬃﬃ0ﬃﬃ+ﬃﬃﬃﬃ A2 + B2 + C2
+
+D
+
+ð2Þ
+
+(4) The threshold t is set to divide the point cloud into inner points and outer points, and the condition of the inner point is di \ t.
+(5) Repeat the above steps N times until the maximum number of point clouds within the search threshold, that is, the plane fitting is complete
+
+80
+
+Measurement and Control 57(1)
+
+Figure 1. Optimized algorithm registration solution process.
+
+logð1 À PÞ
+
+N = logð1 À ð1 À eÞsÞ
+
+ð3Þ
+
+Where P is the probability of getting at least one inner point, e is the probability that the point is outside, s is the number of point clouds needed to solve the model.
+Efficient and convenient statistical analysis method can be used in noise point processing to quickly remove invalid point cloud from point set. The mean m and standard deviation s were calculated according to the point cloud distribution. Then all the points in the neighborhood point set and the points outside the interval where the distance between the points and their neighborhood was greater than m + mul3s could be regarded as noise points, where mul is the multiple threshold of standard deviation.
+In point cloud descending sampling processing, octree is used to establish voxel and replace all points in voxel with the mean of internal points. By setting the size of voxel, the size of voxel grid is changed, so that the descending sampling can be achieved without destroying the geometric structure of point cloud.
+Remark 1: Similar methods of downsampling and removal of outliers are proposed in literature.17,41 This paper fully considers the actual situation, and presents
+
+the methods of establishing voxel grid downsampling based on octree, and removing complex background based on RANSAC fitting plane. Considering the number of noise points and outliers, we choose to quickly remove the disturbance point cloud by calculating the mean and standard deviation of the point spacing. Although RANSAC algorithm is also used in Zhan et al.41 to remove abnormal points, there are still unavoidable missing noise points, which not only affect the effect of point cloud registration, but also bring serious errors to the subsequent three-dimensional measurement of industrial forgings.
+
+Point cloud edge contour feature extraction
+By extracting the edge features of the point cloud, the contour points are regarded as feature points. The adjacent points around the edge feature points of the point cloud are almost on the same side. The extraction steps of point cloud edge feature are as follows:
+
+(1) Set search radius R, the neighborhood points within
+
+the search radius of any point Ai and Bi in point
+
+cloud A and B are denoÈted NNððBBiiÞÞ,=thÈaBt jisB, jM2ðBA,iÞB=i ÀABjj
+
+aA\sj p2RoAÉin,tAseitÀMAðjA\iÞ RanÉd,
+
+(2) Set surface equation
+
+Zhao et al.
+
+81
+
+PCA rough registration process
+Set the two groups of point sets for edge extraction as X = fXgmi = 1 and Y = fYgni = 1, and the specific steps based on PCA registration algorithm are as follows:
+
+(1) The two sets of point cloud coordinates are barycentric
+
+Figure 2. Angle between vector and coordinate axis.
+
+1 Xm
+
+1 Xn
+
+X = m i = 1 Xi, Y = n i = 1 Yi
+
+ð8Þ
+
+&
+
+(2) Calculate the covariance matrix Cov
+
+A1 Á x + B1 Á y + C1 Á z = D1, A12 + B12 + C12 = 1 A2 Á x + B2 Á y + C2 Á z = D2, A22 + B22 + C22 = 1
+ð4Þ
+
+(
+
+CX CY
+
+= =
+
+1 Pm
+
+m 1
+
+Pni =
+
+1
+
+n i=1
+
+À À Xi Yi
+
+À À
+
+ÁÀ XÁÀ Xi Y Yi
+
+À À
+
+YXÁÁTT
+
+ð9Þ
+
+(3) Calculate the distance from MðAiÞ and NðBiÞ to equation (4)
+
+&
+
+di1 = jA1x + B1y + C1z À D1j di2 = jA2x + B2y + C2z À D2j
+
+ð5Þ
+
+(4)
+
+The min
+
+Pnonj =rm1 ad2il1
+
+vector m and min
+
+Pannd
+j=1
+
+n d2i2
+
+corresponding to can be obtained
+
+by equations (4) and (5).
+
+(5) According to the tangent plane h and g of the
+
+corresponding points of the normal vector m and
+
+n in the (4), the points in MðAiÞ and NðBiÞ are
+
+projected onto h and g, and the point Aj0 and Bj0
+
+are
+
+selected
+
+in
+
+the
+
+projection
+
+point
+
+set,
+
+with
+
+Ai A0 j
+jAi A0 j j
+
+as the u1 axis, m as the v1 axis, u13v1 as the v1
+
+axis,
+
+Bi B0 j
+jBi B0 j j
+
+as
+
+the
+
+u2
+
+axis,
+
+n
+
+as
+
+the
+
+v2
+
+axis,
+
+u23v2
+
+as the v2 axis. (6) The vectors of points An0 and Ai, Bn0 , and Bi in
+
+the projection point set are calculated respectively,
+
+and the included angles with the axes u1 and u2
+
+are calculated
+
+According to equations (8) and (9)
+
+C2X =
+
+3
+
+666666666664
+
+Xi
+m
+Xi
+m
+Xi
+
+À xm
+
+À
+
+XxÁ2
+
+Xi
+
+À xm
+
+À
+
+Xx
+
+ÁÀ ym
+
+À
+
+Xx
+
+Á
+
+Xi À xm
+
+À
+
+Xz
+
+ÁÀ zm
+
+À
+
+Xz
+
+Á
+
+m
+
+m
+
+À ym
+
+À
+
+Xy
+
+ÁÀ xm
+
+À
+
+Á Xx
+
+Xi
+
+À ym
+
+À
+
+Xy
+
+Á2
+
+Xi
+
+À ym
+
+À
+
+ÁÀ Xy zm
+
+À
+
+Á Xx
+
+m
+
+m
+
+À zm
+
+À
+
+ÁÀ Xz xm
+
+À
+
+Xx
+
+Á
+
+Xi
+
+À zm
+
+À
+
+Xz
+
+ÁÀ ym
+
+À
+
+Xy
+
+Á
+
+Xi
+
+À zm
+
+À
+
+XzÁ2
+
+777777777775
+
+m
+
+m
+
+m
+
+ð10Þ
+
+wÀ here ðxm,Áym, zmÞ is the coordinate of point cloud, Xx, Xy, Xz is the central coordinate of point cloud, and CY can be obtained.
+
+(3) The covariance matrix CX and CY are decomposed by SVD singular values, and corresponding eigenvectors are obtained
+
+X
+
+X
+
+CX = ZX VTX, CY = ZY VTY
+
+ð11Þ
+
+& uA = ðuA1, uA2, uA3, Á Á Á uAnÞ uB = ðuB1, uB2, uB3, Á Á Á uBnÞ
+
+where ZX and ZY are orthogonal matrices composed of ð6Þ three identity column vectors, which are the main direc-
+tions of X and Y point clouds.
+
+The diagram is presented in Figure 2.
+
+(7) The difference between the adjacent angles
+
+(
+
+uu00BA==ÀÀuu0B0A11,,uu0B0A22,
+
+, u0A3 u0B3,
+
+, Á
+
+Á Á
+
+Á Á
+
+Áuu0B0AnÀnÀ1Á1Á
+
+ð7Þ
+
+(8) The maximum included angle u0A max and u0B max of adjacent angles of two point sets are found respec-
+tively. If they are larger than the given threshold,
+they are considered as edge points.
+
+(4) Calculate the initial rotation matrix R0 and the translation vector T0
+
+R0 = ZXZÀY1, T0 = X À R0 Ã Y
+
+ð12Þ
+
+GICP registration algorithm based on PCA fusion
+It is assumed that the point cloud determines the correspondence relationship through the nearest neighbor domain search, namely, A = faigi = 1, :::, N and B = fbigi = 1, :::, N, and ai and bi correspond to each other.
+
+82
+
+Measurement and Control 57(1)
+
+Figure 3. Binocular camera equipment.
+
+Remark 2: In the precision matching time, this paper does not directly use ICP algorithm, but the generalized algorithm of ICP algorithm GICP, by using covariance matrix to play a similar role of weight, weaken the influence of irrelevant point cloud, improve the accuracy of registration. In the scope of application, the applicability of GICP algorithm is stronger than ICP algorithm, that is, GICP can be degraded into standard ICP algorithm under certain conditions.
+
+A and B point sets are generated according to the
+
+Gaussian model
+
+(
+
+ÀÁ
+
+ai;Na^i, sAi  bi;N b^i, sBi
+
+ð13Þ
+
+ÈÉ ÈÉ Where sAi and sBi are covariance matrices.
+Theoretically, there exists a correct transformation
+
+matrix TÃ that makes point cloud A and B match each other, namely b^i = TÃa^i. For an arbitrary rigid body
+
+transformation matrix, define the registration error diðTÞ = bi À Tai, where ai and bi are obtained from the
+
+independent Gaussian model. Substitute the definition
+
+to calculate the registration error under the standard transformation matrix TÃ:
+
+
+
+
+
+dðiTÃÞ;N b^i À ðTÃÞa^i, sBi + ðTÃÞsAi ðTÃÞT
+
+
+
+
+
+ð14Þ
+
+= N 0, sBi + ðTÃÞsAi ðTÃÞT
+
+After rough registration based on PCA, rotation matrix R0 = ZXZÀY1 and translation vector T0 = X À R0 Ã Y calculated by spindle orientation parameters are used
+
+as initial pose parameters of the improved GICP
+
+registration algorithm:
+
+b^i
+
+=
+
+ZXZÀY1a^i
+
++
+
+Â X
+
+À
+
+À ZX
+
+ZÀY1Á
+
+Ã
+
+Ã Y
+
+ð15Þ
+
+Experiment and result analysis
+Binocular structured light system was used in the experiment to acquire point cloud data. The acA1920150uc array camera of Basler company was used in the system, as shown in Figure 3. The frame rate of the camera reached 150 fps and the resolution reached 2.3 million pixels. It has an ON Semiconductor PYTHON 2000 CMOS chip. This paper takes public data set and real object data set as examples to carry out experimental analysis. All experiments were carried out using Windows10 operating system based on PCL 1.8.1 and Visual Studio 2015 software framework, and completed with C ++ language.
+
+Evaluation index
+To verify the registration effect of the optimization algorithm, the mean MSE of the sum of squares between corresponding points was used as the evaluation index of point cloud registration accuracy for the iterative error analysis. The smaller the MSE value, the higher the registration accuracy. That is:
+
+MSE
+
+=
+
+1 N
+
+XN
+i=1
+
+ðpi
+
+À
+
+qiÞ2
+
+ð19Þ
+
+At this time, the registration error dðiTÞ is updated
+
+dði TÞ
+
+=
+
+ZX
+
+ZÀY1a^i
+
++
+
+Â X
+
+À
+
+À ZX
+
+ZÀY1Á
+
+Ã
+
+Ã Y
+
+À
+
+Tai
+
+ð16Þ
+
+The rigid body transformation matrix T is calculated by maximum likelihood estimation method, and the
+
+maximum probability of T occurrence is calculated
+
+T
+
+=
+
+arg max
+
+Y
+
+ p dði TÞ
+
+=
+
+arg
+
+max
+
+X
+
+ log p dðiTÞ
+
+
+
+T
+
+i
+
+T
+
+i
+
+ð17Þ
+
+where N is the number of point clouds, pi is the coordinates of reference points, and qi is the coordinates of point clouds to be updated by the timing points.
+To further verify the registration accuracy of the improved algorithm, this paper analyzes the overlap degree of the two groups of point clouds after registration, and introduces the centroid deviation of the two groups of point clouds after registration as the index to evaluate the registration accuracy of point clouds, namely:
+Overlap rate Po:
+
+Po
+
+=
+
+Nc N
+
+ð20Þ
+
+Take the logarithm of formula (17) and simplify
+
+where Nc is the matching logarithm of the origin cloud
+
+T = arg min X diðTÞT ÀsBi + TsAi TTÁÀ1dðiTÞ
+
+T
+
+i
+
+and the target point cloud. Only the nearest neighbor ð18Þ points of each other can form a matching pair.
+
+Zhao et al.
+
+83
+
+Centroid deviation Pc:
+
+1 Pc = N
+
+!
+
+XN
+
+XN XN
+
+XN XN
+
+XN
+
+xFi À xTi, yFi À yTi, zFi À zTi
+
+i=0
+
+i=0 i=0
+
+i=0 i=0
+
+i=0
+
+ð21Þ
+
+where ðxFi, yFi, zFiÞ is the coordinate of point cloud after registration, and ðxTi, yTi, zTiÞ is the coordinate of target point cloud.
+
+Public dataset registration experiment
+Firstly, the optimization algorithm in this paper is applied to the public data set, and Stanford 3D rabbit point cloud, automobile point cloud, and aircraft point cloud are selected. The initial relative position relationship between the reference point cloud and the point cloud to be matched is shown in Figures 4(a), 5(a), and 6(a), in which the green point cloud is the source point cloud, the blue point cloud is the target point cloud, and the red point cloud is the post-registration point cloud. The traditional ICP algorithm, FPFH-based descriptor subalgorithm, PCA algorithm, and the improved algorithm in this paper were respectively used to test the above point cloud model. Figures 4 to 6 are the registration effect diagrams of 30 iteration experiments.
+It can be concluded from the combination of the chart that under the condition of no noise interference and smooth point cloud data, traditional ICP is still prone to fall into the local minimum, leading to registration failure. Through 30 iterations, the traditional ICP registration results of the three types of public point clouds are shown in Figures 4(b), 5(b), and 6(b), in which the on-time point clouds to be installed in Figures 4(b) and 5(b) roughly coincide with each other, and the accuracy index MSE is 0.02 and 0.06, respectively, but the overlap rate is only 76.69% and 69.40%. This is because the traditional ICP algorithm only considers the distance between the point and the point, and does not use the structural information of the point cloud, and when the algorithm is looking for the corresponding point, resulting in a certain number of wrong corresponding points. In Figure 6(b), the registration of aircraft point cloud has local convergence problem. The accuracy index MSE is 8.13 and the overlap rate is only
+
+1.22%, so the registration fails. The point cloud model has the characteristics of sparse distribution of point clouds on both wings and dense distribution of point clouds on fuselage. The point clouds only have good matching point pairs at the fuselage, which greatly affects the registration result and causes mismatching.
+Under the same experimental conditions, the registration results of FPFH algorithm are shown in Figures 4(c), 5(c), and 6(c). The accuracy index MSE is 0.32, 0.20, and 6.44e-03, and the overlap rate is 87.72%, 20.07%, and 33.08%, respectively. Although the FPFH algorithm meets the registration accuracy requirements, it improves the computational efficiency by not calculating the triples between neighboring points in the neighborhood, which inevitably reduces the complete description of the local neighborhood. To make up for this defect, FPFH expands the consideration range when performing statistical analysis, that is, the neighboring points of neighboring points are also taken into account, so the accuracy of the corresponding matching point pair is reduced. The overlap rate will go down. Similarly, the registration results of PCA algorithm are shown in Figures 4(d), 5(d), and 6(d). The accuracy index MSE is 1.28e-04, 3.01e-05, and 1.33e-03, respectively, and the overlap rate is 100%, 15.04%, and 38.00%, respectively. The registration overlap rate of the algorithm is also affected by the low precision of the corresponding points.
+The improved algorithm in this paper is superior to the above registration algorithms in terms of registration time and accuracy. Figures 4(e), 5(e), and 6(e) show the registration effect under the extraction of point cloud edge contour features, and Figures 4(f), 5(f), and 6(f) show the complete registration effect of optimized GICP algorithm based on edge contour features. The accuracy index MSE is 7.08e-12, 8.16e-13, and 1.98e-08 respectively, and the overlap rate is 100%, 99.92%, and 91.12% respectively. The specific experimental data are shown in Table 1 (in the table, Time represents the shortest time required to complete registration with the least number of iterations. Iteration times represents the minimum number of iterations to complete registration, Overlap rate represents the overlap rate of the two sets of point clouds after full registration, Offset represents the centroid offset of the two sets of point clouds after full registration.)
+
+Figure 4. Original rabbit point cloud and three registration results: (a) initial position, (b) ICP algorithm, (c) FPFH algorithm, (d) PCA registration, (e) edge registration, and (f) GICP optimization.
+
+84
+
+Measurement and Control 57(1)
+
+Figure 5. Original automobile point cloud and three registration results: (a) initial position, (b) ICP algorithm, (c) FPFH algorithm, (d) PCA registration, (e) edge registration, and (f) GICP optimization.
+
+Figure 6. Original aircraft point cloud and three registration results: (a) initial position, (b) ICP algorithm, (c) FPFH algorithm, (d) PCA registration, (e) edge registration, and (f) GICP optimization.
+
+Table 1. Public data set experiment results.
+
+Type
+
+Method
+
+Time/s
+
+Rabbit Automobile Aircraft
+
+ICP ICP FPFH PCA Optimize GICP ICP ICP FPFH PCA Optimize GICP ICP ICP FPFH PCA Optimize GICP
+
+44.81 42.92 32.12 21.04 21.52 37.33 23.25 5.97 9.54 23.27 35.17 11.63 105.19 4.817 22.95
+
+Iteration times
+33 30 – – 2 50 30 – 2 100 30 – – 2
+
+MSE
+1:78310À10 0.02 0.32 1:28310À4 7:08310À12 9:28310À11 0.06 0.20 3:01310À5 8:16310À13 8.13 8.13 6:44310À3 1:33310À3 1:98310À8
+
+Overlap rate (%)
+100.00 76.69 87.72 100 100 69.40 69.40 20.07 15.04 99.92 1.22 1.22 33.08 38.00 91.12
+
+Offset
+(0, 0, 0) (0, 0, 0) (0.21277, 20.41834, 0.37756) (0.00017, 0.00007, 0) (0.00189, 0.00042, 0.00389) (0.69141, 0.30896, 20.06695) (0.48738, 0.18108,20.16972) (20.04511, 20.56027, 20.19446) (20.00003, 0, 0) (0, 0, 0) (2116.92800, 246.58070, 2.98144) (2116.92800, 246.58070, 2.98144) (215.56430, 16.01830, 26.32390) (0.00070, 20.00122, 0) (0.00006, 0.00006, 0)
+
+Workpiece data set registration experiment
+In the experiment, binocular camera system was used to collect 10 sets of point cloud data of forging workpiece, and 4 sets of data were taken as examples. Since the obtained point cloud background noise is large and difficult to register, on the premise of retaining the complete characteristics, the RANSAC algorithm is applied to the point cloud data to remove the interference background, and other noise points, and outliers are removed through statistical analysis. The efficiency of the algorithm is improved by using Octree based voxel grid downsampling and K-D tree fast searching for the nearest point.
+
+Now the traditional ICP algorithm, FPFH-based descriptor algorithm, PCA algorithm and the improved algorithm in this paper are used for experimental analysis of the above collected point cloud data, and the data are also analyzed from the aspects of registration accuracy index MSE, point cloud overlap rate, registration time and the minimum number of iterations required for registration. Figures 7 to 10 are the registration effect diagrams of 50 iterative experiments.
+It can be concluded from the combination of the charts that Figures 7(b), 8(b), 9(b), and 10(b) show the registration effect of the traditional ICP algorithm. The accuracy index MSE is 0.36, 1.08, 3.18, and 11.36, respectively, and the point cloud overlap rate is
+
+Zhao et al.
+
+85
+
+Figure 7. Comparison of registration accuracy of workpiece A: (a) initial position, (b) ICP algorithm, (c) FPFH algorithm, (d) PCA registration, (e) edge registration, and (f) GICP optimization.
+
+Figure 8. Comparison of registration accuracy of workpiece B: (a) initial position, (b) ICP algorithm, (c) FPFH algorithm, (d) PCA registration, (e) edge registration, and (f) GICP optimization.
+
+Figure 9. Comparison of registration accuracy of workpiece C: (a) initial position, (b) ICP algorithm, (c) FPFH algorithm, (d) PCA registration, (e) edge registration, and (f) GICP optimization.
+
+Figure 10. Comparison of registration accuracy of workpiece D: (a) initial position, (b) ICP algorithm, (c) FPFH algorithm, (d) PCA registration, (e) edge registration, and (f) GICP optimization.
+
+21.17%%, 86.64%, 66.90%, and 61.89%, respectively. The registration errors of parts A and B are relatively large, and only parts C and D are successfully registered, indicating that although ICP algorithm performs well in public data sets, in the face of complex workpiece point clouds with a large number of noise points in reality, the registration accuracy of the algorithm is related to the initial pose, point cloud data and shape, and the success rate is somewhat random. Figures 7(c), 8(c), 9(c), and 10(c) show the
+
+registration effect diagram of FPFH algorithm. The accuracy index MSE is 0.36, 1.61, 1.16, and 3.89, respectively, and the overlap rate of point cloud is 77.81%, 71.79%, 88.17%, and 60.96% respectively, which is higher in accuracy than the traditional ICP algorithm. And the workpiece A, B, C, D are successfully registered, but FPFH algorithm to extract feature points need to calculate a large number of normal, so the speed still can not meet the industrial requirements. Figures 7(d), 9(d), and 10(d) are the
+
+86
+
+Measurement and Control 57(1)
+
+Figure 11. Registration accuracy evaluation index: (a) MSE error comparison and (b) comparison of overlap rate of point cloud.
+
+registration renderings based on PCA algorithm, which are superior to the traditional ICP algorithm and FPFH algorithm in terms of speed, and the registration time is 29.07, 1.19, 1.57, and 2.84 s, respectively. However, they are not superior to the traditional ICP algorithm and FPFH algorithm in terms of registration accuracy.
+Figures 7(f), 8(f), 9(f), and 10(f) show the registration effect of the optimization algorithm proposed in this paper. By combining PCA algorithm, the registration speed of point cloud is improved, and the information, and structure between point clouds are fully utilized to further improve the registration accuracy of point cloud. As shown in Figure 11 and Table 2, the accuracy index MSE of the algorithm is 6.50e-10, 7.73e-06, 5.03e-06, and 2.28, respectively, and the point cloud overlap rate is 100%, 100%, 100%, and 80.43%, respectively. In addition, the traditional ICP algorithm needs 127 iterations, 105 iterations, 54 iterations, and 122 iterations respectively to complete the registration, while the algorithm only needs 4 iterations, 17 iterations, 5 iterations, and 3 iterations to complete the registration. After registration, the centroid offset of the two groups of point clouds is lower than that of the traditional ICP algorithm, FPFH descriptor algorithm, and PCA algorithm. It effectively shows that the overall registration degree of the optimization algorithm is high.
+Figure 12 shows the bar chart of the time required by the traditional ICP algorithm, FPFH-based descriptor subalgorithm, PCA algorithm and the improved algorithm for the registration of work pieces A, B, C, and D. In the figure, the time required by the improved algorithm is significantly faster than that of the traditional ICP algorithm and FPFH algorithm, greatly improving the registration speed of point cloud, while the time required by PCA algorithm for work pieces B and C is slightly shorter. However, it can be seen from Figure 11 and Table 2 that the registration accuracy is lower than that of the improved GICP algorithm. After
+
+registration, the accuracy index MSE, point cloud overlap rate, point cloud centroid deviation, the improved algorithm is superior to the traditional ICP algorithm, FPFH-based descriptor algorithm, and PCA algorithm.
+Through experiments and data analysis, the improved algorithm is 59.04% faster than the traditional ICP algorithm and 93.48% faster than the FPFH descriptor algorithm. The registration accuracy is 30.24% higher than that of the traditional ICP algorithm and 85.35% higher than that of the FPFH descriptor algorithm, which not only improves the registration speed and accuracy, but also avoids the local convergence of the algorithm.
+Conclusion
+Point cloud registration technology is very important in the three-dimensional measurement of large forgings, and it is one of the important links to judge whether the size of forgings meets the industrial requirements. The traditional ICP registration algorithm has problems such as slow speed, low precision and easy to fall into local convergence, which cannot meet the requirements of forgings measurement. Therefore, this paper proposes an optimized GICP fine registration algorithm based on point cloud edge extraction by principal component analysis.
+Our method removes the disturbing background by plane fitting to the matching point cloud, and refines the other noise and outliers. Because the voxel grid downsampling method has high efficiency, uniform distribution of sampling points, and can control the distance of sampling points, we choose to use voxel grid downsampling and K-D tree to quickly search the nearest point to improve the efficiency of the algorithm. The extraction of feature points in this paper is different from the previous single feature algorithm. We carry out multi-information description of feature points, and determine whether the point is an edge feature
+
+Zhao et al.
+
+87
+
+Table 2. Experimental results of real forged workpiece data set.
+
+Type Workpiece A Workpiece B Workpiece C Workpiece D
+
+Method
+ICP ICP FPFH PCA Optimize GICP ICP ICP FPFH PCA Optimize GICP ICP ICP FPFH PCA Optimize GICP ICP ICP FPFH PCA Optimize GICP
+
+Time/s
+188.60 93.68 93.98 29.07 10.36 7.60 4.03 64.31 1.19 4.08 5.76 5.55 93.48 1.57 4.45 8.61 3.62 59.38 2.84 2.36
+
+Iteration times
+127 50 – – 4 105 50 – – 17 54 50 – – 5 122 50 – – 3
+
+MSE
+1:46310À8 0.36 0.36 0.41 6:50310À10 3:95310À6 1.08 1.61 3.46 7:73310À6 3.12 3.18 1.16 3.81 5:03310À6 2.89 11.36 3.89 0.77 2.28
+
+Overlap rate (%)
+100.00 21.17 77.81 37.60 100.00 100.00 86.64 71.79 57.66 100.00 66.90 66.90 88.17 55.04 100 71.09 61.89 60.96 70.63 80.43
+
+Offset
+(0, 20.00002, 0.00006) (1.68570, 1.85470, 20.63000) (1.48613,0.12997,1.35205) (20.00002, 0.00030, 20.01984) (0, 0, 0) (0.00005, 0.00006, 0) (20.23800, 21.44180, 0.00500) (2.31019, 2.01330, 0.50573) (0, 0.00008, 0) (0, 0, 0) (24.36025, 6.54373, 0.54254) (24.35329, 6.55700, 0.54500) (0.30382, 0.75903, 20.05231) (0.00412, 20.00085, 20.02417) (20.00003, 0, 20.00006) (2.01187, 20.03463, 20.18543) (17.3687, 0.813629, 21.23706) (10.88640, 1.82459,0.35830) (20.00009, 0, 20.00232) (20.13632, 20.41649, 20.03247)
+
+Figure 12. Comparison chart of registration time.
+point by calculating the angle between the normal vector and the coordinate axis of adjacent points in the point cloud. This method can effectively improve the registration accuracy, and then PCA algorithm is used to calculate the covariance matrix of the feature point cloud to obtain the main feature components and the principal axis direction, so as to provide a good initial pose for the subsequent point cloud fine registration, which can effectively avoid the algorithm falling into local convergence. Then, the pose parameters obtained by rough registration are applied to GICP algorithm, and the rigid body transformation matrix is calculated by maximum likelihood estimation method. After continuous iteration, more accurate pose parameters are obtained to complete point cloud fine registration.
+Different from the optimization of single problem in ICP algorithm, this paper emphasizes to solve the
+
+limitation problem of ICP algorithm to the maximum extent, and further improve the speed and accuracy of algorithm registration while solving the problem that the algorithm is prone to local convergence. It is worth mentioning that the GICP algorithm, the generalized algorithm of ICP algorithm, is optimized by fusion, which makes the algorithm more widely applied and more applicable. It should be pointed out that the experiment of the optimization algorithm is completed in a regular scene, and is limited by the experimental site. In this paper, small workpieces are used to simulate large forgings, but the experiment has not been carried out for the real large forgings. The experimental scene is too idealized, and the forging environment of large forgings is generally accompanied by factors such as high temperature, light, dust and air convection. These uncertain influence factors will produce certain errors to point cloud registration. The future work will carry out registration experiments on real large forgings, try to carry out experiments in different complex environments, and improve the universality of the optimization algorithm.
+Declaration of conflicting interests
+The author(s) declared no potential conflicts of interest with respect to the research, authorship, and/or publication of this article.
+Funding
+The author(s) disclosed receipt of the following financial support for the research, authorship, and/or publication of this article: This work was supported by Natural Science Foundation of Education Department of Anhui Province under Grant 2108085MF225.
+
+88
+
+Measurement and Control 57(1)
+
+ORCID iD
+Dandan Zhang https://orcid.org/0009-0006-5642-1340
+References
+1. Huang M, Jia J, Li S, et al. Panoramic texture mapping algorithm based on multi-image pose estimation. Geomat Inf Sci Wuhan Univ 2019; 44(11): 1622–1632.
+2. Zeybek M and Sxanlıog˘ lu I_. Point cloud filtering on UAV based point cloud. Measurement 2019; 133: 99–111.
+3. Xu B, Jiang W, Shan J, et al. Investigation on the weighted RANSAC approaches for building roof plane segmentation from LiDAR point clouds. Remote Sens 2015; 8(1): 5.
+4. Sanchez J, Denis F, Checchin P, et al. Global registration of 3D LiDAR point clouds based on scene features: application to structured environments. Remote Sens 2017; 9(10): 1014.
+5. O¨ zxcelia¨ k YB and Altan A. Classification of diabetic retinopathy by machine learning algorithm using entorpy-based features. In: Proceedings of the CxAnkaya International Congress on Scientific Research, 2023, pp. 523–535. Golbasi, Adiyaman Province, Turkey: IKSAD.
+6. Li C, Lu B, Zhang Y, et al. 3D reconstruction of indoor scenes via image registration. Neural Process Lett 2018; 48: 1281–1304.
+7. Zhu J, Jin C, Jiang Z, et al. Robust point cloud registration based on both hard and soft assignments. Opt Laser Technol 2019; 110: 202–208.
+8. Zhu J, Jiang Z, Evangelidis GD, et al. Efficient registration of multi-view point sets by K-means clustering. Inf Sci 2019; 488: 205–218.
+9. Guo Y, Sohel F, Bennamoun M, et al. A novel local surface feature for 3D object recognition under clutter and occlusion. Inf Sci 2015; 293: 196–213.
+10. Yag˘ I_ and Altan A. Artificial intelligence-based robust hybrid algorithm design and implementation for real-time detection of plant diseases in agricultural environments. Biology 2022; 11(12): 1732.
+11. Vizzo I, Chen X, Chebrolu N, et al. Poisson surface reconstruction for LiDAR odometry and mapping. In: 2021 IEEE international conference on robotics and automation (ICRA). New York: IEEE, 2021: 5624–5630.
+12. Zhang Y, Wang Y, Liu Y, et al. A concentricity measurement method for large forgings based on laser ranging principle. Measurement 2019; 147: 106838.
+13. Liu Y, Kong D, Zhao D, et al. A point cloud registration algorithm based on feature extraction and matching. Math Probl Eng 2018; 2018: 1–9.
+14. Besl PJ and McKay ND. Method for registration of 3-D shapes. In: Sensor fusion IV: control paradigms and data structures, 1992, vol. 1611, pp.586–606. Bellingham, WA: SPIE.
+15. Li P, Wang R, Wang Y, et al. Evaluation of the ICP algorithm in 3D point cloud registration. IEEE Access 2020; 8: 68030–68048.
+16. Cheng L, Chen S, Liu X, et al. Registration of laser scanning point clouds: a review. Sensors 2018; 18(5): 1641.
+17. Wang X, Jin Y, Cen Y, et al. LighTN: light-weight transformer network for performance-overhead tradeoff in point cloud downsampling. arXiv preprint arXiv:2202. 06263, 2022.
+
+18. Lang I, Manor A and Avidan S. Samplenet: differentiable point cloud sampling. In: Proceedings of the IEEE/ CVF conference on computer vision and pattern recognition, 2020, pp.7578–7588. New York: IEEE.
+19. Lin Y, Liu T, Zhang Y, et al. LA-Net: LSTM and attention based point cloud down-sampling and its application. Meas Control 2023. Epub ahead of print 9 February 2023. Doi:10.1177/00202940221149074.
+20. Al-Rawabdeh A, He F and Habib A. Automated featurebased down-sampling approaches for fine registration of irregular point clouds. Remote Sens 2020; 12(7): 1224.
+21. Borges TM, Garcia DC and de Queiroz RL. Fractional super-resolution of voxelized point clouds. IEEE Trans Image Process 2022; 31: 1380–1390.
+22. Cohen A and Migliorati G. Optimal weighted leastsquares methods. SMAI J Comput Math 2017; 3: 181–203.
+23. Wang B, Li J and Liu C. A robust weighted total least squares algorithm and its geodetic applications. Stud Geophys Geod 2016; 60: 177–194.
+24. Le H and Zach C. Robust fitting with truncated least squares: a bilevel optimization approach. In: 2021 international conference on 3D vision (3DV), 2021, pp.1392–1400. New York: IEEE.
+25. Yang H, Shi J and Carlone L. Teaser: fast and certifiable point cloud registration. IEEE Trans Robot 2021; 37(2): 314–333.
+26. Yang L, Li Y, Li X, et al. Efficient plane extraction using normal estimation and RANSAC from 3D point cloud. Comput Stand Interfaces 2022; 82: 103608.
+27. Zhu Q, Wang Z, Hu H, et al. Leveraging photogrammetric mesh models for aerial-ground feature point matching toward integrated 3D reconstruction. ISPRS J Photogramm Remote Sens 2020; 166: 26–40.
+28. Al-Durgham K and Habib A. Association-matrix-based sample consensus approach for automated registration of terrestrial laser scans using linear features. Photogramm Eng Remote Sens 2014; 80(11): 1029–1039
+29. Erwin AM, Hartuti N, Hartuti N, et al. A study about principle component analysis and eigenface for facial extraction. J Phys Conf Series 2019; 1196(1): 012010.
+30. Song Y, Chen J, Chen J, et al. Extraction and reconstruction of a beetle forewing cross-section point set and its curvature characteristics. Pattern Anal Appl 2022; 25(1): 77–87.
+31. Zai D, Li J, Guo Y, et al. Pairwise registration of TLS point clouds using covariance descriptors and a noncooperative game. ISPRS J Photogramm Remote Sens 2017; 134: 15–29.
+32. Yin C, Li H, Hu Z, et al. Application of the terrestrial laser scanning in slope deformation monitoring: taking a highway slope as an example. Appl Sci 2020; 10(8): 2808.
+33. Sinha A, Bai J and Ramani K. Deep learning 3D shape surfaces using geometry images. In: Computer vision– ECCV 2016: 14th European conference, Amsterdam, The Netherlands, Proceedings, Part VI 14, 11–14 October 2016, pp.223–240. London: Springer International Publishing.
+34. Li X, Liu J and Zhao H. Point cloud registration by discrete spin image and normal registration radial feature. In: Proceedings of the 15th ACM SIGGRAPH conference on virtual-reality continuum and its applications in industry, vol. 1, 2016, pp.373–379. New York, NY: ACM.
+
+Zhao et al.
+
+89
+
+35. Guo M, Yan B, Wang G, et al. Iterative automatic global registration algorithm for multi-view point cloud of underground tunnel space. Meas Control 2021; 54(3–4): 385–395.
+36. Guo M, Fu Z, Pan D, et al. 3D digital protection and representation of burial ruins based on LiDAR and UAV survey. Meas Control 2022; 55(7–8): 555–566.
+37. Sipiran I and Bustos B. Harris 3D: a robust extension of the Harris operator for interest point detection on 3D meshes. Vis Comput 2011; 27: 963–976.
+38. Makovetskii A, Voronin S, Kober V, et al. Affine registration of point clouds based on point-to-plane approach. Procedia Eng 2017; 201: 322–330.
+39. Meng J, Li J and Gao X. An accelerated ICP registration algorithm for 3D point cloud data. In: 9th International symposium on advanced optical manufacturing and testing technologies: optical test, measurement technology, and equipment, 2019, 10839, pp.18–23. Bellingham, WA: SPIE.
+40. Segal A, Haehnel D and Thrun S. Generalized-ICP. Robotics 2009; 2(4): 435.
+41. Zhan X, Cai Y, Li H, et al. A point cloud registration algorithm based on normal vector and particle swarm optimization. Meas Control 2020; 53(3–4): 265–275.
+42. Yao Z, Zhao Q, Li X, et al. Point cloud registration algorithm based on curvature feature similarity. Measurement 2021; 177: 109274.
+43. Patel MI, Thakar VK and Shah SK. Image registration of satellite images with varying illumination level using HOG descriptor based SURF. Procedia Comput Sci 2016; 93: 382–388.
+
+44. Salti S, Tombari F and Di Stefano L. SHOT: Unique signatures of histograms for surface and texture description. Comput Vis Image Underst 2014; 125: 251–264.
+45. Dong Z, Yang B, Liu Y, et al. A novel binary shape context for 3D local surface description. ISPRS J Photogramm Remote Sens 2017; 130: 431–452.
+46. Wu LS, Wang GL and Hu Y. Iterative closest point registration for fast point feature histogram features of a volume density optimization algorithm. Meas Control 2020; 53(1–2): 29–39.
+47. Yang J, Cao Z and Zhang Q. A fast and robust local descriptor for 3D point cloud registration. Inf Sci 2016; 346–347: 163–179.
+48. Sanchez J, Denis F, Coeurjolly D, et al. Robust normal vector estimation in 3D point clouds through iterative principal component analysis. ISPRS J Photogramm Remote Sens 2020; 163: 18–35.
+49. Duan Y, Yang C, Chen H, et al. Low-complexity point cloud denoising for LiDAR by PCA-based dimension reduction. Opt Commun 2021; 482: 126567.
+50. Li Y, Li Z, Yang Y, et al. A fast recognition algorithm of ship hatch in bulk cargo terminal based on point cloud contour extraction. Meas Control 2023; 56(1–2): 228–236.
+51. Wang X, Xu Y, Xu K, et al. Pie-net: parametric inference of point cloud edges. Adv Neural Inf Process Syst 2020; 33: 20167–20178.
+52. Mineo C, Pierce SG and Summan R. Novel algorithms for 3D surface point cloud boundary detection and edge reconstruction. J Comput Des Eng 2019; 6(1): 81–91.
+

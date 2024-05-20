@@ -4,71 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "218e6dbfe41d8564",
+        "id": "99fc0879b0d73235",
         "type": "tabs",
         "children": [
           {
-            "id": "c0c94bbf93e2a093",
+            "id": "f6027ac32615e124",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/zotero/notes/ressSLAMIndoorMapping2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1437742e43e166de",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/notes/ressSLAMIndoorMapping2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a0bea2bbe8ac6cf1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/notes/ressSLAMIndoorMapping2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a6870cb454fc75a7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/GloballyConsistent3D.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e08592175eca7794",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/renRobustGICPbased3D2019.md",
+                "file": "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014a.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -118,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 368.5
   },
   "right": {
     "id": "47a7fb051f9573eb",
@@ -134,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/zotero/annotations/renRobustGICPbased3D2019.md",
+                "file": "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014a.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -151,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/zotero/annotations/renRobustGICPbased3D2019.md",
+                "file": "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014a.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/zotero/annotations/renRobustGICPbased3D2019.md"
+                "file": "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014a.md"
               }
             }
           },
@@ -237,35 +188,44 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "e08592175eca7794",
+  "active": "f6027ac32615e124",
   "lastOpenFiles": [
-    "essay/zotero/annotations/GloballyConsistent3D.md",
-    "essay/zotero/annotations/renRobustGICPbased3D2019.md",
-    "essay/zotero/zotero-import-templates.md",
+    "essay/zotero/db/better-bibtex/cache.json",
+    "essay/zotero/db/storage/IBSEGDJH",
+    "essay/zotero/attachments/GICPLin et al/Lin et al_2020_An Improved ICP with Heuristic Initial Pose for Point Cloud Alignment.pdf",
+    "essay/zotero/attachments/GICPLin et al",
+    "essay/zotero/db/storage/IDJ78CCE/Lin et al. - 2020 - An Improved ICP with Heuristic Initial Pose for Po.pdf",
+    "essay/zotero/db/storage/IDJ78CCE",
+    "essay/zotero/db/storage/tmp-2Y07Gq/Lin et al. - 2020 - An Improved ICP with Heuristic Initial Pose for Po.pdf",
+    "essay/zotero/db/storage/tmp-2Y07Gq",
     "essay/zotero/notes/ressSLAMIndoorMapping2024.md",
-    "essay/zotero/notes/~$ssSLAMIndoorMapping2024.docx",
-    "essay/zotero/annotations",
-    "assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png",
-    "assets/renRobustGICPbased3D2019",
-    "essay/zotero/db/cache/library/S235A727.png",
-    "essay/zotero/db/cache/library",
-    "essay/zotero/db/cache",
-    "essay/zotero/ressSLAMIndoorMapping2024.md",
-    "essay/zotero/db/storage/GTU8F2VI",
-    "essay/zotero/db/Zhao et al_2024_Optimized GICP registration algorithm based on principal component analysis for.pdf",
-    "essay/zotero/db/storage/K7VX5NMM/Zhao et al. - 2024 - Optimized GICP registration algorithm based on pri.pdf",
-    "essay/zotero/db/storage/K7VX5NMM",
-    "essay/zotero/db/storage/tmp-flMYTR/Zhao et al. - 2024 - Optimized GICP registration algorithm based on pri.pdf",
-    "essay/zotero/renRobustGICPbased3D2019.md",
+    "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014a.md",
+    "essay/zotero/attachments/GICPKorn et al/Korn et al_2014_Color supported generalized-ICP.pdf",
+    "essay/zotero/attachments/EMPTY_COLLECTION_NAMEKorn et al/Korn et al_2014_Color supported generalized-ICP.pdf",
+    "essay/zotero/annotations/GloballyConsistent3D.md",
+    "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014.md",
+    "assets/kornColorSupportedGeneralizedICP2014a/kornColorSupportedGeneralizedICP2014a-4-x69-y230.png",
+    "assets/kornColorSupportedGeneralizedICP2014a",
+    "essay/zotero/db/cache/library/I8UAPL9U.png",
+    "essay/zotero/db/cache/library/PPRYCZ8E.png",
     "essay/Knowledge.md",
-    "docs/papers/zotero/renRobustGICPbased3D2019.md",
-    "essay/SCI_paper.md",
     "essay/read-dairy.md",
+    "essay/SCI_paper.md",
+    "essay/zotero/annotations/renRobustGICPbased3D2019.md",
+    "essay/zotero/db/cache/library/WIER7IV4.png",
+    "essay/zotero/db/cache/library/HQA4SW3L.png",
+    "essay/zotero/db/storage/RPVPGJY9/image.png",
+    "essay/zotero/db/cache/library/DJSGC9WG.png",
+    "essay/zotero/zotero-import-templates.md",
+    "assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png",
+    "essay/zotero/db/cache/library/S235A727.png",
+    "essay/zotero/ressSLAMIndoorMapping2024.md",
+    "essay/zotero/renRobustGICPbased3D2019.md",
+    "docs/papers/zotero/renRobustGICPbased3D2019.md",
     "essay/main.md",
     "docs/papers/zotero/ressSLAMIndoorMapping2024.md",
     "assest/ressSLAMIndoorMapping2024/ressSLAMIndoorMapping2024-4-x52-y274.png",
     "docs/papers/zotero/notes/ressSLAMIndoorMapping2024.md",
-    "assest/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png",
     "docs/papers/main.md",
     "docs/Language/C++/STL/vector.md",
     "docs/Language/C++/STL/unordered_set.md",
@@ -276,15 +236,6 @@
     "docs/Language/C++/STL/Queue.md",
     "docs/Language/C++/STL/Pointer.md",
     "docs/Language/C++/STL/map.md",
-    "docs/Language/C++/syntax.md",
-    "docs/URLs.md",
-    "docs/account.md",
-    "assets/Pasted image 20240512125417.png",
-    "assets/Pasted image 20240512125353.png",
-    "assets/Pasted_image_20240504112823.png",
-    "assets/Pasted image 20240504112823.png",
-    "assets/Pasted_image_20240412154259.png",
-    "assets/Pasted_image_20240412154252.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
