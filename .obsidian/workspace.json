@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "essay/Gradient-down-Sampling.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "essay/Gradient-down-Sampling.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "essay/Gradient-down-Sampling.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "essay/Gradient-down-Sampling.md"
               }
             }
           },
@@ -203,6 +203,14 @@
   },
   "active": "67d90be9a02c1e53",
   "lastOpenFiles": [
+    "essay/ABGICP.md",
+    "essay/Knowledge.md",
+    "essay/Gradient-down-Sampling.md",
+    "essay/main.md",
+    "essay/read-dairy.md",
+    "essay/Untitled.md",
+    "README.md",
+    "essay/word/~$ssSLAMIndoorMapping2024.docx",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "essay/zotero/annotations/guptaNDT6DColor2023.md",
     "essay/zotero/attachments/GICP/Gupta et al_2023_NDT‐6D for color registration in agri‐robotic applications.pdf",
@@ -218,7 +226,6 @@
     "essay/zotero/annotations/GloballyConsistent3D.md",
     "essay/zotero/attachments/GICP/Choi et al_2020_Iterative K-closest point algorithms for colored point cloud registration.pdf",
     "essay/zotero/attachments/GICP",
-    "essay/zotero/references.bib",
     "essay/zotero/notes/guptaNDT6DColor2023.md",
     "conflict-files-obsidian-git.md",
     "essay/zotero/notes/ressSLAMIndoorMapping2024.md",
@@ -226,8 +233,6 @@
     "assets/kornColorSupportedGeneralizedICP2014a/kornColorSupportedGeneralizedICP2014a-4-x69-y230.png",
     "essay/zotero/db/cache/library/I8UAPL9U.png",
     "essay/zotero/db/cache/library/PPRYCZ8E.png",
-    "essay/Knowledge.md",
-    "essay/read-dairy.md",
     "essay/SCI_paper.md",
     "essay/zotero/db/cache/library/WIER7IV4.png",
     "essay/zotero/db/cache/library/HQA4SW3L.png",
@@ -238,17 +243,12 @@
     "essay/zotero/ressSLAMIndoorMapping2024.md",
     "essay/zotero/renRobustGICPbased3D2019.md",
     "docs/papers/zotero/renRobustGICPbased3D2019.md",
-    "essay/main.md",
     "docs/papers/zotero/ressSLAMIndoorMapping2024.md",
     "assest/ressSLAMIndoorMapping2024/ressSLAMIndoorMapping2024-4-x52-y274.png",
     "docs/papers/zotero/notes/ressSLAMIndoorMapping2024.md",
     "docs/papers/main.md",
     "docs/Language/C++/STL/vector.md",
     "docs/Language/C++/STL/unordered_set.md",
-    "docs/Language/C++/STL/unordered_map.md",
-    "docs/Language/C++/STL/String.md",
-    "docs/Language/C++/STL/stack.md",
-    "docs/Language/C++/STL/set.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
