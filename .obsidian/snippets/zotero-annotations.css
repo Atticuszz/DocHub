@@ -1,73 +1,43 @@
-/* See https://lucide.dev for icon codes */
-
-/* annotation */
-.callout[data-callout="annotation-yellow"] {
-  --callout-color: 255, 212, 0;
-  --callout-icon: lucide-highlighter;
+/* Red */
+.callout[data-callout-metadata="#ff6666"] {
+    --callout-color: 205, 52, 92;
 }
 
-.callout[data-callout="annotation-red"] {
-  --callout-color: 255, 102, 102;
-  --callout-icon: lucide-highlighter;
+/* Green */
+.callout[data-callout-metadata="#5fb236"] {
+    --callout-color: 114, 162, 100;
 }
 
-.callout[data-callout="annotation-green"] {
-  --callout-color: 95, 178, 54;
-  --callout-icon: lucide-highlighter;
+/* Blue */
+.callout[data-callout-metadata="#2ea8e5"] {
+    --callout-color: 52, 82, 255;
 }
 
-.callout[data-callout="annotation-blue"] {
-  --callout-color: 46, 168, 255;
-  --callout-icon: lucide-highlighter;
+/* Purple */
+.callout[data-callout-metadata="#a28ae5"] {
+    --callout-color: 157, 131, 242;
 }
 
-.callout[data-callout="annotation-purple"] {
-  --callout-color: 162, 138, 229;
-  --callout-icon: lucide-highlighter;
+/* Orange */
+.callout[data-callout-metadata="#f19837"] {
+    --callout-color: 244, 164, 96;
 }
 
-.callout[data-callout="annotation-purple"] {
-  --callout-color: 162, 138, 229;
-  --callout-icon: lucide-highlighter;
+/* Yellow */
+.callout[data-callout-metadata="#ffd400"] {
+    --callout-color: 255, 236, 0;
 }
 
-.callout[data-callout="annotation-magenta"] {
-  --callout-color: 229, 110, 238;
-  --callout-icon: lucide-highlighter;
+/* Magenta */
+.callout[data-callout-metadata="#e56eee"] {
+    --callout-color: 255, 33, 255;
 }
 
-.callout[data-callout="annotation-orange"] {
-  --callout-color: 241, 152, 55;
-  --callout-icon: lucide-highlighter;
+/* Gray */
+.callout[data-callout-metadata="#aaaaaa"] {
+    --callout-color: 152, 152, 152;
 }
 
-.callout[data-callout="annotation-gray"] {
-  --callout-color: 170, 170, 170;
-  --callout-icon: lucide-highlighter;
-}
-
-/* note */
-.callout[data-callout="note-yellow"] {
-  --callout-color: 255, 212, 0;
-  --callout-icon: lucide-sticky-note;
-}
-
-.callout[data-callout="note-red"] {
-  --callout-color: 255, 102, 102;
-  --callout-icon: lucide-sticky-note;
-}
-
-.callout[data-callout="note-green"] {
-  --callout-color: 95, 178, 54;
-  --callout-icon: lucide-sticky-note;
-}
-
-.callout[data-callout="note-blue"] {
-  --callout-color: 46, 168, 255;
-  --callout-icon: lucide-sticky-note;
-}
-
-.callout[data-callout="note-purple"] {
-  --callout-color: 162, 138, 229;
-  --callout-icon: lucide-sticky-note;
+.callout-icon {
+    display: none;
 }

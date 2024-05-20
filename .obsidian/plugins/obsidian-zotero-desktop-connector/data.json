@@ -2,13 +2,12 @@
   "database": "Zotero",
   "noteImportFolder": "essay/zotero/notes/",
   "pdfExportImageDPI": 120,
-  "pdfExportImageFormat": "jpg",
+  "pdfExportImageFormat": "png",
   "pdfExportImageQuality": 100,
   "citeFormats": [
     {
-      "name": "cite",
+      "name": "citation",
       "format": "pandoc",
-      "cslStyle": "IEEE",
       "brackets": true
     }
   ],
@@ -18,8 +17,8 @@
       "outputPathTemplate": "essay/zotero/annotations/{{citekey}}.md",
       "imageOutputPathTemplate": "assets/{{citekey}}/",
       "imageBaseNameTemplate": "{{citekey}}",
-      "cslStyle": "ieee",
-      "templatePath": "essay/zotero/zotero-import-templates.md"
+      "templatePath": "essay/zotero/zotero-import-templates.md",
+      "cslStyle": "ieee"
     }
   ],
   "citeSuggestTemplate": "[[{{citekey}}]]",
