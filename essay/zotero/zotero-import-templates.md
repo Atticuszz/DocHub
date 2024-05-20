@@ -262,8 +262,7 @@ aliases: ["{{title | replace ('"','')}}"{%- if authors and date-%}, "
 {{printTags(tags)}}
 
 > [!info]- Metadata
-> {{generateFields("> ",":: ",inline_fields) -}}
-> {% if relations.length > 0 -%}
+> {{generateFields("> ",":: ",inline_fields) -}} > {% if relations.length > 0 -%}
 >
 > > [!note]- References:
 > >
@@ -272,15 +271,9 @@ aliases: ["{{title | replace ('"','')}}"{%- if authors and date-%}, "
 > >
 > > {%- for r in relations %}
 > > | {{formatCell(r.title)}} | [@{{r.citekey}}](@{{r.citekey}}) | [Zotero Link]({{r.desktopURI}}) |
-> > {%- endfor -%}
-> > {{ "" }}
-> > {%- endif %}
-> > {{ "" }}
+> > {%- endfor -%} > > {{ "" }} > > {%- endif %} > > {{ "" }}
 > > 🔥🔥🔥everything above this line might change during an update 🔥🔥🔥
-> > {% persist "notes" %}
-> > {{ "" }}
-> > {%- set newNotes = notes | filterby("dateModified", "dateafter", lastImportDate) -%}
-> > {% if newNotes.length > 0 %}
+> > {% persist "notes" %} > > {{ "" }} > > {%- set newNotes = notes | filterby("dateModified", "dateafter", lastImportDate) -%} > > {% if newNotes.length > 0 %}
 > > ⬇️*Imported (Notes) on: {{importDate | format("YYYY-MM-DD#HH:mm:ss")}}*⬇️
 > > {% for note in newNotes %}
 
@@ -313,16 +306,9 @@ aliases: ["{{title | replace ('"','')}}"{%- if authors and date-%}, "
 {# #### {{colorToName(color | lower)-}} #}
 {# {% endif %} #}
 
-> [!annotation-{% if annotation.color %}{% if colorToColorCategory[annotation.color].length > 0 %}{{colorToColorCategory[annotation.color]}}{% else %}yellow{% endif %}]{% endif %} {{calloutHeader(annotation.type)}}
-> {%- if annotation.annotatedText.length > 0 -%} > {{-annotation.annotatedText | nl2br -}} (p. [{{annotation.page}}](zotero://open-pdf/library/items/{{annotation.attachment.itemKey}}?page={{annotation.page}}&annotation={{annotation.id}})){% endif %}{%- if annotation.imageRelativePath -%}
-> ![300]({{annotation.imageRelativePath}})
-> {%- endif %}{%- if annotation.ocrText -%} > {{-annotation.ocrText | nl2br-}}{%- endif -%}
-> {%- if annotation.comment -%}
+> [!annotation-{% if annotation.color %}{% if colorToColorCategory[annotation.color].length > 0 %}{{colorToColorCategory[annotation.color]}}{% else %}yellow{% endif %}]{% endif %} {{calloutHeader(annotation.type)}} > {%- if annotation.annotatedText.length > 0 -%} > {{-annotation.annotatedText | nl2br -}} (p. [{{annotation.page}}](zotero://open-pdf/library/items/{{annotation.attachment.itemKey}}?page={{annotation.page}}&annotation={{annotation.id}})){% endif %}{%- if annotation.imageRelativePath -%} > ![300]({{annotation.imageRelativePath}}) > {%- endif %}{%- if annotation.ocrText -%} > {{-annotation.ocrText | nl2br-}}{%- endif -%} > {%- if annotation.comment -%}
 >
-> **comment:** > {{annotation.comment | nl2br }}{% endif %} > [format("YYYY-MM-DD#HH:mm")}}]({{annotation.date )
-> {%- if annotation.tags.length > 0 %} > {{printTags(annotation.tags)}}
-> {% endif %}
-> {% endfor -%}
+> **comment:** > {{annotation.comment | nl2br }}{% endif %} > [format("YYYY-MM-DD#HH:mm")}}]({{annotation.date) > {%- if annotation.tags.length > 0 %} > {{printTags(annotation.tags)}} > {% endif %} > {% endfor -%}
 > {# {% endfor %} #}
 > {%- endif -%}
 
