@@ -80,5 +80,14 @@
       ],
       "key": "P"
     }
+  ],
+  "obsidian-zotero-desktop-connector:zdc-exp-import annotations": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "A"
+    }
   ]
 }

@@ -5,5 +5,8 @@
   "translucency": true,
   "nativeMenus": true,
   "theme": "obsidian",
-  "showViewHeader": true
+  "showViewHeader": true,
+  "enabledCssSnippets": [
+    "zotero-annotations"
+  ]
 }

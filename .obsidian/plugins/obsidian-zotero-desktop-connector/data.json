@@ -18,7 +18,7 @@
       "outputPathTemplate": "essay/zotero/annotations/{{citekey}}.md",
       "imageOutputPathTemplate": "assets/{{citekey}}/",
       "imageBaseNameTemplate": "{{citekey}}",
-      "cslStyle": "IEEE",
+      "cslStyle": "ieee",
       "templatePath": "essay/zotero/zotero-import-templates.md"
     }
   ],
