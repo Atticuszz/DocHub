@@ -9,34 +9,28 @@
     - [GICP_slam.pdf](essay/zotero/GICP_slam.pdf)
     - **attachments/:**
       - [GICP.pdf](essay/zotero/attachments/GICP.pdf)
-      - **GICPSegal et al/:**
-        - [Segal et al_2009_Generalized-icp.pdf](essay/zotero/attachments/GICPSegal_et_al/Segal_et_al_2009_Generalized-icp.pdf)
       - [Gaussian-SLAM.pdf](essay/zotero/attachments/Gaussian-SLAM.pdf)
       - [GICP_zh.pdf](essay/zotero/attachments/GICP_zh.pdf)
-      - **2dslamRess et al/:**
-        - [Ress et al_2024_SLAM for Indoor Mapping of Wide Area Construction Environments.pdf](essay/zotero/attachments/2dslamRess_et_al/Ress_et_al_2024_SLAM_for_Indoor_Mapping_of_Wide_Area_Construction_Environments.pdf)
       - [nerf_nav.pdf](essay/zotero/attachments/nerf_nav.pdf)
       - [VGICP_zh.pdf](essay/zotero/attachments/VGICP_zh.pdf)
       - [splat_nav.pdf](essay/zotero/attachments/splat_nav.pdf)
-      - **GICPKorn et al/:**
-        - [Korn et al_2014_Color supported generalized-ICP.pdf](essay/zotero/attachments/GICPKorn_et_al/Korn_et_al_2014_Color_supported_generalized-ICP.pdf)
-      - **GICPLin et al/:**
-        - [Lin et al_2020_An Improved ICP with Heuristic Initial Pose for Point Cloud Alignment.pdf](essay/zotero/attachments/GICPLin_et_al/Lin_et_al_2020_An_Improved_ICP_with_Heuristic_Initial_Pose_for_Point_Cloud_Alignment.pdf)
       - [Dynamic_3D_Gaussians_dul.pdf](essay/zotero/attachments/Dynamic_3D_Gaussians_dul.pdf)
       - [SplaTAM.pdf](essay/zotero/attachments/SplaTAM.pdf)
       - [VGICP.pdf](essay/zotero/attachments/VGICP.pdf)
-      - **2dslamZhao et al/:**
-        - [Zhao et al_2024_Optimized GICP registration algorithm based on principal component analysis for.pdf](essay/zotero/attachments/2dslamZhao_et_al/Zhao_et_al_2024_Optimized_GICP_registration_algorithm_based_on_principal_component_analysis_for.pdf)
+      - **SLAM/:**
+        - [Ress et al_2024_SLAM for Indoor Mapping of Wide Area Construction Environments.pdf](essay/zotero/attachments/SLAM/Ress_et_al_2024_SLAM_for_Indoor_Mapping_of_Wide_Area_Construction_Environments.pdf)
+      - **GICP/:**
+        - [Choi et al_2020_Iterative K-closest point algorithms for colored point cloud registration.pdf](essay/zotero/attachments/GICP/Choi_et_al_2020_Iterative_K-closest_point_algorithms_for_colored_point_cloud_registration.pdf)
     - **notes/:**
       - [ressSLAMIndoorMapping2024.md](essay/zotero/notes/ressSLAMIndoorMapping2024.md)
       - [ressSLAMIndoorMapping2024.pdf](essay/zotero/notes/ressSLAMIndoorMapping2024.pdf)
+      - [guptaNDT6DColor2023.md](essay/zotero/notes/guptaNDT6DColor2023.md)
       - [ressSLAMIndoorMapping2024.docx](essay/zotero/notes/ressSLAMIndoorMapping2024.docx)
     - [ieee.csl](essay/zotero/ieee.csl)
+    - [references.bib](essay/zotero/references.bib)
     - [zotero-import-templates.md](essay/zotero/zotero-import-templates.md)
     - **annotations/:**
-      - [kornColorSupportedGeneralizedICP2014a.md](essay/zotero/annotations/kornColorSupportedGeneralizedICP2014a.md)
-      - [renRobustGICPbased3D2019.md](essay/zotero/annotations/renRobustGICPbased3D2019.md)
-      - [GloballyConsistent3D.md](essay/zotero/annotations/GloballyConsistent3D.md)
+      - [guptaNDT6DColor2023.md](essay/zotero/annotations/guptaNDT6DColor2023.md)
   - [read-dairy.md](essay/read-dairy.md)
   - [Knowledge.md](essay/Knowledge.md)
 - **docs/:**
@@ -130,16 +124,65 @@
 - **Excalidraw/:**
   - [Drawing_2024-03-03_13.07.53.excalidraw.md](Excalidraw/Drawing_2024-03-03_13.07.53.excalidraw.md)
 ## 最近修改
+### 2024-05-20 by Atticuszz - finished zotero and obsidian work together
+- 🔨 [app.json](.obsidian/app.json)
+- 🔨 [appearance.json](.obsidian/appearance.json)
+- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
+- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
+- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
+- 🔨 [hotkeys.json](.obsidian/hotkeys.json)
+- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
+- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
+- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
+- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
+- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
+- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
+- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [data.json](.obsidian/plugins/obsidian-zotero-desktop-connector/data.json)
+- 🔨 [main.js](.obsidian/plugins/obsidian-zotero-desktop-connector/main.js)
+- 🔨 [manifest.json](.obsidian/plugins/obsidian-zotero-desktop-connector/manifest.json)
+- 🔨 [styles.css](.obsidian/plugins/obsidian-zotero-desktop-connector/styles.css)
+- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
+- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
+- 🔨 [zotero-annotations.css](.obsidian/snippets/zotero-annotations.css)
+- 🔨 [types.json](.obsidian/types.json)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [renRobustGICPbased3D2019-4-x63-y60.png](assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png)
+- 🔨 [zotero.bib](docs/papers/zotero/zotero.bib)
+- 🗑️ GloballyConsistent3D.md
+- ✨ [guptaNDT6DColor2023.md](essay/zotero/annotations/guptaNDT6DColor2023.md)
+- 🗑️ kornColorSupportedGeneralizedICP2014a.md
+- 🗑️ renRobustGICPbased3D2019.md
+- 🗑️ Zhao_et_al_2024_Optimized_GICP_registration_algorithm_based_on_principal_component_analysis_for.pdf
+- ✨ [Choi et al_2020_Iterative K-closest point algorithms for colored point cloud registration.pdf](essay/zotero/attachments/GICP/Choi_et_al_2020_Iterative_K-closest_point_algorithms_for_colored_point_cloud_registration.pdf)
+- 🗑️ Korn_et_al_2014_Color_supported_generalized-ICP.pdf
+- 🗑️ Lin_et_al_2020_An_Improved_ICP_with_Heuristic_Initial_Pose_for_Point_Cloud_Alignment.pdf
+- 🗑️ Segal_et_al_2009_Generalized-icp.pdf
+- 🔨 [bibliography.bib](essay/zotero/bibliography.bib)
+- ✨ [guptaNDT6DColor2023.md](essay/zotero/notes/guptaNDT6DColor2023.md)
+- ✨ [references.bib](essay/zotero/references.bib)
+- 🔨 [zotero-import-templates.md](essay/zotero/zotero-import-templates.md)
+### 2024-05-20 by Atticuszz - Ci workflows Update README.md
+- 🔨 [main.js](.obsidian/plugins/editing-toolbar/main.js)
+- 🔨 [main.js](.obsidian/plugins/obsidian-excalidraw-plugin/main.js)
+- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
+- 🔨 [main.js](.obsidian/plugins/obsidian-git/main.js)
+- 🔨 [workspace.json](.obsidian/workspace.json)
+- 🔨 [README.md](README.md)
+- 🔨 [read-dairy.md](essay/read-dairy.md)
+- 🔨 [kornColorSupportedGeneralizedICP2014a.md](assets/kornColorSupportedGeneralizedICP2014a)
+- 🔨 [zotero-import-templates.md](essay/zotero/zotero-import-templates.md)
 ### 2024-05-20 by Atticuszz - vault backup: 2024-05-20 10:40:19
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - ✨ [kornColorSupportedGeneralizedICP2014a-4-x69-y230.png](assets/kornColorSupportedGeneralizedICP2014a/kornColorSupportedGeneralizedICP2014a-4-x69-y230.png)
 - 🚚 [GICP_slam.pdf](essay/zotero/GICP_slam.pdf) <- GICP_slam.pdf
-- ✨ [kornColorSupportedGeneralizedICP2014a.md](essay/zotero/annotations/kornColorSupportedGeneralizedICP2014a.md)
-- ✨ [Ress et al_2024_SLAM for Indoor Mapping of Wide Area Construction Environments.pdf](essay/zotero/attachments/2dslamRess_et_al/Ress_et_al_2024_SLAM_for_Indoor_Mapping_of_Wide_Area_Construction_Environments.pdf)
+- ✨ [kornColorSupportedGeneralizedICP2014a.md](assets/kornColorSupportedGeneralizedICP2014a)
+- ✨ [Ress et al_2024_SLAM for Indoor Mapping of Wide Area Construction Environments.pdf](essay/zotero/attachments/SLAM/Ress_et_al_2024_SLAM_for_Indoor_Mapping_of_Wide_Area_Construction_Environments.pdf)
 - 🚚 [Dynamic_3D_Gaussians_dul.pdf](essay/zotero/attachments/Dynamic_3D_Gaussians_dul.pdf) <- Dynamic_3D_Gaussians_dul.pdf
-- ✨ [Korn et al_2014_Color supported generalized-ICP.pdf](essay/zotero/attachments/GICPKorn_et_al/Korn_et_al_2014_Color_supported_generalized-ICP.pdf)
-- ✨ [Lin et al_2020_An Improved ICP with Heuristic Initial Pose for Point Cloud Alignment.pdf](essay/zotero/attachments/GICPLin_et_al/Lin_et_al_2020_An_Improved_ICP_with_Heuristic_Initial_Pose_for_Point_Cloud_Alignment.pdf)
-- ✨ [Segal et al_2009_Generalized-icp.pdf](essay/zotero/attachments/GICPSegal_et_al/Segal_et_al_2009_Generalized-icp.pdf)
+- ✨ [Korn et al_2014_Color supported generalized-ICP.pdf](essay/zotero/attachments/GICPKorn et al/Korn et al_2014_Color supported generalized-ICP.pdf)
+- ✨ [Lin et al_2020_An Improved ICP with Heuristic Initial Pose for Point Cloud Alignment.pdf](essay/zotero/attachments/GICPLin et al/Lin et al_2020_An Improved ICP with Heuristic Initial Pose for Point Cloud Alignment.pdf)
+- ✨ [Segal et al_2009_Generalized-icp.pdf](essay/zotero/attachments/GICPSegal et al/Segal et al_2009_Generalized-icp.pdf)
 - 🚚 [GICP_zh.pdf](essay/zotero/attachments/GICP_zh.pdf) <- GICP_zh.pdf
 - 🚚 [Gaussian-SLAM.pdf](essay/zotero/attachments/Gaussian-SLAM.pdf) <- Gaussian-SLAM.pdf
 - 🚚 [SplaTAM.pdf](essay/zotero/attachments/SplaTAM.pdf) <- SplaTAM.pdf
@@ -237,7 +280,7 @@
 - 🔨 [SCI_paper.md](essay/SCI_paper.md)
 - 🔨 [read-dairy.md](essay/read-dairy.md)
 - 🔨 [GloballyConsistent3D.md](essay/zotero/annotations/GloballyConsistent3D.md)
-- 🔨 [renRobustGICPbased3D2019.md](essay/zotero/annotations/renRobustGICPbased3D2019.md)
+- 🔨 [renRobustGICPbased3D2019.md](assets/renRobustGICPbased3D2019)
 - 🔨 [engines.json](essay/zotero/db/locate/engines.json)
 - 🔨 [.zotero-ft-unprocessed](essay/zotero/db/storage/B82RPBHT/.zotero-ft-unprocessed)
 - 🔨 [.zotero-pdf-state](essay/zotero/db/storage/B82RPBHT/.zotero-pdf-state)
@@ -507,9 +550,9 @@
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - ✨ [renRobustGICPbased3D2019-4-x63-y60.png](assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png)
 - ✨ [GloballyConsistent3D.md](essay/zotero/annotations/GloballyConsistent3D.md)
-- ✨ [renRobustGICPbased3D2019.md](essay/zotero/annotations/renRobustGICPbased3D2019.md)
+- ✨ [renRobustGICPbased3D2019.md](assets/renRobustGICPbased3D2019)
 - 🚚 [GICP.pdf](essay/zotero/attachments/GICP.pdf) <- GICP.pdf
-- ✨ [Zhao et al_2024_Optimized GICP registration algorithm based on principal component analysis for.pdf](essay/zotero/attachments/2dslamZhao_et_al/Zhao_et_al_2024_Optimized_GICP_registration_algorithm_based_on_principal_component_analysis_for.pdf)
+- ✨ [Zhao et al_2024_Optimized GICP registration algorithm based on principal component analysis for.pdf](essay/zotero/db/Zhao et al_2024_Optimized GICP registration algorithm based on principal component analysis for.pdf)
 - ✨ [better-bibtex.sqlite](essay/zotero/db/better-bibtex.sqlite)
 - ✨ [S235A727.png](essay/zotero/db/cache/library/S235A727.png)
 - ✨ [CrossRef Lookup.ico](essay/zotero/db/locate/CrossRef Lookup.ico)
@@ -1504,30 +1547,6 @@
 - 🔨 [workspace.json](.obsidian/workspace.json)
 - ✨ [Pasted image 20240504112823.png](assets/Pasted_image_20240504112823.png)
 - 🔨 [SCI_paper.md](essay/SCI_paper.md)
-### 2024-05-02 by Atticuszz - Ci workflows Update README.md
-- 🔨 [app.json](.obsidian/app.json)
-- 🔨 [appearance.json](.obsidian/appearance.json)
-- 🔨 [community-plugins.json](.obsidian/community-plugins.json)
-- 🔨 [core-plugins-migration.json](.obsidian/core-plugins-migration.json)
-- 🔨 [core-plugins.json](.obsidian/core-plugins.json)
-- 🔨 [markdown+hugo.lua](.obsidian/plugins/obsidian-enhancing-export/lua/markdown+hugo.lua)
-- 🔨 [math_block.lua](.obsidian/plugins/obsidian-enhancing-export/lua/math_block.lua)
-- 🔨 [polyfill.lua](.obsidian/plugins/obsidian-enhancing-export/lua/polyfill.lua)
-- 🔨 [url.lua](.obsidian/plugins/obsidian-enhancing-export/lua/url.lua)
-- 🔨 [dissertation.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/dissertation.tex)
-- 🔨 [neurips.sty](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.sty)
-- 🔨 [neurips.tex](.obsidian/plugins/obsidian-enhancing-export/textemplate/neurips.tex)
-- 🔨 [data.json](.obsidian/plugins/obsidian-git/data.json)
-- 🔨 [data.json](.obsidian/plugins/omnisearch/data.json)
-- 🔨 [data.json](.obsidian/plugins/table-editor-obsidian/data.json)
-- 🔨 [types.json](.obsidian/types.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [README.md](README.md)
-- 🔨 [Knowledge.md](essay/Knowledge.md)
-### 2024-05-02 by Atticuszz - vault backup: 2024-05-02 15:56:31
-- 🔨 [appearance.json](.obsidian/appearance.json)
-- 🔨 [workspace.json](.obsidian/workspace.json)
-- 🔨 [Knowledge.md](essay/Knowledge.md)
 ## 其他仓库
 
 ### 论文速览
