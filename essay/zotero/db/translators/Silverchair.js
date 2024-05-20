@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2020-2022 Sebastian Karcher and Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -115,7 +115,7 @@ function scrape(doc, url) {
 		if (text.includes('We are sorry, but we are experiencing unusual traffic at this time.')) {
 			throw new Error('Rate-limited');
 		}
-		
+
 		// Z.debug(text);
 		var translator = Zotero.loadTranslator("import");
 		translator.setTranslator("32d59d2d-b65a-4da4-b0a3-bdd3cfb979e7");

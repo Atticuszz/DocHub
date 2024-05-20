@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2015-2024 Sean Takats, Michael Berkowitz, Matt Burton, Rintze Zelle, and Geoff Banh
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify

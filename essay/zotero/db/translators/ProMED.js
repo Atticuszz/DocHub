@@ -16,7 +16,7 @@ function detectWeb(doc, url)  {
 	if (url.toLowerCase().indexOf("direct.php?id=") != -1)  {
 		return "email";
 	}
-} 
+}
 function doWeb(doc, url) {
 		var newItem = new Zotero.Item('email');
 		var info = ZU.xpathText(doc, '//div[@id="content_container"]//div/p[1]');

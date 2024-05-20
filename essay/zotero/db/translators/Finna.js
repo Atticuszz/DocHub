@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -95,44 +95,44 @@ function doWeb(doc, url) {
 function scrapeMARC(url) {
 	let cleanURL = url.replace(/[#?].*$/, '').replace(/\/$/, '');
 	let marcURL = cleanURL + '/Export?style=MARC';
-	
+
 	// would like to pass all the URLs at once as an array here, but it makes
 	// the RIS fallback difficult.
 	ZU.doGet(marcURL, function (marcData) {
 		var success = false;
-		
+
 		var translator = Zotero.loadTranslator("import");
 		// MARC
 		translator.setTranslator("a6ee60df-1ddc-4aae-bb25-45e0537be973");
 		translator.setString(marcData);
-		
+
 		translator.setHandler('itemDone', function (_, item) {
 			if (item.place) {
 				item.place = item.place.replace(/\[[^[]+\]/, '');
 			}
-			
+
 			if (item.publisher) {
 				item.publisher = item.publisher.replace(/&amp;/g, '&');
 			}
-			
+
 			success = true;
 			item.complete();
 		});
-		
+
 		translator.setHandler('done', function (_) {
 			if (!success) {
 				Z.debug('Falling back to RIS.');
 				scrapeRIS(cleanURL);
 			}
 		});
-		
+
 		translator.translate();
 	});
 }
 
 function scrapeRIS(cleanURL) {
 	let risURL = cleanURL + '/Export?style=RIS';
-	
+
 	ZU.doGet(risURL, function (text) {
 		var translator = Zotero.loadTranslator("import");
 		// RIS

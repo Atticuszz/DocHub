@@ -57,17 +57,17 @@ function scrape(titleAuthor, url) {
 	let [title, author] = titleAuthor.split(". . .");
 	let pdfTitle = url.split('/').pop();
 	let [, issue, pages] = pdfTitle.split('_');
-	
+
 	var item = new Zotero.Item('journalArticle');
 	item.url = url;
 	item.journalAbbreviation = "J. Evang. Theol. Soc."; // ISO 4 abbreviation
 	item.publicationTitle = "Journal of the Evangelical Theological Society";
 	item.title = ZU.trimInternal(title);
-	
+
 	if (author) {
 		item.creators.push(ZU.cleanAuthor(author, 'author', false));
 	}
-	
+
 	if (pages.match(/[0-9]+(-[0-9]+)?/)) {
 		item.pages = pages;
 	}
@@ -78,7 +78,7 @@ function scrape(titleAuthor, url) {
 		mimeType: 'application/pdf',
 		url: url
 	});
-	
+
 	item.complete();
 }
 

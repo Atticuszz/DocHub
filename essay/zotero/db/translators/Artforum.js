@@ -55,7 +55,7 @@ function scrape(doc, url) {
 	var translator = Zotero.loadTranslator('web');
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48'); // embedded metadata (EM)
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) { // corrections to EM
 		item.publicationTitle = "Artforum";
 		item.language = 'en-US';
@@ -64,7 +64,7 @@ function scrape(doc, url) {
 			jsonLD = JSON.parse(jsonLD.textContent);
 			item.title = jsonLD.name;
 			item.date = jsonLD.dateModified || jsonLD.datePublished;
-			
+
 			if (!item.creators.length && jsonLD.author) {
 				item.creators.push(ZU.cleanAuthor(jsonLD.author.name, 'author'));
 			}

@@ -46,7 +46,7 @@ function detectWeb(doc, url) {
 	if (contentDiv) {
 		Z.monitorDOMChanges(contentDiv, {childList: true});
 	}
-	
+
 	if (onTextView(doc) && doc.getElementById('PDFcontainer') && extractTitle(doc)) {//single item
 		return "journalArticle";
 	} else if (getSearchResults(doc, true)) {
@@ -101,7 +101,7 @@ function getSearchResults(doc, checkOnly) {
 
 function doWeb(doc, url) {
 	if (detectWeb(doc, url) == "multiple") {
-		
+
 		Zotero.selectItems(getSearchResults(doc, false), function (items) {
 			if (!items) {
 				return true;
@@ -118,7 +118,7 @@ function doWeb(doc, url) {
 						permalink = '/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl&jumpTo='+id;
 					}
 				}
-				articles.push(permalink);			
+				articles.push(permalink);
 			}
 			ZU.processDocuments(articles, scrape);
 		});
@@ -143,7 +143,7 @@ function scrape(doc, url) {
 		//e.g. parts[0] = bgbl149 (i.e. BGBl Teil 1, 1949) --> no new information
 		//     parts[1] = 0001.pdf (i.e. article starts on page 1)
 		item.pages = parts[1].replace(/\D/g,'').replace(/^0+/,'');
-		
+
 		item.url = 'http://www.bgbl.de/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl&jumpTo='+pdfName;
 		var embeddedPdf = ZU.xpathText(doc, '//div[@id="PDFcontainer"]/iframe/@src');
 		//e.g. media.xav/bgbl117s2262_75530.pdf?SID=&name=A730335D9081EC7D0035E5213AFA9AF8%2Fbgbl117s2262_75530.pdf&iid=75530
@@ -162,7 +162,7 @@ function scrape(doc, url) {
 		item.date = doc.getElementsByClassName('ub3')[0].getAttribute('title');
 		item.issue = doc.getElementsByClassName('ub4')[0].getAttribute('title');
 	}
-	
+
 	//cleanup
 	if (item.issue.indexOf('vom')>-1) {//e.g. Nr. 47 vom 17.10.2014
 		var parts = item.issue.split('vom');
@@ -170,7 +170,7 @@ function scrape(doc, url) {
 		var dateparts = ZU.trim(parts[1]).split('.');
 		item.date = dateparts[2]+'-'+dateparts[1]+'-'+dateparts[0];
 	}
-	
+
 	item.complete();
 
 }/** BEGIN TEST CASES **/

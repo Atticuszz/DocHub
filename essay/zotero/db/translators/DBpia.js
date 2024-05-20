@@ -79,7 +79,7 @@ function scrape(doc, url) {
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setHandler('itemDone', function (obj, item) {
 		let nodeId = encodeURIComponent(url.match(/[?&]nodeId=([^&#]+)/)[1]);
-		
+
 		let downloadDataURL = '/download/downloadData';
 		let downloadDataBody = `nodeId=${nodeId}&systemCode=Article&depth=Article&shape=download`;
 
@@ -88,13 +88,13 @@ function scrape(doc, url) {
 				item.complete();
 				return;
 			}
-			
+
 			let json = JSON.parse(respText);
 			if (!json.link) {
 				item.complete();
 				return;
 			}
-			
+
 			item.attachments.push({
 				url: json.link,
 				title: "Full Text PDF",

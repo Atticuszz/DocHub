@@ -15,17 +15,17 @@
 /*
 	BOE Translator
 	Copyright (C) 2020-2021 Félix Brezo, felixbrezo@disroot.org
-	
+
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version.
-	
+
 	This program is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 	GNU General Public License for more details.
-	
+
 	You should have received a copy of the Affero GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
@@ -41,11 +41,11 @@ function detectWeb(doc, url) {
 function doWeb(doc, url) {
 	var resourceType = detectWeb(doc, url);
 	var newItem = new Zotero.Item(resourceType);
-	
+
 	var metadataUri;
 	if (!url.includes("/xml")) {
 		var index = 0;
-		
+
 		while (true) {
 			index++;
 			metadataUri = ZU.xpathText(doc, "(//meta[@property='http://data.europa.eu/eli/ontology#is_embodied_by'])[" + index + "]/@resource");
@@ -70,10 +70,10 @@ function doWeb(doc, url) {
 		if (tmpAuthor) {
 			newItem.creators.push({ lastName: tmpAuthor, creatorType: "author", fieldMode: 1 });
 		}
-		
+
 		var tmpDate = ZU.xpathText(metadataDoc, "//fecha_publicacion");
 		newItem.dateEnacted = ZU.strToISO(tmpDate.substring(0, 4) + "/" + tmpDate.substring(4, 6) + "/" + tmpDate.substring(6, 8));
-		
+
 		newItem.nameOfAct = ZU.xpathText(metadataDoc, "//titulo").replace(/\.$/, ""); // Remove trailing dot
 		newItem.section = ZU.xpathText(metadataDoc, "//seccion");
 		newItem.pages = ZU.xpathText(metadataDoc, "//pagina_inicial") + "-" + ZU.xpathText(metadataDoc, "//pagina_final");
@@ -88,7 +88,7 @@ function doWeb(doc, url) {
 			mimeType: "text/html",
 			url: url
 		});
-	
+
 		newItem.complete();
 	});
 }/** BEGIN TEST CASES **/

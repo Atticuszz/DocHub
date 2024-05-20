@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021-2024 Abe Jellinek, Sebastian Karcher
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -52,37 +52,37 @@ function scrape(doc, url) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	// translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		// the title that EM finds contains both the main title and the heading
 		// used when the story is continued on another page. we really only want
 		// the former.
 		item.title = text(doc, '.index_article_title') || item.title;
-		
+
 		item.date = ZU.strToISO(text(doc, '#publish_date_content'));
-		
+
 		item.pages = ZU.trimInternal(text(doc, '#page_num_content'))
 			.replace(/ ,/g, ',');
-		
+
 		// The URL and abstract don't update when you move from issue to article and it duplicates the hostname
 		item.url = doc.location.href.replace(/\?.+./, "");
 		item.abstractNote = text(doc, '.index_article_lede');
-		
+
 		let byline = text(doc, '#byline_content').replace(/^\s*by\b/gi, '');
 		for (let author of byline.split(/ and |, /)) {
 			author = ZU.capitalizeName(author);
-			
+
 			if (author.toLowerCase() == 'special to the new york times') {
 				continue;
 			}
-			
+
 			item.creators.push(ZU.cleanAuthor(author, 'author'));
 		}
-		
+
 		for (let subject of doc.querySelectorAll('#subjects_container .subjects_item')) {
 			item.tags.push({ tag: subject.textContent.trim() });
 		}
-		
+
 		let pdfURL = attr(doc, '.index_article_pdf a', 'href');
 		if (pdfURL) {
 			item.attachments = [{
@@ -91,11 +91,11 @@ function scrape(doc, url) {
 				url: pdfURL
 			}];
 		}
-		
+
 		item.ISSN = '0362-4331';
 		item.libraryCatalog = 'TimesMachine';
 		item.publicationTitle = 'The New York Times';
-		
+
 		item.complete();
 	});
 

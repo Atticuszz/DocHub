@@ -50,7 +50,7 @@ function getSearchResults(doc) {
 		// title = title.replace(/\s*\[[^\]]*\]$/, '');
 
 		if (!title || !url) continue;
-		
+
 		items[url] = title;
 		found = true;
 	}

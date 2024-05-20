@@ -56,7 +56,7 @@ function detectWeb(doc, _url) {
 	if (doc.querySelectorAll('.article-list-item .titre-article')) {
 		return "multiple";
 	}
-	
+
 	return false;
 }
 
@@ -128,7 +128,7 @@ async function scrape(doc) {
 				mimeType: 'application/pdf'
 			});
 		}
-		
+
 		item.attachments.push({
 			title: 'Snapshot',
 			document: doc

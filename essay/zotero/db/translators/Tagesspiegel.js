@@ -99,14 +99,14 @@ function scrape(doc, url) {
 			newItem.creators.push(ZU.cleanAuthor(author[i], "author"));
 		}
 	}
-	
+
 	newItem.url = ZU.xpathText(doc, '//link[@rel="canonical"]/@href') || url;
 	newItem.attachments.push({
 		url: newItem.url,
 		title: "Snapshot",
 		mimeType: "text/html"
 	});
-	
+
 	// Tags
 	/* We read the tags from the initialisation of variable cmsObject.
 	 * This object and the keywords are defined in a head script tag.

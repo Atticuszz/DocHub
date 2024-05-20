@@ -33,9 +33,9 @@ function scrape(doc, url) {
 	var dataTags = new Object();
 	var tagsContent = new Array();
 	var fieldTitle;
-	
+
 	var newItem = new Zotero.Item("artwork");
-	
+
 	var headers = doc.evaluate('//table[2]/tbody/tr/td[1]/span[@class="textb"]/b', doc, null, XPathResult.ANY_TYPE, null);
 	var contents = doc.evaluate('//tr[2]/td/table[2]/tbody/tr/td[2]', doc, null, XPathResult.ANY_TYPE, null);
 	var xPathCount = doc.evaluate('count (//table[2]/tbody/tr/td[1]/span[@class="textb"]/b)', doc, null, XPathResult.ANY_TYPE, null);
@@ -43,15 +43,15 @@ function scrape(doc, url) {
 	newItem.title = contents.iterateNext().textContent.replace(/^\s*|\s+$/g, '');
 	var dump = contents.iterateNext();
 
-	for (i=0; i<xPathCount.numberValue; i++) {	 	
-	 			
+	for (i=0; i<xPathCount.numberValue; i++) {
+
 	 		fieldTitle = headers.iterateNext().textContent.replace(/\s+/g, '');
 	 		if (fieldTitle == "Artist/Maker/Manufacturer") {
 		 		fieldTitle = "	Artiste/Artisan/Fabricant";
 	 		} else if (fieldTitle == "Autreaffiliationculturelle") {
 		 		fieldTitle = "OtherCulturalAffiliation";
 	 		}
-	 		
+
 	 		 dataTags[fieldTitle] = Zotero.Utilities.cleanTags(contents.iterateNext().textContent.replace(/^\s*|\s*$/g, ''));
 	 	}
 
@@ -60,10 +60,10 @@ function scrape(doc, url) {
 		if (author.match(" and ")) {
 			var authors = author.split(" and ");
 			for (var i in authors) {
-				newItem.creators.push(Zotero.Utilities.cleanAuthor(authors[i], "author"));	
+				newItem.creators.push(Zotero.Utilities.cleanAuthor(authors[i], "author"));
 			}
 		} else {
-			newItem.creators.push({lastName: author, creatorType: "creator"});				
+			newItem.creators.push({lastName: author, creatorType: "creator"});
 		}
 	}
 
@@ -74,35 +74,35 @@ function scrape(doc, url) {
 			 		newItem.tags[i] = tagsContent[i];
 		 	}
 	}
-	
+
 	if (dataTags["Collection"]) {
 		newItem.extra = "Collection: " + dataTags['Collection'];
 	}
-	
+
 	associateData (newItem, dataTags, "ArtifactNumber", "callNumber");
 	associateData (newItem, dataTags, "Museum", "repository");
 	associateData (newItem, dataTags, "Measurements", "artworkSize");
 	associateData (newItem, dataTags, "BeginDate", "date");
 	associateData (newItem, dataTags, "EndDate", "date");
 	associateData (newItem, dataTags, "AdditionalInformation", "abstractNote");
-	
+
 	associateData (newItem, dataTags, "Numérod'artefact", "callNumber");
 	associateData (newItem, dataTags, "Musée", "repository");
 	associateData (newItem, dataTags, "Mesures", "artworkSize");
 	associateData (newItem, dataTags, "Datededébut", "date");
 	associateData (newItem, dataTags, "Datedefin", "date");
 	associateData (newItem, dataTags, "Informationsupplémentaire", "abstractNote");
-	
+
 	newItem.url = doc.location.href;
 	newItem.complete();
 }
 
-function doWeb(doc, url) {	
+function doWeb(doc, url) {
 	if (detectWeb(doc, url) == "multiple") {
 		var items = new Object();
-	
+
 		var titles = doc.evaluate('//tr/td[2]/a', doc, null, XPathResult.ANY_TYPE, null);
-	
+
 		var next_title;
 		while (next_title = titles.iterateNext()) {
 			if (next_title.textContent.match(/\w/)) {

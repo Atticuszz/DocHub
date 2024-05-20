@@ -16,10 +16,10 @@ function scrapeMasterTable(doc) {
 	var meta = {};
 	var td = doc.getElementById('contenuto');
 	if (!td) return false;
-	
+
 	scrapeTable(td.firstElementChild, meta);
 	if (!Object.keys(meta).length) return false; // DOI not found page
-	
+
 	return meta;
 }
 
@@ -29,7 +29,7 @@ function scrapeTable(node, meta) {
 	do {
 		var tagName = node.tagName.split(':').pop(); // drop XHTML prefix
 		if (tagName == 'BR') continue;
-		
+
 		if (tagName == 'SPAN') {
 			var sectionHeading = ZU.trimInternal(node.textContent).toLowerCase();
 			switch (sectionHeading) {
@@ -52,7 +52,7 @@ function scrapeTable(node, meta) {
 			}
 			continue;
 		}
-		
+
 		if (tagName == 'TABLE') {
 			if (node.getElementsByTagName('span').length) {
 				//there are subtables, dig deeper
@@ -104,15 +104,15 @@ function scrapeMeta(tr, section, meta) {
 		var label = tr.firstElementChild;
 		var value = ZU.trimInternal(label.nextElementSibling.textContent);
 		label = ZU.trimInternal(label.textContent).toLowerCase();
-		
+
 		if (!label || !value) continue;
-		
+
 		var zLabel = map.all[label] || map[section][label];
 		if (zLabel) {
 			meta[zLabel] = value;
 			continue;
 		}
-		
+
 		// Some special cases
 		if (label.indexOf('by ') == 0) {
 			// Authors. Role indicated in first set of parentheses
@@ -147,7 +147,7 @@ function scrapeMeta(tr, section, meta) {
 function detectWeb(doc, url) {
 	var meta = scrapeMasterTable(doc);
 	if (!meta) return;
-	
+
 	return mapItemType(meta);
 }
 
@@ -171,7 +171,7 @@ function  mapItemType(meta) {
 			}
 		}
 	}
-	
+
 	Z.debug('Using default item type: journalArticle');
 	return 'journalArticle';
 }
@@ -179,9 +179,9 @@ function  mapItemType(meta) {
 function doWeb(doc, url) {
 	var meta = scrapeMasterTable(doc);
 	if (!meta) return;
-	
+
 	var type = mapItemType(meta);
-	
+
 	var item = new Zotero.Item(type);
 	for (var label in meta) {
 		var value = meta[label];
@@ -242,10 +242,10 @@ function doWeb(doc, url) {
 								}
 							}
 							name += value[j].lastName;
-							
+
 							value.splice(j,1);
 							j--;
-							
+
 							if (!/\&#\d{2,4}$/.test(name)) {
 								// There doesn't seem to be another split
 								break;
@@ -266,23 +266,23 @@ function doWeb(doc, url) {
 				}
 			break;
 		}
-		
+
 		if ((label == 'title' || label == 'publicationTitle')) {
 			if (value.toUpperCase() == value) {
 				value = ZU.capitalizeTitle(value, true);
 			}
 			value = value.replace(/\s+:/g, ':');
 		}
-		
+
 		item[label] = value;
 	}
-	
+
 	item.complete();
 }
 
 function sanitizeQueries(queries) {
 	if (typeof queries == 'string' || !queries.length) queries = [queries];
-	
+
 	var dois = [], doi;
 	for (var i=0; i<queries.length; i++) {
 		if (queries[i].DOI) {
@@ -292,16 +292,16 @@ function sanitizeQueries(queries) {
 		} else {
 			doi = undefined;
 		}
-		
+
 		if (doi) dois.push(doi);
 	}
-	
+
 	return dois;
 }
 
 function detectSearch(queries) {
 	if (!queries) return;
-	
+
 	return !!sanitizeQueries(queries).length;
 }
 

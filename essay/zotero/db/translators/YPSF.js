@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Corey Runkel
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -86,7 +86,7 @@ function scrape(doc, url) {
 	var item = new Zotero.Item(type[0]);
 	var pub = ZU.xpathText(doc, '//dl[@class="ypfs-case__details"]/dt[contains(., "Publisher")]/following-sibling::dd[1]/a');
 	var lang = ZU.xpathText(doc, '//dl[@class="ypfs-case__details"]/dt[contains(., "Language")]/following-sibling::dd[1]/a');
-	
+
 	item.title = doc.querySelector('#block-ypfs-theme-page-title').innerText;
 	item.date = ZU.xpathText(doc, '//dl[@class="ypfs-case__details"]/dt[contains(., "Date")]/following-sibling::dd[1]');
 	item.abstractNote = ZU.xpathText(doc, '//dl[@class="ypfs-case__details"]/dt[contains(., "Information")]/following-sibling::dd[1]');
@@ -95,19 +95,19 @@ function scrape(doc, url) {
 	item.url = doc.querySelector('link[rel="shortlink"]').href;
 	item.archive = 'Yale Program on Financial Stability Resource Library';
 	item.extra = type[3];
-	
+
 	item.creators = [];
 	for (i=1; i<=ZU.xpath(doc, '//dl[@class="ypfs-case__details"]/dt[contains(., "Author")]/following-sibling::dd[1]/a').length; i++) {
 		auth = ZU.xpathText(doc, '//dl[@class="ypfs-case__details"]/dt[contains(., "Author")]/following-sibling::dd[1]/a'.concat("[", i, "]"));
 		item.creators.push(ZU.cleanAuthor(auth.replace(/.*: | \(.*\)/g, ""), "author", true));
 	}
-	
+
 	item.attachments = [{
 		url: doc.querySelector('a[href*="ypfsresourcelibrary"]').href,
 		mimeType: type[1],
 		title: type[2]
 	}];
-	
+
 	item.tags = [
 		{tag: ZU.xpathText(doc, '//dl[@class="ypfs-case__details"]/dt[contains(., "Crisis")]/following-sibling::dd[1]/a')},
 		{tag: ZU.xpathText(doc, '//dl[@class="ypfs-case__details"]/dt[contains(., "Case Series")]/following-sibling::dd[1]/a')},

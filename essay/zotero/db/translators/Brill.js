@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -89,41 +89,41 @@ function scrape(doc, url) {
 		scrapeBibliography(doc);
 		return;
 	}
-	
+
 	var translator = Zotero.loadTranslator('web');
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		if (item.date) {
 			item.date = ZU.strToISO(item.date);
 		}
-		
+
 		if (item.itemType == 'journalArticle' && item.section) {
 			delete item.section;
 		}
-		
+
 		if (item.itemType == 'book' && item.publicationTitle) {
 			delete item.publicationTitle;
 		}
-		
+
 		if (item.abstractNote && item.abstractNote.endsWith('by Brill.')) {
 			delete item.abstractNote;
 		}
-		
+
 		if (!item.creators.length) {
 			// editors often don't make it into the EM
 			for (let editor of doc.querySelectorAll('.content-contributor-editor a')) {
 				item.creators.push(ZU.cleanAuthor(editor.textContent, 'editor'));
 			}
 		}
-		
+
 		if (item.attachments.length > 1) {
 			// only remove snapshot if we get a PDF
 			item.attachments = item.attachments.filter(at => at.title != 'Snapshot');
 		}
-		
+
 		item.complete();
 	});
 
@@ -146,7 +146,7 @@ function scrapeBibliography(doc) {
 		entryId: attr(doc, 'input[name="entryId"]', 'value'),
 		dest: attr(doc, 'input[name="dest"]', 'value')
 	}).toString();
-	
+
 	ZU.doPost('/export/exportRis', params, function (ris) {
 		var translator = Zotero.loadTranslator("import");
 		translator.setTranslator("32d59d2d-b65a-4da4-b0a3-bdd3cfb979e7"); // RIS
@@ -155,11 +155,11 @@ function scrapeBibliography(doc) {
 			if (item.journalAbbreviation == item.publicationTitle) {
 				delete item.journalAbbreviation;
 			}
-			
+
 			if (item.url) {
 				item.url = item.url.replace(':443', '');
 			}
-			
+
 			item.complete();
 		});
 		translator.translate();

@@ -76,7 +76,7 @@ function getSearchResults(doc, url, checkOnly) {
 	for (var i = 0; i < titles.length; i++) {
 		items[titles[i].href] = ZU.trimInternal(titles[i].textContent);
 	}
-	
+
 	return items;
 }
 
@@ -94,7 +94,7 @@ async function scrape(doc, url) {
 
 	let json = apiJSON[0];
 	let item = new Zotero.Item(getType(json.shortName));
-		
+
 	let signingDate;
 	let admissionDate;
 	let firstAdmissionDate;
@@ -113,7 +113,7 @@ async function scrape(doc, url) {
 
 	item.title = json.title;
 	item.shortTitle = json.popularTitle;
-		
+
 	let number = json.shortName;
 	let date = ZU.strToISO(signingDate || admissionDate || firstAdmissionDate);
 
@@ -129,7 +129,7 @@ async function scrape(doc, url) {
 		item.billNumber = number;
 		item.date = date;
 	}
-		
+
 	if (json.ressort) {
 		item.creators.push({
 			creatorType: 'author',

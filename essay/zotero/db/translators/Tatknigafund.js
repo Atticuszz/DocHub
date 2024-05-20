@@ -34,10 +34,10 @@
  This translator is designed for the Tatar Book Repository, http://www.tatknigafund.ru/ .
  At present, it imports the limited metadata that the repository exposes about its books,
  independent of interface language (Russian or Tatar).
- 
+
  It should be able to fetch bibliographic data even for non-logged-in users, although
  to read the full-text of works in the repository, users will need to create a free account.
- 
+
  It works on URLs of the form http://www.tatknigafund.ru/books/XXXX/ , where XXXX is the
  book ID assigned by the repository. One such URL is:
  http://www.tatknigafund.ru/books/1037
@@ -45,7 +45,7 @@
  Ф. Гыйбадуллина, Роман hәм милләт: Гаяз Исхакый иҗатында роман жанры (Татарстан китап нəшрияты, 2007),
 	http://www.tatknigafund.ru/books/1037?locale=tt.
  It should also populate the abstract field.
- 
+
  It can also work on search results, of the form http://www.tatknigafund.ru/books/search?locale=ru&type=meta&query=XXXX
  where XXXX is the query string. One such URL is:
  http://www.tatknigafund.ru/books/search?locale=ru&type=meta&query=%D0%B8%D1%81%D1%85%D0%B0%D0%BA%D0%B8
@@ -54,7 +54,7 @@
  When Zotero is able to assign languages to bibliographic data, the data obtained here would
  be a good candidate, since all the author names, titles and abstracts are served in Russian
  or Tatar, depending on the user's locale choice.
- 
+
  This translator draws heavily on the National Library of Australia translator for inspiration,
  in lieu of up-to-date translator documentation.
  */
@@ -64,19 +64,19 @@ function scrape(doc, url) {
 	var ns = n ? function(prefix) {
 		if (prefix == 'x') return n; else return null;
 	} : null;
-	
+
 	var item = new Zotero.Item("book");
 	item.title = Zotero.Utilities.trimInternal(
 		doc.evaluate('//div[@class="description"]/h1', doc, ns, XPathResult.ANY_TYPE, null).iterateNext().textContent
 	);
-	
+
 	var author = doc.evaluate('//a[@class="author_link"]', doc, ns, XPathResult.ANY_TYPE, null).iterateNext().textContent;
 	// Authors here are Last Name, First initial(s) (ФИО)
 	var spaceIndex = author.lastIndexOf(" ");
 	var firstName = author.substring(spaceIndex+1);
 	var lastName = author.substring(0, spaceIndex);
 	item.creators.push({firstName:firstName, lastName:lastName, creatorType:"author"});
-	
+
 	var info = doc.evaluate('//p[@class="summary"]', doc, ns, XPathResult.ANY_TYPE, null).iterateNext().textContent;
 	var pub = info.match(/(Нәшрият|Издательство): (.+)/);
 	var publisher = pub[2];
@@ -88,12 +88,12 @@ function scrape(doc, url) {
 	item.publisher = Zotero.Utilities.trimInternal(publisher);
 	item.date = Zotero.Utilities.trimInternal(year);
 	item.numPages = pages;
-	
+
 	var description = doc.evaluate('//div[@class="description"]/p[2]', doc, ns, XPathResult.ANY_TYPE, null).iterateNext().textContent;
 	item.abstractNote = description;
-	
+
 	item.url = url;
-	
+
 	item.complete();
 }
 

@@ -104,7 +104,7 @@ function scrape(doc, url) {
 				title: "Figshare Snapshot",
 				mimeType: "text/html"
 			});
-			
+
 			item.complete();
 		});
 		translator.translate();

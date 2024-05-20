@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -49,16 +49,16 @@ function doWeb(doc, url) {
 
 function scrape(doc, url) {
 	let item = new Zotero.Item('film');
-	
+
 	item.title = ZU.trimInternal(text(doc, 'h1.title').trim().replace(/\s*\n/, ':'));
 	item.abstractNote = text(doc, '#video-panel-details p');
 	item.distributor = text(doc, '.author a');
 	item.url = attr(doc, 'link[rel="canonical"]', 'href') || url;
-	
+
 	for (let elem = doc.querySelector('.features > *'); elem; elem = elem.nextElementSibling) {
 		let key = elem.textContent.trim();
 		let value = (elem = elem.nextElementSibling).textContent.trim();
-		
+
 		switch (key) {
 			case 'Running Time':
 				item.runningTime = value;
@@ -89,7 +89,7 @@ function scrape(doc, url) {
 				break;
 		}
 	}
-	
+
 	item.complete();
 }
 

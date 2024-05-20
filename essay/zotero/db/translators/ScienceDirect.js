@@ -71,7 +71,7 @@ function getPDFLink(doc, onDone) {
 		onDone();
 		return;
 	}
-	
+
 	// Some pages still have the PDF link available
 	var pdfURL = attr(doc, '#pdfLink', 'href');
 	if (!pdfURL) pdfURL = attr(doc, '[name="citation_pdf_url"]', 'content');
@@ -80,7 +80,7 @@ function getPDFLink(doc, onDone) {
 		parseIntermediatePDFPage(pdfURL, onDone);
 		return;
 	}
-	
+
 	// If intermediate page URL is available, use that directly
 	var intermediateURL = attr(doc, '.PdfEmbed > object', 'data');
 	if (intermediateURL) {
@@ -93,7 +93,7 @@ function getPDFLink(doc, onDone) {
 		}
 		return;
 	}
-	
+
 	// Simulate a click on the "Download PDF" button to open the menu containing the link with the URL
 	// for the intermediate page, which doesn't seem to be available in the DOM after the page load.
 	// This is an awful hack, and we should look out for a better way to get the URL, but it beats
@@ -118,7 +118,7 @@ function getPDFLink(doc, onDone) {
 			return;
 		}
 	}
-	
+
 	// On some institutional networks with access to ScienceDirect, the site
 	// serves JSON metadata probably used to preload dynamic content without a
 	// separate network request. If we find it, we can take advantage of it to
@@ -129,9 +129,9 @@ function getPDFLink(doc, onDone) {
 		try {
 			json = JSON.parse(json);
 			Zotero.debug("Trying to construct PDF URL from JSON data");
-			
+
 			let urlMetadata = json.article.pdfDownload.urlMetadata;
-			
+
 			let path = urlMetadata.path;
 			let pdfExtension = urlMetadata.pdfExtension;
 			let pii = urlMetadata.pii;
@@ -163,7 +163,7 @@ function getPDFLink(doc, onDone) {
 		onDone(pdfURL);
 		return;
 	}
-	
+
 	// If none of that worked for some reason, get the URL from the initial HTML,
 	// where it is present, by fetching the page source again. Hopefully this is
 	// never actually used.
@@ -388,7 +388,7 @@ function processRIS(doc, text) {
 		}
 		if (item.ISBN && !ZU.cleanISBN(item.ISBN)) delete item.ISBN;
 		if (item.ISSN && !ZU.cleanISSN(item.ISSN)) delete item.ISSN;
-		
+
 		item.language = item.language || attr(doc, 'article[role="main"]', 'lang');
 
 		if (item.url && item.url.substr(0, 2) == "//") {

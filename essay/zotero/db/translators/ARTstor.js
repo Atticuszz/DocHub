@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -96,13 +96,13 @@ function buildMetadataURL(pageURL) {
 		let id = idMatches[1];
 		return `https://library.artstor.org/api/v1/metadata?object_ids=${id}&legacy=false`;
 	}
-	
+
 	// "encrypted" IDs (external collections)
 	idMatches = pageURL.match(/\/asset\/[^/]+\/[^/]+\/([^?/;]+)/);
 	if (!idMatches) {
 		throw new Error('Could not extract ID from ARTstor URL: ' + pageURL);
 	}
-	
+
 	let id = idMatches[1];
 	return `https://library.artstor.org/api/v2/items/resolve?encrypted_id=${id}&ref=&legacy=false&openlib=true`;
 }
@@ -111,17 +111,17 @@ function scrape(doc, url, json) {
 	if (!json.success || !json.metadata.length) {
 		throw new Error('ARTstor metadata retrieval failed');
 	}
-	
+
 	let meta = json.metadata[0];
 	let item = new Zotero.Item(resolveTypeID(meta.object_type_id));
-	
+
 	item.DOI = ZU.cleanDOI(meta.doi);
 	// URL will be overwritten if the accession number has a source link
 	if (url.includes(';')) {
 		url = url.substring(0, url.indexOf(';'));
 	}
 	item.url = url;
-	
+
 	for (let { fieldName, fieldValue } of meta.metadata_json) {
 		switch (fieldName) {
 			case 'Work Type':
@@ -138,12 +138,12 @@ function scrape(doc, url, json) {
 				else if (item.itemType == 'videoRecording') {
 					type = 'contributor'; // sometimes cast member, sometimes director
 				}
-				
+
 				fieldValue = fieldValue
 					.replace(/^[^:]+:/, '')
 					.replace(/\(.*\)/, '')
 					.replace(/\d+-(\d+)?/, '');
-				
+
 				item.creators.push(ZU.cleanAuthor(fieldValue, type, true));
 				break;
 			}
@@ -227,13 +227,13 @@ function scrape(doc, url, json) {
 				Z.debug(`Unknown field: ${fieldName} = ${fieldValue}`);
 		}
 	}
-	
+
 	if (!item.title) {
 		item.title = 'Untitled';
 	}
-	
+
 	// PDF attachments not handled yet
-	
+
 	if (json.imageUrl) {
 		// ideal situation: the JSON has a direct image URL in it
 		item.attachments.push({
@@ -248,7 +248,7 @@ function scrape(doc, url, json) {
 		let basePart = 'https://stor.artstor.org/iiif/fpx/';
 		let idPart = meta.image_url.replace(/\.fpx.*/, '.fpx');
 		let imagePart = `/full/${meta.width},/0/default.jpg`;
-		
+
 		item.attachments.push({
 			title: 'Artwork Image',
 			mimeType: 'image/jpeg',
@@ -284,7 +284,7 @@ function scrape(doc, url, json) {
 			url: attr(doc, '#downloadAssetLink', 'href')
 		});
 	}
-	
+
 	item.complete();
 }
 
@@ -302,11 +302,11 @@ function append(existingText, newText) {
 	if (!existingText) {
 		return newText;
 	}
-	
+
 	if (!newText) {
 		return existingText;
 	}
-	
+
 	return existingText + '\n' + newText;
 }
 

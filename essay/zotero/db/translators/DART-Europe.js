@@ -36,7 +36,7 @@
 function detectWeb(doc, url) {
 	if (url.indexOf("full.php?") != -1) return "thesis";
 	if (url.indexOf("results.php?") != -1) return "multiple";
-	
+
 }
 
 

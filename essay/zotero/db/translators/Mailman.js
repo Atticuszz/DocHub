@@ -68,7 +68,7 @@ function doWeb(doc, url) {
 	if (item.date) item.date = ZU.trimInternal(item.date);
 
 	item.url = url; /* get url of archived email */
-	
+
 	item.attachments.push({title:"snapshot", mimeType:"text/html", url:item.url});
 		/* get snapshot of archived email */
 

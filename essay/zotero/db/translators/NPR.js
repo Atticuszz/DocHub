@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -109,7 +109,7 @@ function scrape(doc, url) {
 function scrapeText(doc, _url) {
 	let item = new Zotero.Item('newspaperArticle');
 	let json = JSON.parse(text(doc, 'script[type="application/ld+json"]'));
-	
+
 	item.title = json.headline;
 	item.abstractNote = ZU.cleanTags(json.description);
 	item.publicationTitle = 'NPR';
@@ -117,18 +117,18 @@ function scrapeText(doc, _url) {
 	item.section = text(doc, 'h3.slug');
 	item.language = 'en';
 	item.url = json.mainEntityOfPage['@id'];
-	
+
 	if (json.author) {
 		for (let name of json.author.name) {
 			item.creators.push(ZU.cleanAuthor(name, 'author'));
 		}
 	}
-	
+
 	item.attachments.push({
 		title: 'Snapshot',
 		document: doc
 	});
-	
+
 	item.complete();
 }
 
@@ -154,13 +154,13 @@ function scrapeAudio(doc, _url) {
 	else {
 		itemType = 'podcast';
 	}
-	
+
 	let item = new Zotero.Item(itemType);
 	let json = JSON.parse(text(doc, 'script[type="application/ld+json"]'));
-	
+
 	item.title = text(doc, '#primaryaudio .audio-module-title') || json.headline;
 	item.abstractNote = ZU.cleanTags(json.description);
-	
+
 	// strip the time from the date, since we have no way of knowing exactly
 	// what time it aired (and the time on the article is based on when the
 	// transcript was published)
@@ -186,33 +186,33 @@ function scrapeAudio(doc, _url) {
 		item.seriesTitle = text(doc, 'h3.slug');
 		item.publisher = 'NPR'; // no good analogue for this, so let it go into extra
 	}
-	
+
 	item.runningTime = attr(doc, '#primaryaudio .audio-module-duration', 'datetime')
 		.replace(/P(\d+)H,(\d+)M,(\d+)S/, '$1:$2:$3')
 		.replace(/P(\d+)M,(\d+)S/, '$1:$2');
 	item.language = 'en';
 	item.url = json.mainEntityOfPage['@id'];
-	
+
 	if (json.author) {
 		for (let name of json.author.name) {
 			let creatorType = itemType == 'radioBroadcast' ? 'director' : 'podcaster';
 			item.creators.push(ZU.cleanAuthor(name, creatorType));
 		}
 	}
-	
+
 	item.attachments.push({
 		title: 'Audio',
 		mimeType: 'audio/mpeg',
 		url: attr(doc, '#primaryaudio .audio-tool-download > a', 'href')
 	});
-	
+
 	item.attachments.push({
 		title: 'Transcript',
 		mimeType: 'text/html',
 		url: attr(doc, '#primaryaudio .audio-tool-transcript > a', 'href'),
 		snapshot: true
 	});
-	
+
 	item.complete();
 }
 

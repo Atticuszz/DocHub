@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -87,7 +87,7 @@ function scrape(doc, url) {
 			for (let tag of doc.querySelectorAll('.ant-tag')) {
 				item.tags.push({ tag: tag.textContent.trim() });
 			}
-			
+
 			for (let action of doc.querySelectorAll('.__UserAction__ a')) {
 				if (/\bpdf\b/i.test(action.textContent)) {
 					item.attachments.push({
@@ -97,7 +97,7 @@ function scrape(doc, url) {
 					});
 				}
 			}
-			
+
 			item.complete();
 		});
 		translator.translate();
@@ -115,7 +115,7 @@ var testCases = [
 	{
 		"type": "web",
 		"url": "https://inspirehep.net/literature/1284987",
-		"defer": true,		
+		"defer": true,
 		"items": [
 			{
 				"itemType": "journalArticle",

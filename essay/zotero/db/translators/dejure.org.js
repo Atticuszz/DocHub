@@ -94,7 +94,7 @@ function doWeb(doc, url) {
 
 function scrape(doc, url, type) {
 	var item = new Zotero.Item(type);
-	
+
 	if (type == "case") {
 		var headline = ZU.xpathText(doc, './/td[contains(@class, "urteilszeile")]');
 		var posComma = headline.indexOf(",");
@@ -107,10 +107,10 @@ function scrape(doc, url, type) {
 		}
 		item.dateDecided = ZU.strToISO(headline);
 		item.title = headline;
-		
+
 		var previousDecisions = ZU.xpath(doc, './/div[h4[contains(., "Verfahrensgang")]]/ul/li');
 		item.history = previousDecisions.map(function(li) { return li.textContent; } ).join("; ");
-		
+
 	}
 	if (type == "statute") {
 		var headings = ZU.xpath(doc, "//h1/text()");
@@ -132,12 +132,12 @@ function scrape(doc, url, type) {
 			item.title = item.shortTitle;
 		}
 	}
-	
+
 	item.attachments.push({
 		title: "Snapshot",
 		document: doc
 	});
-	
+
 	item.complete();
 }
 /** BEGIN TEST CASES **/

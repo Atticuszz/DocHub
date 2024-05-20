@@ -41,7 +41,7 @@ function detectWeb(doc, url) {
 		Z.monitorDOMChanges(doc.body, {attributes: true, attributeFilter: ['class']});
 		return "newspaperArticle";
 	}
-	
+
 	var splitter = doc.getElementById('hldSplitter');
 	if (splitter) Z.monitorDOMChanges(splitter, { attributes: true, attributeFilter: ['style'] });
 	if (getSearchResults(doc, true)) return "multiple";
@@ -56,20 +56,20 @@ function getSearchResults(doc, checkOnly) {
 		var count = rows[i].getElementsByClassName('count')[0];
 		if (!count) count = "";
 		else count = count.textContent.replace(/^\s*(\d+)[\s\S]*/, '$1') + '. ';
-		
+
 		var title = rows[i].getElementsByTagName('a')[0];
 		if (!title) continue;
-		
+
 		var hdl = rows[i].getElementsByTagName('input')[0];
 		if (!hdl) continue;
-		
+
 		if (checkOnly) return true;
 		found = true;
-		
+
 		var link = title.href.replace(/#.*/, '');
 		items[hdl.value] = ZU.trimInternal(title.textContent);
 	}
-	
+
 	return found ? items : false;
 }
 
@@ -77,7 +77,7 @@ function doWeb(doc, url) {
 	if (detectWeb(doc, url) == "multiple") {
 		Zotero.selectItems(getSearchResults(doc), function (items) {
 			if (!items) return true;
-			
+
 			var hdls = [];
 			for (var i in items) {
 				hdls.push(i);
@@ -97,19 +97,19 @@ function doWeb(doc, url) {
 function getPostParams(doc) {
 	var form = doc.forms.namedItem('PageBaseForm');
 	if (!form) throw new Error('Could not find PageBaseForm');
-	
+
 	var params = [],
 		fetchFromForm = ['_XFORMSESSSTATE', 'hls', 'elks', 'istphst', 'sri', 'usageAggregator'],
 		fetchById = ['ao', 'aod', 'iisac', 'ipfCtrl', 'hideahdr'],
 		name, input, value;
-	
+
 	for (var i=0; i<fetchFromForm.length; i++) {
 		name = fetchFromForm[i];
 		input = form.elements.namedItem(name);
 		if (!input) continue;
-		
+
 		value = input.value;
-		
+
 		if (name == '_XFORMSESSSTATE') {
 			value = value.replace(/\+/g, "%2b").replace(/\=/g, "%3d");
 		} else if (name == 'usageAggregator') {
@@ -117,29 +117,29 @@ function getPostParams(doc) {
 		} else if (name == 'hls') {
 			value = value.replace(/\+/g, "%2b").replace(/\=/g, "%3d").replace(/&/g, "%26");
 		}
-		
+
 		params.push(name + '=' + value);
 	}
-	
+
 	for (var i=0; i<fetchById.length; i++) {
 		name = fetchById[i];
 		input = doc.getElementById(name);
 		if (!input && name != 'iisac') continue;
-		
+
 		if (name != 'iisac') {
 			value = input.value;
 		} else {
 			value = input ? input.value : 0;
 		}
-		
+
 		if (name == 'ipfCtrl') {
 			name = 'ipf'
 			value = input.getAttribute('value'); // Not actually inputs
 		}
-		
+
 		params.push(name + '=' + value);
 	}
-	
+
 	return params;
 }
 
@@ -180,7 +180,7 @@ function fetchQueries(url, queries, headers, doc) {
 			Z.debug('Could not locate metadata');
 			Z.debug(text);
 		}
-		
+
 		scrapeArticles(articles);
 		if (queries.length) fetchQueries(url, queries, headers, doc);
 	}, headers)
@@ -194,7 +194,7 @@ function scrapeArticles(articles) {
 		for (var j=0; j<rows.length; j++) {
 			var data = rows[j].getElementsByTagName('td');
 			if (data.length != 2) continue;
-			
+
 			var index, value;
 			if (data[0].classList.contains('index')) {
 				index = data[0];
@@ -204,18 +204,18 @@ function scrapeArticles(articles) {
 				index = data[1];
 				value = data[0];
 			}
-			
+
 			index = index.textContent.trim();
 			if (index != 'TD') value = ZU.trimInternal(value.textContent);
 			element[index] = value;
 		}
-		
+
 		var newItem = new Zotero.Item("newspaperArticle");
-		
+
 		newItem.title = element["HD"];
 		newItem.publicationTitle = element["SN"];
 		newItem.section = element["SE"];
-			
+
 		if (element["PD"]) {
 			dateArray = element["PD"].split(/ |\. ?/);
 			if (dateArray.length == 5) {//in Spanish e.g. [8 de diciembre de 2013
@@ -231,11 +231,11 @@ function scrapeArticles(articles) {
 									"Juni":"06", "June":"06", "juin":"06", "giugno":"06", "junio":"06",
 									"Juli":"07", "July":"07", "juillet":"07", "luglio":"07", "julio":"07",
 									"August":"08", "août":"08", "agosto":"08",
-									"September":"09", "septembre":"09", "settembre":"09", "septiembre":"09", 
+									"September":"09", "septembre":"09", "settembre":"09", "septiembre":"09",
 									"Oktober":"10", "October":"10", "octobre":"10", "ottobre":"10", "octubre":"10",
-									"November":"11", "novembre":"11", "noviembre":"11", 
+									"November":"11", "novembre":"11", "noviembre":"11",
 									"Dezember":"12", "December":"12", "décembre":"12", "dicembre":"12", "dicembre":"12", "diciembre":"12"
-										   
+
 				};
 				if (dateArray[1] in monthsMap) dateArray[1] = monthsMap[dateArray[1]];
 				if (dateArray[0].length == 1) dateArray[0] = "0"+dateArray[0];
@@ -253,7 +253,7 @@ function scrapeArticles(articles) {
 		newItem.language = element["LA"];
 		newItem.volume = element["VOL"];
 		newItem.rights = element["CY"];
-		
+
 		// Eventually replace this with PDF of the "Full Article" view
 		if (element['TD']) {
 			var html = element['TD'].innerHTML
@@ -261,7 +261,7 @@ function scrapeArticles(articles) {
 				.replace(/<\/?a[^>]*>/g, '');
 			newItem.notes.push({note:ZU.trimInternal(html)});
 		}
-		
+
 		var authors = new Array();
 		if (element["AU"]) {
 			authors = element["AU"].split(",");
@@ -272,7 +272,7 @@ function scrapeArticles(articles) {
 		for (var j=0; j<authors.length; j++) {
 			newItem.creators.push(ZU.cleanAuthor(authors[j], "author"));
 		}
-		
+
 		//company: element["CO"] --> seems fine as tags
 		//industry: element["IN"] --> broad but still okay
 		//element["NS"] --> too messy
@@ -290,13 +290,13 @@ function scrapeArticles(articles) {
 				newItem.tags.push(ZU.trimInternal(tagCodeNamePair[1]));
 			}
 		}
-		
+
 		if (element["AN"]) {
 			element["AN"] = element["AN"].split(" ")[1];
 			var exportUrl = 'http://global.factiva.com/redir/default.aspx?P=sa&an=' + encodeURIComponent(element["AN"]) + '&cat=a&ep=ASE';
 			newItem.url = exportUrl;
 		}
-		
+
 		newItem.complete();
 	}
 }

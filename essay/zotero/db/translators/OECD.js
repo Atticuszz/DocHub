@@ -14,23 +14,23 @@
 
 /*
 	***** BEGIN LICENSE BLOCK *****
-	
+
 	Copyright © 2012-2021 Sebastian Karcher and Abe Jellinek
 	This file is part of Zotero.
-	
+
 	Zotero is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version.
-	
+
 	Zotero is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 	GNU Affero General Public License for more details.
-	
+
 	You should have received a copy of the GNU Affero General Public License
 	along with Zotero.  If not, see <http://www.gnu.org/licenses/>.
-	
+
 	***** END LICENSE BLOCK *****
 */
 
@@ -57,10 +57,10 @@ function doWeb(doc, url) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		item.attachments = [];
-		
+
 		let pdfURL = attr(doc, '.action-pdf', 'href');
 		if (pdfURL) {
 			item.attachments.push({
@@ -69,11 +69,11 @@ function doWeb(doc, url) {
 				url: pdfURL
 			});
 		}
-		
+
 		if (!item.place) {
 			item.place = 'Paris';
 		}
-		
+
 		if (!item.creators.length) {
 			item.creators.push({
 				lastName: 'OECD',
@@ -81,30 +81,30 @@ function doWeb(doc, url) {
 				fieldMode: 1
 			});
 		}
-		
+
 		if (!item.tags.length) {
 			item.tags = text(doc, '.keyword')
 				.replace(/^Keywords:/, '')
 				.split(', ')
 				.map(tag => ({ tag }));
 		}
-		
+
 		if (item.reportType == 'Text') {
 			item.reportType = '';
 		}
-		
+
 		if (!item.publisher || item.publisher == 'OECD') {
 			item.publisher = 'Organisation for Economic Co-operation and Development';
 		}
-		
+
 		if (item.itemType == 'book') {
 			item.ISBN = ZU.cleanISBN(text(doc, '.block-infos-sidebar .mg-t-zero'));
 		}
-		
+
 		item.libraryCatalog = 'OECD iLibrary';
-		
+
 		item.date = ZU.strToISO(item.date);
-		
+
 		if (item.date) {
 			item.complete();
 		}

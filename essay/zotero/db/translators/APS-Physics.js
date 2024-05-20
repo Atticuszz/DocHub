@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -77,12 +77,12 @@ function scrape(doc, url) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		if (!item.DOI) {
 			item.DOI = ZU.cleanDOI(attr(doc, 'a[href*="link.aps.org/doi"]', 'href'));
 		}
-		
+
 		// both snapshot and PDF: HTML is commentary, PDF is article
 		item.attachments = [];
 		item.attachments.push({
@@ -94,9 +94,9 @@ function scrape(doc, url) {
 			mimeType: 'application/pdf',
 			url: `https://physics.aps.org/articles/pdf/${item.DOI}`
 		});
-		
+
 		item.libraryCatalog = 'APS Physics';
-		
+
 		item.complete();
 	});
 

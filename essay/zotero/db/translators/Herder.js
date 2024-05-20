@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -75,7 +75,7 @@ function doWeb(doc, url) {
 
 function scrape(doc, url) {
 	let item = new Zotero.Item('journalArticle');
-	
+
 	item.title = text(doc, '.headline');
 	if (text(doc, '.subline')) item.title += ': ' + text(doc, '.subline');
 	item.abstractNote = text(doc, '.article-summary')
@@ -83,7 +83,7 @@ function scrape(doc, url) {
 		.replace(/\s*\n\s*/, '\n\n');
 	item.publicationTitle = attr(doc, 'img.header__logo-image', 'alt')
 		|| text(doc, 'a[id$="linkBreadcrumb_0"]');
-	
+
 	let infoline = text(doc, '.article-infoline')
 		.match(/[^\s]+ ([^\s]+) \(([0-9]+)\) ([^\s]+)?/);
 	if (infoline) {
@@ -91,20 +91,20 @@ function scrape(doc, url) {
 		item.date = infoline[2];
 		item.pages = infoline[3];
 	}
-	
+
 	item.language = 'de-DE';
 	item.url = attr(doc, 'link[rel="canonical"]', 'href') || url;
-	
+
 	for (let author of doc.querySelectorAll('.byline a')) {
 		item.creators.push(ZU.cleanAuthor(author.innerText, 'author'));
 	}
-	
+
 	item.attachments.push({
 		title: 'Full Text PDF',
 		url: attr(doc, 'a[id$="_linkPDF"]', 'href'),
 		mimeType: 'application/pdf'
 	});
-	
+
 	item.complete();
 }
 

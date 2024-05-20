@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2017 Philipp Zumstein
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -37,7 +37,7 @@
 
 
 function detectWeb(doc, url) {
-	if (ZU.xpathText(doc, '//meta[@property="og:type"]/@content')=="article" ){ 
+	if (ZU.xpathText(doc, '//meta[@property="og:type"]/@content')=="article" ){
 		return "newspaperArticle";
 	} else if (getSearchResults(doc, true)) {
 		return "multiple";
@@ -85,7 +85,7 @@ function scrape(doc, url) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	//translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		item.publicationTitle = "Die Tageszeitung: taz";
 		item.ISSN = "0931-9085";
@@ -96,7 +96,7 @@ function scrape(doc, url) {
 				item.creators.splice(i, 1);
 			}
 		}
-		
+
 		item.pages = ZU.xpathText(doc, '//div[contains(@class, "print-page")]//ul[contains(@class, "right")]/li[contains(@class, "page")]');
 		if (item.pages) {
 			item.pages = item.pages.replace('S.', '');

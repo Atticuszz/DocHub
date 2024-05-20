@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -76,7 +76,7 @@ function scrape(doc, _url) {
 	let DOI = ZU.cleanDOI(attr(doc, 'a[href*="doi."]', 'href'));
 
 	let search = Zotero.loadTranslator('search');
-	
+
 	search.setHandler('translators', function (_, translators) {
 		search.setTranslator(translators);
 		search.setHandler('itemDone', function (_, item) {
@@ -84,7 +84,7 @@ function scrape(doc, _url) {
 		});
 		search.translate();
 	});
-	
+
 	search.setSearch({ DOI });
 	search.getTranslators();
 }

@@ -46,7 +46,7 @@ function scrape(doc, url) {
 		item.attachments.push({url:pdfurl, title:"SlideShare Slide Show", mimeType:"application/pdf"});
 	}
 
-	item.complete();	
+	item.complete();
 }
 
 function detectWeb(doc, url) {
@@ -66,7 +66,7 @@ function doWeb(doc, url) {
 		Zotero.selectItems( ZU.getItemArray(doc, links, 'from_search=', null),
 			function(items) {
 				if (!items) return true;
-	
+
 				var shows = new Array();
 				for (var i in items) {
 					shows.push(i);

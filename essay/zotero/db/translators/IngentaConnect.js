@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2020 Michael Berkowitz
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify

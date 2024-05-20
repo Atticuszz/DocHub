@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -82,31 +82,31 @@ function scrape(doc, url) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		item.title = item.title.replace(' : ', ': ');
-		
+
 		delete item.journalAbbreviation;
-		
+
 		if (item.attachments.some(at => at.title == 'Full Text PDF')) {
 			item.attachments = item.attachments.filter(at => at.title != 'Snapshot');
 		}
-		
+
 		for (let creator of item.creators) {
 			if (creator.firstName) {
 				creator.firstName = creator.firstName.replace(/\s*\[.*$/, '');
 			}
 		}
-		
+
 		if (item.itemType == 'bookSection') {
 			let search = Zotero.loadTranslator('search');
 			search.setSearch({ DOI: item.DOI });
-			
+
 			search.setHandler('translators', function (_, translators) {
 				search.setTranslator(translators);
 				search.translate();
 			});
-			
+
 			search.setHandler('itemDone', function (_, doiItem) {
 				item.title = doiItem.title;
 				item.bookTitle = doiItem.bookTitle;
@@ -115,7 +115,7 @@ function scrape(doc, url) {
 				item.date = doiItem.date;
 				item.complete();
 			});
-			
+
 			search.getTranslators();
 		}
 		else {
@@ -127,7 +127,7 @@ function scrape(doc, url) {
 		if (attr(doc, 'meta[name="DC.type"]', 'content') == 'chapter') {
 			trans.itemType = 'bookSection';
 		}
-		
+
 		trans.doWeb(doc, url);
 	});
 }

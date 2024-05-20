@@ -61,7 +61,7 @@ function scrapeClip(doc, url) {
 	newItem.title = text(doc, '#mainContent h1') || text(doc, '[itemprop="about"]');
 	// remove the unnecessary xid param
 	newItem.url = attr(doc, 'link[rel="canonical"]', 'href');
-	
+
 	/*
 		The user can append the author to the title with a forward slash
 		e.g. "My Day / Eleanor Roosevelt"
@@ -76,7 +76,7 @@ function scrapeClip(doc, url) {
 			newItem.creators.push(Zotero.Utilities.cleanAuthor(author, "author"));
 		}
 	}
-	
+
 	newItem.publicationTitle = text(doc, '[itemprop="name"]');
 	// details["source"]["title"] gives a string like
 	// "Newspapers.com - The Akron Beacon Journal - 1939-10-30 - Page Page 15"
@@ -86,7 +86,7 @@ function scrapeClip(doc, url) {
 
 	newItem.attachments.push(makeImageAttachment(url));
 	newItem.attachments.push(makePDFAttachment(url));
-	
+
 	// handle empty title
 	if (newItem.title === "") {
 		newItem.title = "Article clipped from <i>" + newItem.publicationTitle + "</i>";

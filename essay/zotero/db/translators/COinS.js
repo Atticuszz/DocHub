@@ -37,13 +37,13 @@
 
 function detectWeb(doc, _url) {
 	var encounteredType = false;
-	
+
 	var spans = doc.querySelectorAll('span.Z3988[title]');
 	for (let span of spans) {
 		// determine if it's a valid type
 		var item = new Zotero.Item();
 		Zotero.Utilities.parseContextObject(span.title, item);
-		
+
 		if (item.itemType) {
 			if (encounteredType) {
 				return "multiple";
@@ -53,7 +53,7 @@ function detectWeb(doc, _url) {
 			}
 		}
 	}
-	
+
 	return encounteredType;
 }
 
@@ -61,7 +61,7 @@ function detectWeb(doc, _url) {
 function supplementItem(item, supp, prefer, ignore) {
 	if (!prefer) prefer = [];
 	if (!ignore) ignore = [];
-	
+
 	for (var i in supp) {
 		if (ignore.includes(i)) continue;
 		if (i == 'creators' || i == 'attachments' || i == 'notes'
@@ -90,7 +90,7 @@ function supplementItem(item, supp, prefer, ignore) {
 function retrieveNextCOinS(needFullItems, newItems, couldUseFullItems, doc) {
 	if (needFullItems.length) {
 		var item = needFullItems.shift();
-		
+
 		Zotero.debug("Looking up contextObject");
 		var search = Zotero.loadTranslator("search");
 		search.setHandler("itemDone", function (obj, newItem) {
@@ -115,7 +115,7 @@ function retrieveNextCOinS(needFullItems, newItems, couldUseFullItems, doc) {
 				retrieveNextCOinS(needFullItems, newItems, couldUseFullItems, doc);
 			}
 		});
-		
+
 		search.setSearch(item);
 		search.getTranslators();
 	}
@@ -132,7 +132,7 @@ function completeCOinS(newItems, couldUseFullItems, doc) {
 		for (var i in newItems) {
 			selectArray[i] = newItems[i].title;
 		}
-		
+
 		Zotero.selectItems(selectArray, function (selectArray) {
 			if (!selectArray) return;
 			var useIndices = [];
@@ -152,12 +152,12 @@ function completeItems(newItems, useIndices, couldUseFullItems, doc) {
 		return;
 	}
 	var i = useIndices.shift();
-	
+
 	// grab full item if the COinS was missing an author
 	if (couldUseFullItems[i]) {
 		Zotero.debug("Looking up contextObject");
 		var search = Zotero.loadTranslator("search");
-		
+
 		var firstItem = false;
 		search.setHandler("itemDone", function (obj, newItem) {
 			supplementItem(newItem, newItems[i], [], ['contextObject', 'repository']);
@@ -192,7 +192,7 @@ function completeItems(newItems, useIndices, couldUseFullItems, doc) {
 				completeItems(newItems, useIndices, couldUseFullItems);
 			}
 		});
-		
+
 		search.setSearch(newItems[i]);
 		search.getTranslators();
 	}
@@ -223,7 +223,7 @@ function doWeb(doc, _url) {
 					newItem.contextObject = spanTitle;
 					couldUseFullItems[newItems.length] = true;
 				}
-				
+
 				// title and creators are minimum data to avoid looking up
 				newItems.push(newItem);
 			}
@@ -234,7 +234,7 @@ function doWeb(doc, _url) {
 			}
 		}
 	}
-	
+
 	Zotero.debug(needFullItems);
 	if (needFullItems.length) {
 		// retrieve full items asynchronously
@@ -249,7 +249,7 @@ function doWeb(doc, _url) {
 function doExport() {
 	var item;
 	var co;
-	
+
 	while ((item = Zotero.nextItem())) {
 		co = Zotero.Utilities.createContextObject(item, "1.0");
 		if (co) {

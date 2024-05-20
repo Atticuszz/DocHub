@@ -52,7 +52,7 @@ function detectWeb(doc, url) {
 				{ attributeFilter: ['style'] });
 		}
 	}
-	
+
 	// If this is a view page, find the link to the citation
 	var favLink = getFavLink(doc);
 	if ((favLink && getJID(favLink.href)) || getJID(url)) {
@@ -171,7 +171,7 @@ function processRIS(text, jid) {
 	var translator = Zotero.loadTranslator("import");
 	translator.setTranslator("32d59d2d-b65a-4da4-b0a3-bdd3cfb979e7");
 	// Z.debug(text);
-	
+
 	// Reviews have a RI tag now (official RIS for Reviewed Item)
 	var review = text.match(/^RI\s+-\s+(.+)/m);
 	// sometimes we have subtitles stored in T1. These are part of the title, we want to add them later
@@ -181,7 +181,7 @@ function processRIS(text, jid) {
 	translator.setHandler("itemDone", function (obj, item) {
 		// author names are not (always) supplied as lastName, firstName in RIS
 		// we fix it here (note sure if still need with new RIS)
-	
+
 		var m;
 		for (var i = 0, n = item.creators.length; i < n; i++) {
 			if (!item.creators[i].firstName
@@ -191,7 +191,7 @@ function processRIS(text, jid) {
 				delete item.creators[i].fieldMode;
 			}
 		}
-		
+
 		// fix special characters in abstract, convert html linebreaks and italics, remove stray p tags; don't think they use anything else
 		if (item.abstractNote) {
 			item.abstractNote = convertCharRefs(item.abstractNote);
@@ -215,10 +215,10 @@ function processRIS(text, jid) {
 		if (item.ISSN) {
 			item.ISSN = ZU.cleanISSN(item.ISSN);
 		}
-		
+
 		// Only the DOIs mentioned in RIS are valid, and we don't
 		// add any other jid for DOI because they are only internal.
-		
+
 		if (maintitle && subtitle) {
 			maintitle[1] = maintitle[1].replace(/:\s*$/, '');
 			item.title = maintitle[1] + ": " + subtitle[1];
@@ -240,12 +240,12 @@ function processRIS(text, jid) {
 			}
 			item.title = "Review of " + reviewedTitle;
 		}
-		
+
 		// titles may also contain escape characters
 		item.title = convertCharRefs(item.title);
 		item.url = item.url.replace('http:', 'https:'); // RIS still lists http addresses while JSTOR's stable URLs use https
 		if (item.url && !item.url.startsWith("http")) item.url = "https://" + item.url;
-		
+
 		// remove all caps from titles and authors.
 		for (i = 0; i < item.creators.length; i++) {
 			if (item.creators[i].lastName && item.creators[i].lastName == item.creators[i].lastName.toUpperCase()) {
@@ -268,7 +268,7 @@ function processRIS(text, jid) {
 			item.complete();
 		}
 	});
-		
+
 	translator.getTranslatorObject(function (trans) {
 		trans.doImport();
 	});
@@ -309,7 +309,7 @@ function finalizeItem(item) {
 		}
 	);
 }
-	
+
 /** BEGIN TEST CASES **/
 var testCases = [
 	{

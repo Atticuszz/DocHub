@@ -161,7 +161,7 @@ function processTag(item, tag, value) {
 		else if (tag == "Y") {
 			type = "translator";
 		}
-		
+
 		item.creators.push(Zotero.Utilities.cleanAuthor(value, type, value.includes(",")));
 	}
 	else if (tag == "Q") {
@@ -214,7 +214,7 @@ function doImport() {
 
 	// default to creating a book if no %0 tag is eventually found
 	var item = new Zotero.Item(inputTypeMap.Generic);
-	
+
 	tag = line[1];
 	var data = line.substr(3);
 	while ((line = Zotero.read()) !== false) {	// until EOF
@@ -235,7 +235,7 @@ function doImport() {
 			if (tag) {
 				processTag(item, tag, data);
 			}
-			
+
 			// then fetch the tag and data from this line
 			tag = line[1];
 			data = line.substr(3);
@@ -245,7 +245,7 @@ function doImport() {
 			data += "\n" + line;
 		}
 	}
-	
+
 	if (tag) {	// save any unprocessed tags
 		processTag(item, tag, data);
 		item.complete();
@@ -265,15 +265,15 @@ function doExport() {
 		if (item.itemType == "note" || item.itemType == "attachment") {
 			continue;
 		}
-		
+
 		// type
 		addTag("0", typeMap[item.itemType] ? typeMap[item.itemType] : "Generic");
-		
+
 		// use field map
 		for (let j in fieldMap) {
 			if (item[fieldMap[j]]) addTag(j, item[fieldMap[j]]);
 		}
-		
+
 		// handle J & B tags correctly
 		if (item.publicationTitle) {
 			if (item.itemType == "journalArticle") {
@@ -283,7 +283,7 @@ function doExport() {
 				addTag("B", item.publicationTitle);
 			}
 		}
-		
+
 		// creators
 		for (let j in item.creators) {
 			var referTag = "A";
@@ -293,13 +293,13 @@ function doExport() {
 			else if (item.creators[j].creatorType == "translator") {
 				referTag = "?";
 			}
-			
+
 			addTag(referTag, item.creators[j].lastName + (item.creators[j].firstName ? ", " + item.creators[j].firstName : ""));
 		}
-		
+
 		// date
 		addTag("D", item.date);
-		
+
 		// tags
 		if (item.tags) {
 			var keywordTag = "";

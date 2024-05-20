@@ -63,7 +63,7 @@ function doWeb(doc, url) {
 			.map(row => row.split('='))
 			.find(row => row[0].trim() == 'idToken')[1];
 		Zotero.debug(idToken)
-		
+
 		let postBody = JSON.stringify({
 			input: text(doc, 'textarea'),
 			requestOptions: { qaColumns: [] },
@@ -85,7 +85,7 @@ function doWeb(doc, url) {
 				Zotero.selectItems(items, (items) => {
 					if (items) Object.keys(items).map(scrape);
 				});
-			}, 
+			},
 			{
 				'Authorization': 'Bearer ' + idToken,
 				'Content-Type': 'application/json'

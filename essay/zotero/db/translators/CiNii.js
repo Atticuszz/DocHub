@@ -39,7 +39,7 @@ function doWeb(doc, url) {
 			Zotero.Utilities.processDocuments(arts, scrape, function () {
 				Zotero.done();
 			});
-			Zotero.wait();	
+			Zotero.wait();
 		});
 	} else {
 		scrape(doc, url)

@@ -94,7 +94,7 @@ FW._Base = function () {
 
 };
 
-FW.Scraper = function (init) { 
+FW.Scraper = function (init) {
     FW._scrapers.push(new FW._Scraper(init));
 };
 
@@ -207,7 +207,7 @@ FW._Scraper = function (init) {
         "volume",
         "websiteTitle",
         "websiteType" ];
-    
+
     this._makeAttachments = function(doc, url, config, item) {
         if (config instanceof Array) {
             config.forEach(function (child) { this._makeAttachments(doc, url, child, item); }, this);
@@ -280,7 +280,7 @@ FW._Scraper = function (init) {
 
 FW._Scraper.prototype = new FW._Base;
 
-FW.MultiScraper = function (init) { 
+FW.MultiScraper = function (init) {
     FW._scrapers.push(new FW._MultiScraper(init));
 };
 
@@ -359,7 +359,7 @@ FW._MultiScraper = function (init) {
         var urls = [];
         this._makeChoices(this["choices"], doc, url, titles, urls);
         var attachments = this._mkAttachments(doc, url, urls);
-        
+
 	var parentItemTrans = this.itemTrans;
 	this._selectItems(titles, urls, function (itemsToUse) {
 	    if(!itemsToUse) {
@@ -386,7 +386,7 @@ FW._MultiScraper = function (init) {
 
 FW._MultiScraper.prototype = new FW._Base;
 
-FW.WebDelegateTranslator = function (init) { 
+FW.WebDelegateTranslator = function (init) {
     return new FW._WebDelegateTranslator(init);
 };
 
@@ -399,7 +399,7 @@ FW._WebDelegateTranslator = function (init) {
         var parentThis = this;
 
         var translator = Zotero.loadTranslator("web");
-        translator.setHandler("itemDone", function(obj, item) { 
+        translator.setHandler("itemDone", function(obj, item) {
             eachItem(item, parentThis, doc, url);
         });
         translator.setDocument(doc);
@@ -468,10 +468,10 @@ FW._StringMagic = function () {
 
     this.match = function(re, group) {
         if (!group) group = 0;
-        return this.addFilter(function(s) { 
+        return this.addFilter(function(s) {
                                   var m = s.match(re);
                                   if (m === undefined || m === null) { return undefined; }
-                                  else { return m[group]; } 
+                                  else { return m[group]; }
                               });
     };
 
@@ -524,7 +524,7 @@ FW.PageText = function () {
 FW._PageText = function() {
     this._filters = new Array();
 
-    this.evaluate = function (doc) {        
+    this.evaluate = function (doc) {
         var a = [doc.documentElement.innerHTML];
         a = this._applyFilters(a, doc);
         if (a.length == 0) { return false; }
@@ -539,7 +539,7 @@ FW.Url = function () { return new FW._Url(); };
 FW._Url = function () {
     this._filters = new Array();
 
-    this.evaluate = function (doc, url) {        
+    this.evaluate = function (doc, url) {
         var a = [url];
         a = this._applyFilters(a, doc);
         if (a.length == 0) { return false; }
@@ -570,7 +570,7 @@ FW._Xpath = function (_xpath) {
             if (result) {
                 return result.iterateNext();
             } else {
-                return undefined;               
+                return undefined;
             }
         };
         this.addFilter(filter);
@@ -591,7 +591,7 @@ FW._Xpath = function (_xpath) {
                    resultType == XPathResult.UNORDERED_NODE_ITERATOR_TYPE) {
             var x;
             while ((x = res.iterateNext())) { a.push(x); }
-        } 
+        }
         a = this._applyFilters(a, doc);
         if (a.length == 0) { return false; }
         else { return a; }
@@ -622,7 +622,7 @@ FW.getScraper = function (doc, url) {
 
 FW.doWeb = function (doc, url) {
     var scraper = FW.getScraper(doc, url);
-    scraper.makeItems(doc, url, [], 
+    scraper.makeItems(doc, url, [],
                       function(item, scraper, doc, url) {
                           scraper.callHook('scraperDone', item, doc, url);
                           if (!item['title']) {
@@ -675,7 +675,7 @@ FW.Scraper({
 	attachments: [
 		{ url: FW.Url(),
   		title:  "Drugbank.ca Snapshot",
-  		type: "text/html" 	
+  		type: "text/html"
 	}, {
 		url: FW.Url().append(".mol"),
 		title: "MOL file",

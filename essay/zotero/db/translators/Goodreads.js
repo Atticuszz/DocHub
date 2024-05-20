@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -74,10 +74,10 @@ function doWeb(doc, url) {
 
 function scrape(doc, _url) {
 	let ISBN = ZU.cleanISBN(attr(doc, 'meta[property="books:isbn"]', 'content'));
-	
+
 	// adapted from Amazon translator
 	let search = Zotero.loadTranslator('search');
-	
+
 	search.setHandler('translators', function (_, translators) {
 		search.setTranslator(translators);
 		search.setHandler("itemDone", function (_, item) {
@@ -87,7 +87,7 @@ function scrape(doc, _url) {
 		});
 		search.translate();
 	});
-	
+
 	Z.debug(`Searching by ISBN: ${ISBN}`);
 	search.setSearch({ ISBN });
 	search.getTranslators();

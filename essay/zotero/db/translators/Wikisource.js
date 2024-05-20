@@ -112,7 +112,7 @@ function scrape(doc, url) {
 	} else {
 		item.title = doc.getElementById("header_title_text").textContent;
 	}
-	
+
 	var creators = ZU.xpath(doc, '//span[@id="header_author_text"]');
 	for (var i=0; i<creators.length; i++) {
 		var author = creators[i].textContent.replace('by', '').replace(/\(.+/, '');
@@ -131,7 +131,7 @@ function scrape(doc, url) {
 		title : "Wikisource Snapshot",
 		type : "text/html"
 	});
-	
+
 	//Add more metadata from the "Source" page if it is present
 	var sourcePage = ZU.xpathText(doc, '//li[@id="ca-proofread-source"]//a/@href');
 	if (sourcePage) {

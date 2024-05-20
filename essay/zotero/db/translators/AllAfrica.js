@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Sebastian Karcher and Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -77,14 +77,14 @@ function scrape(doc, url) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		let publication = text(doc, '.publisher-name');
 		if (publication) {
 			item.publicationTitle = publication.match(/[^(]+/)[0];
 			item.place = (publication.match(/\((.*)\)/) || [])[1];
 		}
-		
+
 		item.libraryCatalog = 'AllAfrica';
 		item.complete();
 	});

@@ -14,23 +14,23 @@
 
 /*
 	***** BEGIN LICENSE BLOCK *****
-	
+
 	wiso Translator, Copyright © 2014 Philipp Zumstein
 	This file is part of Zotero.
-	
+
 	Zotero is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version.
-	
+
 	Zotero is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 	GNU Affero General Public License for more details.
-	
+
 	You should have received a copy of the GNU Affero General Public License
 	along with Zotero. If not, see <http://www.gnu.org/licenses/>.
-	
+
 	***** END LICENSE BLOCK *****
 */
 
@@ -54,12 +54,12 @@ function scrape(doc, url) {
 		+ docUid + "&dbShortcut=&query=&source=Document&format=Citavi";
 
 	ZU.doGet(risUrl, function(text) {
-		
+
 		//author names are messy and not consistently saved
 		//sometimes a list of authors is saved in one field seperated by commas
 		//to prevent this breaking sync:
 		text = text.replace(/^(A[U123]|ED)\s+-\s+(.+[,;].+)$/mg, cleanAuthorFields );
-		
+
 		//sometimes more than one T1 fields are present
 		//or the title is distributed over T1, T2, T3...
 		if ( /^TY\s+-\s+JOUR/m.test(text) && /^JF\s+-\s+/m.test(text) && !/^TI\s+-\s+/m.test(text)) {
@@ -69,7 +69,7 @@ function scrape(doc, url) {
 				if (title) titlesArray.push(title);
 				return '';
 			});
-			
+
 			if (titlesArray.length) {
 				//insert an aggregated TI tag
 				text = text.replace(/^TY\s+-\s+(.+)$/m , "$&\nTI  - " + titlesArray.join(": "));
@@ -102,10 +102,10 @@ function scrape(doc, url) {
 			//Zotero.debug(item);
 			item.complete();
 		});
-	
+
 		trans.translate();
 	} , null , "ISO-8859-1");//the text file is LATIN1 encoded
-	
+
 }
 
 
@@ -131,10 +131,10 @@ function cleanAuthorFields(m, tag, authorStr) {
 			}
 		}
 	}
-	
+
 	//here: One of the following two cases holds:
 	//(i) authorStr contains semicolon(s), authors is the array of its different parts, fixName = false
-	//(ii) authorStr contains no semicolon but more than one comma, authors is the array of its different parts, fixName = true	
+	//(ii) authorStr contains no semicolon but more than one comma, authors is the array of its different parts, fixName = true
 	var str = '';
 	for (var i=0; i<authors.length; i++) {
 		var author = ZU.superCleanString(authors[i]).replace(/(?:Dr|Prof)\.\s*/,"");

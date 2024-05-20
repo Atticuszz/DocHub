@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2012 Sebastian Karcher
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -68,7 +68,7 @@ function scrape(doc, url) {
 		newItem.reporter = reporterDetails[2];
 		newItem.firstPage = reporterDetails[3];
 	}
-	
+
 	newItem.court = text('#breadcrumbs *[itemprop="name"]', 2);
 	newItem.dateDecided = ZU.xpathText(doc, '//div[@id="documentMeta"]//div[contains(text(), "Date")]/following-sibling::div');
 	newItem.docketNumber = ZU.xpathText(doc, '//div[@id="documentMeta"]//div[contains(text(), "File number") or contains(text(), "Numéro de dossier")]/following-sibling::div');
@@ -76,7 +76,7 @@ function scrape(doc, url) {
 	if (otherCitations) {
 		newItem.notes.push({ note: "Other Citations: " + ZU.trimInternal(otherCitations) });
 	}
-	
+
 	var shortUrl = text('.documentStaticUrl');
 	if (shortUrl) {
 		newItem.url = shortUrl.trim();

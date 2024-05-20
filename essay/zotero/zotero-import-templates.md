@@ -1,82 +1,82 @@
 {#- infer latest annotation Date -#}
 {% macro maxAnnotationsDate() %}
-   {%- set tempDate = "" -%}
-	{%- for a in annotations -%}
-		{%- set testDate = a.date | format("YYYY-MM-DD#HH:mm:ss") -%}
-		{%- if testDate > tempDate or tempDate == ""-%}
-			{%- set tempDate = testDate -%}
-		{%- endif -%}
-	{%- endfor -%}
-	{{tempDate}}
+{%- set tempDate = "" -%}
+{%- for a in annotations -%}
+{%- set testDate = a.date | format("YYYY-MM-DD#HH:mm:ss") -%}
+{%- if testDate > tempDate or tempDate == ""-%}
+{%- set tempDate = testDate -%}
+{%- endif -%}
+{%- endfor -%}
+{{tempDate}}
 {%- endmacro %}
 {#- infer earliest annotation date -#}
 {%- macro minAnnotationsDate() -%}
-   {%- set tempDate = "" -%}
-	{%- for a in annotations -%}
-		{%- set testDate = a.date | format("YYYY-MM-DD#HH:mm:ss") -%}
-		{%- if testDate < tempDate or tempDate == ""-%}
-			{%- set tempDate = testDate -%}
-		{%- endif -%}
-	{%- endfor -%}
-	{{tempDate}}
+{%- set tempDate = "" -%}
+{%- for a in annotations -%}
+{%- set testDate = a.date | format("YYYY-MM-DD#HH:mm:ss") -%}
+{%- if testDate < tempDate or tempDate == ""-%}
+{%- set tempDate = testDate -%}
+{%- endif -%}
+{%- endfor -%}
+{{tempDate}}
 {%- endmacro -%}
 {# infer latest note date #}
 {%- macro maxNotesDate() -%}
-   {%- set tempDate = "" -%}
-	{%- for n in notes -%}
-		{%- set testDate = n.dateModified | format("YYYY-MM-DD#HH:mm:ss") -%}
-		{%- if testDate > tempDate or tempDate == ""-%}
-			{%- set tempDate = testDate -%}
-		{%- endif -%}
-	{%- endfor -%}
-	{{tempDate}}
+{%- set tempDate = "" -%}
+{%- for n in notes -%}
+{%- set testDate = n.dateModified | format("YYYY-MM-DD#HH:mm:ss") -%}
+{%- if testDate > tempDate or tempDate == ""-%}
+{%- set tempDate = testDate -%}
+{%- endif -%}
+{%- endfor -%}
+{{tempDate}}
 {%- endmacro -%}
 {#- infer earliest note date -#}
 {%- macro minNotesDate() -%}
-   {%- set tempDate = "" -%}
-	{%- for n in notes -%}
-		{%- set testDate = n.dateAdded | format("YYYY-MM-DD#HH:mm:ss") -%}
-		{%- if testDate < tempDate or tempDate == "" -%}
-			{%- set tempDate = testDate -%}
-		{%- endif -%}
-	{%- endfor -%}
-	{{tempDate}}
+{%- set tempDate = "" -%}
+{%- for n in notes -%}
+{%- set testDate = n.dateAdded | format("YYYY-MM-DD#HH:mm:ss") -%}
+{%- if testDate < tempDate or tempDate == "" -%}
+{%- set tempDate = testDate -%}
+{%- endif -%}
+{%- endfor -%}
+{{tempDate}}
 {%- endmacro -%}
 {# find earliest date of two dates #}
 {%- macro minDate(min1, min2) -%}
-	{%- if min1 == "" -%} 	
-		{%- if min2 != "" -%}
-			{{min2}} 
-		{%- endif -%}
-	{%- else -%}
-		{%- if min2 != "" -%}
-			{%- if min1 <= min2 -%}
-				{{min1}} 
-			{%- else -%}
-				{{min2}}
-			{%- endif -%}
-		{%- else -%}
-			{{min1}} 
-		{%- endif -%}
-	{%- endif -%}
+{%- if min1 == "" -%}
+{%- if min2 != "" -%}
+{{min2}}
+{%- endif -%}
+{%- else -%}
+{%- if min2 != "" -%}
+{%- if min1 <= min2 -%}
+{{min1}}
+{%- else -%}
+{{min2}}
+{%- endif -%}
+{%- else -%}
+{{min1}}
+{%- endif -%}
+{%- endif -%}
 {%- endmacro -%}
 {# find latest date of two dates #}
 {%- macro maxDate(min1, min2) -%}
-	{%- if min1 == "" -%} 	
-		{%- if min2 != "" -%}
-			{{min2}} 
-		{%- endif -%}
-	{%- else -%}
-		{%- if min2 != "" -%}
-			{%- if min1 >= min2 -%}
-				{{min1}} 
-			{%- else -%}
-				{{min2}}
-			{%- endif -%}
-		{%- else -%}
-			{{min1}} 
-		{%- endif -%}
-	{%- endif -%}
+{%- if min1 == "" -%}
+{%- if min2 != "" -%}
+{{min2}}
+{%- endif -%}
+{%- else -%}
+{%- if min2 != "" -%}
+{%- if min1 >= min2 -%}
+{{min1}}
+{%- else -%}
+{{min2}}
+{%- endif -%}
+{%- else -%}
+{{min1}}
+{%- endif -%}
+{%- endif -%}
 {%- endmacro -%}
 
 {# colorCategory to hex:
@@ -129,7 +129,6 @@
 {%endif%}
 {%- endmacro -%}
 
-
 {%- set calloutHeaders = {
 "highlight": "Highlight",
 "strike": "Strike Through",
@@ -148,13 +147,13 @@
 {%- endmacro -%}
 
 {#- handle space characters in zotero tags -#}
-{%- set space = joiner(' ') -%} 
+{%- set space = joiner(' ') -%}
 {%- macro printTags(rawTags) -%}
-	{%- if rawTags.length > 0 -%}
-		{%- for tag in rawTags -%}
-			#zotero/{{ tag.tag | lower | replace(" ","_") }} {{ space() }} 
-		{%- endfor -%}
-	{%- endif -%}
+{%- if rawTags.length > 0 -%}
+{%- for tag in rawTags -%}
+#zotero/{{ tag.tag | lower | replace(" ","_") }} {{ space() }}
+{%- endfor -%}
+{%- endif -%}
 {%- endmacro %}
 
 {#- handle | characters in zotero strings used in MD -#}
@@ -165,47 +164,46 @@
 {%- macro formatDate(testDate, dateFormat) -%}
 {%- if testDate -%}
 {{date | format (dateFormat)}}
-{%- endif %}	
+{%- endif %}
 {%- endmacro %}
 
 {#- handle | characters in zotero strings used in MD -#}
-{# {%- set comma = joiner(', ') -%} 
+{# {%- set comma = joiner(', ') -%}
 {%- macro generateCreators(prefix) -%}
 {%- for creatorType, creators in creators | groupby("creatorType") -%}
-{{prefix}}{{ creatorType }}::{{ space() }} 
-    {%- for creator in creators -%}
-        {{ creator.firstName }} {{ creator.lastName }} 
-		{%- if not loop.last -%}
-		{{comma()}}
-		{%- endif -%}
-    {%- endfor %}
+{{prefix}}{{ creatorType }}::{{ space() }}
+{%- for creator in creators -%}
+{{ creator.firstName }} {{ creator.lastName }}
+{%- if not loop.last -%}
+{{comma()}}
+{%- endif -%}
+{%- endfor %}
 {% endfor -%}
 {%- endmacro -%} #}
 
 {%- macro renderArray(items) -%}
 {%- if items -%}
-		[{{items | replace (";", ", ")}}]
-{%- endif %}	
+[{{items | replace (";", ", ")}}]
+{%- endif %}
 {%- endmacro %}
 
 {%- macro quote(s) -%}
 {%- if s -%}
-		"{{s}}"
-{%- endif %}	
+"{{s}}"
+{%- endif %}
 {%- endmacro %}
 
 {%- set inline_fields = {
 "abstract": abstractNote,
-"pdf": pdfZoteroLink, 
+"pdf": pdfZoteroLink,
 "extra": quote(extra),
 "bibliography": quote(bibliography)
 }
 -%}
 
-
 {%- set frontmatter_fields = {
 "title": quote(title | replace ('"','')) or quote(caseTitle |  replace ('"','')),
-"authors": renderArray(authors),  
+"authors": renderArray(authors),
 "editors": renderArray(editors),
 "directors": renderArray(directors),
 "podcasters": renderArray(podcasters),
@@ -244,6 +242,7 @@
 {%- endmacro -%}
 
 ---
+
 aliases: ["{{title | replace ('"','')}}"{%- if authors and date-%}, "
 {%- for author in authors -%}
 {{author}}
@@ -252,6 +251,7 @@ aliases: ["{{title | replace ('"','')}}"{%- if authors and date-%}, "
 {{generateFields("",": ",frontmatter_fields) -}}
 
 ---
+
 {{ "" }}
 
 {%- if ISBN -%}
@@ -262,36 +262,41 @@ aliases: ["{{title | replace ('"','')}}"{%- if authors and date-%}, "
 {{printTags(tags)}}
 
 > [!info]- Metadata
-{{generateFields("> ",":: ",inline_fields) -}}
-{% if relations.length > 0 -%}
-> 
-> > [!note]- References:  
+> {{generateFields("> ",":: ",inline_fields) -}}
+> {% if relations.length > 0 -%}
+>
+> > [!note]- References:
 > >
 > > | title | proxy note | desktopURI |
-> > | --- | --- | --- |
-{%- for r in relations %}
-> > | {{formatCell(r.title)}} | [[@{{r.citekey}}]] | [Zotero Link]({{r.desktopURI}}) |
-{%- endfor -%}
-{{ "" }}
-{%- endif %}
-{{ "" }}
-🔥🔥🔥everything above this line might change during an update 🔥🔥🔥
-{% persist "notes" %}
-{{ "" }}
-{%- set newNotes = notes | filterby("dateModified", "dateafter", lastImportDate) -%}
-{% if newNotes.length > 0 %}
-⬇️*Imported (Notes) on: {{importDate | format("YYYY-MM-DD#HH:mm:ss")}}*⬇️
-{% for note in newNotes %}
+> > | ----- | ---------- | ---------- |
+> >
+> > {%- for r in relations %}
+> > | {{formatCell(r.title)}} | [@{{r.citekey}}](@{{r.citekey}}) | [Zotero Link]({{r.desktopURI}}) |
+> > {%- endfor -%}
+> > {{ "" }}
+> > {%- endif %}
+> > {{ "" }}
+> > 🔥🔥🔥everything above this line might change during an update 🔥🔥🔥
+> > {% persist "notes" %}
+> > {{ "" }}
+> > {%- set newNotes = notes | filterby("dateModified", "dateafter", lastImportDate) -%}
+> > {% if newNotes.length > 0 %}
+> > ⬇️*Imported (Notes) on: {{importDate | format("YYYY-MM-DD#HH:mm:ss")}}*⬇️
+> > {% for note in newNotes %}
+
 ### 🟨 Note (modified: {{ note.dateModified | format("YYYY-MM-DD#HH:mm:ss") }})
+
 {{ "" }}
 {#- change heading level -#}
 {{ note.note | replace ("# ","### ") }}
 [Link to note](zotero://select/library/items/{{note.key}})
 {{printTags(note.tags)}}
 {{ "" }}
+
 ---
+
 {% endfor %}
-{% endif -%} 
+{% endif -%}
 
 {% endpersist -%}
 {{ " " }}
@@ -307,22 +312,18 @@ aliases: ["{{title | replace ('"','')}}"{%- if authors and date-%}, "
 {# {% if loop.first -%} #}
 {# #### {{colorToName(color | lower)-}} #}
 {# {% endif %} #}
+
 > [!annotation-{% if annotation.color %}{% if colorToColorCategory[annotation.color].length > 0 %}{{colorToColorCategory[annotation.color]}}{% else %}yellow{% endif %}]{% endif %} {{calloutHeader(annotation.type)}}
-{%- if annotation.annotatedText.length > 0 -%} 
-> {{-annotation.annotatedText | nl2br -}} (p. [{{annotation.page}}](zotero://open-pdf/library/items/{{annotation.attachment.itemKey}}?page={{annotation.page}}&annotation={{annotation.id}})){% endif %}{%- if annotation.imageRelativePath -%}
-> ![[{{annotation.imageRelativePath}}|300]]
-{%- endif %}{%- if annotation.ocrText -%}
-> {{-annotation.ocrText | nl2br-}}{%- endif -%}
-{%- if annotation.comment -%} 
+> {%- if annotation.annotatedText.length > 0 -%} > {{-annotation.annotatedText | nl2br -}} (p. [{{annotation.page}}](zotero://open-pdf/library/items/{{annotation.attachment.itemKey}}?page={{annotation.page}}&annotation={{annotation.id}})){% endif %}{%- if annotation.imageRelativePath -%}
+> ![300]({{annotation.imageRelativePath}})
+> {%- endif %}{%- if annotation.ocrText -%} > {{-annotation.ocrText | nl2br-}}{%- endif -%}
+> {%- if annotation.comment -%}
 >
-> **comment:**
-> {{annotation.comment | nl2br }}{% endif %}
-> [[{{annotation.date | format("YYYY-MM-DD#HH:mm")}}]]
-{%- if annotation.tags.length > 0 %} 
-> {{printTags(annotation.tags)}}
-{% endif %}
-{% endfor -%}
-{# {% endfor %} #}
-{%- endif -%}
+> **comment:** > {{annotation.comment | nl2br }}{% endif %} > [format("YYYY-MM-DD#HH:mm")}}]({{annotation.date )
+> {%- if annotation.tags.length > 0 %} > {{printTags(annotation.tags)}}
+> {% endif %}
+> {% endfor -%}
+> {# {% endfor %} #}
+> {%- endif -%}
 
 {% endpersist -%}

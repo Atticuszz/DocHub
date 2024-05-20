@@ -14,7 +14,7 @@
 
 /*
 	***** BEGIN LICENSE BLOCK *****
-	
+
 	theses.fr
 
 	This file is part of Zotero.
@@ -75,7 +75,7 @@ function doWeb(doc, url) {
 			for (item in items) {
 				records.push(item);
 			}
-			
+
 			ZU.processDocuments(records, scrape);
 		});
 	}
@@ -86,7 +86,7 @@ function doWeb(doc, url) {
 
 function scrape(doc, url) {
 	let xmlDocumentUrl = `${url}.rdf`;
-	
+
 	// Each thesis record has an underlying .rdf file
 	Zotero.Utilities.HTTP.doGet(xmlDocumentUrl, function (text) {
 		let parser = new DOMParser();
@@ -96,7 +96,7 @@ function scrape(doc, url) {
 		if (xmlDoc.getElementsByTagName('parsererror')[0] || xmlDoc.children[0].childElementCount === 0) {
 			throw new Error("Invalid or empty RDF file");
 		}
-		
+
 		// Importing XML namespaces for parsing purposes
 		let ns = {
 			bibo: 'http://purorg/ontology/bibo/',
@@ -106,9 +106,9 @@ function scrape(doc, url) {
 			marcrel: 'http://www.loc.gov/loc.terms/relators/',
 			rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
 		};
-	
+
 		let title = ZU.xpathText(xmlDoc, '//dc:title', ns);
-		
+
 		if (!title) throw new Error("Reccord must contains a title to be imported");
 
 		let newItem = new Zotero.Item();

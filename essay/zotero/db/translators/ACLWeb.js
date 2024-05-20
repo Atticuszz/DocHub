@@ -120,22 +120,22 @@ function scrape(doc) {
 			mimeType: 'application/pdf'
 		});
 		delete item.itemID;
-		
+
 		if (item.date) {
 			item.date = ZU.strToISO(item.date);
 		}
-		
+
 		if (item.abstractNote) {
 			item.abstractNote = ZU.cleanTags(item.abstractNote);
 		}
-		
+
 		if (item.itemType == 'conferencePaper') {
 			item.conferenceName = getVenue(doc, item.publicationTitle);
 		}
-		
+
 		if (Z.getHiddenPref('attachSupplementary')) {
 			let supplementaries = ZU.xpath(doc, '//div[contains(@class, "acl-paper-link-block")]//a[contains(@class, "btn-attachment")]');
-			
+
 			supplementaries.forEach(function (supplementary) {
 				let ext = supplementary.href.split('.').pop();
 				let supplementaryMime = Z.getHiddenPref('supplementaryAsLink') ? 'text/html' : ext2mime[ext];
@@ -147,7 +147,7 @@ function scrape(doc) {
 				});
 			});
 		}
-		
+
 		item.complete();
 	});
 	translator.translate();
@@ -158,14 +158,14 @@ function getVenue(doc, pubTitle) {
 	let venues = venueElements.map(function (v) {
 		return v.innerText.trim();
 	});
-	
+
 	if (!venues.length) {
 		return '';
 	}
-	
+
 	let year = ZU.xpath(doc, '//dt[contains(text(), "Year")]/following::dd[1]')[0].textContent;
 	let venueString = venues.join('-') + ' ' + year;
-	
+
 	if (pubTitle.includes('Student') || pubTitle.includes('Demonstration') || pubTitle.includes('Tutorial')) {
 		// better to use full proceedingsTitle to cite these publications
 		return '';

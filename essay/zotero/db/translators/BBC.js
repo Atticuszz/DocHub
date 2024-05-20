@@ -96,12 +96,12 @@ function doWeb(doc, url) {
 function scrape(doc, url) {
 	url = url.replace(/[?#].+/, "");
 	var itemType = detectWeb(doc, url);
-	
+
 	var translator = Zotero.loadTranslator('web');
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		// add date and time if missing by one of four attempts:
 		// 1. look at the json-ld data
@@ -131,7 +131,7 @@ function scrape(doc, url) {
 				}
 			}
 		}
-		
+
 		if (item.date) {
 			item.date = ZU.strToISO(item.date);
 		}
@@ -164,7 +164,7 @@ function scrape(doc, url) {
 				}
 			}
 		}
-		
+
 		if (url.includes("/newsbeat/article")) {
 			item.blogTitle = "BBC Newsbeat";
 		}

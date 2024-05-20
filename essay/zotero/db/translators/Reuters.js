@@ -95,11 +95,11 @@ function scrape(doc, url) {
 		for (let author of authors) {
 			item.creators.push(authorFix(author.textContent));
 		}
-		
+
 		item.publicationTitle = "Reuters";
 		item.tags = attr(doc, 'meta[property$="article:tag"]', 'content')
 			.split(/\s*[/,]\s*/).map(tag => ({ tag }));
-		
+
 		item.complete();
 	});
 

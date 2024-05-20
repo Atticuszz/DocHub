@@ -93,14 +93,14 @@ function doWeb(doc, url) {
 
 function scrape(doc, url) {
 	var item = new Zotero.Item(detectWeb(doc, url));
-	
+
 	//title
 	var title = ZU.xpathText(doc, '//h1[contains(@class, "title")]');
 	item.title = title;
-	
+
 	//authors
 	//Examples:
-	//Edward H. Burtt, Jr. 
+	//Edward H. Burtt, Jr.
 	//James Hengeveld, Keith A. Mcmullen, Geoffrey A. Williamson
 	//==> The author string is splitted by ',' into the individual
 	//authors, but for suffixes this will be corrected again by
@@ -120,11 +120,11 @@ function scrape(doc, url) {
 					item.creators.push( ZU.cleanAuthor( value, "author") );
 					index++;
 				}
-			
+
 			}
 		}
 	}
-	
+
 	//other fields
 	var fields = ZU.xpath(doc, '//div[contains(@class, "content")]/fieldset/div/div');
 	for (var k=0; k<fields.length; k++) {
@@ -136,8 +136,8 @@ function scrape(doc, url) {
 			Z.debug('Unrecognized field: ' + fieldName);
 		}
 	}
-	
-	
+
+
 	//PDF
 	var pdfLink = ZU.xpath(doc, '//div[contains(@class, "field-name-upload")]//a[contains(@type, "application/pdf")]');
 	if (pdfLink.length>0) {
@@ -154,7 +154,7 @@ function scrape(doc, url) {
 		mimeType : "text/html",
 		snapshot : false
 	});
-	
+
 	item.complete();
 }/** BEGIN TEST CASES **/
 var testCases = [

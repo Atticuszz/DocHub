@@ -45,7 +45,7 @@ const magazines = {
 	"c't Fotografie": { ISSN: '2196-3878' },
 	"Heise Magazine": { ISSN: '2196-3878' }
 };
-	
+
 function detectWeb(doc, url) {
 	if (url.includes('/select')) {
 		return 'magazineArticle';
@@ -91,7 +91,7 @@ function getSearchResults(doc, checkOnly) {
 		}
 		items[href] = text;
 	}
-	
+
 	return (Object.keys(items).length != 0) ? items : false;
 }
 
@@ -144,7 +144,7 @@ function scrape(doc) {
 			item.tags = data.keywords.split(',');
 		}
 		item.url = data.mainEntityOfPage;
-		
+
 		item.complete();
 	}
 }

@@ -82,15 +82,15 @@ function scrape(doc, url) {
 	var data = script.substring(start, end+1);
 	var json = JSON.parse(data);
 	//Z.debug(json.Capabilities.Capabilities);
-	
+
 	var item = new Zotero.Item('book');
 	item.title = json.NameVm.Name;
-	
+
 	for (var property in json.Capabilities.Capabilities) {
 		var name = json.Capabilities.Capabilities[property].Name;
 		var value = json.Capabilities.Capabilities[property].Value;//this can be either a text string or an array of values (e.g. publisher, authors)
 		var role = null;
-		
+
 		switch (name) {
 			//All creatorss are handled the same except that the role
 			//depends on the label and therefore depending on the
@@ -128,11 +128,11 @@ function scrape(doc, url) {
 				item.series = getValue(value);
 		}
 	}
-	
+
 	if (json.Description && json.Description.FirstBlock) {
 		item.abstractNote = ZU.cleanTags(json.Description.FirstBlock.Text);
 	}
-	
+
 	item.complete();
 }
 
@@ -150,7 +150,7 @@ function getValue(jsonSnippet, normalize) {
 	if (Array.isArray(jsonSnippet)) {
 		return jsonSnippet.map(function(obj) { return obj.Text; }).join(", ");
 	}
-	
+
 	if (normalize) {
 		var t = jsonSnippet = jsonSnippet.trim().toLowerCase();Z.debug(t);
 		if (codes[t]) {
@@ -158,7 +158,7 @@ function getValue(jsonSnippet, normalize) {
 		}
 	}
 	return jsonSnippet
-	
+
 }
 
 

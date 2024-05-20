@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -49,7 +49,7 @@ function detectWeb(doc, url) {
 function guessType(doc) {
 	// Fatcat types are based on CSL types, with some extensions
 	// https://guide.fatcat.wiki/entity_release.html#release_type-vocabulary
-	
+
 	let dcType = attr(doc, 'meta[name="DC.type"]', 'content');
 	switch (dcType) {
 		case 'article-magazine':
@@ -121,7 +121,7 @@ function scrape(doc, url) {
 
 	translator.setHandler('itemDone', function (obj, item) {
 		item.itemType = guessType(doc); // needs to be told twice sometimes
-		
+
 		// attachment URLs go to the archive.org frame page, not directly to
 		// the PDF
 		for (let attachment of item.attachments) {
@@ -133,7 +133,7 @@ function scrape(doc, url) {
 					.replace(/^(https:\/\/web\.archive\.org\/web\/\d+)/, '$1if_');
 			}
 		}
-		
+
 		item.url = attr(doc, 'a.huge.black.button', 'href');
 
 		for (let field in item) {
@@ -141,24 +141,24 @@ function scrape(doc, url) {
 				delete item[field];
 			}
 		}
-		
+
 		let id = text(doc, 'h1.header code');
 		item.extra = (item.extra ? item.extra + '\n' : '') + 'Fatcat ID: ' + id + '\n';
-		
+
 		if (item.itemType == 'blogPost') {
 			delete item.websiteType; // "post"
 			item.blogTitle = item.publisher;
 		}
-		
+
 		if (item.publicationTitle && item.seriesTitle
 			&& item.publicationTitle == item.seriesTitle
 			&& ZU.fieldIsValidForType('publicationTitle', item.itemType)) {
 			delete item.seriesTitle;
 		}
-		
+
 		// we could handle special cases for every possible item type,
 		// but in practice it's about 90% papers, 5% blog posts, 5% everything else
-		
+
 		item.complete();
 	});
 

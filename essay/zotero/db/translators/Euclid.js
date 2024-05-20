@@ -36,9 +36,9 @@ function detectWeb(doc,url) {
 	if (ZU.xpath(doc, xpath).length > 0) {
 		return "journalArticle";
 	}
-			
+
 	multxpath = '//div[@class="article-item"]/span[@class="title"]|//div[@class="result"]/h3'
-	
+
 	if (ZU.xpath(doc, multxpath).length>0){
 		return "multiple";
 	}

@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2023 Abe Jellinek & Sebastian Karcher
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -43,7 +43,7 @@ function detectWeb(doc, url) {
 	if (!doc.querySelector('#dataverseHeader')) {
 		return false;
 	}
-	
+
 	if (url.includes('/dataset.xhtml')) {
 		return datasetType;
 	}
@@ -96,7 +96,7 @@ async function scrape(doc, url = doc.location.href) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', (_obj, item) => {
 		item.libraryCatalog = text(doc, '#breadcrumbLnk0');
 		// we commonly have two colons in titles. The first one just labels the data as data

@@ -71,11 +71,11 @@ function toStdRef(reftext) {
 
 function getIDFromURL(url) {
 	if (!url) return false;
-	
+
 	var dbname = url.match(/[?&]dbname=([^&#]*)/i);
 	var filename = url.match(/[?&]filename=([^&#]*)/i);
 	if (!dbname || !dbname[1] || !filename || !filename[1]) return false;
-	
+
 	return { dbname: dbname[1], filename: filename[1], url: url };
 }
 
@@ -165,7 +165,7 @@ function getItemsFromSearchResults(doc, url, itemInfo) {
 			doc = innerDoc;
 		}
 	}
-	
+
 	var links = ZU.xpath(doc, '//tr[not(.//tr) and .//a[@class="fz14"]]');
 	var aXpath = './/a[@class="fz14"]';
 	if (!links.length) {
@@ -249,13 +249,13 @@ async function scrape(id, doc, extraData) {
 	var translator = Z.loadTranslator('import');
 	translator.setTranslator('1a3506da-a303-4b0a-a1cd-f216e6138d86'); // RefWorks Tagged
 	translator.setString(toStdRef(reftext));
-	
+
 	translator.setHandler('itemDone', function (obj, newItem) {
 		// split names
 		for (var i = 0, n = newItem.creators.length; i < n; i++) {
 			var creator = newItem.creators[i];
 			if (creator.firstName) continue;
-			
+
 			var lastSpace = creator.lastName.lastIndexOf(' ');
 			var lastMiddleDot = creator.lastName.lastIndexOf('·');
 			if (/[A-Za-z]/.test(creator.lastName) && lastSpace !== -1) {
@@ -274,16 +274,16 @@ async function scrape(id, doc, extraData) {
 				creator.lastName = creator.lastName.charAt(0);
 			}
 		}
-		
+
 		if (newItem.abstractNote) {
 			newItem.abstractNote = newItem.abstractNote.replace(/\s*[\r\n]\s*/g, '\n');
 		}
-		
+
 		// clean up tags. Remove numbers from end
 		for (var j = 0, l = newItem.tags.length; j < l; j++) {
 			newItem.tags[j] = newItem.tags[j].replace(/:\d+$/, '');
 		}
-		
+
 		newItem.title = ZU.trimInternal(newItem.title);
 		if (extraData) {
 			newItem.url = extraData.url;
@@ -353,7 +353,7 @@ function getAttachments(doc, item) {
 			});
 		}
 	}
-	
+
 	return attachments;
 }
 

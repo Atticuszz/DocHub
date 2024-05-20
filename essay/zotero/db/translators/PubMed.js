@@ -14,28 +14,28 @@
 
 /*
  	***** BEGIN LICENSE BLOCK *****
- 	
+
  	Copyright © 2015 Philipp Zumstein
- 	
+
  	This file is part of Zotero.
- 	
+
  	Zotero is free software: you can redistribute it and/or modify
  	it under the terms of the GNU Affero General Public License as published by
  	the Free Software Foundation, either version 3 of the License, or
  	(at your option) any later version.
- 	
+
  	Zotero is distributed in the hope that it will be useful,
  	but WITHOUT ANY WARRANTY; without even the implied warranty of
  	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  	GNU Affero General Public License for more details.
- 	
+
  	You should have received a copy of the GNU Affero General Public License
  	along with Zotero. If not, see <http://www.gnu.org/licenses/>.
- 	
+
  	***** END LICENSE BLOCK *****
  */
- 
-  
+
+
 /** ***************************
   * General utility functions *
   *****************************/
@@ -48,7 +48,7 @@ function lookupPMIDs(ids) {
 		if (!text.includes('PubmedArticle') && !text.includes('PubmedBookArticle')) { // e.g. http://www.ncbi.nlm.nih.gov/pubmed/1477919937
 			throw new Error("No Pubmed Data found - Most likely eutils is temporarily down");
 		}
-		
+
 		// call the import translator
 		var translator = Zotero.loadTranslator("import");
 		translator.setTranslator("fcf41bed-0cbc-3704-85c7-8062a0068a7a");
@@ -71,14 +71,14 @@ function getUID(doc) {
 	if (uid.length == 1 && uid[0].textContent.search(/^\d+$/) != -1) {
 		return uid[0].textContent;
 	}
-	
+
 	uid = ZU.xpath(doc, 'html/head/link[@media="handheld"]/@href');
 	if (!uid.length) uid = ZU.xpath(doc, 'html/head/link[@rel="canonical"]/@href'); // mobile site
 	if (uid.length == 1) {
 		uid = uid[0].textContent.match(/\/(\d+)(?:\/|$)/);
 		if (uid) return uid[1];
 	}
-	
+
 	// PMID from a bookshelf entry
 	var maincontent = doc.getElementById('maincontent');
 	if (maincontent) {
@@ -115,7 +115,7 @@ function scrapeItemProps(itemprops) {
 		var value = ZU.trimInternal(itemprops[i].textContent);
 		var field = bookRDFaMap[itemprops[i].getAttribute('itemprop')];
 		if (!field) continue;
-		
+
 		if (field.indexOf('creator/') == 0) {
 			field = field.substr(8);
 			item.creators.push(ZU.cleanAuthor(value, field, false));
@@ -123,7 +123,7 @@ function scrapeItemProps(itemprops) {
 		else if (field == 'ISBN') {
 			if (!item.ISBN) item.ISBN = '';
 			else item.ISBN += '; ';
-			
+
 			item.ISBN += value;
 		}
 		else {
@@ -181,13 +181,13 @@ function detectWeb(doc, url) {
 	if (getSearchResults(doc, true) && !url.includes("/books/")) {
 		return "multiple";
 	}
-	
+
 	if (!getUID(doc)) {
 		if (getBookProps(doc)) return 'book';
 		// if we can't get the UID or the book itemprops, we can't import
 		else return false;
 	}
-	
+
 	// try to determine if this is a book
 	// "Sections" heading only seems to show up for books
 	var maincontent = doc.getElementById('maincontent');
@@ -204,12 +204,12 @@ function detectWeb(doc, url) {
 		var isChapter = doc.querySelectorAll('#full-view-heading div.affiliations').length > 1;
 		return isChapter ? "bookSection" : "book";
 	}
-	
+
 	// from bookshelf page
 	var pdid = ZU.xpathText(doc, 'html/head/meta[@name="ncbi_pdid"]/@content');
 	if (pdid == "book-part") return 'bookSection';
 	if (pdid == "book-toc") return 'book';
-	
+
 	return "journalArticle";
 }
 
@@ -264,13 +264,13 @@ function detectSearch(item) {
 			return true;
 		}
 	}
-	
+
 	// supply PMID as a string or array
 	if (item.PMID
 		&& (typeof item.PMID == 'string' || item.PMID.length > 0)) {
 		return true;
 	}
-	
+
 	return false;
 }
 
@@ -280,9 +280,9 @@ function doSearch(item) {
 		pmid = getPMID(item.contextObject);
 	}
 	if (!pmid) pmid = item.PMID;
-	
+
 	if (typeof pmid == "string") pmid = [pmid];
-	
+
 	lookupPMIDs(pmid);
 }
 

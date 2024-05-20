@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2018 Sylvain Machefert
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -62,8 +62,8 @@ function getTranslatorFromDomain(domain) {
 	if (domain.endsWith(".archives-ouvertes.fr")) {
 		return '951c027d-74ac-47d4-a107-9c3069ab7b48';
 	}
-	
-	
+
+
 	return false;
 }
 
@@ -85,7 +85,7 @@ function getSearchResults(doc, checkOnly) {
 		// We need to replace the http://www.sudoc.fr/XXXXXX links are they are redirects and aren't handled correctly from subtranslator
 		href = href.replace(/http:\/\/www\.sudoc\.fr\/(.*)$/, "http://www.sudoc.abes.fr/xslt/DB=2.1//SRCH?IKT=12&TRM=$1");
 		var domain = urlToDomain(href);
-		
+
 		if (getTranslatorFromDomain(domain)) {
 			if (checkOnly) return true;
 			found = true;
@@ -113,7 +113,7 @@ function doWeb(doc, _url) {
 
 function scrape(doc, url) {
 	var translator = Zotero.loadTranslator('web');
-	
+
 	// Orcid is the only case where we need to use an import translator, different behvior from previous ones
 	if (url.includes("pub.orcid.org")) {
 		// Idrefs contains orcid links with /works/ for which the content negotiation
@@ -130,7 +130,7 @@ function scrape(doc, url) {
 
 		return;
 	}
-	
+
 	var domain = urlToDomain(url);
 	var domainTranslator = getTranslatorFromDomain(domain);
 
@@ -145,7 +145,7 @@ function scrape(doc, url) {
 	translator.setHandler('itemDone', function (obj, item) {
 		item.complete();
 	});
-	
+
 	translator.getTranslatorObject(function (trans) {
 		trans.doWeb(doc, url);
 	});

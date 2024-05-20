@@ -226,7 +226,7 @@ function cleanup(obj, item) {
 }
 
 
-//The permalinks in the test cases will point to search results and therefore 
+//The permalinks in the test cases will point to search results and therefore
 //trigger multiple here. However, they are useful to have some examples at hand.
 
 /** BEGIN TEST CASES **/

@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -87,12 +87,12 @@ function scrape(doc, url) {
 		item.dateDecided = ZU.strToISO(json.date);
 		item.language = 'de';
 		item.url = json.url;
-		
+
 		item.attachments.push({
 			title: 'Full Text PDF',
 			url: `/u/${id}.ppdf`
 		});
-		
+
 		item.complete();
 	});
 }

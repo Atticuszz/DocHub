@@ -105,7 +105,7 @@ function getTypeBit(doc, url) { // TODO: Switch to 'url' once we use the API ins
 		if (description.includes("Décision")) return " (déc.)";
 		if (description.includes("Affaire Communiquée")) return " (communiquée)"; // TODO: Rather use abbreviation?
 		if (description.includes("Révision")) return " (déc. de révision)"; // TODO: Rather use abbreviation?
-	
+
 		return "";
 
 		// return " (" + description.split("(")[0].toLowerCase() + ")";
@@ -237,7 +237,7 @@ function scrapeDecision(doc, url) { // Works for both Court judgments and decisi
 
 	// Title
 	// FIXME: Abbreviations in the form of A.B.C. or N.A.T.O are capitalized like A.b.c or N.a.t.o. That is a problem in capitalizeText()
-	
+
 	var capTitle = ZU.capitalizeTitle(text(doc, "title").toLowerCase(), true);
 
 	var splitTitle = capTitle.split(/\(/);
@@ -328,7 +328,7 @@ function scrapeDecision(doc, url) { // Works for both Court judgments and decisi
 	else {
 		item.url = "https://hudoc.echr.coe.int/eng?i=" + getItemID(url);
 	}
-	
+
 
 	// Query remaining metadata from API
 	var queryUrl = "https://hudoc.echr.coe.int/app/query/results?query=(contentsitename=ECHR) AND "
@@ -347,7 +347,7 @@ function scrapeDecision(doc, url) { // Works for both Court judgments and decisi
 		// Some styles add "no." (Chicago), while other styles don't add anything (OSCOLA, APA)
 		// However, most citation style guides require adding the numbering system to the docket number ("app. no."/"no."),
 		// so users may need to correct their fields, depending on the style used.
-		
+
 		// TODO: For advisory opinions, scrape the number from the text
 
 		var appno = json.appno.split(";");

@@ -14,17 +14,17 @@
 
 /**
 	Copyright (c) 2021 Aurimas Vinckevicius and Abe Jellinek
-	
+
 	This program is free software: you can redistribute it and/or
 	modify it under the terms of the GNU Affero General Public License
 	as published by the Free Software Foundation, either version 3 of
 	the License, or (at your option) any later version.
-	
+
 	This program is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 	Affero General Public License for more details.
-	
+
 	You should have received a copy of the GNU Affero General Public
 	License along with this program. If not, see
 	<http://www.gnu.org/licenses/>.
@@ -38,7 +38,7 @@ function detectWeb(doc, _url) {
 	if (doc.body.classList.contains('ns-special') && getSearchResults(doc, true)) {
 		return 'multiple';
 	}
-	
+
 	// exclude the non-viewing interface, since it doesn't give us much
 	// to work with and users are unlikely to want to add it as an
 	// encyclopediaArticle.
@@ -47,7 +47,7 @@ function detectWeb(doc, _url) {
 	if (!doc.body.classList.contains('action-view')) {
 		return false;
 	}
-	
+
 	// Diff interface is not supported
 	if (new URLSearchParams(doc.location.search).get('diff')) {
 		return false;
@@ -63,7 +63,7 @@ function detectWeb(doc, _url) {
 	if (doc.getElementById('firstHeading') || doc.getElementById('section_0')) {
 		return 'encyclopediaArticle';
 	}
-	
+
 	return false;
 }
 
@@ -96,7 +96,7 @@ function doWeb(doc, url) {
 function scrape(doc, url) {
 	var item = new Zotero.Item('encyclopediaArticle');
 	item.title = ZU.trimInternal((doc.getElementById('firstHeading') || doc.getElementById('section_0')).textContent);
-	
+
 	/* Removing the creator and publisher. Wikipedia is pushing the creator in their own
   	directions on how to cite http://en.wikipedia.org/w/index.php?title=Special%3ACite&page=Psychology
   	but style guides - including Chicago and APA disagree and prefer just using titles.
@@ -155,7 +155,7 @@ function scrape(doc, url) {
 	});
 
 	item.language = doc.documentElement.lang;
-	
+
 	// last modified date is hard to get from the page because it is localized
 	var pageInfoURL = '/w/api.php?action=query&format=json'
 		+ '&inprop=url%7Cdisplaytitle'
@@ -188,11 +188,11 @@ function scrape(doc, url) {
 					'i, b, sub, sup, '
 					+ 'span[style="font-variant:small-caps;"], '
 					+ 'span[class="nocase"]');
-				
+
 				// Note that this is the abstract for the latest revision,
 				// not necessarily the revision that is being queried
 				item.abstractNote = pages[i].extract;
-				
+
 				// we should never have more than one page returned,
 				// but break just in case
 				break;

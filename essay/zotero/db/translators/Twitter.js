@@ -17,22 +17,22 @@
 
 	Twitter Translator
 	Copyright © 2020-2021 Bo An, Dan Stillman
-	
+
 	This file is part of Zotero.
-	
+
 	Zotero is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version.
-	
+
 	Zotero is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 	GNU Affero General Public License for more details.
-	
+
 	You should have received a copy of the GNU Affero General Public License
 	along with Zotero. If not, see <http://www.gnu.org/licenses/>.
-	
+
    	***** END LICENSE BLOCK *****
 */
 
@@ -100,13 +100,13 @@ function scrape(doc, url) {
 	// Extract tweet from "[optional count] [Display Name] on Twitter: “[tweet]”"
 	var matches = unshortenedTitle.match(titleRe);
 	var [, author, tweet] = matches;
-	
+
 	// Title is tweet with newlines removed
 	item.title = tweet.replace(/\s+/g, ' ');
-	
+
 	// Don't set short title when tweet contains colon
 	item.shortTitle = false;
-	
+
 	// Identify the tweet block by looking for the client link (e.g, "Tweetbot")
 	var articleEl;
 	var clientLink = doc.querySelector('a[href*="source-labels"]');
@@ -124,7 +124,7 @@ function scrape(doc, url) {
 		articleEl = a.closest('article');
 	}
 	var tweetSelector = 'article[role="article"]';
-	
+
 	// If the title is modified (e.g., because we stripped newlines), add the
 	// full tweet in Abstract.
 	//
@@ -146,13 +146,13 @@ function scrape(doc, url) {
 	}
 
 	item.language = attr(articleEl, 'div[lang]', 'lang');
-	
+
 	item.creators.push({
 		lastName: `${author} [@${canonicalURL.split('/')[3]}]`,
 		fieldMode: 1,
 		creatorType: 'author'
 	});
-	
+
 	// Date and time
 	var spans = articleEl.querySelectorAll(`${tweetSelector} a span`);
 	for (let span of spans) {
@@ -161,7 +161,7 @@ function scrape(doc, url) {
 		let str = span.textContent;
 		if (!str.includes(dotSep)) {
 			// Z.debug("Date separator not found")
-			
+
 			// Share URLs don't show the date, so use the <time> in the
 			// permalink link
 			//
@@ -178,7 +178,7 @@ function scrape(doc, url) {
 		}
 		let [time, date] = str.split(dotSep);
 		item.date = ZU.strToISO(date);
-		
+
 		time = time.trim();
 		let matches = time.match(/^([0-9]{1,2})[:h]([0-9]{2})(?: (.+))?$/);
 		if (matches) {
@@ -195,11 +195,11 @@ function scrape(doc, url) {
 			item.date = isoDate.replace(/:00\.000/, '');
 		}
 	}
-	
+
 	item.forumTitle = "Twitter";
 	item.postType = "Tweet";
 	item.url = canonicalURL;
-	
+
 	/*
 	// Add retweets and likes to Extra
 	let retweets;
@@ -229,12 +229,12 @@ function scrape(doc, url) {
 		item.extra += '\n' + 'Likes: ' + likes;
 	}
 	*/
-	
+
 	item.attachments.push({
 		document: doc,
 		title: "Snapshot"
 	});
-	
+
 	// Add links to any URLs
 	var urls = extractURLs(doc, originalTitle);
 	for (let i = 0; i < urls.length; i++) {
@@ -256,7 +256,7 @@ function scrape(doc, url) {
 			snapshot: false
 		});
 	}
-	
+
 	item.complete();
 }
 

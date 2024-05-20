@@ -18,7 +18,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -56,19 +56,19 @@ function detectImport() {
 
 function doImport() {
 	let xml = Zotero.getXML();
-	
+
 	for (let mets of xml.querySelectorAll('mets')) {
 		let attachments = createAttachments(mets);
-		
+
 		for (let dmd of mets.querySelectorAll('dmdSec')) {
 			let mdWrap = dmd.querySelector('mdWrap');
 			if (!mdWrap) {
 				Z.debug('No metadata found in METS item. External metadata is not supported.');
 			}
-			
+
 			let mdType = mdWrap.getAttribute('MDTYPE');
 			Z.debug(`Found metadata of type '${mdType}'`);
-			
+
 			let data = extractData(mdWrap);
 			processData(mdType, data, attachments);
 		}
@@ -77,20 +77,20 @@ function doImport() {
 
 function createAttachments(mets) {
 	let attachments = [];
-	
+
 	for (let file of mets.querySelectorAll('fileSec file')) {
 		if (attachments.length >= 5) {
 			Z.debug('Too many attachments. Something is probably wrong.');
 			attachments = [];
 			break;
 		}
-		
+
 		let mimeType = file.getAttribute('MIMETYPE');
 		let locator = file.querySelector('FLocat[LOCTYPE="URL"]');
 		let url = locator && locator.getAttribute('xlink:href');
 		if (mimeType && url) {
 			let title = 'Attachment';
-			
+
 			if (mimeType == 'application/pdf') {
 				title = 'PDF'; // full text? often it isn't text!
 			}
@@ -103,7 +103,7 @@ function createAttachments(mets) {
 			else if (mimeType.startsWith('image/')) {
 				title = 'Image';
 			}
-			
+
 			attachments.push({
 				title,
 				mimeType,
@@ -111,7 +111,7 @@ function createAttachments(mets) {
 			});
 		}
 	}
-	
+
 	return attachments;
 }
 
@@ -126,7 +126,7 @@ function extractData(mdWrap) {
 			return atob(child.innerHTML);
 		}
 	}
-	
+
 	Z.debug('Metadata is in XML (unwrapped)');
 	return mdWrap.innerHTML;
 }
@@ -177,7 +177,7 @@ function callImport(data, translator, attachments, callback) {
 		let numFieldsSet = 0;
 		for (let field of Object.keys(item)) {
 			if (field == 'itemType') continue;
-			
+
 			if (item[field] && typeof item[field] == 'string') {
 				numFieldsSet++;
 			}
@@ -186,15 +186,15 @@ function callImport(data, translator, attachments, callback) {
 			Z.debug(`Skipping item with < 2 fields set: '${item.title}'`);
 			return;
 		}
-		
+
 		if (attachments) {
 			item.attachments.push(...attachments);
 		}
-		
+
 		if (item.language == 'zxx') {
 			delete item.language;
 		}
-		
+
 		if (callback) callback(item);
 		item.complete();
 	});

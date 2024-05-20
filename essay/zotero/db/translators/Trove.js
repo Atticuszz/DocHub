@@ -53,7 +53,7 @@ function detectWeb(doc, url) {
 				return false;
 			}
 		}
-		
+
 		return checkType(formatContainer.innerText);
 	}
 	return false;
@@ -198,7 +198,7 @@ function cleanPublicationTitle(pubTitle) {
 
 function cleanPlace(place) {
 	if (!place) return place;
-	
+
 	let replacements = {
 		'Vic.': 'Victoria',
 		'Qld.': 'Queensland',
@@ -215,11 +215,11 @@ function cleanPlace(place) {
 		NT: 'Northern Territory',
 		'N.T.': 'Northern Territory'
 	};
-	
+
 	for (let [from, to] of Object.entries(replacements)) {
 		place = place.replace(from, to);
 	}
-	
+
 	return place;
 }
 
@@ -256,7 +256,7 @@ function checkType(string) {
 			return zotero;
 		}
 	}
-	
+
 	let lastSemicolon = string.lastIndexOf('; ');
 	if (lastSemicolon != -1) {
 		return checkType(string.substring(0, lastSemicolon));
@@ -300,7 +300,7 @@ function cleanCreators(creators) {
 
 function cleanPublisher(publisher) {
 	if (!publisher) return publisher;
-	
+
 	let parts = publisher.split(':').map(s => s.trim());
 	if (parts.length == 2) {
 		return { place: cleanPlace(parts[0]), publisher: parts[1] };
@@ -313,9 +313,9 @@ function cleanPublisher(publisher) {
 
 function cleanEdition(text) {
 	if (!text) return text;
-	
+
 	// from Taylor & Francis eBooks translator, slightly adapted
-	
+
 	const ordinals = {
 		first: "1",
 		second: "2",
@@ -328,7 +328,7 @@ function cleanEdition(text) {
 		ninth: "9",
 		tenth: "10"
 	};
-	
+
 	text = ZU.trimInternal(text).replace(/[[\]]/g, '');
 	// this somewhat complicated regex tries to isolate the number (spelled out
 	// or not) and make sure that it isn't followed by any extra info
@@ -350,7 +350,7 @@ function scrapeWork(doc, url, docContext) {
 	var workID = url.match(/\/work\/([0-9]+)/)[1];
 	// version ID seems to always be undefined now
 	var bibtexURL = `https://trove.nla.gov.au/api/citation/work/${workID}?version=undefined`;
-	
+
 	if (doc) {
 		thumbnailURL = attr(doc, '.thumbnail img', 'src');
 	}
@@ -369,14 +369,14 @@ function scrapeWork(doc, url, docContext) {
 			item.itemType = checkType(item.type);
 			item.creators = cleanCreators(item.creators);
 			item.edition = cleanEdition(item.edition);
-			
+
 			Object.assign(item, cleanPublisher(item.publisher));
-			
+
 			if (item.itemType == 'artwork' && item.type) {
 				item.artworkMedium = item.type;
 				delete item.type;
 			}
-			
+
 			if (item.notes && item.notes.length == 1) {
 				// abstract goes into a note, but we want it in abstractNote
 				// (with HTML tags removed)

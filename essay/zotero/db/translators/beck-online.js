@@ -80,13 +80,13 @@ function detectWeb(doc, _url) {
 	if (!dokument) {
 		return getSearchResults(doc, true) ? "multiple" : false;
 	}
-	
+
 	var type = mappingClassNameToItemType[dokument.className.toUpperCase()];
 	// Z.debug(dokument.className.toUpperCase());
 	if (type == 'multiple') {
 		return getSearchResults(doc, true) ? "multiple" : false;
 	}
-	
+
 	return type;
 }
 
@@ -101,13 +101,13 @@ function getSearchResults(doc, checkOnly) {
 		var title = ZU.trimInternal(ZU.xpathText(rows[i], './text()[1]'));
 		var link = rows[i].href;
 		if (!link || !title) continue;
-		
+
 		if (checkOnly) return true;
 		found = true;
-		
+
 		items[link] = title;
 	}
-	
+
 	return found ? items : false;
 }
 
@@ -138,9 +138,9 @@ function authorRemoveTitlesEtc(authorStr) {
 
 function scrapeKommentar(doc, url) {
 	var item = new Zotero.Item("encyclopediaArticle");
-	
+
 	item.title = ZU.xpathText(doc, '//div[@class="dk2"]//span[@class="ueber"]');
-	
+
 	var authorText = ZU.xpathText(doc, '//div[@class="dk2"]//span[@class="autor"]');
 	if (authorText) {
 		var authors = authorText.split("/");
@@ -148,7 +148,7 @@ function scrapeKommentar(doc, url) {
 			item.creators.push(ZU.cleanAuthor(authors[i], 'author', false));
 		}
 	}
-	
+
 	// e.g. a) Beck'scher Online-Kommentar BGB, Bamberger/Roth
 	// e.g. b) Langenbucher/Bliesener/Spindler, Bankrechts-Kommentar
 	// e.g. c) Scherer, Münchener Anwaltshandbuch Erbrecht
@@ -157,7 +157,7 @@ function scrapeKommentar(doc, url) {
 	if (pos > 0) {
 		item.publicationTitle = ZU.trimInternal(citationFirst.substr(0, pos));
 		var editorString = citationFirst.substr(pos + 1);
-		
+
 		if ((!editorString.includes("/") && item.publicationTitle.includes("/"))
 			|| editorString.toLowerCase().includes("handbuch")
 			|| editorString.toLowerCase().includes("kommentar")
@@ -167,7 +167,7 @@ function scrapeKommentar(doc, url) {
 			editorString = temp;
 		}
 		editorString = editorString.replace(/, /g, '');
-		
+
 		var editors = editorString.trim().split("/");
 		for (let i = 0; i < editors.length; i++) {
 			item.creators.push(ZU.cleanAuthor(editors[i], 'editor', false));
@@ -178,7 +178,7 @@ function scrapeKommentar(doc, url) {
 		// from https://beck-online.beck.de/?vpath=bibdata%2fkomm%2fmuekobgb_7_band2%2fbgb%2fcont%2fmuekobgb.bgb.p305.htm
 		item.publicationTitle = ZU.trimInternal(citationFirst);
 	}
-	
+
 	var editionText = ZU.xpathText(doc, '//div[@class="dk2"]//span[@class="citation"]/text()[preceding-sibling::br]');
 	if (editionText) {
 		if (editionText.search(/\d+/) > -1) {
@@ -201,7 +201,7 @@ function scrapeKommentar(doc, url) {
 // where only information about the article, not the article itself is in beck-online
 function scrapeLSK(doc, url) {
 	var item = new Zotero.Item(mappingClassNameToItemType.LSK);
-	
+
 	// description example 1: "Marco Ganzhorn: Ist ein E-Book ein Buch?"
 	// description example 2: "Michael Fricke/Dr. Martin Gerecke: Informantenschutz und Informantenhaftung"
 	// description example 3: "Sara Sun Beale: Die Entwicklung des US-amerikanischen Rechts der strafrechtlichen Verantwortlichkeit von Unternehmen"
@@ -210,17 +210,17 @@ function scrapeLSK(doc, url) {
 
 	// authors
 	var authorsString = descriptionItems[0];
-	
+
 	var authors = authorsString.split("/");
 
 	for (var index = 0; index < authors.length; ++index) {
 		var author = authorRemoveTitlesEtc(ZU.trimInternal(authors[index]));
 		item.creators.push(ZU.cleanAuthor(author, 'author', false));
 	}
-	
+
 	// title
 	item.title = ZU.trimInternal(descriptionItems[1]);
-	
+
 	// src => journalTitle, date and pages
 	// example 1: "Ganzhorn, CR 2014, 492"
 	// example 2: "Fricke, Gerecke, AfP 2014, 293"
@@ -232,7 +232,7 @@ function scrapeLSK(doc, url) {
 		if (m[2]) item.date = m[2];
 		item.publicationTitle = ZU.trimInternal(m[1]);
 		item.journalAbbreviation = item.publicationTitle;
-		
+
 		// if src is like example 3, then extract the volume
 		var tmp = item.publicationTitle.match(/(^[A-Za-z]+) Bd\. (\d+)/);
 		if (tmp) {
@@ -267,7 +267,7 @@ function scrapeBook(doc, _url) {
 			item.edition = parts[0].replace('.', '');
 			item.date = parts[1];
 		}
-		
+
 		if (contributorsAreNext) {
 			contributors = space.textContent.split("; ");
 			contributorsAreNext = false;
@@ -308,10 +308,10 @@ function addNote(originalNote, newNote) {
 
 function scrapeCase(doc, url) {
 	var documentClassName = doc.getElementById("dokument").className.toUpperCase();
-	
+
 	var item = new Zotero.Item('case');
 	var note = "";
-		
+
 	// case name
 	// in some cases, the caseName is in a separate <span>
 	var caseName = ZU.xpathText(doc, '//div[@class="titel sbin4"]/h1/span');
@@ -336,7 +336,7 @@ function scrapeCase(doc, url) {
 			item.shortTitle = caseName.trim().replace(/^\*|\*$/, '').trim();
 		}
 	}
-	
+
 	var courtLine = ZU.xpath(doc, '//div[contains(@class, "gerzeile")]/p')[0];
 	var alternativeLine = "";
 	var alternativeData = [];
@@ -349,7 +349,7 @@ function scrapeCase(doc, url) {
 		alternativeData = alternativeLine.match(/^([A-Za-zÖöÄäÜüß ]+): \b(.*?Urteil|.*?Urt\.|.*?Beschluss|.*?Beschl\.) vom (\d\d?\.\s*\d\d?\.\s*\d\d\d\d) - ([\w\s/]*)/i);
 		item.court = ZU.trimInternal(alternativeData[1]);
 	}
-	
+
 	// add jurisdiction to item.extra - in accordance with citeproc-js - for compatability with Zotero-MLZ
 	item.extra = "";
 	if (item.court.indexOf('EuG') == 0) {
@@ -358,36 +358,36 @@ function scrapeCase(doc, url) {
 	else {
 		item.extra += "Jurisdiction: de";
 	}
-	
+
 	var decisionDateStr = ZU.xpathText(doc, '(//span[@class="edat"] | //span[@class="EDAT"] | //span[@class="datum"])[1]');
 	if (decisionDateStr === null) {
 		decisionDateStr = alternativeData[3];
 	}
 	// e.g. 24. 9. 2001 or 24-9-1990
 	item.dateDecided = decisionDateStr.replace(/(\d\d?)[.-]\s*(\d\d?)[.-]\s*(\d\d\d\d)/, "$3-$2-$1");
-	
+
 	item.docketNumber = ZU.xpathText(doc, '(//span[@class="az"])[1]');
 	if (item.docketNumber === null) {
 		item.docketNumber = alternativeData[4];
 	}
-	
+
 	item.title = item.court + ", " + decisionDateStr + " - " + item.docketNumber;
 	if (item.shortTitle) {
 		item.title += " - " + item.shortTitle;
 	}
-	
+
 	var decisionType;
 	if (courtLine) {
 		item.history = ZU.xpathText(courtLine, './span[@class="vorinst"]');
-	
+
 		// type of decision. Save this in item.extra according to citeproc-js
 		decisionType = ZU.xpathText(courtLine, './span[@class="etyp"]');
 	}
-	
+
 	if (!decisionType) {
 		decisionType = alternativeData[2];
 	}
-	
+
 	if (decisionType) {
 		if (/Beschluss|Beschl\./i.test(decisionType)) {
 			item.extra += "\nGenre: Beschl.";
@@ -396,14 +396,14 @@ function scrapeCase(doc, url) {
 			item.extra += "\nGenre: Urt.";
 		}
 	}
-	
+
 	// code to scrape the BeckRS source, if available
 	// example: BeckRS 2013, 06445
 	// Since BeckRS is not suitable for citing, let's push it into the notes instead
 	var beckRSline = ZU.xpathText(doc, '//span[@class="fundstelle"]');
 	if (beckRSline) {
 		note = addNote(note, "<h3>Fundstelle</h3><p>" + ZU.trimInternal(beckRSline) + "</p>");
-		
+
 		/* commented out, because we cannot use it for the CSL-stylesheet at the moment.
 		 * If we find a better solution later, we can reactivate this code and save the
 		 * information properly
@@ -422,7 +422,7 @@ function scrapeCase(doc, url) {
 	if (basedOnRegulations) {
 		note = addNote(note, "<h3>Normen</h3><p>" + ZU.trimInternal(basedOnRegulations) + "</p>");
 	}
-	
+
 	item.abstractNote = ZU.xpathText(doc, '//div[@class="abstract" or @class="leitsatz"]');
 	if (item.abstractNote) {
 		item.abstractNote = item.abstractNote.replace(/\n\s*\n/g, "\n");
@@ -438,7 +438,7 @@ function scrapeCase(doc, url) {
 		if (publicationTitle) {
 			note = addNote(note, "<h3>Zeitschrift Titel</h3><p>" + ZU.trimInternal(publicationTitle) + "</p>");
 		}
-		
+
 		// e.g. ArbrAktuell 2014, 150
 		var shortCitation = ZU.xpathText(doc, '//div[@class="dk2"]//span[@class="citation"]');
 		var pagesStart = ZU.trimInternal(shortCitation.substr(shortCitation.lastIndexOf(",") + 1));
@@ -450,11 +450,11 @@ function scrapeCase(doc, url) {
 			item.pages = pagesStart;
 		}
 	}
-	
+
 	if (note.length != 0) {
 		item.notes.push({ note: note });
 	}
-	
+
 	finalize(doc, url, item);
 }
 
@@ -489,23 +489,23 @@ function scrape(doc, url) {
 	if (mappingClassNameToItemType[documentClassName]) {
 		item = new Zotero.Item(mappingClassNameToItemType[documentClassName]);
 	}
-	
+
 	var titleNode = ZU.xpath(doc, '//div[@class="titel"]')[0]
 		|| ZU.xpath(doc, '//div[@class="dk2"]//span[@class="titel"]')[0];
 	item.title = ZU.trimInternal(titleNode.textContent);
-	
+
 	// in some cases (e.g. NJW 2007, 3313) the title contains an asterisk with a footnote that is imported into the title
 	// therefore, this part should be removed from the title
 	var indexOfAdditionalText = item.title.indexOf("zur Fussnote");
 	if (indexOfAdditionalText != -1) {
 		item.title = item.title.substr(0, indexOfAdditionalText);
 	}
-	
+
 	var authorNode = ZU.xpath(doc, '//div[@class="autor"]');
 	for (var i = 0; i < authorNode.length; i++) {
 		// normally several authors are under the same authorNode
 		// and they occur in pairs with first and last names
-		
+
 		var authorFirstNames = ZU.xpath(authorNode[i], './/span[@class="vname"]');
 		var authorLastNames = ZU.xpath(authorNode[i], './/span[@class="nname"]');
 		for (let j = 0; j < authorFirstNames.length; j++) {
@@ -516,7 +516,7 @@ function scrape(doc, url) {
 			});
 		}
 	}
-	
+
 	if (item.creators.length == 0) {
 		authorNode = ZU.xpath(doc, '//div[@class="autor"]/p | //p[@class="authorline"]/text() | //div[@class="authorline"]/p/text()');
 		for (let j = 0; j < authorNode.length; j++) {
@@ -533,7 +533,7 @@ function scrape(doc, url) {
 			if (posComma > 0) {
 				authorString = authorString.substr(0, posComma);
 			}
-			
+
 			var authorArray = authorString.split(/und|,/);
 			for (var k = 0; k < authorArray.length; k++) {
 				authorString = ZU.trimInternal(authorRemoveTitlesEtc(authorArray[k]));
@@ -541,12 +541,12 @@ function scrape(doc, url) {
 			}
 		}
 	}
-	
+
 	item.publicationTitle = ZU.xpathText(doc, '//li[@class="breadcurmbelemenfirst"]');
 	item.journalAbbreviation = ZU.xpathText(doc, '//div[@id="toccontent"]/ul/li/a[2]');
-	
+
 	item.date = ZU.xpathText(doc, '//div[@id="toccontent"]/ul/li/ul/li/a[2]');
-	
+
 	// e.g. Heft 6 (Seite 141-162)
 	var issueText = ZU.xpathText(doc, '//div[@id="toccontent"]/ul/li/ul/li/ul/li/a[2]');
 
@@ -556,7 +556,7 @@ function scrape(doc, url) {
 			item.issue = item.issue.match(/\d+/)[0];
 		}
 	}
-	
+
 	// e.g. ArbrAktuell 2014, 150
 	var shortCitation = ZU.xpathText(doc, '//div[@class="dk2"]//span[@class="citation"]');
 	if (shortCitation) {
@@ -569,7 +569,7 @@ function scrape(doc, url) {
 	else {
 		item.pages = pagesStart;
 	}
-	
+
 	item.abstractNote = ZU.xpathText(doc, '//div[@class="abstract"]') || ZU.xpathText(doc, '//div[@class="leitsatz"]');
 	if (item.abstractNote) {
 		item.abstractNote = item.abstractNote.replace(/\n\s*\n/g, "\n");
@@ -578,7 +578,7 @@ function scrape(doc, url) {
 	if (documentClassName == "ZBUCHB") {
 		item.extra = ZU.xpathText(doc, '//div[@class="biblio"]');
 	}
-	
+
 	finalize(doc, url, item);
 }
 
@@ -587,7 +587,7 @@ function finalize(doc, url, item) {
 		title: "Snapshot",
 		document: doc
 	}];
-	
+
 	var perma = ZU.xpathText(doc, '//div[@class="doc-link"]/a/@href');
 	if (perma) {
 		// not clear that this case ever comes up - permalinks appear always
@@ -600,14 +600,14 @@ function finalize(doc, url, item) {
 		if (pathRe.test(perma)) {
 			perma = perma.match(pathRe)[1];
 		}
-		
+
 		if (perma.startsWith('/')) {
 			perma = 'https://beck-online.beck.de' + perma;
 		}
-		
+
 		item.url = perma;
 	}
-	
+
 	item.complete();
 }
 

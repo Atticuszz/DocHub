@@ -83,25 +83,25 @@ function scrape(doc, url) {
 	var translator = Zotero.loadTranslator('web');
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');//https://github.com/zotero/translators/blob/master/Embedded%20Metadata.js
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		//issn
 		if (item.ISSN) {
 			item.ISSN = item.ISSN.replace(/(\d{4})(\d{4})/, "$1-$2");
 		}
-		
+
 		//doi
 		var doiLink = doc.getElementById('aDoi');
 		if (doiLink && !item.DOI) {
 			item.DOI = doiLink.textContent;
 		}
-		
+
 		//abstract
 		var abstractLink = doc.getElementById('TextControl');
 		if (abstractLink) {
 			item.abstractNote = abstractLink.textContent;
 		}
-		
+
 		//pdf
 		var pdfLink = doc.getElementById('aFullText');
 		if (pdfLink) {
@@ -111,10 +111,10 @@ function scrape(doc, url) {
 				"mimeType": "application/pdf"
 			});
 		}
-		
+
 		item.complete();
 	});
-	
+
 	translator.translate();
 
 }/** BEGIN TEST CASES **/

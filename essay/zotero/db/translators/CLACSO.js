@@ -14,24 +14,24 @@
 
 /*
 	***** BEGIN LICENSE BLOCK *****
-	
-	Copyright © 2013 Sebastian Karcher 
-	
+
+	Copyright © 2013 Sebastian Karcher
+
 	This file is part of Zotero.
-	
+
 	Zotero is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version.
-	
+
 	Zotero is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 	GNU Affero General Public License for more details.
-	
+
 	You should have received a copy of the GNU Affero General Public License
 	along with Zotero.  If not, see <http://www.gnu.org/licenses/>.
-	
+
 	***** END LICENSE BLOCK *****
 */
 
@@ -78,13 +78,13 @@ function getType (doc){
 			type= "thesis";
 		}
 		else type = "book";
-	
+
 	return type;
 	}
 }
 
 function scrape(doc, url) {
-	
+
 	var newItem = new Zotero.Item(getType(doc));
 	var title = ZU.xpathText(doc, '//tbody/tr/td[span/b[contains(text(), "Título")]]/following-sibling::td');
 	var publication = ZU.xpathText(doc, '//tr/td[@id="bold" and contains(text(), "Revista")]/following-sibling::td');
@@ -98,7 +98,7 @@ function scrape(doc, url) {
 	var pages = ZU.xpathText(doc, '//tbody/tr/td[b[contains(text(), "Extensión")]]/following-sibling::td');
 	var fulltext = ZU.xpathText(doc, '//tbody/tr/td[b[contains(text(), "URL")]]/following-sibling::td');
 
-	
+
 	//Descripción field has pages, issue and volume
 	var publication;
 	var volume;
@@ -110,7 +110,7 @@ function scrape(doc, url) {
 		volume = description.match(/(Año|vol\.?)\s*([\dIVX]+)/);
 		issue = description.match(/no\.\s*(\d+)/);
 	}
-	
+
 	//Authors
 	var authors = ZU.xpath(doc, '//tbody/tr/td[b[contains(text(), "Autor")]]/following-sibling::td/a');
 	var author;
@@ -122,14 +122,14 @@ function scrape(doc, url) {
 		 role = authorRole(author)
 		 newItem.creators.push(ZU.cleanAuthor(author, role, true));
 	}
-	
+
 
 	// TAGS
 	var tags = ZU.xpath(doc, '//tbody/tr/td[b[contains(text(), "Temas")]]/following-sibling::td/a');
 	for (var i in tags) {
 		 newItem.tags.push(tags[i].textContent);
 	}
-	
+
 	//distinguish between page ranges and num of pages
 	var numPages;
 	var pagerange;
@@ -141,7 +141,7 @@ function scrape(doc, url) {
 			pagerange = pages.replace(/pp\./, "");
 		}
 	}
-	
+
 	var ISBN;
 	var ISSN;
 	if (identifier){
@@ -151,7 +151,7 @@ function scrape(doc, url) {
 		if (identifier.indexOf("ISSN")!=-1){
 			ISSN = identifier;
 		}
-		
+
 	}
 
 	if (fulltext) {

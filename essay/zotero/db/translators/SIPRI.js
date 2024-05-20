@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -79,25 +79,25 @@ function doWeb(doc, url) {
 
 function scrape(doc, url) {
 	let item = new Zotero.Item('report');
-	
+
 	item.title = text(doc, '#sipri-2016-page-title');
 	item.abstractNote = text(doc, '.body p');
 	item.date = ZU.strToISO(text(doc, '.views-field-field-year-of-publication'));
 	item.language = 'en';
 	item.url = attr(doc, 'link[rel="canonical"]', 'href') || url;
-	
+
 	for (let author of doc.querySelectorAll('.views-field-combinedauthors a')) {
 		let name = author.innerText.replace(/^\s*Dr\.?\b/, '');
 		item.creators.push(ZU.cleanAuthor(name, 'author'));
 	}
-	
+
 	if (doc.querySelector('.views-field-field-isbn')) {
 		item.itemType = 'book';
 		item.ISBN = ZU.cleanISBN(text(doc, '.views-field-field-isbn .field-content'));
 		item.numPages = text(doc, '.views-field-field-pages .field-content')
 			.replace('pp.', '');
 		item.publisher = text(doc, '.views-field-field-publisher-name .field-content');
-		
+
 		// this is VERY fragile, but oh well. it isn't crucial and there's no
 		// better way besides fetching info from the ISBN (which is worse in terms
 		// of speed and isn't guaranteed to be more accurate).
@@ -113,7 +113,7 @@ function scrape(doc, url) {
 	else {
 		item.institution = text(doc, '.views-field-field-publisher-name .field-content');
 	}
-	
+
 	let pdfURL = attr(doc, '.field-pdf-full-publication a', 'href');
 	if (pdfURL) {
 		item.attachments.push({
@@ -122,7 +122,7 @@ function scrape(doc, url) {
 			url: pdfURL
 		});
 	}
-	
+
 	item.complete();
 }
 

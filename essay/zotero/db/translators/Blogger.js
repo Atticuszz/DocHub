@@ -44,14 +44,14 @@ function getSearchResults(doc, checkOnly) {
 function scrape(doc, url) {
 	var tagsContent = new Array();
 	var newItem = new Zotero.Item("blogPost");
-	
+
 	//title
 		if (ZU.xpathText(doc, '//h3[@class="post-title entry-title"]/a')) {
 			newItem.title = ZU.xpathText(doc, '//h3[@class="post-title entry-title"]/a');
 		} else {
 			newItem.title = doc.title;
 		}
-	
+
 	//author, if available
 		if (ZU.xpathText(doc, '//span[@class="post-author vcard"]//span[@class="fn"]')) {
 			var author = ZU.xpathText(doc, '//span[@class="post-author vcard"]//span[@class="fn"]').trim();
@@ -67,17 +67,17 @@ function scrape(doc, url) {
 			author = words.join(" ");
 			newItem.creators.push(Zotero.Utilities.cleanAuthor(author, "author"));
 		}
-	
+
 	//date, if available
 		newItem.date = ZU.xpathText(doc, '//h2[@class="date-header"]');
-			
+
 
 	//tags, if available
 		var tags = ZU.xpath(doc, '//span[@class="post-labels"]/a');
 		for (var i = 0; i < tags.length; i++) {
 			newItem.tags.push(tags[i].textContent);
 		}
-		
+
 	var blogTitle1 = doc.title.split(":");
 	var cleanurl = url.replace(/[\?#].+/, "");
 	newItem.blogTitle = blogTitle1[0];
@@ -90,7 +90,7 @@ function scrape(doc, url) {
 
 function doWeb(doc, url) {
 	var articles = new Array();
-	
+
 	if (detectWeb(doc, url) == "multiple") {
 		Zotero.selectItems(getSearchResults(doc, false), function(items) {
 			if (!items) {

@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2017-2021 Philipp Zumstein, Pieter van der Wees
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -155,9 +155,9 @@ function scrape(doc, url) {
 	// var docSector = attr(doc, 'meta[name="WT.z_docSector"]', 'content');
 	var docType = attr(doc, 'meta[name="WT.z_docType"]', 'content');
 	var celex = attr(doc, 'meta[name="WT.z_docID"]', 'content');
-	
+
 	var eliTypeUri = (attr(doc, 'meta[property="eli:type_document"]', "resource"));
-	
+
 	var type = detectWeb(doc, url);
 	var item = new Zotero.Item(type);
 	// determine the language in which we are currently viewing the document
@@ -168,7 +168,7 @@ function scrape(doc, url) {
 	var language = languageMapping[languageUrl].iso || "eng";
 	// Cases only return language; discard everything else
 	item.language = languageUrl.toLowerCase();
-	
+
 
 	if (eliTypeUri) {
 		// type: everything with ELI (see var typeMapping: bill, statute, report)
@@ -199,17 +199,17 @@ function scrape(doc, url) {
 		if (!item.date) {
 			item.date = attr(doc, 'meta[property="eli:date_publication"]', "content");
 		}
-		
+
 		var passedBy = doc.querySelectorAll('meta[property="eli:passed_by"]');
 		var passedByArray = [];
 		for (let i = 0; i < passedBy.length; i++) {
 			passedByArray.push(passedBy[i].getAttribute("resource").split("/").pop());
 		}
 		item.legislativeBody = passedByArray.join(", ");
-		
+
 		item.url = attr(doc, 'meta[typeOf="eli:LegalResource"]', "about") + "/" + language.toLowerCase();
 	}
-		
+
 	else if (item.itemType == "case") {
 		// type: case
 		// pretty hacky stuff, as there's little metadata available
@@ -257,7 +257,7 @@ function scrape(doc, url) {
 	var htmlurl = "https://eur-lex.europa.eu/legal-content/" + languageUrl + "/TXT/HTML/?uri=CELEX:" + celex;
 	item.attachments = [{ url: pdfurl, title: "EUR-Lex PDF (" + languageUrl + ")", mimeType: "application/pdf" }];
 	item.attachments.push({ url: htmlurl, title: "EUR-Lex HTML (" + languageUrl + ")", mimeType: "text/html", snapshot: true });
-	
+
 	item.complete();
 }
 

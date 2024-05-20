@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -88,19 +88,19 @@ function scrape(doc, url) {
 		translator.setString(bibText);
 		translator.setHandler("itemDone", function (obj, item) {
 			delete item.itemID;
-			
+
 			if (PMID && !(item.extra && item.extra.includes('PMID:'))) {
 				item.extra = (item.extra || '') + `\nPMID: ${PMID}`;
 			}
-			
+
 			if (PMCID && !(item.extra && item.extra.includes('PMCID:'))) {
 				item.extra = (item.extra || '') + `\nPMCID: ${PMCID}`;
 			}
-			
+
 			if (arXiv && !(item.extra && item.extra.includes('arXiv:'))) {
 				item.extra = (item.extra || '') + `\narXiv: ${arXiv}`;
 			}
-			
+
 			if (oaURL) {
 				item.attachments.push({
 					title: 'Full Text PDF',
@@ -108,11 +108,11 @@ function scrape(doc, url) {
 					url: oaURL
 				});
 			}
-			
+
 			if (item.url.includes('app.dimensions.ai/')) {
 				delete item.url;
 			}
-			
+
 			item.complete();
 		});
 		translator.translate();

@@ -53,20 +53,20 @@ function removeUnsupportedMarkup(text) {
 			close: '</span>'
 		}
 	};
-	
+
 	return text.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1') // Remove CDATA markup
 		.replace(markupRE, function (m, close, name) {
 			name = name.toLowerCase();
-			
+
 			if (supportedMarkup.includes(name)) {
 				return (close ? '</' : '<') + name + '>';
 			}
-			
+
 			let newMarkup = transformMarkup[name.toLowerCase()];
 			if (newMarkup) {
 				return close ? newMarkup.close : newMarkup.open;
 			}
-			
+
 			return '';
 		});
 }
@@ -87,13 +87,13 @@ function fixAuthorCapitalization(string) {
 
 function parseCreators(result, item, typeOverrideMap) {
 	let types = ['author', 'editor', 'chair', 'translator'];
-	
+
 	for (let i = 0; i < types.length; i++) {
 		let type = types[i];
-		
+
 		if (result[type]) {
 			let creatorType = null;
-			
+
 			if (typeOverrideMap && typeOverrideMap[type] !== undefined) {
 				creatorType = typeOverrideMap[type];
 			}
@@ -103,14 +103,14 @@ function parseCreators(result, item, typeOverrideMap) {
 			else {
 				creatorType = "contributor";
 			}
-			
+
 			if (!creatorType) continue;
-			
+
 			for (let j = 0; j < result[type].length; j++) {
 				let creator = {};
-				
+
 				creator.creatorType = creatorType;
-				
+
 				if (result[type].name) { // Organization
 					creator.fieldMode = 1;
 					creator.lastName = result[type][j].name;
@@ -120,7 +120,7 @@ function parseCreators(result, item, typeOverrideMap) {
 					creator.lastName = fixAuthorCapitalization(result[type][j].family);
 					if (!creator.firstName) creator.fieldMode = 1;
 				}
-				
+
 				item.creators.push(creator);
 			}
 		}
@@ -129,12 +129,12 @@ function parseCreators(result, item, typeOverrideMap) {
 
 function processCrossref(json) {
 	json = JSON.parse(json);
-	
+
 	for (let i = 0; i < json.message.items.length; i++) {
 		let result = json.message.items[i];
-		
+
 		let item = null;
-		
+
 		// Journal article
 		if (['journal-article'].includes(result.type)) {
 			item = new Zotero.Item("journalArticle");
@@ -192,24 +192,24 @@ function processCrossref(json) {
 		else {
 			return;
 		}
-		
+
 		// edited-book, standard-series - ignore, because Crossref has zero results for this type
 		// component, journal, journal-issue, journal-volume, other, proceedings,
 		// proceedings-series, peer-review - ignore, because Zotero doesn't have equivalent item types.
-		
+
 		item.abstractNote = result.abstract;
-		
+
 		parseCreators(result, item);
-		
-		
+
+
 		// Contains the earliest of: published-online, published-print, content-created
 		let pubDate = result['issued'];
-		
+
 		if (pubDate && pubDate['date-parts'][0]) {
 			let year = pubDate['date-parts'][0][0];
 			let month = pubDate['date-parts'][0][1];
 			let day = pubDate['date-parts'][0][2];
-			
+
 			if (year) {
 				if (month) {
 					if (day) {
@@ -224,9 +224,9 @@ function processCrossref(json) {
 				}
 			}
 		}
-		
+
 		item.pages = result.page;
-		
+
 		if (result.DOI) {
 			if (ZU.fieldIsValidForType('DOI', item.itemType)) {
 				item.DOI = result.DOI;
@@ -241,11 +241,11 @@ function processCrossref(json) {
 				}
 			}
 		}
-		
+
 		// result.URL is always http://dx.doi.org/..
-		
+
 		if (result.link && result.link.URL) item.url = result.link.URL;
-		
+
 		if (result.title && result.title[0]) {
 			item.title = result.title[0];
 			if (result.subtitle && result.subtitle[0]) {
@@ -256,7 +256,7 @@ function processCrossref(json) {
 			}
 			item.title = removeUnsupportedMarkup(item.title);
 		}
-		
+
 		// Check if there are potential issues with character encoding and try to fix it
 		// e.g. 10.1057/9780230391116.0016 (en dash in title is presented as <control><control>â)
 		for (let field in item) {
@@ -301,9 +301,9 @@ function doSearch(item) {
 		'chair',
 		'translator'
 	];
-	
+
 	let query = null;
-	
+
 	if (item.DOI) {
 		if (Array.isArray(item.DOI)) {
 			query = '?filter=doi:' + item.DOI.map(x => ZU.cleanDOI(x)).filter(x => x).join(',doi:');
@@ -315,13 +315,13 @@ function doSearch(item) {
 		query = '?query.bibliographic=' + encodeURIComponent(item.query);
 	}
 	else return;
-	
+
 	query += '&select=' + selectedFields.join(',');
-	
+
 	if (Z.getHiddenPref('CrossrefREST.email')) {
 		query += '&mailto=' + Z.getHiddenPref('CrossrefREST.email');
 	}
-	
+
 	ZU.doGet('https://api.crossref.org/works/' + query, function (responseText) {
 		processCrossref(responseText);
 	});

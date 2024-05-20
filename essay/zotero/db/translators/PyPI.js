@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2017 Philipp Zumstein
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -93,7 +93,7 @@ function scrape(doc, url) {
 	if (subtitle) {
 		item.title += ": " + subtitle;
 	}
-	
+
 	var author = ZU.xpathText(doc, '//div[contains(@class, "vertical-tabs__tabs")]//p[strong[contains(., "Author")]]/a');
 	if (author) {
 		item.creators.push(ZU.cleanAuthor(author, "author"));
@@ -104,7 +104,7 @@ function scrape(doc, url) {
 	for (let keyword of keywords) {
 		item.tags.push(keyword.textContent.trim());
 	}
-	
+
 	// info from linked categories
 	var programmingLanguage = ZU.xpath(doc, '//div[contains(@class, "vertical-tabs__tabs")]//a[contains(@href, "/search/?c=Programming+Language+")]');
 	for (let i=0; i<programmingLanguage.length; i++) {
@@ -140,7 +140,7 @@ function scrape(doc, url) {
 		title: "Snapshot",
 		document: doc
 	});
-	
+
 	item.complete();
 }
 

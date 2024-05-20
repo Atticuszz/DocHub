@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -43,11 +43,11 @@ function detectWeb(doc, _url) {
 	if (viewFrame) {
 		doc = viewFrame.contentWindow.document;
 	}
-	
+
 	if (taglineRe.test(text(doc, 'div#tagline'))) {
 		return "computerProgram";
 	}
-	
+
 	return false;
 }
 
@@ -56,10 +56,10 @@ function doWeb(doc, url) {
 	if (viewFrame) {
 		doc = viewFrame.contentWindow.document;
 	}
-	
+
 	let item = new Zotero.Item('computerProgram');
 	let meta = text(doc, 'div#tagline').match(taglineRe);
-	
+
 	let [, title, project, owner, rev, date] = meta;
 	item.title = title;
 	item.seriesTitle = project;
@@ -73,7 +73,7 @@ function doWeb(doc, url) {
 	item.url = url;
 	item.company = 'Stanford Artificial Intelligence Laboratory';
 	item.archive = 'SAILDART';
-	
+
 	item.complete();
 }
 
@@ -279,7 +279,7 @@ function mapUsername(username) {
 		RJB: "Richard Beigel",
 		SM: "Scott McGregor"
 	};
-	
+
 	let fullName = mapping[username];
 	if (fullName) {
 		return ZU.cleanAuthor(fullName, 'programmer');

@@ -184,7 +184,7 @@ async function scrape(doc, url) {
 		tags = Array.from(doc.querySelectorAll('a.subject')).map(el => el.textContent.trim());
 		text = await requestText(cslURL);
 	}
-	
+
 	// use CSL JSON translator
 	text = text.replace(/publisher_place/, "publisher-place");
 	text = text.replace(/container_title/, "container-title");

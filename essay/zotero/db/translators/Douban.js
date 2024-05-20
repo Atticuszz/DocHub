@@ -200,7 +200,7 @@ function detectWeb(doc, url) {
 }
 
 function detectTitles(doc, url) {
-	
+
 	var pattern = /\.douban\.com\/tag\//;
 	if (pattern.test(url)) {
 		return ZU.xpath(doc, '//div[@class="info"]/h2/a');

@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2017 Philipp Zumstein
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -189,7 +189,7 @@ function scrape(doc, url) {
 	ZU.doGet(xmlUrl, function (data) {
 		var parser = new DOMParser();
 		var xml = parser.parseFromString(data, "application/xml");
-		
+
 		var item = new Zotero.Item(type);
 		item.extra = 'QID: ' + qnumber;
 		var nodes = ZU.xpath(xml, '//rdf:Description', namespaces);

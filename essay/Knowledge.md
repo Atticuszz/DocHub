@@ -18,7 +18,7 @@ _format in RAM_
 
 #### Image coordinate system
 
-![300](../../assets/Pasted_image_20240329151607.png)
+![300](../assets/Pasted_image_20240329151607.png)
 图像坐标系中：
 
 - **原点**（0, 0）位于图像的左上角。
@@ -124,7 +124,7 @@ $\mathbf{M}_{\mathrm{w2c}}$ 变量名常作`w2c`
 #### Coordinate transformation during imaging
 
 **成像过程中的坐标变换**
-![../../assets/Pasted_image_20240329152030.png](../../assets/Pasted_image_20240329152030.png)
+![../../assets/Pasted_image_20240329152030.png](../assets/Pasted_image_20240329152030.png)
 当我们讨论将三维世界坐标系中的点投影到二维图像平面时，需要进行坐标变换，包括：
 
 1. **从世界坐标系到相机坐标系**：这一步使用齐次坐标形式的外参矩阵$\mathbf{M}_\mathrm{w2c}=\begin{bmatrix}R&T\\0&1\end{bmatrix}$，给定$P_w=(X_w,Y_w,Z_w,1)^T$ 变换$\begin{aligned}\mathbf{P}_c=(X_c,Y_c,Z_c)^T\end{aligned}$

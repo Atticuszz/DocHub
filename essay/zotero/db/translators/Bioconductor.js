@@ -14,10 +14,10 @@
 
 /*
 	***** BEGIN LICENSE BLOCK *****
-	
+
 	Bioconductor Packages Translator
 	Copyright © 2019 Qiang Hu
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -38,7 +38,7 @@
 
 // attr()/text() v2
 // eslint-disable-next-line
-function attr(docOrElem,selector,attr,index){var elem=index?docOrElem.querySelectorAll(selector).item(index):docOrElem.querySelector(selector);return elem?elem.getAttribute(attr):null;}function text(docOrElem,selector,index){var elem=index?docOrElem.querySelectorAll(selector).item(index):docOrElem.querySelector(selector);return elem?elem.textContent:null;} 
+function attr(docOrElem,selector,attr,index){var elem=index?docOrElem.querySelectorAll(selector).item(index):docOrElem.querySelector(selector);return elem?elem.getAttribute(attr):null;}function text(docOrElem,selector,index){var elem=index?docOrElem.querySelectorAll(selector).item(index):docOrElem.querySelector(selector);return elem?elem.textContent:null;}
 
 
 function detectWeb(doc, url) {
@@ -123,7 +123,7 @@ function scrape(doc, url) {
 	if (year) {
 		item.date = year.match(/\d+/g)[1];
 	}
-	
+
 	var tags = ZU.xpath(doc, '//td[contains(text(), "biocViews")]/following-sibling::td/a');
 	for (let i = 0; i < tags.length; i++) {
 		item.tags.push(tags[i].textContent);

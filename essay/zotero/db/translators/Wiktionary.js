@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -46,7 +46,7 @@ function detectWeb(doc, url) {
 		return "dictionaryEntry";
 	}
 	return false;
-	
+
 	// like the Wikipedia translator, we're not going to handle search results
 	// unless someone feels strongly about it and wants to add it
 }
@@ -67,7 +67,7 @@ function scrape(doc, url) {
 	// Wikipedia
 	translator.setTranslator('e5dc9733-f8fc-4c00-8c40-e53e0bb14664');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		item.itemType = 'dictionaryEntry';
 		item.dictionaryTitle = item.encyclopediaTitle;

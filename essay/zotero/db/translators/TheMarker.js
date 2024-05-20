@@ -14,17 +14,17 @@
 
 /**
 	Copyright (c) 2015 Eran Rosenthal
-	
+
 	This program is free software: you can redistribute it and/or
 	modify it under the terms of the GNU Affero General Public License
 	as published by the Free Software Foundation, either version 3 of
 	the License, or (at your option) any later version.
-	
+
 	This program is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 	Affero General Public License for more details.
-	
+
 	You should have received a copy of the GNU Affero General Public
 	License along with this program. If not, see
 	<http://www.gnu.org/licenses/>.
@@ -46,9 +46,9 @@ function doWeb(doc, url) {
 	var abstract = ZU.xpathText(doc, '//header/p');
 	if (!abstract) abstract = ZU.xpathText(doc, '//meta[@property="og:description"]/@content');
 	newItem.abstractNote = abstract;
-	
+
 	newItem.date = ZU.xpathText(doc, '(//meta[@itemprop="datePublished"]/@content)[1]');
-	
+
 	var authors = ZU.xpath(doc, '//address/a[@rel="author"]');
 	for (var i=0; i<authors.length; i++) {
 		newItem.creators.push(ZU.cleanAuthor(authors[i].textContent, 'author'));

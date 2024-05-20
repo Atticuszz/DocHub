@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -83,11 +83,11 @@ async function doWeb(doc, url) {
 
 async function scrape(doc, url) {
 	let item = new Zotero.Item('magazineArticle');
-	
+
 	let [, MID, IID, AID] = url.match(urlRe);
 	let issue = await requestJSON(`${apiBase}/Search/IssueHInfo?MID=${MID}&IID=${IID}`);
 	let article = await requestJSON(`${apiBase}/Search/ArticleHInfo?AID=${AID}`);
-			
+
 	item.title = article.articleTitle.replace(' : ', ": ");
 	item.pages = article.pageNo;
 	item.creators.push(ZU.cleanAuthor(article.articleAuthor, 'author'));

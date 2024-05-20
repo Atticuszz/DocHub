@@ -85,7 +85,7 @@ async function scrape(doc, url = doc.location.href) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', (_obj, item) => {
 		item.title = item.title.replace(/''/g, '"');
 		if (item.abstractNote) {

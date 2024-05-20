@@ -126,7 +126,7 @@ function detectWeb(doc, url) {
 			return dType;
 		}
 	}
-	
+
 	return false;
 }
 
@@ -144,17 +144,17 @@ function getSearchResults(doc, checkOnly, itemInfo) {
 		}
 
 		if (checkOnly) return true;
-		
+
 		let url = a.href;
 
 		// Z.debug(url);
 		let title = ZU.trimInternal(a.textContent);
-		
+
 		found = true;
 		if (!found['']) {
 			items[''] = '【提醒：存在失败的可能，请隔几个小时后试试，或单个抓取。】';
 		}
-		
+
 		if (itemInfo) {
 			var download = row.querySelector('.get a');
 			if (download && download.textContent == 'PDF下载') {
@@ -166,7 +166,7 @@ function getSearchResults(doc, checkOnly, itemInfo) {
 		if (title.startsWith('《') && title.endsWith('》')) {
 			title = title.replace(/《|》/g, '');
 		}
-		
+
 		items[url] = title;
 	}
 	return found ? items : false;
@@ -199,7 +199,7 @@ function scrape(doc, url, pdfurl) {
 	if (!url || url.length <= 0) {
 		return;
 	}
-	
+
 	var itemType = detectType(doc);
 	var item = new Zotero.Item(itemType);
 
@@ -211,10 +211,10 @@ function scrape(doc, url, pdfurl) {
 			infos = trim(infos);
 			for (var section0 of infos.split('\n')) {
 				if (!section0.trim()) continue;
-		
+
 				let index = section0.indexOf('】');
 				if (index <= -1) continue;
-		
+
 				let key = section0.substr(0, index + 1).trim();
 				let value = section0.substr(index + 1).trim();
 				// Z.debug(key + ':' + value);
@@ -236,12 +236,12 @@ function scrape(doc, url, pdfurl) {
 					case "【中图法分类号】":
 						item.archiveLocation = value.replace(/\(.*\)/, '');
 						break;
-						
+
 					default:
 						break;
 				}
 			}
-		
+
 			// 摘要
 			item.abstractNote = text(doc, '.tu_content').replace(/内容提要:\n*/g, '');
 			break;
@@ -251,10 +251,10 @@ function scrape(doc, url, pdfurl) {
 			for (var section1 of infos) {
 				let content = ZU.trimInternal(section1.textContent);
 				if (!content || content.length <= 0) continue;
-		
+
 				let index = content.indexOf('】');
 				if (index <= -1) continue;
-		
+
 				content = trim(content);
 				let key = content.substr(0, index + 1).trim();
 				let value = content.substr(index + 1).trim();
@@ -291,10 +291,10 @@ function scrape(doc, url, pdfurl) {
 			for (var section5 of infos) {
 				let content = ZU.trimInternal(section5.textContent);
 				if (!content || content.length <= 0) continue;
-		
+
 				let index = content.indexOf('】');
 				if (index <= -1) continue;
-		
+
 				content = trim(content);
 				let key = content.substr(0, index + 1).trim();
 				let value = content.substr(index + 1).trim();
@@ -335,10 +335,10 @@ function scrape(doc, url, pdfurl) {
 			for (var section3 of infos) {
 				let content = ZU.trimInternal(section3.textContent);
 				if (!content || content.length <= 0) continue;
-		
+
 				let index = content.indexOf('】');
 				if (index <= -1) continue;
-		
+
 				content = trim(content);
 				let key = content.substr(0, index + 1).trim();
 				let value = content.substr(index + 1).trim();
@@ -375,10 +375,10 @@ function scrape(doc, url, pdfurl) {
 			for (var section4 of infos) {
 				let content = ZU.trimInternal(section4.textContent);
 				if (!content || content.length <= 0) continue;
-		
+
 				let index = content.indexOf('】');
 				if (index <= -1) continue;
-		
+
 				content = trim(content);
 				let key = content.substr(0, index + 1).trim();
 				let value = content.substr(index + 1).trim();
@@ -413,11 +413,11 @@ function scrape(doc, url, pdfurl) {
 			}
 			break;
 	}
-	
+
 	if (item.title.startsWith('《') && item.title.endsWith('》')) {
 		item.title = item.title.replace(/《|》/g, '');
 	}
-	
+
 	// 如果抓取失败，请配合油猴脚本使用：https://greasyfork.org/zh-CN/scripts/408790
 	if (pdfurl) {
 		item.attachments.push({
@@ -436,7 +436,7 @@ function scrape(doc, url, pdfurl) {
 			});
 		}
 	}
-	
+
 	item.complete();
 }
 

@@ -129,7 +129,7 @@ function scrape(doc, _url) {
 		title: "Snapshot",
 		document: doc
 	});
-	
+
 	item.complete();
 }/** BEGIN TEST CASES **/
 var testCases = [

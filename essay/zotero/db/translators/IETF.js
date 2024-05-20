@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -99,7 +99,7 @@ function scrape(doc, url, originalURL) {
 			return;
 		}
 	}
-	
+
 	if (bibURL.startsWith('/')) {
 		// relative URL resolution doesn't currently work right when inside a
 		// cross-domain processDocuments callback, so we'll do it manually
@@ -110,7 +110,7 @@ function scrape(doc, url, originalURL) {
 		// make sure the BibTeX translator understands that it's a report...
 		// weird stuff with the reportNumber happens otherwise.
 		respText = respText.replace(/^\s*@[^{]+/m, '@report');
-		
+
 		var translator = Zotero.loadTranslator("import");
 		translator.setTranslator("9cb70025-a888-4a29-a210-93ec52da40d4");
 		translator.setString(respText);
@@ -121,7 +121,7 @@ function scrape(doc, url, originalURL) {
 				item.reportType = (item.type || item.reportType)
 					.replace(/-/g, ' ');
 				delete item.type; // not sure what that's about
-				
+
 				if (item.reportType == 'Request for Comments'
 					&& item.reportNumber
 					&& !item.reportNumber.includes('RFC')) {
@@ -133,7 +133,7 @@ function scrape(doc, url, originalURL) {
 			delete item.publisher;
 			delete item.backupPublisher;
 			delete item.extra;
-			
+
 			item.url = url.replace(/[?#].*/, '');
 
 			let pdfURL = attr(doc, '.meta a[href$=".pdf"], .meta a[href*="/doc/pdf"]', 'href');

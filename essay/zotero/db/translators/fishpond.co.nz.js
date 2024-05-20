@@ -16,7 +16,7 @@
 	Fishpond.co.nz Translator- Parses Fishpond.co.nz articles and creates Zotero-based metadata
    Copyright (C) 2011 Sopheak Hean, University of Waikato, Faculty of Education
    Contact:  maxximuscool@gmail.com
-   
+
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
@@ -57,7 +57,7 @@ function scrape(doc, url) {
 	var authorObject = ZU.xpathText(doc, '//p[@id="product_author"]');
 	if (authorObject){
 		//Z.debug(authorObject)
-		//e.g. By Astrid Lindgren, Lauren Child (Illustrated by), Tina Nunally (Translated by)    
+		//e.g. By Astrid Lindgren, Lauren Child (Illustrated by), Tina Nunally (Translated by)
 		authorObject = authorObject.replace(/By\s/, '').split(",");
 		for (var i=0; i<authorObject.length; i++) {
 			var indexParenthesis = authorObject[i].indexOf('(');
@@ -83,7 +83,7 @@ function scrape(doc, url) {
 		if (dateObject.match(/Release Date:\s/)){
 			newItem.date = dateObject.replace(/Release Date:\s/, '');
 		} else {
-			
+
 			var d = new Date();
 			date ='//span[@class="arrival_time"]';
 			dateObject = doc.evaluate(date, doc, null, XPathResult.ANY_TYPE, null).iterateNext();
@@ -99,7 +99,7 @@ function scrape(doc, url) {
 		abstractObject = abstractObject.textContent;
 		newItem.abstractNote = abstractObject;
 	}
-	
+
 	var isbn = "//table/tbody/tr/td[2]/table[4]/tbody/tr[2]/td[2]";
 	var isbnObject = doc.evaluate(isbn, doc, null, XPathResult.ANY_TYPE, null).iterateNext();
 	if (isbnObject){
@@ -120,10 +120,10 @@ function doWeb(doc, url) {
 	var articles = new Array();
 	if (detectWeb(doc, url) == "multiple") {
 		var items = new Object();
-		
+
 		var titles = '//td[contains(@class, "productSearch-data")]//a[contains(@class, "fn")]';
 		var titleObject = doc.evaluate(titles, doc, null, XPathResult.ANY_TYPE, null);
-		var next_title; 
+		var next_title;
 		while ( next_title = titleObject.iterateNext()) {
 			items[next_title.href] = next_title.textContent;
 		}
@@ -136,7 +136,7 @@ function doWeb(doc, url) {
 			}
 			Zotero.Utilities.processDocuments(articles, scrape, function () {
 				Zotero.done();
-			});	
+			});
 		});
 	} else {
 		scrape(doc, url);

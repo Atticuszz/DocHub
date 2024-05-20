@@ -80,7 +80,7 @@ function scrape(doc, url) {
 		scrapeSA(doc, url);
 		return;
 	}
-	
+
 	var newItem = new Zotero.Item(preprintType);
 	if (preprintType == "report") {
 		newItem.extra = "type: article\n";

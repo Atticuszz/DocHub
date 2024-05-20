@@ -14,17 +14,17 @@
 
 /**
 	Copyright (c) 2012 Aurimas Vinckevicius
-	
+
 	This program is free software: you can redistribute it and/or
 	modify it under the terms of the GNU Affero General Public License
 	as published by the Free Software Foundation, either version 3 of
 	the License, or (at your option) any later version.
-	
+
 	This program is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 	Affero General Public License for more details.
-	
+
 	You should have received a copy of the GNU Affero General Public
 	License along with this program. If not, see
 	<http://www.gnu.org/licenses/>.
@@ -113,7 +113,7 @@ function detectWeb(doc, url) {
 	if (url.match(/\/pubs\/\d+$/)) {
 		var entry = doc.getElementById('publicationLayoutLeftSide');
 		if (!entry) return false;
-		
+
 		var source = parseSource(getFieldValue(entry, 'Source'));
 		return source ? source.type : null;
 	}
@@ -126,12 +126,12 @@ function detectWeb(doc, url) {
 function getSearchResults(doc, checkOnly) {
 	var links = ZU.xpath(doc, '//table[@class="query"]//tr[1]/following-sibling::tr/td[2]//a');
 	if (checkOnly || !links.length) return !!links.length;
-	
+
 	var items = {};
 	for (var i = 0; i < links.length; i++) {
 		items[links[i].href] = ZU.trimInternal(links[i].textContent);
 	}
-	
+
 	return items;
 }
 

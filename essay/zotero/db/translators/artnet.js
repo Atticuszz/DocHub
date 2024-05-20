@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -75,7 +75,7 @@ function doWeb(doc, url) {
 function scrape(doc, _url) {
 	let item = new Zotero.Item('artwork');
 	let json = JSON.parse(text(doc, 'script[type="application/ld+json"]'));
-	
+
 	item.title = json.name;
 	item.abstractNote = json.description;
 	item.artworkMedium = (json.artMedium || []).join(',');
@@ -83,15 +83,15 @@ function scrape(doc, _url) {
 		.map(dim => dim.name).filter(s => s && !/^0\s/.test(s)).join(' x ');
 	item.date = json.dateCreated;
 	item.url = attr(doc, 'link[rel="canonical"]', 'href');
-	
+
 	if (json.creator) {
 		item.creators.push(ZU.cleanAuthor(json.creator.name, 'artist'));
 	}
-	
+
 	if (json.contributor) {
 		item.creators.push(ZU.cleanAuthor(json.contributor.name, 'contributor'));
 	}
-	
+
 	if (json.image) {
 		item.attachments.push({
 			title: 'Artwork Image',
@@ -99,7 +99,7 @@ function scrape(doc, _url) {
 			url: json.image
 		});
 	}
-	
+
 	item.complete();
 }
 

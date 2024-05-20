@@ -32,11 +32,11 @@
 
 function detectWeb(doc,url) {
 	var xpath='//meta[@content="Patent Application"]';
-		
+
 	if (ZU.xpath(doc, xpath).length > 0) {
 		return "patent";
 	}
-			
+
 	if (url.match(/\/search\/.+&filter=PCT&/)) {
 		return "multiple";
 	}
@@ -67,7 +67,7 @@ function doWeb(doc,url)
 			for (var j in items) {
 				urls.push(j);
 			}
-			ZU.processDocuments(urls, function (myDoc) { 
+			ZU.processDocuments(urls, function (myDoc) {
 				doWeb(myDoc, myDoc.location.href); }, function () {});
 		});
 	} else {

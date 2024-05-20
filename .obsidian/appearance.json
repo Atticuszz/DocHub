@@ -6,7 +6,5 @@
   "nativeMenus": true,
   "theme": "obsidian",
   "showViewHeader": true,
-  "enabledCssSnippets": [
-    "zotero-annotations"
-  ]
+  "enabledCssSnippets": ["zotero-annotations"]
 }

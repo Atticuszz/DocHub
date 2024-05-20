@@ -105,19 +105,19 @@ function doWeb(doc, url) {
 function scrape(doc, url) {
 	var type = detectWeb(doc, url);
 	var item = new Zotero.Item(type);
-	
+
 	item.title = ZU.xpathText(doc, '//div[@id="middle-column"]//h1[div[contains(@class, "addToList")]]');
 	var subtitle = ZU.xpathText(doc, '//div[contains(@class, "artikel_untertitel_thema")]');
 	if (subtitle) {
 		item.title += ' ' + subtitle;
 	}
-	
+
 	var author = getValueToLabel(doc, "Autor") || getValueToLabel(doc, "Verfasst von");
 	if (author) {
 		author = author.replace(/(Dr|Prof|RA)\.?\s/g, '');
 		item.creators.push(ZU.cleanAuthor(author, "author"));
 	}
-	
+
 	var journal = getValueToLabel(doc, "Zeitschrift");
 	if (journal) {
 		var pos = journal.indexOf('-');
@@ -128,7 +128,7 @@ function scrape(doc, url) {
 			item.publicationTitle = journal;
 		}
 	}
-	
+
 	var ref = getValueToLabel(doc, "Referenz");
 	if (ref) {
 		var m = ref.match(/(\d{4}),\s+([\d\s\-IVX]*)\((.*)\)/);
@@ -163,7 +163,7 @@ function scrape(doc, url) {
 			}
 		}
 	}
-	
+
 	//case
 	var date = getValueToLabel(doc, "Datum");
 	if (date) {
@@ -179,7 +179,7 @@ function scrape(doc, url) {
 	if (caseName && type == "case") {
 		item.title = caseName;
 	}
-	
+
 	//bookSection
 	var booktitle = getValueToLabel(doc, "Titel");
 	if (booktitle && type == "bookSection") {
@@ -202,7 +202,7 @@ function scrape(doc, url) {
 			item.creators.push(ZU.cleanAuthor(editors[i], "editor"));
 		}
 	}
-	
+
 	//statue
 	var section = getValueToLabel(doc, "Abschnitt");
 	if (section) {
@@ -219,13 +219,13 @@ function scrape(doc, url) {
 			item.code = code;
 		}
 	}
-	
+
 	item.attachments.push({
 		title: "Snapshot",
 		document: doc
 	});
-	
-	
+
+
 	item.complete();
 }
 

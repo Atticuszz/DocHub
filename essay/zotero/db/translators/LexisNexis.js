@@ -49,7 +49,7 @@ function detectWeb(doc, url) {
 	if (url.indexOf("parent=docview") != -1 && url.indexOf("target=results_listview_resultsNav") != -1 ) {
 		return "newspaperArticle";
 	}
-	
+
 	if ((url.indexOf("contentRenderer.do?") != -1 || url.indexOf("target=results_ResultsList") != -1) && ZU.xpath(doc, '//tr[./td/input[@name="frm_tagged_documents"]]/td/a').length > 0) {
 		return "multiple";
 	}
@@ -74,9 +74,9 @@ function scrape(doc, url) {
 	var base = urlParts.slice(0,Math.min(5, urlParts.length-1)).join('/') + '/';
 
 	var permaLink = ZU.xpathText(doc,'//input[@name="bookmarkUrl"]/@value');
-	
+
 	var risb = ZU.xpathText(doc,'//input[@name="risb"]/@value');
-	
+
 	var cisb = ZU.xpathText(doc,'//input[@name="cisb"]/@value');
 	if (!cisb) {
 		cisb = "";
@@ -92,15 +92,15 @@ function scrape(doc, url) {
 	for (var i=0; i<hiddenInputs.length; i++) {
 		poststring = poststring+"&"+encodeURIComponent(hiddenInputs[i].name)+"="+encodeURIComponent(hiddenInputs[i].value);
 	};
-	
+
 	poststring += "&focusTerms=&nextSteps=0";
-	
+
 	ZU.doPost(urlIntermediateSite, poststring, function(text) {
-		
+
 		var urlRis = base+"delivery/rwBibiographicDelegate.do";
 		var disb = /<input type="hidden" name="disb" value="([^"]+)">/.exec(text);
 		var initializationPage = /<input type="hidden" name="initializationPage" value="([^"]+)">/.exec(text);
-		
+
 		var poststring2 = "screenReaderSupported=false&delRange=cur&selDocs=&exportType=dnldBiblio&disb="+encodeURIComponent(disb[1])+"&initializationPage="+encodeURIComponent(initializationPage[1]);
 		//Z.debug(poststring2);
 
@@ -117,7 +117,7 @@ function scrape(doc, url) {
 					text = text.replace(/^U3\s+-/m,"TI  -");
 					text = text.replace(/^TY\s+-\s+NEWS\s*$/mg, 'TY  - CASE');
 				}
-			} 
+			}
 			//most authors are saved in N1 tag, correct that:
 			text = text.replace(/^N1\s+-[ \f\r\t\v\u00A0\u2028\u2029]+(\w.*)$/mg, cleanAuthorFields );//the range in the regexp is actually just \s without the line break
 			//correct date format in RIS e.g. PY - 2013/05/09/
@@ -134,18 +134,18 @@ function scrape(doc, url) {
 				}
 			});
 			Z.debug(text);
-			
+
 			var trans = Zotero.loadTranslator('import');
 			trans.setTranslator('32d59d2d-b65a-4da4-b0a3-bdd3cfb979e7');//https://github.com/zotero/translators/blob/master/RIS.js
 			trans.setString(text);
 
 			trans.setHandler('itemDone', function (obj, item) {
-				
+
 				item.url = permaLink;
-				
+
 				//for debugging TODO: delete later
 				item.notes.push({note:risData});
-				
+
 				item.attachments.push( {
 					url: url.replace("target=results_listview_resultsNav","target=results_DocumentContent"),
 					title: "LexisNexis Entry",
@@ -153,9 +153,9 @@ function scrape(doc, url) {
 				} );
 				item.complete();
 			});
-		
+
 			trans.translate();
-			
+
 		});
 	});
 }
@@ -179,10 +179,10 @@ function cleanAuthorFields(m, authorStr) {//see e.g. Test Cases 2,3
 			}
 		}
 	}
-	
+
 	//here: One of the following two cases holds:
 	//(i) authorStr contains semicolon(s), authors is the array of its different parts, fixName = false
-	//(ii) authorStr contains no semicolon but more than one comma, authors is the array of its different parts, fixName = true	
+	//(ii) authorStr contains no semicolon but more than one comma, authors is the array of its different parts, fixName = true
 	var str = '';
 	for(var i=0; i<authors.length; i++) {
 		var author = ZU.trimInternal(authors[i]);
@@ -199,14 +199,14 @@ function cleanAuthorFields(m, authorStr) {//see e.g. Test Cases 2,3
 
 function doWeb(doc, url) {
 	if (detectWeb(doc, url) == "multiple") {
-		
+
 		var items = new Object();
 		var articles = new Array();
-		
+
 		//if the detectWeb is not clear on the iframe, we might need
 		//tempDoc instead of doc:
 		//var tempDoc = doc.defaultView.parent.document;
-		
+
 		var rows = ZU.xpath(doc, '//tr[./td/input[@name="frm_tagged_documents"]]/td/a');//exclude weblinks
 		Z.debug("rows.length = " + rows.length);
 		for(var i=0; i<rows.length; i++) {
@@ -226,7 +226,7 @@ function doWeb(doc, url) {
 	} else {
 		scrape(doc, url);
 	}
-	
+
 }
 
 

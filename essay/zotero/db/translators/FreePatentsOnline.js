@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2018 Philipp Zumstein
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -81,7 +81,7 @@ function scrape(doc, url, pdfUrl = null) {
 	}
 
 	var newItem = new Zotero.Item("patent");
-	
+
 	var fieldtitles = ZU.xpath(doc, '//div[@class="disp_doc2"]/div[@class="disp_elm_title"]');
 	for (let i=0; i<fieldtitles.length; i++) {
 		let label = fieldtitles[i].textContent.replace(/:$\s*/, '').toLowerCase();
@@ -124,7 +124,7 @@ function scrape(doc, url, pdfUrl = null) {
 						newItem.creators.push(ZU.cleanAuthor(name, "attorneyAgent", true));
 					} else {
 						newItem.creators.push({
-							lastName: name, 
+							lastName: name,
 							creatorType: "attorneyAgent",
 							fieldMode: 1
 						});
@@ -147,13 +147,13 @@ function scrape(doc, url, pdfUrl = null) {
 	}
 
 	newItem.url = url;
-	
-	
+
+
 	newItem.attachments.push({
 		document: doc,
 		title: "Snapshot"
 	});
-	
+
 	if (pdfUrl) {
 		newItem.attachments.push({
 			url: pdfUrl,

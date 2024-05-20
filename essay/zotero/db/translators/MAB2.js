@@ -35,14 +35,14 @@ function clean(value) {
 	value = value.replace(/<<+/g, '');
 	value = value.replace(/>>+/g, '');
 	value = value.replace(/ +/g, ' ');
-	
+
 	var char1 = value[0];
 	var char2 = value[value.length-1];
 	if ((char1 == "[" && char2 == "]") || (char1 == "(" && char2 == ")")) {
 		// chop of extraneous characters
 		return value.substr(1, value.length-2);
 	}
-	
+
 	return value;
 }
 
@@ -80,8 +80,8 @@ function author(author, type, useComma) {
 	return Zotero.Utilities.cleanAuthor(author, type, useComma);
 }
 
-// MAB2 author extraction 
-// evaluates subfield $b and sets authType 
+// MAB2 author extraction
+// evaluates subfield $b and sets authType
 function authorMab(author, authType, useComma) {
 		if (!authType) var authType='author';
 		authType = authType.replace('[Hrsg.]', 'editor');
@@ -97,7 +97,7 @@ var record = function() {
 	this.directory = new Object();
 	this.leader = "";
 	this.content = "";
-	
+
 	// defaults
 	this.indicatorLength = 2;
 	this.subfieldCodeLength = 2;
@@ -109,15 +109,15 @@ record.prototype.importBinary = function(record) {
 	var directory = record.substr(0, record.indexOf(fieldTerminator));
 	this.leader = directory.substr(0, 24);
 	var directory = directory.substr(24);
-	
+
 	// get various data
 	this.indicatorLength = parseInt(this.leader[10], 10);
 	this.subfieldCodeLength = parseInt(this.leader[11], 10);
 	var baseAddress = parseInt(this.leader.substr(12, 5), 10);
-	
+
 	// get record data
 	var contentTmp = record.substr(baseAddress);
-	
+
 	// MARC wants one-byte characters, so when we have multi-byte UTF-8
 	// sequences, add null characters so that the directory shows up right. we
 	// can strip the nulls later.
@@ -132,13 +132,13 @@ record.prototype.importBinary = function(record) {
 			this.content += "\x00";
 		}
 	}
-	
+
 	// read directory
 	for (var i=0; i<directory.length; i+=12) {
 		var tag = parseInt(directory.substr(i, 3), 10);
 		var fieldLength = parseInt(directory.substr(i+3, 4), 10);
 		var fieldPosition = parseInt(directory.substr(i+7, 5), 10);
-		
+
 		if (!this.directory[tag]) {
 			this.directory[tag] = new Array();
 		}
@@ -155,16 +155,16 @@ record.prototype.addField = function(field, indicator, value) {
 	} else if (indicator.length != this.indicatorLength) {
 		indicator = Zotero.Utilities.lpad(indicator, " ", this.indicatorLength);
 	}
-	
+
 	// add terminator
 	value = indicator+value+fieldTerminator;
-	
+
 	// add field to directory
 	if (!this.directory[field]) {
 		this.directory[field] = new Array();
 	}
 	this.directory[field].push([this.content.length, value.length]);
-	
+
 	// add field to record
 	this.content += value;
 }
@@ -173,22 +173,22 @@ record.prototype.addField = function(field, indicator, value) {
 record.prototype.getField = function(field) {
 	field = parseInt(field, 10);
 	var fields = new Array();
-	
+
 	// make sure fields exist
 	if (!this.directory[field]) {
 		return fields;
 	}
-	
+
 	// get fields
 	for (var i in this.directory[field]) {
 		var location = this.directory[field][i];
-		
+
 		// add to array, replacing null characters
 		fields.push([this.content.substr(location[0], this.indicatorLength),
 					 this.content.substr(location[0]+this.indicatorLength,
 						 location[1]-this.indicatorLength-1).replace(/\x00/g, "")]);
 	}
-	
+
 	return fields;
 }
 
@@ -196,10 +196,10 @@ record.prototype.getField = function(field) {
 record.prototype.getFieldSubfields = function(tag) { // returns a two-dimensional array of values
 	var fields = this.getField(tag);
 	var returnFields = new Array();
-	
+
 	for (var i in fields) {
 		returnFields[i] = new Object();
-		
+
 		var subfields = fields[i][1].split(subfieldDelimiter);
 		if (subfields.length == 1) {
 			returnFields[i]["?"] = fields[i][1];
@@ -214,7 +214,7 @@ record.prototype.getFieldSubfields = function(tag) { // returns a two-dimensiona
 			}
 		}
 	}
-	
+
 	return returnFields;
 }
 
@@ -237,11 +237,11 @@ record.prototype._associateDBField = function(item, fieldNo, part, fieldName, ex
 			}
 			if (value) {
 				value = clean(value);
-				
+
 				if (execMe) {
 					value = execMe(value, arg1, arg2);
 				}
-				
+
 				if (fieldName == "creator") {
 					item.creators.push(value);
 				} else {
@@ -283,7 +283,7 @@ record.prototype.translate = function(item) {
 	} else {
 		item.itemType = "book";
 	}
-	
+
 	// Extract MAB2 fields
 	// FUB Added language, edition, pages, url, edition, series, ISBN, url
 	for (var i = 100; i <= 196; i++) {
@@ -301,13 +301,13 @@ record.prototype.translate = function(item) {
 	}
 
 	// if (this.getFieldSubfields("800")[0]) this._associateDBField(item, "800", "a", "creator", author, "author", true);
-	if (!item.language) this._associateDBField(item, "037b", "a", "language");	
+	if (!item.language) this._associateDBField(item, "037b", "a", "language");
 	this._associateDBField(item, "200", "a", "creator", corpAuthor);
 	if (!item.title) this._associateDBField(item, "331", "a", "title");
 	this._associateDBField(item, "304", "a", "extra");
 	if (this.getFieldSubfields("335")[0]) {
 		item.title = item.title + ": " + this.getFieldSubfields("335")[0]['a'];
-	}	
+	}
 	if (!item.edition) this._associateDBField(item, "403", "a", "edition");
 	if (!item.place) this._associateDBField(item, "410", "a", "place");
 	if (!item.publisher) this._associateDBField(item, "412", "a", "publisher");
@@ -320,18 +320,18 @@ record.prototype.translate = function(item) {
 	if (!item.edition) this._associateDBField(item, "523", "a", "edition");
 	if (!item.ISBN) this._associateDBField(item, "540", "a", "ISBN", pullISBN);
 	if (!item.date) this._associateDBField(item, "595", "a", "date", pullNumber);
-	if (!item.url) this._associateDBField(item, "655e", "u", "url");	
+	if (!item.url) this._associateDBField(item, "655e", "u", "url");
 
 	// Extract German subject headings (RSWK) as tags
 	this._associateTags(item, "902", "acfgpkstz");
-	this._associateTags(item, "907", "acfgpkstz");	
-	this._associateTags(item, "912", "acfgpkstz");	
-	this._associateTags(item, "917", "acfgpkstz");	
-	this._associateTags(item, "922", "acfgpkstz");	
-	this._associateTags(item, "927", "acfgpkstz");	
-	this._associateTags(item, "932", "acfgpkstz");	
-	this._associateTags(item, "937", "acfgpkstz");	
-	this._associateTags(item, "942", "acfgpkstz");	
+	this._associateTags(item, "907", "acfgpkstz");
+	this._associateTags(item, "912", "acfgpkstz");
+	this._associateTags(item, "917", "acfgpkstz");
+	this._associateTags(item, "922", "acfgpkstz");
+	this._associateTags(item, "927", "acfgpkstz");
+	this._associateTags(item, "932", "acfgpkstz");
+	this._associateTags(item, "937", "acfgpkstz");
+	this._associateTags(item, "942", "acfgpkstz");
 
 
 }
@@ -339,24 +339,24 @@ record.prototype.translate = function(item) {
 function doImport() {
 	var text;
 	var holdOver = "";	// part of the text held over from the last loop
-	
+
 	Zotero.setCharacterSet("utf-8");
-	
+
 	while (text = Zotero.read(4096)) {	// read in 4096 byte increments
 		var records = text.split("\x1D");
-		
+
 		if (records.length > 1) {
 			records[0] = holdOver + records[0];
 			holdOver = records.pop(); // skip last record, since it's not done
-			
+
 			for (var i in records) {
 				var newItem = new Zotero.Item();
-				
+
 				// create new record
-				var rec = new record();	
+				var rec = new record();
 				rec.importBinary(records[i]);
 				rec.translate(newItem);
-				
+
 				newItem.complete();
 			}
 		} else {

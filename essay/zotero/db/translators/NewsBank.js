@@ -89,13 +89,13 @@ function itemFromRIS(doc, url, risText) {
 				.replace(/\bpage\b\s*/gi, '')
 				.replace(/,(\S)/g, ', $1');
 		}
-		
+
 		let openURL = attr(doc, '.action-link--bookmark', 'onclick')
 			.match(/f_openurl=([^&'"]+)/);
 		item.url = text(doc, '.actions-bar__urltext')
 			|| (openURL && decodeURIComponent(openURL[1]))
 			|| url;
-		
+
 		let pdfURL = attr(doc, '.action-link--pdf', 'href');
 		if (pdfURL) {
 			item.attachments.push({

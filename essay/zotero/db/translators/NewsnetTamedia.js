@@ -88,8 +88,8 @@ function scrape(doc, url) {
 	//translator.setDocument(doc);
 
 	translator.setHandler('itemDone', function (obj, item) {
-		
-		
+
+
 		var authors = ZU.xpath(doc, '//div[@id="mainColLeft"]//div[contains(@class, "storyInfo")]/span[contains(@class, "author")]/a[1]');
 		if (!authors || authors.length===0) authors = ZU.xpath(doc, '//div[@id="mainColLeft"]//div[contains(@class, "storyInfo")]/span[contains(@class, "author")]');
 		if (!authors || authors.length===0) authors = ZU.xpath(doc, '(//section[contains(@class, "article-info")])[1]//a[contains(@class, "article-author")]');
@@ -100,20 +100,20 @@ function scrape(doc, url) {
 				item.creators.push(ZU.cleanAuthor(author, "author"));
 			}
 		}
-		
+
 		var date = ZU.xpathText(doc, '//div[@id="mainColLeft"]//div[contains(@class, "storyInfo")]/time/span') ||
 			ZU.xpathText(doc, '//div[@id="mainColLeft"]//div[contains(@class, "storyInfo")]/time');
 		if (date) {
 			item.date = ZU.strToISO(date);
 		}
-		
+
 		item.section = ZU.xpathText(doc, '//div[@id="mainNav"]/ul/li/a[contains(@class, "active")]');
-		
+
 		var newspaperName = ZU.xpathText(doc, '(//img[@id="mainLogo"]/@alt)[1]');
 		if (newspaperName) {
 			item.publicationTitle = newspaperName;
 		}
-		
+
 		if (url.includes("24heures.ch")
 			|| url.includes("lematin.ch")
 			|| url.includes("tdg.ch")
@@ -122,20 +122,20 @@ function scrape(doc, url) {
 		} else {
 			item.language = "de";
 		}
-		
+
 		if (item.url && item.url.slice(0,2) == "//") {
 			item.url = "https:" + item.url;
 		}
-		
+
 		item.ISSN = issnMapping(url);
-		
+
 		var tags = ZU.xpath(doc, '//span[contains(@class, "tagWrapper")]');
 		if (tags) {
 			for (let i=0; i<tags.length; i++) {
 				item.tags.push(tags[i].textContent.trim());
 			}
 		}
-		
+
 		item.complete();
 	});
 

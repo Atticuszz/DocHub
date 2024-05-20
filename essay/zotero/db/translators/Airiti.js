@@ -32,12 +32,12 @@ async function doWeb(doc, url) {
 			// Maybe we shouldn't. Looks more like a catalog.
 			item.url = url;
 		}
-		
+
 		item.attachments.push({
 			title: 'Snapshot',
 			document: doc
 		});
-		
+
 		item.complete();
 	});
 }
@@ -64,15 +64,15 @@ async function scrape(docIDs, itemDoneHandler) {
 			// Sometimes, English name is provided as well in parentheses
 			for (var i=0, n=item.creators.length; i<n; i++) {
 				var c = item.creators[i];
-				
+
 				var zhChar = /[\u4E00-\u9FFF]/;
 				if (!zhChar.test(c.firstName) && !zhChar.test(c.lastName)) continue;
-				
+
 				delete c.fieldMode;
-				
+
 				var name = (c.firstName || "") + (c.lastName || "");
 				var trimAt = name.indexOf('(');
-				
+
 				if (trimAt == 0) {
 					c.lastName = name;
 					delete c.firstName;
@@ -81,9 +81,9 @@ async function scrape(docIDs, itemDoneHandler) {
 				} else if (trimAt != -1) {
 					name = name.substr(0, trimAt);
 				}
-				
+
 				name = name.trim();
-				
+
 				c.lastName = name.substr(0, 1);
 				if (name.length > 1) {
 					c.firstName = name.substr(1, name.length);
@@ -92,11 +92,11 @@ async function scrape(docIDs, itemDoneHandler) {
 					c.fieldMode = 1;
 				}
 			}
-			
+
 			// language is sometimes written in chinese
 			// use "zh", since I think dialect actually varies in this catalog
 			item.language = "zh";
-			
+
 			// search- and web-specific itemDone handlers
 			if (itemDoneHandler) itemDoneHandler(item);
 			else item.complete();

@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -92,19 +92,19 @@ function doWeb(doc, url) {
 
 function scrape(doc, url) {
 	let item = new Zotero.Item(detectWeb(doc, url));
-	
+
 	item.title = text(doc, '[itemprop="name"]');
 	item.abstractNote = text(doc, '[itemprop="description"]');
 	item.date = ZU.strToISO(text(doc, '[itemprop="dateCreated"]'));
-	
+
 	// sometimes the last language line will be the ISO code!
 	let languages = text(doc, '[itemprop="inLanguage"]').split(/\s/);
 	item.language = languages[languages.length - 1];
-	
+
 	item.url = attr(doc, 'link[rel="canonical"]', 'href') || url;
 	item.archive = text(doc, '[itemprop="isPartOf"]');
 	item.libraryCatalog = 'Calisphere';
-	
+
 	let authors = innerText(doc, '[itemprop="creator"]');
 	if (authors) {
 		for (let author of authors.split('\n')) {
@@ -116,7 +116,7 @@ function scrape(doc, url) {
 				|| item.itemType == 'audioRecording') {
 				type = 'contributor'; // hard to tell from the page
 			}
-			
+
 			item.creators.push(ZU.cleanAuthor(
 				author,
 				type,
@@ -124,11 +124,11 @@ function scrape(doc, url) {
 			));
 		}
 	}
-	
+
 	item.tags = innerText(doc, '[itemprop="about"]')
 		.split('\n')
 		.map(tag => ({ tag }));
-	
+
 	if (doc.querySelector('a.obj__link')) {
 		item.attachments.push({
 			title: 'Source',
@@ -136,7 +136,7 @@ function scrape(doc, url) {
 			url: attr(doc, 'a.obj__link', 'href')
 		});
 	}
-	
+
 	item.complete();
 }
 

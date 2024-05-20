@@ -15,20 +15,20 @@
 /*
 	***** BEGIN LICENSE BLOCK *****
 	This file is part of Zotero.
-	
+
 	Zotero is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version.
-	
+
 	Zotero is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 	GNU Affero General Public License for more details.
-	
+
 	You should have received a copy of the GNU Affero General Public License
 	along with Zotero.  If not, see <http://www.gnu.org/licenses/>.
-	
+
 	***** END LICENSE BLOCK *****
 */
 
@@ -65,7 +65,7 @@ function detectWeb(doc) {
 	if (getSearchResults(doc).length) {
 		return 'multiple';
 	}
-	
+
 	var contentDiv = doc.getElementsByClassName('EXLFullResultsHeader');
 	if (!contentDiv.length) contentDiv = doc.getElementsByClassName('EXLFullDisplay');
 	if (!contentDiv.length) contentDiv = doc.getElementsByClassName('EXLFullView');
@@ -86,16 +86,16 @@ function doWeb(doc, url) {
 					break;
 				}
 			}
-			
+
 			if (!link || !title || !(title = ZU.trimInternal(title))) continue;
-			
+
 			items[link.href] = title;
 			itemIDs[link.href] = { id: i, docID: getDocID(link.href) };
 		}
-		
+
 		Z.selectItems(items, function (selectedItems) {
 			if (!selectedItems) return true;
-			
+
 			var urls = [];
 			for (var i in selectedItems) {
 				urls.push({ url: i, id: itemIDs[i].id, docID: itemIDs[i].docID });
@@ -143,23 +143,23 @@ var PNXUrlGenerator = new function () {
 			return url[0] + 'showPnx=true';
 		}
 	];
-	
+
 	function getUrlWithId(url, id) {
 		url = url.match(/(https?:\/\/[^?#]+\/)[^?#]+\/[^/]*(?:[?#]|$)/);
 		if (!url) return false;
 		return url[1] + 'showPNX.jsp?id=' + id;
 	}
-	
+
 	this.currentFunction = 0;
 	this.confirmed = false;
-	
+
 	this.getUrl = function (data) {
 		var fun = functions[this.currentFunction];
 		if (!fun) return false;
-		
+
 		return fun(data);
 	};
-	
+
 	this.nextFunction = function () {
 		if (!this.confirmed && this.currentFunction < functions.length) {
 			Z.debug("Function " + this.currentFunction + " did not work.");
@@ -175,7 +175,7 @@ var PNXUrlGenerator = new function () {
 // retrieve PNX records for given items sequentially
 function fetchPNX(itemData) {
 	if (!itemData.length) return; // do this until we run out of URLs
-	
+
 	var data = itemData.shift();
 	var url = PNXUrlGenerator.getUrl(data); // format URL if still possible
 	if (!url) {
@@ -188,11 +188,11 @@ function fetchPNX(itemData) {
 			Z.debug("Could not determine PNX url from " + data.url);
 			PNXUrlGenerator.currentFunction = 0;
 		}
-		
+
 		fetchPNX(itemData);
 		return;
 	}
-	
+
 	var gotPNX = false;
 	Z.debug("Trying " + url);
 	ZU.doGet(url,
@@ -216,7 +216,7 @@ function fetchPNX(itemData) {
 				// otherwise, we move on
 				itemData.unshift(data);
 			}
-			
+
 			fetchPNX(itemData);
 		},
 		null,

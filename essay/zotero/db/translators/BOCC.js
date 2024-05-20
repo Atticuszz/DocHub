@@ -53,7 +53,7 @@ function getAuthors(newItem, itemsAutors) {
 	} else {
 	  newItem.creators.push(Zotero.Utilities.cleanAuthor(author, "author"));
 	}
-  } 
+  }
 }
 // Standard Zotero translator entry point
 function doWeb(doc, url) {
@@ -76,7 +76,7 @@ function doWeb(doc, url) {
 		// accessible with .iterateNext() method
 		var content = doc.evaluate("//table[@class='ag']/tbody/tr[1]/td[@class='agenda']", doc, null, XPathResult.ANY_TYPE, null);
 		// All articles are in same <td>
-		// Get the first <td> data 
+		// Get the first <td> data
 		bloco = content.iterateNext().innerHTML;
 		lines = bloco.split('<br><br>');
 		//Zotero.debug('Artigo===>'+lines[0]+'<===');
@@ -92,7 +92,7 @@ function doWeb(doc, url) {
 			var tematicasnums =  doc.evaluate('//a[@class="tematica"]/@href', doc, null, XPathResult.ANY_TYPE, null);
 			var tematicasname;
 			var tematicasnames =  doc.evaluate('//a[@class="tematica"]', doc, null, XPathResult.ANY_TYPE, null);
-		
+
 			var tematicas = new Object();
 			while (tematicanum = tematicasnums.iterateNext()) {
 				tematicanum = tematicanum.textContent;
@@ -100,9 +100,9 @@ function doWeb(doc, url) {
 				tematicanum = tematicanum.replace('=','');
 				tematicaname = tematicasnames.iterateNext().textContent;
 				tematicas[tematicanum] = tematicaname;
-			}		
+			}
 			////////////////////////////////////////////
-			// Get current tematica 
+			// Get current tematica
 			var tagsContent = new Array();
 
 
@@ -124,8 +124,8 @@ function doWeb(doc, url) {
 			}
 			//for (var i in tagsContent) {
 			//	Zotero.debug('Tag ===>'+i+'='+tagsContent[i]+'<===');
-			//}		
-		} // if (isTematica) 
+			//}
+		} // if (isTematica)
 		/////////////////////////////////////////////
 		var title;
 		var docurl;
@@ -156,19 +156,19 @@ function doWeb(doc, url) {
 		}
 		//Zotero.debug('URL===>'+docurl[1]+'<===');
 		/* Zotero.selectItems()
-		 * Presents items to select in the select box. 
+		 * Presents items to select in the select box.
 		 * Assumes window.arguments[0].dataIn is an object with
 		 * URLs as keys and descriptions as values
 		 */
-		 
-		
+
+
 		Zotero.selectItems(items, function (items) {
 			if (!items) {
 				return true;
 			}
 			var filetitle;
 			var filemime;
-			for (var item in items) {			
+			for (var item in items) {
 				var newItem = new Zotero.Item("journalArticle");
 				newItem.title = items[item];
 				newItem.date = itemDate[item];
@@ -194,7 +194,7 @@ function doWeb(doc, url) {
 				);
 				temp = itemsAutors[item];
 				for (var i in temp) {
-					newItem.creators.push(Zotero.Utilities.cleanAuthor(temp[i], "author"));			
+					newItem.creators.push(Zotero.Utilities.cleanAuthor(temp[i], "author"));
 				}
 				if (isTematica) {
 					for (var i = 0; i < tagsContent.length; i++) {

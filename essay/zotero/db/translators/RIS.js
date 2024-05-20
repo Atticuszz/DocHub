@@ -597,14 +597,14 @@ TagMapper.prototype.getField = function (itemType, tag) {
  */
 TagMapper.prototype.reverseLookup = function (itemType, zField) {
 	if (!this.reverseCache[itemType]) this.reverseCache[itemType] = {};
-	
+
 	if (this.reverseCache[itemType][zField] !== undefined) {
 		return this.reverseCache[itemType][zField];
 	}
-	
+
 	for (let i = 0, n = this.mapList.length; i < n; i++) {
 		var risTag;
-	
+
 		for (risTag in this.mapList[i]) {
 			var typeMap = this.mapList[i][risTag];
 			if (typeMap == zField) {
@@ -631,7 +631,7 @@ TagMapper.prototype.reverseLookup = function (itemType, zField) {
 							break;
 						}
 					}
-					
+
 					if (!preventDefault) {
 						this.reverseCache[itemType][zField] = risTag;
 						return risTag;
@@ -676,7 +676,7 @@ var RISReader = new function () {
 		var tagValue,
 			entry = []; //maintain tag order
 		entry.tags = {}; //tag list for convenience
-		
+
 		// eslint-disable-next-line no-cond-assign
 		while (tagValue = (_tagValueBuffer.length && _tagValueBuffer.pop()) || _getTagValue()) {
 			if (tagValue.tag == 'TY' && entry.length) {
@@ -684,29 +684,29 @@ var RISReader = new function () {
 				_tagValueBuffer.push(tagValue);
 				return entry;
 			}
-			
+
 			if (tagValue.tag == 'ER') {
 				if (!entry.length) continue; //weird, but keep going and ignore ER outside of entry
 				return entry;
 			}
-			
+
 			entry.push(tagValue);
 			//also add to the "tags" list for convenient access
 			if (!entry.tags[tagValue.tag]) entry.tags[tagValue.tag] = [];
 			entry.tags[tagValue.tag].push(tagValue);
 		}
-		
+
 		if (entry.length) return entry;
 		return false;
 	};
-	
+
 	var risFormat = /^([A-Z][A-Z0-9]) {1,2}-(?: (.*))?$/, //allow empty entries
 		//list of tags for which we preserve newlines
 		preserveNewLines = ['KW', 'L1', 'L2', 'L3'], //these could use newline as separator
 		//keep track of maximum line length so we can make a better call on whether
 		//something should be on a new line or not
 		_maxLineLength = 0;
-	
+
 	/**
 	 * private
 	 * Get the next RIS tag-value pair
@@ -721,7 +721,7 @@ var RISReader = new function () {
 		var line, tagValue, temp, lastLineLength = 0;
 		while ((line = _nextLine()) !== false) { //could be reading empty lines
 			temp = line.match(risFormat);
-			
+
 			if (!temp && !tagValue) {
 				//doesn't match RIS format and we're not processing a tag-value pair,
 				//so this is not a multi-line tag-value pair
@@ -730,16 +730,16 @@ var RISReader = new function () {
 				}
 				continue;
 			}
-			
+
 			if (line.length > _maxLineLength) _maxLineLength = line.length;
-			
+
 			if (temp && tagValue) {
 				//if we are already processing a tag-value pair, then this is the next pair
 				//store this line for later and return
 				_lineBuffer.push(line);
 				return tagValue;
 			}
-			
+
 			if (temp) {
 				//new tag-value pair
 				tagValue = {
@@ -747,7 +747,7 @@ var RISReader = new function () {
 					value: temp[2],
 					raw: line
 				};
-				
+
 				if (tagValue.value === undefined) tagValue.value = '';
 			}
 			else {
@@ -768,29 +768,29 @@ var RISReader = new function () {
 					cleanLine = "\n" + cleanLine;
 					newLineAdded = true;
 				}
-				
+
 				//don't remove new lines from keywords or attachments
 				if (!newLineAdded && preserveNewLines.includes(tagValue.tag)) {
 					cleanLine = "\n" + cleanLine;
 					newLineAdded = true;
 				}
-				
+
 				//check if we need to add a space before concatenating
 				if (!newLineAdded && tagValue.value.charAt(tagValue.value.length - 1) != ' ') {
 					cleanLine = ' ' + cleanLine;
 				}
-	
+
 				tagValue.raw += "\n" + line;
 				tagValue.value += cleanLine;
 			}
-			
+
 			lastLineLength = line.length;
 		}
-		
+
 		if (tagValue) return tagValue;
 		return false;
 	}
-	
+
 	var _lineBuffer = [];
 
 	/**
@@ -835,11 +835,11 @@ var TagCleaner = {
 	 */
 	changeTag: function (entry, at, toTags) {
 		var source = entry[at], byTag = entry.tags[source.tag];
-		
+
 		//clean up "tags" list
 		byTag.splice(byTag.indexOf(source), 1);
 		if (!byTag.length) delete entry.tags[source.tag];
-		
+
 		if (!toTags || !toTags.length) {
 			//then we just remove
 			entry.splice(at, 1);
@@ -916,7 +916,7 @@ var ProCiteCleaner = new function () {
 		Histroy: 'history', // yes, it's misspelled in their export filter
 		Size: 'artworkSize'
 	};
-	
+
 	var tagValueSplit = /([A-Za-z,\s]+)\s*:\s*([\s\S]*)/; //ProCite version
 	/**
 	 * public
@@ -936,8 +936,8 @@ var ProCiteCleaner = new function () {
 				_changeAllTags(entry, 'VL', 'ET');
 			}
 		}
-		
-		
+
+
 		var extentOfWork, packagingMethod;
 		//go through all the notes
 		for (let i = 0; i < entry.length; i++) {
@@ -946,7 +946,7 @@ var ProCiteCleaner = new function () {
 				|| !(m = entry[i].value.trim().match(tagValueSplit))) {
 				continue;
 			}
-			
+
 			switch (m[1]) {
 				case 'Author, Subsidiary':
 				case 'Author, Monographic':
@@ -996,9 +996,9 @@ var ProCiteCleaner = new function () {
 						}
 						if (!(risTags.includes(risTag))) risTags.push(risTag); //don't add same role
 					}
-					
+
 					if (fail || !risTags.length) continue;
-					
+
 					// Z.debug('RIS: ' + m[0]);
 					// Z.debug('RIS: Mapping preceeding authors to ' + risTags.join(', '));
 					let added = this._remapPreceedingTags(entry, i, ['A1', 'A2', 'A3'], risTags);
@@ -1044,7 +1044,7 @@ var ProCiteCleaner = new function () {
 					}
 			}
 		}
-		
+
 		if (extentOfWork) {
 			let extent = extentOfWork.value.match(tagValueSplit)[2],
 				m = extent.match(/^(\d+)\s*(pages?|p(?:p|gs?)?|vols?|volumes?)\.?$/i), //e.g. 2 vols.
@@ -1062,7 +1062,7 @@ var ProCiteCleaner = new function () {
 				extent = extent.trim();
 				deletePackagingMethod = true; //we can delete it since we used it
 			}
-			
+
 			if (units) {
 				risTag = importFields.reverseLookup(item.itemType, units);
 				if (risTag) {
@@ -1074,12 +1074,12 @@ var ProCiteCleaner = new function () {
 				}
 			}
 		}
-		
+
 		//the rest we only fix if we're sure this is ProCite
 		if (!this.proCiteMode) return;
-		
+
 		ty = entry.tags.TY && entry.tags.TY[0].value;
-		
+
 		//fix titles in book sections.
 		//essentially, make sure there are no duplicate T tags and put them in order
 		if (ty == 'CHAP') {
@@ -1092,32 +1092,32 @@ var ProCiteCleaner = new function () {
 				}
 			}
 		}
-		
+
 		if (ty == 'BOOK' && entry.tags.IS && entry.tags.IS.length) {
 			_changeAllTags(entry, 'IS', 'VL');
 		}
-		
+
 		if ((ty == 'CHAP' || ty == 'BOOK') && entry.tags.VL && entry.tags.VL.length > 1) {
 			// We try to fix this ahead of time, but we can't always
 			// 2 of these entries would indicate Edition and then Volume (maybe)
 			this._changeTag(entry, entry.indexOf(entry.tags.VL[0]), ['ET']);
 		}
-		
+
 		if (ty == 'COMP' && entry.tags.IS) {
 			_changeAllTags(entry, 'IS', 'ET');
 		}
-		
+
 		if (ty == 'BILL') {
 			if (entry.tags.CY) _changeAllTags(entry, 'CY', 'T2');
 			if (entry.tags.VL) _changeAllTags(entry, 'VL', 'M1');
 			if (entry.tags.SP) _changeAllTags(entry, 'SP', 'SE');
 		}
-		
+
 		if (ty == 'ART') {
 			if (entry.tags.M1) _changeAllTags(entry, 'M1', 'M3');
 		}
 	};
-	
+
 	/**
 	 * private
 	 * Normalize author role strings
@@ -1131,7 +1131,7 @@ var ProCiteCleaner = new function () {
 			//split multiple types
 			.split(/\s*(?:,|and)\s*/);
 	}
-	
+
 	/**
 	 * private
 	 * Formats author name as lastName, firstName
@@ -1144,7 +1144,7 @@ var ProCiteCleaner = new function () {
 		author = author.trim();
 		return author.substr(author.lastIndexOf(' ') + 1) + ', ' + author.substring(0, author.lastIndexOf(' '));
 	}
-		
+
 	/**
 	 * private
 	 * Change all appearances of tag to another tag
@@ -1155,28 +1155,28 @@ var ProCiteCleaner = new function () {
 	 */
 	function _changeAllTags(entry, from, to) {
 		if (!from || !to) return;
-		
+
 		for (let i = 0; i < entry.tags[from].length; i++) {
 			entry.tags[from][i].tag = to;
 		}
-		
+
 		entry.tags[to] = entry.tags[from];
 		delete entry.tags[from];
 	}
-	
+
 	/**
 	 * public
 	 * Wrapper for TagCleaner.changeTag
 	 */
 	this._changeTag = function (entry, at, toTags) {
 		TagCleaner.changeTag(entry, at, toTags);
-		
+
 		//if we're changing tags, then we're sure this is ProCite format
 		//it's not the most intuitive place for this,
 		//but it makes sure that we don't miss setting this somewhere
 		this.proCiteMode = true;
 	};
-	
+
 	/**
 	 * public
 	 * Changes RIS tags for preceeding tag-value pairs until we hit something that
@@ -1198,18 +1198,18 @@ var ProCiteCleaner = new function () {
 				//different from the tags we changed previously. Don't continue
 				return added ? added : true;
 			}
-			
+
 			tag = entry[i].tag;
 			if (!(allowedTags.includes(tag))) {
 				//not allowed to remap this tag
 				// Z.debug('RIS: nothing to remap');
 				return false;
 			}
-			
+
 			this._changeTag(entry, i, risTags); //don't need to adjust i, since we're traversing backwards
 			added += risTags.length - 1;
 		}
-		
+
 		//we should not end up at the begining of entry,
 		//since we will probably never be replacing TY, but just in case
 		if (tag) return added ? added : true;
@@ -1247,22 +1247,22 @@ var CitaviCleaner = new function () {
 		// numbers for items. We can only store one, so we will transform the first
 		// set of H1+H2 tags to DP+CN tags
 		if (entry.tags.CN || entry.tags.DP) return; // DP or CN already in use, so do nothing
-		
+
 		if (!entry.tags.H1 && !entry.tags.H2) return;
-		
+
 		if (!entry.tags.H1) {
 			// Only have a call number (maybe multiple, so take the first)
 			let at = entry.indexOf(entry.tags.H2[0]);
 			TagCleaner.changeTag(entry, at, ['CN']);
 			return;
 		}
-		
+
 		if (!entry.tags.H1) {
 			// Only have a library
 			let at = entry.indexOf(entry.tags.H1[0]);
 			TagCleaner.changeTag(entry, at, ['DP']);
 		}
-		
+
 		// We have pairs, so find the first set and change it
 		for (let i = 0; i < entry.length - 1; i++) {
 			if (entry[i].tag == 'H1' && entry[i + 1].tag == 'H2') {
@@ -1282,14 +1282,14 @@ function processTag(item, tagValue, risEntry, allowDeprecated) {
 	var tag = tagValue.tag;
 	var value = tagValue.value.trim();
 	var rawLine = tagValue.raw;
-	
+
 	//drop empty fields
 	if (value === "") return false;
-	
+
 	if (!allowDeprecated && importFields.isDeprecated(tag)) {
 		return false;
 	}
-	
+
 	var zField = importFields.getField(item.itemType, tag);
 	if (!zField) {
 		// Z.debug("Unknown field " + tag + " in entry :\n" + rawLine);
@@ -1450,7 +1450,7 @@ function processTag(item, tagValue, risEntry, allowDeprecated) {
 					//support for EndNote's relative paths
 					url = values[i].replace(/^internal-pdf:\/\//i, 'PDF/').trim();
 					if (!url) continue;
-					
+
 					//get title from file name
 					title = url.match(/([^/\\]+)(?:\.\w{1,8})$/);
 					if (title) {
@@ -1469,7 +1469,7 @@ function processTag(item, tagValue, risEntry, allowDeprecated) {
 						title = "Full Text (HTML)";
 						mimeType = "text/html";
 					}
-					
+
 					item.attachments.push({
 						title: title,
 						path: url,
@@ -1596,18 +1596,18 @@ function dateRIStoZotero(risDate, zField) {
 		if (!y && m) {
 			return '0000 ' + m[0] + (d ? ' ' + d[0] : '');
 		}
-		
+
 		// Only try harder with access dates, since those get dropped otherwise
 		// For everything else, Zotero will go through the same algorithm later
 		// but at least we won't be discarding anything
 		if (zField != 'accessDate') return risDate;
-		
+
 		// Let Zotero try and figure this out
 		var parsedDate = ZU.strToDate(risDate);
 		if (!parsedDate || !parsedDate.year) {
 			return risDate;
 		}
-		
+
 		date[0] = parsedDate.year;
 		date[1] = '' + (parsedDate.month + 1);
 		date[2] = '' + parsedDate.day;
@@ -1757,7 +1757,7 @@ function completeItem(item) {
 		}
 		item.backupAccessDate = undefined;
 	}
-	
+
 	if (item.DOI) {
 		// Only clean DOI if we get something back. Otherwise just leave it be
 		var cleanDOI = ZU.cleanDOI(item.DOI);
@@ -1796,7 +1796,7 @@ function completeItem(item) {
 		for (let i = 0, n = item.unknownFields.length; i < n; i++) {
 			note += item.unknownFields[i] + '<br/>';
 		}
-	
+
 		if (note) {
 			note = "The following values have no corresponding Zotero field:<br/>" + note;
 			item.notes.push({ note: note.trim(), tags: ['_RIS import'] });
@@ -1804,7 +1804,7 @@ function completeItem(item) {
 	}
 	item.unsupportedFields = undefined;
 	item.unknownFields = undefined;
-	
+
 	return item.complete();
 }
 
@@ -1839,7 +1839,7 @@ function startImport(resolve, reject) {
 		var maps = [fieldMap, degenerateImportFieldMap];
 		if (exportedOptions.fieldMap) maps.unshift(exportedOptions.fieldMap);
 		importFields = new TagMapper(maps, degenerateImportFieldMap);
-		
+
 		//prepare some configurable options
 		if (Zotero.getHiddenPref) {
 			let pref = Zotero.getHiddenPref("RIS.import.ignoreUnknown");
@@ -1851,7 +1851,7 @@ function startImport(resolve, reject) {
 				degenerateImportFieldMap.ID = pref;
 			}
 		}
-		
+
 		importNext(resolve, reject);
 	}
 	catch (e) {
@@ -1875,32 +1875,32 @@ function importNext(resolve, reject) {
 					itemType = importTypeMap[risType];
 				}
 			}
-			
+
 			//we allow entries without TY and just use default type
 			if (!itemType) {
 				var defaultType = exportedOptions.defaultItemType || DEFAULT_IMPORT_TYPE;
-	
+
 				if (entry.tags.TY) {
 					// Z.debug("RIS: Unknown item type: " + entry.tags.TY[0].value + ". Defaulting to " + defaultType);
 				}
 				else {
 					// Z.debug("RIS: TY tag not specified. Defaulting to " + defaultType);
 				}
-				
+
 				itemType = defaultType;
 			}
-			
+
 			var item = getNewItem(itemType);
 			ProCiteCleaner.cleanTags(entry, item); //clean up ProCite "tags"
 			EndNoteCleaner.cleanTags(entry, item); //some tweaks to EndNote export
 			CitaviCleaner.cleanTags(entry, item);
-			
+
 			var deferredEntries = [];
-		
+
 			for (let i = 0, n = entry.length; i < n; i++) {
 				//ignore TY and ER tags
 				if (['TY', 'ER'].includes(entry[i].tag)) continue;
-				
+
 				if (!processTag(item, entry[i], entry, false)) {
 					deferredEntries.push(entry[i]);
 				}
@@ -1920,7 +1920,7 @@ function importNext(resolve, reject) {
 	catch (e) {
 		reject(e);
 	}
-	
+
 	resolve();
 }
 
@@ -2042,7 +2042,7 @@ function addTag(tag, value) {
 
 function doExport() {
 	var item, order, tag, field, value;
-	
+
 	//set up field mapper
 	var map = [fieldMap];
 	if (exportedOptions.fieldMap) map.unshift(exportedOptions.fieldMap);
@@ -2175,7 +2175,7 @@ function doExport() {
 						date.month = (date.month || date.month === 0 || date.month === "0") ? ('0' + (date.month + 1)).substr(-2) : '';
 						date.day = date.day ? ('0' + date.day).substr(-2) : '';
 						if (!date.part) date.part = '';
-	
+
 						value = date.year + '/' + date.month + '/' + date.day + '/' + date.part;
 					}
 					else {

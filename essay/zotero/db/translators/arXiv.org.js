@@ -99,16 +99,16 @@ function doWeb(doc, url) {
 		else {
 			throw new Error("Unrecognized multiples format");
 		}
-		
+
 		var items = {};
 		for (let i = 0; i < rows.length; i++) {
 			var row = getTitleId(rows[i]);
 			items[row.id] = row.title;
 		}
-		
+
 		Z.selectItems(items, function (items) {
 			if (!items) return;
-			
+
 			var urls = [];
 			for (var id in items) {
 				urls.push('https://export.arxiv.org/oai2'
@@ -116,7 +116,7 @@ function doWeb(doc, url) {
 					+ '&identifier=oai%3AarXiv.org%3A' + encodeURIComponent(id)
 				);
 			}
-			
+
 			ZU.doGet(urls, parseXML);
 		});
 	}
@@ -181,10 +181,10 @@ function parseXML(text) {
 			newItem.date = dates[dates.length - 1];
 		}
 	}
-	
-	
+
+
 	var descriptions = ZU.xpath(dcMeta, "./dc:description", ns);
-	
+
 	// Put the first description into abstract, all other into notes.
 	if (descriptions.length > 0) {
 		newItem.abstractNote = ZU.trimInternal(descriptions[0].textContent);
@@ -198,7 +198,7 @@ function parseXML(text) {
 		var subject = ZU.trimInternal(subjects[j].textContent);
 		newItem.tags.push(subject);
 	}
-					
+
 	var identifiers = ZU.xpath(dcMeta, "./dc:identifier", ns);
 	for (let j = 0; j < identifiers.length; j++) {
 		var identifier = ZU.trimInternal(identifiers[j].textContent);
@@ -212,17 +212,17 @@ function parseXML(text) {
 
 	var articleID = ZU.xpath(xml, "//n:GetRecord/n:record/n:header/n:identifier", ns)[0];
 	if (articleID) articleID = ZU.trimInternal(articleID.textContent).substr(14); // Trim off oai:arXiv.org:
-	
+
 	var articleField = ZU.xpathText(xml, '//n:GetRecord/n:record/n:header/n:setSpec', ns);
 	if (articleField) articleField = "[" + articleField.replace(/^.+?:/, "") + "]";
-	
+
 	if (articleID && articleID.includes("/")) {
 		newItem.extra = "arXiv:" + articleID;
 	}
 	else {
 		newItem.extra = "arXiv:" + articleID + " " + articleField;
 	}
-	
+
 
 	var pdfUrl = "https://arxiv.org/pdf/" + articleID + (version ? "v" + version : "") + ".pdf";
 	newItem.attachments.push({
@@ -235,13 +235,13 @@ function parseXML(text) {
 		url: newItem.url,
 		mimeType: "text/html"
 	});
-	
+
 	// retrieve and supplement publication data for published articles via DOI
 	if (newItem.DOI) {
 		var translate = Zotero.loadTranslator("search");
 		// CrossRef
 		translate.setTranslator("b28d0d42-8549-4c6d-83fc-8382874a5cb9");
-		
+
 		var item = { itemType: "journalArticle", DOI: newItem.DOI };
 		translate.setSearch(item);
 		translate.setHandler("itemDone", function (obj, item) {

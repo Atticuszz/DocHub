@@ -100,14 +100,14 @@ function initLang(doc) {
 function getSearchResults(doc, checkOnly, extras) {
 	var root;
 	var elements = doc.getElementsByClassName('resultListContainer');
-	
+
 	for (let i = 0; i < elements.length; i++) {
 		if (elements[i] && elements[i].offsetHeight > 0) {
 			root = elements[i];
 			break;
 		}
 	}
-	
+
 	if (!root) {
 		Z.debug("No root found");
 		return false;
@@ -118,15 +118,15 @@ function getSearchResults(doc, checkOnly, extras) {
 	var items = {}, found = false;
 	isEbrary = (results && results[0] && results[0].getElementsByClassName('ebraryitem').length > 0);
 	// if the first result is Ebrary, they all are - we're looking at the Ebrary results tab
-	
+
 	for (let i = 0, n = results.length; i < n; i++) {
 		var title = results[i].querySelectorAll('h3 a')[0];
 		// Z.debug(title)
 		if (!title || !title.href) continue;
-		
+
 		if (checkOnly) return true;
 		found = true;
-		
+
 		var item = ZU.trimInternal(title.textContent);
 		var preselect = results[i].getElementsByClassName('marked_list_checkbox')[0];
 		if (preselect) {
@@ -135,9 +135,9 @@ function getSearchResults(doc, checkOnly, extras) {
 				checked: preselect.checked
 			};
 		}
-		
+
 		items[title.href] = item;
-		
+
 		if (isEbrary && Zotero.isBookmarklet) {
 			extras[title.href] = {
 				html: results[i],
@@ -152,18 +152,18 @@ function getSearchResults(doc, checkOnly, extras) {
 
 function detectWeb(doc, url) {
 	initLang(doc);
-	
+
 	// Check for multiple first
 	if (!url.includes('docview') && !url.includes('pagepdf')) {
 		return getSearchResults(doc, true) ? 'multiple' : false;
 	}
-	
+
 	// if we are on Abstract/Details page,
 	// then we can read the type from the corresponding field
 	var types = getTextValue(doc, ["Source type", "Document type", "Record type"]);
 	var zoteroType = getItemType(types);
 	if (zoteroType) return zoteroType;
-	
+
 	// hack for NYTs, which misses crucial data.
 	var db = getTextValue(doc, "Database")[0];
 	if (db && db.includes("The New York Times")) {
@@ -187,25 +187,25 @@ function doWeb(doc, url, noFollow) {
 	if (type == "multiple") {
 		// detect web returned multiple
 		var resultData = {};
-		
+
 		Zotero.selectItems(getSearchResults(doc, false, resultData), function (items) {
 			if (!items) return;
-			
+
 			var articles = [];
 			for (let item in items) {
 				articles.push(item);
 			}
-			
+
 			if (isEbrary) {
 				if (Zotero.isBookmarklet) {
 					// The bookmarklet can't use the ebrary translator
-					
+
 					var refs = [];
-					
+
 					for (let i in items) {
 						refs.push(resultData[i]);
 					}
-					
+
 					scrapeEbraryResults(refs);
 				}
 				else {
@@ -254,17 +254,17 @@ function doWeb(doc, url, noFollow) {
 
 function scrape(doc, url, type) {
 	var item = new Zotero.Item(type);
-	
+
 	// get all rows
 	var rows = doc.getElementsByClassName('display_record_indexing_row');
-	
+
 	let label, value, enLabel;
 	var dates = [], place = {}, altKeywords = [];
 
 	for (let i = 0, n = rows.length; i < n; i++) {
 		label = rows[i].childNodes[0];
 		value = rows[i].childNodes[1];
-		
+
 		if (!label || !value) continue;
 
 		label = label.textContent.trim();
@@ -281,7 +281,7 @@ function scrape(doc, url, type) {
 			case 'Author':
 			case 'Editor':	// test case?
 				creatorType = (enLabel == 'Author') ? 'author' : 'editor';
-				
+
 				// Use titles of a tags if they exist, since these don't include
 				// affiliations; don't include links to ORCID profiles
 				value = ZU.xpathText(rows[i].childNodes[1], "a[not(@id='orcidLink')]/@title", null, "; ") || value;
@@ -395,7 +395,7 @@ function scrape(doc, url, type) {
 			case 'Country of publication':
 				place.publicationCountry = value;
 				break;
-			
+
 
 			// multiple dates are provided
 			// more complete dates are preferred
@@ -434,7 +434,7 @@ function scrape(doc, url, type) {
 	if (item.itemType == "thesis" && place.schoolLocation) {
 		item.place = place.schoolLocation;
 	}
-	
+
 	else if (place.publicationPlace) {
 		item.place = place.publicationPlace;
 		if (place.publicationCountry) {
@@ -458,12 +458,12 @@ function scrape(doc, url, type) {
 
 	// sometimes number of pages ends up in pages
 	if (!item.numPages) item.numPages = item.pages;
-	
+
 	// don't override the university with a publisher information for a thesis
 	if (item.itemType == "thesis" && item.university && item.publisher) {
 		delete item.publisher;
 	}
-	
+
 	// lanuguage is sometimes given as full word and abbreviation
 	if (item.language) item.language = item.language.split(/\s*;\s*/)[0];
 
@@ -497,7 +497,7 @@ function scrape(doc, url, type) {
 	if (!item.tags.length && altKeywords.length) {
 		item.tags = altKeywords.join(',').split(/\s*(?:,|;)\s*/);
 	}
-	
+
 	let pdfLink = doc.querySelector('[id^="downloadPDFLink"]');
 	if (pdfLink) {
 		item.attachments.push({
@@ -517,7 +517,7 @@ function scrape(doc, url, type) {
 			});
 		}
 	}
-	
+
 	item.complete();
 }
 
@@ -597,7 +597,7 @@ function getItemType(types) {
 
 function scrapeEbraryResults(refs) {
 	// Since we can't chase URLs, let's get what we can from the page
-	
+
 	for (let i = 0; i < refs.length; i++) {
 		var ref = refs[i];
 		var hiddenData = ZU.xpathText(ref.html, './span');
@@ -616,38 +616,38 @@ function scrapeEbraryResults(refs) {
 
 		item.title = ref.title;
 		item.url = ref.url;
-		
+
 		if (date) {
 			item.date = date[1];
 		}
-		
+
 		if (place) {
 			item.place = place[1].trim();
 		}
-		
+
 		item.publisher = visibleData[1].trim();
-		
+
 		// Push the authors in reverse to restore the original order
 		for (var j = visibleData.length - 1; j >= 2; j--) {
 			item.creators.push(ZU.cleanAuthor(visibleData[j], "author", true));
 		}
-		
+
 		if (isbn) {
 			item.ISBN = isbn[1];
 		}
-		
+
 		if (language) {
 			item.language = language[1];
 		}
-		
+
 		if (numPages) {
 			item.numPages = numPages[1];
 		}
-		
+
 		if (locNum) {
 			item.callNumber = locNum[1];
 		}
-		
+
 		item.complete();
 	}
 }

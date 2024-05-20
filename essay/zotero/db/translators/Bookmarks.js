@@ -72,7 +72,7 @@ function detectImport() {
 			return true;
 		}
 	}
-	return false;	
+	return false;
 }
 
 function doImport() {
@@ -86,19 +86,19 @@ function doImport() {
 	};
 	var firstMatch, firstMatchAt, openItem, lastIndex = 0;
 	var collectionStack = [], collection;
-	
+
 	while ((l = Zotero.read()) !== false) {
 		line += '\n' + l;
 		bookmarkRE.lastIndex = collectionRE.lastIndex = descriptionRE.lastIndex = 0;
 		do {
 			firstMatch = false;
 			firstMatchType = false;
-			
+
 			for (var re in allREs) {
 				if (re == 'd' && !openItem) {
 					continue;
 				}
-				
+
 				allREs[re].lastIndex = lastIndex;
 				m = allREs[re].exec(line);
 				if (m && (!firstMatchType || m.index < firstMatch.index)) {
@@ -106,29 +106,29 @@ function doImport() {
 					firstMatchType = re;
 				}
 			}
-			
+
 			if (firstMatchType) {
 				m = firstMatch;
 				lastIndex = allREs[firstMatchType].lastIndex;
 			}
-			
+
 			switch (firstMatchType) {
 				case 'b': //create new webpage item
 					if (openItem) openItem.complete();
-					
+
 					var title = m[3].trim();
-					
+
 					if (!title || m[2].toUpperCase().indexOf('PLACE:') == 0) {
 						Z.debug('Skipping item with no title or special "place:" item');
 						openItem = false;
 						break;
 					}
-					
+
 					openItem = new Zotero.Item("webpage");
 					openItem.title = ZU.unescapeHTML(title);
 					openItem.itemID = openItem.id = itemID++;
 					if (collection) collection.children.push(openItem);
-					
+
 					bookmarkDetailsRE.lastIndex = 0;
 					var detailMatch;
 					while (detailMatch = bookmarkDetailsRE.exec(m[0])) {
@@ -154,9 +154,9 @@ function doImport() {
 						openItem.complete();
 						openItem = false;
 					}
-					
+
 					if (collection) collectionStack.push(collection)
-					
+
 					collection = new Zotero.Collection();
 					collection.type = 'collection';
 					collection.name = ZU.unescapeHTML(m[1]);
@@ -168,9 +168,9 @@ function doImport() {
 						openItem.complete();
 						openItem = false;
 					}
-					
+
 					var parentCollection = collectionStack.pop();
-					
+
 					if (parentCollection) {
 						if (collection.children.length) {
 							parentCollection.children.push(collection);
@@ -188,11 +188,11 @@ function doImport() {
 				break;
 			}
 		} while (firstMatch);
-		
+
 		line = line.substr(lastIndex);
 		lastIndex = 0;
 	}
-	
+
 	if (openItem) openItem.complete();
 	if (collection) {
 		var parentCollection;
@@ -223,7 +223,7 @@ function convertDate(timestamp){
 
 function doExport() {
 	var item;
-	
+
 	var header = '<!DOCTYPE NETSCAPE-Bookmark-file-1>\n'+
 '<!-- This is an automatically generated file.\n'+
 '     It will be read and overwritten.\n'+

@@ -85,9 +85,9 @@ function scrape(doc, url) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
-		
+
 		item.title = item.title.split(' | ')[0];
 
 		// Problem: also the place will be taken as part of the autor name
@@ -104,21 +104,21 @@ function scrape(doc, url) {
 				item.creators.push( ZU.cleanAuthor(authors[i] , "author") );
 			}
 		}
-		
+
 		item.ISSN = "0376-6829";
 		item.language = "de-CH";
 		item.libraryCatalog = "NZZ";
-		
+
 		item.section = text(doc, '.breadcrumbs > a:last-child');
 		if (item.section == "NZZ am Sonntag" || item.section == "NZZaS") {
 			item.publicationTitle = "NZZ am Sonntag";
 			item.ISSN = "1660-0851";
 			item.section = "";
 		}
-		
+
 		item.complete();
 	});
-	
+
 	translator.getTranslatorObject(function(trans) {
 		trans.itemType = "newspaperArticle";
 		trans.addCustomFields({

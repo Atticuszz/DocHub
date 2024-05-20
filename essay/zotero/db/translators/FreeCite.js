@@ -43,7 +43,7 @@ function detectWeb(doc, url) {
 }
 
 function doWeb(doc, url) {
-	
+
 	var text = "";
 	var index = 0;
 	var itemList = [];
@@ -53,7 +53,7 @@ function doWeb(doc, url) {
 	for (var i = 0; i < codes.length; i++) {
 		textContent = codes[i].textContent;
 		// there is always a dummy object <code>ContextObject</code> which we want to exclude here
-		if (textContent.indexOf("<")>-1) { 
+		if (textContent.indexOf("<")>-1) {
 			text += textContent;
 		}
 	}
@@ -63,7 +63,7 @@ function doWeb(doc, url) {
 	var translator = Zotero.loadTranslator('import');
 	translator.setTranslator('24d9f058-3eb3-4d70-b78f-1ba1aef2128d');//CTX
 	translator.setString(text);
-	
+
 	// we  save the item only temporarily in the itemList
 	// and its title in titleList for the selection dialog
 	translator.setHandler("itemDone", function(trans, item) {
@@ -73,7 +73,7 @@ function doWeb(doc, url) {
 			index++;
 		}
 	});
-	
+
 	translator.setHandler("done", function(translate) {
 		if (itemList.length) {
 			Zotero.selectItems(titleList, function(selectedIndices) {
@@ -86,9 +86,9 @@ function doWeb(doc, url) {
 			});
 		}
 	});
-	
+
 	translator.translate();
-	
+
 }
 /** BEGIN TEST CASES **/
 var testCases = []

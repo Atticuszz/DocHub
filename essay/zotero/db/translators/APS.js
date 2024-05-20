@@ -74,7 +74,7 @@ var dontDownload = [
 
 function scrape(doc, url) {
 	url = url.replace(/[?#].*/, '');
-	
+
 	if (url.indexOf('/abstract/') == -1) {
 		// Go to Abstract page first so we can scrape the abstract
 		url = url.replace(/\/(?:supplemental|references|cited-by)\//, '/abstract/');
@@ -82,7 +82,7 @@ function scrape(doc, url) {
 			Zotero.debug('Unrecognized URL ' + url);
 			return;
 		}
-		
+
 		ZU.processDocuments(url, function(doc, url) {
 			if (url.indexOf('/abstract/') == -1) {
 				Zotero.debug('Redirected when trying to go to abstract page. ' + url);
@@ -92,9 +92,9 @@ function scrape(doc, url) {
 		});
 		return;
 	}
-	
+
 	url = url.replace(/\/abstract\//, '/{REPLACE}/');
-	
+
 	// fetch RIS
 	var risUrl = url.replace('{REPLACE}', 'export')
 			   + '?type=ris&download=true';
@@ -108,7 +108,7 @@ function scrape(doc, url) {
 			item.abstractNote = ZU.trimInternal(cleanMath(
 				ZU.xpathText(doc, '//section[contains(@class,"abstract")]/div[@class="content"]/p[1]')
 			));
-			
+
 			// attach PDF
 			if (ZU.xpath(doc, '//div[@class="article-nav-actions"]/a[contains(text(), "PDF")]').length) {
 				item.attachments.push({
@@ -117,12 +117,12 @@ function scrape(doc, url) {
 					mimeType: 'application/pdf'
 				});
 			}
-			
+
 			item.attachments.push({
 				title: "APS Snapshot",
 				document: doc
 			});
-			
+
 			if (Z.getHiddenPref && Z.getHiddenPref('attachSupplementary')) {
 				ZU.processDocuments(url.replace('{REPLACE}', 'supplemental'), function(doc) {
 					try {

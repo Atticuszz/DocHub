@@ -35,7 +35,7 @@ function doWeb(doc, url) {
 					mimeType: 'application/pdf'
 				});
 			}
-			
+
 			item.complete();
 		});
 		trans.translate();

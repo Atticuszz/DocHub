@@ -44,7 +44,7 @@ function detectWeb(doc,url) {
  */
 function doWeb(doc, url) {
   if (detectWeb(doc,url) == "document"){
-  	/* Collect columns name */ 
+  	/* Collect columns name */
   	var columnNames = collectColumnTitle(doc);
   	/* Collect all the documents */
   	var lines = collectDocuments(doc,"tdoff").concat(collectDocuments(doc,"tdoff2"));
@@ -57,7 +57,7 @@ function doWeb(doc, url) {
 
 /**
  * Collect the name of the column for an automatic treatment
- * 
+ *
  */
 function collectColumnTitle(doc){
 	var columnNames = new Array();
@@ -77,7 +77,7 @@ function collectColumnTitle(doc){
 
 /**
  * Collect documents
- * 
+ *
  */
 function collectDocuments(doc,className){
 	var linesCollected = new Array();
@@ -97,7 +97,7 @@ function collectDocuments(doc,className){
 
 /**
  * Parse all the document
- * 
+ *
  */
 function documentsTreatment(titles,lines,doc){
 	var documents = new Array();
@@ -118,19 +118,19 @@ function documentsTreatment(titles,lines,doc){
 
 /**
  * Parse a document
- * 
+ *
  */
 function documentTreatment(line,titles,typeColumn,doc){
 	var document;
  	var elements = doc.evaluate('.//td', line, null, XPathResult.ANY_TYPE, null);
- 	
+
  	/* Convert XPathResult into an array */
  	var values = new Array()
  	var element;
  	while (element = elements.iterateNext()) {
 		values.push(element);
 	}
-	
+
 	/* Parsing values*/
  	if (values[typeColumn].textContent == "Article"){
  		document = new Zotero.Item("journalArticle");
@@ -185,7 +185,7 @@ function documentTreatment(line,titles,typeColumn,doc){
 			Zotero.debug("ISSN : " + document.ISSN);
 			Zotero.debug("DOI : " + document.DOI);
 			Zotero.debug("Abstract : " + document.abstractNote);
-			
+
 		}
  	} else {
  		document = new Zotero.Item("patent");
@@ -252,13 +252,13 @@ function documentTreatment(line,titles,typeColumn,doc){
  	}
  	return document;
  }
- 
+
  /**
   * Save the documents
-  * 
+  *
   */
  function saveDocuments(documents){
- 	for (var i = 0; i < documents.length; ++i) {	
+ 	for (var i = 0; i < documents.length; ++i) {
 		documents[i].complete();
 	}
  }

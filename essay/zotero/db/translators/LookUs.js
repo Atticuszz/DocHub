@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -82,24 +82,24 @@ function scrape(doc, url) {
 	}
 
 	let pdfURL = attr(doc, '.siteArticleShare a[href*="download_fulltext.asp?"]', 'href');
-	
+
 	let topRow = text(doc, '.siteTopRow');
 	let ISSN = topRow.match(/ISSN\s+(\d{4}-\d{3}[\dX])/);
 	ISSN = ISSN && ZU.cleanISSN(ISSN[1]);
-	
+
 	ZU.doGet(risURL, function (text) {
 		var translator = Zotero.loadTranslator("import");
 		translator.setTranslator("32d59d2d-b65a-4da4-b0a3-bdd3cfb979e7");
 		translator.setString(text);
 		translator.setHandler("itemDone", function (obj, item) {
 			delete item.journalAbbreviation; // usually not a common abbreviation
-			
+
 			if (!item.ISSN) {
 				item.ISSN = ISSN;
 			}
-			
+
 			item.notes = [];
-			
+
 			if (pdfURL) {
 				item.url = url.replace(/#.*$/, '').replace(/&look4=[^&]*/, '');
 				item.attachments.push({
@@ -111,7 +111,7 @@ function scrape(doc, url) {
 			else if (item.url && item.url.includes('dx.doi.org')) {
 				delete item.url;
 			}
-			
+
 			item.complete();
 		});
 		translator.translate();

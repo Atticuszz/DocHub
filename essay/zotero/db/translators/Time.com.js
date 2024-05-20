@@ -61,7 +61,7 @@ function handleAuthors(authors) {
 				authors = matches[1];
 			}
 		}
-		
+
 		// x, y and z
 		authors = authors.replace(/^\s*By\s+/, "").split(/\s*,\s*|\s+and\s+/i);
 		var authArr = [];
@@ -87,7 +87,7 @@ function handleKeywords(keywords) {
 function scrape(doc, url) {
 	var article = ZU.xpath(doc, '//section/div[@class="wrapper"]/article[contains(@class, "active")]')[0];
 	var metaUrl = ZU.xpathText(doc, '/html/head/meta[@property="og:url"]/@content');
-	
+
 	if (article && metaUrl && !doc.location.href.includes(metaUrl)) {
 		// time has a feature where you scroll to the next article
 		// in this case we have to use the active article instead
@@ -97,7 +97,7 @@ function scrape(doc, url) {
 		item.url = url;
 		item.ISSN = "0040-781X";
 		item.language = "en-US";
-		
+
 		var authors = article.getElementsByClassName('byline');
 		if (authors.length) {
 			item.creators = handleAuthors(authors
@@ -113,21 +113,21 @@ function scrape(doc, url) {
 
 		item.abstractNote = ZU.xpathText(doc, '//h2[@class="article-excerpt"]');
 		item.date = ZU.xpathText(article, 'header//time[@class="publish-date"]/@datetime');
-		
+
 		item.complete();
 	}
 	else {
 		var translator = Zotero.loadTranslator('web');
 		translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 		translator.setDocument(doc);
-		
+
 		translator.setHandler('itemDone', function (obj, item) {
 			item.itemType = "magazineArticle";
 			item.publicationTitle = "Time";
 			item.url = url;
 			item.ISSN = "0040-781X";
 			item.language = "en-US";
-			
+
 			var authors = ZU.xpathText(doc, '//meta[@name="byline"]/@content')
 				|| ZU.xpathText(doc, '//span[@class="author vcard"]/a', null, ' and ')
 				|| ZU.xpathText(doc, '//span[@class="entry-byline"]')
@@ -137,11 +137,11 @@ function scrape(doc, url) {
 
 			var title = ZU.xpathText(doc, '//h1[@class="entry-title"]');
 			if (!item.title && title) item.title = title;
-			
+
 			var keywords = ZU.xpathText(doc, '/html/head/meta[@name="keywords"]/@content')
 				|| ZU.xpathText(doc, 'header//a[@class="topic-tag" or @class="section-tag"]');
 			if (item.tags.length == 0 && keywords) item.tags = handleKeywords(keywords);
-			
+
 			if (!item.abstractNote) item.abstractNote = ZU.xpathText(doc, '//h2[@class="article-excerpt"]');
 			if (!item.date) {
 				item.date = ZU.xpathText(doc, '//time[@class="publish-date"]/@datetime')
@@ -151,10 +151,10 @@ function scrape(doc, url) {
 			if (item.date) {
 				item.date = ZU.strToISO(item.date);
 			}
-			
+
 			item.complete();
 		});
-		
+
 		translator.getTranslatorObject(function (em) {
 			em.addCustomFields({
 				date: 'date'

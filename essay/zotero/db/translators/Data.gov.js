@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -76,18 +76,18 @@ function scrape(doc, url) {
 	// Data.gov gives us RDF, but it uses some schemas that the RDF translator
 	// doesn't understand, so for now we'll use the embedded Schema.org
 	// metadata.
-	
+
 	let item = new Zotero.Item('document');
 	item.extra = 'Type: dataset\n'; // will map to dataset
-	
+
 	let art = doc.querySelector('article[itemtype="http://schema.org/Dataset"]');
-	
+
 	item.title = text(art, '[itemprop="name"]');
 	item.abstractNote = text(art, '[itemprop="description"]');
 	item.publisher = text(art, '[itemprop="publisher"] [itemprop="name"]');
 	item.language = 'en';
 	item.url = url;
-	
+
 	for (let row of art.querySelectorAll('[rel="dc:relation"]')) {
 		let label = text(row, '[property="rdfs:label"]').trim();
 		let value = text(row, '[property="rdf:value"]');
@@ -99,11 +99,11 @@ function scrape(doc, url) {
 			item.language = value;
 		}
 	}
-	
+
 	for (let tag of doc.querySelectorAll('.tag')) {
 		item.tags.push(tag.textContent);
 	}
-	
+
 	item.complete();
 }
 

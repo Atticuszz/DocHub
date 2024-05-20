@@ -44,7 +44,7 @@ function detectWeb(doc, url) {
 			return "case";
 		}
 		return "journalArticle";
-		
+
 	} else if (url.includes('/archivsuche/') || url.includes('/aktuelles-heft/') || url.includes('/heft-')) {
 		if (getSearchResults(doc, true)) {
 			return "multiple";
@@ -92,7 +92,7 @@ function doWeb(doc, url) {
 
 function scrape(doc, url) {
 	var type = detectWeb(doc, url);
-	
+
 	var translator = Zotero.loadTranslator('web');
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
@@ -113,7 +113,7 @@ function scrape(doc, url) {
 				}
 			}
 		}
-		
+
 		var firstPage = ZU.xpathText(doc, '//span[@data-dokid]/@data-spage');
 		var lastPage = ZU.xpathText(doc, '(//ins[contains(@class, "beitrag-seite")]/@data-nummer)[last()]');
 		if (firstPage) {
@@ -122,16 +122,16 @@ function scrape(doc, url) {
 				item.pages += "–" + lastPage.replace(/^0*/, '');
 			}
 		}
-		
+
 		var m = url.match(/\/heft-([\d\-]*)-\d\d\d\d\/zip/);
 		if (m) {
 			item.issue = m[1];
 		}
-		
+
 		item.publicationTitle = "Zeitschrift für Wirtschaftsrecht";
 		item.journalAbbreviation = "ZIP";
 		item.ISSN = "0723-9416";
-		
+
 		var caseInfo = ZU.xpath(doc, '//span[contains(@class, "beitrag-entscheidung")]/span[contains(@class, "beitrag-instanz")]');
 		if (type == "case" && caseInfo) {
 			if (item.date) {
@@ -144,7 +144,7 @@ function scrape(doc, url) {
 			item.docketNumber  = ZU.xpathText(caseInfo, './span[contains(@class, "beitrag-az")]');
 			item.reporter = "ZIP";
 		}
-		
+
 		item.complete();
 	});
 

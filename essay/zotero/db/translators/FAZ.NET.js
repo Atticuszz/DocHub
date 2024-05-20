@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2017 Philipp Zumstein
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -92,12 +92,12 @@ function doWeb(doc, url) {
 
 function scrape(doc, url) {
 	var type = detectWeb(doc, url);
-	
+
 	var translator = Zotero.loadTranslator('web');
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	// translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		// fix authors
 		item.creators = [];
@@ -105,7 +105,7 @@ function scrape(doc, url) {
 		for (let i=0; i<authors.length; i++) {
 			item.creators.push(ZU.cleanAuthor(authors[i].textContent, "author"));
 		}
-		
+
 		var section = text(doc, '.gh-MainNav_SectionsLink-is-active');
 		if (section) {
 			item.section = Zotero.Utilities.trimInternal(section);

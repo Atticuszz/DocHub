@@ -129,7 +129,7 @@ var GaleZotero = (function() {
 	function isNewspaperArticle(url) {
 		return (/NewspapersDetails/).test(url);
 	}
-	
+
 	function isMagazineArticle(url) {
 		return (/MagazinesDetails/).test(url);
 	}

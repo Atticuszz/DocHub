@@ -17,7 +17,7 @@
 
 	Copyright © 2018-2021 czar (http://en.wikipedia.org/wiki/User_talk:Czar)
 	                      and Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -68,7 +68,7 @@ function scrape(doc, url) {
 		item.creators[0].fieldMode = 1;                       // change to single-field mode
 	}
 	item.attachments.push({ document: doc, title: 'Snapshot' });
-	
+
 	item.complete();
 }
 

@@ -46,7 +46,7 @@ function doWeb(doc, url)	{
 				trans.setHandler("itemDone", function(obj, item) {
 					item.title = item.title.replace(/\s\s+/, " ").replace(/\s:/, ":");
 					item.complete();
-				});	
+				});
 				trans.translate();
 			});
 		});
@@ -64,7 +64,7 @@ function doWeb(doc, url)	{
 			trans.setHandler("itemDone", function(obj, item) {
 				item.title = item.title.replace(/\s\s+/, " ").replace(/\s:/, ":");
 				item.complete();
-			});	
+			});
 			trans.translate();
 		});
 

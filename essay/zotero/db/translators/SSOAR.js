@@ -44,7 +44,7 @@ function detectWeb(doc, url) {
 			return "journalArticle";
 		}
 	}
-	
+
 	if ( getSearchResults(doc).length>0 ) {
 		return "multiple";
 	}
@@ -92,15 +92,15 @@ function scrape(doc, url) {
 	ZU.doGet(bibUrl, function(text) {
 		bibTexContent = ZU.cleanTags(text);
 		bibTexContent = bibTexContent.replace(/&#13;/g, "\n");
-		
+
 		var trans = Zotero.loadTranslator('import');
 		trans.setTranslator('9cb70025-a888-4a29-a210-93ec52da40d4');//https://github.com/zotero/translators/blob/master/BibTeX.js
 		trans.setString(bibTexContent);
-	
+
 		trans.setHandler('itemDone', function (obj, item) {
 			//for debugging
 			//item.notes.push({note:bibTexContent});
-			
+
 			//add doi
 			var identfiers = ZU.xpath(doc, '//meta[contains(@name, "DC.identifier")]');
 			if (!item.DOI) {
@@ -112,21 +112,21 @@ function scrape(doc, url) {
 					}
 				}
 			}
-			
+
 			//clean ISSN
 			if (item.ISSN) {
 				item.ISSN = ZU.cleanISSN(item.ISSN);
 			}
-			
+
 			//add language
 			item.language = ZU.xpathText(doc, '//meta[contains(@name, "DC.language")]/@content');
-			
+
 			//add place of publication
 			var place = ZU.xpath(doc, '//td[contains(@class, "resourceDetailTableCellLabel") and text()="Erscheinungsort"] | //td[contains(@class, "resourceDetailTableCellLabel") and text()="City"]');
 			if (place.length>0) {
 				item.place = place[0].nextElementSibling.textContent;
 			}
-			
+
 			//books in book series with numbers are handled wrong
 			//add in this case series name, correct volume to number
 			var series = ZU.xpath(doc, '//td[contains(@class, "resourceDetailTableCellLabel") and text()="Schriftenreihe"] | //td[contains(@class, "resourceDetailTableCellLabel") and text()="Series"]');
@@ -141,7 +141,7 @@ function scrape(doc, url) {
 					}
 				}
 			}
-			
+
 			//add pdf or snapshot
 			var pdfUrl = ZU.xpath(doc, '//a[img[@alt="fulltextDownload"]]');
 			if (pdfUrl.length>0) {
@@ -149,7 +149,7 @@ function scrape(doc, url) {
 			} else {
 				item.attachments.push( {title: "Snapshot", document:doc} );
 			}
-			
+
 			//add rights information
 			var linkedFields = ZU.xpath(doc, '//td[@class="resourceDetailTableCellValue"]/a[@href]');
 			if (linkedFields.length>0) {
@@ -159,10 +159,10 @@ function scrape(doc, url) {
 
 			item.complete();
 		});
-		
+
 		trans.translate();
 	});
-	
+
 }/** BEGIN TEST CASES **/
 var testCases = [
 	{

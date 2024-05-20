@@ -574,7 +574,7 @@ function detectType(newItem, node, ret) {
 				case 'doctoralthesis':
 					t.dc = 'thesis';
 					break;
-				
+
 				// from http://www.idealliance.org/specifications/prism/specifications/prism-controlled-vocabularies/prism-12-controlled-vocabularies
 				// some are the same as eprints and are handled above
 				case 'electronicbook':

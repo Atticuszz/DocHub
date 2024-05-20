@@ -17,13 +17,13 @@ function detectWeb(doc, url) {
 	if (ZU.xpath(doc,'//h1[@property="dc:title" and starts-with(@id, "title_div")]').length) {
 		return getPhotoId(doc) ? "artwork" : null;
 	}
-	
+
 	var type = ZU.xpathText(doc,'//meta[@name="og:type"]/@content');
 	if ( type && type.substr(type.length - 5) == 'photo') {
 		return getPhotoId(doc) ? "artwork" : null;
 	}*/
 
-	
+
 	if (getSearchResults(doc, true)) {
 		return "multiple";
 	}
@@ -41,7 +41,7 @@ function getSearchResults(doc, checkOnly) {
 		elmts = ZU.xpath(doc, '//div[not(contains(@style, "display: none"))]\
 			/*/a[@class="title"]');
 	}
-	
+
 	var items = {}, found = false;
 	for (var i=0, n=elmts.length; i<n; i++) {
 		var title = elmts[i].title;
@@ -52,16 +52,16 @@ function getSearchResults(doc, checkOnly) {
 		}
 		title = ZU.trimInternal(title);
 		if (!title) continue;
-		
+
 		var photoId = elmts[i].href.match(/\/photos\/[^\/]*\/([0-9]+)/);
 		if (!photoId) continue;
-		
+
 		if (checkOnly) return true;
-		
+
 		found = true;
 		items[photoId[1]] = title;
 	}
-	
+
 	return found ? items : false;
 }
 
@@ -78,12 +78,12 @@ function doWeb(doc, url) {
 	if (detectWeb(doc, url) == "multiple") {
 		Zotero.selectItems(getSearchResults(doc), function (items) {
 			if (!items) return true;
-			
+
 			var ids = [];
 			for (var id in items) {
 				ids.push(id);
 			}
-			
+
 			fetchForIds(ids);
 		});
 	} else {
@@ -95,7 +95,7 @@ function fetchForIds(ids) {
 	var key = "3cde2fca0879089abf827c1ec70268b5";
 	var apiUrl = "https://api.flickr.com/services/rest/?api_key=" + key
 		+ "&method=flickr.photos.getInfo&photo_id=";
-	
+
 	ZU.doGet(
 		ids.map(function(id) { return apiUrl + encodeURIComponent(id) }),
 		parseResponse
@@ -116,14 +116,14 @@ var licenses = [ // See https://api.flickr.com/services/rest/?api_key=3cde2fca08
 
 function parseResponse(text) {
 	var doc = (new DOMParser()).parseFromString(text, 'application/xml');
-	
+
 	var status = doc.firstElementChild.getAttribute('stat');
 	if (status && status == 'fail') {
 		var error = doc.firstElementChild.firstElementChild;
 		throw new Error('Error retrieving metadata: ' + error.getAttribute('msg')
 			+ ' (' + error.getAttribute('code') + ')');
 	}
-	
+
 	var photo = doc.firstElementChild.firstElementChild;
 	var newItem = new Zotero.Item("artwork");
 
@@ -133,19 +133,19 @@ function parseResponse(text) {
 	} else {
 		newItem.title = " ";
 	}
-	
+
 	var tags = ZU.xpath(photo, './tags/tag');
 	if (tags.length) {
 		for (var i=0; i<tags.length; i++) {
 			newItem.tags.push(ZU.trimInternal(tags[i].textContent));
 		}
 	}
-	
+
 	var date = ZU.xpathText(photo, './dates/@taken');
 	if (date) {
 		newItem.date = date.substr(0, 10);
 	}
-	
+
 	var owner = ZU.xpathText(photo, './owner/@realname')
 	if (owner) {
 		newItem.creators.push(ZU.cleanAuthor(owner, "artist"));
@@ -156,30 +156,30 @@ function parseResponse(text) {
 			fieldMode: 1
 		});
 	}
-	
+
 	var url = ZU.xpath(photo, './urls/url[@type="photopage"]')[0];
 	if (url) {
 		newItem.url = url.textContent;
 	}
-	
+
 	var description;
 	if ((description = ZU.xpathText(photo, './description'))) {
 		newItem.abstractNote = description;
 	}
-	
+
 	var license = photo.getAttribute('license');
 	if (license && licenses[license * 1]) {
 		newItem.rights = licenses[license * 1];
 	}
-	
+
 	var media = photo.getAttribute('media'); // photo, screenshot, other... I think
 	if (media) {
 		newItem.artworkMedium = media;
 	}
-	
+
 	// TODO:
 	// * add location where the photo was taken into Extra?
-	
+
 	// We can build the original photo URL manually. See https://www.flickr.com/services/api/misc.urls.html
 	var secret = photo.getAttribute('originalsecret');
 	var originalFormat = photo.getAttribute('originalformat');
@@ -188,14 +188,14 @@ function parseResponse(text) {
 		 + photo.getAttribute('server') + '/'
 		 + photo.getAttribute('id') + '_' + secret
 		 + '_o.' + originalFormat;
-		 
+
 		newItem.attachments.push({
 			title: newItem.title,
 			url: fileUrl,
 			mimeType: 'image/' + photo.getAttribute('originalformat') // jpg|gif|png
 		});
 	}
-	
+
 	newItem.complete();
 }
 /** BEGIN TEST CASES **/

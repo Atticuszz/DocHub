@@ -39,7 +39,7 @@ function doWeb(doc, url) {
 	ZU.processDocuments([url + "?cmd=1!"], function (cDoc) {
 		var cite = ZU.xpath(cDoc, "//body/p");
 		if (!cite) return;
-		
+
 		var item = new Zotero.Item("bookSection");
 		var authorPieces = ZU.xpathText(cite[0], "./em").split(" ");
 		item.creators.push({
@@ -47,7 +47,7 @@ function doWeb(doc, url) {
 			"lastName": authorPieces.shift(),
 			"firstName": authorPieces.join(" ")
 		});
-		
+
 		item.title = ZU.xpathText(cite[0], "./b[1]");
 
 		var rem = ZU.xpathText(cite[0], "./b[1]/following-sibling::text()|./b[1]/following-sibling::b");
@@ -59,26 +59,26 @@ function doWeb(doc, url) {
 			item.publisher = matches[4].replace(/,\s*$/,'');
 			item.date = matches[5];
 		}
-		
+
 		if (cite.length > 1) {
 			item.volume = ZU.xpathText(cite[1], "./table/preceding-sibling::b/preceding-sibling::text()").replace(/\.?\s*—?\s*$/,'').replace(/^\s*Т.\s*/,'');
 			var newdate = ZU.xpathText(cite[1], "./table/preceding-sibling::b[1]");
 			item.pages = ZU.xpathText(cite[1], "./table/preceding-sibling::b/following-sibling::text()").replace(/^\s*[—. ]*\s*(.*)[\n\t, ]*$/,'$1').replace(/[Сс. ]/g,'').replace(/—/g,'-');
 			if (newdate && newdate != "") item.date = newdate;
 		}
-		
+
 		if (item.bookTitle) {
 			var numVols = item.bookTitle.match(/В (\d+)-?х? тт?(?:ома)?х?\.?/);
 			if (numVols) item.numberOfVolumes = numVols[1];
 		}
 
 		item.libraryCatalog = "Фундаментальная электронная библиотека";
-		
+
 		item.attachments.push({document: doc, title:"Полный текст"});
 		item.attachments.push({url: url, title:"Адрес ресурса", snapshot:false});
-		
+
 		item.complete();
-		
+
 	}, function () { Zotero.done() });
 	Zotero.wait();
 }

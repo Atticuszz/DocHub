@@ -16,7 +16,7 @@
 ***** BEGIN LICENSE BLOCK *****
 
 	Juris Translator, Copyright © 2014 Reto Mantz
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -75,10 +75,10 @@ function initData(doc) {
 		scrapeData.Normen = scrapeData.Norm;
 	}
 }
-	
+
 function detectWeb(doc, _url) {
 	initData(doc);		// gather data
-	
+
 	var type = scrapeData.Beitragstyp || scrapeData.Dokumenttyp;
 	if (type) {
 		type = type.toUpperCase();
@@ -120,7 +120,7 @@ function addNote(originalNote, newNote) {
 
 function scrape(doc, url, itemType) {
 	var item = new Zotero.Item(itemType);
-	
+
 	// scrape authors
 	var myAuthorsString = scrapeData.Autor;
 	// example: "Michael Fricke, Martin Gerecke"
@@ -131,7 +131,7 @@ function scrape(doc, url, itemType) {
 			item.creators.push(ZU.cleanAuthor(author, 'author', false));
 		}
 	}
-	
+
 	var editorString = scrapeData.Herausgeber || scrapeData.Gesamtherausgeber;
 	if (editorString) {
 		var editors = ZU.trimInternal(editorString).split("/");
@@ -139,13 +139,13 @@ function scrape(doc, url, itemType) {
 			item.creators.push(ZU.cleanAuthor(editors[i], 'editor', false));
 		}
 	}
-	
+
 	// scrape title
 	item.title = ZU.xpathText(doc, "//div[@class='docLayoutTitel']/h3")
 		|| ZU.xpathText(doc, "//div[contains(@class, 'docLayoutTitel')]//strong")
 		|| ZU.xpathText(doc, "//div[contains(@class, 'docLayoutTitel')]")
 		|| ZU.xpathText(doc, "//div[contains(@class, 'docbar__title')]");
-	
+
 	item.date = scrapeData.Erscheinungsjahr || scrapeData.Stand;
 	item.edition = scrapeData.Ausgabe || scrapeData.Auflage;
 	var isbn = scrapeData.Bestellnummer;
@@ -164,9 +164,9 @@ function scrape(doc, url, itemType) {
 			item.publisher = pub;
 		}
 	}
-	
+
 	item.conferenceName = scrapeData.Kongress;
-	
+
 	item.publicLawNumber = scrapeData.FNA; // Fundstellennachweis A (?)
 	item.code = scrapeData['Amtliche Abkürzung'];
 	if (itemType === "statute" && scrapeData.Zitiervorschlag) {
@@ -180,7 +180,7 @@ function scrape(doc, url, itemType) {
 			item.codeNumber = m[1];
 		}
 	}
-	
+
 	item.publicationTitle = ZU.xpathText(doc, '(//table//img[contains(@alt,"Abkürzung Fundstelle")]/@title)[1]')
 		|| scrapeData.Werk;
 	// scrape src
@@ -207,13 +207,13 @@ function scrape(doc, url, itemType) {
 			}
 		}
 	}
-	
+
 	finalize(doc, url, item);
 }
 
 function finalize(doc, url, item) {
 	var note = "";
-	
+
 	// regulations cited in the database for the article
 	var citedRegulations = scrapeData.Normen;
 	if (citedRegulations) {
@@ -230,17 +230,17 @@ function finalize(doc, url, item) {
 			note = addNote(note, "<h3>Fundstellen</h3><p>" + ZU.trimInternal(sources) + "</p>");
 		}
 	}
-	
+
 	if (note.length !== 0) {
 		item.notes.push({ note: note });
 	}
-	
+
 	// saving a snapshot is currently not working properly
 	// item.attachments = [{
 	//	title: "Snapshot",
 	//	document: doc
 	// }];
-	
+
 	var perma = ZU.xpathText(doc, '//span[contains(@class, "docLayoutPermalinkItemLink")]');
 	if (perma) {
 		item.attachments.push({
@@ -249,7 +249,7 @@ function finalize(doc, url, item) {
 			snapshot: false
 		});
 	}
-	
+
 	var pdfLink = ZU.xpathText(doc, '//a[contains(@class, "button--pdf")]/@href');
 	if (pdfLink) {
 		item.attachments.push({
@@ -264,7 +264,7 @@ function finalize(doc, url, item) {
 
 function scrapeCase(doc, url) {
 	var item = new Zotero.Item('case');
-	
+
 	// court
 	item.court = scrapeData.Gericht;
 	// if there is additional information about the body inside the court (starting with a number), disregard it
@@ -280,16 +280,16 @@ function scrapeCase(doc, url) {
 	else {
 		item.extra += "jurisdiction: de";
 	}
-	
+
 	// date
 	var myDateString = scrapeData.Entscheidungsdatum;
 	if (myDateString) {
 		item.dateDecided = myDateString.replace(/(\d\d?)\.\s*(\d\d?)\.\s*(\d\d\d\d)/, "$3-$2-$1");
 	}
-	
+
 	// docketNumber
 	item.docketNumber = scrapeData.Aktenzeichen;
-	
+
 	// type of decision. Save this in item.extra according to citeproc-js
 	var decisionType = scrapeData.Dokumenttyp;
 	if (/(Beschluss)|Beschl\./i.test(decisionType)) {
@@ -298,18 +298,18 @@ function scrapeCase(doc, url) {
 	else if (/(Urteil)|(Urt\.)/i.test(decisionType)) {
 		item.extra += "\ngenre: Urt.";
 	}
-	
+
 	// name of decision (caseName) if availabe
 	// since the CSL stylesheet does not have a "caseName" property, but uses only "title" we have to use other field => item.history (=CSL.references)
 	// also, item.caseName and item.title are identical in Zotero. Therefore, we should not use item.caseName at all
-	
+
 	var caseName = scrapeData.Entscheidungsname;
 	item.title = item.court + ", " + myDateString + " - " + item.docketNumber;
 	if (caseName) {
 		item.shortTitle = caseName;
 		item.title += " - " + caseName;
 	}
-	
+
 	finalize(doc, url, item);
 }
 

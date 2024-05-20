@@ -91,7 +91,7 @@ function doWeb(doc, url) {
 function scrape(doc, url) {
 	var item = new Zotero.Item('computerProgram');
 	item.title = text(doc, 'h2');
-	
+
 	var authorString = ZU.xpathText(doc, '//table/tbody/tr/td[contains(text(), "Author")]/following-sibling::td');
 	if (authorString) {
 		var creators = authorString.replace(/\[.+?\]/g, '').split(/\s*,\s*/);
@@ -108,18 +108,18 @@ function scrape(doc, url) {
 			}
 		}
 	}
-	
+
 	item.versionNumber = ZU.xpathText(doc, '//table/tbody/tr/td[contains(text(), "Version")]/following-sibling::td');
 	item.abstractNote = ZU.trimInternal(text(doc, 'body p') || '');
 	item.date = ZU.xpathText(doc, '//table/tbody/tr/td[contains(text(), "Published")]/following-sibling::td');
 	item.rights = ZU.xpathText(doc, '//table/tbody/tr/td[contains(text(), "License")]/following-sibling::td');
-	
+
 	item.url = text(doc, 'a>samp') || url;
 	var tags = ZU.xpath(doc, '//td[contains(text(), "views")]/following-sibling::td/a');
 	for (let i = 0; i < tags.length; i++) {
 		item.tags.push(tags[i].textContent);
 	}
-	
+
 	item.complete();
 }
 

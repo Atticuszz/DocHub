@@ -109,7 +109,7 @@ function getDOIsFromDocument(doc) {
 			}
 		}
 	}
-	
+
 	// FIXME: The test for this (developmentbookshelf.com) fails in Scaffold due
 	// to a cookie error, though running the code in Scaffold still works
 	var links = doc.querySelectorAll('a[href]');
@@ -159,11 +159,11 @@ async function retrieveDOIs(doiOrDOIs) {
 
 	for (const doi of dois) {
 		items[doi] = null;
-		
+
 		const translate = Zotero.loadTranslator("search");
 		translate.setTranslator("b28d0d42-8549-4c6d-83fc-8382874a5cb9");
 		translate.setSearch({ itemType: "journalArticle", DOI: doi });
-	
+
 		// don't save when item is done
 		translate.setHandler("itemDone", function (_translate, item) {
 			if (!item.title) {
@@ -175,14 +175,14 @@ async function retrieveDOIs(doiOrDOIs) {
 		/* eslint-disable no-loop-func */
 		translate.setHandler("done", function () {
 			numDOIs--;
-			
+
 			// All DOIs retrieved
 			if (numDOIs <= 0) {
 				// Check to see if there's at least one DOI
 				if (!Object.keys(items).length) {
 					throw new Error("DOI Translator: could not find DOI");
 				}
-				
+
 				// If showSelect is false, don't show a Select Items dialog,
 				// just complete if we can
 				if (!showSelect) {
@@ -203,17 +203,17 @@ async function retrieveDOIs(doiOrDOIs) {
 				}
 				Zotero.selectItems(select, function (selectedDOIs) {
 					if (!selectedDOIs) return;
-					
+
 					for (let selectedDOI in selectedDOIs) {
 						items[selectedDOI].complete();
 					}
 				});
 			}
 		});
-	
+
 		// Don't throw on error
 		translate.setHandler("error", function () {});
-	
+
 		await translate.translate();
 	}
 }

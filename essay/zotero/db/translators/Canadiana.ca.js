@@ -52,7 +52,7 @@ function scrape(doc, url) {
 	}
 
 	//At this point we have two lists (xPath1Results and xPath2Results). this loop matches the first item in the first list
-	//with the first item in the second list, and on until the end. 
+	//with the first item in the second list, and on until the end.
 	//If we then ask for the "Principal Author" the program returns "J.K. Rowling" instead of "Principal Author"
 	if (doc.evaluate('//div[@id="documentRecord"]//table/tbody/tr/th', doc, null, XPathResult.ANY_TYPE, null)) {
 		for (i = 0; i < xPathCount.numberValue; i++) {
@@ -64,7 +64,7 @@ function scrape(doc, url) {
 				var authorName = dataTags["PrincipalAuthor"];
 				newItem.creators.push(Zotero.Utilities.cleanAuthor(dataTags["PrincipalAuthor"], "author"));
 
-				//Splits Adressebibliographique or Imprint into 3 fields and cleans away any extra whitespace or unwanted characters.      		
+				//Splits Adressebibliographique or Imprint into 3 fields and cleans away any extra whitespace or unwanted characters.
 			} else if (fieldTitle == "Adressebibliographique" || fieldTitle == "Published") {
 
 				fieldTitle = "Imprint";
@@ -103,7 +103,7 @@ function scrape(doc, url) {
 		newItem.tags[i] = tagsContent[i];
 	}
 
-	//calls the associateData function to put the data in the correct Zotero field.	
+	//calls the associateData function to put the data in the correct Zotero field.
 	//English
 	associateData(newItem, dataTags, "Title", "title");
 	associateData(newItem, dataTags, "Place", "place");
@@ -128,7 +128,7 @@ function scrape(doc, url) {
 	if (newItem.language) {
 		if (newItem.language.match(/English|Anglais/)) newItem.language = "en-CA";
 	}
-	//Saves everything to Zotero.	
+	//Saves everything to Zotero.
 	newItem.complete();
 
 }
@@ -157,7 +157,7 @@ function doWeb(doc, url) {
 	} else {
 		scrape(doc, url);
 	}
-} 
+}
 
 /** BEGIN TEST CASES **/
 var testCases = [

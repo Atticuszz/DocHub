@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2018 Timotheus Chang-Whae Kim, Johannes Ruscheinski, Philipp Zumstein
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -106,7 +106,7 @@ function getValue(nodes) {
 
 function scrape(doc, url) {
 	var item = new Z.Item('journalArticle');
-	
+
 	var titleNodes = ZU.xpath(doc, '//b[contains(text(), "Title:")]/following-sibling::node()');
 	item.title = getValue(titleNodes);
 	var subtitleNodes = ZU.xpath(doc, '//b[contains(text(), "Subtitle:")]/following-sibling::node()');
@@ -114,7 +114,7 @@ function scrape(doc, url) {
 	if (subtitle) {
 		item.title += ': ' + subtitle;
 	}
-	
+
 	// e.g. Author(s): HANDAL, Boris , WATSON, Kevin , ..., VAN DER MERWE, W.L.
 	// but sometimes the space before the comma is also missing
 	var authors = ZU.xpathText(doc, '//b[contains(text(), "Author(s):")]/following-sibling::text()[1]');
@@ -132,7 +132,7 @@ function scrape(doc, url) {
 			};
 		} else {// first name
 			creator.firstName = name;
-			item.creators.push(creator); 
+			item.creators.push(creator);
 		}
 	}
 
@@ -143,7 +143,7 @@ function scrape(doc, url) {
 	item.pages = ZU.xpathText(doc, '//b[contains(text(), "Pages:")]/following-sibling::text()[1]');
 	item.DOI = ZU.xpathText(doc, '//b[contains(text(), "DOI:")]/following-sibling::text()[1]');
 	item.abstractNote = ZU.xpathText(doc, '//b[contains(text(), "Abstract :")]/following-sibling::text()[1]');
-	
+
 	item.attachments.push({
 		url: url,
 		title: "Snapshot",

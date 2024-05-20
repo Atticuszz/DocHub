@@ -61,7 +61,7 @@ function doWeb(doc, url) {
 			item.volume = complex.substr(0, posParenthesis);
 			item.issue = complex.substr(posParenthesis+1, complex.length-posParenthesis-2);
 		}
-		
+
 	}
 
 	item.title = ZU.xpathText(doc, '//div[contains(@class, "article")]//h1');
@@ -70,13 +70,13 @@ function doWeb(doc, url) {
 	for (var i=0; i<authors.length; i++) {
 		item.creators.push(ZU.cleanAuthor(authors[i].textContent, "author"));
 	}
-	
+
 	item.libraryCatalog = "Журнальный зал";
 
 	item.url = url;
 	item.attachments.push({
 		url:url,
-		title: "Snapshot", 
+		title: "Snapshot",
 		mimeType:"text/html"
 	});
 

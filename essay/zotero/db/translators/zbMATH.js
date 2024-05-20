@@ -14,23 +14,23 @@
 
 /*
 	***** BEGIN LICENSE BLOCK *****
-	
+
 	zbMATH Translator, Copyright © 2014 Philipp Zumstein
 	This file is part of Zotero.
-	
+
 	Zotero is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version.
-	
+
 	Zotero is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 	GNU Affero General Public License for more details.
-	
+
 	You should have received a copy of the GNU Affero General Public License
 	along with Zotero. If not, see <http://www.gnu.org/licenses/>.
-	
+
 	***** END LICENSE BLOCK *****
 */
 
@@ -52,14 +52,14 @@ function scrape(doc, _url) {
 
 	ZU.doGet(bibUrl, function (text) {
 		// Z.debug(text);
-		
+
 		var trans = Zotero.loadTranslator('import');
 		trans.setTranslator('9cb70025-a888-4a29-a210-93ec52da40d4');// https://github.com/zotero/translators/blob/master/BibTeX.js
 		trans.setString(text);
 
 		trans.setHandler('itemDone', function (obj, item) {
 			item.title = item.title.replace(/\.$/, '');
-			
+
 			if (item.publisher) {
 				var publisherSeparation = item.publisher.indexOf(":");
 				if (publisherSeparation != -1) {
@@ -67,7 +67,7 @@ function scrape(doc, _url) {
 					item.publisher = item.publisher.substr(publisherSeparation + 1);
 				}
 			}
-			
+
 			// keywords are normally not in the bib file, so we take them from the page
 			// moreover, the meaning of the MSC classification is also only given on the page
 			if (item.tags.length == 0) {
@@ -80,13 +80,13 @@ function scrape(doc, _url) {
 					item.extra = (item.extra ? item.extra + "\n" : '') + 'MSC2010: ' + ZU.trimInternal(ZU.xpathText(classification, './td', null, " = "));
 				}
 			}
-			
+
 			// add abstract but not review
 			var abstractOrReview = ZU.xpathText(doc, '//div[@class="abstract"]');
 			if (abstractOrReview.indexOf('Summary') == 0) {
 				item.abstractNote = abstractOrReview.replace(/^Summary:?\s*/, '');
 			}
-			
+
 			item.attachments = [{
 				title: "Snapshot",
 				document: doc
@@ -96,16 +96,16 @@ function scrape(doc, _url) {
 			if (id) {
 				if (!item.extra) item.extra = '';
 				else item.extra += "\n";
-				
+
 				item.extra += 'Zbl: ' + ZU.trimInternal(id.textContent)
 					.replace(/^\s*Zbl\s+/i, ''); // e.g. Zbl 1255.05045
 				item.url = id.href;
 			}
-			
+
 			item.complete();
 			// Z.debug(item);
 		});
-		
+
 		trans.translate();
 	});
 }

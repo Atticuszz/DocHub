@@ -67,13 +67,13 @@ function scrape(doc, url) {
 	if (json) json = json["@graph"][1];
 	else Z.debug("JSON invalid");
 	item.title = json.headline;
-	
+
 	item.abstractNote = attr(doc, 'meta[name="description"]', 'content');
 	item.blogTitle = "Vice";
 	item.date = json.dateModified || json.datePublished;
 	item.url = json.mainEntityOfPage['@id'];
 	item.language = attr(doc, 'html', 'lang');
-	
+
 	// use XPath to support the rare multiple authors and fallback to JSON, which only lists one author
 	let authors = doc.querySelectorAll('.contributor__meta a');
 	if (authors) {
@@ -90,13 +90,13 @@ function scrape(doc, url) {
 		}
 	}
 	item.tags = scrubLowercaseTags(item.tags);
-	
+
 	item.attachments.push({
 		document: doc,
 		title: 'Snapshot',
 		mimeType: "text/html"
 	});
-	
+
 	item.complete();
 }
 

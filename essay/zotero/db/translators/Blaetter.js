@@ -36,11 +36,11 @@ function detectWeb(doc, url) {
 	// I use XPaths. Therefore, I need the following block.
 	var Blaetter_ArticleTools_XPath = ".//div[contains(@id, 'node')]/h2";
 	var Blaetter_Multiple_XPath = ".//div[contains(@class, 'teaser') and not(contains(@class, 'dossier'))]/h3[@class='headline']/a";
-	
-	if (doc.evaluate(Blaetter_ArticleTools_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext() ){ 
+
+	if (doc.evaluate(Blaetter_ArticleTools_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext() ){
 		Zotero.debug("magazineArticle");
 		return "magazineArticle";
-	} else if (doc.evaluate(Blaetter_Multiple_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext() ){ 
+	} else if (doc.evaluate(Blaetter_Multiple_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext() ){
 		Zotero.debug("multiple");
 		return "multiple";
 	}
@@ -49,15 +49,15 @@ function detectWeb(doc, url) {
 
 function scrape(doc, url) {
 	var newItem = new Zotero.Item("magazineArticle");
-	newItem.url = doc.location.href; 
+	newItem.url = doc.location.href;
 
-	
+
 	// This is for the title
-	
+
 	var title_XPath =".//h2[@class='headline']";
 	var title = doc.evaluate(title_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext().textContent;
 	newItem.title = title;
-	
+
 	// Author
 	var author_XPath = ".//h4[@class='author']/a";
 	if (doc.evaluate(author_XPath, doc, null, XPathResult.ANY_TYPE, null)){
@@ -67,8 +67,8 @@ function scrape(doc, url) {
 			Zotero.debug(next_author.textContent);
 			newItem.creators.push(Zotero.Utilities.cleanAuthor(next_author.textContent, "author"));
 		}
-	} 
-	
+	}
+
 	// Tags
 	var tags_XPath = ".//p[@class='credit']/a[@class='rb']";
 	if (doc.evaluate(author_XPath, doc, null, XPathResult.ANY_TYPE, null)){
@@ -77,25 +77,25 @@ function scrape(doc, url) {
 		while (next_tag= tags_obj.iterateNext()) {
 			newItem.tags.push(next_tag.textContent);
 		}
-	} 
-	
+	}
+
 	// Attachment. If there's a PDF available, grab it, otherwise just take the HTML site.
 	var pdfurl_XPath = "//ul/li[contains(@class, 'download')]/a";
 	if (doc.evaluate(pdfurl_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext()){
 		var pdfurl = doc.evaluate(pdfurl_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext().href;
-		newItem.attachments.push({url:pdfurl, title:doc.title, mimeType:"application/pdf"}); 
+		newItem.attachments.push({url:pdfurl, title:doc.title, mimeType:"application/pdf"});
 
 	} else {
-		newItem.attachments.push({url:doc.location.href, title:doc.title, mimeType:"text/html"}); 
+		newItem.attachments.push({url:doc.location.href, title:doc.title, mimeType:"text/html"});
 
 	}
-	
+
 	// Publication Title
 	newItem.publicationTitle = "Blätter für deutsche und internationale Politik";
 	// Issue, Year and Date
 	var credit_XPath = ".//p[@class='credit']";
 	if (doc.evaluate(credit_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext())	{
-		var credit= doc.evaluate(credit_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext().textContent;	
+		var credit= doc.evaluate(credit_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext().textContent;
 		newItem.date = credit.replace(/.*(\d+)\/(\d\d\d\d?).*\n.*/g, '$2-$1-00'); // Standard Date Format
 		newItem.date = newItem.date.replace(/-(\d)-/, '-0$1-'); // If Month is single-digit, add a zero before it.
 		newItem.pages= credit.replace(/.*,\sSeite\s(\d+-\d+).*\n.*/g, '$1');
@@ -103,30 +103,30 @@ function scrape(doc, url) {
 		var title2_XPath =".//h3[@class='subtitle']";
 		// Zotero doesn't have a field for subtitle, so just add a colon and then the subtitle.
 		var title2 = doc.evaluate(title2_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext().textContent;
-		newItem.title = newItem.title + ": " + title2.replace(/(.*)(,\s\d+\.\d+\.\d\d\d\d)$/, '$1'); 
+		newItem.title = newItem.title + ": " + title2.replace(/(.*)(,\s\d+\.\d+\.\d\d\d\d)$/, '$1');
 		// And the date is in there as well...
-		newItem.date = title2.replace(/(.*,\s)(\d+\.\d+\.\d\d\d\d)$/, '$2'); 
+		newItem.date = title2.replace(/(.*,\s)(\d+\.\d+\.\d\d\d\d)$/, '$2');
 	}
-	
+
 	var summary_XPath = ".//meta[@name='description']";
 	var summary = doc.evaluate(summary_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext().content;
 	newItem.abstractNote = Zotero.Utilities.unescapeHTML(summary);
-	
+
 	newItem.complete();
 }
 function doWeb(doc, url) {
 
 	var articles = new Array();
-	
+
 	if (detectWeb(doc, url) == "multiple") {
 		var items = new Object();
-		
+
 		var Blaetter_Multiple_XPath = ".//div[contains(@class, 'teaser') and not(contains(@class, 'dossier'))]/h3[@class='headline']/a";
 		 if (doc.evaluate(Blaetter_Multiple_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext() ){
 			var titles = doc.evaluate(Blaetter_Multiple_XPath, doc, null, XPathResult.ANY_TYPE, null);
-		} 
+		}
 		var next_title;
-		
+
 		while (next_title = titles.iterateNext()) {
 			Zotero.debug(next_title.textContent);
 			items[next_title.href] = next_title.textContent;
@@ -143,7 +143,7 @@ function doWeb(doc, url) {
 	} else {
 		scrape(doc, url);
 	}
-}	
+}
 /** BEGIN TEST CASES **/
 var testCases = [
 	{

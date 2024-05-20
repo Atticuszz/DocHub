@@ -57,13 +57,13 @@ function doWeb(doc, url) {
 			if (!items) return true;
 
 			var articlesURLs = [];
-			
+
 			for (var itemURL in items) {
 				articlesURLs.push(itemURL);
 			}
 
 			ZU.processDocuments(articlesURLs, scrape);
-		  
+
 		})
 
 	} else {
@@ -111,7 +111,7 @@ function scrape(doc, url) {
 
 	/*---------- URL ----------*/
 	newItem.url = url;
-	
+
 	/*---------- Title ----------*/
 	var xpathTitle = '//li[@class="active"]';
 	var title = ZU.xpathText(doc, xpathTitle);
@@ -133,7 +133,7 @@ function scrape(doc, url) {
 			newItem.date = dateISO8601;
 		}
 	}
-	
+
 	/*---------- Tags ----------*/
 	var xpathTags = '//div[@id="doc-donnees"]/span/a';
 	var xresultTags = ZU.xpath(doc, xpathTags);
@@ -159,7 +159,7 @@ function scrape(doc, url) {
 
 	// For each PDF anchor get the url and push it
 	for (var i = 0; i < xresultsPdf.length; i++) {
-		
+
 		var nextResult = xresultsPdf[i];
 		var pdfUrl = nextResult.href;
 

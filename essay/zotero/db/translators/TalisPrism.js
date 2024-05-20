@@ -14,12 +14,12 @@
 
 /* TalisPrism translator.
  Version 1.1
- By William Smith (http://www.willsmith.org/contactme) 
+ By William Smith (http://www.willsmith.org/contactme)
  and Emma Reisz
 
-TalisPrism is a library management system used by a number of universities 
-and public bodies in the UK, Ireland and elsewhere.  
-For example: http://qu-prism.qub.ac.uk/TalisPrism/ 
+TalisPrism is a library management system used by a number of universities
+and public bodies in the UK, Ireland and elsewhere.
+For example: http://qu-prism.qub.ac.uk/TalisPrism/
 and http://http://star.shef.ac.uk/TalisPrism/
 
 This program is free software: you can redistribute it and/or modify
@@ -34,7 +34,7 @@ This program is free software: you can redistribute it and/or modify
 
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- 
+
 */
 
 
@@ -42,16 +42,16 @@ This program is free software: you can redistribute it and/or modify
 
 function detectWeb(doc, url){
 
-	/* Can't differentiate multiple from single results by URL 
+	/* Can't differentiate multiple from single results by URL
 	as single search results have a search URL but display as browse.
-	Can't scrape the titles to differentiate between single and multiple as the display format 
+	Can't scrape the titles to differentiate between single and multiple as the display format
 	is too different to be scraped consistently.
 	Instead we differentiate by URL but make an exception for a solo result.
 	*/
 	var search=searchTest(doc, url);
-		
+
 	if (search==1) {
-		var doctype = 'multiple'; 
+		var doctype = 'multiple';
 	} else {doctype=docType(doc, url);
 	}
 	return doctype;
@@ -64,22 +64,22 @@ function docType (doc,url){
 		if (prefix == "x" ) return namespace; else return null;
 	} : null;
 
-	// Best way to identify item type on an entry page is by its icon.  	
- 	if (getXPath(doc, '//img[@alt="sound - disc"]/@alt').length) {		
+	// Best way to identify item type on an entry page is by its icon.
+ 	if (getXPath(doc, '//img[@alt="sound - disc"]/@alt').length) {
 		doctype = 'audioRecording';
 	} else if (getXPath(doc, '//img[@alt="Book"]/@alt').length) {
 		doctype = 'book';
 	} else if (getXPath(doc, '//img[@alt="video - disc"]/@alt').length) {
 		doctype = 'videoRecording';
 	} else {
-		doctype = 'document';	
+		doctype = 'document';
 	}
-	return doctype;	
+	return doctype;
 }
 
 
 function searchTest (doc, url){
-	
+
 	//Need xpaths to differentiate search and item pages.
 	var namespace = doc.documentElement.namespaceURI;
 	var nsResolver = namespace ? function(prefix) {
@@ -88,12 +88,12 @@ function searchTest (doc, url){
 
 	var searchPage;
 	var search;
-	if (url.match(/doSearch/)) {	
+	if (url.match(/doSearch/)) {
 		var resultCount;
 		var resultCountElements = new Array();
 		var resultCountText;
 		var resultCountPath = '//table/tbody/tr/td/table/tbody/tr/td[1]/font/span[@class="text"]/font';
-		var resultCountObject = doc.evaluate(resultCountPath, doc, nsResolver, XPathResult.ANY_TYPE, null);		
+		var resultCountObject = doc.evaluate(resultCountPath, doc, nsResolver, XPathResult.ANY_TYPE, null);
 		while (resultCountText = resultCountObject.iterateNext()) {
 			resultCountElements.push(resultCountText.textContent);
 		}
@@ -101,18 +101,18 @@ function searchTest (doc, url){
 		if (resultCount == 1) {
 			search=0;
 		} else {
-			search=1;	
+			search=1;
 		}
 	} else {
 		var pageCount;
 		var pageCountElements = new Array();
 		var pageCountText;
 		var pageCountPath= '//tbody/tr/td[2]/font/span[@class="text"]/table/tbody/tr[2]/td/font/span[@class="text"]/table/tbody/tr/td[4]';
-		var pageCountObject = doc.evaluate(pageCountPath, doc, nsResolver, XPathResult.ANY_TYPE, null);		
+		var pageCountObject = doc.evaluate(pageCountPath, doc, nsResolver, XPathResult.ANY_TYPE, null);
 		while (pageCountText = pageCountObject.iterateNext()) {
 			pageCountElements.push(pageCountText.textContent);
 		}
-		pageCount=pageCountElements[0];	
+		pageCount=pageCountElements[0];
 		if (pageCount==undefined){
 			search=0;
 		} else if (pageCount.match(/Page/)){
@@ -126,7 +126,7 @@ function searchTest (doc, url){
 
 function getXPath ( doc, field ) {
 	xpath = field;
-	
+
 	content = doc.evaluate(xpath, doc, null, XPathResult.ANY_TYPE, null).iterateNext();
 
 	if (content)
@@ -150,7 +150,7 @@ function getField (doc, field) {
 		{
 			// OK, find the next field
 			while (val = content.iterateNext()) {
-	
+
 				if (val && val.textContent != c.textContent)
 				{
 					return val.textContent;
@@ -165,26 +165,26 @@ function multiscrape(doc, url) {
 	url=doc.documentURI;
 	var item;
 	var doctype = docType(doc, url);
-	item        = new Zotero.Item(doctype);	
-	scrape(doc,url, item);	
+	item        = new Zotero.Item(doctype);
+	scrape(doc,url, item);
 }
 
 
 function soloscrape(doc, url) {
 	url=doc.documentURI;
 	var item;
-	item        = new Zotero.Item(doctype);	
+	item        = new Zotero.Item(doctype);
 	scrape(doc,url, item);
-	return '';	
+	return '';
 }
 
 
 function scrape(doc, url, item){
-	var namespace = doc.documentElement.namespaceURI; 
+	var namespace = doc.documentElement.namespaceURI;
 	var nsResolver = namespace ? function(prefix) {
-		if (prefix == 'x') return namespace; else return null; 
+		if (prefix == 'x') return namespace; else return null;
 	} : null;
-	
+
 	// The fields often contain multiple data types and need some cleanup.
 	var title = getField(doc, 'Title');
 
@@ -207,8 +207,8 @@ function scrape(doc, url, item){
 			item.creators.push(Zotero.Utilities.cleanAuthor(author, "author", 1));
 		}
 	}
-	
-	
+
+
 	// Place, publisher and publish date are in the same field.  Format is usually "Place : Publisher, yyyy".
 
 	var publishing              = getField(doc, 'Publisher');
@@ -225,17 +225,17 @@ function scrape(doc, url, item){
 		if (date) item.date = date[0];
 		var place = publishing.substring(0, publishing.indexOf(':'));
 		item.place = place.replace(/^\s+|\s+$/g, '');
-		var publisher = publishing.substring(publishing.indexOf(':')+1, pos); 
+		var publisher = publishing.substring(publishing.indexOf(':')+1, pos);
 		item.publisher = publisher.replace(/^\s+|\s+$|\,\s+$/g, '');
 	}
 
 
-	var isbn              = getField(doc, 'ISBN');	
+	var isbn              = getField(doc, 'ISBN');
 	if (isbn.length == 0) {
 		isbn = getField(doc, 'ISBN, etc.');
 	}
-	
-	isbn=isbn.replace(/^\D+|\D+$/g, "");	
+
+	isbn=isbn.replace(/^\D+|\D+$/g, "");
 	isbn = isbn.substring(0).match(/\d+/);
 	if (isbn) item.ISBN = isbn[0];
 
@@ -249,23 +249,23 @@ function scrape(doc, url, item){
 		var seriesNumber = series.substring(pos2+1);
 		item.seriesNumber = seriesNumber.replace(/^\s+|\s+$/g, '');
 	}
-		
+
 	item.edition 		  = getField(doc, 'Edition');
 
 	var physical			  = getField(doc, 'Physical details');
 	var numPages = physical.substring(0, physical.indexOf(':'));
 	item.numPages = numPages.replace(/^\s+|\s+$/g, '');
-	
+
 	var physicaldetails  = physical.substring(physical.indexOf(':')+1, physical.lastIndexOf('.'));
 	physicaldetails = physicaldetails.replace(/^\s+|\s+$/g, '');
-	
+
 	var databasedetails = getField(doc, 'Cited/indexed in');
 	databasedetails = databasedetails.replace(/^\s+|\s+$/g, '');
-	
+
 	item.extra = databasedetails + physicaldetails
-	
+
 	item.attachments.push({url:url, title:"Snapshot of Library Page", mimeType:"text/html"});
-	
+
 	var doctitle
 	doctitle = doc.title
 	if (doctitle == "TalisPrism"){
@@ -274,23 +274,23 @@ function scrape(doc, url, item){
 		item.libraryCatalog = doctitle
 	}
 
-	
-	/* We need to XPath to the call number as we cannot be sure about the previous cell, 
-	so the label method won't work. Some items have multiple call numbers, 
-	but a generalised XPath which retrieves multiple sets of location data (tr[2], tr[3] etc.) 
-	also retrieves tr [1], which contains all the rest of the bibliographic entry. 
-	The size of tr[1] varies and there is no consistent final item, 
-	so instead of using a general XPath, we scrape tr[2], tr[3] and tr[4] successively into an array; 
-	tr[5] is also scraped into the array, but if non-null, 'See record for additional call numbers.' 
-	is returned as the final shelfmark. Note that each call number is itself scraped into an 
+
+	/* We need to XPath to the call number as we cannot be sure about the previous cell,
+	so the label method won't work. Some items have multiple call numbers,
+	but a generalised XPath which retrieves multiple sets of location data (tr[2], tr[3] etc.)
+	also retrieves tr [1], which contains all the rest of the bibliographic entry.
+	The size of tr[1] varies and there is no consistent final item,
+	so instead of using a general XPath, we scrape tr[2], tr[3] and tr[4] successively into an array;
+	tr[5] is also scraped into the array, but if non-null, 'See record for additional call numbers.'
+	is returned as the final shelfmark. Note that each call number is itself scraped into an
 	array ('shelfmarkElements'), as we need both the Library and Shelfmark elements.
 	*/
-	
+
 	var shelfmark = new Array();
 	var callNumber = "";
 
 	//Need to test whether the search page has a sidebar showing as this shifts the classmarks.
-		
+
 	var authorModePath='//td/table/tbody/tr/td[1]/font/span[@class="text"]/table/tbody/tr[2]/td/font/span[@class="text"]/font/b/span[@class="text"]/table/tbody/tr/td[2]';
 	var authorModeObject=doc.evaluate(authorModePath, doc, nsResolver, XPathResult.ANY_TYPE, null).iterateNext();
 	var browseModePath='//td/table/tbody/tr/td[1]/font/span[@class="text"]/table/tbody/tr/td[2]/font/span[@class="text"]/table/tbody/tr/td[1]';
@@ -306,10 +306,10 @@ function scrape(doc, url, item){
 			for (var i=0; i < 4; i ++){
 				var shelfmarkObject = new Array();
 				var shelfmarkElements = new Array();
-				shelfmarkObject[i] = doc.evaluate(shelfmarkPath[i], doc, nsResolver, XPathResult.ANY_TYPE, null);		
+				shelfmarkObject[i] = doc.evaluate(shelfmarkPath[i], doc, nsResolver, XPathResult.ANY_TYPE, null);
 				while (shelfmarkText = shelfmarkObject[i].iterateNext()) {
 					shelfmarkElements.push(shelfmarkText.textContent);
-				}	
+				}
 				shelfmark[i]=shelfmarkElements[0]+" "+shelfmarkElements[1];
 				//Need to remove junk text scraped when there is a request button in the call number field.
 				shelfmark[i] = shelfmark[i].replace(/\s*\/*(?:xc_d.write.*\;)/, '');
@@ -318,10 +318,10 @@ function scrape(doc, url, item){
 			for (var i=0; i < 4; i ++){
 				var shelfmarkObject = new Array();
 				var shelfmarkElements = new Array();
-				shelfmarkObject[i] = doc.evaluate(shelfmarkPath[i], doc, nsResolver, XPathResult.ANY_TYPE, null);		
+				shelfmarkObject[i] = doc.evaluate(shelfmarkPath[i], doc, nsResolver, XPathResult.ANY_TYPE, null);
 				while (shelfmarkText = shelfmarkObject[i].iterateNext()) {
 					shelfmarkElements.push(shelfmarkText.textContent);
-				}	
+				}
 				shelfmark[i]=shelfmarkElements[1]+" "+shelfmarkElements[2];
 				shelfmark[i] = shelfmark[i].replace(/\s*\/*(?:xc_d.write.*\;)/, '');
 			}
@@ -330,10 +330,10 @@ function scrape(doc, url, item){
 		for (var i=0; i < 4; i ++){
 			var shelfmarkObject = new Array();
 			var shelfmarkElements = new Array();
-			shelfmarkObject[i] = doc.evaluate(shelfmarkPath[i], doc, nsResolver, XPathResult.ANY_TYPE, null);		
+			shelfmarkObject[i] = doc.evaluate(shelfmarkPath[i], doc, nsResolver, XPathResult.ANY_TYPE, null);
 			while (shelfmarkText = shelfmarkObject[i].iterateNext()) {
 				shelfmarkElements.push(shelfmarkText.textContent);
-			}	
+			}
 			shelfmark[i]=shelfmarkElements[1]+" "+shelfmarkElements[2];
 			shelfmark[i] = shelfmark[i].replace(/\s*\/*(?:xc_d.write.*\;)/, '');
 		}
@@ -349,10 +349,10 @@ function scrape(doc, url, item){
 	if (shelfmark[3] != "undefined undefined"){
 		callNumber = callNumber + ". See record for additional call numbers.";
 	}
-		
+
 	item.callNumber = callNumber;
-	
-	var link = getField (doc, 'Link to');	
+
+	var link = getField (doc, 'Link to');
 	if (link.length == 0) {
 		var linkPath='//span[@class="text"]/table/tbody/tr/td/table/tbody/tr/td[2]/font/span[@class="text"]/table/tbody/tr/td/font/span[@class="text"]/table/tbody/tr/td[2]/font/span[@class="text"]/a';
 		var linkObject=doc.evaluate(linkPath, doc, nsResolver, XPathResult.ANY_TYPE, null).iterateNext();
@@ -368,7 +368,7 @@ function scrape(doc, url, item){
 	item.url = link;
 
 	item.complete();
-	return '';	
+	return '';
 }
 
 function doWeb(doc, url) {
@@ -382,32 +382,32 @@ function doWeb(doc, url) {
 	var nextTitle;
 	doctype=detectWeb(doc, url);
 
-	/* Typically scrapers process both search pages and item pages in the same way; 
+	/* Typically scrapers process both search pages and item pages in the same way;
 	the processDocuments function is used, calling the scraped result link URLs for a search page,
-	and for an item page calling the item page's own URL.  
-	But Talis displays solo search results with an unstable URL and with no link to an item page. 
-	So we cannot call the URL for a solo search result as it will yield a null page. 
+	and for an item page calling the item page's own URL.
+	But Talis displays solo search results with an unstable URL and with no link to an item page.
+	So we cannot call the URL for a solo search result as it will yield a null page.
 	Instead we must process solo search results directly without using processDocuments.
-	We want to process item pages in the same way as solo search pages because 
+	We want to process item pages in the same way as solo search pages because
 	waiting for the URL on an item page to be called noticeably slows down the scrape.
 	*/
-	
+
 	var indexPath ='//span[@class="text"]/x:table/x:tbody/x:tr/x:td/x:table/x:tbody/x:tr/x:td[1]'
 	var index;
 	var indexElements = new Array();
 	var indexText;
-	var indexObject = doc.evaluate(indexPath, doc, nsResolver, XPathResult.ANY_TYPE, null);		
+	var indexObject = doc.evaluate(indexPath, doc, nsResolver, XPathResult.ANY_TYPE, null);
 	while (indexText = indexObject.iterateNext()) {
 			indexElements.push(indexText.textContent);
 		}
 	index=indexElements[0];
-	index1=indexElements[1];	
+	index1=indexElements[1];
 	if (doctype == "multiple" && index.match(/Index/) && index1 == ""){
 		var titlePath = '//td[3]/font/span[@class="text"]/table/tbody/tr/td/font/span[@class="text"]/table/tbody/tr/td[1]/font/span[@class="text"]/a';
 		var titles = doc.evaluate(titlePath, doc, nsResolver, XPathResult.ANY_TYPE, null);
 		while (nextTitle = titles.iterateNext()) {
 			items[nextTitle.href] = nextTitle.textContent;
-			names.push(nextTitle.textContent);	
+			names.push(nextTitle.textContent);
 		}
 		Zotero.selectItems(items, function(items) {
 			if (!items) return true;
@@ -423,7 +423,7 @@ function doWeb(doc, url) {
 		var titles = doc.evaluate(titlePath, doc, nsResolver, XPathResult.ANY_TYPE, null);
 		while (nextTitle = titles.iterateNext()) {
 			items[nextTitle.href] = nextTitle.textContent;
-			names.push(nextTitle.textContent);	
+			names.push(nextTitle.textContent);
 		}
 
 		Zotero.selectItems(items, function(items) {
@@ -435,11 +435,11 @@ function doWeb(doc, url) {
 			}
 			ZU.processDocuments(articles, function(doc) { multiscrape(doc, doc.location.href) });
 		});
-	} 
+	}
 	else {
 		soloscrape(doc, url);
 	}
-		
+
 }/** BEGIN TEST CASES **/
 var testCases = []
 /** END TEST CASES **/

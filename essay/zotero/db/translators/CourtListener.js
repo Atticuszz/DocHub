@@ -76,7 +76,7 @@ async function doWeb(doc, url) {
 async function scrape(doc, url = doc.location.href) {
 	var item = new Zotero.Item('case');
 	let citeString = text(doc, 'h2');
-	
+
 	let title = citeString.match(/^(.+?),\s\d+/);
 	item.caseName = title ? title[1] : citation;
 	item.court = text(doc, 'article h3');
@@ -115,7 +115,7 @@ async function scrape(doc, url = doc.location.href) {
 			item.history = caseHistory.trim().replace(/^.+?,/, "");
 		}
 	}
-	
+
 	// no good selctor for date, author, and docket number, so
 	let date = ZU.xpathText(doc, '//span[@class="meta-data-header" and contains(text(), "Filed:")]/following-sibling::span');
 	item.dateDecided = date ? date.trim() : "";

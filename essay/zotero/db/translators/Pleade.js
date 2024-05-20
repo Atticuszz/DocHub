@@ -56,10 +56,10 @@ function detectWeb(doc, url) {
 	else if (url.match("base=ead") && url.match("results.html")) {
 		return "multiple";
 	}
-/** //The original method this used to work with - by getting a qId from the search page - doesn't work anymore. 
+/** //The original method this used to work with - by getting a qId from the search page - doesn't work anymore.
  //It's probably possible to fix this otherwise, but I'm not sure if that'd work across pleade implementations
 	else if (url.match("list-results.html") && url.match("mode=")) {
-		return "multiple";	
+		return "multiple";
 	} */
 }
 
@@ -89,7 +89,7 @@ function Remplace(expr,a,b) {
  * @param author :  "string author"
  * @param managed : this field is provided by Pleade and permit to now if the @author is normalized
  */
- 
+
  //We're currrently not using this - leaving this here in case problems come up
 function getAuthors(newItem, author, managed) {
 	if (managed=="true") newItem.creators.push(Zotero.Utilities.cleanAuthor(author, "author"));
@@ -102,7 +102,7 @@ function getAuthors(newItem, author, managed) {
  */
 function getTag(newItem, book) {
 	var Tags = new Array();
-	
+
 	for (var i=0; i<book.subject.length(); i++) {
 		Tags.push(Zotero.Utilities.superCleanString(book.subject[i].text().toString()));
 	}
@@ -129,7 +129,7 @@ function scrape(url) {
 		var parser = new DOMParser();
 		var doc = parser.parseFromString(text, "text/xml");
 		var books = ZU.xpath(doc, '//book');
-		
+
 		for (var i in books) {
 			var newItem = new Zotero.Item("book");
 			var book = books[i];
@@ -148,13 +148,13 @@ function scrape(url) {
 			if (!newItem.place && newItem.publisher.indexOf(".")!=-1){
 				newItem.place = newItem.publisher.match(/\.\s*([^\.]+)$/)[1];
 				newItem.publisher = newItem.publisher.match(/(.+)\./)[1];
-			}	
+			}
 			newItem.language = ZU.xpathText(book, './lang');
 			newItem.rights = ZU.xpathText(book, './rights');
 			newItem.archiveLocation = ZU.xpathText(book, './archLoc');
 			newItem.libraryCatalog = ZU.xpathText(book, './serverName');
 			newItem.callNumber = ZU.xpathText(book, './cote');
-			
+
 			if (note) newItem.notes.push(note);
 			newItem.complete();
 		}
@@ -175,7 +175,7 @@ function getNbrTerms(text)
 }
 
 /**
-* If a web page that describe multiple is matched, this function call Pleade for getting the terms in that page. And then, it call the 
+* If a web page that describe multiple is matched, this function call Pleade for getting the terms in that page. And then, it call the
 * zotero.selectItem function and finaly it scrape the selected items in zotero.
 * @param doc : the javascript doc var
 * @param url : url to give to Pleade for getting informations in that page.
@@ -189,7 +189,7 @@ function getMultipleQid(doc,url)
 		text = text.replace(/<!DOCTYPE[^>]*>/, "").replace(/<\?xml[^>]*\?>/, "");
 		text = Zotero.Utilities.trim(text);
 		var temp1;
-		
+
 		if (url.match("base=ead") && url.match("results.html")) {
 			temp1 = text.substr(text.indexOf("var oid")+11,30);
 			qId = temp1.substring(0,temp1.indexOf("\""));
@@ -202,35 +202,35 @@ function getMultipleQid(doc,url)
 		}
 
 		Zotero.debug("qId :  " + qId);
-		
+
 		var newURL = url.substring(url.indexOf("http"), url.indexOf("results.html"))+"functions/zotero/results/"+qId;
 		Zotero.debug("Getting terms : " + newURL);
 
 		// Getting field.title
 		Zotero.Utilities.HTTP.doGet(newURL, function(text2) {
-	
+
 			text2 = text2.replace(/(<[^!>][^>]*>)/g, function replacer(str, p1, p2, offset, s) {return str.replace(/-/gm, "");});
 			text2 = text2.replace(/(<[^!>][^>]*>)/g, function replacer(str, p1, p2, offset, s) {return str.replace(/:/gm, "");});
 			text2 = Zotero.Utilities.trim(text2);
 
 			var temp = text2.substring(text2.indexOf("\<title\>"),text2.lastIndexOf("\<\/pleadeId\>")+11);
 			var pids = {};
-			
+
 			var max=text2.substring(text2.indexOf("nbrresult\>")+20, text2.lastIndexOf("\<nbrresult"));
 			max=parseInt(max.substring(max.indexOf("\>")+1, max.lastIndexOf("\<")));
-			
+
 			//this loop get fields from Pleade
-			for (var i=0; i< max; i++) 
+			for (var i=0; i< max; i++)
 			{
 				var title = temp.substring(temp.indexOf("\<title\>")+7,temp.indexOf("\<\/title\>"));
 				var pleadeId = temp.substring(temp.indexOf("\<pleadeId\>")+10,temp.indexOf("\<\/pleadeId\>"));
 				temp = temp.substring(temp.indexOf("\<result\>")+8,temp.lastIndexOf("\<\/pleadeId\>")+11);
-		
+
 				pids[pleadeId] = title;
 			}
 
 			var newURL2 = url.substring(url.indexOf("http"), url.indexOf("results.html"))+"functions/zotero/";
-		
+
 			Zotero.selectItems(pids, function (tpids) {
 				for (var i in tpids) {
 					scrape(newURL2+i+".xml?fragment=null");
@@ -247,7 +247,7 @@ function doWeb(doc, url) {
 	var pleadeId;
 	var fragmentId;
 	var text;
-	
+
 	if (detectWeb(doc, url) == "multiple") {
 		getMultipleQid(doc,url);
 	}

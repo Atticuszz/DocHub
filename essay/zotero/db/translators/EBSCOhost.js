@@ -81,11 +81,11 @@ function downloadFunction(text, url, prefs) {
 	// remove M3 so it does not interfere with DOI.
 	// hopefully EBCSOhost doesn't use this for anything useful
 	text = text.replace(/^M3\s\s?-.*/gm, '');
-	
+
 	// we'll save this for later, in case we have to throw away a subtitle
 	// from the RIS
 	let subtitle;
-	
+
 	// EBSCOhost uses nonstandard tags to represent journal titles on some items
 	// Sometimes T2 also just duplicates the journal title across along with JO/JF/J1
 	// no /g flag so we don't create duplicate tags
@@ -99,7 +99,7 @@ function downloadFunction(text, url, prefs) {
 			subtitle = subtitleMatch[1];
 			text = text.replace(subtitleRe, '');
 		}
-		
+
 		text = text.replace(journalRe, 'T2');
 	}
 
@@ -110,7 +110,7 @@ function downloadFunction(text, url, prefs) {
 	var season = text.match(
 		/^(Y1\s+-\s+(\d{2})(\d{2})\/\/\/)(?:\2?\3(.+)|(.+?)\2?\3)\s*$/m);
 	season = season && (season[4] || season[5]);
-	
+
 	// load translator for RIS
 	var translator = Zotero.loadTranslator("import");
 	translator.setTranslator("32d59d2d-b65a-4da4-b0a3-bdd3cfb979e7");
@@ -126,11 +126,11 @@ function downloadFunction(text, url, prefs) {
 		if (item.title) {
 			// Strip final period from title if present
 			item.title = item.title.replace(/([^.])\.\s*$/, '$1');
-			
+
 			if (item.title.toUpperCase() == item.title) {
 				item.title = ZU.capitalizeTitle(item.title, true);
 			}
-			
+
 			if (subtitle) {
 				item.title += `: ${subtitle}`;
 			}
@@ -149,18 +149,18 @@ function downloadFunction(text, url, prefs) {
 				item.creators[i].lastName = ZU.capitalizeTitle(ln, true);
 			}
 		}
-		
+
 		// Sometimes EBSCOhost gives us year and season
 		if (season) {
 			item.date = season + ' ' + item.date;
 		}
-		
+
 		// The non-DOI values in M3 should never pass RIS translator,
 		// but, just in case, if we know it's not DOI, let's remove it
 		if (item.DOI && item.DOI == m3Data) {
 			item.DOI = undefined;
 		}
-		
+
 		// Strip EBSCOhost tags from the end of abstract
 		if (item.abstractNote) {
 			item.abstractNote = item.abstractNote
@@ -178,13 +178,13 @@ function downloadFunction(text, url, prefs) {
 		else if (!an) {	// we'll need this later
 			an = item.callNumber;
 		}
-		
+
 		// A lot of extra info is jammed into notes
 		item.notes = [];
-		
+
 		// the archive field is pretty useless:
 		item.archive = "";
-		
+
 		if (item.url) {
 			// Trim the ⟨=cs suffix -- EBSCO can't find the record with it!
 			item.url = item.url.replace(/(AN=[0-9]+)⟨=[a-z]{2}/, "$1")
@@ -201,7 +201,7 @@ function downloadFunction(text, url, prefs) {
 				item.url = undefined;
 			}
 		}
-		
+
 		if (prefs.pdfURL) {
 			item.attachments.push({
 				url: prefs.pdfURL,
@@ -239,7 +239,7 @@ function downloadFunction(text, url, prefs) {
 							Z.debug('PDF viewer page doesn\'t appear to be serving the correct PDF. Skipping PDF attachment.');
 							return;
 						}
-						
+
 						var realpdf = findPdfUrl(pdfDoc);
 						if (realpdf) {
 							item.attachments.push({
@@ -289,7 +289,7 @@ function getResultList(doc, items, itemInfo) {
 					'.//span[@class = "item add-to-folder"]/input/@value|.//span[@class = "item add-to-folder"]/a[1]/@data-folder');
 				// I'm not sure if the input/@value format still exists somewhere, but leaving this in to be safe
 				// skip if we're missing something
-	
+
 				itemInfo[title[0].href] = {
 					folderData: folderData[0].textContent,
 					// let's also store item type
@@ -313,7 +313,7 @@ function getResultList(doc, items, itemInfo) {
 			if (!title.length) continue;
 			if (folder) {
 				folderData = ZU.xpath(results[i], './/a[@class="add-to-folder"]/@data-folder');
-			
+
 				itemInfo[title[0].href] = {
 					folderData: folderData[0].textContent,
 					// let's also store item type
@@ -380,7 +380,7 @@ function isCorrectViewerPage(pdfDoc) {
 		Z.debug('PDF viewer page structure has changed - assuming PDF is correct');
 		return true;
 	}
-	
+
 	return !!JSON.parse(citationAmplitude).result_index;
 }
 
@@ -397,7 +397,7 @@ function findPdfUrl(pdfDoc) {
 				|| pdfDoc.getElementById('pdfEmbed')) // embed
 			&& el.src;
 	}
-	
+
 	return realpdf;
 }
 
@@ -435,7 +435,7 @@ function btoa(input) {
 	var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
 	var i = 0;
 	input = utf8Encode(input);
-		
+
 	while (i < input.length) {
 		chr1 = input.charCodeAt(i++);
 		chr2 = input.charCodeAt(i++);
@@ -460,7 +460,7 @@ function btoa(input) {
 /**
  * end borrowed code
  */
- 
+
 /**
  * EBSCOhost encodes the target url before posting the form
  * Replicated from http://global.ebsco-content.com/interfacefiles/13.4.0.98/javascript/bundled/_layout2/master.js
@@ -564,7 +564,7 @@ function doDelivery(doc, itemInfo) {
 		prefs.itemType = ebscoToZoteroItemType(itemInfo.itemType);
 		prefs.itemTitle = itemInfo.itemTitle;
 	}
-	
+
 	if (prefs.itemTitle) {
 		prefs.itemTitle = ZU.trimInternal(prefs.itemTitle).replace(/([^.])\.$/, '$1');
 	}

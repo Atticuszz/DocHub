@@ -277,7 +277,7 @@ function finalizeItem(item) {
 	if (item.ISBN) {
 		item.ISBN = ZU.cleanISBN(item.ISBN.replace("ISBN-", ""));
 	}
-	
+
 	if (item.itemType == "book") {
 		item.publisher = item.publicationTitle;
 		delete item.publicationTitle;

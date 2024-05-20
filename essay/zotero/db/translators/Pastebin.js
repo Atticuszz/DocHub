@@ -15,17 +15,17 @@
 /*
 	Pastebin Translator
 	Copyright (C) 2016 Félix Brezo, felixbrezo@gmail.com
-	
+
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version.
-	
+
 	This program is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 	GNU General Public License for more details.
-	
+
 	You should have received a copy of the Affero GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
@@ -45,29 +45,29 @@ function doWeb(doc, url) {
 	newItem.websiteTitle = "Pastebin.com";
 	newItem.websiteType = "Paste Site";
 	newItem.url = url;
-	var title = ZU.xpathText(doc, '//h1');	
+	var title = ZU.xpathText(doc, '//h1');
 	if (title != null) {
 		newItem.title  = title;
 	}
 	else {
 		newItem.title = ZU.xpathText(doc, '//title');
 	}
-	
+
 	var urlType = "general";
 	if ( url.indexOf('pastebin.com/u/')>-1 ) {
 		urlType = "profile";
-	}	
+	}
 
 	// Settingspecific metadata
 	var author, date;
 	if (urlType == "general") {
-		author = ZU.xpathText(doc, '//div[@class="paste_box_line2"]//a');	
+		author = ZU.xpathText(doc, '//div[@class="paste_box_line2"]//a');
 		date = ZU.xpathText(doc, '//div[@class="paste_box_line2"]//span/@title');
-	} 
+	}
 	else if (urlType == "profile")  {
-		author = url.substring(url.lastIndexOf('/'));	
+		author = url.substring(url.lastIndexOf('/'));
 		date = ZU.xpathText(doc, '//div[@class="paste_box_line_u2"]//span/@title');
-		
+
 	}
 	if (author) {
 		newItem.creators.push(ZU.cleanAuthor(author, "author", false));
@@ -76,14 +76,14 @@ function doWeb(doc, url) {
 	if (date) {
 		newItem.date = ZU.strToISO(date);
 	}
-	
+
 	// Adding the attachment
 	newItem.attachments.push({
 		title: "Pastebin Snapshot",
 		mimeType: "text/html",
 		url: url
-	});	
-	
+	});
+
 	newItem.complete();
 }
 /** BEGIN TEST CASES **/

@@ -20,7 +20,7 @@ function detectWeb(doc, url) {
 	if (url.indexOf('search') !== -1 && getSearchResults(doc).length) {
 		return 'multiple';
 	}
-	
+
 	if (ZU.xpathText(doc, '/html/head/meta[@name="citation_journal_title"]/@content')) {
 		return 'journalArticle';
 	}
@@ -34,15 +34,15 @@ function doWeb(doc, url) {
 			var title = ZU.xpath(results[i], './/div[@class="title"]/a')[0];
 			items[title.href] = ZU.trimInternal(title.textContent);
 		}
-		
+
 		Z.selectItems(items, function(selectedItems) {
 			if (!selectedItems) return true;
-			
+
 			var urls = [];
 			for (var i in selectedItems) {
 				urls.push(i);
 			}
-			
+
 			ZU.processDocuments(urls, scrape);
 		})
 	} else {
@@ -55,7 +55,7 @@ function scrape(doc, url) {
 	var translator = Z.loadTranslator('web');
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function(obj, item) {
 		//for conference papers, we're missing some metadata
 		if (!item.publicationTitle
@@ -63,15 +63,15 @@ function scrape(doc, url) {
 			item.publicationTitle = "AIP Conference Proceedings";
 			item.volume = ZU.xpathText(doc, '//div[@class="itemCitation"]//span[@class="citationvolume"]');
 		}
-		
+
 		//check if we have the correct publication date
 		var year = doc.getElementsByClassName('itemCitation')[0];
 		if (year) year = year.textContent.match(/\((\d{4})\)/);
 		if (year && (!item.date || item.date.indexOf(year[1]) == -1) ) {
 			item.date = year[1];
 		}
-		
-		
+
+
 		var pdf = ZU.xpath(doc, '//div[@class="pdfItem"]/a[@class="pdf" and @href]')[0];
 		if (pdf) {
 			item.attachments.push({
@@ -80,7 +80,7 @@ function scrape(doc, url) {
 				mimeType: 'application/pdf'
 			});
 		}
-		
+
 		var keywords = ZU.xpath(doc, '//div[@class="keywords-container"]//dt/a');
 		var tags = [];
 		for (var i=0, n=keywords.length; i<n; i++) {
@@ -89,10 +89,10 @@ function scrape(doc, url) {
 		if (tags.length) {
 			item.tags = tags;
 		}
-		
+
 		item.complete();
 	});
-	
+
 	translator.translate();
 }/** BEGIN TEST CASES **/
 var testCases = [

@@ -45,16 +45,16 @@ function detectWeb(doc, url) {
 
 function getSearchResults(doc) {
 	var results = {};
-	
+
 	var rows = ZU.xpath(doc, '//div[@id="inhalt"]/form/table/tbody/tr');
-	
+
 	for (var i = 0, n = rows.length; i < n; i++) {
 		var columns = ZU.xpath(rows[i], './td');
-		
+
 		var href = ZU.xpath(columns[0], './a')[0].href;
 		var name = ZU.trimInternal(columns[0].textContent);
 		name = name + " \"" + cleanTitle(columns[1]) + "\"";
-		
+
 		results[href] = name;
 	}
 	return results;
@@ -82,7 +82,7 @@ function cleanTitle(value) {
 function cleanName(name, inventors) {
 	name = ZU.trimInternal(name);
 	if (name == "") return "";
-	
+
 	var parts = name.split(",");
 
 	parts = parts.map(
@@ -118,7 +118,7 @@ function scrape(doc, url) {
 	var ipcs = [];
 
 	var rows = ZU.xpath(doc, '//table[@class="tab_detail"]/tbody/tr');
-	
+
 	for (var i = 0, n = rows.length; i < n; i++) {
 		var columns = ZU.xpath(rows[i], './td');
 
@@ -133,10 +133,10 @@ function scrape(doc, url) {
 			value = columns[2];
 		}
 		if (!value) continue;
-		
+
 		// Z.debug("label: " + label);
 		// Z.debug("value: " + value.textContent);
-		
+
 		switch (label) {
 			case "TI":
 				newItem.title = cleanTitle(value);
@@ -178,9 +178,9 @@ function scrape(doc, url) {
 	}
 
 	var pn = url.match(/\bdocid=([^&#]*)/)[1];
-	
+
 	newItem.url = "http://depatisnet.dpma.de/DepatisNet/depatisnet?action=bibdat&docid=" + pn;
-	
+
 	newItem.patentNumber = pn.replace(/^([A-Z]{2})[0]*(.*)$/, "$1$2");
 
 	// some entries (especially JP and RU patents) have no titles listed in DepatisNet
@@ -196,7 +196,7 @@ function scrape(doc, url) {
 		url: url,
 		snapshot: false
 	});
-	
+
 	var pages = ZU.xpathText(doc, '//div[@id="inhalt"]/h2');
 	// e.g. "Dokument   DE000004446098C2   (Seiten: 8)"
 	// but there is no PDF available when we have "Seiten: 0"

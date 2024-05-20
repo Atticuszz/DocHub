@@ -82,7 +82,7 @@ function scrape(doc, url) {
 	else {
 		newItem.court = "not found";
 	}
-	
+
 	// judge
 	var panel = doc.getElementsByTagName("PANEL");
 	if (panel.length > 0) {

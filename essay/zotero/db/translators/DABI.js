@@ -17,7 +17,7 @@
 
 	Copyright © 2018 Jens Mittelbach
 	Contact: mail@jensmittelbach.de
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -79,7 +79,7 @@ function getSearchResults(doc, checkOnly) {
 			item = title;
 		}
 		if (!item || !url) continue;
-		
+
 		if (checkOnly) return true;
 		found = true;
 
@@ -120,10 +120,10 @@ function scrape(doc, _url) {
 		data.Titel = data.Untertitel;
 		delete data.Untertitel;
 	}
-	
+
 	if (data.Titel) {
 		newItem.title = data.Titel.replace(/\*/g, '');
-		
+
 		if (data.Untertitel) {
 			if (/(\?|!|\.)\W?$/.test(newItem.title)) {
 				newItem.title += " " + data.Untertitel;
@@ -162,7 +162,7 @@ function scrape(doc, _url) {
 	newItem.issue = data.Heft;
 	newItem.volume = data.Band;
 	newItem.abstractNote = data.Abstract;
-	
+
 	// Scrape is COMPLETE!
 	newItem.complete();
 }

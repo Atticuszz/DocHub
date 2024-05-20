@@ -51,12 +51,12 @@ function scrape(doc, url) {
 	translator.setHandler('itemDone', function(obj, item) {
 		// Necessary as author surname comes first and is often capitalised, so Zotero thinks it's actually initials.
 		let authors = ZU.xpath(doc, '//span[@itemprop="author"]/a');
-		item.creators = authors.map(function(author) { 
+		item.creators = authors.map(function(author) {
 			let authorNames = author.text.split(' ');
 			authorNames[0] = authorNames[0].charAt(0) + authorNames[0].substr(1).toLowerCase();
 			return ZU.cleanAuthor(authorNames.reverse().join(' '), 'author');
 		});
-		
+
 		let keywords = ZU.xpath(doc, '//span[@itemprop="headline"]/a');
 		item.tags = keywords.map(function (keyword) {
 			return keyword.textContent;

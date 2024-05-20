@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -83,17 +83,17 @@ function scrape(doc, url) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		// item.url will be empty if there's no full-text link; we don't want
 		// to use the catalog page as the URL in that case.
 		item.url = attr(doc, '.link-full-text a', 'href');
 		item.attachments = [];
-		
+
 		if (item.itemType == 'document') {
 			item.extra = (item.extra || '') + '\nType: dataset';
 		}
-		
+
 		item.complete();
 	});
 

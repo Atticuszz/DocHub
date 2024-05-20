@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -39,7 +39,7 @@
 function detectWeb(doc, _url) {
 	let results = getSearchResults(doc, false);
 	if (!results) return false;
-	
+
 	if (Object.keys(results).length == 1) {
 		return guessType(doc);
 	}
@@ -79,28 +79,28 @@ function doWeb(doc, url) {
 
 function scrapeRecord(doc, url, recordID) {
 	let article = doc.getElementById(recordID);
-	
+
 	let DOI = ZU.cleanDOI(article.getAttribute('data-doi') || '');
 	let ISBN = ZU.cleanISBN(article.getAttribute('data-isbn') || '');
-	
+
 	if (!DOI && !ISBN) {
 		scrapeRecordManually(doc, url, article);
 		return;
 	}
-	
+
 	let search = Zotero.loadTranslator('search');
 	search.setSearch({ DOI, ISBN });
-	
+
 	search.setHandler('itemDone', function (_, item) {
 		item.date = text(article, '.field_PUBLDATE') || item.date; // often better
 		item.complete();
 	});
-	
+
 	search.setHandler('translators', function (_, translators) {
 		search.setTranslator(translators);
 		search.translate();
 	});
-	
+
 	search.getTranslators();
 }
 
@@ -112,7 +112,7 @@ function scrapeRecordManually(doc, url, article) {
 	if (subtitle) {
 		item.title += ': ' + subtitle;
 	}
-	
+
 	item.abstractNote = text(article, '.field_ABSTRACT');
 	item.tags = text(article, '.field_KEYWORDS').split(' ; ').map(tag => ({ tag }));
 	item.language = text(article, '.field_LANGUAGE');
@@ -120,19 +120,19 @@ function scrapeRecordManually(doc, url, article) {
 	item.publisher = text(article, '.field_PUBLISHER');
 	item.url = attr(article, '.links.fulltext a', 'href')
 		.replace(/^.+[?&]link=([^&#]+).*$/, (_, link) => decodeURIComponent(link));
-	
+
 	for (let author of article.querySelectorAll('.authors a')) {
 		let creatorType = 'author';
-		
+
 		author = author.textContent;
 		if (author.includes('[Akademischer Betreuer]')) {
 			creatorType = 'contributor';
 		}
 		author = author.replace(/\[.+\]/, '');
-		
+
 		item.creators.push(ZU.cleanAuthor(author, creatorType, true));
 	}
-	
+
 	item.complete();
 }
 

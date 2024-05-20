@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2019-2021 Vincent Carret
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -77,7 +77,7 @@ function scrapeEM(doc, url, postprocess) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		item.abstractNote = item.abstractNote.replace(/^Abstract/, '')
 			.split(' | ')[0];
@@ -99,7 +99,7 @@ function scrape(doc, url) {
 			url: attr(doc, 'a[href*=".pdf"][target="_blank"]', 'href'),
 			mimeType: 'application/pdf'
 		});
-		
+
 		var m = url.match(/\/papers\/([^/#?]+)/);
 		if (m) {
 			var bibUrl = "/api/citations/export?pids=" + m[1] + "&format=BIBTEX";
@@ -110,7 +110,7 @@ function scrape(doc, url) {
 					item.complete();
 					return;
 				}
-				
+
 				var translator = Zotero.loadTranslator("import");
 				// BibTeX
 				translator.setTranslator("9cb70025-a888-4a29-a210-93ec52da40d4");
@@ -120,12 +120,12 @@ function scrape(doc, url) {
 						// BibTeX publication title is better
 						delete item.publicationTitle;
 					}
-					
+
 					if (bibItem.url) {
 						// EM URL is just the page URL
 						delete item.url;
 					}
-					
+
 					Object.assign(bibItem, item);
 					bibItem.complete();
 				});

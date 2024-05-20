@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2017-2021 Velősy Péter Kristóf
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -110,11 +110,11 @@ function scrape(doc, _url) {
 	if (publisherPlace) {
 		newItem.place = publisherPlace.replace('(', '').replace(')', '');
 	}
-		
+
 	newItem.date = firstText(doc, '[itemprop=datePublished]');
 
 	newItem.numPages = firstText(doc, '[itemprop=numberOfPages]');
-	
+
 	newItem.language = firstText(doc, '[itemprop=inLanguage]');
 
 	var isbnElement = getElementByInnerText(doc, 'th', 'ISBN:');
@@ -140,7 +140,7 @@ function firstText(docOrElem, selector) {
 		let elemText = elem.textContent.trim();
 		if (elemText) return elemText;
 	}
-	
+
 	return '';
 }
 

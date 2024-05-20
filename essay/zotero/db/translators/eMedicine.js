@@ -29,8 +29,8 @@ function useMeta (doc, newItem, field, zoteroField) {
 	xpath='//meta[@name="' + field + '"]/@content';
 	temp=doc.evaluate(xpath, doc, null, XPathResult.ANY_TYPE, null).iterateNext();
 	if (temp)
-	{ 	
-		newItem[zoteroField] =temp.value;     
+	{
+		newItem[zoteroField] =temp.value;
 	}
 }
 function getMeta (doc, newItem, field) {
@@ -44,10 +44,10 @@ function scrape(doc, url) {
 	var namespace = doc.documentElement.namespaceURI;
 	var nsResolver = namespace ? function(prefix) {
 		if (prefix == 'x') return namespace; else return null;
-	} : null;	
-	
+	} : null;
+
 	var fieldTitle;
-	
+
 	var newItem = new Zotero.Item("journalArticle");
 
 	newItem.publication = 'Medscape - eMedicine';
@@ -56,9 +56,9 @@ function scrape(doc, url) {
 	useMeta(doc, newItem, "title", "title");
 	useMeta(doc, newItem, "date"        , "date" );
 	useMeta(doc, newItem, "book"        , "repository");
-	useMeta(doc, newItem, "description" , "abstractNote"); 
+	useMeta(doc, newItem, "description" , "abstractNote");
 	newItem.abstractNote = newItem.abstractNote.replace(/^(Overview|Treatment|Diagnosis|Followup|Media):\s+/, "");
-	
+
 	// Authors - we only handle one.
 	authors = getMeta(doc, newItem, "authors");
 	if (!String(authors).match(/[a-z]/)) {
@@ -78,10 +78,10 @@ function scrape(doc, url) {
 			newItem.tags[i] = Zotero.Utilities.cleanTags(keywords[i], "");
 		}
 	}
-		
+
 	newItem.url = url;
 
-	// Attachment doesn't seem to work - misses a stylesheet or something, and looks ugly.	
+	// Attachment doesn't seem to work - misses a stylesheet or something, and looks ugly.
 	// newItem.attachments.push({url:url, title:"eMedicine Snapshot",mimeType:"text/html"});
 	newItem.complete();
 }
@@ -91,7 +91,7 @@ function doWeb(doc, url) {
 	var nsResolver = namespace ? function(prefix) {
 		if (prefix == 'x') return namespace; else return null;
 	} : null;
-	
+
 
 	scrape(doc,url);
 }

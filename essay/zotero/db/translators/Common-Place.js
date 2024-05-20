@@ -58,7 +58,7 @@ function scrape(doc, url) {
 	var newItem = new Zotero.Item("journalArticle");
 	newItem.publicationTitle = "Common-Place";
 	newItem.url = url;
-	
+
 	if (doc.body.className.indexOf("single-article")>-1) {
 		newItem.title = ZU.xpathText(doc, '//article/h1');
 		var author = ZU.xpathText(doc, '//article/h1/following-sibling::p');
@@ -73,7 +73,7 @@ function scrape(doc, url) {
 			newItem.volume = m[1];
 			newItem.issue = m[2];
 		}
-	
+
 	} else {
 		//get issue year and month
 		//these will determine what xpaths we use for title and author
@@ -88,7 +88,7 @@ function scrape(doc, url) {
 				newItem.date = ZU.strToISO(n[1]);
 			}
 		}
-		
+
 		var author = ZU.xpathText(doc, '//div[@id="content"]/p/span[1]');
 		var title = ZU.xpathText(doc, '//div[@id="content"]/p/span[2]');
 		if (author) {
@@ -97,24 +97,24 @@ function scrape(doc, url) {
 			if (author.indexOf("Review by") != -1 ) {
 				title = String.concat("Review of ", title);
 				author = author.substring(10);
-			} 
+			}
 			newItem.creators.push(ZU.cleanAuthor(author, "author"));
 		} else { //we have older issue
 			//check if we are on a review
 			var review = ZU.xpathText(doc, '/html/body/table/tbody/tr/td[2]/p[2]');
 			if (review.indexOf("Review") != -1) {
 				title = ZU.xpathText(doc, '/html/body/table/tbody/tr/td[2]/p/i');
-				title = "Review of " + title; 
+				title = "Review of " + title;
 				author = review.substring(10);
 			} else { //for articles
 				title = ZU.xpathText(doc, '/html/body/table/tbody/tr/td[2]/p/b');
-				author = ZU.xpathText(doc, '/html/body/table/tbody/tr/td[2]/p[1]').split(/\n/)[1];;	
+				author = ZU.xpathText(doc, '/html/body/table/tbody/tr/td[2]/p[1]').split(/\n/)[1];;
 			}
 			newItem.creators.push(ZU.cleanAuthor(author, "author"));
 		}
 		newItem.title = title;
 	}
-	
+
 	newItem.attachments.push({document:doc, title:doc.title});
 	newItem.complete();
 }

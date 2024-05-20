@@ -30,7 +30,7 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-/* 
+/*
 Works w/ search and overviews. I had to include the ugly hack stopping non-articles (photo-streams) to make the multiple item import return an error. Test on:
 http://www.fr-online.de/politik/spezials/wikileaks---die-enthuellungsplattform/-/4882932/4882932/-/index.html
 http://www.fr-online.de/page/search/fr-online/home/suche/-/1473784/1473784/-/view/asSearch/-/index.html?contextsIds=1472660&docTypes=%22MauArticle,MauGallery,DMBrightcoveVideo,CMDownload,DMMovie,DMEvent,DMVenue%22&offset=5&pageNumber=2&searchMode=SIMPLEALL&sortBy=maupublicationdate&userQuery=Wikileaks
@@ -99,7 +99,7 @@ function scrape(doc, url) {
 			newItem.abstractNote = Zotero.Utilities.trim(summary);
 		}
 
-		//Date	
+		//Date
 		var date_XPath = ".//div[contains(@class, 'Date')]";
 		var date = doc.evaluate(date_XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext().textContent;
 		newItem.date = date.trim();

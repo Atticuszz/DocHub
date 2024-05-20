@@ -28,55 +28,55 @@ function doWeb(doc, url) {
 	if (detectWeb(doc, url) == "journalArticle") {
 		// Aufsatz gefunden
 		var item = new Zotero.Item('journalArticle');
-		
-		// Authors and title are in h2-elements	
+
+		// Authors and title are in h2-elements
 		var information = ZU.xpath(doc, '//h2');
-		
+
 		var aus = information[0].textContent.split("/");
 		for (var i=0; i< aus.length ; i++) {
 			aus[i] = aus[i].replace(/\*/, "").trim();
 			item.creators.push(ZU.cleanAuthor(aus[i], "author"));
 		}
-		
+
 		item.title = ZU.trimInternal(information[1].textContent);
-		
+
 		var webdoktext = ZU.xpathText(doc, '//h3');
-		
+
 		var year = webdoktext.match(/\/(\d{4}),/);
 		var webdok = webdoktext.match(/Dok. (\d+)\//);
-		
+
 		if (year) item.year = year[1];
-		
+
 		if (webdok && year) {
 			item.volume =  "WebDok " + webdok[1] + "/" + year[1];
 		}
-		
+
 		var doi = ZU.xpathText(doc, '//span[@class="resultinfo left"]')
 		if (doi != null) {
 			item.DOI = ZU.cleanDOI(doi);
 		}
-		
+
 		item.journal = "JurPC";
 		item.url = url;
 		item.language = "de-DE";
-		
+
 		item.attachments = [{
 			title: "JurPC Snapshot",
 			document: doc
 		}];
-		
+
 		item.complete();
 	} else {
 		//Case
 		var item = new Zotero.Item('case');
-		
+
 		// all information about the case are stored in h2-elements.
 		var information = doc.getElementsByTagName('h2');
 		var caseInformation = [];
 		for (var i=0; i<information.length; i++) {
 			caseInformation[i] = information[i].textContent;
 		}
-		
+
 		// does the first row contain court, type of decision and date? Then clean up data!
 		var i = caseInformation[0].indexOf("Urteil vom");
 		if (i == -1) i = caseInformation[0].indexOf("Beschluss vom")
@@ -84,11 +84,11 @@ function doWeb(doc, url) {
 			caseInformation.splice(1, 0, caseInformation[0].substr(i));
 			caseInformation[0] = caseInformation[0].substring(0, i);
 		}
-		
+
 		item.title = caseInformation[3];
 		item.court = caseInformation[0];
 		item.docketNumber = caseInformation[2];
-		
+
 		item.reporter = "JurPC WebDok";
 		var cite = ZU.xpathText(doc, '//h3');
 		var year = cite.match(/\/(\d{4})/);
@@ -96,14 +96,14 @@ function doWeb(doc, url) {
 		if (webdok && year) {
 			item.reporterVolume =  " " + webdok[1] + "/" + year[1];
 		}
-		
+
 		item.url = url;
-		
+
 		var date = caseInformation[1].match(/\b(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{4})\b/);
 		if (date) {
 			item.dateDecided = date[3] + "-" + date[2] + "-" + date[1];
 		}
-		
+
 		// store type of decision
 		if (/Beschluss./i.test(caseInformation[1])) {
 			item.extra = "Genre: Beschl.";
@@ -111,19 +111,19 @@ function doWeb(doc, url) {
 		else if (/Urteil/i.test(caseInformation[1])) {
 				item.extra = "Genre: Urt.";
 		}
-		
+
 		var doi = ZU.xpathText(doc, '//span[@class="resultinfo left"]')
 		if (doi) {
 			item.DOI = ZU.cleanDOI(doi);
 		}
-		
+
 		item.language = "de-DE";
-		
+
 		item.attachments = [{
 			title: "JurPC Snapshot",
 			document: doc
 		}];
-		
+
 		item.complete();
 	}
 }

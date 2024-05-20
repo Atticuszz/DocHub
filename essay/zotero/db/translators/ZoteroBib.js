@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2018 Dan Stillman
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -67,12 +67,12 @@ function importJSON(json) {
 			case 'key':
 			case 'version':
 				continue;
-			
+
 			case 'creators':
 			case 'tags':
 				item[field].push(...entry[field]);
 				break;
-			
+
 			default:
 				// Ignore other properties that are already set
 				if (item[field] !== undefined) {

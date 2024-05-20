@@ -84,7 +84,7 @@ function fixCasing(string) {
 function getDocType(doc) {
 	var docType = ZU.xpathText(doc, '//tr/td/text()[contains(., "Тип:")]/following-sibling::*[1]');
 	var itemType;
-	
+
 	switch (docType) {
 		case "обзорная статья":
 		case "статья в журнале - научная статья":
@@ -116,59 +116,59 @@ function scrape(doc, url) {
 	item.itemType = getDocType(doc);
 	item.title = fixCasing(doc.title);
 	item.url = url;
-	
+
 	var rightPart = doc.getElementById("leftcol").nextSibling;
 	var centralColumn = ZU.xpath(rightPart, './table/tbody/tr[2]/td[@align="left"]');
 	var datablock = ZU.xpath(centralColumn, './div[1]');
-	
+
 	var authors = ZU.xpath(datablock, './/table[1]//b');
 	// Zotero.debug('authors.length: ' + authors.length);
-	
+
 	for (let i = 0; i < authors.length; i++) {
 		var dirty = authors[i].textContent;
 		// Zotero.debug('author[' + i + '] text: ' + dirty);
-		
+
 		/* Common author field formats are:
 			(1) "LAST FIRST PATRONIMIC"
 			(2) "LAST F. P." || "LAST F.P." || "LAST F.P" || "LAST F."
-			
+
 		   In all these cases, we put comma after LAST for `ZU.cleanAuthor()` to work.
 		   Other formats are rare, but possible, e.g. "ВАН ДЕ КЕРЧОВЕ Р." == "Van de Kerchove R.".
 		   They go to single-field mode (assuming they got no comma). */
 		var nameFormat1RE = new ZU.XRegExp("^\\p{Letter}+\\s\\p{Letter}+\\s\\p{Letter}+$");
 		var nameFormat2RE = new ZU.XRegExp("^\\p{Letter}+\\s\\p{Letter}\\.(\\s?\\p{Letter}\\.?)?$");
-		
+
 		var isFormat1 = ZU.XRegExp.test(dirty, nameFormat1RE);
 		var isFormat2 = ZU.XRegExp.test(dirty, nameFormat2RE);
-		
+
 		if (isFormat1 || isFormat2) {
 			// add comma before the first space
 			dirty = dirty.replace(/^([^\s]*)(\s)/, '$1, ');
 		}
-		
+
 		var cleaned = ZU.cleanAuthor(dirty, "author", true);
-		
+
 		/* Now `cleaned.firstName` is:
 			(1) "FIRST PATRONIMIC"
 			(2) "F. P." || "F."
-			
+
 		   The `fixCasing()` makes 2nd letter lowercase sometimes,
 		   for example, "S. V." -> "S. v.", but "S. K." -> "S. K.".
 		   Thus, we can only apply it to Format1 . */
-		
+
 		if (isFormat1) {
 			// "FIRST PATRONIMIC" -> "First Patronimic"
 			cleaned.firstName = fixCasing(cleaned.firstName);
 		}
-		
+
 		if (cleaned.firstName === undefined) {
 			// Unable to parse. Restore punctuation.
 			cleaned.fieldMode = true;
 			cleaned.lastName = dirty;
 		}
-		
+
 		cleaned.lastName = fixCasing(cleaned.lastName, true);
-		
+
 		// Skip entries with an @ sign-- email addresses slip in otherwise
 		if (!cleaned.lastName.includes("@")) item.creators.push(cleaned);
 	}
@@ -185,8 +185,8 @@ function scrape(doc, url) {
 		Язык: "language",
 		"Место издания": "place"
 	};
-	
-	
+
+
 	for (let key in mapping) {
 		var t = ZU.xpathText(datablock, './/tr/td/text()[contains(., "' + key + ':")]/following-sibling::*[1]');
 		if (t) {
@@ -196,7 +196,7 @@ function scrape(doc, url) {
 
 	var pages = ZU.xpathText(datablock, '//tr/td/div/text()[contains(., "Страницы")]/following-sibling::*[1]');
 	if (pages) item.pages = pages;
-	
+
 	/*
 	// Times-cited in Russian-Science-Citation-Index.
 	// This value is hardly useful for most users, would just clutter "extra" field.
@@ -218,7 +218,7 @@ function scrape(doc, url) {
 	}
 
 	item.abstractNote = ZU.xpathText(datablock, './table/tbody/tr[td/font[text() = "АННОТАЦИЯ:"]]/following-sibling::*[1]');
-	
+
 	// Language to RFC-4646 code
 	switch (item.language) {
 		case "русский":
@@ -233,7 +233,7 @@ function scrape(doc, url) {
 	}
 
 	item.DOI = ZU.xpathText(doc, '/html/head/meta[@name="doi"]/@content');
-	
+
 	/* var pdf = false;
 	// Now see if we have a free PDF to download
 	var pdfImage = doc.evaluate('//a/img[@src="/images/pdf_green.gif"]', doc, null,XPathResult.ANY_TYPE, null).iterateNext();

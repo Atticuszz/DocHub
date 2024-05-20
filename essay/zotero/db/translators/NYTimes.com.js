@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2017 Philipp Zumstein
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -65,7 +65,7 @@ function scrape(doc, url) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	// translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		item.itemType = type;
 		if (item.language) {
@@ -130,7 +130,7 @@ function scrape(doc, url) {
 		}
 
 		/* TODO: Fix saving the PDF attachment which is currently broken
-		
+
 		// PDF attachments are in subURL with key & signature
 		var pdfurl = ZU.xpathText(doc, '//div[@id="articleAccess"]//span[@class="downloadPDF"]/a[contains(@href, "/pdf")]/@href | //a[@class="button download-pdf-button"]/@href');
 		if (pdfurl) {
@@ -159,7 +159,7 @@ function scrape(doc, url) {
 		item.complete();
 		// }
 	});
-	
+
 	translator.getTranslatorObject(function (trans) {
 		trans.splitTags = false;
 		trans.addCustomFields({

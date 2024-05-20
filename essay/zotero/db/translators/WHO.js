@@ -99,9 +99,9 @@ function scrape(doc, url) {
 	for (let meta of metasInBody) {
 		head[0].append(meta);
 	}
-	
+
 	var type = detectWeb(doc, url);
-	
+
 	var translator = Zotero.loadTranslator('web');
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
@@ -112,7 +112,7 @@ function scrape(doc, url) {
 			item.place = placePublisher[0];
 			item.publisher = placePublisher[1];
 		}
-		
+
 		var firstAuthor = attr(doc, 'meta[name="DC.creator"]', 'content');
 		if (firstAuthor && !firstAuthor.includes(',')) {
 			item.creators[0] = {
@@ -121,7 +121,7 @@ function scrape(doc, url) {
 				fieldMode: 1
 			};
 		}
-		
+
 		var descriptions = doc.querySelectorAll('meta[name="DC.description"]');
 		// DC.description doesn't actually contain other useful content,
 		// except possibly the number of pages
@@ -140,8 +140,8 @@ function scrape(doc, url) {
 				delete item.abstractNote;
 			}
 		}
-	
-		
+
+
 		item.complete();
 	});
 
@@ -169,7 +169,7 @@ function doSearch(item) {
 		translator.setHandler("itemDone", function (obj, item) {
 			item.libraryCatalog = 'WHO IRIS';
 			item.archive = '';
-			
+
 			if (item.url) {
 				ZU.processDocuments(item.url, function (recordDoc) {
 					let pdfURL = attr(recordDoc, 'meta[name="citation_pdf_url"]', 'content');

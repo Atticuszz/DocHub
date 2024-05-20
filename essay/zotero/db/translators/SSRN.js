@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2013-2022 Sebastian Karcher and Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -98,7 +98,7 @@ function scrape(doc, url) {
 		if (item.date) {
 			item.date = ZU.strToISO(item.date);
 		}
-		
+
 		item.itemType = preprintType;
 		var number = url.match(/abstract_id=(\d+)/);
 		if (preprintType == 'preprint') {

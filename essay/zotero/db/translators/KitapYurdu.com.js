@@ -89,28 +89,28 @@ function localeCapitalizeTitle(name) {
 function scrape(doc, _url) {
 	var item = new Zotero.Item("book");
 	let json = JSON.parse(text(doc, 'body script[type="application/ld+json"]'));
-	
+
 	item.title = ZU.unescapeHTML(json.name);
-	
+
 	var authors = doc.querySelectorAll('.pr_producers__manufacturer .pr_producers__link');
 	for (var i = 0; i < authors.length; i++) {
 		var creator = cleanCreatorTitles(authors[i].textContent);
 		item.creators.push(ZU.cleanAuthor(creator, "author"));
 	}
 
-	
+
 	var translators = ZU.xpath(doc, '//tr[contains(., "Çevirmen")]');
 	for (let i = 0; i < translators.length; i++) {
 		let creator = cleanCreatorTitles(translators[i].textContent);
 		item.creators.push(ZU.cleanAuthor(creator, "translator"));
 	}
-	
+
 	var editors = ZU.xpath(doc, '//tr[contains(., "Editor")]|//tr[contains(., "Derleyici")]');
 	for (let i = 0; i < editors.length; i++) {
 		let creator = cleanCreatorTitles(editors[i].textContent);
 		item.creators.push(ZU.cleanAuthor(creator, "editor"));
 	}
-	
+
 	var edition = doc.querySelector('[itemprop=bookEdition]');
 	if (edition) {
 		edition = ZU.trimInternal(edition.textContent);
@@ -119,7 +119,7 @@ function scrape(doc, _url) {
 			item.edition = edition.split('.')[0];
 		}
 	}
-	
+
 	var language = ZU.xpathText(doc, '//tr/td[contains(., "Dil")]//following-sibling::td');
 	if (language) {
 		switch (language.trim()) {
@@ -130,7 +130,7 @@ function scrape(doc, _url) {
 				item.language = "tr";
 		}
 	}
-	
+
 	var publisher = json.publisher.name;
 	if (publisher) {
 		publisher = ZU.trimInternal(publisher);
@@ -141,22 +141,22 @@ function scrape(doc, _url) {
 			item.publisher = ZU.capitalizeTitle(publisher, true);
 		}
 	}
-	
+
 	for (let tr of doc.querySelectorAll('.attributes tr')) {
 		if (text(tr, 'td', 0).startsWith('Yayın Tarihi')) {
 			item.date = ZU.strToISO(text(tr, 'td', 1));
 		}
 	}
-	
+
 	item.ISBN = json.isbn;
 	item.numPages = json.numberOfPages;
 	item.abstractNote = ZU.unescapeHTML(json.description);
-	
+
 	item.attachments.push({
 		title: "Snapshot",
 		document: doc
 	});
-		
+
 	item.complete();
 }
 

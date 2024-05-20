@@ -89,7 +89,7 @@ function scrape(doc, url) {
 	var details = ZU.xpath(doc, '(//dl[contains(@class, "metadata__details-description-list")])[1]');
 
 	var title = ZU.xpathText(details, './/ancestor::dt[contains(@class,"metadata__details-text") and (normalize-space(text())="Titel" or normalize-space(text())="Kop")]/following-sibling::dd[1]');
-	
+
 	if (!title) {
 		title = ZU.xpathText(details, './/ancestor::dt[contains(@class,"metadata__details-text") and (normalize-space(text())="Krantentitel")]/following-sibling::dd[1]');
 	}
@@ -136,7 +136,7 @@ function scrape(doc, url) {
 		title: "Snapshot",
 		document: doc
 	});
-	
+
 	var pdflink = ZU.xpathText(doc, './/a[contains(@class,"object-view-menu__downloads-link") and (normalize-space(text())="pdf")]/@href');
 	if (pdflink) {
 		item.attachments.push({
@@ -145,8 +145,8 @@ function scrape(doc, url) {
 			url: pdflink
 		});
 	}
-	
-  
+
+
 	var jpglink = ZU.xpathText(doc, './/a[contains(@class,"object-view-menu__downloads-link") and (normalize-space(text())="jpg")]/@href');
 	if (jpglink) {
 		item.attachments.push({

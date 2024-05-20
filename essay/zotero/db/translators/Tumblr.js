@@ -15,17 +15,17 @@
 /*
 	Tumblr Translator
 	Copyright (C) 2020 Félix Brezo, felixbrezo@gmail.com
-	
+
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version.
-	
+
 	This program is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 	GNU General Public License for more details.
-	
+
 	You should have received a copy of the Affero GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
@@ -77,7 +77,7 @@ function scrape(doc, url) {
 	var newItem = new Zotero.Item(resourceType);
 
 	var urlParts = url.split('/');
-	
+
 	var tmpDate;
 	if (resourceType == "blogPost") {
 		newItem.blogTitle = ZU.xpathText(doc, "//meta[@property='og:site_name']/@content");
@@ -98,14 +98,14 @@ function scrape(doc, url) {
 	}
 	newItem.websiteType = "Tumblr";
 	newItem.url = url;
-	
+
 	// Adding the attachment
 	newItem.attachments.push({
 		title: "Tumblr Snapshot",
 		mimeType: "text/html",
 		url: url
 	});
-	
+
 	newItem.complete();
 }
 

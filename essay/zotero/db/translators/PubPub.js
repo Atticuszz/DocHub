@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -41,7 +41,7 @@ function detectWeb(doc, url) {
 		&& !url.includes('pubpub.org')) {
 		return false;
 	}
-	
+
 	// this won't match search result pages not hosted on pubpub.org, but the
 	// results URL (/search?q=) is just too generic to justify including it in
 	// the target.
@@ -98,7 +98,7 @@ function scrape(doc, url) {
 	// Embedded Metadata
 	translator.setTranslator('951c027d-74ac-47d4-a107-9c3069ab7b48');
 	translator.setDocument(doc);
-	
+
 	translator.setHandler('itemDone', function (obj, item) {
 		if (!item.publicationTitle) {
 			item.publicationTitle = attr(doc, 'meta[property="og:site_name"]', 'content');
@@ -108,32 +108,32 @@ function scrape(doc, url) {
 			item.itemType = 'report';
 			item.extra = (item.extra || '') + '\nType: article';
 		}
-		
+
 		if (item.itemType == 'bookSection' && item.bookTitle) {
 			delete item.publicationTitle;
 		}
-		
+
 		if (item.publisher == 'PubPub') {
 			delete item.publisher;
 		}
-		
+
 		delete item.institution;
 		delete item.company;
 		delete item.label;
 		delete item.distributor;
-		
+
 		if (item.date) {
 			item.date = ZU.strToISO(item.date);
 		}
-		
+
 		if (item.ISSN == ',') {
 			delete item.ISSN;
 		}
-		
+
 		if (item.attachments.length > 1) {
 			item.attachments = item.attachments.filter(at => at.title != 'Snapshot');
 		}
-		
+
 		item.complete();
 	});
 

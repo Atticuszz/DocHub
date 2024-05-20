@@ -86,7 +86,7 @@ function scrape(doc, url) {
 		if (metadataUrl.indexOf('http') != 0 && metadataUrl[0] != "/") {
 			metadataUrl = "/" + metadataUrl;
 		}
-		//redirect metadata lookup such that labels are always German 
+		//redirect metadata lookup such that labels are always German
 		metadataUrl = metadataUrl.replace('/en/', '/');
 		//Z.debug(metadataUrl);
 		ZU.doGet(metadataUrl, function(text) {
@@ -98,13 +98,13 @@ function scrape(doc, url) {
 			item.libraryCatalog = "DigiZeitschriften";
 			item.url = url;
 			item.tags = [];
-			delete item.abstractNote; 
+			delete item.abstractNote;
 			item.complete();
 		});
-		
-		
+
+
 	});
-	
+
 	translator.getTranslatorObject(function(trans) {
 		trans.doWeb(doc, url);
 	});

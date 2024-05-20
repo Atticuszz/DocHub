@@ -16,7 +16,7 @@
 	***** BEGIN LICENSE BLOCK *****
 
 	Copyright © 2021 Abe Jellinek
-	
+
 	This file is part of Zotero.
 
 	Zotero is free software: you can redistribute it and/or modify
@@ -74,7 +74,7 @@ function doWeb(doc, url) {
 
 function scrape(doc, _url) {
 	let item = new Zotero.Item('book');
-	
+
 	for (let keyElem of doc.querySelectorAll('#d-book-details dt')) {
 		let key = ZU.trimInternal(keyElem.textContent);
 		let value = keyElem.nextElementSibling.textContent;
@@ -114,9 +114,9 @@ function scrape(doc, _url) {
 				break;
 		}
 	}
-	
+
 	item.url = attr(doc, 'link[rel="canonical"]', 'href');
-	
+
 	item.complete();
 }
 

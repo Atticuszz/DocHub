@@ -13,14 +13,14 @@
 }
 
 function detectWeb(doc, url) {
-	
+
 	// ensure that there is an InfoTrac logo
 	if (!doc.evaluate('//img[substring(@alt, 1, 8) = "InfoTrac"]', doc, null, XPathResult.ANY_TYPE, null).iterateNext()) return false;
-	
+
 	if (doc.title.substring(0, 8) == "Article ") {
 		if (ZU.xpathText(doc, '//td//img[contains(@src, "ncnp_logo.gif")]/@title')) return "newspaperArticle";
 		var genre = doc.evaluate('//comment()[substring(., 1, 6) = " Genre"]', doc, null, XPathResult.ANY_TYPE, null).iterateNext();
-		
+
 		if (genre) {
 			var value = Zotero.Utilities.trimInternal(genre.nodeValue.substr(7));
 			if (value == "article") {
@@ -33,7 +33,7 @@ function detectWeb(doc, url) {
 				return "bookSection";
 			}
 		}
-		
+
 		return "magazineArticle";
 	} else if (doc.title.substring(0, 10) == "Citations ") {
 		return "multiple";
@@ -98,7 +98,7 @@ function extractCitation(url, elmts, title, doc) {
 			var field = null;
 			for (j in parts) {
 				firstChar = parts[j].substring(0, 1);
-				
+
 				if (firstChar == "v") {
 					newItem.itemType = "journalArticle";
 					field = "volume";
@@ -106,7 +106,7 @@ function extractCitation(url, elmts, title, doc) {
 					field = "issue";
 				} else if (firstChar == "p") {
 					field = "pages";
-					
+
 					var pagesRegexp = /p(\w+)\((\w+)\)/;	// weird looking page range
 					var match = pagesRegexp.exec(parts[j]);
 					if (match) {			// yup, it's weird
@@ -123,10 +123,10 @@ function extractCitation(url, elmts, title, doc) {
 									// anything else
 					date += " "+parts[j];
 				}
-				
+
 				if (field) {
 					isDate = false;
-					
+
 					if (parts[j] != "pNA") {		// make sure it's not an invalid
 												// page number
 						// chop of letter
@@ -137,18 +137,18 @@ function extractCitation(url, elmts, title, doc) {
 					}
 				}
 			}
-			
+
 			// Set type
 			if (!newItem.itemType) {
 				newItem.itemType = "magazineArticle";
 			}
-			
+
 			if (date != "") {
 				newItem.date = date.substring(1);
 			}
 		} else if (field == "author") {
 			var author = Zotero.Utilities.cleanAuthor(value, "author", true);
-			
+
 			// ensure author is not already there
 			var add = true;
 			for (var i=0; i<newItem.creators.length; i++) {
@@ -186,21 +186,21 @@ function extractCitation(url, elmts, title, doc) {
 			}
 		}
 	}
-	
+
 	if (doc) {
 		newItem.attachments.push({document:doc, title:"InfoTrac Snapshot"});
 	} else {
 		newItem.attachments.push({url:url, title:"InfoTrac Snapshot",
 								 mimeType:"text/html"});
 	}
-	
+
 	newItem.complete();
 }
 
-function doWeb(doc, url) {	
+function doWeb(doc, url) {
 	var ncnp;
 	if (ZU.xpathText(doc, '//td//img[contains(@src, "ncnp_logo.gif")]/@title')) ncnp = true;
-	/*the only Infotrac Site that's still up & I'm aware of is 19th Century Newspapers. 
+	/*the only Infotrac Site that's still up & I'm aware of is 19th Century Newspapers.
 	But there may well be others, so I'm leaving a lot of legacy code in just in case */
 
 	var uri = doc.location.href;
@@ -215,7 +215,7 @@ function doWeb(doc, url) {
 		var items = new Object();
 		var uris = new Array();
 		var elmts = new Array();
-		
+
 		var host = doc.location.href.match(/^https?:\/\/[^\/]+/)[0];
 		var baseurl = doc.location.href.match(/(.+)\/purl=/);
 		var institution = url.match(/\?sw_aep=.+/)[0];
@@ -262,17 +262,17 @@ function doWeb(doc, url) {
 				citation[i] = ZU.xpath(tableRow, '//')
 				i++;
 			}
-			
+
 			Zotero.selectItems(items, function (items) {
 				if (!items) {
 					return true;
 				}
-				
+
 				for (var i in items) {
 					extractCitation(uris[i], elmts[i], items[i]);
 				}
 			});
-		}	
+		}
 	}
 }/** BEGIN TEST CASES **/
 var testCases = []

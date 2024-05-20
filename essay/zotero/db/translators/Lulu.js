@@ -20,7 +20,7 @@ function detectWeb(doc, url) {
 	if (url.search(/\/product-\d+\.html/) != -1) {
 		return 'book';
 	}
-	
+
 	if (url.indexOf('/search.ep?') != -1
 		&& getSearchResults(doc).length) {
 		return 'multiple';
@@ -34,10 +34,10 @@ function doWeb(doc, url) {
 		for (var i=0, n=results.length; i<n; i++) {
 			items[results[i].href] = ZU.trimInternal(results[i].textContent);
 		}
-		
+
 		Z.selectItems(items, function(selectedItems) {
 			if (!selectedItems) return true;
-			
+
 			var urls = [];
 			for (var i in selectedItems) {
 				urls.push(i);
@@ -60,13 +60,13 @@ function makeItem(doc, url) {
 		ZU.trimInternal(ZU.xpathText(doc, '//div[@class="product-information"]/h2[1]')),
 		true
 	);
-	
+
 	var authors = ZU.xpath(doc, '//div[@class="product-information"]//span[@class="authors"]/a/span');
 	for (var i=0, n=authors.length; i<n; i++) {
 		var name = ZU.trimInternal(authors[i].textContent).replace(/^(?:Dr|Prof)\.?\s|\s(?:M.?A|Ph\.?D|B\.?S|B\.?A|M\.?D(?:\.?\sPh\.?D)?)\.?$/gi, '');
 		item.creators.push(ZU.cleanAuthor(ZU.capitalizeTitle(name, true), 'author'));
 	}
-	
+
 	var description = doc.getElementsByClassName('description')[0];
 	if (description.getElementsByClassName('expandable-text').length) {
 		description = ZU.xpathText(description, './span/text()[1]')
@@ -77,26 +77,26 @@ function makeItem(doc, url) {
 			description = false;
 		}
 	}
-	
+
 	if (description) {
 		item.abstractNote = description.trim().replace(/ +/, ' ');
 	}
-	
+
 	var productDetails = doc.getElementsByClassName('product-details')[0];
 	item.ISBN = ZU.cleanISBN(ZU.xpathText(productDetails, './dd[@class="isbn"]') || '', true);
 	item.publisher = ZU.trimInternal(ZU.xpathText(productDetails, './dd[@class="publisher"]') || '');
-	item.rights = ZU.trimInternal(ZU.xpathText(productDetails, './dd[@class="copyright-info"]') || '');	
+	item.rights = ZU.trimInternal(ZU.xpathText(productDetails, './dd[@class="copyright-info"]') || '');
 	item.language = ZU.trimInternal(ZU.xpathText(productDetails, './dd[@class="language"]') || '');
 	item.date = ZU.strToISO(ZU.xpathText(productDetails, './dd[@class="publication-date"]') || '');
 	item.numPages = ZU.trimInternal(ZU.xpathText(productDetails, './dd[@class="pages"]') || '');
-	
+
 	item.attachments.push({
 		title: "Lulu Link",
 		url: url,
 		mimeType: 'text/html',
 		snapshot: false
 	})
-	
+
 	return item;
 }
 
@@ -105,9 +105,9 @@ function detectSearch(items) {
 	return false;
 
 	if (items.ISBN) return true;
-	
+
 	if (!items.length) return;
-	
+
 	for (var i=0, n=items.length; i<n; i++) {
 		if (items[i].ISBN && ZU.cleanISBN('' + items[i].ISBN)) {
 			return true;
@@ -117,7 +117,7 @@ function detectSearch(items) {
 
 function doSearch(items) {
 	if (!items.length) items = [items];
-	
+
 	var query = [];
 	for (var i=0, n=items.length; i<n; i++) {
 		var isbn;
@@ -129,7 +129,7 @@ function doSearch(items) {
 						if (item.complete) item.complete();
 						return;
 					}
-					
+
 					ZU.processDocuments(results[0].href, function(doc, url) {
 						var newItem = makeItem(doc, url);
 						if (newItem.ISBN == isbn) {

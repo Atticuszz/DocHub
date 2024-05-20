@@ -55,9 +55,9 @@ function scrape(doc, url) {
 		var emptyString =" ";
 		var firstName, lastName;
 	/*==========================Blog Post===========================*/
-	
+
 	if (type =="blogPost"){
-	
+
 		var newItem = new Zotero.Item('blogPost');
 		newItem.url = doc.location.href;
 		//newItem.title = "No Title Found";
@@ -66,15 +66,15 @@ function scrape(doc, url) {
 
 		//Get Author
 		try { /*Try and Catch if encounter erro */
-		
+
 			var blogAuthor = "//div[@id='left_col']/span";
 			var blogAuthorObject = doc.evaluate(blogAuthor, doc, null, XPathResult.ANY_TYPE, null).iterateNext();
 				if (blogAuthorObject) {
-					
+
 					if (blogAuthorObject.textContent.replace(/\s*/g,'') ==""){
 					newItem.creators =blogAuthorObject.textContent.replace(/\s*/g,'');
 					}
-					
+
 					else {
 						blogAuthorObject = blogAuthorObject.textContent;
 						if (blogAuthorObject.match(/[\s\n\r\t]+-[\s\n\r\t]+[a-zA-Z\s\n\r\t]*/g)){
@@ -84,18 +84,18 @@ function scrape(doc, url) {
 								firstName = splitIntoArray[i].substring(0,1).toUpperCase();
 								lastName = splitIntoArray[i].substring(1).toLowerCase();
 								fullName += firstName + lastName + emptyString;
-										
+
 							}
 							newItem.creators.push(Zotero.Utilities.cleanAuthor(fullName , "author"));
 						}
-				
-					 else { 
+
+					 else {
 						splitIntoArray = blogAuthorObject.replace(/\bBy \b/g,'').split (" ");
 						for (var i = 0; i < splitIntoArray.length; i++){
 							firstName = splitIntoArray[i].substring(0,1).toUpperCase();
 							lastName = splitIntoArray[i].substring(1).toLowerCase();
 							fullName += firstName + lastName + emptyString;
-										
+
 						}
 					 	newItem.creators.push(Zotero.Utilities.cleanAuthor(fullName , "author"));   }
 					}
@@ -104,7 +104,7 @@ function scrape(doc, url) {
 			newItem.creators = [];
 
 		}
-			
+
 		//Blog title
 		var blogTitle = url.match(/\/blogs\/([^/]+)/);
 		if (blogTitle){
@@ -117,21 +117,21 @@ function scrape(doc, url) {
 		newItem.websiteType = "Newspaper";
 		newItem.attachments.push({document: doc, title:"Stuff.co.nz Snapshot"});
 		newItem.complete();
-	} 
-	
-	
-	
+	}
+
+
+
 	/* ======================Newspaper Article========================*/
-	
+
 	else  if (type =="newspaperArticle"){
-	
+
 		var newItem = new Zotero.Item('newspaperArticle');
 		newItem.url = url;
 		//newItem.title = "No Title Found";
-		
+
 		//Get extended publisher if there is any then replace with stuff.co.nz
 		var myPublisher = '//span[@class="storycredit"]';
-	
+
 		var myPublisherObject = doc.evaluate(myPublisher , doc, null, XPathResult.ANY_TYPE, null).iterateNext();
 		if (myPublisherObject) {
 			var realPublisher = myPublisherObject.textContent;
@@ -141,53 +141,53 @@ function scrape(doc, url) {
 			} else {
 				newItem.publicationTitle = "Stuff.co.nz";
 			}
-			
+
 		} else {
 				newItem.publicationTitle = "Stuff.co.nz";
 		}
-	
+
 		newItem.language = "English";
-		
+
 		//Short Title
 		newItem.shortTitle = doShortTitle(doc,url);
-	
-		
+
+
 		//get Abstract
 		newItem.abstractNote = doAbstract(doc, url);
 		var authorXPath = '//span[@class="storycredit"]';
-		
+
 		var authorXPathObject = doc.evaluate(authorXPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext();
 		if (authorXPathObject){
 			var authorArray = new Array("NZPA", "The Press", "The Dominion Post");
 			authorXPathObject = authorXPathObject.textContent;
-			
+
 			if (authorXPathObject.match(/[\s\n\r\t]+-[\s\n\r\t]+\b[a-zA-Z\s\n\r\t]*|^\s+\bBy\s*/g)){
 				authorXPathObject = authorXPathObject.replace(/([\s\n\r\t]+-[\s\n\r\t]+\b[a-zA-Z\s\n\r\t]*)|\b.co.nz|\b.com|(-[a-zA-Z0-9]*)/g, '');
 				var authorString = authorXPathObject.replace(/^\s+\bBy\s*|^\s+\bBY\s*/g, '');
-				
+
 				if (authorString.match(/\W\band\W+/g)) {
 					authorTemp = authorString.replace(/\W\band\W+/g, ', ');
-					authorArray = authorTemp.split(", ");	
+					authorArray = authorTemp.split(", ");
 				} else if (!authorString.match(/\W\band\W+/g)) {
 						authorArray = authorString.toLowerCase();
 				}
 				if ( authorArray instanceof Array ) {
-					for (var i in authorArray){			
+					for (var i in authorArray){
 					splitIntoArray = authorArray[i].split (" ");
 						for (var i = 0; i < splitIntoArray.length; i++){
 							firstName = splitIntoArray[i].substring(0,1).toUpperCase();
 							lastName = splitIntoArray[i].substring(1).toLowerCase();
 							fullName += firstChar + lastChar + emptyString;
-								
-						
+
+
 						}
 					newItem.creators.push(Zotero.Utilities.cleanAuthor(JoinString, "author"));
-					
+
 					}
-					
+
 				} else {
-					
-			
+
+
 					if (authorString.match(/\W\bof\W+/g)){
 						authorTemp = authorString.replace (/\W\bof\W(.*)/g, '');
 						splitIntoArray = authorTemp.split (" ");
@@ -195,27 +195,27 @@ function scrape(doc, url) {
 									firstName = splitIntoArray[i].substring(0,1).toUpperCase();
 									lastName = splitIntoArray[i].substring(1).toLowerCase();
 									fullName += firstChar + lastChar + emptyString;
-							
+
 							}
 						newItem.creators.push(Zotero.Utilities.cleanAuthor(JoinString, "author"));
-					
-	
+
+
 					} else {
-						
+
 						splitIntoArray = authorArray.split (" ");
-						for (var i = 0; i < splitIntoArray.length; i++){	
+						for (var i = 0; i < splitIntoArray.length; i++){
 							firstName = splitIntoArray[i].substring(0,1).toUpperCase();
 							lastName = splitIntoArray[i].substring(1).toLowerCase();
 							fullName += firstName+ lastName + emptyString;
-								
-							
+
+
 						}
 						newItem.creators.push(Zotero.Utilities.cleanAuthor(fullName, "author"));
 					}
-								
+
 				}
 			}  else {
-				
+
 				if (authorXPathObject.match(/[\s\n\r]+/g)){
 					authorXPathObject = ZU.capitalizeTitle( authorXPathObject.trim(), true ); //.replace(/\s+/g, '-');
 					newItem.creators.push(ZU.cleanAuthor(authorXPathObject, "author"));
@@ -223,22 +223,22 @@ function scrape(doc, url) {
 					newItem.creators.push(Zotero.Utilities.cleanAuthor(authorXPathObject , "author"));
 				}
 			}
-			
+
 		} else {
 			newItem.creators = [];
 		}
-			
+
 		//Title of the Article
 		newItem.title= doTitle(doc, url);
-		
-		
-		//Section of the Article 
-	
+
+
+		//Section of the Article
+
 		var current = '//li/a[@class="current"]';
 		var currentObject = doc.evaluate(current, doc, null, XPathResult.ANY_TYPE, null).iterateNext();
 		if (currentObject){
 			currentObject = currentObject.textContent;
-	
+
 			var articleSection = '//li[@class="mid_nav_item"]/a';
 			var articleSectionObject = doc.evaluate(articleSection , doc, null, XPathResult.ANY_TYPE, null).iterateNext();
 			if (articleSectionObject){
@@ -251,19 +251,19 @@ function scrape(doc, url) {
 						newItem.place= "New Zealand";
 						newItem.section = currentObject;
 						break;
-				
+
 					case "World":
 						newItem.place= "World";
 						newItem.section = currentObject; break;
-					
+
 					default:
 						newItem.section = articleSectionObject;break;
 				}
-			} 
+			}
 			var SectionType = '//li[@class="current_nav_item"]/a';
 			var SectionTypeObject = doc.evaluate(SectionType, doc, null, XPathResult.ANY_TYPE, null).iterateNext();
 			if (SectionType){
-				
+
 					SectionTypeObject = SectionTypeObject.textContent;
 					switch (SectionTypeObject) {
 						case "National":
@@ -273,26 +273,26 @@ function scrape(doc, url) {
 						case "Politics":
 						case "Environment":
 						case "Business":
-						
+
 							newItem.place= "New Zealand";
 							newItem.section = currentObject; break;
-							
-						case  "Opinion": 
-						case  "Rugby": 
-						case  "Soccer": 
-						case  "Cricket": 
-						case  "Basketball": 
-						case  "Fishing": 
+
+						case  "Opinion":
+						case  "Rugby":
+						case  "Soccer":
+						case  "Cricket":
+						case  "Basketball":
+						case  "Fishing":
 						case  "League":
 						case  "Scoreboard":
 						case  "Football":
-						case  "Golf": 
+						case  "Golf":
 						case  "Motorsport":
 						case  "Netball":
 						case  "Tennis":
-						
+
 							newItem.section ="Sport"; break;
-						default: 
+						default:
 							newItem.section = SectionTypeObject; break;
 					}
 				}
@@ -301,9 +301,9 @@ function scrape(doc, url) {
 			var SectionType = '//li[@class="current_nav_item"]/a';
 			var SectionTypeObject = doc.evaluate(SectionType, doc, null, XPathResult.ANY_TYPE, null).iterateNext();
 			if (SectionType){
-				
+
 					SectionTypeObject = SectionTypeObject.textContent;
-					
+
 					switch (SectionTypeObject) {
 						case "National":
 						case "Crime":
@@ -314,22 +314,22 @@ function scrape(doc, url) {
 						case "Business":
 							newItem.place= "New Zealand";
 							newItem.section = SectionTypeObject; break;
-						
+
 						default:
 							newItem.section =SectionTypeObject; break;
 					}
-				
+
 			}
 		}
 		//Snapshot of  the web page.
 		newItem.attachments.push({document:doc, title:"Stuff.co.nz Snapshot"});
-	 							  
+
 		//Call Do date function to make it cleaner in scape. This way things are easier to follow.
 		newItem.date = doDate(doc,url);
 		newItem.complete();
-		
+
 	}
-	
+
 }
 
 
@@ -346,7 +346,7 @@ function doShortTitle(doc, url){
 }
 
 function doAbstract(doc, url){
-	var abstractString=""; 
+	var abstractString="";
 	var a= "//meta[@name='description']";
 	var abs= doc.evaluate(a, doc, null, XPathResult.ANY_TYPE, null).iterateNext();
 	if (abs){
@@ -374,7 +374,7 @@ function doDate(doc, url){
 	try {
 		if (dateXpathObject){
 			var storeDateValue = dateXpathObject.textContent.replace(/\b(Last updated )\d{0,9}:\d{0,9} /g,'');
-			
+
 			var ArrayDate = storeDateValue.split('/');
 			var emptyString = " ";
 			var comma = ", ";
@@ -383,12 +383,12 @@ function doDate(doc, url){
 			var ArrayNumber = new Array("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
 			for (var i=0; i <ArrayNumber.length; i++){
 				if (ArrayDate[1] ==ArrayNumber[i]) {
-					
+
 					ArrayNumber[i] = ArrayMonth[i];
 					var month = ArrayNumber[i] + emptyString;
 				}
 				DateString = month + ArrayDate[0] + comma + ArrayDate[2];
-				
+
 			}
 			return DateString;
 		} else {
@@ -396,7 +396,7 @@ function doDate(doc, url){
 			return DateString;
 		}
 	}catch (err) {
-		
+
 		DateString = "";
 	}
 	return DateString;

@@ -14,24 +14,24 @@
 
 /*
 	***** BEGIN LICENSE BLOCK *****
-	
+
 	ESpacenet translator - Copyright © 2011-2021 Sebastian Karcher
-	
+
 	This file is part of Zotero.
-	
+
 	Zotero is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Affero General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version.
-	
+
 	Zotero is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 	GNU Affero General Public License for more details.
-	
+
 	You should have received a copy of the GNU Affero General Public License
 	along with Zotero.  If not, see <http://www.gnu.org/licenses/>.
-	
+
 	***** END LICENSE BLOCK *****
 */
 
@@ -46,7 +46,7 @@ function detectWeb(doc, url) {
 	if (doc.getElementById("application-content")) {
 		Z.monitorDOMChanges(doc.getElementById("application-content"));
 	}
-	
+
 	if ((url.includes("/biblio?") || url.includes("/publication/"))
 		&& getTitle(doc)) {
 		return "patent";
@@ -112,14 +112,14 @@ function scrape(doc, url) {
 				ZU.cleanAuthor(name.replace(/,?\s/, ', '),	// format displayed is LAST FIRST MIDDLE, so we add a comma after LAST
 					"inventor", true));
 		});
-	
+
 	var assignees = [];
 	cleanNames(text(doc, '#applicants, #biblio-applicants-content'),
 		function (name) {
 			assignees.push(name);
 		});
 	newItem.assignee = assignees.join('; ');
-	
+
 	var classifications = {
 		ipc: [],
 		cpc: []
@@ -174,14 +174,14 @@ function scrape(doc, url) {
 					break;
 			}
 		}
-		
+
 		var date = text(doc, '#pagebody>h1');
 		if (date) {
 			newItem.issueDate = ZU.strToISO(date);
 		}
 		newItem.patentNumber = text(doc, 'span.sel');
 	}
-	
+
 	newItem.abstractNote = ZU.trimInternal(
 		text(doc, 'p.printAbstract, #biblio-abstract-content') || '');
 

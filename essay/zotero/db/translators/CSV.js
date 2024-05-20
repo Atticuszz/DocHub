@@ -182,7 +182,7 @@ function escapeValue(str) {
 	if (typeof replaceNewlinesWith == 'string') {
 		str = str.replace(/[\r\n]+/g, replaceNewlinesWith);
 	}
-	
+
 	return str.replace(escapeRE, fieldWrapperCharacter + '$&');
 }
 
@@ -207,7 +207,7 @@ function writeColumnHeaders() {
 		// Split individual words in labels and capitalize property
 		label = label[0].toUpperCase() + label.substr(1);
 		label = label.replace(/([a-z])([A-Z])/g, '$1 $2');
-		
+
 		line += escapeValue(label) + fieldWrapperCharacter;
 	}
 	Zotero.write(line);

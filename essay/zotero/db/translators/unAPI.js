@@ -76,9 +76,9 @@ var defaultFormat, unAPIIDs;
 function UnAPIFormat(aXML) {
 	var parser = new DOMParser();
 	var doc = parser.parseFromString(aXML.replace(/<!DOCTYPE[^>]*>/, "").replace(/<\?xml[^>]*\?>/, ""), "text/xml");
-	
+
 	var foundFormat = {};
-	
+
 	// Loop through to determine format name
 	var nodes = doc.documentElement.getElementsByTagName("format");
 	var nNodes = nodes.length;
@@ -93,7 +93,7 @@ function UnAPIFormat(aXML) {
 		name = node.getAttribute("name");
 		lowerName = name.toLowerCase();
 		format = false;
-		
+
 		// Look for formats we can recognize
 		if (["rdf_zotero", "rdf_bibliontology", "bibtex", "endnote", "rdf_dc"].includes(lowerName)) {
 			format = lowerName;
@@ -124,10 +124,10 @@ function UnAPIFormat(aXML) {
 				|| lowerName.match(/^ris\b/)) {
 			format = "ris";
 		}
-		
+
 		if (format) foundFormat[format] = name;
 	}
-	
+
 	// Loop through again to determine optimal supported format
 	for (let i = 0; i < RECOGNIZABLE_FORMATS.length; i++) {
 		if (foundFormat[RECOGNIZABLE_FORMATS[i]]) {
@@ -137,7 +137,7 @@ function UnAPIFormat(aXML) {
 			return;
 		}
 	}
-	
+
 	this.isSupported = false;
 }
 
@@ -183,7 +183,7 @@ UnAPIID.prototype = {
 			callback(this.items);
 			return;
 		}
-		
+
 		this.items = [];
 		this.isSupported((isSupported) => {
 			if (!isSupported) {
@@ -223,7 +223,7 @@ UnAPIID.prototype = {
 			callback(this.format.isSupported);
 			return;
 		}
-		
+
 		getDefaultFormat((defaultFormat) => {
 			// first try default format, since this won't require >1 HTTP request
 			if (defaultFormat.isSupported) {
@@ -267,7 +267,7 @@ function getUnAPIIDs(doc) {
 		unAPIResolver = newUnAPIResolver;
 		unAPIIDs = [];
 	}
-	
+
 	// look for abbrs
 	var abbrs = doc.evaluate('//x:abbr[contains(@class, " unapi-id") or contains(@class, "unapi-id ") or @class="unapi-id"][@title]',
 		doc, nsResolver, XPathResult.ANY_TYPE, null);
@@ -277,7 +277,7 @@ function getUnAPIIDs(doc) {
 		var id = abbr.getAttribute("title");
 		ids.push(unAPIIDs[id] ? unAPIIDs[id] : new UnAPIID(id));
 	}
-	
+
 	return ids;
 }
 
@@ -333,7 +333,7 @@ function getAllItems(ids, callback, items) {
 	var id = ids.shift();
 	id.getItems(function (retrievedItems) {
 		var collectedItems = (items ? items.concat(retrievedItems) : retrievedItems);
-		
+
 		if (ids.length) {
 			getAllItems(ids, callback, collectedItems);
 		}
@@ -347,7 +347,7 @@ function detectWeb(doc, _url) {
 	// get unAPI IDs
 	var ids = getUnAPIIDs(doc);
 	if (!ids.length) return false;
-	
+
 	if (!ids.length === 1) {
 		// Only one item, so we will just get its item type
 		ids[0].getItemType(Zotero.done);
@@ -361,11 +361,11 @@ function detectWeb(doc, _url) {
 
 function doWeb(doc, _url) {
 	var ids = getUnAPIIDs(doc);
-	
+
 	getAllItems(ids, function (items) {
 		// get the domain we're scraping, so we can use it for libraryCatalog
 		let domain = doc.location.href.match(/https?:\/\/([^/]+)/);
-		
+
 		if (items.length == 1) {
 			// If only one item, just complete it
 			items[0].libraryCatalog = domain[1];
@@ -377,11 +377,11 @@ function doWeb(doc, _url) {
 			for (var i in items) {
 				itemTitles[i] = items[i].title;
 			}
-			
+
 			// Show item selection dialog
 			Zotero.selectItems(itemTitles, function (chosenItems) {
 				if (!chosenItems) return;
-				
+
 				// Complete items
 				for (var i in chosenItems) {
 					items[i].libraryCatalog = domain[1];
