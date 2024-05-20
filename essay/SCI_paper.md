@@ -6,4 +6,4 @@
 
 [Web of Science Master Journal List - WoS MJL by Clarivate](https://mjl.clarivate.com/home)
 比如**IMAGE AND VISION COMPUTING**
-![../../assets/Pasted_image_20240504112823.png](../../assets/Pasted_image_20240504112823.png)，**SCI**或者*SCIE*
+![../../assets/Pasted_image_20240504112823.png](../assets/Pasted_image_20240504112823.png)，**SCI**或者*SCIE*
