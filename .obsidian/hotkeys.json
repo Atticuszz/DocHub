@@ -37,5 +37,35 @@
       "modifiers": ["Alt", "Shift"],
       "key": "P"
     }
+  ],
+  "workspace:close-window": [
+    {
+      "modifiers": ["Shift"],
+      "key": "Key229"
+    }
+  ],
+  "obsidian-zotero-desktop-connector:zdc-cite": [
+    {
+      "modifiers": ["Alt", "Mod"],
+      "key": "C"
+    }
+  ],
+  "obsidian-enhancing-export:obsidian-enhancing-export:export-with-previous": [
+    {
+      "modifiers": ["Alt", "Mod"],
+      "key": "P"
+    }
+  ],
+  "obsidian-zotero-desktop-connector:zdc-exp-import annotations": [
+    {
+      "modifiers": ["Alt", "Mod"],
+      "key": "A"
+    }
+  ],
+  "obsidian-zotero-desktop-connector:zdc-import-notes": [
+    {
+      "modifiers": ["Alt", "Mod"],
+      "key": "N"
+    }
   ]
 }

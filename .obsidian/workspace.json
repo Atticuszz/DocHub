@@ -20,12 +20,14 @@
             }
           },
           {
-            "id": "e8f944abd9107714",
+            "id": "ea9a7b56358dd45d",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "docs/papers/Gaussian-SLAM.pdf"
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -41,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -107,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Language/python/py-env/Poetry.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -124,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Language/python/py-env/Poetry.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Language/python/py-env/Poetry.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -210,53 +213,54 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "26f859f3c83a290b",
+  "active": "ea9a7b56358dd45d",
   "lastOpenFiles": [
-    "docs/papers/GICP_slam.pdf",
-    "docs/schedule/report.md",
-    "docs/papers/Gaussian-SLAM.pdf",
+    "docs/Language/python/py-env/Poetry.md",
     "conflict-files-obsidian-git.md",
+    "essay/zotero/zotero-import-templates.md",
+    "essay/zotero/references.bib",
+    "essay/zotero/notes/ressSLAMIndoorMapping2024.pdf",
+    "essay/zotero/notes/ressSLAMIndoorMapping2024.md",
+    "essay/zotero/notes/ressSLAMIndoorMapping2024.docx",
+    "essay/zotero/notes/guptaNDT6DColor2023.md",
+    "essay/zotero/notes",
+    "essay/zotero/ieee.csl",
+    "essay/zotero/bibliography.bib",
+    "essay/zotero/attachments/splat_nav.pdf",
+    "essay/zotero/attachments/nerf_nav.pdf",
+    "essay/zotero/attachments/VGICP_zh.pdf",
+    "essay/zotero/attachments/VGICP.pdf",
+    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
+    "essay/zotero/annotations/guptaNDT6DColor2023.md",
+    "essay/read-dairy.md",
+    "essay/SCI_paper.md",
+    "essay/main.md",
+    "essay/Knowledge.md",
+    "essay/Gradient-down-Sampling.md",
+    "essay/ABGICP.md",
+    "docs/Language/C++/Pointer.md",
+    "docs/Language/C++/Data_model/vector.md",
+    "docs/Language/C++/Data_model/unordered_set.md",
+    "docs/Language/C++/Data_model/unordered_map.md",
+    "docs/Language/C++/Data_model/stack.md",
+    "docs/Language/C++/Data_model/set.md",
+    "docs/Language/C++/Data_model/map.md",
+    "docs/Language/C++/Data_model/String.md",
+    "docs/Language/C++/Data_model/Queue.md",
+    "assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png",
+    "assets/kornColorSupportedGeneralizedICP2014a/kornColorSupportedGeneralizedICP2014a-4-x69-y230.png",
+    "docs/schedule/report.md",
     "docs/schedule/report_mid.md",
-    "docs/papers/VGICP_zh.pdf",
-    "docs/papers/VGICP.pdf",
-    "docs/papers/GICP_zh.pdf",
-    "docs/papers/GICP.pdf",
     "docs/Language/C++/STL/Pointer.md",
     "assets/Pasted_image_20240512125417.png",
     "assets/Pasted_image_20240512125353.png",
     "assets/Pasted_image_20240504112823.png",
     "docs/Language/C++/packages.md",
-    "docs/papers/SplaTAM.pdf",
-    "docs/VCS/git.md",
-    "docs/papers/Knowledge.md",
-    "docs/tools/IDE/JetBrains.md",
-    "docs/tools/IDE/plugin.md",
     "assets/Pasted image 20240420105746.png",
-    "docs/tools/git-install-instruction.md",
-    "docs/OS/Ubuntu/system.md",
-    "docs/OS/Ubuntu/shell.md",
-    "docs/papers/main.md",
     "assets/Pasted_image_20240412154259.png",
     "assets/Pasted_image_20240412154252.png",
-    "docs/Language/python/py-env/conda.md",
-    "docs/OS/GPU.md",
     "assets/Pasted image 20240412154259.png",
     "assets/Pasted image 20240412154252.png",
-    "docs/papers/read-dairy.md",
-    "docs/OS/Ubuntu/configs.md",
-    "docs/OS/Ubuntu/code_env.md",
-    "docs/OS/Ubuntu/bugs.md",
-    "docs/Language/python/standard_lib/Pathlib.md",
-    "docs/Language/python/standard_lib/Pytorch.md",
-    "docs/papers/SCI_paper.md",
-    "assets/Pasted_image_20240329154710.png",
-    "assets/Pasted_image_20240329152030.png",
-    "docs/papers/3d_gaussian_splatting.pdf",
-    "docs/papers/3d_gaussian_splatting_high-dual-translated.pdf",
-    "docs/papers/3DGS.pdf",
-    "docs/baidu_driver.md",
-    "docs/Language/C++/STL/algorithm.md",
-    "docs/Language/C++/STL/vector.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",

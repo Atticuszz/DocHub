@@ -452,6 +452,19 @@ img.excalidraw-cropped-pdfpage {
 .ex-opacity-0 {
   opacity: 0;
 }
+.popover .excalidraw-svg {
+  height: 100%;
+  max-height: inherit;
+  max-width: inherit;
+  width: 100%;
+}
+root {
+  --excalidraw-caret-color: initial;
+}
+.excalidraw input,
+textarea.excalidraw-wysiwyg {
+  caret-color: var(--excalidraw-caret-color);
+}
 @font-face {
   font-display: swap;
   font-family: Virgil;
@@ -641,6 +654,13 @@ img.excalidraw-cropped-pdfpage {
 .excalidraw .ToolIcon .ToolIcon__icon:active svg {
   color: var(--color-on-primary-container);
 }
+.excalidraw .ToolIcon .ToolIcon__icon[aria-disabled="true"] {
+  background: initial;
+  border: none;
+}
+.excalidraw .ToolIcon .ToolIcon__icon[aria-disabled="true"] svg {
+  color: var(--color-disabled);
+}
 .excalidraw .ToolIcon--plain {
   background-color: transparent;
 }
@@ -710,6 +730,24 @@ img.excalidraw-cropped-pdfpage {
 .excalidraw .ToolIcon_type_button.ToolIcon--selected:active,
 .excalidraw .ToolIcon_type_button:active {
   background-color: var(--button-gray-3);
+}
+.excalidraw .Modal .ToolIcon_type_button:disabled,
+.excalidraw .ToolIcon_type_button:disabled {
+  cursor: default;
+}
+.excalidraw .Modal .ToolIcon_type_button:disabled:active,
+.excalidraw .Modal .ToolIcon_type_button:disabled:focus-visible,
+.excalidraw .Modal .ToolIcon_type_button:disabled:hover,
+.excalidraw .ToolIcon_type_button:disabled:active,
+.excalidraw .ToolIcon_type_button:disabled:focus-visible,
+.excalidraw .ToolIcon_type_button:disabled:hover {
+  background-color: initial;
+  border: none;
+  box-shadow: none;
+}
+.excalidraw .Modal .ToolIcon_type_button:disabled svg,
+.excalidraw .ToolIcon_type_button:disabled svg {
+  color: var(--color-disabled);
 }
 .excalidraw .Modal .ToolIcon_type_button--show,
 .excalidraw .ToolIcon_type_button--show {
@@ -2012,6 +2050,11 @@ img.excalidraw-cropped-pdfpage {
   margin-inline-start: auto;
   opacity: 0.5;
 }
+.excalidraw .dropdown-menu .dropdown-menu-item__shortcut--orphaned {
+  font-size: 0.875rem;
+  padding: 0 0.625rem;
+  text-align: right;
+}
 .excalidraw .dropdown-menu .dropdown-menu-item:hover {
   background-color: var(--button-hover) !important;
   text-decoration: none;
@@ -2021,6 +2064,21 @@ img.excalidraw-cropped-pdfpage {
   border-color: var(--color-brand-active);
 }
 .excalidraw .dropdown-menu .dropdown-menu-item svg {
+  display: block;
+  height: 1rem;
+  width: 1rem;
+}
+.excalidraw .dropdown-menu .dropdown-menu-item-bare {
+  align-items: center;
+  height: 2rem;
+  justify-content: space-between;
+}
+@media screen and (min-width: 1921px) {
+  .excalidraw .dropdown-menu .dropdown-menu-item-bare {
+    height: 2.25rem;
+  }
+}
+.excalidraw .dropdown-menu .dropdown-menu-item-bare svg {
   display: block;
   height: 1rem;
   width: 1rem;
@@ -4790,7 +4848,7 @@ img.excalidraw-cropped-pdfpage {
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: 2;
+  z-index: var(--zIndex-svgLayer);
 }
 .excalidraw .SVGLayer svg {
   height: 100%;
@@ -4975,6 +5033,7 @@ img.excalidraw-cropped-pdfpage {
   --color-gray-85: #242424;
   --color-gray-90: #1e1e1e;
   --color-gray-100: #121212;
+  --color-disabled: var(--color-gray-40);
   --color-warning: #fceeca;
   --color-warning-dark: #f5c354;
   --color-warning-darker: #f3ab2c;
@@ -5073,6 +5132,7 @@ img.excalidraw-cropped-pdfpage {
   --color-primary-light: #4f4d6f;
   --color-primary-light-darker: #43415e;
   --color-primary-hover: #bbb8ff;
+  --color-disabled: var(--color-gray-70);
   --color-text-warning: var(--color-gray-80);
   --color-danger: #ffa8a5;
   --color-danger-dark: #672120;
@@ -5109,6 +5169,7 @@ img.excalidraw-cropped-pdfpage {
 :root {
   --zIndex-canvas: 1;
   --zIndex-interactiveCanvas: 2;
+  --zIndex-svgLayer: 3;
   --zIndex-wysiwyg: 3;
   --zIndex-canvasButtons: 3;
   --zIndex-layerUI: 4;

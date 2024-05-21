@@ -16,10 +16,13 @@
       "name": "Typst"
     },
     {
-      "name": "PDF"
+      "name": "PDF",
+      "customArguments": "--pdf-engine=pdflatex --citeproc  --bibliography=C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\bibliography.bib  --csl=C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\ieee.csl",
+      "arguments": "-f ${fromFormat} --resource-path=\"${currentDir}\" --resource-path=\"${attachmentFolderPath}\"  ${ options.textemplate ? `--resource-path=\"${pluginDir}/textemplate\" --template=\"${options.textemplate}\"` : ` ` } -o \"${outputPath}\" -t pdf"
     },
     {
-      "name": "Word (.docx)"
+      "name": "Word (.docx)",
+      "customArguments": "--citeproc  --bibliography=C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\bibliography.bib  --csl=C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\ieee.csl"
     },
     {
       "name": "OpenOffice"
@@ -54,8 +57,9 @@
   "env": {},
   "showExportProgressBar": true,
   "lastExportDirectory": {
-    "win32": "C:\\Users\\18317\\OneDrive\\文档"
+    "win32": "C:\\Users\\18317\\DevSpace\\DocHub\\essay\\word"
   },
+  "showOverwriteConfirmation": true,
   "lastExportType": "Word (.docx)",
   "lastEditName": "Word (.docx)"
 }
