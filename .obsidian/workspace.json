@@ -8,24 +8,24 @@
         "type": "tabs",
         "children": [
           {
-            "id": "decaf21bef42ca4e",
+            "id": "67d90be9a02c1e53",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/zotero/annotations/guptaNDT6DColor2023.md",
+                "file": "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "67d90be9a02c1e53",
+            "id": "f07da258dff78db4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/Gradient-down-Sampling.md",
+                "file": "essay/main.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/Gradient-down-Sampling.md",
+                "file": "essay/main.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/Gradient-down-Sampling.md",
+                "file": "essay/main.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/Gradient-down-Sampling.md"
+                "file": "essay/main.md"
               }
             }
           },
@@ -201,54 +201,53 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "67d90be9a02c1e53",
+  "active": "f07da258dff78db4",
   "lastOpenFiles": [
-    "essay/ABGICP.md",
     "essay/Knowledge.md",
+    "essay/zotero/annotations/guptaNDT6DColor2023.md",
+    "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-13-x43-y370.png",
+    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
+    "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-14-x56-y502.png",
+    "assets/guptaNDT6DColor2023",
+    "essay/zotero/zotero-import-templates.md",
+    "essay/ABGICP.md",
     "essay/Gradient-down-Sampling.md",
     "essay/main.md",
     "essay/read-dairy.md",
+    "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree4.pdf",
+    "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree3.txt",
+    "essay/zotero/attachments/raw/image-list.txt",
+    "essay/zotero/attachments/raw/page-01.png",
+    "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree3.ocr.txt",
+    "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree3.ocr.pdf",
+    "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree3.ocr.hocr",
+    "essay/zotero/attachments/raw/page-15.png",
+    "essay/zotero/attachments/raw/page-14.png",
+    "essay/zotero/attachments/raw/page-13.png",
+    "essay/zotero/attachments/raw/page-12.png",
+    "essay/zotero/attachments/raw/page-11.png",
+    "essay/zotero/attachments/raw/page-10.png",
+    "essay/zotero/attachments/raw/page-09.png",
+    "essay/zotero/attachments/raw/pdfinfo.txt",
     "essay/Untitled.md",
     "README.md",
     "essay/word/~$ssSLAMIndoorMapping2024.docx",
-    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
-    "essay/zotero/annotations/guptaNDT6DColor2023.md",
     "essay/zotero/attachments/GICP/Gupta et al_2023_NDT‐6D for color registration in agri‐robotic applications.pdf",
-    "essay/zotero/attachments/SLAM/Ress_et_al_2024_SLAM_for_Indoor_Mapping_of_Wide_Area_Construction_Environments.pdf",
-    "essay/zotero/attachments/GICP/Choi_et_al_2020_Iterative_K-closest_point_algorithms_for_colored_point_cloud_registration.pdf",
-    "essay/zotero/attachments/SLAM/Ress et al_2024_SLAM for Indoor Mapping of Wide Area Construction Environments.pdf",
-    "essay/zotero/attachments/SLAM",
-    "essay/zotero/attachments/2dslam/Ress et al_2024_SLAM for Indoor Mapping of Wide Area Construction Environments.pdf",
-    "essay/zotero/attachments/2dslam",
-    "essay/zotero/zotero-import-templates.md",
     "essay/zotero/annotations/renRobustGICPbased3D2019.md",
     "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014a.md",
     "essay/zotero/annotations/GloballyConsistent3D.md",
-    "essay/zotero/attachments/GICP/Choi et al_2020_Iterative K-closest point algorithms for colored point cloud registration.pdf",
-    "essay/zotero/attachments/GICP",
     "essay/zotero/notes/guptaNDT6DColor2023.md",
     "conflict-files-obsidian-git.md",
     "essay/zotero/notes/ressSLAMIndoorMapping2024.md",
     "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014.md",
-    "assets/kornColorSupportedGeneralizedICP2014a/kornColorSupportedGeneralizedICP2014a-4-x69-y230.png",
-    "essay/zotero/db/cache/library/I8UAPL9U.png",
-    "essay/zotero/db/cache/library/PPRYCZ8E.png",
     "essay/SCI_paper.md",
-    "essay/zotero/db/cache/library/WIER7IV4.png",
-    "essay/zotero/db/cache/library/HQA4SW3L.png",
-    "essay/zotero/db/storage/RPVPGJY9/image.png",
-    "essay/zotero/db/cache/library/DJSGC9WG.png",
-    "assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png",
-    "essay/zotero/db/cache/library/S235A727.png",
     "essay/zotero/ressSLAMIndoorMapping2024.md",
     "essay/zotero/renRobustGICPbased3D2019.md",
     "docs/papers/zotero/renRobustGICPbased3D2019.md",
     "docs/papers/zotero/ressSLAMIndoorMapping2024.md",
-    "assest/ressSLAMIndoorMapping2024/ressSLAMIndoorMapping2024-4-x52-y274.png",
     "docs/papers/zotero/notes/ressSLAMIndoorMapping2024.md",
     "docs/papers/main.md",
     "docs/Language/C++/STL/vector.md",
-    "docs/Language/C++/STL/unordered_set.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",

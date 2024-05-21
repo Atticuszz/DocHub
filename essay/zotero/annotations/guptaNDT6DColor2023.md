@@ -15,7 +15,7 @@ H. Gupta, A. J. Lilienthal, H. Andreasson, and P. Kurtser, ‘NDT‐6D for color
 
 **Lien de la publication :** https://onlinelibrary.wiley.com/doi/10.1002/rob.22194
 
-**Lien Zotero :** [Gupta et al_2023_NDT‐6D for color registration in agri‐robotic applications.pdf](zotero://select/library/items/MTL9XXAP)
+**Lien Zotero :** [Gupta et al_2023_NDT‐6D for color registration in agri‐robotic applications.pdf](zotero://select/library/items/K23NLWH2)
 
 **Tags :** 
 
@@ -23,12 +23,38 @@ H. Gupta, A. J. Lilienthal, H. Andreasson, and P. Kurtser, ‘NDT‐6D for color
 > _« Abstract
             Registration of point cloud data containing both depth and color information is critical for a variety of applications, including in‐field robotic plant manipulation, crop growth modeling, and autonomous navigation. However, current state‐of‐the‐art registration methods often fail in challenging agricultural field conditions due to factors such as occlusions, plant density, and variable illumination. To address these issues, we propose the NDT‐6D registration method, which is a color‐based variation of the Normal Distribution Transform (NDT) registration approach for point clouds. Our method computes correspondences between pointclouds using both geometric and color information and minimizes the distance between these correspondences using only the three‐dimensional (3D) geometric dimensions. We evaluate the method using the GRAPES3D data set collected with a commercial‐grade RGB‐D sensor mounted on a mobile platform in a vineyard. Results show that registration methods that only rely on depth information fail to provide quality registration for the tested data set. The proposed color‐based variation outperforms state‐of‐the‐art methods with a root mean square error (RMSE) of 1.1–1.6 cm for NDT‐6D compared with 1.1–2.3 cm for other color‐information‐based methods and 1.2–13.7 cm for noncolor‐information‐based methods. The proposed method is shown to be robust against noises using the TUM RGBD data set by artificially adding noise present in an outdoor scenario. The relative pose error (RPE) increased 14% for our method compared to an increase of 75% for the best‐performing registration method. The obtained average accuracy suggests that the NDT‐6D registration methods can be used for in‐field precision agriculture applications, for example, crop detection, size‐based maturity estimation, and growth modeling. »_
 
+> [!Annotation|#ff6666]+
+>_« A representative example of this is the TEASER++ algorithm (Yang et al., 2020). »_([9](zotero://open-pdf/library/items/K23NLWH2?page=9&annotation=WKFU5JVY))
+>
+> 现代化快速配准算法，代码质量高，开源文档好
+
 > [!Annotation|#ffd400]+
+>![assets/guptaNDT6DColor2023/guptaNDT6DColor2023-13-x43-y370.png](assets/guptaNDT6DColor2023/guptaNDT6DColor2023-13-x43-y370.png)
 >
+> RGB-D变换的空间3D点云基本公式
+
+> [!Annotation|#ffd400]+
+>![assets/guptaNDT6DColor2023/guptaNDT6DColor2023-14-x56-y502.png](assets/guptaNDT6DColor2023/guptaNDT6DColor2023-14-x56-y502.png)
 >
-> The PDF you provided describes a novel method for point cloud registration in agricultural robotics applications, specifically designed to handle the challenges associated with variable lighting conditions, occlusions, and plant density in agricultural fields. The method introduced is called the NDT-6D registration method, which is a color-based variation of the Normal Distribution Transform (NDT) registration approach for point clouds.您提供的 PDF 描述了农业机器人应用中点云配准的一种新颖方法，该方法专门用于应对农业领域中与可变照明条件、遮挡和植物密度相关的挑战。引入的方法称为 NDT-6D 配准方法，它是点云正态分布变换 (NDT) 配准方法的基于颜色的变体。The key advancements proposed in this method include:该方法提出的主要改进包括：<b>Integration of Color Information</b>: Unlike traditional methods that rely only on geometric information, NDT-6D computes correspondences between point clouds using both geometric and color data. This integration allows for more accurate matching in environments where color can provide significant additional information about the scene.颜色信息的集成：与仅依赖几何信息的传统方法不同，NDT-6D 使用几何数据和颜色数据来计算点云之间的对应关系。这种集成可以在颜色可以提供有关场景的重要附加信息的环境中进行更准确的匹配。<b>Robustness to Noise and Outdoor Conditions</b>: The method demonstrates improved robustness against noises typically found in outdoor agricultural settings. It achieves this by effectively minimizing the distance between matched correspondences using only the three-dimensional geometric dimensions.对噪声和室外条件的鲁棒性：该方法证明了对户外农业环境中常见噪声的鲁棒性有所提高。它通过仅使用三维几何尺寸有效地最小化匹配对应关系之间的距离来实现这一点。<b>Empirical Validation</b>: The method was tested using the GRAPES3D data set collected with a commercial-grade RGB-D sensor mounted on a mobile platform in a vineyard. The results show that the NDT-6D method outperforms existing state-of-the-art methods, providing more reliable registration with lower root mean square error (RMSE) in challenging field conditions.经验验证：使用安装在葡萄园移动平台上的商业级 RGB-D 传感器收集的 GRAPES3D 数据集对该方法进行了测试。结果表明，NDT-6D 方法优于现有的最先进方法，在具有挑战性的现场条件下提供更可靠的配准和更低的均方根误差 (RMSE)。<b>Potential for Practical Applications</b>: The paper suggests that the NDT-6D method can significantly enhance the capabilities of in-field precision agriculture applications such as crop detection, size-based maturity estimation, and growth modeling.实际应用潜力：论文表明，NDT-6D 方法可以显着增强田间精准农业应用的能力，例如作物检测、基于大小的成熟度估计和生长建模。This approach addresses critical issues in agricultural robotics by enhancing the accuracy and reliability of point cloud registration in environments that are typically problematic for optical sensors.这种方法通过提高光学传感器通常存在问题的环境中点云配准的准确性和可靠性，解决了农业机器人技术中的关键问题。
+> 边缘溢出点对配准没有太大价值，因为下一帧也采集不到，对配准没有任何帮助
+
+> [!Annotation|#ffd400]+
+>_« (1) distance‐based filter: points at a distance of more than 3 m are rejected; (2) radius based filter: the point is rejected if the number of neighboring points in a radius of 0.01 m is less than 20 (3) voxel grid filter: if downsampling is required (in case of NDT P2D registration), the grid size of 0.02 m is used. The same preprocessed clouds are used for all compared methods. »_([15](zotero://open-pdf/library/items/K23NLWH2?page=15&annotation=AS5MYFEL))
+>
+> 常见降采样方法
+1. 基于距离的
+2. 基于半径的：根据上述计算，对每个点检查其邻域内的点数是否满足最小点数 \( n_{\text{min}} \) 的条件。具体公式如下：
+   $$
+   l(p, r) < n_{\text{min}}
+   $$
+   其中，\( l(p, r) \) 是点 \( p \) 在半径 \( r \) 内的邻近点数。
+
+上述去除异常值
+3. 体素化网格进行降采样加速处理
 
 > [!Annotation|#e56eee]+
->_« proach for point clouds. Our method computes correspondences between pointclouds using both geometric and color information and minimizes the distance between these correspondences using only the three‐dimensional (3D) geometric dimensions. We evaluate the method using the GRAPES3D data set collected with a commercial‐grade RGB‐D sensor mounted on a mobile platform in a vineyard. Results show that registration methods that only rely on depth information fail to provide quality registration for the tested data set. The proposed color‐based variation outperforms state‐of‐the‐art methods with a root mean square error (RMSE) of 1.1–1.6 »_([1](zotero://open-pdf/library/items/MTL9XXAP?page=1&annotation=JN92XP9Q))
+>_« For the TUM data set, Equation (6) was used to convert the RGBD scans into pointclodus; the camera parameters (focal length and image center) and scale factor used for conversion were taken from Sturm et al. (2012). For this data set, no outlier removal preprocessing procedure was done because pointclouds are inherently less noisy and more feature‐rich, as seen in Figure 2. The only pre‐processing was to artificially introduce noise in pointclouds to evaluate the robustness of the algorithms. These degradation procedures included generating data sets with (1) downsampled pointclouds with a voxel size of 1 cm, and (2) applying a Gaussian blur kernel with window size 5 × 5. »_([15](zotero://open-pdf/library/items/K23NLWH2?page=15&annotation=DZWD87DG))
+>
+> 手动模糊数据集来验证算法的robust
 
 

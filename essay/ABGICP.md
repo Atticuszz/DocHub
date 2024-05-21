@@ -55,8 +55,52 @@ $$T^*=\arg\min_T\sum_{i=1}^nd_i(T)$$
 
 ## 4. Experimental Setup
 
-### estimate camera pose via different approaches in dynamic sim
+### preproccess 
+#### grid down sample for depth image 
+优点:
+不会引入噪声也能够加速点云转换，因为直接转换点云计算量很大，频繁的创建数据，
+Variables:
+- $i, j$: Pixel indices in the depth image.
+- $D$: Original depth image.
+- $S$: Scale factor to convert depth values from units to meters.
+- $K$: Intrinsic camera matrix.
+- $\text{downsample\_stride}$: Stride used for down sampling the image and depth values.
 
-### estimate path plan via different approaches in dynamic sim
+Mathematical Formulation:
+
+1. **Generate pixel indices for the entire depth image:**
+$$
+(i, j) = \text{np.indices}(D.shape)
+$$
+
+2. **Downsampling by taking every nth pixel determined by the downsample_stride:**
+$$
+i = i[::\text{downsample\_stride}, ::\text{downsample\_stride}], \quad j = j[::\text{downsample\_stride}, ::\text{downsample\_stride}]
+$$
+$$
+D_{\text{downsampled}} = D[::\text{downsample\_stride}, ::\text{downsample\_stride}]
+$$
+
+3. **Scale depth values to meters:**
+$$
+Z = D_{\text{downsampled}} \cdot \frac{1}{S}
+$$
+
+4. **Calculate 3D coordinates in the camera coordinate system using the intrinsic parameters:**
+- $x$ coordinate:
+$$
+X = (j - c_x) \cdot \frac{Z}{f_x}
+$$
+- $y$ coordinate:
+$$
+Y = (i - c_y) \cdot \frac{Z}{f_y}
+$$
+
+5. **Concatenate coordinates to form the 3D points with a homogeneous coordinate:**
+$$
+\text{points} = \begin{bmatrix} X & Y & Z & 1 \end{bmatrix}
+$$
+The final array, `points`, is reshaped to \((-1, 4)\) to flatten the point cloud into a two-dimensional array where each row represents a 3D point in homogeneous coordinates.
+
 
 ## 5. Results & Discussion

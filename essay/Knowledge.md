@@ -134,6 +134,11 @@ $\mathbf{M}_{\mathrm{w2c}}$ 变量名常作`w2c`
 
 ### Point Cloud
 
+#### pixel to Point cloud
+$$
+\mathbf{p} = \begin{bmatrix} \frac{u - c_x}{f_x} d \\ \frac{v - c_y}{f_y} d \\ d \end{bmatrix}, \quad d = \frac{I_d(u, v)}{s}
+$$
+
 #### estimate c2w
 
 **估计相机坐标系到世界坐标系的姿态变换矩阵**

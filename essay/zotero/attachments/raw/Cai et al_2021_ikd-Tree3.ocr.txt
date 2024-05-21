@@ -1,0 +1,1276 @@
+arX
+
+2102.10808v1 [cs.RO] 22 Feb 2021
+
+1V
+
+ikd-Tree: An Incremental K-D Tree for Robotic Applications
+
+Yixi Cai, Wei Xu and Fu Zhang
+
+Abstract— This paper proposes an efficient data structure,
+ikd-Tree, for dynamic space partition. The ikd-Tree incremen-
+tally updates a k-d tree with new coming points only, leading
+to much lower computation time than existing static k-d trees.
+Besides point-wise operations, the ikd-Tree supports several
+features such as box-wise operations and down-sampling that
+are practically useful in robotic applications. In parallel to
+the incremental operations (i.e., insert, re-insert, and delete),
+ikd-Tree actively monitors the tree structure and partially re-
+balances the tree, which enables efficient nearest point search
+in later stages. The ikd-Tree is carefully engineered and sup-
+ports multi-thread parallel computing to maximize the overall
+efficiency. We validate the ikd-Tree in both theory and practical
+experiments. On theory level, a complete time complexity
+analysis is presented to prove the high efficiency. On experiment
+level, the ikd-Tree is tested on both randomized datasets and
+real-world LiDAR point data in LiDAR-inertial odometry and
+mapping application. In all tests, ikd-Tree consumes only 4%
+of the running time in a static k-d tree.
+
+I. INTRODUCTION
+
+The K-Dimensional Tree (K-D Tree) is an efficient data
+structure that organizes multi-dimensional point data [1]
+which enables fast search of nearest neighbors, an essential
+operation that is widely required in various robotic applica-
+tions [2]. For example, in LiDAR odometry and mapping,
+k-d tree-based nearest points search is crucial to match a
+point in a new LiDAR scan to its correspondences in the
+map (or the previous scan) [3]—[8]. Nearest points search is
+also important in motion planning for fast obstacle collision
+check on point-cloud, such as in [9]-[14].
+
+Common-used k-d tree structure in robotic applications
+[15] is “static”, where the tree is built from scratch using
+all points. This contradicts with the fact that the data is
+usually acquired sequentially in actual robotic applications.
+In this case, incorporating a frame of new data to existing
+ones by re-building the entire tree from scratch is typically
+very inefficient and time-consuming. As a result, k-d trees
+are usually updated at a low frequency [5]-[7] or simply
+re-built only on the new points [11, 12].
+
+To fit the sequential data acquisition nature, a more natural
+k-d tree design would be updating (i.e., insert and delete) the
+existing tree locally with the newly acquired data. The local
+update would effectively eliminate redundant operations in
+re-building the entire tree, and save much computation. Such
+a dynamic k-d tree is particularly promising when the new
+data is much smaller than existing ones in the tree.
+
+Y. Cai, W. Xu and EF Zhang are with the Department
+
+of Mechanical Engineering, Hong Kong University, Hong Kong
+SAR. China. {yixicai}@connect.hku.hk, {xuweii,
+fuzhang}@hku.hk
+
+Fig. 1. Illustration of incremental k-d tree update and re-balancing. (a):
+an existing k-d tree (black dots) and new points (red triangles) to insert,
+blue cubes denote the space (i.e., branches) need to be re-balanced. (b): the
+k-d tree after points insertion and tree re-balancing, blue cubes denote the
+space after re-balancing while rest majority tree does not change.
+
+However, a dynamic k-d tree brings suitable for robotic
+applications several challenges: 1) It should support not
+merely efficient points operations such as insertion and
+delete but also space operations such as point-cloud down-
+sampling; 2) It easily grows unbalanced after massive points
+or space operations which deteriorates efficiency of points
+queries. Hence re-building is required to re-balance the tree.
+3) The re-building should be sufficiently efficient to enable
+real-time robotic applications.
+
+In this paper, we propose a dynamic k-d tree structure
+called ikd-Tree, which builds and incrementally updates a k-d
+tree with new points only while simultaneously down-sample
+them into the desired resolution. It supports incremental
+operations including insertion, re-insertion, and delete of a
+single point (i.e., point-wise) or a box of points (i.e., box-
+wise). The tree is automatically re-balanced by partial re-
+building. To preserve efficient real-time tree update, ikd-
+Tree separates the tree re-building in two parallel threads
+when necessary. This paper also provides a complete time
+complexity analysis for all tree updates, including both incre-
+mental operations and re-balancing. The time complexity of
+ikd-Tree is reduced substantially as verified on both random
+data and real-world point-cloud in LiDAR-inertial mapping
+applications. The ikd-Tree is open sourced at Github!. Fig.
+1 illustrates the incremental updates and re-balancing on the
+tree from a 3-D view.
+
+The remaining paper is organized as follows: Section II
+introduces related work. The design of ikd-Tree is described
+in Section III. Theoretical analysis of time and space com-
+plexity are presented in Section IV. Experiments are shown
+
+'Git: https://github.com/hku-mars/ikd-Tree.git
+arXiv:2102. 10808v1 [cs. RO] 2021 *F 2 H 22
+
+ikd-Tree: AT A#LaS ALAA USS se K-D By
+
+Yixi Cai, Wei Xu and Fu Zhang
+
+SE: ACHE T APA Fon Ass a AEA ikd-Tree.
+ikd-Tree (iAP HEIRS BT k-d BY. MiTTLEBLATARAS k-d HY
+AUT SEIN Ta) eG. BRIE ERVEZ MS, ikd-Tree MHS MIN HE.
+{Fl WAAR ER (FA PORE. ROHR AETENL ASA DA sch LRA. ‘oie
+PRE CAA. SERA AUR SFT, ikd-Tree “Exhitite pth Masti
+Bre a. MIT tE a BABY BSE IE YR. | ikd-Tree#@it
+Kei, SES ASE T I, WOK BR SE EA. BOTERE
+WOMISE IRISH IGE ikd-Tree. (EPRICE LE. 2H4 Soe MENUS la
+AREA HT. EAB YT OTE RR. CEI, ikd-Tree 7E LiDAR fit
+PE RTT ALE 2 A Le A SFE LADAR BCH LEST
+Wik. ZEPPAWMIR. ikd-Tree (UAFEARAS k-d PH TTINTAINY 4%.
+
+K 426} (K-D i) Z—-MAREGEAM, ATBREH AR
+#2 [1], TARR, KES AMAA iz
+EH SAGH(E [2]. PRO, 4 LIDAR BRitAlMieeh, BT
+k-d HHI RANTS LIDAR HPN RSRete
+(SCRIH) PAIR RHI LACRAESS [3]-[8]. RITA
+RANT ASL RRS ieee MRES, fi
+0[9]-[14].
+
+Has AMBP AS FRAY k-d i214 [15] Se RESAT" , pit
+ERMA RMA REN. KSEIN AMA PBS
+RIMFRDAEWSLET ES. EXP h, BMA
+BE MAS MAGMA ASIA Aaa Pie aS SERS RL
+BRRtAy. Alt, k-d RB R LAB a (5]-[7], KAM
+Feat ra Lie Sib es = [11, 12].
+
+A Si MIRFRGERRAE I, BAPAR k-d MRE AAT
+RVG EA Ae (BDA) RAM. Babee]
+LARUubi RRS MURR, FHBARITESE.
+SrSue OM PRA SGEIVSSA, aA k-d WHAIABT
+
+Y. Cai, W. Xu 7] F. Zhang RE PHSSSSITNKS SASK LEA.
+{yixicai}@connect.hku.hk, {xuweii, fuzhang}@hku.hk
+
+1.188 k-d WEATHER. (a): BUSA k-d it (Rea) ABBA
+atm GRA) , BWSR SSeS) (BIDS) . (b):
+RIES Pek dit}, BEIAATEM TORS, MARSA
+PRA.
+
+PRTG, abAsk-diNAMLESA MBSR T —HePkAR: 1) BARMMZ
+PUSSMOGRE, GIMERAFIMIE, URGE SIAE
+(E, PIMA ARE; 2) KARAS ABE
+@, SUARIUENE. ALBERS. 3)
+HEME CALM AMA.
+
+PEAS, BAYELT EPR ikd-Tree Aba k-d WE
+9, CURRIER k-d ht, ARSCIT ERE
+ABO, CRGAMEE, GIA. Beis Al
+RANA (BDA) AAA (BIAS) . AOA
+ADEE. ATRSROL ER, ikdTree EYE
+RSE SIM MTRIER, ASUREGET PER
+HSEMASRES, GREG. & LIDAR
+(SMART PANRSY AUER, ikd-Tree AORTA
+SAEAAVHE. ikd-Tree 4 Github FFR, El1M 3D @
+Bay hi Liem Bae ee,
+FICAYERNI ES: BOMB LIE. ikd-Tree AUR
+HES=PREA, BO MET MMS SAABABICD
+i. SWRA
+
+1Git: https://github. com/hku-mars/ikd-Tree. git
+in Section V, followed by conclusions in Section VI.
+
+II. RELATED WORK
+
+A k-d tree can be viewed as a binary search tree and
+inherits the same incremental operations (i.e., insert, re-
+insert, and delete), such as those in AVL trees [16], treaps
+[17] and splay trees [18]. In these techniques, re-balancing
+of a binary search tree after many points operations can
+be easily achieved by tree node rotations. However, this
+straightforward tree rotation only works for one-dimensional
+data. For k-d trees with higher data dimension, it requires
+much more complicated tree reorganization.
+
+Strategies specifically designed for fast re-balancing k-
+d trees fall into two categories: hardware-based accelera-
+tion and specially designed structure enabling dynamic re-
+balancing. Hardware-based algorithms exploits the comput-
+ing hardware to (re-) balance a kd-tree by building a new one.
+It has been thoroughly investigated to solve the ray tracing
+problem in dynamic scenes. In 3D graphic applications,
+algorithms on single-core CPU [19, 20] and multi-core CPU
+[21] are firstly proposed to speed up the k-d tree construction.
+Zhou et al. proposed a real-time construction algorithm on
+GPU [22]. These algorithms rely heavily on the computing
+resource which is usually limited on onboard computers.
+
+For the second category, Bentley et al. proposed a general
+binary transformation method for converting a static k-d
+tree to a dynamic one [23]. The dynamic k-d tree supports
+only insertion but not delete, which leads to a growing tree
+size hence increased time for nearest search. Galperin ef al.
+[24] proposes a scapegoat k-d tree that can dynamically re-
+balance the tree by re-building unbalanced sub-trees, which
+is much more efficient than a complete re-building of the
+entire tree. Bkd tree [25] is a dynamic data structure extended
+from a K-D-B tree [26] which focus on external memory
+adaptions. A set of static k-d trees are built in the Bkd
+tree where the trees are re-balanced by re-building partial
+set of the trees at regular intervals. The well-known point
+cloud library (PCL) [15] uses the fast library for approximate
+nearest neighbors (FLANN) search [27]. Point insertion and
+delete are supported in FLANN but the trees are re-balanced
+via inefficient complete tree re-building after a predetermined
+amount of points insertion or delete [28].
+
+Our ikd-Tree is an efficient and complete data structure
+enabling incremental operations (i.e., insert, re-insert, and
+delete) and dynamic re-balancing of k-d trees. Compared to
+the dynamic k-d tree in [23], our implementation supports
+points delete. Besides the point-wise operations presented
+in [16]-[18] and [24], our ikd-Tree further supports the
+incremental operations of a box of points (i.e., box-wise
+operations) and simultaneous points down-sampling. The
+dynamic tree re-balancing strategy of ikd-Tree follows the
+concept of scapegoat trees in [24], which only re-builds those
+unbalanced sub-trees. The ikd-Tree is particularly suitable for
+robotic applications, such as real-time LiDAR mapping and
+motion planning, where data are sampled sequentially and
+fast incremental update is necessary.
+
+III. IkD-TREE DESIGN AND IMPLEMENTATION
+
+In this section, we describe how to design, build, and
+update an incremental k-d tree in ikd-Tree to allow incre-
+mental operations (e.g., insertion, re-insertion, and delete)
+and dynamic re-balancing.
+
+A. Data Structure
+
+The attributes of a tree node in ikd-Tree is presented in
+Data Structure 1. Line 2-4 are the common attributes for a
+standard k-d tree. The attributes le ftson and rightson are
+pointers to its left and right son node, respectively. The point
+information (e.g., point coordinate, intensity) are stored in
+point. Since a point corresponds a single node on a k-d tree,
+we will use points and nodes interchangeably. The division
+axis is recorded in axis. Line 5-7 are the new attributes
+designed for incremental updates detailed in Section IH-C.
+
+Data Structure 1: Tree node structure
+
+1 Struct TreeNode:
+
+// Common Attributes in Standard
+K-D trees
+
+PointType point;
+
+TreeNode * le ftson, rightson;
+
+int axis;
+
+// New Attributes in ikd-Tree
+
+int treesize, invalidnum;
+
+bool deleted, treedeleted, pushdown;
+
+float range[k][2};
+
+& BW NY
+
+end
+
+B. Building An Incremental K-D Tree
+
+Building an incremental k-d tree is similar to building a
+static k-d tree except maintaining extra information for incre-
+mental updates. The entire algorithm is shown in Algorithm
+1: given a point array V, the points are firstly sorted by the
+division axis with maximal covariance (Line 4-5). Then the
+median point is saved to point of a new tree node T’ (Line 6-
+7). Points below and above the median are passed to the left
+and right son nodes of 7’, respectively, for recursive building
+(Line 9-10). The LazyLabelInit and Pullup in Line
+11-12 update all attributes necessary for incremental updates
+(see Data Structure 1, Line 5-7) detailed in Section II-C.
+
+C. Incremental Updates
+
+The incremental updates refer to incremental operations
+followed by a dynamic re-balancing detailed in Section II-D.
+The incremental operations include insertion, delete and re-
+insertion of points to/from the k-d tree. Specifically, the
+insertion operation appends a new point (i.e., a node) to
+the k-d tree. In the delete operation, we use a lazy delete
+strategy. That is, the points are not removed from the tree
+immediately but only labeled as “deleted” by setting the
+attribute deleted to true (see Data Structure 1, Line 6).
+BERD, ABeA BOW.
+=A
+
+k-d MA LRMATNIBAM, FHA THRASH (BD
+fhA. BTA FOMIBR) , Bilao AVL ft [16], treaps [17] #0
+splay ff [18] -RASH/(E. AAR, REAL
+BMSWAS SEER NBA EPES. SAM, xe
+Nites (WERF—HHACE. WFACEHEESSHk-dit, S
+SRsSrywe a.
+
+STARR EIrES kd WIRTH AMA: Bt
+NIRS Risse eNAM. BRAS
+FFB BeBe kd WH (BR) FE kd M.
+CER RAR UB AMAR PABA. F3DAH
+MA, Bychew SRRCPU [19, 20]A0BtKCPU [21] LAE
+FASRMMIRK-dMANMZ. ASA. He iF GPU AYSEAT
+MESA [22], RHSAFH SKM SN LBSAIR
+WFB—, Bentley SA, HH S—HARNITRRA
+iA, FASS k-d WBA k-d HH [23], MBk-diMR
+SSEAT ASS, KASHMNAI ABI, Mints
+DORIS AAIATIA). DORMASA. [24]$EM PERSE
+dit, ELT Sri een wR Sees
+MM, IXtbeSESryee MESRss. Bkdit[25]ZMkK-
+D-Bit [26] RA ASAGEA, SEF SBE AAM.
+
+Bkd Whig 7 —4BRSS k-d WM, BPE SHAE RS
+WERE SAN. SBWABE (PCL) [15] (SRR
+{TIAA SB (FLANN) #228[27], FLANN set rateA AU
+, SRE THRMES SA, BURRS hee
+KSA Sw28].
+
+FaiTAY ikd-Tree 2—MSMETRENWAGEAM, MHS
+VE (BDA, areeBAFOMIBR) #0 k-d RAISES. 5S
+[23] RANaASK-dBLE, FHSS RHR. BRT[16)-
+[18] F0[24) FIR HAAREMEIS, Bei kd MARR
+feeie Ee (BUA TRF) FOR RSREF.  ikd-Tree AYN
+NEMS ABSAl24] FRESHERS, NBs
+ASH FM. ikd-Tree SHAM AMA, PISOSCAT
+LIDAR RAFAH, SPSdRIAS REF B SS Res
+=e.
+
+=. -TDI ADH, FTAA ikd-Tree Pikit, HE
+ASwies kd, Uae Se (PIMA. Bate
+
+A. BGR
+
+ikd-Tree PINTS AS BEBE 1 Afar. SB 2-4 (TRIE
+k-d HAYA. IStt leftson 4] rightson DSI BHARA
+FRAMATFDARIEH. AIR (PIMOS SRE) Hae
+point 2, AF ROTM k-d MENDES, AUC eias
+AMtliem. wMotmickttaxish, 45-7 FSASSSMMIZ
+irate, FDIS III-C 75.
+
+BOE: PTS RAaa1 Struct TreeNode:_// fafeep
+HFS Ate
+
+K-D#iy
+2 PointeHm;
+3 TreeNode* AF, AF;
+4) Been:
+
+// ikd-Tree PAY #r RTE
+
+5 int JAA, invalidnum;
+
+6 bool filBR. treedeleted, HE;
+7 ZAVeEIK] [2];
+
+8 end
+
+B. f2t9er K-D BY
+ISS k-d WSR k-d WAY, REARS SMAA
+BUMS. BSUS 1 Pa: AE TRBWAV, GB
+HRA BRADA ENR UTHER (4-577) .
+Re PRED RAaNRR (386777) . (RFA RA
+DRO SIS62) THES H RAAT, Wot sIFwe
+(33 9-10 47) . $$ 11-12 47H LazyLabellnit 4] Pullup &
+PSSM SWMA Blt ISS Ill-C PRAANAGEA
+#91, 85-747).
+
+C. Wasa
+
+HEPES t, “ees lll-D DP hiFa Mase
+APPS. ee FARE/M k-d HA, HRSA.
+RUSKIN, ARES (BAS ea) NOE k-d BYR.
+MIRE ED, BX tEMIGR RRS. hate, KEARS
+TEOMA PRR, TEES Ee ttdeletedigg Atruekinic
+A “OMG” (BAGS, F677) .
+Algorithm 1: Build a balanced k-d tree
+
+Algorithm 2: Box-wise Updates
+
+Input: V, NV > Point Array and Point Number
+Output: Root Node > K-D Tree Node
+1 RootNode = Build(V,0,N—1);
+
+2 Function Build(V,1,r)
+
+3 mid + |(1+r)/2];
+
+4 Axis + Axis with Maximal Covariance;
+5 V < sort(V, axis);
+
+6 Node T;
+
+7 T.point — V|[mid];
+
+8 T.axis + Axis;
+
+9 T.leftson — Build (V,l,mid—1);
+
+10 T.rightson ~ Build(V,mid+1,r);
+ol LazyLabelInit(/);
+
+12 Pullup (T);
+
+13 return 7’;
+
+14 End Function
+
+If all nodes on the sub-tree rooted at JT’ have been deleted,
+the attribute treedeleted of T is set to true. Therefore the
+attributes deleted and treedeleted are called lazy labels. If
+points labeled as “deleted” but not removed are later inserted
+to the tree, it is referred to as “re-insertion” and is efficiently
+achieved by simply setting the deleted attribute back to false.
+Otherwise, points labeled as “deleted” will be removed from
+the tree during re-building process(see Section IH-D).
+
+Our incremental updates support two types: point-wise
+updates and box-wise updates. The point-wise updates insert,
+delete, or re-insert a single point on the tree while the
+box-wise updates insert, delete or re-insert all points in a
+given box aligned with the data coordinate axis. Box-wise
+updates may require to delete or re-insert an entire sub-tree
+rooted at 7’. In this case, recursively updating the lazy labels
+deleted and treedeleted for all offspring nodes of T are
+still inefficient. To address this issue, we use a further lazy
+strategy to update the lazy labels of the offspring nodes.
+The lazy label for lazy labels deleted and treedeleted is
+pushdown (see Data Structure 1, Line 6). The three labels
+deleted, treedeleted, and pushdown are all initialized as
+false in LazyLabelInit (see Algorithm 1, Line 11).
+
+1) Pushdown and Pullup: Two supporting functions,
+Pushdown and Pullup, are designed to update attributes
+on a tree node T’. The Pushdown function copies the labels
+deleted, treedeleted, and pushdown of T to its sons (but
+not further offsprings) when the attribute pushdown is true.
+The Pullup function summarizes the information of the
+sub-tree rooted at 7’ to the following attributes of node T:
+treesize (see Data Structure 1, Line 5) saving the number
+of all nodes on the sub-tree, invalidnum saving the number
+of nodes labelled as “deleted” on the sub-tree, and range
+(see Data Structure 1, Line 7) summarising the range of all
+points on the sub-tree along coordinate axis, where k is the
+points dimension.
+
+2) Point-wise Updates: The point-wise updates on the
+incremental k-d tree are implemented in a recursive way
+
+Input: Co > Operation box
+T > K-D Tree Node
+SW > Switch of Parallelly Re-building
+
+1 Function BoxwiseUpdate (T,Co, SW)
+
+2 Pushdown (7);
+
+3 Cr «+ T.range;
+
+4 if Cr 1 Co = @ then return;
+
+5 if Cr © Co then
+
+6 UpdateLazyLabel ();
+
+7 T.pushdown = true;
+
+8
+
+9
+
+return;
+else
+10 P<€T.point;
+ra if P C Co then Modify T.deleted;
+12 BoxwiseUpdate (Tleftson,Co, SW);
+13 BoxwiseUpdate (T.rightson, Co, SW);
+14 end
+
+15 Pullup (T);
+16 if ViolateCriterion(T) then
+
+17 if T.treesize < Nmax or Not SW then
+
+18 | Rebuild(T)
+
+19 else
+
+20 | ThreadSpawn (ParallelRebuild, T)
+21 end
+
+22 end
+
+23 End Function
+
+which is similar to the scapegoat k-d tree [24]. For point-wise
+insertion, the algorithm searches down from the root node
+recursively and compare the coordinate on division axis of
+the new point with the points stored on the tree nodes until
+a leaf node is found to append a new tree node. For delete
+or re-insertion of a point P, the algorithm finds the tree
+node storing the point P and modifies the attribute deleted.
+Further details can be found in our Github repository!.
+
+3) Box-wise Updates: The box-wise insertion is imple-
+mented by inserting the new points one by one into the incre-
+mental k-d tree. Other box-wise updates (box-wise delete and
+re-insertion) are implemented utilizing the range information
+in attribute range, which forms a box Cr, and the lazy labels
+on the tree nodes. The pseudo code is shown in Algorithm
+2. Given the box of points Co to be updated on (sub-) tree
+rooted at 7’, the algorithm first passes down its lazy labels to
+its sons for further passing-down if visited (Line 2). Then,
+it searches the k-d tree from its root node recursively and
+checks whether the range Cy on the (sub-)tree rooted at
+the current node 7 has an intersection with the box Co.
+If there is no intersection, the recursion returns directly
+without updating the tree (Line 4). If the box Cr is fully
+contained in the box Co, the box-wise delete set attributes
+deleted and treedeleted to true while the box-wise re-
+insertion set them to false by function UpdateLazyLabel
+(Line 6). The pushdown attribute is set to true indicating
+that the latest incremental updates have not been applied
+Fuk 1: EFS k-d WBA: VN 3 RBS
+
+ttt: RootN ode 3 K-D WA
+
+1 ARR = Build(V, 0, N - 1);
+
+2 Function Build(V, 1, r)
+3 P< [1+ 1/2];
+
+4 | th- BaRADHzAA:
+5 | V — HEFA(V, 4m);
+
+6 PRT;
+
+7 TT. — V [mid];
+
+8 Th 4H;
+
+9 T.lef tson — Build(V, |, mid - 1);
+10 T.rightson — Build(V, mid + 1, r);
+ul LazyLabellnit(T );
+
+12 HZ (T) ;
+13 IRE] T ;
+14 ZG RIN AE
+
+DORUT ARNT WENA RAB RHR, RITA
+treedeleted#Rigs true, Att, deleted #] treedeleted
+BHERABHtine. WRincdyA “CHIR (ARRAS
+MiBADM, UA “Sim” , FBRSSCHRNB
+MIS] false PIAS. Al, iicnA “CHIR WR
+BEBSEUERMM HR (BW Ill-D 7) .
+IWS Sse: ARSE e. SRB
+ae FA, HRSA S TR, MRS RUA.
+RS
+BAe) seas SRS ALL T ARS TT. FPS
+mR, elaibe ee T APRA AlazyingdeletedFi]
+treedeleted{j7AE(RRAI. ASHAX NA, FAR
+—SHBEABKE MEP RABtines. CHIR Hines
+TCHRANNBnse MEN (BEBRBGEAIS 1, B 6
+47) . ABR. BBRAD RHEX= Mase LazyLabellnit zB
+RADIAL false (BMA 1, 41147).
+1) Pushdown#fPullup: pa-Sszt#swsPushdown#FPullup
+ML ATS iil ENB. SettpushdownAtrue
+AY, PushdownRaugTastnedeleted, treedeleted#i]
+pushdownSslZICRVLF (BRBH-SAITt) . Pullup
+RAST ARNT ERILAATDRIALA RB:
+treesize (BR EGEAI1S517) RETREAT RA
+@, invalidnuni®RFDRMSerwbinicnA “CHR , 3
+Bl (SAGEM 1, 475) BATH LGeiMMoR
+ASCH, Bh k 2RA4Ee.
+2) Point-wise Updates: #2k-dit{EASpoint-wise@ er 2k
+WiBlAN ASSAY
+
+Bik 2: EE
+Input: C < ER FAA
+T a K-D ittira SW 3 FHTBBARK
+
+1 Function BoxwiseUpdate (T, C, SW )
+2 FECT );
+
+3 G<— Tse;
+
+4 1 RCNC= oil;
+
+5 if Cj Cthen
+6 —
+
+TRE=H;
+8 Ral;
+
+9 else
+10RP—T a;
+
+11 & Pic C MMEA T. AUER;
+
+12 BoxwiseUpdate(T.lef tson, C, SW );
+
+13 BoxwiseUpdate(T.rightson, C, SW );
+14a R
+
+15 Ftv (T) ;
+
+16 MR ECT ) MBA
+
+17 W1# Ttreesize < N kA SW, WI
+
+18 | ae (1)
+
+19 else
+
+20 Thre dSpawn (FHT BE, T)
+214K
+
+2244 RR
+
+23 End Function RW BaR k-d M [24]. WA
+A, SENT SOBA RR, FERRET A CEI LAY AB po
+AS EP ET, BBIPR BIA Ae A
+ES P MIR ATA, SUARSAER P NPT RIE
+COCA Pa Aes HE
+
+BS Ma B LAGI Github Fig PEI.
+
+3) Box-wise Updates: Box-wisef@A iwi HBA
+SUS k-ditPSCHA. ARIES (FEMS ws
+A) 2URBISCRRASSRES GAGE C) FRA
+MARESSESCINAY. (AASUIEA 2 Fam. AEBELAT AiRAY
+(+) MESA CATE, ZEASASRBEMS eA
+MEH eis (35247). Ala, Mik
+PRA BFBACdN, MBL4RTBATARAY (+) WADE
+BICone2ASiECARE. WRRAsE, VIBIFBRSREl, 7A
+Heer 454) . WRECHEeHSHECH, REM!
+SHIR SHIRES A true, MES iB ia
+Bax UpdateLazyLabel EIR false ($8 677) .
+Pushdownalttizs Atrueknn Ames S Be
+Algorithm 3: Downsample
+Input: L > Length of Downsample Cube
+P > New Point
+1 Cp «+ FindCube (L, P)
+2 Prenter < Center (Cp) 3
+3 V + BoxwiseSearch (RootNode, Cp);
+4 V.push(P);
+5
+6
+7
+
+Prearest < FindNearest (V, Peenter)3
+BoxwiseDelete (RootNode, Cp)
+PointwiselInsert (RootNode, Prearest) 3
+
+TABLE I
+COMPARISON OF SUPPORTED INCREMENTAL UPDATES
+
+Static Dynamic | Scapegoat ikd-Tree
+K-D Tree | K-D Tree | K-D Tree
+Point Insert x v v v
+omy ” Delete x x ov v
+wise Re-insert x x x v
+Insert x v v v
+Box-
+
+: Delete x x x v
+
+wise J
+Re-insert x x x v
+Downsample x x x v
+
+(a) (b)
+
+Fig. 2. Point Cloud Downsample. (a): the point cloud before down-
+sampling. (b): the point cloud after down-sampling
+
+to the offspring nodes of 7. For the condition that Cy
+intersects but not contained in Co, the current point P is
+firstly deleted from or re-inserted to the tree if it is contained
+in Co (Line 11), after which the algorithm looks into the
+son nodes recursively (Line 12-13) and updates all attributes
+of the current node T' (Line 15). Line 16-22 re-balance the
+tree if certain criterion is violated (Line 16) by re-building
+the tree in the same (Line 18) or a separate (Line 20)
+thread. The function ViolateCriterion, Rebuild and
+ParrallelRebuild are detailed in Section IH-D.
+
+4) Downsample: Our ikd-Tree further supports down-
+sampling as detailed in Algorithm 3. For the given point
+P and down-sampling resolution L, the algorithm partitions
+the space evenly into cubes of length L, then the box Cp that
+contains point P is found (Line 1). The algorithm only keeps
+the point that is nearest to the center Pecnier of Cp (Line
+2). This is achieved by firstly searching all points contained
+in Cp on the k-d tree and stores them in a point array
+V together with the new point P (Line 3-4). The nearest
+point Prearest is obtained by comparing the distances of
+each point in V to the center Peenter (Line 5). Then existing
+points in C’p are deleted (Line 6), after which the nearest
+point Prearest iS inserted to the k-d tree (Line 7). The
+implementation of box-wise search is similar to the box-
+wise delete and re-insertion (see Algorithm 2). An example
+of downsample is shown in Fig. 2.
+
+In summary, Table I shows the comparison of supported
+incremental updates on the static k-d tree [1], the dynamic
+k-d tree [23], the scapegoat k-d tree [24] and our ikd-Tree.
+
+D. Re-balancing
+
+Our ikd-Tree actively monitors the balance property of the
+incremental k-d tree and dynamically re-balance it by partial
+re-building.
+
+1) Balancing Criterion: The balancing criterion is com-
+posed of two sub-criterions: a-balanced criterion and a-
+deleted criterion. Suppose a sub-tree of the incremental k-d
+tree is rooted at T’. The sub-tree is a-balanced if and only if
+it satisfies the following condition:
+
+S(Tleftson) < avai (s(r) — 1)
+(1)
+S(L.rightson) < abat (s(r) — 1)
+
+where pai € (0.5,1) and S(T) is the treesize attribute
+of the node T.
+The a-deleted criterion of the sub-tree rooted at J’ is
+
+I(T) < aaerS(T) (2)
+
+where Qdei € (0,1) and I(T’) denotes the number of invalid
+nodes on the sub-tree (i.e., the attributes invalidnum of
+node 7’).
+
+If a sub-tree of the incremental k-d tree meets both
+criterion, the sub-tree is balanced. The entire tree is balanced
+if all sub-trees are balanced. Violation of either criterion will
+trigger a re-building process to re-balance that (sub-) tree: the
+a-balanced criterion maintains the maximum height of the
+(sub-) tree. It can be easily proved that the maximum height
+of an a-balanced tree is log; /,,,., (n) where n is the tree size;
+the a-deleted criterion ensures invalid nodes (1.e., labeled as
+“deleted’) on the (sub-) trees are removed to reduce tree
+size. Reducing height and size of the k-d tree allows highly
+efficient incremental operations and queries in future. The
+function ViolateCriterion in Algorithm 2, Line 16
+returns true if either criterion is violated.
+
+2) Re-build: Assuming re-building is triggered on a sub-
+tree TJ (see Fig. 3), the sub-tree is firstly flattened into a
+point storage array V. The tree nodes labeled as “deleted”
+are discarded during flattening. A new perfectly balanced k-d
+tree is then built with all points in V by Algorithm 1.
+
+3) Parallel Re-build: An evident degradation of real-time
+ability is observed when re-building a large sub-tree on
+the incremental k-d tree. To preserve high real-time ability,
+we design a double-thread re-building method: the main
+thread only re-builds sub-trees whose size is smaller than
+BR 3: BRE
+
+BA: Ls BREWAANKE
+
+P 3 HT
+
+1 C + FindCube (L, P )
+Pcenter <— t\(C);
+V — BoxwiseSearch(RootNode, C);
+V.push(P);
+Pnearest — FindNearest (V, Pcenter );
+
+BoxwiseDelete (RootNode, C)
+Pointwiselnsert(RootNode, Pnearest);
+
+aA oO 7 fF w bw
+
+(a) (b)
+(a): BSRFERIB RAZ. (b): PRAIA
+
+Bl 2. Ra BRE.
+
+SITAR. SFCHAEFESECHHIER, wR
+RRPASECH, NEA PH RRS riBAZIMA (#8
+1147) , ABSABIABKT DR (B114F) 12-13) #
+BP MA DRA S Be (381577) . MER EVE
+(81647) , B 16-22 7 HBIHA-AARME (HB 1877)
+EaybAveee (58 2077) PEW REH ESM. eV
+ViolateCriterion, Rebuild #9 ParrallelRebuild 428 III-D 7
+Hiya.
+4) BRE: FediTAikd-Treet## 263 BSR, MEAS HE
+iA, WASTE RPA RS REDIREL, SASS Siba
+ATREBLAIZAA, ASREIGSRPAEC ($177). BB
+AUR BIBS C (58 247) Pb Pcenter REWR. Kew
+BFE k-d i Con PHSHMARHECIISHiR P —ié
+Piet Rae V PSRSCHIAY (38 3-447) . RATA Pnearest
+IIR V PES ASIA Pcenter AYIBRSIASH (5
+47) . ZAHIR Care PRS (S677) , AAS
+Fa Pnearest #@A 2] k-d (UP (58747) . ABRAM
+WASH RAB BA (BA BR2) . RRENRPIUA
+2 Pama.
+AZ, | PARTS k-d [1], BHA k-d MH [23], BSE
+k-d #8 [24] FOERIAS ikd-Tree EMSA S BHA,
+
+CSIU
+aSLEAY apa SEF .
+K-Di} | KDB} | K-Day | KOS
+Wes HBA X ViV V
+wise HBIBR X XW v
+EBA XX XV —_
+Box- FRA X ViV V
+wise HIBR X XIX V
+EAA XLX XV —
+| BREE X X Xv __}
+D. Berra
+
+FRIAS ikd-Tree East k-d WAFS, Fie
+
+1) FER: FEET PEMA: oF SEM Aol
+BRE. UES k-d WAFL T AR. SAMSmeLF
+RR, FMA OSS:
+
+S(T.lef tson) < a(S(T ) - 1) a)
+S(T.rightson) < a(S(T ) - 1)
+
+EP ae (0.5, 1) #0 S(T) TR T ASAT.
+
+LAT ARES FPSB oct BREA
+I(T ) < aS(T ) (2)
+
+Eo ae (0, 1) F0 (7) RAAFWELARBAHME (DAT
+ANB invalidnum ) .
+
+Rs Sk-dNIT REX MVE, WiZF RE ESA.
+RMA T WAS Fea, BARRELS. RE
+NFS RSS S TES (SF) M: a FSR
+1 (F) HHORASBSE. RADIEROLeNNRASES
+log(n), BAnSMHNAN; o-TBRER ER RHBR (F) PE
+WA A (BlinicA “CHIP” ) DURMRBSAA. iz k-
+d HNSEMA) DOERR SNS See. 40
+Rustin, S5K 2 8 16 HARA ViolateCriterion
+{#iR[E] true.
+
+2) BE: MRETMT 3) ERE, UTS
+RAARFAWAV. tnicn “CHIR BRS Ree BAIE)
+BREF. ARBUSE 1 AV PMB RE haASS
+F505 k-d HH.
+
+3) FTE: GeSk-dtLSBAL TMA, WIZSBISCATRE
+FTE ME. ATS, BURT TMA BEA
+iA: ERRSERIIF
+a = 0.75
+
+7
+Flatten Build T
+=> =>
+
+Fig. 3. Re-build an unbalanced sub-tree
+
+a predetermined value Niax and the second thread re-builds
+the rest. The key problem is how to avoid information lose
+and memory conflicts between the main thread and the
+second thread.
+
+The re-building algorithm on the second thread is shown
+in Algorithm 4. Denote the sub-tree to re-build in the second
+thread as TJ and its root node as 7. The second thread
+will lock all incremental updates (i.e., points insert, re-insert,
+and delete) but not queries on this sub-tree (Line 2). Then
+the second thread copies all valid points contained in the
+sub-tree 7 into a point array V (ie. flatten) while leaving
+the original sub-tree unchanged for possible queries during
+the re-building process (Line 3). After the flattening, the
+sub-tree is unlocked for the main thread to take further
+requests of incremental updates (Line 4). These requests will
+be suspended and recorded in a queue named as operation
+logger. Once the second thread completes building a new
+balanced k-d tree J’ from the point array V (Line 5), the
+recorded update requests will be performed on the balanced
+sub-tree 7’ by function IncrementalUpdates (Line 6-
+8) where the parallel re-building option is set to false (as it
+is already in the second thread). After all pending requests
+are processed, the algorithm locks the node T’ from both
+incremental updates and queries and replace it with the new
+one T” (Line 9-12). Finally, the algorithm frees the memory
+of the original sub-tree (Line 13). Note that LockUpdates
+does not block queries, which can be conducted parallelly
+in the main thread. In contrast, LockA11 blocks all access
+including queries, but it finishes very quickly (i.e., only one
+instruction), allowing timely queries in the main thread. The
+function LockUpdates and LockA11 are implemented by
+mutual exclusion (mutex).
+
+E. K-Nearest Neighbor Search
+
+The nearest search on the incremental k-d tree is an
+accurate nearest search [2] instead of an approximate one as
+[27]. The function Pushdown is applied before searching
+the sub-tree rooted at node T’ to pass down its lazy labels. We
+use the attribute range to speed up the search process thus
+hard real-time ability is preserved. Due to the space limit,
+the details of k-nearest search algorithm is not presented in
+this paper. Interested readers can refer to the related codes
+in our open source library.
+
+IV. COMPLEXITY ANALYSIS
+
+A. Time Complexity
+
+The time complexity of ikd-Tree breaks into the time for
+incremental operations (insertion, re-insertion and delete) and
+
+a = 0.5 Algorithm 4: Parallelly Rebuild for Re-balancing
+
+Input: T > Root node of 7 for re-building
+1 Function ParallelRebuild(T)
+LockUpdates (T);
+V<Flatten(T);
+Unlock (T);
+T’ + Build (V0,size(V)-1) ;
+foreach op in OperationLogger do
+| IncrementalUpdates (T”, op, false)
+end
+Tremp — T;
+LockAl11 (T);
+TeyT’;
+Unlock (T);
+13 Free (Tremp) 5
+14 End Function
+
+Cc rnr DAMN FE WH NY
+
+—
+NFS
+
+re-building.
+1) Incremental Operations: The time complexity of point-
+wise operations is given as
+
+Lemma I (Point-wise Operations): An incremental k-d
+tree can handle a point-wise incremental operation with time
+complexity of O(log n) where n is the tree size.
+
+Proof: The maximum height of an incremental k-d
+tree can be easily proved to be log) /,,,,(n) from Eq. (1)
+while that of a static k-d tree is logy n. Hence the lemma
+is directly obtained from [1] where the time complexity of
+point insertion and delete on a k-d tree was proved to be
+O(log n). The point-wise re-insertion modifies the attribute
+deleted on a tree node thus the time complexity is the same
+as point-wise delete. a
+
+The time complexity of box-wise operations on an incre-
+mental k-d tree is:
+
+Lemma 2 (Box-wise Operations): An incremental 3-d tree
+handles box-wise insertion of m points in Cp with time
+complexity of O(mlogn). Furthermore, suppose points on
+the 3-d tree are in space Sz x Sy x Sz, and Cp = Lz x Ly x
+L,. The box-wise delete and re-insertion can be handled with
+time complexity of O(H(n)), where
+
+O(log n) ifAmin > a($)(*)
+O(n!-2-b-e) ifAmax < 1— a(3)C*)
+O(H(n)) = § O(n%(3)—Amin—Anes) if (*) and (**) fail and
+Aimed < a(#) _ a(3)
+O(n) Amin ) otherwise.
+(3)
+where a = log, Fe, b = log, ze and c = log, ye with
+
+a,b,c >0. Amin» Amea and Amax are the minimal, median
+and maximal value among a, b and c. a(u) is the flajolet-
+puech function with wu © [0,1], where particular value is
+provided: a(%) = 0.7162 and a() = 0.3949
+
+Proof: The box-wise insertion is implemented by point-
+wise insertion thus the time complexity can be directly
+obtained from Lemma 1. An asymptotic time complexity
+for range search on a k-d tree is provided in [29]. The
+Sa=05
+
+Build ® eT
+V ee ese
+e°@
+
+2 3. Baier
+
+AS RSL, MEE N FBS MEE MVER
+Re. ADDS HALAS A_Shz ZAMS EA
+FARR.
+
+S_ Miz LNEZS AUS 4 im. SRL METSS
+BUSWNATAT, SARDRETAT. BI MRRIE
+PASS (RBA. See) , (AREAS
+
+MENSA (58277). Aa, BMARSTM T PARA
+ATA Axia bl 2) eV28 VP (BORA) , RRR aT
+
+Re, LUPE Bee pA TORN (8377). BY
+Ia, SRRARE, LUBE SH CHESS IEK (8
+447) . HBSS ERIC RES AR FicRAHDG
+Hh, —BS MESSER Be V PRE RTAISES k-d YT
+($5747) , iCRNBSHAHEW RA
+IncrementalUpdates (3 68 47) AFM T EAT, B
+HH BBiAMZSA false (HACCSESR_TAE
+
+fh) , UESEAAiRCNISK, SASHEDAT, SR
+ZAHTSSMIsi, FERRARA T (FB 9-12
+17). Bie, SAPURRSMAAG (8 1377). it
+i, LockUpdates FAME, BAW NEEREPHT
+WHT. MALLZE, LockAll SMA IFAS EAR ATA I,
+(BESEAMSIERIR (BIIM-RES) , MMRITFEEREAR
+AHTEIA. BeXLockUpdates#LockAll isi BF
+(mutex) SCHAY.
+
+E. K-FRUtpye Re
+
+is k-d MERIT RS SAORI [2], MAREK [27]
+ARAVA. HIBRUGR TARAS BIMLA
+Pushdown RaVleieeisttins. FPR SISCR IR
+RWE, MT RRIESCARET. AF Rete, AIRE
+MAKERS IA. BXMMLA TWEE See PA
+AB.
+
+py.
+A. Bet [a] 2 2 RE
+
+ikd-Tree PRI RREDABSEIRF FEA. Sari AMl
+BR) AQATIAIAD
+
+HB
+
+B44: HOBBS YS HA: Ts RFS SAT
+ASHE TS RA
+
+Function ParallelRebuild (T )
+ME BR (T) ;
+
+V — R(T);
+
+REG (T) |
+
+T — $32 (V,0,AA\(V)-1);
+
+6 floreach op in OperationLogger
+7 MSI (T , op, false)
+82a)
+
+9T-T;
+
+10 SizEAA(T);
+
+u TT;
+
+12 REG (T) |
+
+13 EB (T) ;
+
+14 SERRE
+
+om 0 AQ
+ech
+
+do
+
+Be,
+1) TEBE F: RR FMEA EA
+
+5|F2 1 GRAF) : eat k-d PPR) DADE ASR EE
+O(log n) ASS aE, Ep on EMK).
+
+HEAR: 12a k-d WMRABEALMRA DIEM SP IEBA
+log(n). (1) Ma#a&k-dAEAlogn, Alltt, Si#ERM(1]
+PIS, Bebk-dit brat FO BRAY ASE) AR RUE ABS
+O(log n). ZrREwieMENT Nr CHR, BubeAy
+BRE SAAMI.
+
+te k-d #Y_EAY box-wise #2/FAIMIISREN:
+
+5|F2 2 CHESRHER(E) : THe 3-d PAE CH om A AAHESR
+A, WleEARFEW O(m log n). LESS, (RI 3-d MEN AH
+Fi] SX SX Sand C= LX LX LF. AHIR eA
+AU Ta] SARFEA O(H(n)), FERRE
+
+O O(log n) O5RA> a )(*)
+
+OOo tT ox yc) O(n) BOER (*) #0 C**) SERB
++5
+
+OADdg Hd) O(n) AM.
+
+O(H(n)) =
+
+(3)
+HH a = log. b = log fl c = log, H# a. b. c > 0.
+A, A #l A fe a, b fl c PARVME. PIA KIE.
+a(u) # flajoletpuech MA, Hu € [0, 1], Hit
+thy REM: a () = 0.7162 #l a() = 0.3949
+
+EBA: box-wiset&A Zikit pointwisetGASGA, AubatiaS
+ABO BRM EIS. (29) FRET k-ditt HEHBAAT
+MISA. ix
+TABLE II
+THE PARAMETERS SETUP OF IKD-TREE IN EXPERIMENTS
+
+Randomized Data LiDAR Inertial-Odometry Mapping
+Nmax 1500 1500
+QAbal 0.6 0.6
+Qdel 0.5 0.5
+Cp - 0.2m x 0.2m x 0.2
+
+box-wise delete and re-insertion can be regarded as a range
+search except that lazy labels are attached to the tree nodes.
+Therefore, the conclusion of range search can be applied to
+the box-wise delete and re-insertion on the incremental k-d
+tree. a
+
+The down-sampling method on an incremental k-d tree
+is composed of box-wise search and delete followed by
+the point insertion. By applying Lemma 1 and Lemma 2,
+the time complexity of downsample is O(log n)+O(H(n)).
+Generally, the downsample hypercube C'p is very small
+comparing with the entire space. Therefore, the normalized
+range Ax, Ay and Az are small and the value of Ajin
+satisfies the condition (*) for time complexity of O(log 7).
+Hence, the time complexity of down-sampling is O(log n).
+
+2) Re-build: Time complexity for re-building breaks into
+two types: single-thread re-building and parallel two-thread
+re-building. In the former case, the re-building is performed
+by the main thread in a recursive way, each level takes the
+time of sorting (i.e., O(m)) and the total time over log n levels
+is O(nlogn) [1] when the the dimension k is low (e.g., 3
+in most robotic applications). For parallel re-building, the
+time consumed in the main thread is only flattening (which
+suspends the main thread from further incremental updates,
+Algorithm 4, Line 2-4) but not building (which is performed
+in parallel by the second thread, Algorithm 4, Line 5) or tree
+update (which takes constant time O(1), Algorithm 4, Line
+10-12), leading to a time complexity of O(n). In summary,
+the time complexity of re-building an incremental k-d tree is
+O(n) for two-thread parallel re-building and O(n log n) for
+single-thread re-building.
+
+3) Nearest Search: For robotic applications, the points
+dimension is usually very small. Hence the time complexity
+of k-nearest search on the incremental k-d tree can be simply
+approximated as O(log n) because the maximum height of
+the incremental k-d tree is maintained no larger than log in.
+
+B. Space Complexity
+
+As shown Section III, each node on the incremental k-
+d tree records point information, tree size, invalid point
+number and point distribution of the tree. Extra flags such
+as lazy labels are maintained on each node for box-wise
+operations. For an incremental k-d tree with n nodes, the
+space complexity is O(n) though the space constant is a
+few times larger than a static k-d tree.
+
+V. APPLICATION EXPERIMENTS
+A. Randomized Data Experiments
+
+The efficiency of our ikd-Tree is fully investigated by two
+experiments on randomized incremental data sets. The first
+
+Incremental Updates
+
+T T T
+peel
+
+—— ikd-Tree uh aa
+——-Static K-D Tree eee
+
+0.6
+
+iN
+o
+T
+
+(a)
+0.3 4
+aon 750 800
+
+To | l I Lett
+
+1. 1 1
+100 200 300 400 500 600 700 800 900 1000
+
+Run Time/ms
+rw
+oO
+r
+\
+\
+\
+5
+
+Nearest Search
+
+Zz ol —— ikd-Tree |
+£ — —-Static K-D Tree
+b) £
+( & if ih oh Lg a tecaaltebatuldy Jaudarh yada dbl
+rT Ls uf
+Z Whee. ‘dob penn raradvel, nn hiram ktditer lle retagelaneptien tht hotles
+0 L 1 1 1 1 L 4 1 4 1 |
+100 200 300 400 500 600 700 800 900 1000
+50 Total Time Consumption x10°
+i r 1 r T T 1 32
+a —— ikd-Tree
+= 49 | |— ~ Static K-D Tree By
+B | ee Total Point Number €
+(c) ra 2
+§ 207 z
+~ y 6
+Li”) 1 Ja a
+
+ore \ pu. |. fi |
+100 200 300 400 500 600 700
+Operation Counter
+
+800 900 1000
+
+Fig. 4. The time performance comparison between an ikd-Tree and a static
+k-d tree.
+
+experiment generates 5,000 points randomly in a 10m x
+10m x 10m space (i.e., the workspace) to initialize the incre-
+mental k-d tree. Then 1,000 test operations are conducted on
+the k-d tree. In each test operation, 200 new points randomly
+sampled in the workspace are inserted (point-wise) to the kd-
+tree. Then another 200 points are randomly sampled in the
+workspace and searched on (but not inserted to) the k-d tree
+for 5 nearest points of each. For every 50 test operations,
+4 cubes are sampled in the workspace with side length of
+1.5m and points contained in these 4 cubes are deleted (box-
+wise) from the k-d tree. For every 100 test operations, 2,000
+new points are sampled in the workspace and inserted (point-
+wise) to the k-d tree. We compare the ikd-Tree with the static
+k-d tree used in point cloud library [15] where at each test
+operation the k-d tree is entirely re-built. The experiments are
+performed on a PC with Intel 17-10700 CPU at 2.90GHz and
+only 2 threads running. The parameters of the incremental
+k-d tree are summarized in Table II where no down-sampling
+is used to allow a fair comparison. Also the maximal point
+number allowed to store on the leaf node of a static k-d tree
+is set to 1 while the original setting in point cloud library is
+15.
+
+The results of the first experiment are shown in Fig. 4,
+where the point number increases from 5,000 to approximate
+200,000. In this process, the time for incremental updates
+(including both incremental operations and re-building) on
+the ikd-Tree remains stably around 1.6 ms while that for
+the static k-d tree grows linearly with number of the points
+(see Fig. 4(a)). The high peaks in the time consumption
+are resulted from the large-scale point-wise insertion (and
+associated re-balancing) and the low peaks are resulted from
+box-wise delete (and associated re-balancing). As shown in
+Fig. 4(b), the time performance of the k-nearest search on the

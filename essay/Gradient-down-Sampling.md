@@ -1,5 +1,3 @@
-
-
 ## Abstract
 
 ## 1. Introduction
@@ -21,22 +19,18 @@
 $$Magnitude[i, j] = \sqrt{G_x[i, j]^2 + G_y[i, j]^2}$$
 
 ```python
-from numba import jit
+import cv2
+import numpy as np
 
-@jit(nopython=True)
-def compute_gradients_numba(depth_map):
-    # 使用 Numba 加速梯度计算
-    horizontal_grad = np.abs(np.diff(depth_map, axis=1))
-    vertical_grad = np.abs(np.diff(depth_map, axis=0))
-    grad_magnitude = np.sqrt(horizontal_grad[:, :-1]**2 + vertical_grad[:-1, :]**2)
-    return grad_magnitude
+# 假设 depth_map 是已经加载的浮点型深度图
+depth_map = np.random.rand(1024, 1024).astype(np.float32) * 1000  # 深度图例子
 
-@jit(nopython=True)
-def simple_edge_detection_numba(depth_map, threshold=10):
-    grad = compute_gradients_numba(depth_map)
-    edges = grad > threshold
-    return edges
+# 计算水平和垂直梯度
+grad_x = cv2.Sobel(depth_map, cv2.CV_64F, 1, 0, ksize=3)
+grad_y = cv2.Sobel(depth_map, cv2.CV_64F, 0, 1, ksize=3)
 
+# 计算梯度幅度
+grad_magnitude = cv2.magnitude(grad_x, grad_y)
 ```
 
 
