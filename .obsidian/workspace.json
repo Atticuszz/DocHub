@@ -23,11 +23,9 @@
             "id": "f07da258dff78db4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "docs/OS/Windows/Powersehll.md",
-                "mode": "source",
-                "source": false
+                "file": "essay/zotero/attachments/GICP/Yang et al_2020_Teaser.pdf"
               }
             }
           }
@@ -98,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Windows/Powersehll.md",
+                "file": "essay/zotero/attachments/GICP/Yang et al_2020_Teaser.pdf",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Windows/Powersehll.md",
+                "file": "essay/zotero/attachments/GICP/Yang et al_2020_Teaser.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Windows/Powersehll.md"
+                "file": "essay/zotero/attachments/GICP/Yang et al_2020_Teaser.pdf"
               }
             }
           },
@@ -203,12 +201,19 @@
   },
   "active": "f07da258dff78db4",
   "lastOpenFiles": [
+    "essay/zotero/attachments/GICP/Korn et al_2014_Color supported generalized-ICP2.pdf",
+    "essay/zotero/attachments/GICP/Koide et al_2021_Voxelized gicp for fast and accurate 3d point cloud registration2.pdf",
+    "essay/zotero/attachments/GICP/Korn et al_2014_Color supported generalized-ICP.pdf",
+    "essay/zotero/attachments/GICP/Koide et al_2021_Voxelized gicp for fast and accurate 3d point cloud registration.pdf",
     "essay/zotero/attachments/GICP/Gupta et al_2023_NDT‐6D for color registration in agri‐robotic applications2.pdf",
+    "essay/zotero/attachments/GICP/Gupta et al_2023_NDT‐6D for color registration in agri‐robotic applications3.pdf",
+    "essay/zotero/attachments/GICP/Gupta et al_2023_NDT‐6D for color registration in agri‐robotic applications.pdf",
     "essay/zotero/attachments/GICP/Gupta et al. - 2023 - NDT‐6D for color registration in agri‐robotic appl.pdf",
+    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
+    "essay/zotero/attachments/raw/Ren et al_2019_Robust GICP-Based 3D LiDAR SLAM for Underground Mining Environment2.pdf",
+    "essay/zotero/attachments/raw/Ren et al_2019_Robust GICP-Based 3D LiDAR SLAM for Underground Mining Environment.pdf",
     "docs/tools/pdf.md",
     "essay/zotero/attachments/VGICP_zh.pdf",
-    "essay/zotero/attachments/GICP/Koide et al_2021_Voxelized gicp for fast and accurate 3d point cloud registration2.pdf",
-    "essay/zotero/attachments/GICP/Koide et al_2021_Voxelized gicp for fast and accurate 3d point cloud registration.pdf",
     "essay/common.md",
     "assets/Pasted image 20240521203441.png",
     "essay/ABGICP.md",
@@ -217,17 +222,10 @@
     "essay/Gradient-down-Sampling.md",
     "essay/zotero/annotations/guptaNDT6DColor2023.md",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-13-x43-y370.png",
-    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-14-x56-y502.png",
-    "assets/guptaNDT6DColor2023",
     "essay/zotero/zotero-import-templates.md",
     "essay/read-dairy.md",
-    "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree4.pdf",
-    "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree3.txt",
-    "essay/zotero/attachments/raw/image-list.txt",
     "essay/zotero/attachments/raw/page-01.png",
-    "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree3.ocr.txt",
-    "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree3.ocr.pdf",
     "essay/zotero/attachments/raw/page-15.png",
     "essay/zotero/attachments/raw/page-14.png",
     "essay/zotero/attachments/raw/page-13.png",
