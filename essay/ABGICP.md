@@ -1,5 +1,5 @@
 ## Abstract
-
+为GICP增加约束，并且去除LAB的L分量，减少光照影响
 ## 1. Introduction
 
 ## 2. Related Work
@@ -54,7 +54,7 @@ $$d_i(T)=(Lp_i-(TLq_i))^T(C_{Lp_i}+TC_{Lq_i}T^T)^{-1}(Lp_i-(TLq_i))$$
 $$T^*=\arg\min_T\sum_{i=1}^nd_i(T)$$
 
 ## 4. Experimental Setup
-
+> 引入颜色可能要要证明光线强度不会造成影响，手动生成数据集
 ### preproccess 
 #### grid down sample for depth image 
 优点:

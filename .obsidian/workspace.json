@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/main.md",
+                "file": "docs/OS/Windows/Powersehll.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/main.md",
+                "file": "docs/OS/Windows/Powersehll.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/main.md",
+                "file": "docs/OS/Windows/Powersehll.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/main.md"
+                "file": "docs/OS/Windows/Powersehll.md"
               }
             }
           },
@@ -203,16 +203,24 @@
   },
   "active": "f07da258dff78db4",
   "lastOpenFiles": [
+    "essay/zotero/attachments/GICP/Gupta et al_2023_NDT‐6D for color registration in agri‐robotic applications2.pdf",
+    "essay/zotero/attachments/GICP/Gupta et al. - 2023 - NDT‐6D for color registration in agri‐robotic appl.pdf",
+    "docs/tools/pdf.md",
+    "essay/zotero/attachments/VGICP_zh.pdf",
+    "essay/zotero/attachments/GICP/Koide et al_2021_Voxelized gicp for fast and accurate 3d point cloud registration2.pdf",
+    "essay/zotero/attachments/GICP/Koide et al_2021_Voxelized gicp for fast and accurate 3d point cloud registration.pdf",
+    "essay/common.md",
+    "assets/Pasted image 20240521203441.png",
+    "essay/ABGICP.md",
     "essay/Knowledge.md",
+    "essay/main.md",
+    "essay/Gradient-down-Sampling.md",
     "essay/zotero/annotations/guptaNDT6DColor2023.md",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-13-x43-y370.png",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-14-x56-y502.png",
     "assets/guptaNDT6DColor2023",
     "essay/zotero/zotero-import-templates.md",
-    "essay/ABGICP.md",
-    "essay/Gradient-down-Sampling.md",
-    "essay/main.md",
     "essay/read-dairy.md",
     "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree4.pdf",
     "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree3.txt",
@@ -220,19 +228,13 @@
     "essay/zotero/attachments/raw/page-01.png",
     "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree3.ocr.txt",
     "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree3.ocr.pdf",
-    "essay/zotero/attachments/raw/Cai et al_2021_ikd-Tree3.ocr.hocr",
     "essay/zotero/attachments/raw/page-15.png",
     "essay/zotero/attachments/raw/page-14.png",
     "essay/zotero/attachments/raw/page-13.png",
     "essay/zotero/attachments/raw/page-12.png",
     "essay/zotero/attachments/raw/page-11.png",
     "essay/zotero/attachments/raw/page-10.png",
-    "essay/zotero/attachments/raw/page-09.png",
-    "essay/zotero/attachments/raw/pdfinfo.txt",
-    "essay/Untitled.md",
     "README.md",
-    "essay/word/~$ssSLAMIndoorMapping2024.docx",
-    "essay/zotero/attachments/GICP/Gupta et al_2023_NDT‐6D for color registration in agri‐robotic applications.pdf",
     "essay/zotero/annotations/renRobustGICPbased3D2019.md",
     "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014a.md",
     "essay/zotero/annotations/GloballyConsistent3D.md",
@@ -247,7 +249,6 @@
     "docs/papers/zotero/ressSLAMIndoorMapping2024.md",
     "docs/papers/zotero/notes/ressSLAMIndoorMapping2024.md",
     "docs/papers/main.md",
-    "docs/Language/C++/STL/vector.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
