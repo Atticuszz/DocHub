@@ -91,5 +91,14 @@
       ],
       "key": "N"
     }
+  ],
+  "obsidian-zotero-desktop-connector:zdc-citation": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "C"
+    }
   ]
 }
