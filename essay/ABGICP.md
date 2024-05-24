@@ -7,6 +7,7 @@
 ## 3. Method
 ### pixel to point cloud
 最基本的图像变换点云，对于RGB图像只是深度值变成了$\begin{bmatrix} r & g & b \end{bmatrix}^\top$
+
 Variables:
 - $u, v$: Pixel coordinates in the image plane.
 - $c_x, c_y$: Coordinates of the principal point (optical center) in the image, typically given in pixels.
