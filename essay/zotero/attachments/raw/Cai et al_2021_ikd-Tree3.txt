@@ -1,0 +1,107 @@
+arX
+
+2102.10808v1 [cs.RO] 22 Feb 2021
+
+1V
+
+ikd-Tree: An Incremental K-D Tree for Robotic Applications
+
+Yixi Cai, Wei Xu and Fu Zhang
+
+Abstract— This paper proposes an efficient data structure,
+ikd-Tree, for dynamic space partition. The ikd-Tree incremen-
+tally updates a k-d tree with new coming points only, leading
+to much lower computation time than existing static k-d trees.
+Besides point-wise operations, the ikd-Tree supports several
+features such as box-wise operations and down-sampling that
+are practically useful in robotic applications. In parallel to
+the incremental operations (i.e., insert, re-insert, and delete),
+ikd-Tree actively monitors the tree structure and partially re-
+balances the tree, which enables efficient nearest point search
+in later stages. The ikd-Tree is carefully engineered and sup-
+ports multi-thread parallel computing to maximize the overall
+efficiency. We validate the ikd-Tree in both theory and practical
+experiments. On theory level, a complete time complexity
+analysis is presented to prove the high efficiency. On experiment
+level, the ikd-Tree is tested on both randomized datasets and
+real-world LiDAR point data in LiDAR-inertial odometry and
+mapping application. In all tests, ikd-Tree consumes only 4%
+of the running time in a static k-d tree.
+
+I. INTRODUCTION
+
+The K-Dimensional Tree (K-D Tree) is an efficient data
+structure that organizes multi-dimensional point data [1]
+which enables fast search of nearest neighbors, an essential
+operation that is widely required in various robotic applica-
+tions [2]. For example, in LiDAR odometry and mapping,
+k-d tree-based nearest points search is crucial to match a
+point in a new LiDAR scan to its correspondences in the
+map (or the previous scan) [3]—[8]. Nearest points search is
+also important in motion planning for fast obstacle collision
+check on point-cloud, such as in [9]-[14].
+
+Common-used k-d tree structure in robotic applications
+[15] is “static”, where the tree is built from scratch using
+all points. This contradicts with the fact that the data is
+usually acquired sequentially in actual robotic applications.
+In this case, incorporating a frame of new data to existing
+ones by re-building the entire tree from scratch is typically
+very inefficient and time-consuming. As a result, k-d trees
+are usually updated at a low frequency [5]-[7] or simply
+re-built only on the new points [11, 12].
+
+To fit the sequential data acquisition nature, a more natural
+k-d tree design would be updating (i.e., insert and delete) the
+existing tree locally with the newly acquired data. The local
+update would effectively eliminate redundant operations in
+re-building the entire tree, and save much computation. Such
+a dynamic k-d tree is particularly promising when the new
+data is much smaller than existing ones in the tree.
+
+Y. Cai, W. Xu and EF Zhang are with the Department
+
+of Mechanical Engineering, Hong Kong University, Hong Kong
+SAR. China. {yixicai}@connect.hku.hk, {xuweii,
+fuzhang}@hku.hk
+
+Fig. 1. Illustration of incremental k-d tree update and re-balancing. (a):
+an existing k-d tree (black dots) and new points (red triangles) to insert,
+blue cubes denote the space (i.e., branches) need to be re-balanced. (b): the
+k-d tree after points insertion and tree re-balancing, blue cubes denote the
+space after re-balancing while rest majority tree does not change.
+
+However, a dynamic k-d tree brings suitable for robotic
+applications several challenges: 1) It should support not
+merely efficient points operations such as insertion and
+delete but also space operations such as point-cloud down-
+sampling; 2) It easily grows unbalanced after massive points
+or space operations which deteriorates efficiency of points
+queries. Hence re-building is required to re-balance the tree.
+3) The re-building should be sufficiently efficient to enable
+real-time robotic applications.
+
+In this paper, we propose a dynamic k-d tree structure
+called ikd-Tree, which builds and incrementally updates a k-d
+tree with new points only while simultaneously down-sample
+them into the desired resolution. It supports incremental
+operations including insertion, re-insertion, and delete of a
+single point (i.e., point-wise) or a box of points (i.e., box-
+wise). The tree is automatically re-balanced by partial re-
+building. To preserve efficient real-time tree update, ikd-
+Tree separates the tree re-building in two parallel threads
+when necessary. This paper also provides a complete time
+complexity analysis for all tree updates, including both incre-
+mental operations and re-balancing. The time complexity of
+ikd-Tree is reduced substantially as verified on both random
+data and real-world point-cloud in LiDAR-inertial mapping
+applications. The ikd-Tree is open sourced at Github!. Fig.
+1 illustrates the incremental updates and re-balancing on the
+tree from a 3-D view.
+
+The remaining paper is organized as follows: Section II
+introduces related work. The design of ikd-Tree is described
+in Section III. Theoretical analysis of time and space com-
+plexity are presented in Section IV. Experiments are shown
+
+'Git: https://github.com/hku-mars/ikd-Tree.git

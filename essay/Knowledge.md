@@ -134,6 +134,11 @@ $\mathbf{M}_{\mathrm{w2c}}$ 变量名常作`w2c`
 
 ### Point Cloud
 
+#### pixel to Point cloud
+$$
+\mathbf{p} = \begin{bmatrix} \frac{u - c_x}{f_x} d \\ \frac{v - c_y}{f_y} d \\ d \end{bmatrix}, \quad d = \frac{I_d(u, v)}{s}
+$$
+
 #### estimate c2w
 
 **估计相机坐标系到世界坐标系的姿态变换矩阵**
@@ -165,7 +170,7 @@ _数学模型_
    - 重复步骤2-3，直到满足收敛条件（如迭代次数、变换更新阈值等）。
 
 ##### GICP
-
+[Generalized ICP | Wiki](https://wiki.hanzheteng.com/algorithm/slam/generalized-icp#how-to-choose-optimizer-comparison-between-gn-lm-and-bfgs)
 **GICP (Generalized Iterative Closest Point) 算法** 是一种改进的迭代最近点算法，通过分布到分布的比对来增强点云的匹配精度。它主要用于三维空间中的点云数据对齐。下面是GICP算法的数学表达和详细解释：
 
 #### 数学表达

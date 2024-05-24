@@ -6,7 +6,39 @@
   title = {Addon {{Item}}}
 }
 
-@article{guptaNDT6DColor2023a,
+@online{caiIkdTreeIncrementalKD2021,
+  title = {Ikd-{{Tree}}: {{An Incremental K-D Tree}} for {{Robotic Applications}}},
+  shorttitle = {Ikd-{{Tree}}},
+  author = {Cai, Yixi and Xu, Wei and Zhang, Fu},
+  date = {2021-02-22},
+  eprint = {2102.10808},
+  eprinttype = {arxiv},
+  eprintclass = {cs},
+  doi = {10.48550/arXiv.2102.10808},
+  url = {http://arxiv.org/abs/2102.10808},
+  urldate = {2024-05-21},
+  abstract = {This paper proposes an efficient data structure, ikd-Tree, for dynamic space partition. The ikd-Tree incrementally updates a k-d tree with new coming points only, leading to much lower computation time than existing static k-d trees. Besides point-wise operations, the ikd-Tree supports several features such as box-wise operations and down-sampling that are practically useful in robotic applications. In parallel to the incremental operations (i.e., insert, re-insert, and delete), ikd-Tree actively monitors the tree structure and partially re-balances the tree, which enables efficient nearest point search in later stages. The ikd-Tree is carefully engineered and supports multi-thread parallel computing to maximize the overall efficiency. We validate the ikd-Tree in both theory and practical experiments. On theory level, a complete time complexity analysis is presented to prove the high efficiency. On experiment level, the ikd-Tree is tested on both randomized datasets and real-world LiDAR point data in LiDAR-inertial odometry and mapping application. In all tests, ikd-Tree consumes only 4\% of the running time in a static k-d tree.},
+  pubstate = {preprint},
+  keywords = {Computer Science - Robotics},
+  file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\raw\\Cai et al_2021_ikd-Tree4.pdf;C\:\\Users\\18317\\Zotero\\storage\\LWWXKIMB\\2102.html}
+}
+
+@article{choiIterativeKclosestPoint2020,
+  title = {Iterative {{K-closest}} Point Algorithms for Colored Point Cloud Registration},
+  author = {Choi, Ouk and Park, Min-Gyu and Hwang, Youngbae},
+  date = {2020},
+  journaltitle = {Sensors},
+  volume = {20},
+  number = {18},
+  pages = {5331},
+  publisher = {MDPI},
+  doi = {10.3390/s20185331},
+  url = {https://www.mdpi.com/1424-8220/20/18/5331},
+  urldate = {2024-05-22},
+  file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\raw\\Choi et al_2020_Iterative K-closest point algorithms for colored point cloud registration.pdf;C\:\\Users\\18317\\Zotero\\storage\\G2EPG525\\5331.html}
+}
+
+@article{guptaNDT6DColor2023,
   title = {{{NDT}}‐{{6D}} for Color Registration in Agri‐robotic Applications},
   author = {Gupta, Himanshu and Lilienthal, Achim J. and Andreasson, Henrik and Kurtser, Polina},
   date = {2023-09},
@@ -21,7 +53,81 @@
   urldate = {2024-05-20},
   abstract = {Abstract             Registration of point cloud data containing both depth and color information is critical for a variety of applications, including in‐field robotic plant manipulation, crop growth modeling, and autonomous navigation. However, current state‐of‐the‐art registration methods often fail in challenging agricultural field conditions due to factors such as occlusions, plant density, and variable illumination. To address these issues, we propose the NDT‐6D registration method, which is a color‐based variation of the Normal Distribution Transform (NDT) registration approach for point clouds. Our method computes correspondences between pointclouds using both geometric and color information and minimizes the distance between these correspondences using only the three‐dimensional (3D) geometric dimensions. We evaluate the method using the GRAPES3D data set collected with a commercial‐grade RGB‐D sensor mounted on a mobile platform in a vineyard. Results show that registration methods that only rely on depth information fail to provide quality registration for the tested data set. The proposed color‐based variation outperforms state‐of‐the‐art methods with a root mean square error (RMSE) of 1.1–1.6\,cm for NDT‐6D compared with 1.1–2.3\,cm for other color‐information‐based methods and 1.2–13.7\,cm for noncolor‐information‐based methods. The proposed method is shown to be robust against noises using the TUM RGBD data set by artificially adding noise present in an outdoor scenario. The relative pose error (RPE) increased 14\% for our method compared to an increase of 75\% for the best‐performing registration method. The obtained average accuracy suggests that the NDT‐6D registration methods can be used for in‐field precision agriculture applications, for example, crop detection, size‐based maturity estimation, and growth modeling.},
   langid = {english},
-  file = {C:\Users\18317\DevSpace\DocHub\essay\zotero\attachments\GICP\Gupta et al_2023_NDT‐6D for color registration in agri‐robotic applications.pdf}
+  keywords = {⭐},
+  file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\GICP\\Gupta et al_2023_NDT‐6D for color registration in agri‐robotic applications2.pdf;C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\GICP\\Gupta et al. - 2023 - NDT‐6D for color registration in agri‐robotic appl.pdf}
+}
+
+@online{haRGBDGSICPSLAM2024,
+  title = {{{RGBD GS-ICP SLAM}}},
+  author = {Ha, Seongbo and Yeon, Jiung and Yu, Hyeonwoo},
+  date = {2024-03-22},
+  eprint = {2403.12550},
+  eprinttype = {arxiv},
+  eprintclass = {cs},
+  url = {http://arxiv.org/abs/2403.12550},
+  urldate = {2024-05-23},
+  abstract = {Simultaneous Localization and Mapping (SLAM) with dense representation plays a key role in robotics, Virtual Reality (VR), and Augmented Reality (AR) applications. Recent advancements in dense representation SLAM have highlighted the potential of leveraging neural scene representation and 3D Gaussian representation for high-fidelity spatial representation. In this paper, we propose a novel dense representation SLAM approach with a fusion of Generalized Iterative Closest Point (G-ICP) and 3D Gaussian Splatting (3DGS). In contrast to existing methods, we utilize a single Gaussian map for both tracking and mapping, resulting in mutual benefits. Through the exchange of covariances between tracking and mapping processes with scale alignment techniques, we minimize redundant computations and achieve an efficient system. Additionally, we enhance tracking accuracy and mapping quality through our keyframe selection methods. Experimental results demonstrate the effectiveness of our approach, showing an incredibly fast speed up to 107 FPS (for the entire system) and superior quality of the reconstructed map.},
+  pubstate = {preprint},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition},
+  file = {C\:\\Users\\18317\\Zotero\\storage\\HJ4D53M9\\Ha et al. - 2024 - RGBD GS-ICP SLAM.pdf;C\:\\Users\\18317\\Zotero\\storage\\P52BZ3I7\\2403.html}
+}
+
+@article{hondaGeneralizedLOAMLiDAR2022,
+  title = {Generalized {{LOAM}}: {{LiDAR Odometry Estimation With Trainable Local Geometric Features}}},
+  shorttitle = {Generalized {{LOAM}}},
+  author = {Honda, Kohei and Koide, Kenji and Yokozuka, Masashi and Oishi, Shuji and Banno, Atsuhiko},
+  date = {2022},
+  journaltitle = {IEEE Robotics and Automation Letters},
+  volume = {7},
+  number = {4},
+  pages = {12459--12466},
+  publisher = {IEEE},
+  doi = {10.1109/LRA.2022.3219022},
+  url = {https://ieeexplore.ieee.org/abstract/document/9935115/},
+  urldate = {2024-05-22},
+  file = {C:\Users\18317\DevSpace\DocHub\essay\zotero\attachments\raw\Honda et al_2022_Generalized LOAM.pdf}
+}
+
+@article{koideGloballyConsistent3D2021,
+  title = {Globally Consistent {{3D LiDAR}} Mapping with {{GPU-accelerated GICP}} Matching Cost Factors},
+  author = {Koide, Kenji and Yokozuka, Masashi and Oishi, Shuji and Banno, Atsuhiko},
+  date = {2021},
+  journaltitle = {IEEE Robotics and Automation Letters},
+  volume = {6},
+  number = {4},
+  pages = {8591--8598},
+  publisher = {IEEE},
+  doi = {10.1109/LRA.2021.3113043},
+  url = {https://ieeexplore.ieee.org/abstract/document/9540294/},
+  urldate = {2024-05-22},
+  file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\raw\\Koide et al_2021_Globally consistent 3D LiDAR mapping with GPU-accelerated GICP matching cost.pdf;C\:\\Users\\18317\\Zotero\\storage\\NMDSF4QZ\\2109.html}
+}
+
+@inproceedings{koideVoxelizedGicpFast2021,
+  title = {Voxelized Gicp for Fast and Accurate 3d Point Cloud Registration},
+  booktitle = {2021 {{IEEE International Conference}} on {{Robotics}} and {{Automation}} ({{ICRA}})},
+  author = {Koide, Kenji and Yokozuka, Masashi and Oishi, Shuji and Banno, Atsuhiko},
+  date = {2021},
+  pages = {11054--11059},
+  publisher = {IEEE},
+  doi = {10.1109/ICRA48506.2021.9560835},
+  url = {https://ieeexplore.ieee.org/abstract/document/9560835/},
+  urldate = {2024-05-22},
+  file = {C:\Users\18317\DevSpace\DocHub\essay\zotero\attachments\GICP\Koide et al_2021_Voxelized gicp for fast and accurate 3d point cloud registration2.pdf}
+}
+
+@inproceedings{kornColorSupportedGeneralizedICP2014,
+  title = {Color Supported Generalized-{{ICP}}},
+  booktitle = {2014 {{International Conference}} on {{Computer Vision Theory}} and {{Applications}} ({{VISAPP}})},
+  author = {Korn, Michael and Holzkothen, Martin and Pauli, Josef},
+  date = {2014},
+  volume = {3},
+  pages = {592--599},
+  publisher = {IEEE},
+  url = {https://ieeexplore.ieee.org/abstract/document/7295135/},
+  urldate = {2024-05-22},
+  keywords = {💫},
+  file = {C:\Users\18317\DevSpace\DocHub\essay\zotero\attachments\GICP\Korn et al_2014_Color supported generalized-ICP2.pdf}
 }
 
 @inproceedings{kornColorSupportedGeneralizedICP2014a,
@@ -36,6 +142,53 @@
   urldate = {2024-05-20},
   keywords = {⛔ No DOI found},
   file = {C:\Users\18317\DevSpace\DocHub\essay\zotero\attachments\EMPTY_COLLECTION_NAMEKorn et al\Korn et al_2014_Color supported generalized-ICP.pdf}
+}
+
+@article{leeAccurateVisualSimultaneous2023,
+  title = {Accurate {{Visual Simultaneous Localization}} and {{Mapping}} ({{SLAM}}) against {{Around View Monitor}} ({{AVM}}) {{Distortion Error Using Weighted Generalized Iterative Closest Point}} ({{GICP}})},
+  author = {Lee, Yangwoo and Kim, Minsoo and Ahn, Joonwoo and Park, Jaeheung},
+  date = {2023},
+  journaltitle = {Sensors},
+  volume = {23},
+  number = {18},
+  pages = {7947},
+  publisher = {MDPI},
+  doi = {10.3390/s23187947},
+  url = {https://www.mdpi.com/1424-8220/23/18/7947},
+  urldate = {2024-05-22},
+  file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\raw\\Lee et al_2023_Accurate Visual Simultaneous Localization and Mapping (SLAM) against Around.pdf;C\:\\Users\\18317\\Zotero\\storage\\SA68L3LU\\7947.html}
+}
+
+@inproceedings{parkColoredPointCloud2017,
+  title = {Colored Point Cloud Registration Revisited},
+  booktitle = {Proceedings of the {{IEEE}} International Conference on Computer Vision},
+  author = {Park, Jaesik and Zhou, Qian-Yi and Koltun, Vladlen},
+  date = {2017},
+  pages = {143--152},
+  url = {http://openaccess.thecvf.com/content_iccv_2017/html/Park_Colored_Point_Cloud_ICCV_2017_paper.html},
+  urldate = {2024-05-23},
+  keywords = {💫},
+  file = {C:\Users\18317\Zotero\storage\NIWZJR2Y\Park et al_2017_Colored point cloud registration revisited-dual-translated.pdf}
+}
+
+@article{renRobustGICPBased3D2019,
+  title = {Robust {{GICP-Based 3D LiDAR SLAM}} for {{Underground Mining Environment}}},
+  author = {Ren, Zhuli and Wang, Liguan and Bi, Lin},
+  date = {2019-01},
+  journaltitle = {Sensors},
+  volume = {19},
+  number = {13},
+  pages = {2915},
+  publisher = {Multidisciplinary Digital Publishing Institute},
+  issn = {1424-8220},
+  doi = {10.3390/s19132915},
+  url = {https://www.mdpi.com/1424-8220/19/13/2915},
+  urldate = {2024-05-22},
+  abstract = {Unmanned mining is one of the most effective methods to solve mine safety and low efficiency. However, it is the key to accurate localization and mapping for underground mining environment. A novel graph simultaneous localization and mapping (SLAM) optimization method is proposed, which is based on Generalized Iterative Closest Point (GICP) three-dimensional (3D) point cloud registration between consecutive frames, between consecutive key frames and between loop frames, and is constrained by roadway plane and loop. GICP-based 3D point cloud registration between consecutive frames and consecutive key frames is first combined to optimize laser odometer constraints without other sensors such as inertial measurement unit (IMU). According to the characteristics of the roadway, the innovative extraction of the roadway plane as the node constraint of pose graph SLAM, in addition to automatic removing the noise point cloud to further improve the consistency of the underground roadway map. A lightweight and efficient loop detection and optimization based on rules and GICP is designed. Finally, the proposed method was evaluated in four scenes (such as the underground mine laboratory), and compared with the existing 3D laser SLAM method (such as Lidar Odometry and Mapping (LOAM)). The results show that the algorithm could realize low drift localization and point cloud map construction. This method provides technical support for localization and navigation of underground mining environment.},
+  issue = {13},
+  langid = {english},
+  keywords = {GICP,graph optimization,loop detection,roadway plane,SLAM,underground mine},
+  file = {C:\Users\18317\DevSpace\DocHub\essay\zotero\attachments\raw\Ren et al_2019_Robust GICP-Based 3D LiDAR SLAM for Underground Mining Environment.pdf}
 }
 
 @online{ressSLAMIndoorMapping2024,
@@ -67,4 +220,50 @@
   url = {https://direct.mit.edu/books/edited-volume/chapter-pdf/2277340/9780262289801_cau.pdf},
   urldate = {2024-05-20},
   file = {C:\Users\18317\DevSpace\DocHub\essay\zotero\attachments\EMPTY_COLLECTION_NAMESegal et al\Segal et al_2009_Generalized-icp.pdf}
+}
+
+@article{yangTeaserFastCertifiable2020,
+  title = {Teaser: {{Fast}} and Certifiable Point Cloud Registration},
+  shorttitle = {Teaser},
+  author = {Yang, Heng and Shi, Jingnan and Carlone, Luca},
+  date = {2020},
+  journaltitle = {IEEE Transactions on Robotics},
+  volume = {37},
+  number = {2},
+  pages = {314--333},
+  publisher = {IEEE},
+  doi = {10.1109/TRO.2020.3033695},
+  url = {https://ieeexplore.ieee.org/abstract/document/9286491/},
+  urldate = {2024-05-21},
+  file = {C:\Users\18317\DevSpace\DocHub\essay\zotero\attachments\GICP\Yang et al_2020_Teaser.pdf}
+}
+
+@article{zhangRGBDCameraBased2021,
+  title = {An {{RGB-D}} Camera Based Visual Positioning System for Assistive Navigation by a Robotic Navigation Aid},
+  author = {Zhang, He and Jin, Lingqiu and Ye, Cang},
+  date = {2021},
+  journaltitle = {IEEE/CAA Journal of Automatica Sinica},
+  volume = {8},
+  number = {8},
+  pages = {1389--1400},
+  publisher = {IEEE},
+  doi = {10.1109/JAS.2021.1004084},
+  url = {https://ieeexplore.ieee.org/abstract/document/9459587/},
+  urldate = {2024-05-22},
+  file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\raw\\Zhang et al_2021_An RGB-D camera based visual positioning system for assistive navigation by a.pdf;C\:\\Users\\18317\\Zotero\\storage\\S8I3K9V8\\JAS.2021.html}
+}
+
+@article{zhongRobustRigidRegistration2021,
+  title = {A Robust Rigid Registration Framework of {{3D}} Indoor Scene Point Clouds Based on {{RGB-D}} Information},
+  author = {Zhong, Saishang and Guo, Mingqiang and Lv, Ruina and Chen, Jianguo and Xie, Zhong and Liu, Zheng},
+  date = {2021},
+  journaltitle = {Remote Sensing},
+  volume = {13},
+  number = {23},
+  pages = {4755},
+  publisher = {MDPI},
+  doi = {10.3390/rs13234755},
+  url = {https://www.mdpi.com/2072-4292/13/23/4755},
+  urldate = {2024-05-22},
+  file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\raw\\Zhong et al_2021_A robust rigid registration framework of 3D indoor scene point clouds based on.pdf;C\:\\Users\\18317\\Zotero\\storage\\342RPF2H\\4755.html}
 }

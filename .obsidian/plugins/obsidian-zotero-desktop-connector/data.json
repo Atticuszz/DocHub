@@ -1,8 +1,8 @@
 {
   "database": "Zotero",
-  "noteImportFolder": "essay/zotero/notes/",
+  "noteImportFolder": "essay/zotero/notes/{{citekey}}.md",
   "pdfExportImageDPI": 120,
-  "pdfExportImageFormat": "png",
+  "pdfExportImageFormat": "jpg",
   "pdfExportImageQuality": 100,
   "citeFormats": [
     {

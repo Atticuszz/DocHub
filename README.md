@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## 快捷导航
 - **docs/:**
   - **tutorials/:**
@@ -511,4 +512,35 @@ git stash pop       # 重新应用之前保存的更改
 
 - 大文件100mb以上的需要使用git-lfs来推送 _或者直接放在release页面，单独上传文件_
 =======
+>>>>>>> origin/main
+=======
+
+## Basic
+- [ ] to-do
+- [/] incomplete
+- [x] done
+- [-] canceled
+- [>] forwarded
+- [<] scheduling
+
+## Extras
+- [?] question
+- [!] important
+- [*] star
+- ["] quote
+- [l] location
+- [b] bookmark
+- [i] information
+- [S] savings
+- [I] idea
+- [p] pros
+- [c] cons
+- [f] fire
+- [k] key
+- [w] win
+- [u] up
+- [d] down
+- [D] draft pull request
+- [P] open pull request
+- [M] merged pull request
 >>>>>>> origin/main
