@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/GPU.md",
+                "file": "essay/ABGICP.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "05e53b745c632d93",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/VCS/git.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 246.5
   },
   "right": {
     "id": "47a7fb051f9573eb",
@@ -85,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/GPU.md",
+                "file": "essay/ABGICP.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/GPU.md",
+                "file": "essay/ABGICP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/GPU.md"
+                "file": "essay/ABGICP.md"
               }
             }
           },
@@ -170,7 +182,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 496.5
+    "width": 274.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -190,6 +202,13 @@
   },
   "active": "eb173621bf8f8cee",
   "lastOpenFiles": [
+    "essay/zotero/zotero-import-templates.md",
+    "essay/ABGICP.md",
+    "essay/common.md",
+    "essay/Knowledge.md",
+    "assets/Pasted image 20240524150219.png",
+    "docs/VCS/git.md",
+    "docs/OS/GPU.md",
     "conflict-files-obsidian-git.md",
     "essay/Gradient-down-Sampling.md",
     "essay/zotero/attachments/raw/pdfinfo.txt",
@@ -202,14 +221,11 @@
     "essay/zotero/attachments/raw/Lee et al_2023_Accurate Visual Simultaneous Localization and Mapping (SLAM) against Around.pdf",
     "essay/zotero/attachments/raw/Koide et al_2021_Globally consistent 3D LiDAR mapping with GPU-accelerated GICP matching cost.pdf",
     "essay/zotero/attachments/raw/Honda et al_2022_Generalized LOAM.pdf",
-    "essay/common.md",
     "docs/tools/pdf.md",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-14-x56-y502.png",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-13-x43-y370.png",
     "assets/Pasted image 20240521203441.png",
-    "essay/Knowledge.md",
     "docs/Language/python/py-env/Poetry.md",
-    "essay/zotero/zotero-import-templates.md",
     "essay/zotero/notes/ressSLAMIndoorMapping2024.md",
     "essay/zotero/notes/guptaNDT6DColor2023.md",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
@@ -217,7 +233,6 @@
     "essay/read-dairy.md",
     "essay/SCI_paper.md",
     "essay/main.md",
-    "essay/ABGICP.md",
     "docs/Language/C++/Pointer.md",
     "docs/Language/C++/Data_model/vector.md",
     "docs/Language/C++/Data_model/unordered_set.md",
@@ -226,15 +241,12 @@
     "docs/Language/C++/Data_model/set.md",
     "docs/Language/C++/Data_model/map.md",
     "docs/Language/C++/Data_model/String.md",
-    "docs/Language/C++/Data_model/Queue.md",
     "assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png",
     "assets/kornColorSupportedGeneralizedICP2014a/kornColorSupportedGeneralizedICP2014a-4-x69-y230.png",
-    "docs/schedule/report.md",
     "assets/Pasted_image_20240512125417.png",
     "assets/Pasted_image_20240512125353.png",
     "assets/Pasted_image_20240504112823.png",
     "assets/Pasted image 20240420105746.png",
-    "assets/Pasted_image_20240412154259.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",

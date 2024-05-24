@@ -1,18 +1,8 @@
 {
-<<<<<<< HEAD
-  "accentColor": ""
-=======
-  "accentColor": "",
   "cssTheme": "Things",
-  "baseFontSize": 19,
-  "translucency": true,
-  "nativeMenus": true,
-  "theme": "obsidian",
-  "showViewHeader": true,
   "enabledCssSnippets": [
-    "zotero-annotations",
-    "page_width"
+    "page_width",
+    "zotero-annotations"
   ],
-  "baseFontSizeAction": true
->>>>>>> origin/main
+  "accentColor": ""
 }
