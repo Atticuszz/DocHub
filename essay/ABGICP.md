@@ -63,6 +63,9 @@ $$
 \text{points} = \begin{bmatrix} X & Y & Z & 1 \end{bmatrix}
 $$
 The final array, `points`, is reshaped to \((-1, 4)\) to flatten the point cloud into a two-dimensional array where each row represents a 3D point in homogeneous coordinates.
+
+
+
 ### point cloud rejector via image filter
 
 1. 双边滤波（Bilateral Filter）：既保证能够出去离群值也能够保证不太影响图像边缘
