@@ -99,11 +99,10 @@ lab_image = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
      $$E_{geom}(T) = \sum_{i=1}^n \left(s(p_i, T) - q_i\right)^T C_{q_i}^{-1} \left(s(p_i, T) - q_i\right)$$
    - 这里 $s(p_i, T)$ 表示在变换 $T$ 下点 $p_i$ 的位置，$C_{q_i}$ 是点 $q_i$ 的协方巧矩阵。
 
-3. **颜色误差** $E_{color}$：
-   - 在 L\*a\*b\* 空间中，颜色差异使用欧氏距离计算：
-     $$E_{color}(T) = \sum_{i=1}^n \sqrt{(L_{p_i} - L_{q_i}(T))^2 + (a_{p_i} - a_{q_i}(T))^2 + (b_{p_i} - b_{q_i}(T))^2}$$
+ 3. **颜色误差** $E_{color}$：
+   - 在 L\*a\*b\* 空间中，颜色差异使用 CIEDE2000 方法计算：
+     $$E_{color}(T) = \sum_{i=1}^n \Delta E_{00}(L_{p_i}, a_{p_i}, b_{p_i}, L_{q_i}(T), a_{q_i}(T), b_{q_i}(T))$$
    - 这里 $L_{q_i}(T)$, $a_{q_i}(T)$, $b_{q_i}(T)$ 分别代表在变换 $T$ 下的点 $q_i$ 的颜色分量。
-
 4. **联合优化目标函数**：
    - 几何误差和颜色误差的组合，通过权重 $\alpha$ 和 $\beta$ 调节在总优化目标中的影响：
      $$E(T) = \alpha E_{geom}(T) + \beta E_{color}(T)$$
