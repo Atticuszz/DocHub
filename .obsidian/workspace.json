@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/Knowledge.md",
+                "file": "essay/basic/Math.md",
                 "mode": "source",
                 "source": false
               }
@@ -116,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/Knowledge.md",
+                "file": "essay/basic/Math.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/Knowledge.md",
+                "file": "essay/basic/Math.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,7 +157,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/Knowledge.md"
+                "file": "essay/basic/Math.md"
               }
             }
           }
@@ -186,10 +186,14 @@
   },
   "active": "67d90be9a02c1e53",
   "lastOpenFiles": [
-    "README.md",
-    "essay/Knowledge.md",
-    "essay/ABGICP.md",
     "essay/common.md",
+    "essay/basic/Math.md",
+    "essay/Knowledge.md",
+    "essay/basic/3D.md",
+    "essay/basic/image.md",
+    "essay/basic",
+    "README.md",
+    "essay/ABGICP.md",
     "essay/zotero/attachments/GICP/Men et al_2011_Color point cloud registration with 4D ICP algorithm.pdf",
     "conflict-files-obsidian-git.md",
     "docs/tools/IDE/plugin.md",
@@ -208,7 +212,6 @@
     "docs/URLs.md",
     "docs/account.md",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
-    "essay/zotero/attachments/GICP/Yang et al_2020_Teaser.pdf",
     "docs/tools/pdf.md",
     "assets/Pasted image 20240521203441.png",
     "essay/main.md",
@@ -229,8 +232,6 @@
     "essay/zotero/notes/guptaNDT6DColor2023.md",
     "essay/zotero/notes/ressSLAMIndoorMapping2024.md",
     "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014.md",
-    "essay/SCI_paper.md",
-    "essay/zotero/ressSLAMIndoorMapping2024.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",

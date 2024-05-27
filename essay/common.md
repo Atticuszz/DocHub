@@ -17,27 +17,3 @@
 
 在撰写论文时，当你需要比较不同组数据的统计特征，或者想展示你的方法在各种条件下的稳健性时，使用箱形图是一个非常有效的方式。
 
-
-### EVAL
-
-#### pcd
-**Root Mean Square Error**： $RMSE$
-- 均方根误差用于衡量配准后的点云与参考点云之间的平均偏差大小, 是所有点之间的*欧氏距离的平方和的均值的平方根*。
-$$\mathrm{RMSE}_{eP}=\sqrt{\frac1N\sum_{i=1}^N\left(\|p_i-p_i^{\prime}\|\right)^2}$$
-
-**Center of Mass**： $COM$
-质心是点云的质量中心，即所有点的平均位置。质心之间的距离用于衡量两个点云的整体位置偏差。
-
-$$C_P=\left(\frac1N\sum_{i=1}^Nx_i,\frac1N\sum_{i=1}^Ny_i,\frac1N\sum_{i=1}^Nz_i\right)$$
-$$C_Q=\left(\frac1N\sum_{i=1}^Nx_i^\prime,\frac1N\sum_{i=1}^Ny_i^\prime,\frac1N\sum_{i=1}^Nz_i^\prime\right)$$
-$$\text{Distance}_{COM}=\|C_P-C_Q\|$$
-
-#### pose
-对于一段连续N帧的姿态估计
-- $eT$ : Translation Error
-$$\mathrm{RMSE}_{eT}=\sqrt{\frac1N\sum_{i=1}^N\left(\|t_i-t_i^{\prime}\|\right)^2}$$
-
-- $eR$ : Rotation Error
-	1. **相对旋转矩阵**：$\Delta R_i=R_i\cdot(R_i^{\prime})^T$
-	2. **旋转角度**$\theta_i=\arccos\left(\frac{\tan(\Delta R_i)-1}2\right)$
-$$\mathrm{RMSE}_{eR}=\sqrt{\frac1N\sum_{i=1}^N\theta_i^2}$$
