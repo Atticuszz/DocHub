@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/Knowledge.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -117,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/ABGICP.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/ABGICP.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,12 +157,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/ABGICP.md"
+                "file": "README.md"
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -185,22 +184,22 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "bc55de8073fc6d21",
+  "active": "67d90be9a02c1e53",
   "lastOpenFiles": [
-    "essay/zotero/attachments/GICP/Men et al_2011_Color point cloud registration with 4D ICP algorithm.pdf",
+    "essay/Knowledge.md",
+    "essay/ABGICP.md",
     "essay/common.md",
+    "essay/zotero/attachments/GICP/Men et al_2011_Color point cloud registration with 4D ICP algorithm.pdf",
     "conflict-files-obsidian-git.md",
     "docs/tools/IDE/plugin.md",
     "docs/tools/IDE/JetBrains.md",
     "docs/Language/C++/packages.md",
     "assets/Pasted image 20240524150219.png",
     "assets/Pasted image 20240420105746.png",
-    "essay/ABGICP.md",
     "essay/word/~$ABGICP.docx",
     "essay/zotero/attachments/GICP/Ha et al_2024_RGBD GS-ICP SLAM3.pdf",
     "essay/zotero/attachments/GICP/Ha et al_2024_RGBD GS-ICP SLAM2.pdf",
     "essay/zotero/attachments/GICP/Ha et al_2024_RGBD GS-ICP SLAM.pdf",
-    "essay/Knowledge.md",
     "essay/zotero/attachments/GICP/Park et al_2017_Colored point cloud registration revisited3.pdf",
     "essay/zotero/attachments/GICP/Park et al_2017_Colored point cloud registration revisited2.pdf",
     "essay/zotero/attachments/GICP/Park et al_2017_Colored point cloud registration revisited.pdf",
@@ -210,7 +209,6 @@
     "README.md",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "essay/zotero/attachments/GICP/Yang et al_2020_Teaser.pdf",
-    "essay/zotero/attachments/GICP/Korn et al_2014_Color supported generalized-ICP2.pdf",
     "docs/tools/pdf.md",
     "assets/Pasted image 20240521203441.png",
     "essay/main.md",
