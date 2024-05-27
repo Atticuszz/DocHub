@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "essay/Knowledge.md",
                 "mode": "source",
                 "source": false
               }
@@ -116,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "essay/Knowledge.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "essay/Knowledge.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,7 +157,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "essay/Knowledge.md"
               }
             }
           }
@@ -186,6 +186,7 @@
   },
   "active": "67d90be9a02c1e53",
   "lastOpenFiles": [
+    "README.md",
     "essay/Knowledge.md",
     "essay/ABGICP.md",
     "essay/common.md",
@@ -206,7 +207,6 @@
     "essay/word/ABGICP.docx",
     "docs/URLs.md",
     "docs/account.md",
-    "README.md",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "essay/zotero/attachments/GICP/Yang et al_2020_Teaser.pdf",
     "docs/tools/pdf.md",

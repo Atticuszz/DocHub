@@ -82,7 +82,7 @@ shape->(1,h,w)
 - **`fx​`** 和 **`fy`​**：分别是相机在图像平面x轴和y轴方向上的焦距，用像素值表示。焦距反映了镜头对场景的放大程度。在理想情况下，对于方形像素，`fx​` 和 `fy`​ 应该是相同的，但由于镜头畸变和制造公差，它们可能略有不同。
 - **`cx`​** 和 **`cy`​**：是图像的主点（principal point）坐标，也就是图像坐标系统原点在图像平面上的位置。通常，这个点被假定为图像的中心，但实际上可能会由于镜头制造和装配不精确而有所偏移。
   通常作为相机内参矩阵`K`
-  $$\left.K=\left[\begin{array}{ccc}f_x&0&c_x\\0&f_y&c_y\\0&0&1\end{array}\right.\right]$$
+ $$\left.K=\left[\begin{array}{ccc}f_x&0&c_x\\0&f_y&c_y\\0&0&1\end{array}\right.\right]$$
 
 #### Extrinsic Matrix
 
@@ -90,7 +90,7 @@ shape->(1,h,w)
 [Camera Extrinsic Matrix with Example in Python | by Neeraj Krishna | Towards Data Science](https://towardsdatascience.com/camera-extrinsic-matrix-with-example-in-python-cfe80acab8dd)
 
 - 描述了相机在全局空间（或称为世界坐标系）中的位置和方向。
-  $$E_t=\begin{bmatrix}R&\mathbf{t}\end{bmatrix}$$
+ $$E_t=\begin{bmatrix}R&\mathbf{t}\end{bmatrix}$$
 - **旋转（Rotation）**：通过`3x3`的旋转矩阵部分，可以围绕原点执行物体的旋转操作。旋转可以是绕`X`轴、`Y`轴或`Z`轴的单轴旋转，也可以是这些旋转的任意组合。
 - **平移（Translation）**：通过`Tx`, `Ty`, `Tz`三个元素，可以将物体在三维空间中沿各个方向移动。
   > 在实践中，为了同时处理旋转和平移，我们通常使用`4x4`的齐次坐标变换矩阵。这允许我们通过单一的矩阵乘法来执行整个变换操作，从而简化了计算。
@@ -106,7 +106,7 @@ $$\mathbf{M}_{\mathrm{c2w}}=\begin{bmatrix}R&T\\0&1\end{bmatrix}$$
 
 因此可以把相机坐标系中的任意一点转换为世界坐标系中的对应点，该过程包括将点首先通过$R$旋转到正确的朝向，然后通过$T$平移到正确的位置。
 
-对于把$P_w$转化为 $P_c$，依赖于$\mathbf{M}_{\mathrm{w2c}}$,而且可以通过逆变换得到$\mathbf{M}_{\mathrm{w2c}}=\mathbf{M}_{\mathrm{c2w}}^{-1}$
+对于把$P_w$转化为$P_c$，依赖于$\mathbf{M}_{\mathrm{w2c}}$,而且可以通过逆变换得到$\mathbf{M}_{\mathrm{w2c}}=\mathbf{M}_{\mathrm{c2w}}^{-1}$
 
 > 轨迹文件`traj.txt`,每行是一个`4*4`的变换矩阵，变量名常作`c2w`
 
@@ -117,7 +117,7 @@ R31 R32 R33 Tz
  0   0   0  1
 ```
 
-$\mathbf{M}_{\mathrm{w2c}}$ 变量名常作`w2c`
+$\mathbf{M}_{\mathrm{w2c}}$变量名常作`w2c`
 
 #### Projection Transform Matrix
 
@@ -127,10 +127,10 @@ $\mathbf{M}_{\mathrm{w2c}}$ 变量名常作`w2c`
 ![../../assets/Pasted_image_20240329152030.png](../assets/Pasted_image_20240329152030.png)
 当我们讨论将三维世界坐标系中的点投影到二维图像平面时，需要进行坐标变换，包括：
 
-1. **从世界坐标系到相机坐标系**：这一步使用齐次坐标形式的外参矩阵$\mathbf{M}_\mathrm{w2c}=\begin{bmatrix}R&T\\0&1\end{bmatrix}$，给定$P_w=(X_w,Y_w,Z_w,1)^T$ 变换$\begin{aligned}\mathbf{P}_c=(X_c,Y_c,Z_c)^T\end{aligned}$
-   $$\mathbf{P}_c=\mathbf{M}_{\mathrm{w2c}}\cdot\mathbf{P}_w$$
+1. **从世界坐标系到相机坐标系**：这一步使用齐次坐标形式的外参矩阵$\mathbf{M}_\mathrm{w2c}=\begin{bmatrix}R&T\\0&1\end{bmatrix}$，给定$P_w=(X_w,Y_w,Z_w,1)^T$变换$\begin{aligned}\mathbf{P}_c=(X_c,Y_c,Z_c)^T\end{aligned}$
+  $$\mathbf{P}_c=\mathbf{M}_{\mathrm{w2c}}\cdot\mathbf{P}_w$$
 2. **从相机坐标系到图像平面**：这一步使用内参矩阵$K$，将$\begin{aligned}\mathbf{P}_c=(X_c,Y_c,Z_c)^T\end{aligned}$投影到二维图像平面像素点$P_i=(u,v)$
-   $$\mathbf{P}_i=\mathbf{K}\cdot\begin{bmatrix}X_c\\Y_c\\Z_c\end{bmatrix}/Z_c$$
+  $$\mathbf{P}_i=\mathbf{K}\cdot\begin{bmatrix}X_c\\Y_c\\Z_c\end{bmatrix}/Z_c$$
 
 ### Point Cloud
 
@@ -150,23 +150,23 @@ _数学模型_
 
 - **目标函数**：
   - ICP 旨在最小化点云间的欧氏距离之和，通常通过解决最小二乘问题实现：
-  - $$ \min*T \sum*{i=1}^N \| R p*i + \mathbf{t} - q*{\text{closest}(i)} \|^2 $$
+  -$$\min*T \sum*{i=1}^N \| R p*i + \mathbf{t} - q*{\text{closest}(i)} \|^2$$
 - **求解方法**：
-  - 使用 SVD (奇异值分解) 或其他数值方法求解 $R$ 和 $\mathbf{t}$。
+  - 使用 SVD (奇异值分解) 或其他数值方法求解$R$和$\mathbf{t}$。
     _算法流程_
 
 1. **初始化**：
-   - 设定初始变换$T^{(0)}$。若无先验信息，则 $T^{(0)} = I$（单位矩阵）
+   - 设定初始变换$T^{(0)}$。若无先验信息，则$T^{(0)} = I$（单位矩阵）
 2. **最近点搜索**：
-   - 对于源点云 $\mathbf{P}$ 中的每个点 $p_i$，找到目标点云$\mathbf{Q}$ 中最近的点 $q_j$。
-   - $$ \forall p*i \in \mathbf{P}, \quad q*{\text{closest}} = \arg \min\_{q_j \in \mathbf{Q}} \| p_i - q_j \|^2 $$
+   - 对于源点云$\mathbf{P}$中的每个点$p_i$，找到目标点云$\mathbf{Q}$中最近的点$q_j$。
+   -$$\forall p*i \in \mathbf{P}, \quad q*{\text{closest}} = \arg \min\_{q_j \in \mathbf{Q}} \| p_i - q_j \|^2$$
 3. **变换矩阵求解**：
-   - 计算最优变换 $T$ 以最小化配准误差：
-   - $$ T^{(k+1)} = \arg \min*T \sum*{i=1}^N \| T p*i - q*{\text{closest}(i)} \|^2 $$
-   - 其中$T$ 包含旋转$R$ 和平移$\mathbf{t}$。
+   - 计算最优变换$T$以最小化配准误差：
+   -$$T^{(k+1)} = \arg \min*T \sum*{i=1}^N \| T p*i - q*{\text{closest}(i)} \|^2$$
+   - 其中$T$包含旋转$R$和平移$\mathbf{t}$。
 4. **迭代更新**：
-   - 应用变换 $T^{(k+1)}$ 更新点云 $\mathbf{P}$：
-   - $$ \mathbf{P}^{(k+1)} = T^{(k+1)} \mathbf{P}^{(k)} $$
+   - 应用变换$T^{(k+1)}$更新点云$\mathbf{P}$：
+   -$$\mathbf{P}^{(k+1)} = T^{(k+1)} \mathbf{P}^{(k)}$$
    - 重复步骤2-3，直到满足收敛条件（如迭代次数、变换更新阈值等）。
 
 ##### GICP
@@ -176,35 +176,35 @@ _数学模型_
 #### 数学表达
 
 1. **点的高斯表示**：
-   每个点不仅表示为一个位置向量，而是一个带有高斯分布的模型。这意味着，源点云中的每个点$a_i$ 和目标点云中的每个点 $b_i$ 均关联一个高斯分布，其均值分别为 $\hat{a}_i$ 和 $\hat{b}_i$，协方差分别为 $C_{A_i}$ 和 $C_{B_i}$。
-   $$
+   每个点不仅表示为一个位置向量，而是一个带有高斯分布的模型。这意味着，源点云中的每个点$a_i$和目标点云中的每个点$b_i$均关联一个高斯分布，其均值分别为$\hat{a}_i$和$\hat{b}_i$，协方差分别为$C_{A_i}$和$C_{B_i}$。
+  $$
    a_i \sim \mathcal{N}(\hat{a}_i, C_{A_i}), \quad b_i \sim \mathcal{N}(\hat{b}_i, C_{B_i})
-   $$
+  $$
 2. **变换误差的定义**：
-   定义从 $a_i$ 到 $b_i$ 的变换误差为$hat{d}_i$：
+   定义从$a_i$到$b_i$的变换误差为$hat{d}_i$：
 
-   $$
+  $$
    \hat{d}_i = \hat{b}_i - T\hat{a}_i
-   $$
+  $$
 
-   其中 $T$ 是待优化的变换矩阵。
+   其中$T$是待优化的变换矩阵。
 
 3. **误差的高斯分布**：
-   误差 $d_i$ 也假设为高斯分布，利用高斯分布的性质，变换后的点的误差分布为：
+   误差$d_i$也假设为高斯分布，利用高斯分布的性质，变换后的点的误差分布为：
 
-   $$
+  $$
    d_i \sim \mathcal{N}(0, C_{B_i} + T C_{A_i} T^T)
-   $$
+  $$
 
-   这里的 $C_{B_i} + T C_{A_i} T^T$ 表示考虑到源点和目标点协方差的变换点的协方差。
+   这里的$C_{B_i} + T C_{A_i} T^T$表示考虑到源点和目标点协方差的变换点的协方差。
 
 4. **优化目标**：
-   GICP 的目标是找到变换 $T$，使得转换后的源点云在目标点云分布下的似然性最大化，等同于最小化马氏距离：
-   $$
+   GICP 的目标是找到变换$T$，使得转换后的源点云在目标点云分布下的似然性最大化，等同于最小化马氏距离：
+  $$
    T = \arg \min_T \sum_i d_i^T (C_{B_i} + T C_{A_i} T^T)^{-1} d_i
-   $$
+  $$
 5. **协方差的规范化**：
-   为了提高GICP的鲁棒性和避免退化解，通常会对协方差矩阵进行规范化处理。通常在协方差矩阵的对角线元素上添加一个小常数 $\epsilon$ 来确保它们是良态的。
+   为了提高GICP的鲁棒性和避免退化解，通常会对协方差矩阵进行规范化处理。通常在协方差矩阵的对角线元素上添加一个小常数$\epsilon$来确保它们是良态的。
 
 ### mapping
 
@@ -219,13 +219,13 @@ _数学模型_
 - **坐标变换**：
   - 为了将点云数据映射到二维地图上，需要忽略Z坐标，并将X和Y坐标转换为地图的像素索引。
   - 转换公式为：
-    $$
+   $$
     \text{index}_x = \left(\frac{X}{\text{resolution}} + \text{origin}_x\right) \text{（取整）}
-    $$
-    $$
+   $$
+   $$
     \text{index}_y = \left(\frac{Y}{\text{resolution}} + \text{origin}_y\right) \text{（取整）}
-    $$
-    其中，$\text{resolution}$ 是地图的分辨率，$\text{origin}_x$ 和 $\text{origin}_y$ 是地图原点在地图像素坐标中的位置。
+   $$
+    其中，$\text{resolution}$是地图的分辨率，$\text{origin}_x$和$\text{origin}_y$是地图原点在地图像素坐标中的位置。
 
 ##### 2. 热度图构建
 
@@ -234,9 +234,9 @@ _数学模型_
   - 这样可以得到每个像素被点云中的点覆盖的次数，从而生成热度图。
 - **数学表达**：
   - 对于每个有效的点索引$(i, j)$，执行更新操作：
-    $$
+   $$
     \text{heat\_map}[i, j] += 1
-    $$
+   $$
 
 ##### 3. 二维占用网格的构建
 
@@ -244,12 +244,12 @@ _数学模型_
   - 根据设定的阈值（$\text{occupancy\_threshold}$），将热度图转换成二维占用网格。
   - 如果某个像素的热度值小于阈值，则该像素标记为可通行（0），否则标记为障碍（1）。
 - **转换公式**：
-  $$
+ $$
   \text{binary\_map} = \begin{cases}
     0, & \text{if }\text{heat\_map}[i, j] < \text{occupancy\_threshold} \\
     1, & \text{otherwise}
   \end{cases}
-  $$
+ $$
 
 
 
@@ -262,32 +262,71 @@ _数学模型_
 
 在优化和数据拟合问题中，**残差向量**和**目标函数**是两个关键的概念，它们虽然密切相关但有本质的区别：
 
-1. **残差向量**: 残差向量通常指的是单一观测值与模型预测值之间的差异。在点云配准的上下文中，如果我们考虑每个点对之间的差异，残差向量可以具体表示为点 $p_i$ 在变换 $T$ 下的位置 $s(p_i, T)$ 与其目标匹配点 $q_i$ 之间的差异向量。
+1. **残差向量**: 残差向量通常指的是单一观测值与模型预测值之间的差异。在点云配准的上下文中，如果我们考虑每个点对之间的差异，残差向量可以具体表示为点$p_i$在变换$T$下的位置$s(p_i, T)$与其目标匹配点$q_i$之间的差异向量。
 
    对于**几何残差向量**：
-   $$
+  $$
    r_{G}^{(i)}(T) = s(p_i, T) - q_i
-   $$
-   这里 $ s(p_i, T) $ 表示点 $ p_i $ 在变换 $ T $ 下的位置，$ q_i $ 是其匹配点的位置。
+  $$
+   这里$s(p_i, T)$表示点$p_i$在变换$T$下的位置，$q_i$是其匹配点的位置。
 
    对于**光度残差向量**（如果存在颜色信息的话）：
-   $$
+  $$
    r_{C}^{(i)}(T) = C_p(f(s(p_i, T))) - C_q(q_i)
-   $$
-   其中 $ C_p $ 和 $ C_q $ 表示从空间位置到颜色值的映射（比如转换到L*a*b*颜色空间），而 $ f $ 是应用变换 $ T $ 的函数。
+  $$
+   其中$C_p$和$C_q$表示从空间位置到颜色值的映射（比如转换到L*a*b*颜色空间），而$f$是应用变换$T$的函数。
 
 2. **目标函数**: 目标函数（或称为损失函数）是一个标量，它度量整个模型的预测值与观测值之间的差异。在优化问题中，目标函数通常是所有残差的某种汇总（如总和、平均值或其他统计度量），用于评估模型的整体拟合程度。
 
    以点云配准为例，几何误差的目标函数为：
-   $$
+  $$
    E_{geom}(T) = \sum_{i=1}^n \left(r_{G}^{(i)}(T)\right)^T C_{q_i}^{-1} \left(r_{G}^{(i)}(T)\right)
-   $$
-   其中 $C_{q_i}^{-1}$ 是点 $q_i$ 的协方差矩阵的逆，用于调整残差向量的权重，以反映点云中不同点的不确定性或重要性。
+  $$
+   其中$C_{q_i}^{-1}$是点$q_i$的协方差矩阵的逆，用于调整残差向量的权重，以反映点云中不同点的不确定性或重要性。
 
    颜色误差的目标函数可以是：
-   $$
+  $$
    E_{color}(T) = \sum_{i=1}^n \Delta E_{00}(L_{p_i}, a_{p_i}, b_{p_i}, L_{q_i}(T), a_{q_i}(T), b_{q_i}(T))
-   $$
-   其中 $\Delta E_{00}$ 是计算两个颜色之间差异的CIEDE2000颜色差异公式。
+  $$
+   其中$\Delta E_{00}$是计算两个颜色之间差异的CIEDE2000颜色差异公式。
 
-总结来说，残差向量是单个数据点级别的差异表示，而目标函数是将所有这些差异汇总成一个单一标量，用于评估和优化整个模型。在实际应用中，优化算法通常通过最小化目标函数来找到最佳的模型参数 $ T $，以减小这些残差。
+总结来说，残差向量是单个数据点级别的差异表示，而目标函数是将所有这些差异汇总成一个单一标量，用于评估和优化整个模型。在实际应用中，优化算法通常通过最小化目标函数来找到最佳的模型参数$T$，以减小这些残差。
+
+
+雅可比矩阵是一个非常重要的数学工具，尤其在优化问题和多变量函数的微分中扮演关键角色。在讨论雅可比矩阵在LM（Levenberg-Marquardt）优化器中的用处之前，先来了解一下雅可比矩阵本身。
+
+### 雅可比矩阵的定义
+
+给定一个从$\mathbb{R}^n$到$\mathbb{R}^m$的函数$\mathbf{F}$：
+$$\mathbf{F}(\mathbf{x}) = [f_1(\mathbf{x}), f_2(\mathbf{x}), \ldots, f_m(\mathbf{x})]^T$$
+其中$\mathbf{x} = [x_1, x_2, \ldots, x_n]^T$是$n$维实数向量。每个函数$f_i$是$\mathbb{R}^n$到$\mathbb{R}$的映射。
+
+雅可比矩阵是函数$\mathbf{F}$的所有一阶偏导数组成的矩阵，形式如下：
+$$J = \begin{bmatrix}
+\frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \cdots & \frac{\partial f_1}{\partial x_n} \\
+\frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \cdots & \frac{\partial f_2}{\partial x_n} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial f_m}{\partial x_1} & \frac{\partial f_m}{\partial x_2} & \cdots & \frac{\partial f_m}{\partial x_n}
+\end{bmatrix}$$
+这个矩阵展示了函数$\mathbf{F}$输出的每个分量对输入的每个分量的局部线性依赖。
+
+### 雅可比矩阵在LM优化器中的用处
+
+Levenberg-Marquardt (LM) 算法是一种用于非线性最小化问题的数值优化方法，特别适用于最小二乘问题。在LM算法中，雅可比矩阵起到了核心作用。
+
+假设我们要最小化误差函数$S(\mathbf{x})$，其形式通常是：
+$$S(\mathbf{x}) = \frac{1}{2} \sum_{i=1}^m r_i(\mathbf{x})^2$$
+这里，$r_i(\mathbf{x})$是残差项，即数据点与模型预测之间的差异。
+
+LM算法的更新步骤可以描述为：
+$$\mathbf{x}_{k+1} = \mathbf{x}_k + \Delta \mathbf{x}$$
+其中，$\Delta \mathbf{x}$的求解涉及到雅可比矩阵$J$：
+$$(J^T J + \lambda \mathbf{I}) \Delta \mathbf{x} = J^T \mathbf{r}$$
+- $J$是关于当前参数$\mathbf{x}_k$的雅可比矩阵。
+- $\mathbf{r}$是关于$\mathbf{x}_k$的残差向量。
+- $\lambda$是调整因子，用于在梯度下降和高斯牛顿算法之间做平衡。
+- $\mathbf{I}$是单位矩阵。
+
+在这里，雅可比矩阵$J$提供了函数关于当前估计的局部线性近似，这对于计算搜索方向$\Delta \mathbf{x}$至关重要。它使得LM算法能够在每一步都根据函数的局部结构调
+
+整步长和方向，从而提高收敛速度和稳定性。
