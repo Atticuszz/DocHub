@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/basic/Math.md",
+                "file": "docs/URLs.md",
                 "mode": "source",
                 "source": false
               }
@@ -116,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/basic/Math.md",
+                "file": "docs/URLs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/basic/Math.md",
+                "file": "docs/URLs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,7 +157,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/basic/Math.md"
+                "file": "docs/URLs.md"
               }
             }
           }
@@ -186,13 +186,18 @@
   },
   "active": "67d90be9a02c1e53",
   "lastOpenFiles": [
-    "essay/common.md",
+    "docs/account.md",
+    "docs/URLs.md",
+    "README.md",
+    "essay/SCI.md",
+    "essay/read-dairy.md",
+    "essay/basic/experiment.md",
+    "essay/main.md",
     "essay/basic/Math.md",
     "essay/Knowledge.md",
     "essay/basic/3D.md",
     "essay/basic/image.md",
     "essay/basic",
-    "README.md",
     "essay/ABGICP.md",
     "essay/zotero/attachments/GICP/Men et al_2011_Color point cloud registration with 4D ICP algorithm.pdf",
     "conflict-files-obsidian-git.md",
@@ -209,18 +214,14 @@
     "essay/zotero/attachments/GICP/Park et al_2017_Colored point cloud registration revisited2.pdf",
     "essay/zotero/attachments/GICP/Park et al_2017_Colored point cloud registration revisited.pdf",
     "essay/word/ABGICP.docx",
-    "docs/URLs.md",
-    "docs/account.md",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "docs/tools/pdf.md",
     "assets/Pasted image 20240521203441.png",
-    "essay/main.md",
     "essay/Gradient-down-Sampling.md",
     "essay/zotero/annotations/guptaNDT6DColor2023.md",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-13-x43-y370.png",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-14-x56-y502.png",
     "essay/zotero/zotero-import-templates.md",
-    "essay/read-dairy.md",
     "essay/zotero/attachments/raw/page-01.png",
     "essay/zotero/attachments/raw/page-15.png",
     "essay/zotero/attachments/raw/page-14.png",
@@ -231,7 +232,6 @@
     "essay/zotero/annotations/GloballyConsistent3D.md",
     "essay/zotero/notes/guptaNDT6DColor2023.md",
     "essay/zotero/notes/ressSLAMIndoorMapping2024.md",
-    "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
