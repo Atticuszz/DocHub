@@ -25,13 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/ABGICP.md",
+                "file": "essay/basic/GICP.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -116,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/basic/Math.md",
+                "file": "essay/basic/GICP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/basic/Math.md",
+                "file": "essay/basic/GICP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,12 +158,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/basic/Math.md"
+                "file": "essay/basic/GICP.md"
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -184,20 +185,21 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "67d90be9a02c1e53",
+  "active": "bc55de8073fc6d21",
   "lastOpenFiles": [
-    "essay/ABGICP.md",
+    "essay/basic/experiment.md",
+    "essay/basic/GICP.md",
+    "essay/basic/3D.md",
+    "essay/basic/image.md",
     "essay/basic/Math.md",
+    "essay/ABGICP.md",
     "docs/URLs.md",
     "docs/account.md",
     "README.md",
     "essay/SCI.md",
     "essay/read-dairy.md",
-    "essay/basic/experiment.md",
     "essay/main.md",
     "essay/Knowledge.md",
-    "essay/basic/3D.md",
-    "essay/basic/image.md",
     "essay/basic",
     "essay/zotero/attachments/GICP/Men et al_2011_Color point cloud registration with 4D ICP algorithm.pdf",
     "conflict-files-obsidian-git.md",
@@ -231,7 +233,6 @@
     "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014a.md",
     "essay/zotero/annotations/GloballyConsistent3D.md",
     "essay/zotero/notes/guptaNDT6DColor2023.md",
-    "essay/zotero/notes/ressSLAMIndoorMapping2024.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",

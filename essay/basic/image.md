@@ -18,7 +18,7 @@ _format in RAM_
 
 #### Image coordinate system
 
-![300](../assets/Pasted_image_20240329151607.png)
+![300](Pasted_image_20240329151607.png)
 图像坐标系中：
 
 - **原点**（0, 0）位于图像的左上角。
