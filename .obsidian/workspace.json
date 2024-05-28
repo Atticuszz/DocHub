@@ -25,13 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/VCS/git.md",
+                "file": "docs/Language/python/py-env/conda.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/ABGICP.md",
+                "file": "docs/Language/python/py-env/conda.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -114,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/ABGICP.md",
+                "file": "docs/Language/python/py-env/conda.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/ABGICP.md"
+                "file": "docs/Language/python/py-env/conda.md"
               }
             }
           },
@@ -200,14 +201,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "eb173621bf8f8cee",
+  "active": "05e53b745c632d93",
   "lastOpenFiles": [
-    "essay/zotero/zotero-import-templates.md",
+    "docs/VCS/git.md",
     "essay/ABGICP.md",
+    "essay/zotero/zotero-import-templates.md",
     "essay/common.md",
     "essay/Knowledge.md",
     "assets/Pasted image 20240524150219.png",
-    "docs/VCS/git.md",
     "docs/OS/GPU.md",
     "conflict-files-obsidian-git.md",
     "essay/Gradient-down-Sampling.md",
