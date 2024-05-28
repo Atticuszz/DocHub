@@ -7,6 +7,7 @@
 ## 3. Method
 ### pixel to point cloud
 最基本的图像变换点云，对于RGB图像只是深度值变成了$\begin{bmatrix} r & g & b \end{bmatrix}^\top$
+
 Variables:
 - $u, v$: Pixel coordinates in the image plane.
 - $c_x, c_y$: Coordinates of the principal point (optical center) in the image, typically given in pixels.
@@ -61,29 +62,11 @@ $$
 $$
 \text{points} = \begin{bmatrix} X & Y & Z & 1 \end{bmatrix}
 $$
-The final array, `points`, is reshaped to \((-1, 4)\) to flatten the point cloud into a two-dimensional array where each row represents a 3D point in homogeneous coordinates.
+The final array, `points`, is reshaped to $(-1, 4)$ to flatten the point cloud into a two-dimensional array where each row represents a 3D point in homogeneous coordinates.
 
 
 
 ### point cloud rejector via image filter
-
-1. 双边滤波（Bilateral Filter）：既保证能够出去离群值也能够保证不太影响图像边缘
-
-```python
-import cv2
-image = cv2.imread('path_to_image')
-filtered_image = cv2.bilateralFilter(image, d=9, sigmaColor=75, sigmaSpace=75)
-```
-
-其中，`d` 是领域直径，`sigmaColor` 控制颜色的高斯函数标准差，`sigmaSpace` 控制空间的高斯函数标准差。
-2. 中值滤波: 但可能对边缘部分的离群值处理不太好，并且是用于减少噪声，特别是“椒盐”类型的噪声，但不清楚会不会引入
-```c++
-cv::Mat depthImage; // 假设这是你的深度图
-cv::medianBlur(depthImage, depthImage, 5); // 使用5x5的核进行滤波
-```
-
-没有太多的原创性，主要是应用层面迁移，从处理经典图像到深度图的适用，避免在pcd层面的rejector效率不高，毕竟是三维的，能在二维解决为什么要三维呢？并且也可以解决一小部分像素避免进行
-
 
 
 ### ABGICP
@@ -102,22 +85,49 @@ image = cv2.imread('path_to_your_image.png')
 lab_image = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
 ```
 #### GICP
-Math:
-1. points
-   $p_i = (x_{p_i}, y_{p_i}, z_{p_i}, A_{p_i}, B_{p_i})$
-   $q_i = (x_{q_i}, y_{q_i}, z_{q_i}, A_{q_i}, B_{q_i})$
+在您的要求中，您需要将原始的公式和定义重新整理和格式化，以适应您的笔记风格。这里我将调整原有内容的表达方式，使其更符合您的要求：
 
-2. Extended points including the AB component
-   $$Lp_i = \begin{pmatrix} p_i \\ L_{p_i}^* \end{pmatrix}, \quad Lq_i = \begin{pmatrix} q_i \\ L_{q_i}^* \end{pmatrix}$$
+### 数学公式和定义
 
-3. Assuming the error $e_i$ is normally distributed, focusing only on the spatial and AB components:
-   $$e_i = Lp_i - (TLq_i) \sim \mathcal{N}(0, C_{Lp_i} + TC_{Lq_i}T^T)$$
+1. **点的定义**：
+   - 两个点云 $P$ 和 $Q$ 中的点包括空间坐标和颜色信息，定义如下：
+     $$p_i = (x_{p_i}, y_{p_i}, z_{p_i}, L_{p_i}, a_{p_i}, b_{p_i})$$
+     $$q_i = (x_{q_i}, y_{q_i}, z_{q_i}, L_{q_i}, a_{q_i}, b_{q_i})$$
 
-4. Define the loss function using Mahalanobis distance for spatial and AB components:
-   $$d_i(T) = (Lp_i - (TLq_i))^T (C_{Lp_i} + TC_{Lq_i}T^T)^{-1} (Lp_i - (TLq_i))$$
+2. **GICP 几何误差** ($E_{geom}$)：
+   - 通过 $Mahalanobis$ 距离计算每个点的局部几何结构误差，具体公式为：
+     $$E_{geom}(T) = \sum_{i=1}^n \left(s(p_i, T) - q_i\right)^T C_{q_i}^{-1} \left(s(p_i, T) - q_i\right)$$
+   - 这里 $s(p_i, T)$ 表示在变换 $T$ 下点 $p_i$ 的位置，$C_{q_i}$ 是点 $q_i$ 的协方巧矩阵。
 
-5. Objective function and MLE are then defined as:
-   $$T^* = \arg \min_T \sum_{i=1}^n d_i(T)$$
+ 3. **颜色误差** $E_{color}$：
+   - 在 L\*a\*b\* 空间中，颜色差异使用 CIEDE2000 方法计算：
+     $$E_{color}(T) = \sum_{i=1}^n \Delta E_{00}(L_{p_i}, a_{p_i}, b_{p_i}, L_{q_i}(T), a_{q_i}(T), b_{q_i}(T))$$
+   - 这里 $L_{q_i}(T)$, $a_{q_i}(T)$, $b_{q_i}(T)$ 分别代表在变换 $T$ 下的点 $q_i$ 的颜色分量。
+4. **联合优化目标函数**：
+   - 几何误差和颜色误差的组合，通过权重 $\alpha$ 和 $\beta$ 调节在总优化目标中的影响：
+     $$E(T) = \alpha E_{geom}(T) + \beta E_{color}(T)$$
+   - 其中，$\alpha$ 和 $\beta$ 用来平衡几何和颜色误差的重要性。
+
+### 优化过程
+
+优化过程通常采用迭代的方式，例如梯度下降法或更复杂的 $Levenberg-Marquardt$算法，以处理非线性最小化问题。这里我们展示使用梯度下降法的步骤：
+
+1. **初始化**：选择一个初始变换  $T_0$。
+2. **迭代更新**：在每次迭代  $k$ 中，计算总目标函数  $E(T_k)$ 的梯度，并更新变换  $T$。
+   - 使用梯度下降法更新：
+     $$T_{k+1} = T_k - \gamma \nabla E(T_k)$$
+     其中  $\gamma$ 是学习率， $\nabla E(T_k)$ 是在  $T_k$ 处  $E(T)$ 的梯度。
+
+### 梯度计算
+
+- **几何梯度** $\nabla E_{geom}(T)$：
+  $$\nabla E_{geom}(T) = \sum_{i=1}^n 2 C_{q_i}^{-1} \left(s(p_i, T) - q_i\right) \cdot \frac{\partial s(p_i, T)}{\partial T}$$
+
+- **颜色梯度** $\nabla E_{color}(T)$：
+  $$\nabla E_{color}(T) = \sum_{i=1}^n \frac{(L_{p_i} - L_{q_i}(T)) \cdot \frac{\partial L_{q_i}(T)}{\partial T} + (a_{p_i} - a_{q_i}(T)) \cdot \frac{\partial a_{q_i}(T)}{\partial T} + (b_{p_i} - b_{q_i}(T)) \cdot \frac{\partial b_{q_i}(T)}{\partial T}}{\sqrt{(L_{p_i} - L_{q_i}(T))^2 + (a_{p_i} - a_{q_i}(T))^2 + (b_{p_i} - b_{q_i}(T))^2}}$$
+
+这里， $\frac{\partial s(p_i, T)}{\partial T}$、 $\frac{\partial L_{q_i}(T)}{\partial T}$、 $\frac{\partial a_{q_i}(T)}{\partial T}$ 和  $\frac{\partial b_{q_i}(T)}{\partial T}$ 需要具体依据变换模型和颜色模型的细节来推导。
+
 
 ## 4. Experimental Setup
 
@@ -135,53 +145,6 @@ Math:
 1. 配准都采用纯GICP算法情况下，*三者* 都可以比较 *配准精度*
 2. 前两者在相同点云数情况下，应该是后者效率更高比较他们的*运算速度*，
 3. 不出意外，实验证明，应该是混合两者运算 *效率和精度最高*
-
-#### point cloud rejector via image filter
-
-**experiment data**
--  需要手动生成离群值，在干净数据集上面进行模拟因为可以验证离群处理的效果
-
-[@guptaNDT6DColor2023] 该论文也是RGB-D相机但是直接在点云层面上进行预处理
-```c++
-import pclpy
-from pclpy import pcl
-
-def pc_filter(pointcloud, cloud_filtered):
-    # Create temporary PointClouds
-    temp = pcl.PointCloud.PointXYZRGBA()
-    temp2 = pcl.PointCloud.PointXYZRGBA()
-
-    # Distance based filter
-    passthrough = pcl.filters.PassThrough[pcl.PointXYZRGBA]()
-    passthrough.setInputCloud(pointcloud)
-    passthrough.setFilterFieldName("z")
-    passthrough.setFilterLimits(0.0, 3.0)
-    passthrough.filter(temp)
-
-    # Voxel grid filter
-    voxel_filter = pcl.filters.VoxelGrid[pcl.PointXYZRGBA]()
-    voxel_filter.setInputCloud(temp)
-    voxel_filter.setLeafSize(0.005, 0.005, 0.005)
-    voxel_filter.filter(temp2)
-
-    # Radius outlier removal
-    out_rem = pcl.filters.RadiusOutlierRemoval[pcl.PointXYZRGBA]()
-    out_rem.setInputCloud(temp2)
-    out_rem.setRadiusSearch(0.01)
-    out_rem.setMinNeighborsInRadius(10)
-    out_rem.filter(cloud_filtered)
-
-# Example usage
-pointcloud = pcl.PointCloud.PointXYZRGBA()
-cloud_filtered = pcl.PointCloud.PointXYZRGBA()
-pc_filter(pointcloud, cloud_filtered)
-
-```
-
-
-**evaluation**
-- 该滤波方法生成点云时候和标准rejector生成的点云进行比较
-	- 同时和干净点云进行配准，评估 *配准精度*和 *运算帧率* 的影响
 
 ### registration
 **experiment data**
