@@ -120,4 +120,64 @@ $M$ 在 $J^T$ 和 $J$ 之间的位置可以这样理解：$J$ 转置 $J^T$ 表�
 
 
 
+```python
+
+import torch
+from torch import nn
+
+def skew_symmetric(v):
+    """ 生成向量 v 的斜对称矩阵 """
+    zero = torch.zeros_like(v[0])
+    return torch.tensor([
+        [zero, -v[2], v[1]],
+        [v[2], zero, -v[0]],
+        [-v[1], v[0], zero]
+    ], dtype=v.dtype, device=v.device)
+
+class GICPJacobian(nn.Module):
+    def __init__(self):
+        super(GICPJacobian, self).__init__()
+
+    def forward(self, source_points, target_points, source_covariances, target_covariances, T):
+        """ 计算雅可比矩阵
+        :param source_points: 源点云 [N, 3]
+        :param target_points: 目标点云 [N, 3]
+        :param source_covariances: 源点云的协方巧矩阵 [N, 3, 3]
+        :param target_covariances: 目标点云的协方巧矩阵 [N, 3, 3]
+        :param T: 变换矩阵 [4, 4]
+        :return: J 雅可比矩阵 [N, 6], 加权残差 [N, 3]
+        """
+        # 变换源点云
+        ones = torch.ones((source_points.shape[0], 1), device=source_points.device, dtype=source_points.dtype)
+        homogeneous_source = torch.cat([source_points, ones], dim=1)  # [N, 4]
+        transformed_sources = (T @ homogeneous_source.T).T[:, :3]  # [N, 3]
+
+        # 计算残差
+        residuals = target_points - transformed_sources  # [N, 3]
+
+        # 计算残差的加权
+        weighted_residuals = torch.zeros_like(residuals)
+        J = torch.zeros((source_points.shape[0], 6), dtype=source_points.dtype, device=source_points.device)
+        for i in range(source_points.shape[0]):
+            RCR = target_covariances[i] + T[:3, :3] @ source_covariances[i] @ T[:3, :3].T
+            mahalanobis_weight = RCR.inverse()
+            weighted_residuals[i] = mahalanobis_weight @ residuals[i]
+
+            J[i, :3] = skew_symmetric(transformed_sources[i]) @ residuals[i]
+            J[i, 3:] = -residuals[i]
+
+        return J, weighted_residuals
+
+# 示例使用
+source_points = torch.rand(10, 3)  # 随机生成源点云
+target_points = torch.rand(10, 3)  # 随机生成目标点云
+source_covariances = torch.stack([torch.eye(3) for _ in range(10)])  # 源点协方巧矩阵
+target_covariances = torch.stack([torch.eye(3) for _ in range(10)])  # 目标点协方巧矩阵
+T = torch.eye(4)  # 单位变换矩阵
+
+jacobian_module = GICPJacobian()
+jacobian, weighted_residuals = jacobian_module(source_points, target_points, source_covariances, target_covariances, T)
+print("雅可比矩阵:", jacobian)
+print("加权残差:", weighted_residuals)
+```
 
