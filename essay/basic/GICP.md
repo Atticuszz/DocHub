@@ -1,18 +1,18 @@
-
-在代码中，计算雅可比矩阵 $J$ 是为了将点云配准问题线性化，以便计算线性化信息矩阵 $H$、信息向量 $b$ 和线性化点的误差 $e$。这里，残差函数依据马氏距离来定义，雅可比矩阵的推导涉及对变换矩阵 $T$ 的微分。
-
 ### 残差函数的定义
-
 给定：
 - $\mathbf{p}_{\text{target}}$ 为目标点云中的点。
 - $\mathbf{p}_{\text{source}}$ 为源点云中经过变换 $T$ 的点。
 - $\mathbf{r}$ 为残差向量 $\mathbf{r} = \mathbf{p}_{\text{target}} - T \mathbf{p}_{\text{source}}$。
-- $M$ 为马氏距离中使用的协方差矩阵的逆，即 $\text{mahalanobis}$ 矩阵。
-
+-  $RCR$（Rotated Combined Covariance）为误差变换的协方差矩阵$\begin{aligned}\text{di} & \sim\mathcal{N}{\left(\hat{b}_{i}-\mathbf{T}\hat{a}_{i},C_{i}^{B}+\mathbf{T}C_{i}^{A}\mathbf{T}^{T}\right)}\\  & =\mathcal{N}\left(0,C_{i}^{B}+\mathbf{T}C_{i}^{A}\mathbf{T}^{T}\right)\end{aligned}$，这个矩阵反映了点云的不确定性和形状信息。*RCR也有取3x3,为了计算便利性*
+$$
+RCR = \text{cov}_{\text{target}} + T \cdot \text{cov}_{\text{source}} \cdot T^T
+$$
 残差函数 $E$ 可以表示为：
 $$
-E = \frac{1}{2} \mathbf{r}^T M \mathbf{r}
+E = \frac{1}{2} \mathbf{r}^T RCR^{-1} \mathbf{r}
 $$
+这个公式计算了考虑协方巨矩阵后的点之间的加权欧氏距离，反映了点云之间的几何误差。
+#### 为什么有1/2
 在优化理论和应用中，通常在定义二次形式的误差函数时会包含一个系数 $\frac{1}{2}$。
 当对误差函数进行微分求导时，系数 $\frac{1}{2}$ 可以帮助取消在导数计算中出现的常数因子。具体来说，考虑一个一般的二次函数形式：
 $$
@@ -25,7 +25,7 @@ $$
 如果没有前面的 $\frac{1}{2}$，导数将会包含额外的常数因子 2（来自于 $A \mathbf{x}$ 的导数），这会使最终的表达式更加复杂。
 
 ### 求解雅可比矩阵 $J$
-
+*也可以采用自动微分工具*
 为了求解雅可比矩阵，我们需要计算残差 $\mathbf{r}$ 对变换 $T$ 的微分。由于 $T$ 是一个刚体变换，包含旋转 $R$ 和平移 $\mathbf{t}$，我们考虑旋转的无穷小变化 $\delta \theta$ 和平移的无穷小变化 $\delta \mathbf{t}$。
 
 
@@ -181,3 +181,14 @@ print("雅可比矩阵:", jacobian)
 print("加权残差:", weighted_residuals)
 ```
 
+### 实验方法
+**主要基于torchmize**
+#### 雅可比矩阵是否提供 
+1. 提供雅可比矩阵模仿small_gicp
+2. 直接使用`pytorch`的雅可比矩阵，自动追踪梯度
+#### 优化策略
+1. 模仿纯的优化目标数学公式，一群对一群进行优化取均值error判断是否收敛
+2. 模仿small_gicp的模式，每次每次只对`src_pcd`的一个点进行，单个error判断是否收敛，遍历所有`src_pcd`
+#### 验证策略
+1. 粗看轨迹和pcd_vis可视化效果
+2. 细看四个基本误差
