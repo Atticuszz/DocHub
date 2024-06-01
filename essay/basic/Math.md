@@ -351,12 +351,19 @@ $$
 
 
 
-
-
 ## EVAL
+**Root Mean Square Error**： $RMSE$
+[Root Mean Square Error (RMSE)](https://c3.ai/glossary/data-science/root-mean-square-error-rmse/)
+$$RMSE=\sqrt{\frac{\sum_{i=1}^N\|y(i)-\hat{y}(i)\|^2}N},$$
+
+
+
+
+
+
 
 ### pcd
-**Root Mean Square Error**： $RMSE$
+
 - 均方根误差用于衡量配准后的点云与参考点云之间的平均偏差大小, 是所有点之间的*欧氏距离的平方和的均值的平方根*。
 $$\mathrm{RMSE}_{eP}=\sqrt{\frac1N\sum_{i=1}^N\left(\|p_i-p_i^{\prime}\|\right)^2}$$
 

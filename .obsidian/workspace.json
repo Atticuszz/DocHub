@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "b91e8a61b1446054",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/basic/Math.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/basic/Math.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/basic/Math.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -201,14 +213,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "05e53b745c632d93",
+  "active": "b91e8a61b1446054",
   "lastOpenFiles": [
+    "essay/basic/Math.md",
+    "conflict-files-obsidian-git.md",
+    "essay/basic/GICP.md",
     "essay/basic/image.md",
     "essay/basic/experiment.md",
     "docs/Language/python/py-env/conda.md",
-    "conflict-files-obsidian-git.md",
     "essay/zotero/attachments/GICP/Men et al_2011_Color point cloud registration with 4D ICP algorithm.pdf",
-    "essay/basic/Math.md",
     "essay/basic/3D.md",
     "essay/basic",
     "essay/SCI.md",
@@ -242,7 +255,6 @@
     "essay/main.md",
     "docs/Language/C++/Pointer.md",
     "docs/Language/C++/Data_model/vector.md",
-    "docs/Language/C++/Data_model/unordered_set.md",
     "assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png",
     "assets/kornColorSupportedGeneralizedICP2014a/kornColorSupportedGeneralizedICP2014a-4-x69-y230.png",
     "assets/Pasted_image_20240512125417.png",
