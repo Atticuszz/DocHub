@@ -25,26 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Language/python/py-env/conda.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "85b1295543a32c1c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "essay/basic/Math.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "essay/basic/Math.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -127,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "essay/basic/Math.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "essay/basic/Math.md"
               }
             }
           },
@@ -213,13 +201,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "85b1295543a32c1c",
+  "active": "05e53b745c632d93",
   "lastOpenFiles": [
+    "essay/basic/image.md",
+    "essay/basic/experiment.md",
     "docs/Language/python/py-env/conda.md",
     "conflict-files-obsidian-git.md",
     "essay/zotero/attachments/GICP/Men et al_2011_Color point cloud registration with 4D ICP algorithm.pdf",
-    "essay/basic/image.md",
-    "essay/basic/experiment.md",
     "essay/basic/Math.md",
     "essay/basic/3D.md",
     "essay/basic",
