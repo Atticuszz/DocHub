@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/basic/GICP.md",
+                "file": "essay/basic/Math.md",
                 "mode": "source",
                 "source": false
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/basic/GICP.md",
+                "file": "essay/basic/Math.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/basic/GICP.md",
+                "file": "essay/basic/Math.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/basic/GICP.md"
+                "file": "essay/basic/Math.md"
               }
             }
           }
@@ -187,8 +187,8 @@
   },
   "active": "bc55de8073fc6d21",
   "lastOpenFiles": [
-    "essay/basic/Math.md",
     "essay/basic/GICP.md",
+    "essay/basic/Math.md",
     "essay/basic/image.md",
     "essay/basic/experiment.md",
     "essay/basic/3D.md",
