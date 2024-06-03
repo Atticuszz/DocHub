@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/basic/Math.md",
+                "file": "essay/basic/image.md",
                 "mode": "source",
                 "source": false
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/basic/Math.md",
+                "file": "essay/basic/image.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/basic/Math.md",
+                "file": "essay/basic/image.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/basic/Math.md"
+                "file": "essay/basic/image.md"
               }
             }
           }
@@ -187,17 +187,24 @@
   },
   "active": "bc55de8073fc6d21",
   "lastOpenFiles": [
-    "essay/basic/GICP.md",
     "essay/basic/Math.md",
+    "essay/zotero/attachments/GICP/Choi et al_2020_Iterative K-closest point algorithms for colored point cloud registration.pdf",
+    "essay/zotero/attachments/GICP/Men et al_2011_Color point cloud registration with 4D ICP algorithm2.pdf",
+    "essay/zotero/attachments/GICP/Johnson_Kang_1999_Registration and integration of textured 3D data2.pdf",
+    "essay/zotero/attachments/GICP/Johnson_Kang_1999_Registration and integration of textured 3D data.pdf",
+    "docs/papers/zotero/zotero.bib",
+    "docs/papers/zotero",
+    "docs/papers",
+    "essay/read-dairy.md",
+    "essay/ABGICP.md",
+    "essay/SCI.md",
+    "essay/basic/GICP.md",
     "essay/basic/image.md",
     "essay/basic/experiment.md",
     "essay/basic/3D.md",
-    "essay/ABGICP.md",
     "docs/URLs.md",
     "docs/account.md",
     "README.md",
-    "essay/SCI.md",
-    "essay/read-dairy.md",
     "essay/main.md",
     "essay/Knowledge.md",
     "essay/basic",
@@ -209,13 +216,6 @@
     "assets/Pasted image 20240524150219.png",
     "assets/Pasted image 20240420105746.png",
     "essay/word/~$ABGICP.docx",
-    "essay/zotero/attachments/GICP/Ha et al_2024_RGBD GS-ICP SLAM3.pdf",
-    "essay/zotero/attachments/GICP/Ha et al_2024_RGBD GS-ICP SLAM2.pdf",
-    "essay/zotero/attachments/GICP/Ha et al_2024_RGBD GS-ICP SLAM.pdf",
-    "essay/zotero/attachments/GICP/Park et al_2017_Colored point cloud registration revisited3.pdf",
-    "essay/zotero/attachments/GICP/Park et al_2017_Colored point cloud registration revisited2.pdf",
-    "essay/zotero/attachments/GICP/Park et al_2017_Colored point cloud registration revisited.pdf",
-    "essay/word/ABGICP.docx",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "docs/tools/pdf.md",
     "assets/Pasted image 20240521203441.png",
@@ -232,7 +232,6 @@
     "essay/zotero/annotations/renRobustGICPbased3D2019.md",
     "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014a.md",
     "essay/zotero/annotations/GloballyConsistent3D.md",
-    "essay/zotero/notes/guptaNDT6DColor2023.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
