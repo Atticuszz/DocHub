@@ -163,7 +163,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -185,16 +185,20 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "bc55de8073fc6d21",
+  "active": "21942943f6ffac1a",
   "lastOpenFiles": [
+    "essay/zotero/attachments/raw/Kang et al_2024_Point Cloud Registration Method Based on Geometric Constraint and.pdf",
+    "essay/zotero/attachments/raw/Son et al_2022_WGICP.pdf",
+    "essay/zotero/attachments/raw/Wang et al_2022_Improving RGB-D Point Cloud Registration by Learning Multi-scale Local Linear2.pdf",
+    "essay/zotero/attachments/raw/Wang et al_2022_Improving RGB-D Point Cloud Registration by Learning Multi-scale Local Linear.pdf",
+    "essay/zotero/attachments/raw/Sensors Free Full-Text Robust Point Cloud Registration Network for Complex.pdf",
+    "essay/zotero/attachments/raw/Koide et al_2023_Exact Point Cloud Downsampling for Fast and Accurate Global Trajectory.pdf",
+    "essay/zotero/attachments/raw/Lyu et al_2024_Dynamic Downsampling Algorithm for 3D Point Cloud Map Based on Voxel Filtering.pdf",
     "essay/basic/Math.md",
     "essay/zotero/attachments/GICP/Choi et al_2020_Iterative K-closest point algorithms for colored point cloud registration.pdf",
     "essay/zotero/attachments/GICP/Men et al_2011_Color point cloud registration with 4D ICP algorithm2.pdf",
     "essay/zotero/attachments/GICP/Johnson_Kang_1999_Registration and integration of textured 3D data2.pdf",
     "essay/zotero/attachments/GICP/Johnson_Kang_1999_Registration and integration of textured 3D data.pdf",
-    "docs/papers/zotero/zotero.bib",
-    "docs/papers/zotero",
-    "docs/papers",
     "essay/read-dairy.md",
     "essay/ABGICP.md",
     "essay/SCI.md",
@@ -207,15 +211,12 @@
     "README.md",
     "essay/main.md",
     "essay/Knowledge.md",
-    "essay/basic",
-    "essay/zotero/attachments/GICP/Men et al_2011_Color point cloud registration with 4D ICP algorithm.pdf",
     "conflict-files-obsidian-git.md",
     "docs/tools/IDE/plugin.md",
     "docs/tools/IDE/JetBrains.md",
     "docs/Language/C++/packages.md",
     "assets/Pasted image 20240524150219.png",
     "assets/Pasted image 20240420105746.png",
-    "essay/word/~$ABGICP.docx",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "docs/tools/pdf.md",
     "assets/Pasted image 20240521203441.png",
