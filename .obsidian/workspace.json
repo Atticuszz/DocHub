@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/basic/image.md",
+                "file": "essay/ABGICP.md",
                 "mode": "source",
                 "source": false
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/basic/image.md",
+                "file": "essay/ABGICP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/basic/image.md",
+                "file": "essay/ABGICP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/basic/image.md"
+                "file": "essay/ABGICP.md"
               }
             }
           }
@@ -185,8 +185,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "21942943f6ffac1a",
+  "active": "bc55de8073fc6d21",
   "lastOpenFiles": [
+    "essay/basic/Math.md",
     "essay/zotero/attachments/raw/Han et al_2024_A Point Cloud Registration Framework with Color Information Integration2.pdf",
     "essay/zotero/attachments/raw/Yang et al_2020_Color point cloud registration based on supervoxel correspondence3.pdf",
     "essay/zotero/attachments/raw/Ren et al_2021_Color Point Cloud Registration Algorithm Based on Hue3.pdf",
@@ -197,8 +198,6 @@
     "essay/zotero/attachments/raw/Ren et al_2021_Color point cloud registration algorithm based on hue.pdf",
     "essay/zotero/attachments/raw/Nam et al_2017_A 2.pdf",
     "essay/zotero/attachments/raw/Liu et al_2020_Hierarchical optimization of 3D point cloud registration2.pdf",
-    "essay/zotero/attachments/raw/Han et al_2024_A Point Cloud Registration Framework with Color Information Integration.pdf",
-    "essay/basic/Math.md",
     "essay/read-dairy.md",
     "essay/ABGICP.md",
     "essay/SCI.md",
