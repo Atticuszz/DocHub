@@ -20,43 +20,7 @@ Variables:
 $$
 \mathbf{p} = \begin{bmatrix} \frac{u - c_x}{f_x} d \\ \frac{v - c_y}{f_y} d \\ d \end{bmatrix}, \quad d = \frac{I_d(u, v)}{s}
 $$
-### grid down sample for depth image 
-优点:
-不会引入噪声也能够加速点云转换，因为直接转换点云计算量很大，频繁的创建数据
-*随机降采样是个彻头彻尾的反例，因为引入了噪声，但这种规整的降采样就不会*
-Variables:
-- $i, j$: Pixel indices in the depth image.
-- $D$: Original depth image.
-- $S$: Scale factor to convert depth values from units to meters.
-- $K$: Intrinsic camera matrix.
-- $\text{downsample\_stride}$: Stride used for down sampling the image and depth values.
-1. **Generate pixel indices for the entire depth image:**
-$$
-(i, j) = \text{np.indices}(D.shape)
-$$
 
-2. **Downsampling by taking every nth pixel determined by the downsample_stride:**
-$$
-i = i[::\text{downsample\_stride}, ::\text{downsample\_stride}], \quad j = j[::\text{downsample\_stride}, ::\text{downsample\_stride}]
-$$
-$$
-D_{\text{downsampled}} = D[::\text{downsample\_stride}, ::\text{downsample\_stride}]
-$$
-
-3. **Scale depth values to meters:**
-$$
-Z = D_{\text{downsampled}} \cdot \frac{1}{S}
-$$
-
-4. **Calculate 3D coordinates in the camera coordinate system using the intrinsic parameters:**
-- $x$ coordinate:
-$$
-X = (j - c_x) \cdot \frac{Z}{f_x}
-$$
-- $y$ coordinate:
-$$
-Y = (i - c_y) \cdot \frac{Z}{f_y}
-$$
 
 5. **Concatenate coordinates to form the 3D points with a homogeneous coordinate:**
 $$
@@ -65,8 +29,6 @@ $$
 The final array, `points`, is reshaped to $(-1, 4)$ to flatten the point cloud into a two-dimensional array where each row represents a 3D point in homogeneous coordinates.
 
 
-
-### point cloud rejector via image filter
 
 
 ### ABGICP
@@ -131,6 +93,7 @@ lab_image = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
 
 ## 4. Experimental Setup
 
+如果我的数据集是 meta 开源的 replica，我对与每相邻两张进行配准，从而研究我目前创新的配准算法在 rgbd 的特定的环境下的使用，无论是用来三维重建还是姿态估计，大多数使用 rgbd 相机的时候都是会移动，所以我选用 rgbd 数据集的相邻两帧作为配准 scantoscan 模式连续估计，并且为了避免误差的连续积累，并且我们关注于对两帧作为实验，上一帧姿态采用真实姿态，并且使用上一个真实变换 t 作为 t 的初始估计（但这个可能会影响收敛在大角度旋转的时候，需要额外验证），这种情况下我是关注于验证我的算法在两帧之间的效果，有点像升级视觉里程记的最小单位的估计姿态的精准度，而不是完整的轨迹估计，给我实验描述整理，专业名词用英语，中英结合，不要歪曲含义
 ### preprocess 
 
 #### grid down sample for depth image 
