@@ -3,7 +3,7 @@
 - $\mathbf{p}_{\text{target}}$ 为目标点云中的点。
 - $\mathbf{p}_{\text{source}}$ 为源点云中经过变换 $T$ 的点。
 - $\mathbf{r}$ 为残差向量 $\mathbf{r} = \mathbf{p}_{\text{target}} - T \mathbf{p}_{\text{source}}$。
--  $RCR$（Rotated Combined Covariance）为误差变换的协方差矩阵$\begin{aligned}\text{di} & \sim\mathcal{N}{\left(\hat{b}_{i}-\mathbf{T}\hat{a}_{i},C_{i}^{B}+\mathbf{T}C_{i}^{A}\mathbf{T}^{T}\right)}\\  & =\mathcal{N}\left(0,C_{i}^{B}+\mathbf{T}C_{i}^{A}\mathbf{T}^{T}\right)\end{aligned}$，这个矩阵反映了点云的不确定性和形状信息。*RCR也有取3x3,为了计算便利性*
+-  $RCR$（Rotated Combined Covariance）为误差变换的协方差矩阵$\begin{aligned}\text{di} & \sim\mathcal{N}{\left(\hat{b}_{i}-\mathbf{T}\hat{a}_{i},C_{i}^{B}+\mathbf{T}C_{i}^{A}\mathbf{T}^{T}\right)}\\  & =\mathcal{N}\left(0,C_{i}^{B}+\mathbf{T}C_{i}^{A}\mathbf{T}^{T}\right)\end{aligned}$，这个矩阵反映了点云的不确定性和形状信息。*RCR取3x3,否则没有逆，而且只有3x3和xyz有关*
 $$
 RCR = \text{cov}_{\text{target}} + T \cdot \text{cov}_{\text{source}} \cdot T^T
 $$
