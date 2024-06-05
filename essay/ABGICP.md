@@ -69,7 +69,8 @@ lab_image = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
    - 几何误差和颜色误差的组合，通过权重 $\alpha$ 和 $\beta$ 调节在总优化目标中的影响：
      $$E(T) = \alpha E_{geom}(T) + \beta E_{color}(T)$$
    - 其中，$\alpha$ 和 $\beta$ 用来平衡几何和颜色误差的重要性。
-
+> [!idea]
+> 既然是rgb-d的环境下，也许可以增加对齐后的点云变换回深度图像，确保对齐后的点云符合深度图的损失,[[essay/zotero/attachments/SplaTAM.pdf#page=7&selection=172,0,221,44|SplaTAM, page 7]]
 ### 优化过程
 
 优化过程通常采用迭代的方式，例如梯度下降法或更复杂的 $Levenberg-Marquardt$算法，以处理非线性最小化问题。这里我们展示使用梯度下降法的步骤：

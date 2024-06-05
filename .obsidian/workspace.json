@@ -11,21 +11,19 @@
             "id": "eb173621bf8f8cee",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "essay/basic/Math.md",
-                "mode": "source",
-                "source": false
+                "file": "essay/zotero/attachments/SplaTAM.pdf"
               }
             }
           },
           {
-            "id": "207be162df90756f",
+            "id": "4d98bd2693fcd837",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "essay/ABGICP.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "essay/ABGICP.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "essay/ABGICP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "essay/ABGICP.md"
               }
             }
           },
@@ -201,8 +199,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "207be162df90756f",
+  "active": "b02e2e30d05790c3",
   "lastOpenFiles": [
+    "essay/zotero/attachments/SplaTAM.pdf",
+    "essay/ABGICP.md",
+    "essay/basic/GICP.md",
+    "essay/basic/image.md",
     "essay/basic/Math.md",
     "conflict-files-obsidian-git.md",
     "essay/zotero/attachments/raw/Zhou et al_2020_A novel depth and color feature fusion framework for 6d object pose estimation.pdf",
@@ -214,10 +216,6 @@
     "essay/zotero/attachments/raw/Vizzo et al_2023_Kiss-icp.pdf",
     "essay/zotero/attachments/raw/Torroba et al_2020_PointNetKL.pdf",
     "essay/zotero/attachments/raw/Son et al_2022_WGICP.pdf",
-    "essay/zotero/attachments/raw/Sensors Free Full-Text Robust Point Cloud Registration Network for Complex.pdf",
-    "essay/basic/GICP.md",
-    "essay/ABGICP.md",
-    "essay/basic/image.md",
     "essay/basic/experiment.md",
     "docs/Language/python/py-env/conda.md",
     "essay/basic/3D.md",
