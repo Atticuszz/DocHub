@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/basic/3D.md",
+                "file": "essay/ABGICP.md",
                 "mode": "source",
                 "source": false
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/basic/3D.md",
+                "file": "essay/ABGICP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/basic/3D.md",
+                "file": "essay/ABGICP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/basic/3D.md"
+                "file": "essay/ABGICP.md"
               }
             }
           }
@@ -187,6 +187,8 @@
   },
   "active": "bc55de8073fc6d21",
   "lastOpenFiles": [
+    "essay/basic/3D.md",
+    "docs/Untitled.md",
     "essay/basic/Math.md",
     "essay/ABGICP.md",
     "essay/zotero/attachments/raw/Han et al_2024_A Point Cloud Registration Framework with Color Information Integration2.pdf",
@@ -204,7 +206,6 @@
     "essay/basic/GICP.md",
     "essay/basic/image.md",
     "essay/basic/experiment.md",
-    "essay/basic/3D.md",
     "docs/URLs.md",
     "docs/account.md",
     "README.md",
