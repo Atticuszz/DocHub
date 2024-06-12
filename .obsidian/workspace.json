@@ -40,29 +40,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "df3972b3102d25f3",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.2"
-              }
-            }
-          },
-          {
-            "id": "4694ed698cd9c062",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.3"
-              }
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -231,7 +211,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4694ed698cd9c062",
+  "active": "f261ca545b20c490",
   "lastOpenFiles": [
     "essay/zotero/attachments/SplaTAM.pdf",
     "essay/ABGICP.md",
