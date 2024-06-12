@@ -23,14 +23,46 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "essay/basic/Math.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f261ca545b20c490",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "essay/ABGICP.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "df3972b3102d25f3",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.2"
+              }
+            }
+          },
+          {
+            "id": "4694ed698cd9c062",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.3"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -199,13 +231,18 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b02e2e30d05790c3",
+  "active": "4694ed698cd9c062",
   "lastOpenFiles": [
     "essay/zotero/attachments/SplaTAM.pdf",
     "essay/ABGICP.md",
-    "essay/basic/GICP.md",
-    "essay/basic/image.md",
+    "docs/OS/Ubuntu/net.md",
     "essay/basic/Math.md",
+    "docs/Language/python/py-env/conda.md",
+    "docs/OS/Ubuntu/system.md",
+    "essay/basic/3D.md",
+    "essay/basic/experiment.md",
+    "essay/basic/image.md",
+    "essay/basic/GICP.md",
     "conflict-files-obsidian-git.md",
     "essay/zotero/attachments/raw/Zhou et al_2020_A novel depth and color feature fusion framework for 6d object pose estimation.pdf",
     "essay/zotero/attachments/raw/Yang et al_2020_Color point cloud registration based on supervoxel correspondence3.pdf",
@@ -216,9 +253,6 @@
     "essay/zotero/attachments/raw/Vizzo et al_2023_Kiss-icp.pdf",
     "essay/zotero/attachments/raw/Torroba et al_2020_PointNetKL.pdf",
     "essay/zotero/attachments/raw/Son et al_2022_WGICP.pdf",
-    "essay/basic/experiment.md",
-    "docs/Language/python/py-env/conda.md",
-    "essay/basic/3D.md",
     "essay/SCI.md",
     "docs/VCS/git.md",
     "essay/zotero/zotero-import-templates.md",
@@ -238,8 +272,6 @@
     "essay/zotero/annotations/guptaNDT6DColor2023.md",
     "essay/read-dairy.md",
     "essay/SCI_paper.md",
-    "essay/main.md",
-    "docs/Language/C++/Pointer.md",
     "assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png",
     "assets/kornColorSupportedGeneralizedICP2014a/kornColorSupportedGeneralizedICP2014a-4-x69-y230.png",
     "assets/Pasted_image_20240512125417.png",
