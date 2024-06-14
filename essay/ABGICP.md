@@ -29,6 +29,39 @@ $$
 The final array, `points`, is reshaped to $(-1, 4)$ to flatten the point cloud into a two-dimensional array where each row represents a 3D point in homogeneous coordinates.
 
 
+### depth loss
+思路是假设主要优化参数是相机姿态也就是W2C，每次优化的核心是，假设已经有了上一帧的实际姿态last_w2c，并且把上一帧的last_depth根据姿态投射成世界坐标系的点云last_pcd，然后新来的一张深度图cur_depth，cur_w2d初始化=last_w2c上进行投影得到cur_pcd,这是混合点云cur_pcd+last_pcd在当前视角下cur_w2d投影成深度图combind_depth和实际的cur_depth作损失，优化这个过程寻找W2C参数让损失最小
+
+#### define
+
+- $\mathbf{W}_{\text{last}}$：上一帧的世界到相机的变换矩阵（W2C）。
+- $\mathbf{D}_{\text{last}}$：上一帧的深度图。
+- $\mathbf{P}_{\text{last}}$：从 $\mathbf{D}_{\text{last}}$ 通过 $\mathbf{W}_{\text{last}}$ 转换得到的世界坐标系下的点云。
+- $\mathbf{D}_{\text{cur}}$：当前帧的深度图。
+- $\mathbf{W}_{\text{cur}}$：当前帧的相机姿态，优化目标。
+- $\mathbf{P}_{\text{cur}}$：从 $\mathbf{D}_{\text{cur}}$ 通过初始 $\mathbf{W}_{\text{cur}}$ 转换（初始假设为 $\mathbf{W}_{\text{last}}$）得到的世界坐标系下的点云。
+
+#### loss
+
+我们定义损失函数 $L$ 来衡量合成的深度图和实际观测的深度图之间的差异：
+
+$$
+L(\mathbf{W}_{\text{cur}}) = \frac{1}{N} \sum_{i=1}^N \left\| \text{proj}(\mathbf{P}_{\text{cur}} \cup \mathbf{P}_{\text{last}}, \mathbf{W}_{\text{cur}}) - \mathbf{D}_{\text{cur}} \right\|^2
+$$
+
+其中，$\text{proj}(\mathbf{P}, \mathbf{W})$ 表示将点云 $\mathbf{P}$ 通过相机姿态 $\mathbf{W}$ 投影回相机平面得到的深度图。这里的 $\cup$ 表示点云的融合操作，是通过取两个点云对应深度值的最小值来实现的，以此来处理可能的遮挡问题。
+
+#### optimization
+
+优化目标是找到最优的相机姿态 $\mathbf{W}_{\text{cur}}$，使得损失函数 $L(\mathbf{W}_{\text{cur}})$ 最小。这通常通过迭代优化方法实现，例如梯度下降或更高级的优化算法如 Adam。
+
+
+- **深度图到点云的转换**：基于相机的内参矩阵和给定的姿态矩阵，将深度图转换为点云。
+- **点云到深度图的投影**：将世界坐标系下的点云通过当前的相机姿态投影回到相机坐标系，然后基于相机的内参将其转换回深度图。
+
+**算法步骤**
+1. **初始化**：从上一帧的深度图和姿态出发，初始化当前帧的点云。
+2. **优化**：通过最小化合成深度图和实际深度图之间的差异来迭代更新相机姿态。
 
 
 ### ABGICP
