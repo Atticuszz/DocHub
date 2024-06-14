@@ -54,3 +54,39 @@ if ($currentPath -notcontains $newPath) {
 [Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
 
 ```
+
+
+### combine project files such as .py
+```powershell
+# 设置需要递归搜索的目录路径
+$directoryPath = "C:\path\to\your\python\files"
+
+# 指定合并后的文件名和路径
+$combinedFileName = "combined.py"
+$combinedFilePath = Join-Path -Path $directoryPath -ChildPath $combinedFileName
+
+# 创建或清空之前的合并文件
+"" | Out-File -FilePath $combinedFilePath
+
+# 递归地获取所有Python文件
+$pythonFiles = Get-ChildItem -Path $directoryPath -Filter *.py -Recurse
+
+# 循环遍历每个文件并追加到combined.py
+foreach ($file in $pythonFiles) {
+    # 确保不处理目标文件本身
+    if ($file.FullName -ne $combinedFilePath) {
+        # 为每个文件添加一个简单的注释行
+        ("# Contents of " + $file.FullName) | Out-File -FilePath $combinedFilePath -Append
+        
+        # 追加文件内容到combined.py
+        Get-Content -Path $file.FullName | Out-File -FilePath $combinedFilePath -Append
+        
+        # 添加换行以分隔不同的文件内容
+        "`n" | Out-File -FilePath $combinedFilePath -Append
+    }
+}
+
+# 输出结果提示
+Write-Host "All Python files have been combined into $combinedFilePath"
+
+```
