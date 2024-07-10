@@ -20,30 +20,31 @@
             }
           },
           {
-            "id": "bc55de8073fc6d21",
+            "id": "f979334af0a9eaa4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/ABGICP.md",
+                "file": "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "296c76d3ffc21e29",
+            "id": "bc55de8073fc6d21",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Windows/Powersehll.md",
+                "file": "essay/Arxiv.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -128,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/basic/GICP.md",
+                "file": "essay/Arxiv.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/basic/GICP.md",
+                "file": "essay/Arxiv.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -169,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/basic/GICP.md"
+                "file": "essay/Arxiv.md"
               }
             }
           }
@@ -196,11 +197,21 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "67d90be9a02c1e53",
+  "active": "bc55de8073fc6d21",
   "lastOpenFiles": [
-    "essay/basic/Math.md",
+    "essay/zotero/attachments/gs_spalt/Fan et al_2024_InstantSplat.pdf",
     "essay/ABGICP.md",
+    "essay/word/~$ABGICP.docx",
+    "essay/Arxiv.md",
+    "essay/GSplatLoc.md",
     "docs/OS/Windows/Powersehll.md",
+    "essay/zotero/attachments/gs_spalt/Ravi et al_2020_Accelerating 3D Deep Learning with PyTorch3D.pdf",
+    "essay/zotero/attachments/gs_spalt/Lassner_Zollhofer_2021_Pulsar.pdf",
+    "essay/basic/GICP.md",
+    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
+    "essay/zotero/annotations/guptaNDT6DColor2023.md",
+    "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
+    "essay/basic/Math.md",
     "docs/URLs.md",
     "conflict-files-obsidian-git.md",
     "essay/basic/3D.md",
@@ -212,12 +223,8 @@
     "essay/zotero/attachments/raw/Yang et al_2020_Color point cloud registration based on supervoxel correspondence2.pdf",
     "essay/zotero/attachments/raw/Ren et al_2021_Color point cloud registration algorithm based on hue2.pdf",
     "essay/zotero/attachments/raw/Lyu et al_2024_Dynamic Downsampling Algorithm for 3D Point Cloud Map Based on Voxel Filtering2.pdf",
-    "essay/zotero/attachments/raw/Ren et al_2021_Color point cloud registration algorithm based on hue.pdf",
-    "essay/zotero/attachments/raw/Nam et al_2017_A 2.pdf",
-    "essay/zotero/attachments/raw/Liu et al_2020_Hierarchical optimization of 3D point cloud registration2.pdf",
     "essay/read-dairy.md",
     "essay/SCI.md",
-    "essay/basic/GICP.md",
     "essay/basic/image.md",
     "essay/basic/experiment.md",
     "docs/account.md",
@@ -229,21 +236,15 @@
     "docs/Language/C++/packages.md",
     "assets/Pasted image 20240524150219.png",
     "assets/Pasted image 20240420105746.png",
-    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "docs/tools/pdf.md",
     "assets/Pasted image 20240521203441.png",
-    "essay/Gradient-down-Sampling.md",
-    "essay/zotero/annotations/guptaNDT6DColor2023.md",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-13-x43-y370.png",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-14-x56-y502.png",
-    "essay/zotero/zotero-import-templates.md",
     "essay/zotero/attachments/raw/page-01.png",
     "essay/zotero/attachments/raw/page-15.png",
     "essay/zotero/attachments/raw/page-14.png",
     "essay/zotero/attachments/raw/page-13.png",
     "essay/zotero/attachments/raw/page-12.png",
-    "essay/zotero/annotations/renRobustGICPbased3D2019.md",
-    "essay/zotero/annotations/kornColorSupportedGeneralizedICP2014a.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",

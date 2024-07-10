@@ -1,3 +1,10 @@
+@misc{231209031IComMa,
+  title = {[2312.09031] {{iComMa}}: {{Inverting 3D Gaussian Splatting}} for {{Camera Pose Estimation}} via {{Comparing}} and {{Matching}}},
+  urldate = {2024-07-10},
+  howpublished = {https://arxiv.org/abs/2312.09031},
+  file = {C:\Users\18317\Zotero\storage\BZ2U62AZ\2312.html}
+}
+
 @misc{AddonItem,
   title = {Addon {{Item}}}
 }
@@ -19,7 +26,7 @@
   doi = {10.48550/arXiv.2102.10808},
   urldate = {2024-05-21},
   abstract = {This paper proposes an efficient data structure, ikd-Tree, for dynamic space partition. The ikd-Tree incrementally updates a k-d tree with new coming points only, leading to much lower computation time than existing static k-d trees. Besides point-wise operations, the ikd-Tree supports several features such as box-wise operations and down-sampling that are practically useful in robotic applications. In parallel to the incremental operations (i.e., insert, re-insert, and delete), ikd-Tree actively monitors the tree structure and partially re-balances the tree, which enables efficient nearest point search in later stages. The ikd-Tree is carefully engineered and supports multi-thread parallel computing to maximize the overall efficiency. We validate the ikd-Tree in both theory and practical experiments. On theory level, a complete time complexity analysis is presented to prove the high efficiency. On experiment level, the ikd-Tree is tested on both randomized datasets and real-world LiDAR point data in LiDAR-inertial odometry and mapping application. In all tests, ikd-Tree consumes only 4\% of the running time in a static k-d tree.},
-  archiveprefix = {arxiv},
+  archiveprefix = {arXiv},
   keywords = {Computer Science - Robotics},
   file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\raw\\Cai et al_2021_ikd-Tree4.pdf;C\:\\Users\\18317\\Zotero\\storage\\LWWXKIMB\\2102.html}
 }
@@ -36,6 +43,24 @@
   doi = {10.3390/s20185331},
   urldate = {2024-05-22},
   file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\GICP\\Choi et al_2020_Iterative K-closest point algorithms for colored point cloud registration.pdf;C\:\\Users\\18317\\Zotero\\storage\\G2EPG525\\5331.html}
+}
+
+@misc{fanInstantSplatUnboundedSparseview2024,
+  title = {{{InstantSplat}}: {{Unbounded Sparse-view Pose-free Gaussian Splatting}} in 40 {{Seconds}}},
+  shorttitle = {{{InstantSplat}}},
+  author = {Fan, Zhiwen and Cong, Wenyan and Wen, Kairun and Wang, Kevin and Zhang, Jian and Ding, Xinghao and Xu, Danfei and Ivanovic, Boris and Pavone, Marco and Pavlakos, Georgios and Wang, Zhangyang and Wang, Yue},
+  year = {2024},
+  month = jun,
+  number = {arXiv:2403.20309},
+  eprint = {2403.20309},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2403.20309},
+  urldate = {2024-07-10},
+  abstract = {While novel view synthesis (NVS) from a sparse set of images has advanced significantly in 3D computer vision, it relies on precise initial estimation of camera parameters using Structure-from-Motion (SfM). For instance, the recently developed Gaussian Splatting depends heavily on the accuracy of SfM-derived points and poses. However, SfM processes are time-consuming and often prove unreliable in sparse-view scenarios, where matched features are scarce, leading to accumulated errors and limited generalization capability across datasets. In this study, we introduce a novel and efficient framework to enhance robust NVS from sparse-view images. Our framework, InstantSplat, integrates multi-view stereo(MVS) predictions with point-based representations to construct 3D Gaussians of large-scale scenes from sparse-view data within seconds, addressing the aforementioned performance and efficiency issues by SfM. Specifically, InstantSplat generates densely populated surface points across all training views and determines the initial camera parameters using pixel-alignment. Nonetheless, the MVS points are not globally accurate, and the pixel-wise prediction from all views results in an excessive Gaussian number, yielding a overparameterized scene representation that compromises both training speed and accuracy. To address this issue, we employ a grid-based, confidence-aware Farthest Point Sampling to strategically position point primitives at representative locations in parallel. Next, we enhance pose accuracy and tune scene parameters through a gradient-based joint optimization framework from self-supervision. By employing this simplified framework, InstantSplat achieves a substantial reduction in training time, from hours to mere seconds, and demonstrates robust performance across various numbers of views in diverse datasets.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition},
+  file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\gs_spalt\\Fan et al_2024_InstantSplat.pdf;C\:\\Users\\18317\\Zotero\\storage\\HMLQE8XI\\2403.html}
 }
 
 @article{guptaNDT6DColor2023,
@@ -104,7 +129,7 @@
   publisher = {arXiv},
   urldate = {2024-05-23},
   abstract = {Simultaneous Localization and Mapping (SLAM) with dense representation plays a key role in robotics, Virtual Reality (VR), and Augmented Reality (AR) applications. Recent advancements in dense representation SLAM have highlighted the potential of leveraging neural scene representation and 3D Gaussian representation for high-fidelity spatial representation. In this paper, we propose a novel dense representation SLAM approach with a fusion of Generalized Iterative Closest Point (G-ICP) and 3D Gaussian Splatting (3DGS). In contrast to existing methods, we utilize a single Gaussian map for both tracking and mapping, resulting in mutual benefits. Through the exchange of covariances between tracking and mapping processes with scale alignment techniques, we minimize redundant computations and achieve an efficient system. Additionally, we enhance tracking accuracy and mapping quality through our keyframe selection methods. Experimental results demonstrate the effectiveness of our approach, showing an incredibly fast speed up to 107 FPS (for the entire system) and superior quality of the reconstructed map.},
-  archiveprefix = {arxiv},
+  archiveprefix = {arXiv},
   keywords = {Computer Science - Computer Vision and Pattern Recognition},
   file = {C\:\\Users\\18317\\Zotero\\storage\\HJ4D53M9\\Ha et al. - 2024 - RGBD GS-ICP SLAM.pdf;C\:\\Users\\18317\\Zotero\\storage\\P52BZ3I7\\2403.html}
 }
@@ -190,7 +215,7 @@
   publisher = {arXiv},
   urldate = {2024-06-14},
   abstract = {We introduce CoTracker, a transformer-based model that tracks dense points in a frame jointly across a video sequence. This differs from most existing state-of-the-art approaches that track points independently, ignoring their correlation. We show that joint tracking results in a significantly higher tracking accuracy and robustness. We also provide several technical innovations, including the concept of virtual tracks, which allows CoTracker to track 70k points jointly and simultaneously. Furthermore, CoTracker operates causally on short windows (hence, it is suitable for online tasks), but is trained by unrolling the windows across longer video sequences, which enables and significantly improves long-term tracking. We demonstrate qualitatively impressive tracking results, where points can be tracked for a long time even when they are occluded or leave the field of view. Quantitatively, CoTracker outperforms all recent trackers on standard benchmarks, often by a substantial margin.},
-  archiveprefix = {arxiv},
+  archiveprefix = {arXiv},
   keywords = {Computer Science - Computer Vision and Pattern Recognition},
   file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\gs_spalt\\Karaev et al_2023_CoTracker.pdf;C\:\\Users\\18317\\Zotero\\storage\\7Q42W8TM\\2307.html}
 }
@@ -207,7 +232,7 @@
   publisher = {arXiv},
   urldate = {2024-06-09},
   abstract = {Dense simultaneous localization and mapping (SLAM) is crucial for robotics and augmented reality applications. However, current methods are often hampered by the non-volumetric or implicit way they represent a scene. This work introduces SplaTAM, an approach that, for the first time, leverages explicit volumetric representations, i.e., 3D Gaussians, to enable high-fidelity reconstruction from a single unposed RGB-D camera, surpassing the capabilities of existing methods. SplaTAM employs a simple online tracking and mapping system tailored to the underlying Gaussian representation. It utilizes a silhouette mask to elegantly capture the presence of scene density. This combination enables several benefits over prior representations, including fast rendering and dense optimization, quickly determining if areas have been previously mapped, and structured map expansion by adding more Gaussians. Extensive experiments show that SplaTAM achieves up to 2x superior performance in camera pose estimation, map construction, and novel-view synthesis over existing methods, paving the way for more immersive high-fidelity SLAM applications.},
-  archiveprefix = {arxiv},
+  archiveprefix = {arXiv},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Robotics},
   file = {C\:\\Users\\18317\\Zotero\\storage\\WUQKHF5Y\\Keetha et al. - 2024 - SplaTAM Splat, Track & Map 3D Gaussians for Dense.pdf;C\:\\Users\\18317\\Zotero\\storage\\5A6XMJDM\\2312.html}
 }
@@ -276,7 +301,7 @@
   publisher = {arXiv},
   urldate = {2024-06-12},
   abstract = {We present DPPE, a dense pose estimation algorithm that functions over a Plenoxels environment. Recent advances in neural radiance field techniques have shown that it is a powerful tool for environment representation. More recent neural rendering algorithms have significantly improved both training duration and rendering speed. Plenoxels introduced a fully-differentiable radiance field technique that uses Plenoptic volume elements contained in voxels for rendering, offering reduced training times and better rendering accuracy, while also eliminating the neural net component. In this work, we introduce a 6-DoF monocular RGB-only pose estimation procedure for Plenoxels, which seeks to recover the ground truth camera pose after a perturbation. We employ a variation on classical template matching techniques, using stochastic gradient descent to optimize the pose by minimizing errors in re-rendering. In particular, we examine an approach that takes advantage of the rapid rendering speed of Plenoxels to numerically approximate part of the pose gradient, using a central differencing technique. We show that such methods are effective in pose estimation. Finally, we perform ablations over key components of the problem space, with a particular focus on image subsampling and Plenoxel grid resolution. Project website: https://sites.google.com/view/dppe},
-  archiveprefix = {arxiv},
+  archiveprefix = {arXiv},
   keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Robotics},
   file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\gs_spalt\\Kolios et al_2024_DPPE2.pdf;C\:\\Users\\18317\\Zotero\\storage\\XFLYNZ4R\\2403.html}
 }
@@ -304,6 +329,28 @@
   urldate = {2024-05-20},
   keywords = {No DOI found},
   file = {C:\Users\18317\DevSpace\DocHub\essay\zotero\attachments\EMPTY_COLLECTION_NAMEKorn et al\Korn et al_2014_Color supported generalized-ICP.pdf}
+}
+
+@inproceedings{lassnerPulsarEfficientSpherebased2021,
+  title = {Pulsar: {{Efficient}} Sphere-Based Neural Rendering},
+  shorttitle = {Pulsar},
+  booktitle = {Proceedings of the {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and {{Pattern Recognition}}},
+  author = {Lassner, Christoph and Zollhofer, Michael},
+  year = {2021},
+  pages = {1440--1449},
+  urldate = {2024-06-17}
+}
+
+@inproceedings{lassnerPulsarEfficientSpherebased2021a,
+  title = {Pulsar: {{Efficient}} Sphere-Based Neural Rendering},
+  shorttitle = {Pulsar},
+  booktitle = {Proceedings of the {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and {{Pattern Recognition}}},
+  author = {Lassner, Christoph and Zollhofer, Michael},
+  year = {2021},
+  pages = {1440--1449},
+  urldate = {2024-06-17},
+  keywords = {No DOI found},
+  file = {C:\Users\18317\DevSpace\DocHub\essay\zotero\attachments\gs_spalt\Lassner_Zollhofer_2021_Pulsar.pdf}
 }
 
 @article{leeAccurateVisualSimultaneous2023,
@@ -408,6 +455,22 @@
   file = {C:\Users\18317\Zotero\storage\NIWZJR2Y\Park et al_2017_Colored point cloud registration revisited-dual-translated.pdf}
 }
 
+@misc{raviAccelerating3DDeep2020a,
+  title = {Accelerating {{3D Deep Learning}} with {{PyTorch3D}}},
+  author = {Ravi, Nikhila and Reizenstein, Jeremy and Novotny, David and Gordon, Taylor and Lo, Wan-Yen and Johnson, Justin and Gkioxari, Georgia},
+  year = {2020},
+  month = jul,
+  number = {arXiv:2007.08501},
+  eprint = {2007.08501},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  urldate = {2024-06-17},
+  abstract = {Deep learning has significantly improved 2D image recognition. Extending into 3D may advance many new applications including autonomous vehicles, virtual and augmented reality, authoring 3D content, and even improving 2D recognition. However despite growing interest, 3D deep learning remains relatively underexplored. We believe that some of this disparity is due to the engineering challenges involved in 3D deep learning, such as efficiently processing heterogeneous data and reframing graphics operations to be differentiable. We address these challenges by introducing PyTorch3D, a library of modular, efficient, and differentiable operators for 3D deep learning. It includes a fast, modular differentiable renderer for meshes and point clouds, enabling analysis-by-synthesis approaches. Compared with other differentiable renderers, PyTorch3D is more modular and efficient, allowing users to more easily extend it while also gracefully scaling to large meshes and images. We compare the PyTorch3D operators and renderer with other implementations and demonstrate significant speed and memory improvements. We also use PyTorch3D to improve the state-of-the-art for unsupervised 3D mesh and point cloud prediction from 2D images on ShapeNet. PyTorch3D is open-source and we hope it will help accelerate research in 3D deep learning.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Graphics,Computer Science - Machine Learning},
+  file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\gs_spalt\\Ravi et al_2020_Accelerating 3D Deep Learning with PyTorch3D.pdf;C\:\\Users\\18317\\Zotero\\storage\\7JCB8ISJ\\2007.html}
+}
+
 @article{renColorPointCloud2021,
   title = {Color Point Cloud Registration Algorithm Based on Hue},
   author = {Ren, Siyu and Chen, Xiaodong and Cai, Huaiyu and Wang, Yi and Liang, Haitao and Li, Haotian},
@@ -453,7 +516,7 @@
   doi = {10.48550/arXiv.2404.17215},
   urldate = {2024-05-20},
   abstract = {Simultaneous localization and mapping (SLAM), i.e., the reconstruction of the environment represented by a (3D) map and the concurrent pose estimation, has made astonishing progress. Meanwhile, large scale applications aiming at the data collection in complex environments like factory halls or construction sites are becoming feasible. However, in contrast to small scale scenarios with building interiors separated to single rooms, shop floors or construction areas require measures at larger distances in potentially texture less areas under difficult illumination. Pose estimation is further aggravated since no GNSS measures are available as it is usual for such indoor applications. In our work, we realize data collection in a large factory hall by a robot system equipped with four stereo cameras as well as a 3D laser scanner. We apply our state-of-the-art LiDAR and visual SLAM approaches and discuss the respective pros and cons of the different sensor types for trajectory estimation and dense map generation in such an environment. Additionally, dense and accurate depth maps are generated by 3D Gaussian splatting, which we plan to use in the context of our project aiming on the automatic construction and site monitoring.},
-  archiveprefix = {arxiv},
+  archiveprefix = {arXiv},
   keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Robotics},
   file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\SLAM\\Ress_et_al_2024_SLAM_for_Indoor_Mapping_of_Wide_Area_Construction_Environments.pdf;C\:\\Users\\18317\\Zotero\\storage\\Y845EHIN\\2404.html}
 }
@@ -519,7 +582,7 @@
   publisher = {arXiv},
   urldate = {2024-06-14},
   abstract = {Reconstruction of 3D neural fields from posed images has emerged as a promising method for self-supervised representation learning. The key challenge preventing the deployment of these 3D scene learners on large-scale video data is their dependence on precise camera poses from structure-from-motion, which is prohibitively expensive to run at scale. We propose a method that jointly reconstructs camera poses and 3D neural scene representations online and in a single forward pass. We estimate poses by first lifting frame-to-frame optical flow to 3D scene flow via differentiable rendering, preserving locality and shift-equivariance of the image processing backbone. SE(3) camera pose estimation is then performed via a weighted least-squares fit to the scene flow field. This formulation enables us to jointly supervise pose estimation and a generalizable neural scene representation via re-rendering the input video, and thus, train end-to-end and fully self-supervised on real-world video datasets. We demonstrate that our method performs robustly on diverse, real-world video, notably on sequences traditionally challenging to optimization-based pose estimation techniques.},
-  archiveprefix = {arxiv},
+  archiveprefix = {arXiv},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Graphics,Computer Science - Machine Learning},
   file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\gs_spalt\\Smith et al_2023_FlowCam.pdf;C\:\\Users\\18317\\Zotero\\storage\\47JX8X9W\\2306.html}
 }
@@ -536,7 +599,7 @@
   publisher = {arXiv},
   urldate = {2024-06-12},
   abstract = {This paper introduces FlowMap, an end-to-end differentiable method that solves for precise camera poses, camera intrinsics, and per-frame dense depth of a video sequence. Our method performs per-video gradient-descent minimization of a simple least-squares objective that compares the optical flow induced by depth, intrinsics, and poses against correspondences obtained via off-the-shelf optical flow and point tracking. Alongside the use of point tracks to encourage long-term geometric consistency, we introduce differentiable re-parameterizations of depth, intrinsics, and pose that are amenable to first-order optimization. We empirically show that camera parameters and dense depth recovered by our method enable photo-realistic novel view synthesis on 360-degree trajectories using Gaussian Splatting. Our method not only far outperforms prior gradient-descent based bundle adjustment methods, but surprisingly performs on par with COLMAP, the state-of-the-art SfM method, on the downstream task of 360-degree novel view synthesis (even though our method is purely gradient-descent based, fully differentiable, and presents a complete departure from conventional SfM).},
-  archiveprefix = {arxiv},
+  archiveprefix = {arXiv},
   keywords = {Computer Science - Computer Vision and Pattern Recognition},
   file = {C\:\\Users\\18317\\Zotero\\storage\\JS3WVP2A\\Smith et al. - 2024 - FlowMap High-Quality Camera Poses, Intrinsics, an.pdf;C\:\\Users\\18317\\Zotero\\storage\\LN4YMZKV\\2404.html}
 }
@@ -548,7 +611,7 @@
   year = {2022},
   journal = {arXiv preprint arXiv:2209.09777},
   eprint = {2209.09777},
-  archiveprefix = {arxiv},
+  archiveprefix = {arXiv},
   keywords = {No DOI found},
   file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\raw\\Son et al_2022_WGICP.pdf;C\:\\Users\\18317\\Zotero\\storage\\Q3TLWDVF\\Son et al_2022_WGICP-dual-translated.pdf}
 }
@@ -666,6 +729,22 @@
   file = {C:\Users\18317\DevSpace\DocHub\essay\zotero\attachments\GICP\Yang et al_2020_Teaser.pdf}
 }
 
+@misc{yeMathematicalSupplementTexttt2023,
+  title = {Mathematical {{Supplement}} for the \${\textbackslash}texttt\{gsplat\}\$ {{Library}}},
+  author = {Ye, Vickie and Kanazawa, Angjoo},
+  year = {2023},
+  month = dec,
+  number = {arXiv:2312.02121},
+  eprint = {2312.02121},
+  primaryclass = {cs, math},
+  publisher = {arXiv},
+  urldate = {2024-06-29},
+  abstract = {This report provides the mathematical details of the gsplat library, a modular toolbox for efficient differentiable Gaussian splatting, as proposed by Kerbl et al. It provides a self-contained reference for the computations involved in the forward and backward passes of differentiable Gaussian splatting. To facilitate practical usage and development, we provide a user friendly Python API that exposes each component of the forward and backward passes in rasterization at github.com/nerfstudio-project/gsplat .},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Graphics,Computer Science - Mathematical Software,Mathematics - Numerical Analysis},
+  file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\gs_spalt\\Ye_Kanazawa_2023_Mathematical Supplement for the $-texttt gsplat $ Library2.pdf;C\:\\Users\\18317\\Zotero\\storage\\FVVZUTYQ\\2312.html}
+}
+
 @misc{yugayGaussianSLAMPhotorealisticDense2024,
   title = {Gaussian-{{SLAM}}: {{Photo-realistic Dense SLAM}} with {{Gaussian Splatting}}},
   shorttitle = {Gaussian-{{SLAM}}},
@@ -678,7 +757,7 @@
   publisher = {arXiv},
   urldate = {2024-06-09},
   abstract = {We present a dense simultaneous localization and mapping (SLAM) method that uses 3D Gaussians as a scene representation. Our approach enables interactive-time reconstruction and photo-realistic rendering from real-world single-camera RGBD videos. To this end, we propose a novel effective strategy for seeding new Gaussians for newly explored areas and their effective online optimization that is independent of the scene size and thus scalable to larger scenes. This is achieved by organizing the scene into sub-maps which are independently optimized and do not need to be kept in memory. We further accomplish frame-to-model camera tracking by minimizing photometric and geometric losses between the input and rendered frames. The Gaussian representation allows for high-quality photo-realistic real-time rendering of real-world scenes. Evaluation on synthetic and real-world datasets demonstrates competitive or superior performance in mapping, tracking, and rendering compared to existing neural dense SLAM methods.},
-  archiveprefix = {arxiv},
+  archiveprefix = {arXiv},
   keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Robotics},
   file = {C\:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\attachments\\gs_spalt\\Yugay et al_2024_Gaussian-SLAM2.pdf;C\:\\Users\\18317\\Zotero\\storage\\9J38D593\\2312.html}
 }

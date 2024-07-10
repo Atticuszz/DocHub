@@ -34,7 +34,8 @@
       "name": "Epub"
     },
     {
-      "name": "Latex"
+      "name": "Latex",
+      "customArguments": "--pdf-engine=pdflatex --citeproc  --bibliography=C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\bibliography.bib  --csl=C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\ieee.csl"
     },
     {
       "name": "Media Wiki"
@@ -61,5 +62,5 @@
   },
   "showOverwriteConfirmation": true,
   "lastExportType": "Word (.docx)",
-  "lastEditName": "PDF"
+  "lastEditName": "Latex"
 }
