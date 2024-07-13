@@ -5,14 +5,15 @@
   "url-into-selection",
   "omnisearch",
   "obsidian-importer",
-  "obsidian-kanban",
   "obsidian-image-toolkit",
   "obsidian-git",
   "obsidian-excalidraw-plugin",
-  "obsidian-enhancing-export",
   "editing-toolbar",
   "oz-clear-unused-images",
   "obsidian-auto-link-title",
   "obsidian-annotator",
-  "table-editor-obsidian"
+  "obsidian-enhancing-export",
+  "obsidian-pandoc",
+  "obsidian-pandoc-reference-list",
+  "obsidian-linter"
 ]

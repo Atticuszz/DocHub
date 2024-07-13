@@ -65,15 +65,6 @@
       "key": "C"
     }
   ],
-  "obsidian-enhancing-export:obsidian-enhancing-export:export-with-previous": [
-    {
-      "modifiers": [
-        "Alt",
-        "Mod"
-      ],
-      "key": "P"
-    }
-  ],
   "obsidian-zotero-desktop-connector:zdc-exp-import annotations": [
     {
       "modifiers": [
@@ -99,6 +90,33 @@
         "Mod"
       ],
       "key": "C"
+    }
+  ],
+  "obsidian-pandoc:pandoc-export-pdf": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "P"
+    }
+  ],
+  "obsidian-pandoc:pandoc-export-latex": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "T"
+    }
+  ],
+  "obsidian-pandoc:pandoc-export-docx": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "W"
     }
   ]
 }

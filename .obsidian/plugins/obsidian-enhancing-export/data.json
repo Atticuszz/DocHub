@@ -17,12 +17,11 @@
     },
     {
       "name": "PDF",
-      "customArguments": "--pdf-engine=pdflatex --citeproc  --bibliography=C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\bibliography.bib  --csl=C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\ieee.csl",
-      "arguments": "-f ${fromFormat} --resource-path=\"${currentDir}\" --resource-path=\"${attachmentFolderPath}\"  ${ options.textemplate ? `--resource-path=\"${pluginDir}/textemplate\" --template=\"${options.textemplate}\"` : ` ` } -o \"${outputPath}\" -t pdf"
+      "customArguments": "--pdf-engine=xelatex --mathjax  --citeproc",
+      "openExportedFile": true
     },
     {
-      "name": "Word (.docx)",
-      "customArguments": "--citeproc  --bibliography=C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\bibliography.bib  --csl=C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\ieee.csl"
+      "name": "Word (.docx)"
     },
     {
       "name": "OpenOffice"
@@ -34,8 +33,7 @@
       "name": "Epub"
     },
     {
-      "name": "Latex",
-      "customArguments": "--pdf-engine=pdflatex --citeproc  --bibliography=C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\bibliography.bib  --csl=C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\ieee.csl"
+      "name": "Latex"
     },
     {
       "name": "Media Wiki"
@@ -53,14 +51,13 @@
       "name": "Bibliography"
     }
   ],
-  "defaultExportDirectoryMode": "Auto",
+  "defaultExportDirectoryMode": "Same",
   "openExportedFile": true,
   "env": {},
   "showExportProgressBar": true,
+  "lastEditName": "PDF",
   "lastExportDirectory": {
-    "win32": "C:\\Users\\18317\\OneDrive\\桌面"
+    "win32": "C:\\Users\\18317\\DevSpace\\DocHub/essay/texs"
   },
-  "showOverwriteConfirmation": true,
-  "lastExportType": "Word (.docx)",
-  "lastEditName": "Latex"
+  "lastExportType": "PDF"
 }

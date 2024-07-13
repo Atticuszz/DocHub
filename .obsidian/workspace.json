@@ -4,47 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "17a5d4b65e5a96ff",
+        "id": "56f04877aeb0f138",
         "type": "tabs",
         "children": [
           {
-            "id": "67d90be9a02c1e53",
+            "id": "b570d3ecafc29e35",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/basic/GICP.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f979334af0a9eaa4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "bc55de8073fc6d21",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/Arxiv.md",
+                "file": "essay/texs/ABGICP/ABGICP.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 214.5110321044922
+    "width": 284.5110321044922
   },
   "right": {
     "id": "47a7fb051f9573eb",
@@ -129,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/Arxiv.md",
+                "file": "essay/texs/ABGICP/ABGICP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/Arxiv.md",
+                "file": "essay/texs/ABGICP/ABGICP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +145,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/Arxiv.md"
+                "file": "essay/texs/ABGICP/ABGICP.md"
+              }
+            }
+          },
+          {
+            "id": "9bc84faad8aaa4a0",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "essay/texs/ABGICP/ABGICP.md"
               }
             }
           }
@@ -179,7 +164,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 391.5
+    "width": 360.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,49 +179,51 @@
       "oz-clear-unused-images:Clear Unused Images": false,
       "omnisearch:Omnisearch": false,
       "obsidian-importer:Open Importer": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "obsidian-kanban:Create new board": false
     }
   },
-  "active": "bc55de8073fc6d21",
+  "active": "b570d3ecafc29e35",
   "lastOpenFiles": [
-    "essay/zotero/attachments/gs_spalt/Fan et al_2024_InstantSplat.pdf",
-    "essay/ABGICP.md",
-    "essay/word/~$ABGICP.docx",
+    "essay/template/arxiv/ABGICP.md",
+    "essay/texs/ABGICP/ABGICP.pdf",
+    "essay/texs/ABGICP/ABGICP.md",
+    "essay/texs/ABGICP/template.tex",
+    "essay/texs/ABGICP/arxiv.sty",
+    "essay/texs/ABGICP",
+    "essay/template/arxiv/template.tex",
+    "essay/template/arxiv/arxiv.sty",
+    "essay/template/arxiv",
+    "essay/texs/ABGICP.pdf",
+    "essay/texs/GSplatLoc.md",
+    "essay/texs/ABGICP.tex",
+    "essay/texs/~$ABGICP.docx",
+    "essay/texs/Untitled.md",
     "essay/Arxiv.md",
-    "essay/GSplatLoc.md",
-    "docs/OS/Windows/Powersehll.md",
-    "essay/zotero/attachments/gs_spalt/Ravi et al_2020_Accelerating 3D Deep Learning with PyTorch3D.pdf",
-    "essay/zotero/attachments/gs_spalt/Lassner_Zollhofer_2021_Pulsar.pdf",
+    "essay/read-dairy.md",
+    "essay/zotero/zotero-import-templates.md",
+    "essay/zotero/notes/guptaNDT6DColor2023.md",
+    "essay/template/Pandoc-config.md",
+    "Untitled Kanban.md",
+    "assets/screenshot.png",
     "essay/basic/GICP.md",
+    "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
+    "essay/Untitled.md",
+    "docs/OS/Windows/Powersehll.md",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "essay/zotero/annotations/guptaNDT6DColor2023.md",
-    "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
     "essay/basic/Math.md",
     "docs/URLs.md",
     "conflict-files-obsidian-git.md",
     "essay/basic/3D.md",
     "docs/Untitled.md",
-    "essay/zotero/attachments/raw/Han et al_2024_A Point Cloud Registration Framework with Color Information Integration2.pdf",
-    "essay/zotero/attachments/raw/Yang et al_2020_Color point cloud registration based on supervoxel correspondence3.pdf",
-    "essay/zotero/attachments/raw/Ren et al_2021_Color Point Cloud Registration Algorithm Based on Hue3.pdf",
-    "essay/zotero/attachments/raw/Liu et al_2022_Genetic algorithm-based optimization for color point cloud registration.pdf",
-    "essay/zotero/attachments/raw/Yang et al_2020_Color point cloud registration based on supervoxel correspondence2.pdf",
-    "essay/zotero/attachments/raw/Ren et al_2021_Color point cloud registration algorithm based on hue2.pdf",
-    "essay/zotero/attachments/raw/Lyu et al_2024_Dynamic Downsampling Algorithm for 3D Point Cloud Map Based on Voxel Filtering2.pdf",
-    "essay/read-dairy.md",
     "essay/SCI.md",
     "essay/basic/image.md",
     "essay/basic/experiment.md",
     "docs/account.md",
     "README.md",
-    "essay/main.md",
-    "essay/Knowledge.md",
-    "docs/tools/IDE/plugin.md",
-    "docs/tools/IDE/JetBrains.md",
-    "docs/Language/C++/packages.md",
     "assets/Pasted image 20240524150219.png",
     "assets/Pasted image 20240420105746.png",
-    "docs/tools/pdf.md",
     "assets/Pasted image 20240521203441.png",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-13-x43-y370.png",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-14-x56-y502.png",
@@ -244,7 +231,6 @@
     "essay/zotero/attachments/raw/page-15.png",
     "essay/zotero/attachments/raw/page-14.png",
     "essay/zotero/attachments/raw/page-13.png",
-    "essay/zotero/attachments/raw/page-12.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
