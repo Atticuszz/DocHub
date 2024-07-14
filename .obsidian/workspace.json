@@ -13,9 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/texs/ABGICP/ABGICP.md",
+                "file": "essay/texs/GsplatLoc/mess notes.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "0bb35e4b725ed700",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "essay/texs/ABGICP/ABGICP.pdf"
               }
             }
           }
@@ -104,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/texs/ABGICP/ABGICP.md",
+                "file": "essay/texs/GsplatLoc/mess notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/texs/ABGICP/ABGICP.md",
+                "file": "essay/texs/GsplatLoc/mess notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/texs/ABGICP/ABGICP.md"
+                "file": "essay/texs/GsplatLoc/mess notes.md"
               }
             }
           },
@@ -155,7 +165,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "essay/texs/ABGICP/ABGICP.md"
+                "file": "essay/texs/GsplatLoc/mess notes.md"
               }
             }
           }
@@ -175,29 +185,33 @@
       "random-note:Open random note": false,
       "workspaces:Manage workspace layouts": false,
       "switcher:Open quick switcher": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "oz-clear-unused-images:Clear Unused Images": false,
       "omnisearch:Omnisearch": false,
       "obsidian-importer:Open Importer": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "obsidian-kanban:Create new board": false
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
   "active": "b570d3ecafc29e35",
   "lastOpenFiles": [
-    "essay/template/arxiv/ABGICP.md",
-    "essay/texs/ABGICP/ABGICP.pdf",
+    "essay/texs/GsplatLoc/main.md",
+    "essay/texs/GsplatLoc/main.tex",
+    "essay/texs/GsplatLoc/mess notes.md",
+    "essay/texs/GsplatLoc/main.pdf",
+    "essay/texs/GSplatLoc.md",
+    "essay/texs/GSplatLoc.pdf",
     "essay/texs/ABGICP/ABGICP.md",
+    "essay/template/arxiv/main.md",
+    "essay/template/arxiv/ABGICP.md",
+    "essay/texs/GsplatLoc/template.tex",
+    "essay/texs/GsplatLoc/arxiv.sty",
+    "essay/texs/GsplatLoc",
+    "essay/texs/ABGICP/ABGICP.pdf",
+    "essay/basic/Math.md",
+    "essay/basic/3D.md",
+    "essay/basic/experiment.md",
     "essay/texs/ABGICP/template.tex",
     "essay/texs/ABGICP/arxiv.sty",
     "essay/texs/ABGICP",
-    "essay/template/arxiv/template.tex",
-    "essay/template/arxiv/arxiv.sty",
-    "essay/template/arxiv",
-    "essay/texs/ABGICP.pdf",
-    "essay/texs/GSplatLoc.md",
-    "essay/texs/ABGICP.tex",
-    "essay/texs/~$ABGICP.docx",
     "essay/texs/Untitled.md",
     "essay/Arxiv.md",
     "essay/read-dairy.md",
@@ -212,16 +226,9 @@
     "docs/OS/Windows/Powersehll.md",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "essay/zotero/annotations/guptaNDT6DColor2023.md",
-    "essay/basic/Math.md",
     "docs/URLs.md",
     "conflict-files-obsidian-git.md",
-    "essay/basic/3D.md",
     "docs/Untitled.md",
-    "essay/SCI.md",
-    "essay/basic/image.md",
-    "essay/basic/experiment.md",
-    "docs/account.md",
-    "README.md",
     "assets/Pasted image 20240524150219.png",
     "assets/Pasted image 20240420105746.png",
     "assets/Pasted image 20240521203441.png",

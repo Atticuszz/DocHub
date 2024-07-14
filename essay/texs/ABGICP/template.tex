@@ -2,7 +2,7 @@
 \usepackage{arxiv} % 特定于arxiv的样式包，用于格式设置
 % packages
 \usepackage[utf8]{inputenc} % 允许utf-8输入
-\usepackage[T1]{fontenc}    % 使用8位T1字体
+\usepackage{fontspec}
 \usepackage{url}            % 用于类型设置URL
 \usepackage{booktabs}       % 创建专业质量的表格
 \usepackage{amsfonts}       % 黑板数学符号
@@ -11,16 +11,21 @@
 \usepackage{lipsum}         % 生成填充文本
 \usepackage{graphicx}       % 图形包
 \usepackage{doi}            % 处理DOI
-\usepackage{titlesec} % 调整节标题的间距和格式
+\usepackage{titlesec}       % 调整节标题的间距和格式
 \usepackage{setspace}
 \usepackage[backend=biber, style=ieee, natbib=true]{biblatex} % 使用biblatex处理参考文献，指定使用biber作为后端和IEEE样式
 \usepackage{xcolor}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial} % 设置无衬线字体
+\setmonofont{Courier New} % 设置等宽字体
+
 % 配置链接颜色
 \definecolor{authorcolor}{HTML}{800080} % 淡紫色
 \definecolor{linkcolor}{HTML}{A6CE39}   % 绿色
 
 % 标题设置
-\title{\textit{$first-title-word$} $title-rest$}
+\title{\large\bfseries\textit{$first-title-word$} $title-rest$}
 
 % 作者设置
 \author{
@@ -39,8 +44,7 @@
 }
 
 
-
-% csl for pandoc --citeproc https://github.com/Zettlr/Zettlr/issues/4879
+% % csl for pandoc --citeproc https://github.com/Zettlr/Zettlr/issues/4879
 $if(csl-refs)$
 % definitions for citeproc citations
 \NewDocumentCommand\citeproctext{}{}
@@ -77,6 +81,7 @@ $if(csl-refs)$
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 $endif$
 
+% link 
 
 
 % main
@@ -91,9 +96,7 @@ $endif$
   \vspace{1cm}
 \end{@twocolumnfalse}
 ]
+
 $body$
-
-\printbibliography[title={References}]
-
 
 \end{document}
