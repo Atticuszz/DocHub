@@ -16,3 +16,18 @@ Abstract. We present a dense simultaneous localization and mapping (SLAM) method
 
 
 
+localization for Dense simultaneous localization and mapping (SLAM)中的定位方法部分
+
+
+### Experements
+
+```GPT
+分析阐述定位方式是什么？定位方式依赖的场景表示是什么？重点解析定位方式的原理和公式，要有分析和对应的公式，公式均用$$风格,公式必须用$$包裹而不是/(这种，我要适配obsidian我的笔记，主要用论文中的公式来解释，你自己也可以加一些数学描述，要指明数学公式是论文中还是你自己写的
+```
+
+```GPT
+公式均用$$风格，展示关于定位部分的评估标准注意是定位部分，不需要展示重建质量的评估指标，用了哪些及实验数据展示，公式必须用$$包裹而不是/(这种，我要适配obsidian我的笔记,实验数据表格要给全，也要标注是哪个数据集的实验数据表格,每个数据集的表格数据都需要有
+```
+RMSE
+
+Standard Deviation

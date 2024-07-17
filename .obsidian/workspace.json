@@ -20,16 +20,103 @@
             }
           },
           {
-            "id": "0bb35e4b725ed700",
+            "id": "b03d43d60c06d142",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "essay/texs/ABGICP/ABGICP.pdf"
+                "file": "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "67c006353a9e2d54",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "essay/texs/GsplatLoc/mess notes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "189b3ccfef6f9826",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4bff5d339ebcca54",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "384305fe05b4b6f2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "essay/zotero/annotations/sunMM3DGSSLAMMultimodal2024.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7486e7e55e0d1f2f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a13b86062ee6c0e8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "749c1c68c4f010ab",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "essay/zotero/annotations/haRGBDGSICPSLAM2024.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -191,44 +278,46 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b570d3ecafc29e35",
+  "active": "67c006353a9e2d54",
   "lastOpenFiles": [
     "essay/texs/GsplatLoc/main.md",
-    "essay/texs/GsplatLoc/main.tex",
+    "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
+    "essay/zotero/annotations/huangPhotoSLAMRealtimeSimultaneous2024.md",
+    "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
+    "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
+    "essay/zotero/annotations/haRGBDGSICPSLAM2024.md",
+    "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
+    "essay/zotero/annotations/sunMM3DGSSLAMMultimodal2024.md",
+    "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
+    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
+    "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
     "essay/texs/GsplatLoc/mess notes.md",
-    "essay/texs/GsplatLoc/main.pdf",
+    "essay/zotero/annotations/guptaNDT6DColor2023.md",
+    "assets/huangPhotoSLAMRealtimeSimultaneous2024/huangPhotoSLAMRealtimeSimultaneous2024-5-x457-y204.png",
+    "assets/huangPhotoSLAMRealtimeSimultaneous2024",
+    "essay/texs/GsplatLoc/mess notes.pdf",
+    "essay/zotero/notes/{{citekey}}.md/huangPhotoSLAMRealtimeSimultaneous2024.md",
+    "essay/zotero/notes/{{citekey}}.md",
+    "essay/zotero/attachments/gs_spalt/Matsuki et al_2024_Gaussian splatting slam2.pdf",
+    "essay/zotero/attachments/gs_spalt/Matsuki et al_2024_Gaussian splatting slam.pdf",
+    "essay/zotero/attachments/gs_spalt/Yu et al_2024_Gaussian Opacity Fields2.pdf",
+    "essay/zotero/attachments/gs_spalt/Yu et al_2024_Gaussian Opacity Fields.pdf",
+    "essay/zotero/attachments/gs_spalt/Liu et al_2024_MVSGaussian2.pdf",
+    "essay/zotero/attachments/gs_spalt/Liu et al_2024_MVSGaussian.pdf",
+    "essay/zotero/attachments/gs_spalt/Hu et al_2024_CG-SLAM3.pdf",
+    "essay/zotero/attachments/gs_spalt/Hu et al_2024_CG-SLAM2.pdf",
     "essay/texs/GSplatLoc.md",
-    "essay/texs/GSplatLoc.pdf",
     "essay/texs/ABGICP/ABGICP.md",
     "essay/template/arxiv/main.md",
     "essay/template/arxiv/ABGICP.md",
-    "essay/texs/GsplatLoc/template.tex",
-    "essay/texs/GsplatLoc/arxiv.sty",
-    "essay/texs/GsplatLoc",
-    "essay/texs/ABGICP/ABGICP.pdf",
     "essay/basic/Math.md",
     "essay/basic/3D.md",
     "essay/basic/experiment.md",
-    "essay/texs/ABGICP/template.tex",
-    "essay/texs/ABGICP/arxiv.sty",
-    "essay/texs/ABGICP",
     "essay/texs/Untitled.md",
     "essay/Arxiv.md",
     "essay/read-dairy.md",
     "essay/zotero/zotero-import-templates.md",
-    "essay/zotero/notes/guptaNDT6DColor2023.md",
-    "essay/template/Pandoc-config.md",
-    "Untitled Kanban.md",
     "assets/screenshot.png",
-    "essay/basic/GICP.md",
-    "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
-    "essay/Untitled.md",
-    "docs/OS/Windows/Powersehll.md",
-    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
-    "essay/zotero/annotations/guptaNDT6DColor2023.md",
-    "docs/URLs.md",
-    "conflict-files-obsidian-git.md",
-    "docs/Untitled.md",
     "assets/Pasted image 20240524150219.png",
     "assets/Pasted image 20240420105746.png",
     "assets/Pasted image 20240521203441.png",
@@ -237,7 +326,6 @@
     "essay/zotero/attachments/raw/page-01.png",
     "essay/zotero/attachments/raw/page-15.png",
     "essay/zotero/attachments/raw/page-14.png",
-    "essay/zotero/attachments/raw/page-13.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
