@@ -38,7 +38,7 @@ L_{\text{tracking}} = \mathbb{1}_{O(G,T_C)} \left( L_{\text{photo}} + \lambda_D 
 $$
 
 其中，
-- \( \mathbb{1}_{O(G,T_C)} \) 是指示函数，定义为：
+- $\mathbb{1}_{O(G,T_C)}$ 是指示函数，定义为：
 
 $$
 \mathbb{1}_{O(G,T_C)} =
