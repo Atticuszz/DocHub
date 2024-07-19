@@ -125,8 +125,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -211,7 +210,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md",
+                "file": "essay/texs/GsplatLoc/main.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -228,7 +227,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md",
+                "file": "essay/texs/GsplatLoc/main.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -252,7 +251,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md"
+                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           },
@@ -262,7 +261,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md"
+                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           }
@@ -288,10 +287,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "21942943f6ffac1a",
+  "active": "b570d3ecafc29e35",
   "lastOpenFiles": [
-    "essay/texs/GsplatLoc/main.pdf",
     "essay/texs/GsplatLoc/main.md",
+    "essay/texs/GsplatLoc/main.pdf",
     "essay/texs/GsplatLoc/mess notes.md",
     "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
     "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
