@@ -11,11 +11,9 @@
             "id": "b570d3ecafc29e35",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md",
-                "mode": "source",
-                "source": false
+                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           },
@@ -25,7 +23,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md",
+                "file": "essay/texs/GsplatLoc/mess notes.md",
                 "mode": "source",
                 "source": false
               }
@@ -37,7 +35,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
+                "file": "essay/texs/GsplatLoc/main.md",
                 "mode": "source",
                 "source": false
               }
@@ -127,7 +125,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -212,7 +211,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md",
+                "file": "essay/texs/GsplatLoc/main.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -229,7 +228,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md",
+                "file": "essay/texs/GsplatLoc/main.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -253,7 +252,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md"
+                "file": "essay/texs/GsplatLoc/main.md"
               }
             }
           },
@@ -263,7 +262,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md"
+                "file": "essay/texs/GsplatLoc/main.md"
               }
             }
           }
@@ -289,18 +288,19 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b570d3ecafc29e35",
+  "active": "21942943f6ffac1a",
   "lastOpenFiles": [
-    "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
+    "essay/texs/GsplatLoc/main.pdf",
+    "essay/texs/GsplatLoc/main.md",
     "essay/texs/GsplatLoc/mess notes.md",
+    "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
+    "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
     "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
     "essay/zotero/annotations/sunMM3DGSSLAMMultimodal2024.md",
     "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
+    "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
     "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
     "essay/zotero/annotations/huangPhotoSLAMRealtimeSimultaneous2024.md",
-    "essay/texs/GsplatLoc/main.md",
-    "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
-    "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
     "essay/zotero/annotations/haRGBDGSICPSLAM2024.md",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "essay/zotero/annotations/guptaNDT6DColor2023.md",
@@ -316,7 +316,6 @@
     "essay/zotero/attachments/gs_spalt/Liu et al_2024_MVSGaussian2.pdf",
     "essay/zotero/attachments/gs_spalt/Liu et al_2024_MVSGaussian.pdf",
     "essay/zotero/attachments/gs_spalt/Hu et al_2024_CG-SLAM3.pdf",
-    "essay/zotero/attachments/gs_spalt/Hu et al_2024_CG-SLAM2.pdf",
     "essay/texs/GSplatLoc.md",
     "essay/texs/ABGICP/ABGICP.md",
     "essay/template/arxiv/main.md",
@@ -327,7 +326,6 @@
     "essay/texs/Untitled.md",
     "essay/Arxiv.md",
     "essay/read-dairy.md",
-    "essay/zotero/zotero-import-templates.md",
     "assets/screenshot.png",
     "assets/Pasted image 20240524150219.png",
     "assets/Pasted image 20240420105746.png",
