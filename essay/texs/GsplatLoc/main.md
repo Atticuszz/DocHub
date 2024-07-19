@@ -29,12 +29,12 @@ We present GSplatLoc, an innovative pose estimation method for RGB-D cameras tha
 
 # Method
 
-
+Depth-only Gaussian splatting is a highly effective method for modeling 3D scenes and producing depth maps. In our methodology, we initiate 3D Gaussians from a dense point cloud acquired via a RGB-D camera.
 
 ## Gaussian Splatting
 
 
-Depth-only Gaussian splatting is a highly effective method for modeling 3D scenes and producing depth maps. In our methodology, we initiate 3D Gaussians from a dense point cloud acquired via a RGB-D camera. Let $\mathcal{G} = \{G_i\}_{i=1}^N$ be a set of $N$ 3D Gaussians, where each Gaussian $G_i$  is defined as follows:
+ Let $\mathcal{G} = \{G_i\}_{i=1}^N$ be a set of $N$ 3D Gaussians, where each Gaussian $G_i$  is defined as follows:
 
 $$
 G_i = (\boldsymbol{\mu}_i, \boldsymbol{\Sigma}_i, o_i)
