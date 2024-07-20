@@ -125,7 +125,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -210,7 +211,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf",
+                "file": "essay/texs/GsplatLoc/mess notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -227,7 +228,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf",
+                "file": "essay/texs/GsplatLoc/mess notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -251,7 +252,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf"
+                "file": "essay/texs/GsplatLoc/mess notes.md"
               }
             }
           },
@@ -261,7 +262,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf"
+                "file": "essay/texs/GsplatLoc/mess notes.md"
               }
             }
           }
@@ -287,11 +288,14 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b570d3ecafc29e35",
+  "active": "bb0730548a89f865",
   "lastOpenFiles": [
     "essay/texs/GsplatLoc/main.md",
     "essay/texs/GsplatLoc/main.pdf",
     "essay/texs/GsplatLoc/mess notes.md",
+    "essay/zotero/attachments/gs_spalt/method/Zwicker et al_2002_EWA splatting.pdf",
+    "essay/zotero/attachments/gs_spalt/method",
+    "essay/zotero/attachments/gs_spalt/Zwicker et al_2002_EWA splatting.pdf",
     "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
     "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
     "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
@@ -312,9 +316,6 @@
     "essay/zotero/attachments/gs_spalt/Matsuki et al_2024_Gaussian splatting slam.pdf",
     "essay/zotero/attachments/gs_spalt/Yu et al_2024_Gaussian Opacity Fields2.pdf",
     "essay/zotero/attachments/gs_spalt/Yu et al_2024_Gaussian Opacity Fields.pdf",
-    "essay/zotero/attachments/gs_spalt/Liu et al_2024_MVSGaussian2.pdf",
-    "essay/zotero/attachments/gs_spalt/Liu et al_2024_MVSGaussian.pdf",
-    "essay/zotero/attachments/gs_spalt/Hu et al_2024_CG-SLAM3.pdf",
     "essay/texs/GSplatLoc.md",
     "essay/texs/ABGICP/ABGICP.md",
     "essay/template/arxiv/main.md",

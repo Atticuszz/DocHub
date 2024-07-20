@@ -31,43 +31,62 @@ We present GSplatLoc, an innovative pose estimation method for RGB-D cameras tha
 
 Depth-only Gaussian splatting is a highly effective method for modeling 3D scenes and producing depth maps. In our methodology, we initiate 3D Gaussians from a dense point cloud acquired via a RGB-D camera.
 
+
 ## Gaussian Splatting
 
 
- Let $\mathcal{G} = \{G_i\}_{i=1}^N$ be a set of $N$ 3D Gaussians, where each Gaussian $G_i$  is defined as follows:
+
+
+Let $\mathcal{G} = \{G_i\}_{i=1}^N$ denote a set of $N$ 3D Gaussians, where each Gaussian $G_i$ is parameterized as:
 
 $$
 G_i = (\boldsymbol{\mu}_i, \boldsymbol{\Sigma}_i, o_i)
 $$
 
-where $\boldsymbol{\mu}_i \in \mathbb{R}^3$ is the 3D mean, $\boldsymbol{\Sigma}_i \in \mathbb{R}^{3\times3}$ denotes the 3D covariance matrix, and $o_i \in \mathbb{R}$ signifies the opacity. Initially, we uniformly set $o_i = 1$ for all Gaussians  to ensure they are fully opaque.
+Here, $\boldsymbol{\mu}_i \in \mathbb{R}^3$ represents the 3D mean, $\boldsymbol{\Sigma}_i \in \mathbb{R}^{3\times3}$ is the 3D covariance matrix, and $o_i \in \mathbb{R}$ denotes the opacity. Initially, we set $o_i = 1$ for all Gaussians to ensure full opacity.
 
-The projection of a 3D Gaussian onto the 2D image plane is computed as:
-$$\mu_I = \pi(P(T_{wc} \mu_{\text{homogeneous}}))$$
-where $T_{wc} \in SE(3)$ denotes the world-to-camera transformation, $P \in \mathbb{R}^{4 \times 4}$ represents the projection matrix, and $\pi: \mathbb{R}^4 \rightarrow \mathbb{R}^2$ maps to pixel coordinates.
+The projection of a 3D Gaussian onto the 2D image plane is computed through a series of transformations:
 
-The 2D covariance $\Sigma_I$ of a projected Gaussian is given by:
-$$\Sigma_I = J R_{wc} \Sigma R_{wc}^T J^T$$
-where $R_{wc}$ is the rotation component of $T_{wc}$, and $J$ denotes the Jacobian of the projection.
+$$\boldsymbol{\mu}_I = \pi(P(T_{wc} \boldsymbol{\mu}_{\text{homogeneous}}))$$
 
-To generate the depth map, we employ a front-to-back compositing strategy. For each pixel $p$, its depth value $d_p$ is computed as:
-$$d_p = \sum_i w_i z_i$$
-where $z_i$ represents the depth of the $i$-th Gaussian's mean, and $w_i$ is the weight derived from the 2D Gaussian distribution:
-$$w_i = \exp\left(-\frac{1}{2}(x_p - \mu_{I,i})^T \Sigma_{I,i}^{-1} (x_p - \mu_{I,i})\right)$$
-Here, $x_p$ is the 2D coordinate of pixel $p$, $\mu_{I,i}$ and $\Sigma_{I,i}$ denote the projected mean and covariance of the $i$-th Gaussian.
+where $T_{wc} \in SE(3)$ represents the world-to-camera transformation, $P \in \mathbb{R}^{4 \times 4}$ is the projection matrix, and $\pi: \mathbb{R}^4 \rightarrow \mathbb{R}^2$ maps to pixel coordinates.
 
-This approach enables efficient depth map generation by leveraging the dense point cloud captured by the depth camera, without requiring colour information.
+The 2D covariance $\boldsymbol{\Sigma}_I \in \mathbb{R}^{2\times2}$ of a projected Gaussian is derived as:
 
-## Depth Reprojection 
+$$\boldsymbol{\Sigma}_I = J R_{wc} \boldsymbol{\Sigma} R_{wc}^T J^T$$
+
+where $R_{wc}$ represents the rotation component of $T_{wc}$, and $J$ is the affine transform as described in [@zwickerEWASplatting2002].
+
+## Depth Compositing
 
 
-Depth at a pixel $i$ is represented by combining contributions from multiple Gaussian elements, each associated with a certain depth and confidence. Depth $D_i$ can be expressed as[@kerbl3dGaussianSplatting2023]:
-$$ 
-D_i = \frac{\sum_{n \leq N} d_n \cdot c_n \cdot \alpha_n \cdot T_n}{\sum_{n \leq N} c_n \cdot \alpha_n \cdot T_n} 
+For depth map generation, we employ a front-to-back compositing scheme. This approach allows for accurate depth estimation and edge alignment. Let $d_n$ represent the depth value associated with the $n$-th Gaussian, which is the z-coordinate of the Gaussian's mean in the camera coordinate system. The depth $D(p)$ at pixel $p$ is then computed as:
+
 $$
-$d_n$ is the depth value from the $n$-th Gaussian, $c_n$ is the confidence or weight of the $n$-th Gaussian,$\alpha_n$ is the opacity calculated from Gaussian parameters, $T_n$ is the product of transparencies from all Gaussians in front of the $n$-th Gaussian.
+D(p) = \sum_{n \leq N} d_n \cdot \alpha_n \cdot T_n, \quad \text{where } T_n = \prod_{m<n} (1 - \alpha_m)
+$$
 
-The reprojection method utilizes the alignment of 2D Gaussian projections with observed depth data from an RGB-D camera. This involves adjusting the parameters of the Gaussians to minimize the discrepancy between the projected depth and the observed depth. The offset $\Delta_n$ and the covariance matrix $\Sigma'$ are crucial for calculating the Gaussian weights $\alpha_n$ and their impact on reprojection accuracy.
+In this equation, $\alpha_n$ represents the opacity of the $n$-th Gaussian at pixel $p$, which is computed as:
+
+$$
+\alpha_n = o_n \cdot \exp(-\sigma_n), \quad \sigma_n = \frac{1}{2} \Delta_n^T \boldsymbol{\Sigma}_I^{-1} \Delta_n
+$$
+
+where $\Delta_n$ is the offset between the pixel center and the 2D Gaussian center $\boldsymbol{\mu}_I$, and $o_n$ is the opacity parameter of the Gaussian. $T_n$ denotes the cumulative transparency product of all Gaussians preceding $n$, accounting for the occlusion effects of previous Gaussians.
+
+To normalize the depth values and ensure consistent representation across the image, we first calculate the total accumulated opacity $\alpha(p)$ for each pixel:
+
+$$
+\alpha(p) = \sum_{n \leq N} \alpha_n \cdot T_n
+$$
+
+The normalized depth $\text{Norm}_D(p)$ is then defined as:
+
+$$
+\text{Norm}_D(p) = \frac{D(p)}{\alpha(p)}
+$$
+
+This normalization process ensures that the depth values are properly scaled and comparable across different regions of the image, regardless of the varying densities of Gaussians in the scene.
 
 
 ## Camera Tracking

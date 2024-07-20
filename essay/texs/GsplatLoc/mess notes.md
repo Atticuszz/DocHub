@@ -30,6 +30,19 @@ We present GSplatLoc, an innovative pose estimation method for RGB-D cameras tha
 [@matsukiGaussianSplattingSlam2024]优化目标函数结合了光度残差和几何残差,
 # Methods
 
+
+深度生成
+[gsplat/gsplat/rendering.py at main · nerfstudio-project/gsplat · GitHub](https://github.com/nerfstudio-project/gsplat/blob/main/gsplat/rendering.py)
+```python
+if render_mode in ["ED", "RGB+ED"]: 
+	# normalize the accumulated depth to get the expected depth 
+	render_colors = torch.cat( [ render_colors[..., :-1],
+								render_colors[..., -1:] / render_alphas.clamp(min=1e-10), ], dim=-1, 
+							)
+```
+我是用的是ED方式，也就是说，
+
+
 ## Normalization
 
 ## Gaussian Splatting
@@ -194,188 +207,56 @@ class GSModel(nn.Module):
 In the context of depth projection and rasterization for Gaussian splatting, the process involves several mathematical transformations to project 3D Gaussians onto a 2D image plane. Here’s a detailed explanation of the implementation based on the provided code and mathematical principles:
 
 1. **Camera Transformations**:
-    - **Extrinsics \(T_{cw}\)**: This matrix transforms points from the world coordinate space to the camera coordinate space. It is defined as:
+    - **Extrinsics $T_{cw}$**: This matrix transforms points from the world coordinate space to the camera coordinate space. It is defined as:
       $$
       T_{cw} = \begin{bmatrix} R_{cw} & t_{cw} \\ 0 & 1 \end{bmatrix} \in SE(3)
       $$
-      where \( R_{cw} \) is the rotation matrix, and \( t_{cw} \) is the translation vector.
+      where $R_{cw}$ is the rotation matrix, and $t_{cw}$ is the translation vector.
 
-    - **Projection Matrix \(P\)**: This matrix transforms points from camera space to normalized device coordinates (ND). It is defined as:
+    - **Projection Matrix $P$**: This matrix transforms points from camera space to normalized device coordinates (ND). It is defined as:
       $$
       P = \begin{bmatrix} \frac{2f_x}{w} & 0 & 0 & 0 \\ 0 & \frac{2f_y}{h} & 0 & 0 \\ 0 & 0 & \frac{f+n}{f-n} & -\frac{2fn}{f-n} \\ 0 & 0 & 1 & 0 \end{bmatrix}
       $$
-      where \( w \) and \( h \) are the width and height of the output image, and \( n \) and \( f \) are the near and far clipping planes.
+      where $w$ and $h$ are the width and height of the output image, and $n$ and $f$ are the near and far clipping planes.
 
 2. **Projection of 3D Gaussians**:
-    - The 3D mean \( \mu \) of the Gaussian is projected into pixel space:
+    - The 3D mean $\mu$ of the Gaussian is projected into pixel space:
       $$
       t = T_{cw} \begin{bmatrix} \mu \\ 1 \end{bmatrix}, \quad t' = P t, \quad \mu' = \begin{bmatrix} \frac{w \cdot t'_x / t'_w + 1}{2} + c_x \\ \frac{h \cdot t'_y / t'_w + 1}{2} + c_y \end{bmatrix}
       $$
 
 3. **Covariance Transformation**:
-    - The 3D Gaussian covariance \( \Sigma \) is approximated in the 2D pixel space using the Jacobian \( J \):
+    - The 3D Gaussian covariance $\Sigma$ is approximated in the 2D pixel space using the Jacobian $J$:
       $$
       J = \begin{bmatrix} \frac{f_x}{t_z} & 0 & -\frac{f_x t_x}{t_z^2} \\ 0 & \frac{f_y}{t_z} & -\frac{f_y t_y}{t_z^2} \end{bmatrix}
       $$
-      The 2D covariance \( \Sigma' \) is then:
+      The 2D covariance $\Sigma'$ is then:
       $$
       \Sigma' = J R_{cw} \Sigma R_{cw}^T J^T
       $$
 
 4. **Depth Compositing**:
-    - Gaussians are sorted by depth and composited from front to back. The color \( C_i \) at pixel \( i \) is computed as:
+    - Gaussians are sorted by depth and composited from front to back. The colour $C_i$ at pixel $i$ is computed as:
       $$
       C_i = \sum_{n \leq N} c_n \cdot \alpha_n \cdot T_n, \quad T_n = \prod_{m<n} (1 - \alpha_m)
       $$
-    - The opacity \( \alpha \) is computed as:
+    - The opacity $\alpha$ is computed as:
       $$
       \alpha_n = o_n \cdot \exp(-\sigma_n), \quad \sigma_n = \frac{1}{2} \Delta_n^T \Sigma'^{-1} \Delta_n
       $$
-      where \( \Delta \) is the offset between the pixel center and the 2D Gaussian center \( \mu' \).
+      where $\Delta$ is the offset between the pixel center and the 2D Gaussian center $\mu'$.
 
 #### Gaussian Model Explanation
 The Gaussian model in the provided code involves several parameters and transformations:
 
 1. **3D Means and Covariance**:
-    - The 3D means (\( \mu \)) are derived from the point cloud data.
-    - The 3D covariance (\( \Sigma \)) is parameterized by scale (\( s \)) and rotation quaternion (\( q \)). The covariance is computed as:
+    - The 3D means ($\mu$) are derived from the point cloud data.
+    - The 3D covariance ($\Sigma$) is parameterized by scale ($s$) and rotation quaternion ($q$). The covariance is computed as:
       $$
       \Sigma = R S S^T R^T, \quad R = \text{rotation matrix from quaternion } q, \quad S = \text{diag}(s)
       $$
 
-2. **Color and Opacity Parameters**:
-    - The colors are initially given by the RGB values and transformed into spherical harmonics (SH) coefficients.
-    - Opacity is modeled using a logit transformation initialized to a certain value.
 
-3. **Forward Pass**:
-    - In the forward pass, the points, scales, opacities, and colors are used to render the Gaussians. The rendering involves projecting the 3D Gaussians into the 2D image plane and compositing them based on depth.
-
-4. **Optimization Parameters**:
-    - The learning rates for different parameters like scales, opacities, and colors are defined for the optimizer setup.
-
-#### Depth-Only Gaussian Modeling
-For a depth-only Gaussian model (without color information), the implementation simplifies:
-
-1. **Opacity Initialization**:
-    - The opacity is set to 1, indicating fully opaque Gaussians.
-
-2. **Color Information**:
-    - The color-related parameters and transformations can be ignored or removed. This focuses solely on the depth information during rasterization.
-
-3. **Mathematical Definition**:
-    - The depth-only Gaussian is defined by its 3D mean (\( \mu \)), 3D covariance (\( \Sigma \)), and opacity (\( o \)).
-
-#### Summary
-The depth projection and rasterization process involves transforming the 3D Gaussians into 2D space using camera extrinsics and intrinsics, approximating the 2D covariance from the 3D covariance, and compositing the Gaussians based on depth to form the final image. The Gaussian model is parameterized by its mean, covariance, and opacity, with color information optionally included. For depth-only modeling, the focus is on the opacity and 3D covariance to represent the depth accurately.
-
-Here's a revised academic version of your method section, focusing on the model definition and depth generation process:
-
-
-## Modeling
-We propose a depth-only Gaussian splatting model for efficient 3D scene representation and depth map generation. Our model is defined as follows[@yeMathematicalSupplementTexttt2023]:
-
-Let $\mathcal{G} = \{G_i\}_{i=1}^N$ be a set of $N$ 3D Gaussians, where each Gaussian $G_i$ is parameterized by:
-
-$$
-G_i = (\boldsymbol{\mu}_i, \boldsymbol{\Sigma}_i, o_i)
-$$
-
-where $\boldsymbol{\mu}_i \in \mathbb{R}^3$ is the 3D mean, $\boldsymbol{\Sigma}_i \in \mathbb{R}^{3\times3}$ is the 3D covariance matrix, and $o_i \in \mathbb{R}$ is the opacity. Initially, we set $o_i = 1$ for all Gaussians, indicating fully opaque Gaussians.
-
-The 3D covariance $\boldsymbol{\Sigma}_i$ is parameterized by scale $\mathbf{s}_i \in \mathbb{R}^3$ and rotation quaternion $\mathbf{q}_i \in \mathbb{R}^4$:
-
-$$
-\boldsymbol{\Sigma}_i = \mathbf{R}_i \mathbf{S}_i \mathbf{S}_i^T \mathbf{R}_i^T
-$$
-
-where $\mathbf{R}_i$ is the rotation matrix derived from $\mathbf{q}_i$, and $\mathbf{S}_i = \text{diag}(\exp(\mathbf{s}_i))$ is a diagonal scaling matrix.
-
-To project the 3D Gaussians onto the 2D image plane, we use the following transformation:
-
-$$
-\boldsymbol{\mu}'_i = \pi(\mathbf{P}\mathbf{T}_{cw}\tilde{\boldsymbol{\mu}}_i)
-$$
-
-where $\mathbf{T}_{cw} \in SE(3)$ is the camera-to-world transformation matrix, $\mathbf{P} \in \mathbb{R}^{4\times4}$ is the projection matrix, $\tilde{\boldsymbol{\mu}}_i$ is the homogeneous coordinate of $\boldsymbol{\mu}_i$, and $\pi: \mathbb{R}^4 \rightarrow \mathbb{R}^2$ is the perspective division and viewport transformation.
-
-The 2D covariance $\boldsymbol{\Sigma}'_i$ of the projected Gaussian is approximated as:
-
-$$
-\boldsymbol{\Sigma}'_i = \mathbf{J}\mathbf{R}_{cw}\boldsymbol{\Sigma}_i\mathbf{R}_{cw}^T\mathbf{J}^T
-$$
-
-where $\mathbf{R}_{cw}$ is the rotation component of $\mathbf{T}_{cw}$, and $\mathbf{J}$ is the Jacobian of the projection:
-
-$$
-\mathbf{J} = \begin{bmatrix}
-\frac{f_x}{t_z} & 0 & -\frac{f_x t_x}{t_z^2} \\
-0 & \frac{f_y}{t_z} & -\frac{f_y t_y}{t_z^2}
-\end{bmatrix}
-$$
-
-with $f_x, f_y$ being the focal lengths and $(t_x, t_y, t_z)$ the translation component of $\mathbf{T}_{cw}$.
-
-To generate the depth map, we employ a front-to-back compositing scheme. For each pixel $p$, we compute its depth value $d_p$ as:
-
-$$
-d_p = \sum_{i=1}^N w_i z_i
-$$
-
-where $z_i$ is the depth of the $i$-th Gaussian's mean, and $w_i$ is the weight computed as:
-
-$$
-w_i = o_i \exp(-\frac{1}{2}(\mathbf{x}_p - \boldsymbol{\mu}'_i)^T (\boldsymbol{\Sigma}'_i)^{-1} (\mathbf{x}_p - \boldsymbol{\mu}'_i))
-$$
-
-Here, $\mathbf{x}_p$ is the 2D coordinate of pixel $p$.
-
-This depth-only Gaussian splatting model allows for efficient representation of 3D scenes and generation of depth maps without the need for color information. The model parameters are optimized using gradient descent to minimize the difference between the generated depth maps and ground truth depth measurements.
-
-
-Depth-only Gaussian splatting is an efficient method for representing 3D scenes and generating depth maps. In our approach, we initialize 3D Gaussians from a dense point cloud of the scene, captured by a depth camera.
-
-Each 3D Gaussian is parameterized as follows:
-
-$$G = (\mu, \Sigma, o)$$
-
-where $\mu \in \mathbb{R}^3$ is the mean, $\Sigma \in \mathbb{R}^{3 \times 3}$ is the covariance matrix, and $o = 1$ is the opacity, set to 1 for all Gaussians to make them fully opaque.
-
-The projection of a 3D Gaussian onto the 2D image plane is computed as:
-
-$$\mu_I = \pi(P(T_{wc}\mu_{homogeneous}))$$
-
-where $T_{wc} \in SE(3)$is the world-to-camera transformation, $P \in \mathbb{R}^{4 \times 4}$ is the projection matrix, and $\pi: \mathbb{R}^4 \rightarrow \mathbb{R}^2$ is the projection to pixel coordinates.
-
-The 2D covariance $\Sigma_I$ of a projected Gaussian is:
-
-$$\Sigma_I = JR_{wc}\Sigma R_{wc}^T J^T$$
-
-where $R_{wc}$ is the rotation component of $T_{wc}$, and $J$ is the Jacobian of the projection.
-
-To generate the depth map, we use a front-to-back compositing scheme. For each pixel $p$, we compute its depth value $d_p$ as:
-
-$$d_p = \sum_i w_i z_i$$
-
-where $z_i$ is the depth of the $i$-th Gaussian's mean, and $w_i$ is the weight computed based on the 2D Gaussian distribution:
-
-$$w_i = \exp(-\frac{1}{2}(x_p - \mu_{I,i})^T \Sigma_{I,i}^{-1} (x_p - \mu_{I,i}))$$
-
-Here, $x_p$ is the 2D coordinate of pixel $p$, $\mu_{I,i}$ and $\Sigma_{I,i}$ are the projected mean and covariance of the $i$-th Gaussian.
-
-This approach allows for efficient depth map generation without the need for color information, leveraging the dense point cloud captured by the depth camera.
-
-
-Depth-only Gaussian splatting is a highly effective method for modeling 3D scenes and producing depth maps. In our methodology, we initiate 3D Gaussians from a dense point cloud acquired via a depth camera. Each 3D Gaussian is defined as follows:
-$$G = (\mu, \Sigma, o)$$
-where $\mu \in \mathbb{R}^3$ represents the mean, $\Sigma \in \mathbb{R}^{3 \times 3}$ denotes the covariance matrix, and $o = 1$ signifies the opacity, set uniformly to 1 for all Gaussians to ensure they are fully opaque.
-
-The projection of a 3D Gaussian onto the 2D image plane is computed as:
-$$\mu_I = \pi(P(T_{wc} \mu_{\text{homogeneous}}))$$
-where $T_{wc} \in SE(3)$ denotes the world-to-camera transformation, $P \in \mathbb{R}^{4 \times 4}$ represents the projection matrix, and $\pi: \mathbb{R}^4 \rightarrow \mathbb{R}^2$ maps to pixel coordinates.
-
-The 2D covariance $\Sigma_I$ of a projected Gaussian is given by:
-$$\Sigma_I = J R_{wc} \Sigma R_{wc}^T J^T$$
-where $R_{wc}$ is the rotation component of $T_{wc}$, and $J$ denotes the Jacobian of the projection.
 
 To generate the depth map, we employ a front-to-back compositing strategy. For each pixel $p$, its depth value $d_p$ is computed as:
 $$d_p = \sum_i w_i z_i$$
@@ -385,7 +266,7 @@ Here, $x_p$ is the 2D coordinate of pixel $p$, $\mu_{I,i}$ and $\Sigma_{I,i}$ de
 
 This approach enables efficient depth map generation by leveraging the dense point cloud captured by the depth camera, without requiring colour information.
 
-## Depth Reprojection 
+## Depth Compositing 
 
 
 Depth at a pixel $i$ is represented by combining contributions from multiple Gaussian elements, each associated with a certain depth and confidence. Depth $D_i$ can be expressed as[@kerbl3dGaussianSplatting2023]:
@@ -396,33 +277,12 @@ $d_n$ is the depth value from the $n$-th Gaussian, $c_n$ is the confidence or we
 
 The reprojection method utilizes the alignment of 2D Gaussian projections with observed depth data from an RGB-D camera. This involves adjusting the parameters of the Gaussians to minimize the discrepancy between the projected depth and the observed depth. The offset $\Delta_n$ and the covariance matrix $\Sigma'$ are crucial for calculating the Gaussian weights $\alpha_n$ and their impact on reprojection accuracy.
 
+
+
 ## Camera Tracking
 
 
-We define the camera pose as
 
-$$
- \mathbf{T}_{cw} = \begin{pmatrix} \mathbf{R}_{cw} & \mathbf{t}_{cw} \\ \mathbf{0} & 1 \end{pmatrix} \in SE(3)
-$$
-
-where $\mathbf{T}_{cw}$ represents the camera-to-world transformation matrix. Notably, we parameterize the rotation $\mathbf{R}_{cw} \in SO(3)$ using a quaternion $\mathbf{q}_{cw}$. This choice of parameterization is motivated by several key advantages that quaternions offer in the context of camera pose estimation and optimization. 在四元数在表达旋转上相比纯粹的旋转矩阵会出现什么问题？
-
-减少了优化的参数数量：Quaternions provide a compact and efficient representation, requiring only four parameters compared to the nine elements of a rotation matrix, which significantly reduces computational complexity. 
-数值稳定性：Moreover, their inherent structure helps maintain numerical stability, as they are less susceptible to cumulative rounding errors and better preserve orthonormality over multiple operations. This robustness is particularly crucial in scenarios involving long sequences of transformations or iterative optimization procedures.
-
-这里有点废话了：其中一个关键点是没有约束，不像旋转矩阵必须是正交的，我记等还能会避免万向锁？In the realm of pose optimization, quaternions present a continuous and non-redundant parameterization of rotations, which is highly advantageous for gradient-based optimization algorithms. Unlike rotation matrices, which are constrained by orthonormality conditions, quaternions allow for unconstrained optimization, simplifying the optimization landscape and reducing the risk of convergence to local minima. This property is especially beneficial in the context of bundle adjustment and pose graph optimization, where the ability to efficiently update and refine camera orientations is paramount. Furthermore, quaternions facilitate smooth and efficient interpolation between rotations, enabling techniques such as Spherical Linear Interpolation (SLERP), which can be invaluable in applications requiring camera motion smoothing or trajectory estimation.
-
-然后引出我的优化变量设计，对规范化的四元数和姿态分别优化，
-损失设计，对四元数和姿态优化的学习率是不一样的所以分开了，实验所得大约是5\*1e-4,和1e-3的学习率，
-解释L1dpeth损失的定义，真实姿态下的深度图和估计姿态下面的重投影的深度图，注意重投影会提供一个能够重投影的掩码mask，代表是否被重投影，L1depth仅仅计算mask部分的深度图的损失
-
-轮廓损失也是如此
-
-The loss function is designed to ensure accurate depth estimations and edge alignment, incorporating both depth magnitude and contour accuracy. It can be defined as:
-$$ 
-L = \lambda_1 \cdot L_{\text{depth}} + \lambda_2 \cdot L_{\text{contour}} 
-$$
-where: $L_{\text{depth}} = \sum_i |D_i^{\text{predicted}} - D_i^{\text{observed}}|$ represents the L1 loss for depth accuracy, $L_{\text{contour}} = \sum_j |\nabla D_j^{\text{predicted}} - \nabla D_j^{\text{observed}}|$ focuses on the alignment of depth contours or edges, $\lambda_1$ and $\lambda_2$ are weights that balance the two parts of the loss function, tailored to the specific requirements of the application.
 
 这里你要写一个最小化目标，并且我用的是adam优化器，解释优化方法，
 ```python
