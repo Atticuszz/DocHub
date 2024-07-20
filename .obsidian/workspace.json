@@ -125,8 +125,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -211,7 +210,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md",
+                "file": "essay/texs/GsplatLoc/main.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -228,7 +227,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md",
+                "file": "essay/texs/GsplatLoc/main.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -252,7 +251,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md"
+                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           },
@@ -262,7 +261,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md"
+                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           }
@@ -288,11 +287,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "bb0730548a89f865",
+  "active": "b570d3ecafc29e35",
   "lastOpenFiles": [
+    "essay/texs/GsplatLoc/mess notes.md",
     "essay/texs/GsplatLoc/main.md",
     "essay/texs/GsplatLoc/main.pdf",
-    "essay/texs/GsplatLoc/mess notes.md",
     "essay/zotero/attachments/gs_spalt/method/Zwicker et al_2002_EWA splatting.pdf",
     "essay/zotero/attachments/gs_spalt/method",
     "essay/zotero/attachments/gs_spalt/Zwicker et al_2002_EWA splatting.pdf",
