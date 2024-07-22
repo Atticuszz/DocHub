@@ -29,67 +29,71 @@ We present GSplatLoc, an innovative pose estimation method for RGB-D cameras tha
 
 # Method
 
-Depth-only Gaussian splatting is a highly effective method for modeling 3D scenes and producing depth maps. In our methodology, we initiate 3D Gaussians from a dense point cloud acquired via a RGB-D camera.
+Depth-only In our methodology, we initiate 3D Gaussians from a dense point cloud acquired via a RGB-D camera.
+
+## Pre-process
+
+
+
+
 
 
 ## Gaussian Splatting
 
 
 
+Let $\mathcal{G} = \{G_i\}_{i=1}^N$ denote a set of $N$ 3D Gaussians. Each Gaussian $G_i$ is characterized by its 3D mean $\boldsymbol{\mu}_i \in \mathbb{R}^3$, 3D covariance matrix $\boldsymbol{\Sigma}_i \in \mathbb{R}^{3\times3}$, and opacity $o_i \in \mathbb{R}$. We initialize these Gaussians from a point cloud, where each point corresponds to a Gaussian's mean $\boldsymbol{\mu}_i$.
 
-Let $\mathcal{G} = \{G_i\}_{i=1}^N$ denote a set of $N$ 3D Gaussians, where each Gaussian $G_i$ is parameterized as:
+For the initial parameterization, we set $o_i = 1$ for all Gaussians to ensure full opacity. The scale $\mathbf{s}_i \in \mathbb{R}^3$ of each Gaussian is initialized based on the local point density:
 
-$$
-G_i = (\boldsymbol{\mu}_i, \boldsymbol{\Sigma}_i, o_i)
-$$
+$$\mathbf{s}_i = \log(\sqrt{\frac{1}{3}\sum_{j=1}^3 d_{ij}^2})$$
 
-Here, $\boldsymbol{\mu}_i \in \mathbb{R}^3$ represents the 3D mean, $\boldsymbol{\Sigma}_i \in \mathbb{R}^{3\times3}$ is the 3D covariance matrix, and $o_i \in \mathbb{R}$ denotes the opacity. Initially, we set $o_i = 1$ for all Gaussians to ensure full opacity.
+where $d_{ij}$ is the distance to the $j$-th nearest neighbour of point $i$. This approach ensures that the initial Gaussian sizes are proportional to the local point distribution.
 
-The projection of a 3D Gaussian onto the 2D image plane is computed through a series of transformations:
+To represent the orientation of each Gaussian, we use a rotation quaternion $\mathbf{q}_i \in \mathbb{R}^4$. Initially, we set $\mathbf{q}_i = (1, 0, 0, 0)$ for all Gaussians, corresponding to no rotation. The 3D covariance matrix $\boldsymbol{\Sigma}_i$ is then parameterized using $\mathbf{s}_i$ and $\mathbf{q}_i$:
 
-$$\boldsymbol{\mu}_I = \pi(P(T_{wc} \boldsymbol{\mu}_{\text{homogeneous}}))$$
+$$\boldsymbol{\Sigma}_i = R(\mathbf{q}_i) S(\mathbf{s}_i) S(\mathbf{s}_i)^T R(\mathbf{q}_i)^T$$
 
-where $T_{wc} \in SE(3)$ represents the world-to-camera transformation, $P \in \mathbb{R}^{4 \times 4}$ is the projection matrix, and $\pi: \mathbb{R}^4 \rightarrow \mathbb{R}^2$ maps to pixel coordinates.
+where $R(\mathbf{q}_i)$ is the rotation matrix derived from $\mathbf{q}_i$, and $S(\mathbf{s}_i) = \text{diag}(\exp(\mathbf{s}_i))$ is a diagonal matrix of scales.
 
-The 2D covariance $\boldsymbol{\Sigma}_I \in \mathbb{R}^{2\times2}$ of a projected Gaussian is derived as:
+To project these 3D Gaussians onto a 2D image plane, we follow the approach described by [@kerbl3dGaussianSplatting2023]. The projection of the 3D mean $\boldsymbol{\mu}_i$ to the 2D image plane is given by:
 
-$$\boldsymbol{\Sigma}_I = J R_{wc} \boldsymbol{\Sigma} R_{wc}^T J^T$$
+$$\boldsymbol{\mu}_{I,i} = \pi(P(T_{wc} \boldsymbol{\mu}_{i,\text{homogeneous}}))$$
 
-where $R_{wc}$ represents the rotation component of $T_{wc}$, and $J$ is the affine transform as described in [@zwickerEWASplatting2002].
+where $T_{wc} \in SE(3)$ is the world-to-camera transformation, $P \in \mathbb{R}^{4 \times 4}$ is the projection matrix [@yeMathematicalSupplementTexttt2023], and $\pi: \mathbb{R}^4 \rightarrow \mathbb{R}^2$ maps to pixel coordinates.
+
+The 2D covariance $\boldsymbol{\Sigma}_{I,i} \in \mathbb{R}^{2\times2}$ of the projected Gaussian is derived as:
+
+$$\boldsymbol{\Sigma}_{I,i} = J R_{wc} \boldsymbol{\Sigma}_i R_{wc}^T J^T$$
+
+where $R_{wc}$ represents the rotation component of $T_{wc}$, and $J$ is the affine transform as described by Zwicker et al. [@zwickerEWASplatting2002].
+
 
 ## Depth Compositing
 
 
-For depth map generation, we employ a front-to-back compositing scheme. This approach allows for accurate depth estimation and edge alignment. Let $d_n$ represent the depth value associated with the $n$-th Gaussian, which is the z-coordinate of the Gaussian's mean in the camera coordinate system. The depth $D(p)$ at pixel $p$ is then computed as:
 
-$$
-D(p) = \sum_{n \leq N} d_n \cdot \alpha_n \cdot T_n, \quad \text{where } T_n = \prod_{m<n} (1 - \alpha_m)
-$$
+For depth map generation, we employ a front-to-back compositing scheme, which allows for accurate depth estimation and edge alignment. Let $d_n$ represent the depth value associated with the $n$-th Gaussian, which is the z-coordinate of the Gaussian's mean in the camera coordinate system. The depth $D(p)$ at pixel $p$ is computed as [@kerbl3dGaussianSplatting2023]:
 
-In this equation, $\alpha_n$ represents the opacity of the $n$-th Gaussian at pixel $p$, which is computed as:
+$$D(p) = \sum_{n \leq N} d_n \cdot \alpha_n \cdot T_n, \quad \text{where } T_n = \prod_{m<n} (1 - \alpha_m)$$
 
-$$
-\alpha_n = o_n \cdot \exp(-\sigma_n), \quad \sigma_n = \frac{1}{2} \Delta_n^T \boldsymbol{\Sigma}_I^{-1} \Delta_n
-$$
+Here, $\alpha_n$ represents the opacity of the $n$-th Gaussian at pixel $p$, computed as:
+
+$$\alpha_n = o_n \cdot \exp(-\sigma_n), \quad \sigma_n = \frac{1}{2} \Delta_n^T \boldsymbol{\Sigma}_I^{-1} \Delta_n$$
 
 where $\Delta_n$ is the offset between the pixel center and the 2D Gaussian center $\boldsymbol{\mu}_I$, and $o_n$ is the opacity parameter of the Gaussian. $T_n$ denotes the cumulative transparency product of all Gaussians preceding $n$, accounting for the occlusion effects of previous Gaussians.
 
-To normalize the depth values and ensure consistent representation across the image, we first calculate the total accumulated opacity $\alpha(p)$ for each pixel:
+To ensure consistent representation across the image, we normalize the depth values. First, we calculate the total accumulated opacity $\alpha(p)$ for each pixel:
 
-$$
-\alpha(p) = \sum_{n \leq N} \alpha_n \cdot T_n
-$$
+$$\alpha(p) = \sum_{n \leq N} \alpha_n \cdot T_n$$
 
 The normalized depth $\text{Norm}_D(p)$ is then defined as:
 
-$$
-\text{Norm}_D(p) = \frac{D(p)}{\alpha(p)}
-$$
+$$\text{Norm}_D(p) = \frac{D(p)}{\alpha(p)}$$
 
-This normalization process ensures that the depth values are properly scaled and comparable across different regions of the image, regardless of the varying densities of Gaussians in the scene.
+This normalization process ensures that the depth values are properly scaled and comparable across different regions of the image, regardless of the varying densities of Gaussians in the scene. By projecting 3D Gaussians onto the 2D image plane and computing normalized depth values, we can effectively generate depth maps that accurately represent the 3D structure of the scene while maintaining consistency across different viewing conditions.
 
-
-## Camera Tracking
+## Camera Pose
 
 
 
@@ -101,6 +105,7 @@ $$
 
 where $\mathbf{T}_{cw}$ represents the camera-to-world transformation matrix. Notably, we parameterize the rotation $\mathbf{R}_{cw} \in SO(3)$ using a quaternion $\mathbf{q}_{cw}$. This choice of parameterization is motivated by several key advantages that quaternions offer in the context of camera pose estimation and optimization. Quaternions provide a compact and efficient representation, requiring only four parameters, while maintaining numerical stability and avoiding singularities such as gimbal lock. Their continuous and non-redundant nature is particularly advantageous for gradient-based optimization algorithms, allowing for unconstrained optimization and simplifying the optimization landscape.
 
+## Optimization
 Based on these considerations, we design our optimization variables to separately optimize the normalized quaternion and the translation. The loss function is designed to ensure accurate depth estimations and edge alignment, incorporating both depth magnitude and contour accuracy. It can be defined as:
 
 $$ 

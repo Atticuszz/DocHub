@@ -31,18 +31,6 @@ We present GSplatLoc, an innovative pose estimation method for RGB-D cameras tha
 # Methods
 
 
-深度生成
-[gsplat/gsplat/rendering.py at main · nerfstudio-project/gsplat · GitHub](https://github.com/nerfstudio-project/gsplat/blob/main/gsplat/rendering.py)
-```python
-if render_mode in ["ED", "RGB+ED"]: 
-	# normalize the accumulated depth to get the expected depth 
-	render_colors = torch.cat( [ render_colors[..., :-1],
-								render_colors[..., -1:] / render_alphas.clamp(min=1e-10), ], dim=-1, 
-							)
-```
-我是用的是ED方式，也就是说，
-
-
 ## Normalization
 
 ## Gaussian Splatting
@@ -276,6 +264,18 @@ $$
 $d_n$ is the depth value from the $n$-th Gaussian, $c_n$ is the confidence or weight of the $n$-th Gaussian,$\alpha_n$ is the opacity calculated from Gaussian parameters, $T_n$ is the product of transparencies from all Gaussians in front of the $n$-th Gaussian.
 
 The reprojection method utilizes the alignment of 2D Gaussian projections with observed depth data from an RGB-D camera. This involves adjusting the parameters of the Gaussians to minimize the discrepancy between the projected depth and the observed depth. The offset $\Delta_n$ and the covariance matrix $\Sigma'$ are crucial for calculating the Gaussian weights $\alpha_n$ and their impact on reprojection accuracy.
+
+
+深度生成
+[gsplat/gsplat/rendering.py at main · nerfstudio-project/gsplat · GitHub](https://github.com/nerfstudio-project/gsplat/blob/main/gsplat/rendering.py)
+```python
+if render_mode in ["ED", "RGB+ED"]: 
+	# normalize the accumulated depth to get the expected depth 
+	render_colors = torch.cat( [ render_colors[..., :-1],
+								render_colors[..., -1:] / render_alphas.clamp(min=1e-10), ], dim=-1, 
+							)
+```
+我是用的是ED方式，也就是说，
 
 
 

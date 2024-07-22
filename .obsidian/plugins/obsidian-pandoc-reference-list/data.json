@@ -9,7 +9,7 @@
     }
   ],
   "renderCitations": true,
-  "renderCitationsReadingMode": true,
+  "renderCitationsReadingMode": false,
   "renderLinkCitations": true,
   "pathToBibliography": "C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\bibliography.bib",
   "pullFromZotero": true,
