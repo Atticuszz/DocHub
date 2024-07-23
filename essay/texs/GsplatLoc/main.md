@@ -35,6 +35,41 @@ Depth-only In our methodology, we initiate 3D Gaussians from a dense point cloud
 
 
 
+To enhance the optimization process and improve the accuracy of our 3D Gaussian representation, we implement a robust normalization procedure for the input data. This pre-processing step ensures that the initial Gaussian distributions are positioned and scaled optimally within a standardized coordinate system, facilitating more effective optimization and reconstruction.
+
+Our normalization process consists of two primary stages: similarity transformation and principal axis alignment. First, we apply a similarity transformation ?$\mathbf{T}_s \in SE(3)$ to align and scale the camera positions. This transformation is computed as:
+
+$$\mathbf{T}_s = \begin{bmatrix} s\mathbf{R}_a & \mathbf{t} \\ \mathbf{0}^T & 1 \end{bmatrix}$$
+
+where $s \in \mathbb{R}$ is a scaling factor, $\mathbf{R}_a \in SO(3)$ is a rotation matrix that aligns the world up vector with the camera space up vector, and $\mathbf{t} \in \mathbb{R}^3$ is a translation vector that centers the scene. The scaling factor $s$ is calculated based on the distribution of camera positions, using either the maximum (for strict scaling) or median distance from the center.
+
+Following the similarity transformation, we perform principal component analysis (PCA)[@mackiewiczPrincipalComponentsAnalysis1993] on the transformed point cloud to align its principal axes with the coordinate axes. This results in a second transformation matrix $\mathbf{T}_p \in SE(3)$:
+
+$$\mathbf{T}_p = \begin{bmatrix} \mathbf{R}_p & -\mathbf{R}_p\mathbf{c} \\ \mathbf{0}^T & 1 \end{bmatrix}$$
+
+where $\mathbf{R}_p \in SO(3)$ is the rotation matrix formed by the eigenvectors of the point cloud's covariance matrix, and $\mathbf{c} \in \mathbb{R}^3$ is the centroid of the point cloud.
+
+The final normalization transformation $\mathbf{T} \in SE(3)$ is the composition of these two transformations:
+
+$$\mathbf{T} = \mathbf{T}_p \mathbf{T}_s$$
+
+This combined transformation is applied to both the point cloud and the camera poses. For a point $\mathbf{p} \in \mathbb{R}^3$, the normalized point $\mathbf{p}'$ is computed as:
+
+$$\mathbf{p}' = \mathbf{T}_{3\times3}\mathbf{p} + \mathbf{T}_{3\times1}$$
+
+where $\mathbf{T}_{3\times3}$ and $\mathbf{T}_{3\times1}$ are the rotation and translation components of $\mathbf{T}$, respectively.
+
+For camera poses represented by transformation matrices $\mathbf{C} \in SE(3)$, we apply the normalization as:
+
+$$\mathbf{C}' = \mathbf{T}\mathbf{C}$$
+
+To maintain the scale information of the original scene, we compute a scale factor $\lambda$ for each camera pose:
+
+$$\lambda = \|\mathbf{C}'_{1:3,1}\|_2$$
+
+where $\mathbf{C}'_{1:3,1}$ is the first column of the rotational component of the transformed camera pose. We then normalize the rotational component of $\mathbf{C}'$ by this scale factor to preserve the original scale information.
+
+This comprehensive normalization procedure ensures that our initial set of 3D Gaussians is optimally positioned and scaled within a standardized coordinate system. By aligning the principal axes of the scene with the coordinate axes and centering the data, we create a more favorable starting point for subsequent optimization steps. This approach not only improves the convergence of our optimization algorithms but also enhances the overall quality and consistency of the 3D reconstruction across various input datasets.
 
 
 
@@ -42,19 +77,23 @@ Depth-only In our methodology, we initiate 3D Gaussians from a dense point cloud
 
 
 
-Let $\mathcal{G} = \{G_i\}_{i=1}^N$ denote a set of $N$ 3D Gaussians. Each Gaussian $G_i$ is characterized by its 3D mean $\boldsymbol{\mu}_i \in \mathbb{R}^3$, 3D covariance matrix $\boldsymbol{\Sigma}_i \in \mathbb{R}^{3\times3}$, and opacity $o_i \in \mathbb{R}$. We initialize these Gaussians from a point cloud, where each point corresponds to a Gaussian's mean $\boldsymbol{\mu}_i$.
+Let $\mathcal{G} = \{G_i\}_{i=1}^N$ denote a set of $N$ 3D Gaussians. Each Gaussian $G_i$ is characterized by its 3D mean $\boldsymbol{\mu}_i \in \mathbb{R}^3$, 3D covariance matrix $\boldsymbol{\Sigma}_i \in \mathbb{R}^{3\times3}$, and opacity $o_i \in \mathbb{R}$. We initialize these Gaussians from a point cloud, where each point corresponds to a Gaussian's mean $\boldsymbol{\mu}_i$. Unlike traditional 3D reconstruction methods[@kerbl3dGaussianSplatting2023] that often rely on structure-from-motion techniques[@schonbergerStructurefrommotionRevisited2016], our approach is tailored for direct point cloud input, offering greater flexibility and efficiency in various 3D data scenarios.
 
-For the initial parameterization, we set $o_i = 1$ for all Gaussians to ensure full opacity. The scale $\mathbf{s}_i \in \mathbb{R}^3$ of each Gaussian is initialized based on the local point density:
 
-$$\mathbf{s}_i = \log(\sqrt{\frac{1}{3}\sum_{j=1}^3 d_{ij}^2})$$
+For the initial parameterization, we set $o_i = 1$ for all Gaussians to ensure full opacity. The scale $\mathbf{s}_i \in \mathbb{R}^3$ of each Gaussian is initialized based on the local point density, allowing our model to adaptively adjust to varying point cloud densities:
 
-where $d_{ij}$ is the distance to the $j$-th nearest neighbour of point $i$. This approach ensures that the initial Gaussian sizes are proportional to the local point distribution.
+$$\mathbf{s}_i = (\sigma_i, \sigma_i, \sigma_i), \text{ where } \sigma_i = \sqrt{\frac{1}{3}\sum_{j=1}^3 d_{ij}^2}$$
 
-To represent the orientation of each Gaussian, we use a rotation quaternion $\mathbf{q}_i \in \mathbb{R}^4$. Initially, we set $\mathbf{q}_i = (1, 0, 0, 0)$ for all Gaussians, corresponding to no rotation. The 3D covariance matrix $\boldsymbol{\Sigma}_i$ is then parameterized using $\mathbf{s}_i$ and $\mathbf{q}_i$:
+Here, $d_{ij}$ is the distance to the $j$-th nearest neighbour of point $i$. In practice, we calculate this using the k-nearest neighbours algorithm with $k=4$, excluding the point itself. This isotropic initialization ensures a balanced initial representation of the local geometry.
+
+To represent the orientation of each Gaussian, we use a rotation quaternion $\mathbf{q}_i \in \mathbb{R}^4$. Initially, we set $\mathbf{q}_i = (1, 0, 0, 0)$ for all Gaussians, corresponding to no rotation. This initialization strategy provides a neutral starting point, allowing subsequent optimization processes to refine the orientations as needed.
+
+The 3D covariance matrix $\boldsymbol{\Sigma}_i$ is then parameterized using $\mathbf{s}_i$ and $\mathbf{q}_i$:
 
 $$\boldsymbol{\Sigma}_i = R(\mathbf{q}_i) S(\mathbf{s}_i) S(\mathbf{s}_i)^T R(\mathbf{q}_i)^T$$
 
-where $R(\mathbf{q}_i)$ is the rotation matrix derived from $\mathbf{q}_i$, and $S(\mathbf{s}_i) = \text{diag}(\exp(\mathbf{s}_i))$ is a diagonal matrix of scales.
+where $R(\mathbf{q}_i)$ is the rotation matrix derived from $\mathbf{q}_i$, and $S(\mathbf{s}_i) = \text{diag}(\mathbf{s}_i)$ is a diagonal matrix of scales.
+
 
 To project these 3D Gaussians onto a 2D image plane, we follow the approach described by [@kerbl3dGaussianSplatting2023]. The projection of the 3D mean $\boldsymbol{\mu}_i$ to the 2D image plane is given by:
 
@@ -66,7 +105,7 @@ The 2D covariance $\boldsymbol{\Sigma}_{I,i} \in \mathbb{R}^{2\times2}$ of the p
 
 $$\boldsymbol{\Sigma}_{I,i} = J R_{wc} \boldsymbol{\Sigma}_i R_{wc}^T J^T$$
 
-where $R_{wc}$ represents the rotation component of $T_{wc}$, and $J$ is the affine transform as described by Zwicker et al. [@zwickerEWASplatting2002].
+where $R_{wc}$ represents the rotation component of $T_{wc}$, and $J$ is the affine transform as described by [@zwickerEWASplatting2002].
 
 
 ## Depth Compositing

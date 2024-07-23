@@ -125,7 +125,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -210,7 +211,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf",
+                "file": "essay/texs/GsplatLoc/main.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -227,7 +228,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf",
+                "file": "essay/texs/GsplatLoc/main.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -251,7 +252,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf"
+                "file": "essay/texs/GsplatLoc/main.md"
               }
             }
           },
@@ -261,7 +262,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf"
+                "file": "essay/texs/GsplatLoc/main.md"
               }
             }
           }
@@ -287,11 +288,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b570d3ecafc29e35",
+  "active": "b03d43d60c06d142",
   "lastOpenFiles": [
-    "essay/texs/GsplatLoc/main.md",
-    "essay/texs/GsplatLoc/main.pdf",
     "essay/texs/GsplatLoc/mess notes.md",
+    "essay/texs/GsplatLoc/main.pdf",
+    "essay/texs/GsplatLoc/main.md",
+    "essay/zotero/attachments/gs_spalt/method/Taussky_Zassenhaus_1959_On the similarity transformation between a matirx and its transpose.pdf",
     "essay/zotero/attachments/gs_spalt/method/Zwicker et al_2002_EWA splatting.pdf",
     "essay/zotero/attachments/gs_spalt/method",
     "essay/zotero/attachments/gs_spalt/Zwicker et al_2002_EWA splatting.pdf",
@@ -314,7 +316,6 @@
     "essay/zotero/attachments/gs_spalt/Matsuki et al_2024_Gaussian splatting slam2.pdf",
     "essay/zotero/attachments/gs_spalt/Matsuki et al_2024_Gaussian splatting slam.pdf",
     "essay/zotero/attachments/gs_spalt/Yu et al_2024_Gaussian Opacity Fields2.pdf",
-    "essay/zotero/attachments/gs_spalt/Yu et al_2024_Gaussian Opacity Fields.pdf",
     "essay/texs/GSplatLoc.md",
     "essay/texs/ABGICP/ABGICP.md",
     "essay/template/arxiv/main.md",
