@@ -4,33 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "56f04877aeb0f138",
+        "id": "250d0c2daf1284e4",
         "type": "tabs",
         "children": [
           {
-            "id": "b570d3ecafc29e35",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf"
-              }
-            }
-          },
-          {
-            "id": "bb0730548a89f865",
+            "id": "7689c61f01cdf147",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md",
+                "file": "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "b03d43d60c06d142",
+            "id": "fab78e2faaa1f481",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -42,84 +32,12 @@
             }
           },
           {
-            "id": "67c006353a9e2d54",
+            "id": "a6f475a047a06bbc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "189b3ccfef6f9826",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4bff5d339ebcca54",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "384305fe05b4b6f2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/sunMM3DGSSLAMMultimodal2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7486e7e55e0d1f2f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a13b86062ee6c0e8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "749c1c68c4f010ab",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/haRGBDGSICPSLAM2024.md",
+                "file": "essay/texs/GsplatLoc/mess notes.md",
                 "mode": "source",
                 "source": false
               }
@@ -176,7 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 284.5110321044922
+    "width": 246.5
   },
   "right": {
     "id": "47a7fb051f9573eb",
@@ -186,6 +104,35 @@
         "id": "1be3b56d45aba669",
         "type": "tabs",
         "children": [
+          {
+            "id": "cbb2b0927a9a2b61",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "essay/texs/GsplatLoc/mess notes.md",
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "dbce23fdc71b5bd7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "essay/texs/GsplatLoc/mess notes.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
           {
             "id": "5d12bf5c232f51b8",
             "type": "leaf",
@@ -198,44 +145,7 @@
             }
           },
           {
-            "id": "21942943f6ffac1a",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {}
-            }
-          },
-          {
-            "id": "3a18507384016340",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "essay/texs/GsplatLoc/main.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "39b47acb13211c4a",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "essay/texs/GsplatLoc/main.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "9da4cbf1e09b4a69",
+            "id": "b12cdacea1391417",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -247,31 +157,45 @@
             }
           },
           {
-            "id": "b4f886dd03f52d69",
+            "id": "fe33bc386c72aa8e",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md"
+                "file": "essay/texs/GsplatLoc/mess notes.md"
               }
             }
           },
           {
-            "id": "9bc84faad8aaa4a0",
+            "id": "6c7a22ce9a44906b",
             "type": "leaf",
             "state": {
-              "type": "file-properties",
-              "state": {
-                "file": "essay/texs/GsplatLoc/main.md"
-              }
+              "type": "code-execute-manage-executors",
+              "state": {}
+            }
+          },
+          {
+            "id": "b02e2e30d05790c3",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "79aef470e1fbe4d9",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 360.5
+    "width": 274.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -283,58 +207,58 @@
       "workspaces:Manage workspace layouts": false,
       "switcher:Open quick switcher": false,
       "oz-clear-unused-images:Clear Unused Images": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
       "omnisearch:Omnisearch": false,
-      "obsidian-importer:Open Importer": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "obsidian-importer:Open Importer": false
     }
   },
-  "active": "b03d43d60c06d142",
+  "active": "a6f475a047a06bbc",
   "lastOpenFiles": [
-    "essay/texs/GsplatLoc/mess notes.md",
-    "essay/texs/GsplatLoc/main.pdf",
     "essay/texs/GsplatLoc/main.md",
-    "essay/zotero/attachments/gs_spalt/method/Taussky_Zassenhaus_1959_On the similarity transformation between a matirx and its transpose.pdf",
-    "essay/zotero/attachments/gs_spalt/method/Zwicker et al_2002_EWA splatting.pdf",
-    "essay/zotero/attachments/gs_spalt/method",
-    "essay/zotero/attachments/gs_spalt/Zwicker et al_2002_EWA splatting.pdf",
-    "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
-    "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
-    "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
-    "essay/zotero/annotations/sunMM3DGSSLAMMultimodal2024.md",
-    "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
-    "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
     "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
-    "essay/zotero/annotations/huangPhotoSLAMRealtimeSimultaneous2024.md",
-    "essay/zotero/annotations/haRGBDGSICPSLAM2024.md",
-    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
-    "essay/zotero/annotations/guptaNDT6DColor2023.md",
-    "assets/huangPhotoSLAMRealtimeSimultaneous2024/huangPhotoSLAMRealtimeSimultaneous2024-5-x457-y204.png",
-    "assets/huangPhotoSLAMRealtimeSimultaneous2024",
-    "essay/texs/GsplatLoc/mess notes.pdf",
-    "essay/zotero/notes/{{citekey}}.md/huangPhotoSLAMRealtimeSimultaneous2024.md",
-    "essay/zotero/notes/{{citekey}}.md",
+    "essay/texs/GsplatLoc/mess notes.md",
+    "assets/Pasted image 20240727181456.png",
+    "assets/Pasted image 20240727181353.png",
+    "essay/zotero/attachments/GICP/Gupta et al_2023_NDT‐6D for color registration in agri‐robotic applications2.pdf",
+    "essay/zotero/attachments/gs_spalt/Keetha et al_2024_SplaTAM.pdf",
+    "essay/zotero/attachments/gs_spalt/Kerbl et al_2023_3d gaussian splatting for real-time radiance field rendering.pdf",
+    "essay/zotero/attachments/gs_spalt/Kolios et al_2024_DPPE2.pdf",
+    "essay/zotero/attachments/gs_spalt/Lassner_Zollhofer_2021_Pulsar.pdf",
+    "essay/zotero/attachments/gs_spalt/Liu et al_2024_MVSGaussian.pdf",
+    "essay/zotero/attachments/gs_spalt/Liu et al_2024_MVSGaussian2.pdf",
+    "essay/zotero/attachments/gs_spalt/Peng et al_2024_RTG-SLAM.pdf",
     "essay/zotero/attachments/gs_spalt/Matsuki et al_2024_Gaussian splatting slam2.pdf",
     "essay/zotero/attachments/gs_spalt/Matsuki et al_2024_Gaussian splatting slam.pdf",
-    "essay/zotero/attachments/gs_spalt/Yu et al_2024_Gaussian Opacity Fields2.pdf",
-    "essay/texs/GSplatLoc.md",
-    "essay/texs/ABGICP/ABGICP.md",
-    "essay/template/arxiv/main.md",
-    "essay/template/arxiv/ABGICP.md",
+    "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
+    "essay/zotero/annotations/huangPhotoSLAMRealtimeSimultaneous2024.md",
+    "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
+    "essay/zotero/annotations/haRGBDGSICPSLAM2024.md",
+    "essay/zotero/annotations/sunMM3DGSSLAMMultimodal2024.md",
+    "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
+    "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
+    "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
     "essay/basic/Math.md",
+    "essay/zotero/annotations/guptaNDT6DColor2023.md",
+    "assets/huangPhotoSLAMRealtimeSimultaneous2024/huangPhotoSLAMRealtimeSimultaneous2024-5-x457-y204.png",
+    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "essay/basic/3D.md",
     "essay/basic/experiment.md",
+    "docs/VCS/git.md",
+    "essay/texs/ABGICP/ABGICP.md",
     "essay/texs/Untitled.md",
+    "essay/template/arxiv/main.md",
+    "essay/template/Pandoc-config.md",
     "essay/Arxiv.md",
-    "essay/read-dairy.md",
     "assets/screenshot.png",
+    "docs/tutorials/KnowledgeHub.md",
+    "docs/tools/git-install-instruction.md",
+    "docs/OS/GPU.md",
     "assets/Pasted image 20240524150219.png",
-    "assets/Pasted image 20240420105746.png",
-    "assets/Pasted image 20240521203441.png",
-    "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-13-x43-y370.png",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-14-x56-y502.png",
-    "essay/zotero/attachments/raw/page-01.png",
-    "essay/zotero/attachments/raw/page-15.png",
-    "essay/zotero/attachments/raw/page-14.png",
+    "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-13-x43-y370.png",
+    "assets/Pasted image 20240521203441.png",
+    "assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png",
+    "assets/kornColorSupportedGeneralizedICP2014a/kornColorSupportedGeneralizedICP2014a-4-x69-y230.png",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",

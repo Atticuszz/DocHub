@@ -72,26 +72,26 @@ S. Ha, J. Yeon, and H. Yu, ‘RGBD GS-ICP SLAM’, Mar. 22, 2024, _arXiv_: arXiv
 
 **Replica 数据集上的实验结果**：
 
-| Method                 | RMSE (cm) ↓ | PSNR ↑  | SSIM ↑  | LPIPS ↓ | FPS ↑ |
-|------------------------|-------------|---------|---------|---------|-------|
-| NICE-SLAM [47]         | 1.42        | -       | -       | -       | -     |
-| Point-SLAM [32]        | 0.54        | -       | -       | -       | -     |
-| GS-SLAM [44]           | 0.50        | -       | -       | -       | -     |
-| Photo-SLAM [12]        | 0.60        | -       | -       | -       | -     |
-| SplaTAM [14]           | 0.36        | -       | -       | -       | -     |
-| Ours (limited to 30 FPS)| 0.16        | 38.83   | 0.975   | 0.041   | 29.98 |
-| Ours (no tracking speed limit)| 0.16| 35.93   | 0.962   | 0.066   | 98.11 |
+| Method                                     | RMSE (cm) ↓ | PSNR ↑  | SSIM ↑  | LPIPS ↓ | FPS ↑ |
+| ------------------------------------------ | ----------- | ------- | ------- | ------- | ----- |
+| NICE-SLAM [47]                             | 1.42        | -       | -       | -       | -     |
+| Point-SLAM [32]                            | 0.54        | -       | -       | -       | -     |
+| GS-SLAM [44]                               | 0.50        | -       | -       | -       | -     |
+| Photo-SLAM [12]                            | 0.60        | -       | -       | -       | -     |
+| SplaTAM [14]                               | 0.36        | -       | -       | -       | -     |
+| Ours (limited to 30 FPS)                   | 0.16        | 38.83   | 0.975   | 0.041   | 29.98 |
+| RGBD GS-ICP SLAM (no tracking speed limit) | 0.16        | 35.93   | 0.962   | 0.066   | 98.11 |
 
 **TUM-RGBD 数据集上的实验结果**：
 
-| Method                 | RMSE (cm) ↓ | PSNR ↑  | SSIM ↑  | LPIPS ↓ | FPS ↑ |
-|------------------------|-------------|---------|---------|---------|-------|
-| NICE-SLAM [47]         | 4.0         | -       | -       | -       | -     |
-| Point-SLAM [32]        | 2.6         | -       | -       | -       | -     |
-| GS-SLAM [44]           | 3.7         | -       | -       | -       | -     |
-| SplaTAM [14]           | 3.2         | -       | -       | -       | -     |
-| Ours (limited to 30 FPS)| 2.4         | 20.72   | 0.768   | 0.218   | 29.99 |
-| Ours (no tracking speed limit)| 2.37| 19.62   | 0.750   | 0.240   | 73.92 |
+| Method                                     | RMSE (cm) ↓ | PSNR ↑  | SSIM ↑  | LPIPS ↓ | FPS ↑ |
+| ------------------------------------------ | ----------- | ------- | ------- | ------- | ----- |
+| NICE-SLAM [47]                             | 4.0         | -       | -       | -       | -     |
+| Point-SLAM [32]                            | 2.6         | -       | -       | -       | -     |
+| GS-SLAM [44]                               | 3.7         | -       | -       | -       | -     |
+| SplaTAM [14]                               | 3.2         | -       | -       | -       | -     |
+| Ours (limited to 30 FPS)                   | 2.4         | 20.72   | 0.768   | 0.218   | 29.99 |
+| RGBD GS-ICP SLAM (no tracking speed limit) | 2.37        | 19.62   | 0.750   | 0.240   | 73.92 |
 
 这些结果展示了RGBD GS-ICP SLAM在定位精度和重建地图质量方面的优越性能，同时保持了极快的系统速度【15†source】。
 
