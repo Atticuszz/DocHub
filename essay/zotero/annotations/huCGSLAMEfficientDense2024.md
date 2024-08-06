@@ -129,7 +129,6 @@ $$
 其中，$$p_i^{\text{est}}$$表示估计的位姿，$$p_i^{\text{gt}}$$表示真实的位姿，$$N$$是位姿的数量。
 
 ### 实验数据展示
-
 #### Replica数据集
 
 | Method       | rm-0 | rm-1 | rm-2 | off-0 | off-1 | off-2 | off-3 | off-4 | Avg  |

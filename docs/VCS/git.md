@@ -199,9 +199,9 @@ git submodule update --init --recursive
 3. remove
 
 ```bash
-rm -rf thirdparty/gradslam
-rm -rf .git/modules/thirdparty/gradslam
-git config --remove-section submodule.thirdparty/gradslam
+rm -rf thirdparty/GS_ICP_SLAM
+rm -rf .git/modules/thirdparty/GS_ICP_SLAM
+git config --remove-section submodule.thirdparty/GS_ICP_SLAM
 ```
 
 ## LFS
