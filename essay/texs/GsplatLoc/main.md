@@ -29,48 +29,11 @@ We present GSplatLoc, an innovative pose estimation method for RGB-D cameras tha
 
 # Method
 
-Depth-only In our methodology, we initiate 3D Gaussians from a dense point cloud acquired via a RGB-D camera.
+**Overview:** We present GSplatLoc, an innovative pose estimation method for RGB-D cameras that employs a volumetric representation of 3D Gaussians. This approach facilitates precise pose estimation by minimizing the loss based on the reprojection of 3D Gaussians from real depth maps captured from the estimated pose. Our method attains rotational errors close to zero and translational errors within 0.01mm, representing a substantial advancement in pose accuracy over existing point cloud registration algorithms, as well as explicit volumetric and implicit neural representation-based SLAM methods. Comprehensive evaluations demonstrate that GSplatLoc significantly improves pose estimation accuracy, which contributes to increased robustness and fidelity in real-time 3D scene reconstruction, setting a new standard for localization techniques in dense mapping SLAM.
 
-## Pre-process
+**Motivation:** We present GSplatLoc, an innovative pose estimation method for RGB-D cameras that employs a volumetric representation of 3D Gaussians. This approach facilitates precise pose estimation by minimizing the loss based on the reprojection of 3D Gaussians from real depth maps captured from the estimated pose. Our method attains rotational errors close to zero and translational errors within 0.01mm, representing a substantial advancement in pose accuracy over existing point cloud registration algorithms, as well as explicit volumetric and implicit neural representation-based SLAM methods. Comprehensive evaluations demonstrate that GSplatLoc significantly improves pose estimation accuracy, which contributes to increased robustness and fidelity in real-time 3D scene reconstruction, setting a new standard for localization techniques in dense mapping SLAM.
 
-
-
-To enhance the optimization process and improve the accuracy of our 3D Gaussian representation, we implement a robust normalization procedure for the input data. This pre-processing step ensures that the initial Gaussian distributions are positioned and scaled optimally within a standardized coordinate system, facilitating more effective optimization and reconstruction.
-
-Our normalization process consists of two primary stages: similarity transformation and principal axis alignment. First, we apply a similarity transformation ?$\mathbf{T}_s \in SE(3)$ to align and scale the camera positions. This transformation is computed as:
-
-$$\mathbf{T}_s = \begin{bmatrix} s\mathbf{R}_a & \mathbf{t} \\ \mathbf{0}^T & 1 \end{bmatrix}$$
-
-where $s \in \mathbb{R}$ is a scaling factor, $\mathbf{R}_a \in SO(3)$ is a rotation matrix that aligns the world up vector with the camera space up vector, and $\mathbf{t} \in \mathbb{R}^3$ is a translation vector that centers the scene. The scaling factor $s$ is calculated based on the distribution of camera positions, using either the maximum (for strict scaling) or median distance from the center.
-
-Following the similarity transformation, we perform principal component analysis (PCA)[@mackiewiczPrincipalComponentsAnalysis1993] on the transformed point cloud to align its principal axes with the coordinate axes. This results in a second transformation matrix $\mathbf{T}_p \in SE(3)$:
-
-$$\mathbf{T}_p = \begin{bmatrix} \mathbf{R}_p & -\mathbf{R}_p\mathbf{c} \\ \mathbf{0}^T & 1 \end{bmatrix}$$
-
-where $\mathbf{R}_p \in SO(3)$ is the rotation matrix formed by the eigenvectors of the point cloud's covariance matrix, and $\mathbf{c} \in \mathbb{R}^3$ is the centroid of the point cloud.
-
-The final normalization transformation $\mathbf{T} \in SE(3)$ is the composition of these two transformations:
-
-$$\mathbf{T} = \mathbf{T}_p \mathbf{T}_s$$
-
-This combined transformation is applied to both the point cloud and the camera poses. For a point $\mathbf{p} \in \mathbb{R}^3$, the normalized point $\mathbf{p}'$ is computed as:
-
-$$\mathbf{p}' = \mathbf{T}_{3\times3}\mathbf{p} + \mathbf{T}_{3\times1}$$
-
-where $\mathbf{T}_{3\times3}$ and $\mathbf{T}_{3\times1}$ are the rotation and translation components of $\mathbf{T}$, respectively.
-
-For camera poses represented by transformation matrices $\mathbf{C} \in SE(3)$, we apply the normalization as:
-
-$$\mathbf{C}' = \mathbf{T}\mathbf{C}$$
-
-To maintain the scale information of the original scene, we compute a scale factor $\lambda$ for each camera pose:
-
-$$\lambda = \|\mathbf{C}'_{1:3,1}\|_2$$
-
-where $\mathbf{C}'_{1:3,1}$ is the first column of the rotational component of the transformed camera pose. We then normalize the rotational component of $\mathbf{C}'$ by this scale factor to preserve the original scale information.
-
-This comprehensive normalization procedure ensures that our initial set of 3D Gaussians is optimally positioned and scaled within a standardized coordinate system. By aligning the principal axes of the scene with the coordinate axes and centering the data, we create a more favorable starting point for subsequent optimization steps. This approach not only improves the convergence of our optimization algorithms but also enhances the overall quality and consistency of the 3D reconstruction across various input datasets.
-
+**Problem formulation:** We present GSplatLoc, an innovative pose estimation method for RGB-D cameras that employs a volumetric representation of 3D Gaussians. This approach facilitates precise pose estimation by minimizing the loss based on the reprojection of 3D Gaussians from real depth maps captured from the estimated pose. Our method attains rotational errors close to zero and translational errors within 0.01mm, representing a substantial advancement in pose accuracy over existing point cloud registration algorithms, as well as explicit volumetric and implicit neural representation-based SLAM methods. Comprehensive evaluations demonstrate that GSplatLoc significantly improves pose estimation accuracy, which contributes to increased robustness and fidelity in real-time 3D scene reconstruction, setting a new standard for localization techniques in dense mapping SLAM.
 
 
 ## Gaussian Splatting

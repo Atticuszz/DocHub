@@ -11,9 +11,11 @@
             "id": "b570d3ecafc29e35",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf"
+                "file": "essay/texs/GsplatLoc/main.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -24,18 +26,6 @@
               "type": "markdown",
               "state": {
                 "file": "essay/texs/GsplatLoc/mess notes.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b03d43d60c06d142",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/texs/GsplatLoc/main.md",
                 "mode": "source",
                 "source": false
               }
@@ -135,8 +125,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -295,25 +284,27 @@
       "oz-clear-unused-images:Clear Unused Images": false,
       "omnisearch:Omnisearch": false,
       "obsidian-importer:Open Importer": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "188b5112bc5d42de",
+  "active": "b570d3ecafc29e35",
   "lastOpenFiles": [
     "essay/texs/GsplatLoc/mess notes.md",
-    "essay/texs/GsplatLoc/main.pdf",
     "essay/texs/GsplatLoc/main.md",
+    "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
+    "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
+    "essay/texs/GsplatLoc/main.pdf",
     "essay/zotero/attachments/gs_spalt/method/Taussky_Zassenhaus_1959_On the similarity transformation between a matirx and its transpose.pdf",
     "essay/zotero/attachments/gs_spalt/method/Zwicker et al_2002_EWA splatting.pdf",
     "essay/zotero/attachments/gs_spalt/method",
     "essay/zotero/attachments/gs_spalt/Zwicker et al_2002_EWA splatting.pdf",
     "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
-    "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
     "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
     "essay/zotero/annotations/sunMM3DGSSLAMMultimodal2024.md",
     "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
     "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
-    "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
     "essay/zotero/annotations/huangPhotoSLAMRealtimeSimultaneous2024.md",
     "essay/zotero/annotations/haRGBDGSICPSLAM2024.md",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
