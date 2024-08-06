@@ -20,18 +20,6 @@
             }
           },
           {
-            "id": "d41e4289c8b40c59",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "bb0730548a89f865",
             "type": "leaf",
             "state": {
@@ -44,101 +32,17 @@
             }
           },
           {
-            "id": "188b5112bc5d42de",
+            "id": "d52d17cd4e493e2f",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "pdf",
               "state": {
-                "currentVersion": "1.6.7"
-              }
-            }
-          },
-          {
-            "id": "67c006353a9e2d54",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "189b3ccfef6f9826",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4bff5d339ebcca54",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "384305fe05b4b6f2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/sunMM3DGSSLAMMultimodal2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7486e7e55e0d1f2f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a13b86062ee6c0e8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "749c1c68c4f010ab",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "essay/zotero/annotations/haRGBDGSICPSLAM2024.md",
-                "mode": "source",
-                "source": false
+                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -223,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "essay/texs/GsplatLoc/main.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -240,7 +144,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "essay/texs/GsplatLoc/main.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -264,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           },
@@ -274,7 +178,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           }
@@ -302,7 +206,7 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "d41e4289c8b40c59",
+  "active": "d52d17cd4e493e2f",
   "lastOpenFiles": [
     "essay/texs/GsplatLoc/main.md",
     "conflict-files-obsidian-git.md",
