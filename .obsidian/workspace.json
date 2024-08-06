@@ -42,6 +42,16 @@
             }
           },
           {
+            "id": "188b5112bc5d42de",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.7"
+              }
+            }
+          },
+          {
             "id": "67c006353a9e2d54",
             "type": "leaf",
             "state": {
@@ -126,7 +136,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -288,7 +298,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b03d43d60c06d142",
+  "active": "188b5112bc5d42de",
   "lastOpenFiles": [
     "essay/texs/GsplatLoc/mess notes.md",
     "essay/texs/GsplatLoc/main.pdf",
