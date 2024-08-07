@@ -11,6 +11,16 @@
             "id": "b570d3ecafc29e35",
             "type": "leaf",
             "state": {
+              "type": "pdf",
+              "state": {
+                "file": "essay/texs/GsplatLoc/main.pdf"
+              }
+            }
+          },
+          {
+            "id": "48930380d034cbe8",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
                 "file": "essay/texs/GsplatLoc/main.md",
@@ -20,12 +30,24 @@
             }
           },
           {
-            "id": "808b88c3d43d2f83",
+            "id": "81318c9327dadce2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md",
+                "file": "essay/journals/ITE computer vision.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "87216e7e428d1ea2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "essay/texs/GsplatLoc/mess notes.md",
                 "mode": "source",
                 "source": false
               }
@@ -196,23 +218,25 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "808b88c3d43d2f83",
+  "active": "21942943f6ffac1a",
   "lastOpenFiles": [
     "essay/texs/GsplatLoc/main.pdf",
     "essay/texs/GsplatLoc/main.md",
     "essay/texs/GsplatLoc/mess notes.md",
-    "conflict-files-obsidian-git.md",
+    "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
+    "essay/journals/ITE computer vision.md",
+    "essay/journals",
     "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
+    "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
+    "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
+    "essay/zotero/annotations/sunMM3DGSSLAMMultimodal2024.md",
+    "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
+    "conflict-files-obsidian-git.md",
     "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
     "essay/zotero/attachments/gs_spalt/method/Taussky_Zassenhaus_1959_On the similarity transformation between a matirx and its transpose.pdf",
     "essay/zotero/attachments/gs_spalt/method/Zwicker et al_2002_EWA splatting.pdf",
     "essay/zotero/attachments/gs_spalt/method",
     "essay/zotero/attachments/gs_spalt/Zwicker et al_2002_EWA splatting.pdf",
-    "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
-    "essay/zotero/annotations/smithFlowMapHighQualityCamera2024.md",
-    "essay/zotero/annotations/sunMM3DGSSLAMMultimodal2024.md",
-    "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
-    "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
     "essay/zotero/annotations/huangPhotoSLAMRealtimeSimultaneous2024.md",
     "essay/zotero/annotations/haRGBDGSICPSLAM2024.md",
     "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
@@ -224,7 +248,6 @@
     "essay/zotero/notes/{{citekey}}.md",
     "essay/zotero/attachments/gs_spalt/Matsuki et al_2024_Gaussian splatting slam2.pdf",
     "essay/zotero/attachments/gs_spalt/Matsuki et al_2024_Gaussian splatting slam.pdf",
-    "essay/zotero/attachments/gs_spalt/Yu et al_2024_Gaussian Opacity Fields2.pdf",
     "essay/texs/GSplatLoc.md",
     "essay/texs/ABGICP/ABGICP.md",
     "essay/template/arxiv/main.md",
@@ -233,7 +256,6 @@
     "essay/basic/3D.md",
     "essay/basic/experiment.md",
     "essay/texs/Untitled.md",
-    "essay/Arxiv.md",
     "assets/screenshot.png",
     "assets/Pasted image 20240524150219.png",
     "assets/Pasted image 20240420105746.png",

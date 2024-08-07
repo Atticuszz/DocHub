@@ -31,361 +31,10 @@ We present GSplatLoc, an innovative pose estimation method for RGB-D cameras tha
 # Methods
 
 
-## Normalization
-
-```python
-@torch.no_grad()
-# @torch.compile
-def similarity_from_cameras(
-    c2w: torch.Tensor, strict_scaling: bool = False, center_method: str = "focus"
-) -> torch.Tensor:
-    """
-    Calculate a similarity transformation that aligns and scales camera positions.
-
-    Parameters
-    ----------
-    c2w : torch.Tensor
-        A batch of camera-to-world transformation matrices of shape (N, 4, 4).
-    strict_scaling : bool, optional
-        If True, use the maximum distance for scaling, otherwise use the median.
-    center_method : str, optional
-        Method for centering the scene, either "focus" for focusing method or "poses" for camera poses centering.
-
-    Returns
-    -------
-    torch.Tensor
-        A 4x4 similarity transformation matrix that aligns, centers, and scales the input cameras.
-
-    Raises
-    ------
-    ValueError
-        If the `center_method` is not recognized.
-    """
-    t = c2w[:, :3, 3]
-    R = c2w[:, :3, :3]
-
-    # Rotate the world so that z+ is the up axis
-    ups = torch.sum(R * torch.tensor([0, -1.0, 0], device=R.device), dim=-1)
-    world_up = torch.mean(ups, dim=0)
-    world_up /= torch.norm(world_up)
-
-    up_camspace = torch.tensor([0.0, -1.0, 0.0], device=R.device)
-    c = torch.dot(up_camspace, world_up)
-    cross = torch.linalg.cross(world_up, up_camspace)
-    skew = torch.tensor(
-        [
-            [0.0, -cross[2], cross[1]],
-            [cross[2], 0.0, -cross[0]],
-            [-cross[1], cross[0], 0.0],
-        ],
-        device=R.device,
-    )
-
-    if c > -1:
-        R_align = torch.eye(3, device=R.device) + skew + (skew @ skew) * 1 / (1 + c)
-    else:
-        R_align = torch.tensor(
-            [[-1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]], device=R.device
-        )
-
-    R = R_align @ R
-    fwds = torch.sum(R * torch.tensor([0, 0.0, 1.0], device=R.device), dim=-1)
-    t = (R_align @ t.unsqueeze(-1)).squeeze(-1)
-
-    # Recenter the scene
-    if center_method == "focus":
-        nearest = t + (fwds * -t).sum(dim=-1).unsqueeze(-1) * fwds
-        translate = -torch.median(nearest, dim=0)[0]
-    elif center_method == "poses":
-        translate = -torch.median(t, dim=0)[0]
-    else:
-        raise ValueError(f"Unknown center_method {center_method}")
-
-    transform = torch.eye(4, device=R.device)
-    transform[:3, 3] = translate
-    transform[:3, :3] = R_align
-
-    # Rescale the scene using camera distances
-    scale_fn = torch.max if strict_scaling else torch.median
-    scale = 1.0 / scale_fn(torch.norm(t + translate, dim=-1))
-    transform[:3, :] *= scale
-
-    return transform
+这是一段参考文本，但是描述的不是我的方法，需要修改成我的方法，我会在对应的句子后面添加应该修改的内容
+**Problem formulation:** Our goal is to estimate the 6-DoF pose (R , t) ∈ SE(3) of a query image I q，这里查询的应该是是深度图像, where R is a rotation matrix and t is a translation vector in the camera frame.姿态确实是深度相机的姿态 We are given a 3D representation of the environment, such as a sparse or dense 3D point cloud我们这里不是点云了应该是3D Gaussians,是3D高斯 { P i } and posed reference images { I k }和有姿态的参考深度图 , collectively called the reference data.
 
 
-@torch.no_grad()
-# @torch.compile
-def align_principle_axes(point_cloud: torch.Tensor) -> torch.Tensor:
-    """
-    Align the principal axes of a point cloud to the coordinate axes using PCA.
-
-    Parameters
-    ----------
-    point_cloud : torch.Tensor
-        Nx3 tensor containing the 3D point cloud.
-
-    Returns
-    -------
-    torch.Tensor
-        A 4x4 transformation matrix that aligns the point cloud along principal axes.
-    """
-    # Compute centroid
-    centroid = torch.median(point_cloud, dim=0).values
-
-    # Translate point cloud to centroid
-    translated_point_cloud = point_cloud - centroid
-
-    # Compute covariance matrix
-    covariance_matrix = torch.cov(translated_point_cloud.t())
-
-    # Compute eigenvectors and eigenvalues
-    eigenvalues, eigenvectors = torch.linalg.eigh(covariance_matrix)
-
-    # Sort eigenvectors by eigenvalues in descending order
-    sort_indices = eigenvalues.argsort(descending=True)
-    eigenvectors = eigenvectors[:, sort_indices]
-
-    # Check orientation of eigenvectors. If the determinant is negative, flip an eigenvector.
-    if torch.det(eigenvectors) < 0:
-        eigenvectors[:, 0] *= -1
-
-    # Create rotation matrix
-    rotation_matrix = eigenvectors.t()
-
-    # Create SE(3) matrix (4x4 transformation matrix)
-    transform = torch.eye(4, device=point_cloud.device)
-    transform[:3, :3] = rotation_matrix
-    transform[:3, 3] = -torch.mv(rotation_matrix, centroid)
-
-    return transform
-
-
-@torch.no_grad()
-# @torch.compile
-def transform_points(matrix: torch.Tensor, points: torch.Tensor) -> torch.Tensor:
-    """
-    Transform points using a SE(3) transformation matrix.
-
-    Parameters
-    ----------
-    matrix : torch.Tensor
-        A 4x4 SE(3) transformation matrix.
-    points : torch.Tensor
-        An Nx3 tensor of points to be transformed.
-
-    Returns
-    -------
-    torch.Tensor
-        An Nx3 tensor of transformed points.
-    """
-    assert matrix.shape == (4, 4)
-    assert len(points.shape) == 2 and points.shape[1] == 3
-    return torch.addmm(matrix[:3, 3], points, matrix[:3, :3].t())，@torch.no_grad()
-# @torch.compile
-def transform_cameras(
-    matrix: torch.Tensor, c2w: torch.Tensor
-) -> tuple[torch.Tensor, torch.Tensor]:
-    """
-    Apply a SE(3) transformation to a set of camera-to-world matrices.
-
-    Parameters
-    ----------
-    matrix : torch.Tensor
-        A 4x4 SE(3) transformation matrix.
-    c2w : torch.Tensor
-        An Nx4x4 tensor of camera-to-world matrices.
-
-    Returns
-    -------
-    torch.Tensor
-        An Nx4x4 tensor of transformed camera-to-world matrices.
-    """
-    assert matrix.shape == (4, 4)
-    assert len(c2w.shape) == 3 and c2w.shape[1:] == (4, 4)
-    # Perform the matrix multiplication with einsum for better control
-    transformed = torch.einsum("ki,nij->nkj", matrix, c2w)
-
-    # Normalize the 3x3 rotation matrices to maintain scale: Use the norm of the first row
-    scaling = torch.norm(transformed[:, 0, :3], p=2, dim=1, keepdim=True)
-    transformed[:, :3, :3] /= scaling.unsqueeze(
-        -1
-    )  # Unsqueeze to match the shape for broadcasting
-    return transformed, scaling，@torch.no_grad()
-def normalize_2C(tar: RGBDImage, src: RGBDImage) -> tuple[RGBDImage, RGBDImage, Tensor]:
-    """normalize two rgb-d image with tar.pose"""
-    pose = tar.pose.unsqueeze(0)  # -> N,4,4
-    # calculate tar points normalization transform
-    points = tar.points
-    T1 = similarity_from_cameras(pose)
-    T2 = align_principle_axes(transform_points(T1, points))
-    transform = T2 @ T1
-
-    # apply transform
-    tar.points = transform_points(transform, tar.points)
-    src.points = transform_points(transform, src.points)
-    normed_tar_pose, _ = transform_cameras(transform, tar.pose.unsqueeze(0))
-    tar.pose = normed_tar_pose.squeeze(0)
-    normed_src_pose, scale_factor = transform_cameras(transform, src.pose.unsqueeze(0))
-    src.pose = normed_src_pose.squeeze(0)
-    return tar, src, scale_factor
-```
-## Gaussian Splatting
-
-```python
-@dataclass
-class GsConfig:
-    init_opa: float = 1.0
-    sparse_grad: bool = False
-    packed: bool = False
-    absgrad: bool = False
-    antialiased: bool = False
-    # Degree of spherical harmonics
-    sh_degree: int = 1
-
-    # RasterizeConfig
-    # Near plane clipping distance
-    near_plane: float = 1e-10
-    # Far plane clipping distance
-    far_plane: float = 1e10
-
-
-class GSModel(nn.Module):
-    def __init__(
-        self,
-        # dataset
-        points: Tensor,  # N,3
-        colors: Tensor,  # N,3
-        *,
-        # config
-        config: GsConfig = GsConfig(),
-        batch_size: int = 1,
-    ):
-        super().__init__()
-        self.config = config
-        self.batch_size = batch_size
-        points = points
-        # points = gs_data.points
-        rgbs = colors
-        # rgbs = gs_data.colors
-        # scene_scale = gs_data.scene_scale
-        # scene_scale = gs_data.scene_scale
-
-        # Calculate distances for initial scale
-        dist2_avg = (knn(points, 4)[:, 1:] ** 2).mean(dim=-1)
-        dist_avg = torch.sqrt(dist2_avg)
-        scales = torch.log(dist_avg).unsqueeze(-1).repeat(1, 3)
-
-        # Parameters
-        self.means3d = points  # [N, 3]
-        # self.means3d = nn.Parameter(points)  # [N, 3]
-        self.scales = nn.Parameter(scales)
-        self.opacities = nn.Parameter(
-            torch.logit(
-                torch.full((points.shape[0],), self.config.init_opa, device=DEVICE)
-            )
-        )  # [N,]
-        # NOTE: no deformation
-        self.quats = torch.nn.Parameter(
-            to_tensor([1, 0, 0, 0], requires_grad=True).repeat(points.shape[0], 1)
-        )  # [N, 4]
-        # self.quats = torch.nn.Parameter(quats)
-
-        # # color is SH coefficients.
-        colors = torch.zeros(
-            (points.shape[0], (self.config.sh_degree + 1) ** 2, 3), device=DEVICE
-        )  # [N, K, 3]
-        colors[:, 0, :] = rgb_to_sh(rgbs)  # Initialize SH coefficients
-        self.colors = nn.Parameter(rgbs)
-        self.sh0 = torch.nn.Parameter(colors[:, :1, :])
-        self.shN = torch.nn.Parameter(colors[:, 1:, :])
-
-        # Learning rates (not parameters, stored for optimizer setup)
-        # self.lr_means3d = 1.6e-4 * scene_scale
-        self.lr_scales = 5e-3
-        self.lr_opacities = 5e-2
-        self.lr_colors = 2.5e-3
-        self.lr_sh0 = 2.5e-3
-        self.lr_shN = 2.5e-3 / 20
-        self.optimizers = self._create_optimizers()
-
-        # Running stats for prunning & growing.
-        n_gauss = points.shape[0]
-        self.running_stats = {
-            "grad2d": torch.zeros(n_gauss, device=DEVICE),  # norm of the gradient
-            "count": torch.zeros(n_gauss, device=DEVICE, dtype=torch.int),
-        }
-
-    def __len__(self):
-        return self.means3d.shape[0]
-
-    def forward(
-        self,
-        camtoworlds: Tensor,
-        Ks: Tensor,
-        width: int,
-        height: int,
-        render_mode: str = "RGB+ED",
-    ):
-        assert self.means3d.shape[0] == self.opacities.shape[0]
-        opacities = torch.sigmoid(self.opacities)
-        colors = torch.cat([self.sh0, self.shN], 1)
-        # colors = torch.sigmoid(self.colors)
-        scales = torch.exp(self.scales)
-
-        render_colors, render_alphas, info = rasterization(
-            means=self.means3d,
-            quats=self.quats,
-            scales=scales,
-            opacities=opacities,
-            colors=colors,
-            sh_degree=self.config.sh_degree,
-            viewmats=torch.linalg.inv(camtoworlds),
-            Ks=Ks,
-            width=width,
-            height=height,
-            packed=self.config.packed,
-            absgrad=self.config.absgrad,
-            sparse_grad=self.config.sparse_grad,
-            far_plane=self.config.far_plane,
-            near_plane=self.config.near_plane,
-            render_mode=render_mode,
-            rasterize_mode="antialiased" if self.config.antialiased else "classic",
-        )
-
-        return render_colors, render_alphas, info
-
-    def _create_optimizers(self) -> list[Optimizer]:
-        params = [
-            ("scales", self.scales, self.lr_scales),
-            ("opacities", self.opacities, self.lr_opacities),
-            ("colors", self.colors, self.lr_colors),
-        ]
-
-        # if self.config.turn_on_light:
-        #     # params.append(("sh0", self.sh0, self.lr_sh0))
-        #     # params.append(("shN", self.shN, self.lr_shN))
-        #     # params.append(("means3d", self.means3d, self.lr_means3d))
-
-        optimizers = [
-            (SparseAdam if self.config.sparse_grad else Adam)(
-                [
-                    {
-                        "params": param,
-                        "lr": lr * math.sqrt(self.batch_size),
-                        "name": name,
-                    }
-                ],
-                eps=1e-15 / math.sqrt(self.batch_size),
-                betas=(
-                    1 - self.batch_size * (1 - 0.9),
-                    1 - self.batch_size * (1 - 0.999),
-                ),
-            )
-            for name, param, lr in params
-        ]
-
-        return optimizers
-```
 
 
 In the context of depth projection and rasterization for Gaussian splatting, the process involves several mathematical transformations to project 3D Gaussians onto a 2D image plane. Here’s a detailed explanation of the implementation based on the provided code and mathematical principles:
@@ -517,9 +166,131 @@ class CameraConfig:
 ,并且我是定义了weight_decay，,这个你也要体现在优化目标中，总损失应该是定义了 一个正则项的
 
 
-## 收敛判断
+##  Localization pipeline
+
+在这个定义下，我又产生了新的段落，来描述初始化高斯的过程，
+## Localization pipeline
+
+
+We initialize these Gaussians from a point cloud, where each point corresponds to a Gaussian's mean $\boldsymbol{\mu}_i$.
+Unlike traditional 3D reconstruction methods[@kerbl3dGaussianSplatting2023] that often rely on structure-from-motion techniques[@schonbergerStructurefrommotionRevisited2016], our approach is tailored for direct point cloud input, offering greater flexibility and efficiency in various 3D data scenarios. For the initial parameterization, we set $o_i = 1$ for all Gaussians to ensure full opacity. The scale $\mathbf{s}_i \in \mathbb{R}^3$ of each Gaussian is initialized based on the local point density, allowing our model to adaptively adjust to varying point cloud densities:
+
+$$\mathbf{s}_i = (\sigma_i, \sigma_i, \sigma_i), \text{ where } \sigma_i = \sqrt{\frac{1}{3}\sum_{j=1}^3 d_{ij}^2}$$
+
+Here, $d_{ij}$ is the distance to the $j$-th nearest neighbour of point $i$. In practice, we calculate this using the k-nearest neighbours algorithm with $k=4$, excluding the point itself. This isotropic initialization ensures a balanced initial representation of the local geometry.
+
+Initially, we set $\mathbf{q}_i = (1, 0, 0, 0)$ for all Gaussians, corresponding to no rotation. This initialization strategy provides a neutral starting point, allowing subsequent optimization processes to refine the orientations as needed.
+
+
+就像这篇论文一样，4. Localization pipeline PixLoc can be a competitive standalone localization module when coupled with image retrieval, but can also refine poses obtained by previous approaches. It only requires a 3D model and a coarse initial pose, which we now discuss. Initialization: How accurate the initial pose should be depends on the basin of convergence of the alignment. Features from a deep CNN with a large receptive field ensure a large basin (Figure 5). To further increase it, we apply PixLoc to image pyramids, starting at the lowest resolution, yielding coarsest feature maps of size W=16. To keep the pipeline simple, we select the initial pose as the pose of the first reference image returned by image retrieval. This results in a good convergence in most scenarios. When retrieval is not sufficiently robust and returns an incorrect location, as in the most challenging conditions, one could improve the performance by reranking using covisiblity clustering [70,73] or pose verification with sparse [72,96] or dense matching [82]. 3D structure: For simplicity and unless mentioned, for both training and evaluation, we use sparse SfM models triangulated from posed reference images using hloc [69,70] and COLMAP [77,79]. Given a subset of reference images, e.g. top-5 retrieved, we gather all the 3D points that they observe, extract multilevel features at their 2D observations, and average them based on their confidence.，然后这是我的参考我已经写完的方法论部分，
+
+**Problem formulation**: Our objective is to estimate the 6-DoF pose $(R, t) \in SE(3)$ of a query depth image $D_q$, where $R$ is the rotation matrix and $t$ is the translation vector in the camera coordinate system. Given a 3D representation of the environment in the form of 3D Gaussians, let $\mathcal{G} = \{G_i\}_{i=1}^N$ denote a set of $N$ 3D Gaussians, and posed reference depth images $\{D_k\}$, which together constitute the reference data.
+
+
+## Gaussian Splatting
+
+
+Each Gaussian $G_i$ is characterized by its 3D mean $\boldsymbol{\mu}_i \in \mathbb{R}^3$, 3D covariance matrix $\boldsymbol{\Sigma}_i \in \mathbb{R}^{3\times3}$, opacity $o_i \in \mathbb{R}$, and scale $\mathbf{s}_i \in \mathbb{R}^3$. To represent the orientation of each Gaussian, we use a rotation quaternion $\mathbf{q}_i \in \mathbb{R}^4$.
+
+The 3D covariance matrix $\boldsymbol{\Sigma}_i$ is then parameterized using $\mathbf{s}_i$ and $\mathbf{q}_i$:
+
+$$\boldsymbol{\Sigma}_i = R(\mathbf{q}_i) S(\mathbf{s}_i) S(\mathbf{s}_i)^T R(\mathbf{q}_i)^T$$
+
+where $R(\mathbf{q}_i)$ is the rotation matrix derived from $\mathbf{q}_i$, and $S(\mathbf{s}_i) = \text{diag}(\mathbf{s}_i)$ is a diagonal matrix of scales.
+
+To project these 3D Gaussians onto a 2D image plane, we follow the approach described by [@kerbl3dGaussianSplatting2023]. The projection of the 3D mean $\boldsymbol{\mu}_i$ to the 2D image plane is given by:
+
+$$\boldsymbol{\mu}_{I,i} = \pi(P(T_{wc} \boldsymbol{\mu}_{i,\text{homogeneous}}))$$
+
+where $T_{wc} \in SE(3)$ is the world-to-camera transformation, $P \in \mathbb{R}^{4 \times 4}$ is the projection matrix [@yeMathematicalSupplementTexttt2023], and $\pi: \mathbb{R}^4 \rightarrow \mathbb{R}^2$ maps to pixel coordinates.
+
+The 2D covariance $\boldsymbol{\Sigma}_{I,i} \in \mathbb{R}^{2\times2}$ of the projected Gaussian is derived as:
+
+$$\boldsymbol{\Sigma}_{I,i} = J R_{wc} \boldsymbol{\Sigma}_i R_{wc}^T J^T$$
+
+where $R_{wc}$ represents the rotation component of $T_{wc}$, and $J$ is the affine transform as described by [@zwickerEWASplatting2002].
+
+
+## Depth Compositing
+
+
+
+For depth map generation, we employ a front-to-back compositing scheme, which allows for accurate depth estimation and edge alignment. Let $d_n$ represent the depth value associated with the $n$-th Gaussian, which is the z-coordinate of the Gaussian's mean in the camera coordinate system. The depth $D(p)$ at pixel $p$ is computed as [@kerbl3dGaussianSplatting2023]:
+
+$$D(p) = \sum_{n \leq N} d_n \cdot \alpha_n \cdot T_n, \quad \text{where } T_n = \prod_{m<n} (1 - \alpha_m)$$
+
+Here, $\alpha_n$ represents the opacity of the $n$-th Gaussian at pixel $p$, computed as:
+
+$$\alpha_n = o_n \cdot \exp(-\sigma_n), \quad \sigma_n = \frac{1}{2} \Delta_n^T \boldsymbol{\Sigma}_I^{-1} \Delta_n$$
+
+where $\Delta_n$ is the offset between the pixel center and the 2D Gaussian center $\boldsymbol{\mu}_I$, and $o_n$ is the opacity parameter of the Gaussian. $T_n$ denotes the cumulative transparency product of all Gaussians preceding $n$, accounting for the occlusion effects of previous Gaussians.
+
+To ensure consistent representation across the image, we normalize the depth values. First, we calculate the total accumulated opacity $\alpha(p)$ for each pixel:
+
+$$\alpha(p) = \sum_{n \leq N} \alpha_n \cdot T_n$$
+
+The normalized depth $\text{Norm}_D(p)$ is then defined as:
+
+$$\text{Norm}_D(p) = \frac{D(p)}{\alpha(p)}$$
+
+This normalization process ensures that the depth values are properly scaled and comparable across different regions of the image, regardless of the varying densities of Gaussians in the scene. By projecting 3D Gaussians onto the 2D image plane and computing normalized depth values, we can effectively generate depth maps that accurately represent the 3D structure of the scene while maintaining consistency across different viewing conditions.
+
+## Camera Pose
+
+
+
+We define the camera pose as
+
+$$
+ \mathbf{T}_{cw} = \begin{pmatrix} \mathbf{R}_{cw} & \mathbf{t}_{cw} \\ \mathbf{0} & 1 \end{pmatrix} \in SE(3)
+$$
+
+where $\mathbf{T}_{cw}$ represents the camera-to-world transformation matrix. Notably, we parameterize the rotation $\mathbf{R}_{cw} \in SO(3)$ using a quaternion $\mathbf{q}_{cw}$. This choice of parameterization is motivated by several key advantages that quaternions offer in the context of camera pose estimation and optimization. Quaternions provide a compact and efficient representation, requiring only four parameters, while maintaining numerical stability and avoiding singularities such as gimbal lock. Their continuous and non-redundant nature is particularly advantageous for gradient-based optimization algorithms, allowing for unconstrained optimization and simplifying the optimization landscape.
+
+## Optimization
+Based on these considerations, we design our optimization variables to separately optimize the normalized quaternion and the translation. The loss function is designed to ensure accurate depth estimations and edge alignment, incorporating both depth magnitude and contour accuracy. It can be defined as:
+
+$$ 
+L = \lambda_1 \cdot L_{\text{depth}} + \lambda_2 \cdot L_{\text{contour}} 
+$$
+
+where $L_{\text{depth}}$ represents the L1 loss for depth accuracy, and $L_{\text{contour}}$ focuses on the alignment of depth contours or edges. Specifically:
+
+$$
+L_{\text{depth}} = \sum_{i \in M} |D_i^{\text{predicted}} - D_i^{\text{observed}}|
+$$
+
+$$
+L_{\text{contour}} = \sum_{j \in M} |\nabla D_j^{\text{predicted}} - \nabla D_j^{\text{observed}}|
+$$
+
+Here, $M$ denotes the reprojection mask, indicating which pixels are valid for reprojection. Both $L_{\text{depth}}$ and $L_{\text{contour}}$ are computed only over the masked regions. $\lambda_1$ and $\lambda_2$ are weights that balance the two parts of the loss function, tailored to the specific requirements of the application.
+
+The optimization objective can be formulated as:
+
+$$
+\min_{\mathbf{q}_{cw}, \mathbf{t}_{cw}} L + \lambda_q \|\mathbf{q}_{cw}\|_2^2 + \lambda_t \|\mathbf{t}_{cw}\|_2^2
+$$
+
+where $\lambda_q$ and $\lambda_t$ are regularization terms for the quaternion and translation parameters, respectively.
+
+We employ the Adam optimizer for both quaternion and translation optimization, with different learning rates and weight decay values for each. The learning rates are set to $5 × 10^-4$ for quaternion optimization and $10^-3$ for translation optimization, based on experimental results. The weight decay values are set to $10^-3$ for both quaternion and translation parameters, serving as regularization to prevent overfitting.
+你需要给方法论部分添加一个Localization pipeline，
+第一段应该是说定位pipelind的精确的简介描述，我给出我的描述，你不需要全部写出来，提供给你参考，用给定姿态的深度图生成了gs，给定查询深度图的姿态和深度数据本身，然后进行优化求解，我的描述比较口语化，但你写的必须是符合书面论文要求的，计算机顶会论文的标准 
+第二段落 下面这个段落是高斯初始化的详细描述We initialize these Gaussians from a point cloud, where each point corresponds to a Gaussian's mean $\boldsymbol{\mu}_i$.
+Unlike traditional 3D reconstruction methods[@kerbl3dGaussianSplatting2023] that often rely on structure-from-motion techniques[@schonbergerStructurefrommotionRevisited2016], our approach is tailored for direct point cloud input, offering greater flexibility and efficiency in various 3D data scenarios. For the initial parameterization, we set $o_i = 1$ for all Gaussians to ensure full opacity. The scale $\mathbf{s}_i \in \mathbb{R}^3$ of each Gaussian is initialized based on the local point density, allowing our model to adaptively adjust to varying point cloud densities:
+
+$$\mathbf{s}_i = (\sigma_i, \sigma_i, \sigma_i), \text{ where } \sigma_i = \sqrt{\frac{1}{3}\sum_{j=1}^3 d_{ij}^2}$$
+
+Here, $d_{ij}$ is the distance to the $j$-th nearest neighbour of point $i$. In practice, we calculate this using the k-nearest neighbours algorithm with $k=4$, excluding the point itself. This isotropic initialization ensures a balanced initial representation of the local geometry.
+
+Initially, we set $\mathbf{q}_i = (1, 0, 0, 0)$ for all Gaussians, corresponding to no rotation. This initialization strategy provides a neutral starting point, allowing subsequent optimization processes to refine the orientations as needed.这部分是相当于是初始化高斯的内容，posed reference depth images $\{D_k\}$,为了方便评估实验，我们使用给定姿态的posed reference depth images来进行初始化gs，然后第三部分应该是优化停止，收敛的描述，，大量实验结果显示大约在100次迭代后总损失基本稳定，并且设置了patience机制，我设置为100次后启动patience机制，如果连续超过patience次数总损失不再下降，就推出优化迭代循环，采用总损失最小值的时候为最佳的估计姿态，这是优化收敛停止的描述，我的描述比较口语化，但你写的必须是符合书面论文要求的，计算机顶会论文的标准，开始你对Localization pipeline三段的英文学术论文写作，前后需要非常的连贯学术化，根据我提供给你所有的资料
 
 ### Experements
+
+```GPT
+我的描述比较口语化，但你写的必须是符合书面论文要求的，计算机顶会论文的标准
+```
 
 ```GPT
 来你要写成像论文那样。一个整段落的去描述前后句子要衔接起来，不要分开分罗列呢，是像人工智能写的，我是让你帮我润色我的论文，你懂我意思吗？按照计算机学术顶会论文的风格来进行写作。
