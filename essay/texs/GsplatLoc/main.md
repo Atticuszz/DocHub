@@ -37,7 +37,7 @@ Accurate visual localization commonly relies on estimating correspondences betwe
 **Problem formulation**: Our objective is to estimate the 6-DoF pose $(R, t) \in SE(3)$ of a query depth image $D_q$, where $R$ is the rotation matrix and $t$ is the translation vector in the camera coordinate system. Given a 3D representation of the environment in the form of 3D Gaussians, let $\mathcal{G} = \{G_i\}_{i=1}^N$ denote a set of $N$ 3D Gaussians, and posed reference depth images $\{D_k\}$, which together constitute the reference data.
 
 
-## Gaussian Splatting
+## Scene Representation
 
 
 Each Gaussian $G_i$ is characterized by its 3D mean $\boldsymbol{\mu}_i \in \mathbb{R}^3$, 3D covariance matrix $\boldsymbol{\Sigma}_i \in \mathbb{R}^{3\times3}$, opacity $o_i \in \mathbb{R}$, and scale $\mathbf{s}_i \in \mathbb{R}^3$. To represent the orientation of each Gaussian, we use a rotation quaternion $\mathbf{q}_i \in \mathbb{R}^4$.
@@ -85,8 +85,7 @@ $$\text{Norm}_D(p) = \frac{D(p)}{\alpha(p)}$$
 
 This normalization process ensures that the depth values are properly scaled and comparable across different regions of the image, regardless of the varying densities of Gaussians in the scene. By projecting 3D Gaussians onto the 2D image plane and computing normalized depth values, we can effectively generate depth maps that accurately represent the 3D structure of the scene while maintaining consistency across different viewing conditions.
 
-## Camera Pose
-
+## Localization
 
 
 We define the camera pose as
@@ -97,7 +96,7 @@ $$
 
 where $\mathbf{T}_{cw}$ represents the camera-to-world transformation matrix. Notably, we parameterize the rotation $\mathbf{R}_{cw} \in SO(3)$ using a quaternion $\mathbf{q}_{cw}$. This choice of parameterization is motivated by several key advantages that quaternions offer in the context of camera pose estimation and optimization. Quaternions provide a compact and efficient representation, requiring only four parameters, while maintaining numerical stability and avoiding singularities such as gimbal lock. Their continuous and non-redundant nature is particularly advantageous for gradient-based optimization algorithms, allowing for unconstrained optimization and simplifying the optimization landscape.
 
-## Optimization
+
 Based on these considerations, we design our optimization variables to separately optimize the normalized quaternion and the translation. The loss function is designed to ensure accurate depth estimations and edge alignment, incorporating both depth magnitude and contour accuracy. It can be defined as:
 
 $$ 
@@ -124,9 +123,9 @@ $$
 
 where $\lambda_q$ and $\lambda_t$ are regularization terms for the quaternion and translation parameters, respectively.
 
-We employ the Adam optimizer for both quaternion and translation optimization, with different learning rates and weight decay values for each. The learning rates are set to $5 × 10^-4$ for quaternion optimization and $10^-3$ for translation optimization, based on experimental results. The weight decay values are set to $10^-3$ for both quaternion and translation parameters, serving as regularization to prevent overfitting.
 
-## Localization pipeline
+
+## Pipeline
 
 
 The GSplatLoc method simplifies the localization process by requiring only posed reference depth images $\{D_k\}$ and a query depth image $D_q$. Its differentiability in projections of 3D Gaussian facilitates an efficient and smooth convergence during optimization.整个pipeline的描述不够准确
@@ -138,6 +137,9 @@ $$\mathbf{s}_i = (\sigma_i, \sigma_i, \sigma_i), \text{ where } \sigma_i = \sqrt
 Here, $d_{ij}$ is the distance to the $j$-th nearest neighbour of point $i$. In practice, we calculate this using the k-nearest neighbours algorithm with $k=4$, excluding the point itself. This isotropic initialization ensures a balanced initial representation of the local geometry.过滤离群点之后 Initially, we set $\mathbf{q}_i = (1, 0, 0, 0)$ for all Gaussians, corresponding to no rotation.
 
 This initialization strategy provides a neutral starting point, allowing subsequent optimization processes to refine the orientations as needed. Unlike traditional 3D reconstruction methods [@kerbl3dGaussianSplatting2023] that often rely on structure-from-motion techniques [@schonbergerStructurefrommotionRevisited2016], our approach is tailored for direct point cloud input, offering greater flexibility and efficiency in various 3D data scenarios.
+
+
+**Optimization**: We employ the Adam optimizer for both quaternion and translation optimization, with different learning rates and weight decay values for each. The learning rates are set to $5 × 10^-4$ for quaternion optimization and $10^-3$ for translation optimization, based on experimental results. The weight decay values are set to $10^-3$ for both quaternion and translation parameters, serving as regularization to prevent overfitting.
 
 **Convergence**: To determine the convergence of the optimization process, we employ an early stopping mechanism based on the stabilization of the total loss. Extensive experimental results indicate that the total loss stabilizes after approximately 100 iterations. We implement a patience mechanism, set to activate after 100 iterations. If the total loss does not decrease for a consecutive number of patience iterations, the optimization loop is terminated. The pose estimate corresponding to the minimum total loss is then selected as the optimal pose. This approach ensures the reliability and efficiency of the optimization process.
 

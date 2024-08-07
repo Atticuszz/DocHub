@@ -5,20 +5,15 @@
     {
       "id": 1,
       "name": "My Library",
-<<<<<<< HEAD
-      "lastUpdate": 1722914339797
-=======
-      "lastUpdate": 1722864884763
->>>>>>> 41e61c274fcccb905c4cd82223cf7a2c276b2b7a
+      "lastUpdate": 1723024582557
     }
   ],
   "renderCitations": true,
-  "renderCitationsReadingMode": false,
+  "renderCitationsReadingMode": true,
   "renderLinkCitations": true,
+  "hideLinks": false,
+  "enableCiteKeyCompletion": true,
   "pathToBibliography": "C:\\Users\\18317\\DevSpace\\DocHub\\essay\\zotero\\bibliography.bib",
   "pullFromZotero": true,
-  "cslStyleURL": "https://raw.githubusercontent.com/citation-style-language/styles/master/ieee-with-url.csl",
-  "hideLinks": true,
-  "enableCiteKeyCompletion": true,
-  "showCitekeyTooltips": true
+  "cslStyleURL": "https://raw.githubusercontent.com/citation-style-language/styles/master/ieee.csl"
 }
