@@ -97,7 +97,7 @@ $$
 where $\mathbf{T}_{cw}$ represents the camera-to-world transformation matrix. Notably, we parameterize the rotation $\mathbf{R}_{cw} \in SO(3)$ using a quaternion $\mathbf{q}_{cw}$. This choice of parameterization is motivated by several key advantages that quaternions offer in the context of camera pose estimation and optimization. Quaternions provide a compact and efficient representation, requiring only four parameters, while maintaining numerical stability and avoiding singularities such as gimbal lock. Their continuous and non-redundant nature is particularly advantageous for gradient-based optimization algorithms, allowing for unconstrained optimization and simplifying the optimization landscape.
 
 
-Based on these considerations, we design our optimization variables to separately optimize the normalized quaternion and the translation. The loss function is designed to ensure accurate depth estimations and edge alignment, incorporating both depth magnitude and contour accuracy. It can be defined as:
+Based on these considerations, we design our optimization variables to separately optimize the normalized  $\mathbf{q}_{cw}$ and  $\mathbf{t}_{cw}$. The loss function is designed to ensure accurate depth estimations and edge alignment, incorporating both depth magnitude and contour accuracy. It can be defined as:
 
 $$ 
 L = \lambda_1 \cdot L_{\text{depth}} + \lambda_2 \cdot L_{\text{contour}} 
@@ -124,24 +124,23 @@ $$
 where $\lambda_q$ and $\lambda_t$ are regularization terms for the quaternion and translation parameters, respectively.
 
 
-
 ## Pipeline
 
+The GSplatLoc method streamlines the localization process by utilizing only posed reference depth images $\{D_k\}$ and a query depth image $D_q$. Its differentiability in projections of 3D Gaussians facilitates efficient and smooth convergence during optimization.
 
-The GSplatLoc method simplifies the localization process by requiring only posed reference depth images $\{D_k\}$ and a query depth image $D_q$. Its differentiability in projections of 3D Gaussian facilitates an efficient and smooth convergence during optimization.整个pipeline的描述不够准确
-
-**Initialization**: We initialize these Gaussians from a point cloud projected by $\{D_k\}$, where each point corresponds to a Gaussian's mean $\boldsymbol{\mu}_i$. For the initial parameterization, we set $o_i = 1$ for all Gaussians to ensure full opacity. The scale $\mathbf{s}_i \in \mathbb{R}^3$ of each Gaussian is initialized based on the local point density, allowing our model to adaptively adjust to varying point cloud densities:
+**3D structure**: For evaluation consistency, we initialize 3D Gaussians from point clouds projected by $\{D_k\}$. Each point corresponds to a Gaussian's mean $\boldsymbol{\mu}_i$. After outlier filtering, we set opacity $o_i = 1$ for all Gaussians. The scale $\mathbf{s}_i \in \mathbb{R}^3$ is initialized based on local point density:
 
 $$\mathbf{s}_i = (\sigma_i, \sigma_i, \sigma_i), \text{ where } \sigma_i = \sqrt{\frac{1}{3}\sum_{j=1}^3 d_{ij}^2}$$
 
-Here, $d_{ij}$ is the distance to the $j$-th nearest neighbour of point $i$. In practice, we calculate this using the k-nearest neighbours algorithm with $k=4$, excluding the point itself. This isotropic initialization ensures a balanced initial representation of the local geometry.过滤离群点之后 Initially, we set $\mathbf{q}_i = (1, 0, 0, 0)$ for all Gaussians, corresponding to no rotation.
+Here, $d_{ij}$ denotes the distance to the $j$-th nearest neighbor of point $i$, calculated using k-nearest neighbors $(k=4)$. This isotropic initialization ensures balanced representation of local geometry. We initially set rotation $\mathbf{q}_i = (1, 0, 0, 0)$ for all Gaussians.
 
-This initialization strategy provides a neutral starting point, allowing subsequent optimization processes to refine the orientations as needed. Unlike traditional 3D reconstruction methods [@kerbl3dGaussianSplatting2023] that often rely on structure-from-motion techniques [@schonbergerStructurefrommotionRevisited2016], our approach is tailored for direct point cloud input, offering greater flexibility and efficiency in various 3D data scenarios.
+To enhance optimization stability and achieve superior final results, we apply standard Principal Component Analysis (PCA) for principal axis alignment of the point cloud, even for pre-existing scenes. This process involves centering the point cloud at its mean and aligning its principal axes with the coordinate axes. The PCA-based alignment normalizes the overall scene orientation, providing a more uniform starting point for optimization across diverse datasets.
 
+This approach significantly improves the stability of loss reduction during optimization and facilitates the achievement of lower final loss values. By aligning the scene's principal components with the coordinate system, we create a more consistent representation that enables the optimization process to focus on refining local details rather than grappling with global orientation discrepancies. This is particularly advantageous for scenes with pronounced directional features or elongated structures, as it aids the optimization process in more effectively capturing and refining the underlying geometry.
 
-**Optimization**: We employ the Adam optimizer for both quaternion and translation optimization, with different learning rates and weight decay values for each. The learning rates are set to $5 × 10^-4$ for quaternion optimization and $10^-3$ for translation optimization, based on experimental results. The weight decay values are set to $10^-3$ for both quaternion and translation parameters, serving as regularization to prevent overfitting.
+**Optimization**: We employ the Adam optimizer for both quaternion and translation optimization, with distinct learning rates and weight decay values for each. The learning rates are set to $5 \times 10^{-4}$ for quaternion optimization and $10^{-3}$ for translation optimization, based on empirical results. The weight decay values are set to $10^{-3}$ for both quaternion and translation parameters, serving as regularization to mitigate overfitting.
 
-**Convergence**: To determine the convergence of the optimization process, we employ an early stopping mechanism based on the stabilization of the total loss. Extensive experimental results indicate that the total loss stabilizes after approximately 100 iterations. We implement a patience mechanism, set to activate after 100 iterations. If the total loss does not decrease for a consecutive number of patience iterations, the optimization loop is terminated. The pose estimate corresponding to the minimum total loss is then selected as the optimal pose. This approach ensures the reliability and efficiency of the optimization process.
+**Convergence**: To determine the convergence of the optimization process, we implement an early stopping mechanism based on the stabilization of the total loss. Extensive experimental results indicate that the total loss typically stabilizes after approximately 100 iterations. We employ a patience mechanism, activated after 100 iterations. If the total loss fails to decrease for a consecutive number of patience iterations, the optimization loop is terminated. The pose estimate corresponding to the minimum total loss is subsequently selected as the optimal pose.
 
 
 # Experiments

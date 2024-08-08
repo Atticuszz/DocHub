@@ -18,7 +18,7 @@
             }
           },
           {
-            "id": "48930380d034cbe8",
+            "id": "95180cfefa53cc47",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -53,7 +53,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -138,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf",
+                "file": "essay/texs/GsplatLoc/main.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -155,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf",
+                "file": "essay/texs/GsplatLoc/main.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -179,7 +180,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf"
+                "file": "essay/texs/GsplatLoc/main.md"
               }
             }
           },
@@ -189,7 +190,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf"
+                "file": "essay/texs/GsplatLoc/main.md"
               }
             }
           }
@@ -217,10 +218,10 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "b570d3ecafc29e35",
+  "active": "95180cfefa53cc47",
   "lastOpenFiles": [
-    "essay/texs/GsplatLoc/main.md",
     "essay/texs/GsplatLoc/main.pdf",
+    "essay/texs/GsplatLoc/main.md",
     "essay/texs/GsplatLoc/mess notes.md",
     "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
     "essay/journals/ITE computer vision.md",
