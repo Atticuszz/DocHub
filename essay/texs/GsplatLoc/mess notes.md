@@ -332,7 +332,7 @@ Initially, we set $\mathbf{q}_i = (1, 0, 0, 0)$ for all Gaussians, corresponding
 
 | <原文3> | <修改后3> | <修改理由3> |
 
-接下来我会发送需要你英语拼写校对和修辞改进的内容，请你开始上述操作。As an experienced academic research writer, your task is to write an Mehtod discussing the Pipeline. This work should be detailed, well-researched, and written in an academic style. It needs to provide a comprehensive overview of the subject matter, present a logical argument or analysis, and substantiate it with relevant sources, theories or data. Make sure to incorporate current and relevant references for supporting your points. The language used should be formal, precise, and clear. The document should be formatted according to the applicable academic writing guidelines or style guide. Proofread for clarity, coherence, grammar, and punctuation before submission. here is my chapter:
+接下来我会发送需要你英语拼写校对和修辞改进的内容，请你开始上述操作。As an experienced academic research writer, your task is to write an "Mehtod" part of paper. This work should be detailed, well-researched, and written in an academic style. It needs to provide a comprehensive overview of the subject matter, present a logical argument or analysis, and substantiate it with relevant sources, theories or data. Make sure to incorporate current and relevant references for supporting your points. The language used should be formal, precise, and clear. The document should be formatted according to the applicable academic writing guidelines or style guide. Proofread for clarity, coherence, grammar, and punctuation before submission. here is my chapter:
 ```
 
 ```GPT
