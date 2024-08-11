@@ -17,6 +17,9 @@
 \usepackage[backend=biber, style=ieee, natbib=true]{biblatex} % 使用biblatex处理参考文献，指定使用biber作为后端和IEEE样式
 \usepackage{xcolor}
 \usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{colortbl}
+
 \setmainfont{Times New Roman}
 \setsansfont{Arial} % 设置无衬线字体
 \setmonofont{Courier New} % 设置等宽字体
@@ -33,7 +36,7 @@
     \href{$url$}{\textcolor{linkcolor}{\textit{$url$}}}\\[1ex]
     \textcolor{authorcolor}{
         $for(author)$
-        $author.name$$sep$, 
+        $author.name$$sep$,
         $endfor$
     }
 }
@@ -82,7 +85,7 @@ $if(csl-refs)$
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 $endif$
 
-% link 
+% link
 
 
 % main
