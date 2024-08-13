@@ -205,10 +205,12 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "9bc84faad8aaa4a0",
+  "active": "87216e7e428d1ea2",
   "lastOpenFiles": [
     "essay/texs/GsplatLoc/main.pdf",
     "essay/texs/GsplatLoc/main.md",
+    "essay/journals/ITE computer vision.md",
+    "essay/journals",
     "essay/texs/GsplatLoc/mess notes.md",
     "assets/screenshot.png",
     "assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png",
@@ -223,8 +225,6 @@
     "assets/Pasted_image_20240512125417.png",
     "assets/Pasted_image_20240512125353.png",
     "assets/Pasted image 20240524150219.png",
-    "essay/journals/ITE computer vision.md",
-    "essay/journals",
     "essay/texs/GsplatLoc/table_filter.py~",
     "essay/texs/GsplatLoc/main.tex",
     "docs/tools/IDE/JetBrains.md",

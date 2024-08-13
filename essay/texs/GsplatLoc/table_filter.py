@@ -51,21 +51,13 @@ def get_text(item):
         return stringify(item)
 
 
-table_count = 0
-current_table_pair = []
-
-
-def replace_longtables_with_tabular(elem, doc, is_paired):
-    global table_count
+def replace_longtables_with_tabular(elem, doc):
     try:
 
         def tabular():
             # 使用 l 作为第一列，其余列使用 X,防止换因为名称出现'-'行
-            width = "0.48" if is_paired else "1.0"
             return (
-                "\\begin{tabularx}{"
-                + width
-                + "\\textwidth}{l"
+                "\\begin{tabularx}{\\textwidth}{l"
                 + "X" * (elem.cols - 1)
                 + "}\n\\toprule\n"
             )
@@ -107,7 +99,7 @@ def replace_longtables_with_tabular(elem, doc, is_paired):
 
         def caption():
             if elem.caption and elem.caption.content:
-                caption_text = get_text(elem.caption)
+                caption_text = get_text(elem.caption.content)
                 return (
                     "\\caption{"
                     + caption_text
@@ -119,77 +111,39 @@ def replace_longtables_with_tabular(elem, doc, is_paired):
             return ""
 
         result = (
-            tabular()
+            "\\begin{table*}[htbp]\n\\centering\n"
+            + tabular()
             + headers()
             + items()
             + "\\bottomrule\n\\end{tabularx}\n"
             + caption()
+            + "\\end{table*}"
         )
 
-        print(f"Table {table_count} processed successfully", file=sys.stderr)
-        return result
+        print("Table processed successfully", file=sys.stderr)
+        return RawBlock(result, "latex")
     except Exception as e:
-        print(f"Error processing table {table_count}: {str(e)}", file=sys.stderr)
+        print(f"Error processing table: {str(e)}", file=sys.stderr)
         return elem
 
 
 def prepare(doc):
-    global table_count
-    table_count = 0
+    pass
 
 
 def action(elem, doc):
-    global table_count, current_table_pair
     if doc.format != "latex":
         return None
 
     if isinstance(elem, Table):
-        table_count += 1
-        print(f"Table {table_count} found!", file=sys.stderr)
-
-        is_paired = table_count % 2 == 0
-        processed_table = replace_longtables_with_tabular(elem, doc, is_paired)
-
-        if is_paired:
-            current_table_pair.append(processed_table)
-            if len(current_table_pair) == 2:
-                result = RawBlock(
-                    "\\begin{table*}[htbp]\n\\centering\n"
-                    + "\\begin{minipage}[t]{0.48\\textwidth}\n"
-                    + current_table_pair[0]
-                    + "\n\\end{minipage}\n\\hfill\n"
-                    + "\\begin{minipage}[t]{0.48\\textwidth}\n"
-                    + processed_table
-                    + "\n\\end{minipage}\n"
-                    + "\\end{table*}",
-                    "latex",
-                )
-                current_table_pair = []
-                return result
-            return []  # 返回空列表，等待下一个表格
-        else:
-            current_table_pair = []
-            return RawBlock(
-                "\\begin{table}[htbp]\n\\centering\n"
-                + processed_table
-                + "\\end{table}",
-                "latex",
-            )
+        print("Table found!", file=sys.stderr)
+        return replace_longtables_with_tabular(elem, doc)
 
     return None
 
 
 def finalize(doc):
-    global current_table_pair
-    if len(current_table_pair) == 1:
-        # 如果最后剩下一个未配对的表格，将其作为全宽度表格
-        last_table = current_table_pair[0].replace("0.48\\textwidth", "\\textwidth")
-        doc.content.append(
-            RawBlock(
-                "\\begin{table}[htbp]\n\\centering\n" + last_table + "\\end{table}",
-                "latex",
-            )
-        )
+    pass
 
 
 def main(doc=None):
