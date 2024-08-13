@@ -41,7 +41,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -126,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md",
+                "file": "essay/texs/GsplatLoc/main.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +144,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md",
+                "file": "essay/texs/GsplatLoc/main.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -167,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md"
+                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           },
@@ -177,7 +178,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md"
+                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           }
@@ -205,35 +206,35 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "87216e7e428d1ea2",
+  "active": "4960aaa1bbaa117f",
   "lastOpenFiles": [
-    "essay/texs/GsplatLoc/main.pdf",
     "essay/texs/GsplatLoc/main.md",
+    "essay/texs/GsplatLoc/main.pdf",
+    "essay/texs/GsplatLoc/fronts/FiraSans-ExtraBoldItalic.ttf",
+    "essay/texs/GsplatLoc/fronts/FiraSans-BlackItalic.ttf",
+    "essay/texs/GsplatLoc/fronts/FiraSans-Light.ttf",
+    "essay/texs/GsplatLoc/fronts/FiraSans-Regular.ttf",
+    "essay/texs/GsplatLoc/fronts/FiraSans-Black.ttf",
+    "essay/texs/GsplatLoc/fronts/FiraSans-MediumItalic.ttf",
+    "essay/texs/GsplatLoc/fronts/FiraSans-Italic.ttf",
+    "essay/texs/GsplatLoc/fronts/FiraSans-LightItalic.ttf",
+    "essay/texs/GsplatLoc/fronts/FiraSans-SemiBold.ttf",
     "essay/journals/ITE computer vision.md",
-    "essay/journals",
     "essay/texs/GsplatLoc/mess notes.md",
     "assets/screenshot.png",
     "assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png",
-    "assets/renRobustGICPbased3D2019",
     "assets/kornColorSupportedGeneralizedICP2014a/kornColorSupportedGeneralizedICP2014a-4-x69-y230.png",
-    "assets/kornColorSupportedGeneralizedICP2014a",
     "assets/huangPhotoSLAMRealtimeSimultaneous2024/huangPhotoSLAMRealtimeSimultaneous2024-5-x457-y204.png",
-    "assets/huangPhotoSLAMRealtimeSimultaneous2024",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-14-x56-y502.png",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-13-x43-y370.png",
-    "assets/guptaNDT6DColor2023",
     "assets/Pasted_image_20240512125417.png",
     "assets/Pasted_image_20240512125353.png",
     "assets/Pasted image 20240524150219.png",
-    "essay/texs/GsplatLoc/table_filter.py~",
-    "essay/texs/GsplatLoc/main.tex",
     "docs/tools/IDE/JetBrains.md",
     "essay/texs/GsplatLoc/debug_output.md",
     "essay/read-dairy.md",
     "essay/Arxiv.md",
-    "essay/texs/GsplatLoc/table_filter.py",
     "assets/Pasted image 20240810124116.png",
-    "essay/zotero/attachments/gs_spalt/experiments/Sturm et al_2012_A benchmark for the evaluation of RGB-D SLAM systems.pdf",
     "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
     "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
     "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",

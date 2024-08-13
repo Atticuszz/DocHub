@@ -296,26 +296,6 @@ the camera pose based on the rendered depth maps. This differentiability
 facilitates efficient gradient-based optimization, forming the
 foundation for our subsequent localization algorithm.
 
-\begin{table}[htbp]
-\centering
-\begin{tabularx}{1.0\textwidth}{lXXXXXXXXX}
-\toprule
-Methods & Avg. & R0 & R1 & R2 & Of0 & Of1 & Of2 & Of3 & Of4\\
-\midrule
-ICP & \cellcolor{lime!50}0.38 & \cellcolor{lime!50}0.53 & \cellcolor{yellow!30}0.38 & 0.45 & \cellcolor{green!30}\textbf{0.35} & \cellcolor{green!30}\textbf{0.24} & \cellcolor{lime!50}0.36 & \cellcolor{lime!50}0.33 & \cellcolor{green!30}\textbf{0.43}\\
-Vox-Fusion & 3.09 & 1.37 & 4.70 & 1.47 & 8.48 & 2.04 & 2.58 & 1.11 & 2.94\\
-NICE-SLAM & 1.06 & 0.97 & 1.31 & 1.07 & 0.88 & 1.00 & 1.06 & 1.10 & 1.13\\
-ESLAM & 0.63 & 0.71 & 0.70 & 0.52 & 0.57 & 0.55 & 0.58 & 0.72 & 0.63\\
-Point-SLAM & 0.52 & 0.61 & 0.41 & \cellcolor{yellow!30}0.37 & \cellcolor{yellow!30}0.38 & \cellcolor{lime!50}0.48 & 0.54 & 0.69 & 0.72\\
-SplaTAM & \cellcolor{yellow!30}0.36 & \cellcolor{yellow!30}0.31 & \cellcolor{lime!50}0.40 & \cellcolor{green!30}\textbf{0.29} & \cellcolor{lime!50}0.47 & \cellcolor{yellow!30}0.27 & \cellcolor{yellow!30}0.29 & \cellcolor{yellow!30}0.32 & \cellcolor{lime!50}0.55\\
-\midrule
-\textbf{Ours} & \cellcolor{green!30}\textbf{0.10} & \cellcolor{green!30}\textbf{0.20} & \cellcolor{green!30}\textbf{0.30} & \cellcolor{lime!50}0.40 & 0.50 & 0.60 & \cellcolor{green!30}\textbf{0.20} & \cellcolor{green!30}\textbf{0.30} & \cellcolor{yellow!30}0.50\\
-\bottomrule
-\end{tabularx}
-\caption{Replica[4] (ATE RMSE ↓[cm])}
-\label{table:}
-\end{table}
-
 \subsection{Localization as Image
 Alignment}\label{localization-as-image-alignment}
 
@@ -364,7 +344,7 @@ of the loss function, typically set to 0.8 and 0.2 respectively, based
 on empirical results.
 
 The contour loss \(L_{\text{contour}}\) is computed using the Sobel
-operator {[}6{]}, which effectively captures depth discontinuities and
+operator {[}4{]}, which effectively captures depth discontinuities and
 edges. This additional term in our loss function serves several crucial
 purposes. It ensures that depth discontinuities in the rendered image
 align well with those in the observed depth image, thereby improving the
@@ -455,12 +435,56 @@ camera localization method.
 
 \section{Experiments}\label{experiments}
 
-\textbf{Datasets:} The Replica dataset {[}4{]} comprises high-quality 3D
+\begin{table}[htbp]
+\centering
+\scalebox{0.75}{%
+\begin{tabular}{lccccccccc}
+\toprule
+Methods & Avg. & R0 & R1 & R2 & Of0 & Of1 & Of2 & Of3 & Of4\\
+\midrule
+\textbf{ICP} & \cellcolor{lime!50}0.38 & \cellcolor{lime!50}0.53 & \cellcolor{yellow!30}0.38 & 0.45 & \cellcolor{green!30}\textbf{0.35} & \cellcolor{green!30}\textbf{0.24} & \cellcolor{lime!50}0.36 & \cellcolor{lime!50}0.33 & \cellcolor{green!30}\textbf{0.43}\\
+Vox-Fusion & 3.09 & 1.37 & 4.70 & 1.47 & 8.48 & 2.04 & 2.58 & 1.11 & 2.94\\
+NICE-SLAM & 1.06 & 0.97 & 1.31 & 1.07 & 0.88 & 1.00 & 1.06 & 1.10 & 1.13\\
+ESLAM & 0.63 & 0.71 & 0.70 & 0.52 & 0.57 & 0.55 & 0.58 & 0.72 & 0.63\\
+Point-SLAM & 0.52 & 0.61 & 0.41 & \cellcolor{yellow!30}0.37 & \cellcolor{yellow!30}0.38 & \cellcolor{lime!50}0.48 & 0.54 & 0.69 & 0.72\\
+SplaTAM & \cellcolor{yellow!30}0.36 & \cellcolor{yellow!30}0.31 & \cellcolor{lime!50}0.40 & \cellcolor{green!30}\textbf{0.29} & \cellcolor{lime!50}0.47 & \cellcolor{yellow!30}0.27 & \cellcolor{yellow!30}0.29 & \cellcolor{yellow!30}0.32 & \cellcolor{lime!50}0.55\\
+\midrule
+\textbf{Ours} & \cellcolor{green!30}\textbf{0.10} & \cellcolor{green!30}\textbf{0.20} & \cellcolor{green!30}\textbf{0.30} & \cellcolor{lime!50}0.40 & 0.50 & 0.60 & \cellcolor{green!30}\textbf{0.20} & \cellcolor{green!30}\textbf{0.30} & \cellcolor{yellow!30}0.50\\
+\bottomrule
+\end{tabular}
+}
+\caption{Replica[5] (ATE RMSE ↓[cm])}
+\label{table:}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scalebox{0.75}{%
+\begin{tabular}{lcccccc}
+\toprule
+Methods & Avg. & fr1/desk & fr1/desk2 & fr1/room & fr2/xyz & fr3/off.\\
+\midrule
+\textbf{Kintinous} & \cellcolor{yellow!30}4.84 & 3.70 & 7.10 & \cellcolor{yellow!30}7.50 & 2.90 & \cellcolor{lime!50}3.00\\
+ElasticFusion & 6.91 & \cellcolor{yellow!30}2.53 & 6.83 & 21.49 & \cellcolor{yellow!30}1.17 & \cellcolor{yellow!30}2.52\\
+ORB-SLAM2 & \cellcolor{green!30}\textbf{1.98} & \cellcolor{green!30}\textbf{1.60} & \cellcolor{green!30}\textbf{2.20} & \cellcolor{green!30}\textbf{4.70} & \cellcolor{green!30}\textbf{0.40} & \cellcolor{green!30}\textbf{1.00}\\
+NICE-SLAM & 15.87 & 4.26 & \cellcolor{lime!50}4.99 & 34.49 & 31.73 & 3.87\\
+Vox-Fusion & 11.31 & 3.52 & 6.00 & 19.53 & 1.49 & 26.01\\
+Point-SLAM & 8.92 & 4.34 & \cellcolor{yellow!30}4.54 & 30.92 & 1.31 & 3.48\\
+\midrule
+\textbf{SplaTAM} & \cellcolor{lime!50}5.48 & \cellcolor{lime!50}3.35 & 6.54 & \cellcolor{lime!50}11.13 & \cellcolor{lime!50}1.24 & 5.16\\
+\bottomrule
+\end{tabular}
+}
+\caption{TUM[6] (ATE RMSE ↓[cm])}
+\label{table:}
+\end{table}
+
+\textbf{Datasets:} The Replica dataset {[}5{]} comprises high-quality 3D
 reconstructions of a variety of indoor scenes. We utilize the publicly
 available dataset collected by Sucar et al . {[}7{]}, which provides
 trajectories from an RGBD sensor. Further, we demonstrate that our
 framework achieves SOTA results on real-world data by using the TUM-RGBD
-{[}5{]}. The poses for TUM-RGBD were captured using an external motion
+{[}6{]}. The poses for TUM-RGBD were captured using an external motion
 capture system.
 
 \textbf{Metrics:} We quantitatively evaluate reconstruction quality
@@ -514,27 +538,27 @@ the \$\textbackslash texttt\{gsplat\}\$ {Library}.''} Accessed: Jun. 29,
 Computer Graphics}, vol. 8, no. 3, pp. 223--238, 2002, doi:
 \href{https://doi.org/10.1109/TVCG.2002.1021576}{10.1109/TVCG.2002.1021576}.}
 
-\bibitem[\citeproctext]{ref-straubReplicaDatasetDigital2019}
-\CSLLeftMargin{{[}4{]} }%
-\CSLRightInline{J. Straub \emph{et al.}, {``The {Replica Dataset}: {A
-Digital Replica} of {Indoor Spaces}.''} Accessed: Aug. 10, 2024.
-{[}Online{]}. Available: \url{http://arxiv.org/abs/1906.05797}}
-
-\bibitem[\citeproctext]{ref-sturmBenchmarkEvaluationRGBD2012}
-\CSLLeftMargin{{[}5{]} }%
-\CSLRightInline{J. Sturm, N. Engelhard, F. Endres, W. Burgard, and D.
-Cremers, {``A benchmark for the evaluation of {RGB-D SLAM} systems,''}
-in \emph{2012 {IEEE}/{RSJ} international conference on intelligent
-robots and systems}, IEEE, 2012, pp. 573--580. doi:
-\href{https://doi.org/10.1109/IROS.2012.6385773}{10.1109/IROS.2012.6385773}.}
-
 \bibitem[\citeproctext]{ref-kanopoulosDesignImageEdge1988}
-\CSLLeftMargin{{[}6{]} }%
+\CSLLeftMargin{{[}4{]} }%
 \CSLRightInline{N. Kanopoulos, N. Vasanthavada, and R. L. Baker,
 {``Design of an image edge detection filter using the {Sobel}
 operator,''} \emph{IEEE Journal of solid-state circuits}, vol. 23, no.
 2, pp. 358--367, 1988, doi:
 \href{https://doi.org/10.1109/4.996}{10.1109/4.996}.}
+
+\bibitem[\citeproctext]{ref-straubReplicaDatasetDigital2019}
+\CSLLeftMargin{{[}5{]} }%
+\CSLRightInline{J. Straub \emph{et al.}, {``The {Replica Dataset}: {A
+Digital Replica} of {Indoor Spaces}.''} Accessed: Aug. 10, 2024.
+{[}Online{]}. Available: \url{http://arxiv.org/abs/1906.05797}}
+
+\bibitem[\citeproctext]{ref-sturmBenchmarkEvaluationRGBD2012}
+\CSLLeftMargin{{[}6{]} }%
+\CSLRightInline{J. Sturm, N. Engelhard, F. Endres, W. Burgard, and D.
+Cremers, {``A benchmark for the evaluation of {RGB-D SLAM} systems,''}
+in \emph{2012 {IEEE}/{RSJ} international conference on intelligent
+robots and systems}, IEEE, 2012, pp. 573--580. doi:
+\href{https://doi.org/10.1109/IROS.2012.6385773}{10.1109/IROS.2012.6385773}.}
 
 \bibitem[\citeproctext]{ref-sucarImapImplicitMapping2021}
 \CSLLeftMargin{{[}7{]} }%
@@ -545,25 +569,5 @@ pp. 6229--6238. Accessed: Aug. 10, 2024. {[}Online{]}. Available:
 \url{http://openaccess.thecvf.com/content/ICCV2021/html/Sucar_iMAP_Implicit_Mapping_and_Positioning_in_Real-Time_ICCV_2021_paper.html}}
 
 \end{CSLReferences}
-
-\begin{table}[htbp]
-\centering
-\begin{tabularx}{\textwidth}{lXXXXXX}
-\toprule
-Methods & Avg. & fr1/desk & fr1/desk2 & fr1/room & fr2/xyz & fr3/off.\\
-\midrule
-Kintinous & \cellcolor{yellow!30}4.84 & 3.70 & 7.10 & \cellcolor{yellow!30}7.50 & 2.90 & \cellcolor{lime!50}3.00\\
-ElasticFusion & 6.91 & \cellcolor{yellow!30}2.53 & 6.83 & 21.49 & \cellcolor{yellow!30}1.17 & \cellcolor{yellow!30}2.52\\
-ORB-SLAM2 & \cellcolor{green!30}\textbf{1.98} & \cellcolor{green!30}\textbf{1.60} & \cellcolor{green!30}\textbf{2.20} & \cellcolor{green!30}\textbf{4.70} & \cellcolor{green!30}\textbf{0.40} & \cellcolor{green!30}\textbf{1.00}\\
-NICE-SLAM & 15.87 & 4.26 & \cellcolor{lime!50}4.99 & 34.49 & 31.73 & 3.87\\
-Vox-Fusion & 11.31 & 3.52 & 6.00 & 19.53 & 1.49 & 26.01\\
-Point-SLAM & 8.92 & 4.34 & \cellcolor{yellow!30}4.54 & 30.92 & 1.31 & 3.48\\
-\midrule
-\textbf{SplaTAM} & \cellcolor{lime!50}5.48 & \cellcolor{lime!50}3.35 & 6.54 & \cellcolor{lime!50}11.13 & \cellcolor{lime!50}1.24 & 5.16\\
-\bottomrule
-\end{tabularx}
-\caption{TUM[5] (ATE RMSE ↓[cm])}
-\label{table:}
-\end{table}
 
 \end{document}

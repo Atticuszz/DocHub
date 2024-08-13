@@ -5,6 +5,7 @@ This filter does the following:
 
 It's intended use is for scientific papers that require 2 columns in the template layotu.
 """
+import re
 import sys
 
 import pandas as pd
@@ -55,18 +56,17 @@ def replace_longtables_with_tabular(elem, doc):
     try:
 
         def tabular():
-            # 使用 l 作为第一列，其余列使用 X,防止换因为名称出现'-'行
-            return (
-                "\\begin{tabularx}{\\textwidth}{l"
-                + "X" * (elem.cols - 1)
-                + "}\n\\toprule\n"
-            )
+            # 使用 l 作为第一列，其余列使用 c（居中对齐）
+            return "\\begin{tabular}{l" + "c" * (elem.cols - 1) + "}\n\\toprule\n"
 
         def headers():
             if elem.head and elem.head.content:
                 return (
                     " & ".join(
-                        [get_text(cell) for cell in elem.head.content[0].content]
+                        [
+                            "\\textbf{" + get_text(cell) + "}"
+                            for cell in elem.head.content[0].content
+                        ]
                     )
                     + "\\\\\n\\midrule\n"
                 )
@@ -100,24 +100,19 @@ def replace_longtables_with_tabular(elem, doc):
         def caption():
             if elem.caption and elem.caption.content:
                 caption_text = get_text(elem.caption.content)
-                return (
-                    "\\caption{"
-                    + caption_text
-                    + "}\n"
-                    + "\\label{table:"
-                    + (elem.identifier or "")
-                    + "}\n"
-                )
+                label = "table:" + re.sub(r"\W+", "_", caption_text.lower())[:20]
+                return "\\caption{" + caption_text + "}\n" + "\\label{" + label + "}\n"
             return ""
 
         result = (
-            "\\begin{table*}[htbp]\n\\centering\n"
+            "\\begin{table}[htbp]\n"
+            "\\centering\n"
+            "\\begin{adjustbox}{max width=\\columnwidth,max height=!,center}\n"
             + tabular()
             + headers()
             + items()
-            + "\\bottomrule\n\\end{tabularx}\n"
-            + caption()
-            + "\\end{table*}"
+            + "\\bottomrule\n\\end{tabular}\n"
+            "\\end{adjustbox}\n" + caption() + "\\end{table}"
         )
 
         print("Table processed successfully", file=sys.stderr)
