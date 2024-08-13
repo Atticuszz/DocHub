@@ -93,7 +93,7 @@ This normalization process ensures that the depth values are properly scaled and
 The differentiable nature of this depth rendering process is key to our localization method. It allows us to compute gradients with respect to the Gaussian parameters and camera pose, enabling direct optimization of the camera pose based on the rendered depth maps. This differentiability facilitates efficient gradient-based optimization, forming the foundation for our subsequent localization algorithm.
 
 
-::: {.table}
+::: {.table1}
 
 | Methods    | Avg. | R0   | R1   | R2   | Of0  | Of1  | Of2  | Of3  | Of4  |
 | ---------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -105,6 +105,21 @@ The differentiable nature of this depth rendering process is key to our localiza
 | SplaTAM    | 0.36 | 0.31 | 0.40 | 0.29 | 0.47 | 0.27 | 0.29 | 0.32 | 0.55 |
 | Ours       | 0.1  | 0.2  | 0.3  | 0.4  | 0.5  | 0.6  | 0.2  | 0.3  | 0.5  |
 : Replica[@straubReplicaDatasetDigital2019] \(ATE RMSE ↓\[cm\]\)
+:::
+
+
+::: {.table2}
+
+| Methods       | Avg. | fr1/desk | fr1/desk2 | fr1/room | fr2/xyz | fr3/off. |
+|---------------|------|----------|-----------|----------|---------|----------|
+| Kintinous     | 4.84 | 3.70     | 7.10      | 7.50     | 2.90    | 3.00     |
+| ElasticFusion | 6.91 | 2.53     | 6.83      | 21.49    | 1.17    | 2.52     |
+| ORB-SLAM2     | 1.98 | 1.60     | 2.20      | 4.70     | 0.40    | 1.00     |
+| NICE-SLAM     | 15.87| 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
+| Vox-Fusion    | 11.31| 3.52     | 6.00      | 19.53    | 1.49    | 26.01    |
+| Point-SLAM    | 8.92 | 4.34     | 4.54      | 30.92    | 1.31    | 3.48     |
+| SplaTAM       | 5.48 | 3.35     | 6.54      | 11.13    | 1.24    | 5.16     |
+: TUM[@sturmBenchmarkEvaluationRGBD2012] \(ATE RMSE ↓\[cm\]\)
 :::
 
 ## Localization as Image Alignment
@@ -174,8 +189,8 @@ This pipeline effectively combines the efficiency of Gaussian splatting with a r
 
 **Datasets:** The Replica dataset [@straubReplicaDatasetDigital2019]  comprises high-quality 3D reconstructions of a variety of indoor scenes. We utilize the publicly available dataset collected by Sucar et al . [@sucarImapImplicitMapping2021], which provides trajectories from an RGBD sensor. Further, we demonstrate that our framework achieves SOTA results on real-world data by using the TUM-RGBD [@sturmBenchmarkEvaluationRGBD2012]. The poses for TUM-RGBD were captured using an external motion capture system.
 
-
-
+**Metrics:** We quantitatively evaluate reconstruction quality using different 3D metrics. Given 3D triangle meshes, we compute mapping Accuracy [cm], Completion [cm], and Completion Ratio [<5cm %]. Following NICE-SLAM [58], we discard unobserved regions that are not in any viewpoints. As for tracking performance, we measure ATE RMSE [41] for estimated trajectories
+**Baselines:** We primarily consider state-of-the-art NeRF-SLAM works, including NICE-SLAM [58], Co-SLAM [47], Point-SLAM [34], and Vox-Fusion [53], as baselines. For a fair comparison, we reproduced all results from these baselines and reported their reconstruction performance with the same evaluation mechanism. We also add some concurrent manuscripts such as GS-SLAM [51] and SplaTAM [20] for reference, and we directly report the results in their papers.
 # Conclusion
 
 
