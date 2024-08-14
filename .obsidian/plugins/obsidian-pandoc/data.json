@@ -10,6 +10,6 @@
   "pandoc": null,
   "pdflatex": "xelatex",
   "outputFolder": null,
-  "extraArguments": "\n--mathjax  --citeproc\n--template=template.tex\n\n",
+  "extraArguments": "\n--mathjax  --citeproc\n--template=template.tex\n\n--filter=table_filter.py",
   "exportFrom": "md"
 }

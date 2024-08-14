@@ -163,17 +163,37 @@ This pipeline effectively combines the efficiency of Gaussian splatting with a r
 
 ::: {.table}
 
-| Methods    | Avg.    | R0      | R1      | R2      | Of0     | Of1     | Of2     | Of3     | Of4     |
-| ---------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
-| ICP        | 0.38    | 0.53    | 0.38    | 0.45    | 0.35    | 0.24    | 0.36    | 0.33    | 0.43    |
-| Vox-Fusion | 3.09    | 1.37    | 4.70    | 1.47    | 8.48    | 2.04    | 2.58    | 1.11    | 2.94    |
-| NICE-SLAM  | 1.06    | 0.97    | 1.31    | 1.07    | 0.88    | 1.00    | 1.06    | 1.10    | 1.13    |
-| ESLAM      | 0.63    | 0.71    | 0.70    | 0.52    | 0.57    | 0.55    | 0.58    | 0.72    | 0.63    |
-| Point-SLAM | 0.52    | 0.61    | 0.41    | 0.37    | 0.38    | 0.48    | 0.54    | 0.69    | 0.72    |
-| SplaTAM    | 0.36    | 0.31    | 0.40    | 0.29    | 0.47    | 0.27    | 0.29    | 0.32    | 0.55    |
-| Ours       | 0.01587 | 0.01519 | 0.01272 | 0.02052 | 0.01136 | 0.00937 | 0.01836 | 0.02003 | 0.01943 |
+| Methods                                                   | Avg.    | R0      | R1      | R2      | Of0     | Of1     | Of2     | Of3     | Of4     |
+| --------------------------------------------------------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| RTG-SLAM*[@pengRTGSLAMRealtime3D2024]                     | 0.38    | 0.53    | 0.38    | 0.45    | 0.35    | 0.24    | 0.36    | 0.33    | 0.43    |
+| GS-ICP-SLAM*[@haRGBDGSICPSLAM2024]                        | 3.09    | 1.37    | 4.70    | 1.47    | 8.48    | 2.04    | 2.58    | 1.11    | 2.94    |
+| Gaussian-SLAM*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.06    | 0.97    | 1.31    | 1.07    | 0.88    | 1.00    | 1.06    | 1.10    | 1.13    |
+| ESLAM                                                     | 0.63    | 0.71    | 0.70    | 0.52    | 0.57    | 0.55    | 0.58    | 0.72    | 0.63    |
+| Point-SLAM                                                | 0.52    | 0.61    | 0.41    | 0.37    | 0.38    | 0.48    | 0.54    | 0.69    | 0.72    |
+| SplaTAM                                                   | 0.36    | 0.31    | 0.40    | 0.29    | 0.47    | 0.27    | 0.29    | 0.32    | 0.55    |
+| Ours                                                      | 0.01587 | 0.01519 | 0.01272 | 0.02052 | 0.01136 | 0.00937 | 0.01836 | 0.02003 | 0.01943 |
+: Replica[@straubReplicaDatasetDigital2019] \(eT RMSE ↓\[cm\]\). The Replica dataset [@straubReplicaDatasetDigital2019]  comprises high-quality 3D reconstructions of a variety of indoor scenes. We utilize the publicly available dataset collected by Sucar et al . [@sucarImapImplicitMapping2021], which provides trajectories from an RGBD sensor. 
 :::
-**Table 1. Replica[@straubReplicaDatasetDigital2019] \(ATE RMSE ↓\[cm\]\),** The Replica dataset [@straubReplicaDatasetDigital2019]  comprises high-quality 3D reconstructions of a variety of indoor scenes. We utilize the publicly available dataset collected by Sucar et al . [@sucarImapImplicitMapping2021], which provides trajectories from an RGBD sensor. 
+
+
+
+::: {.table}
+
+| Methods    | Avg.   | R0     | R1     | R2     | Of0    | Of1    | Of2    | Of3    | Of4    |
+| ---------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| ICP        | 0.38   | 0.53   | 0.38   | 0.45   | 0.35   | 0.24   | 0.36   | 0.33   | 0.43   |
+| Vox-Fusion | 3.09   | 1.37   | 4.70   | 1.47   | 8.48   | 2.04   | 2.58   | 1.11   | 2.94   |
+| NICE-SLAM  | 1.06   | 0.97   | 1.31   | 1.07   | 0.88   | 1.00   | 1.06   | 1.10   | 1.13   |
+| ESLAM      | 0.63   | 0.71   | 0.70   | 0.52   | 0.57   | 0.55   | 0.58   | 0.72   | 0.63   |
+| Point-SLAM | 0.52   | 0.61   | 0.41   | 0.37   | 0.38   | 0.48   | 0.54   | 0.69   | 0.72   |
+| SplaTAM    | 0.36   | 0.31   | 0.40   | 0.29   | 0.47   | 0.27   | 0.29   | 0.32   | 0.55   |
+| Ours       | 0.0093 | 0.0072 | 0.0081 | 0.0100 | 0.0092 | 0.0087 | 0.0107 | 0.0093 | 0.0108 |
+:Replica[@straubReplicaDatasetDigital2019] \(eR RMSE ↓\[°\]\). The Replica dataset [@straubReplicaDatasetDigital2019]  comprises high-quality 3D reconstructions of a variety of indoor scenes. We utilize the publicly available dataset collected by Sucar et al . [@sucarImapImplicitMapping2021], which provides trajectories from an RGBD sensor. 
+:::
+
+
+
+
 
 ::: {.table}
 
@@ -186,9 +206,30 @@ This pipeline effectively combines the efficiency of Gaussian splatting with a r
 | Vox-Fusion    | 11.31 | 3.52     | 6.00      | 19.53    | 1.49    | 26.01    |
 | Point-SLAM    | 8.92  | 4.34     | 4.54      | 30.92    | 1.31    | 3.48     |
 | Ours          | 5.48  | 3.35     | 6.54      | 11.13    | 1.24    | 5.16     |
+: TUM[@sturmBenchmarkEvaluationRGBD2012]  \(eR RMSE ↓\[°\]\). Further, we demonstrate that our framework achieves SOTA results on real-world data by using the TUM-RGBD [@sturmBenchmarkEvaluationRGBD2012]. The poses for TUM-RGBD were captured using an external motion capture system.
 :::
- **Table 2. TUM[@sturmBenchmarkEvaluationRGBD2012] \(ATE RMSE ↓\[cm\]\),** Further, we demonstrate that our framework achieves SOTA results on real-world data by using the TUM-RGBD [@sturmBenchmarkEvaluationRGBD2012]. The poses for TUM-RGBD were captured using an external motion capture system.
- 
+
+
+
+
+
+::: {.table}
+
+| Methods       | Avg.  | fr1/desk | fr1/desk2 | fr1/room | fr2/xyz | fr3/off. |
+| ------------- | ----- | -------- | --------- | -------- | ------- | -------- |
+| Kintinous     | 4.84  | 3.70     | 7.10      | 7.50     | 2.90    | 3.00     |
+| ElasticFusion | 6.91  | 2.53     | 6.83      | 21.49    | 1.17    | 2.52     |
+| ORB-SLAM2     | 1.98  | 1.60     | 2.20      | 4.70     | 0.40    | 1.00     |
+| NICE-SLAM     | 15.87 | 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
+| Vox-Fusion    | 11.31 | 3.52     | 6.00      | 19.53    | 1.49    | 26.01    |
+| Point-SLAM    | 8.92  | 4.34     | 4.54      | 30.92    | 1.31    | 3.48     |
+| Ours          | 5.48  | 3.35     | 6.54      | 11.13    | 1.24    | 5.16     |
+: TUM[@sturmBenchmarkEvaluationRGBD2012]  \(eR RMSE ↓\[°\]\). Further, we demonstrate that our framework achieves SOTA results on real-world data by using the TUM-RGBD [@sturmBenchmarkEvaluationRGBD2012]. The poses for TUM-RGBD were captured using an external motion capture system.
+:::
+
+
+
+
 **Metrics.** We quantitatively evaluate reconstruction quality using different 3D metrics. Given 3D triangle meshes, we compute mapping Accuracy [cm], Completion [cm], and Completion Ratio [<5cm %]. Following NICE-SLAM [58], we discard unobserved regions that are not in any viewpoints. As for tracking performance, we measure ATE RMSE [41] for estimated trajectories
 
 

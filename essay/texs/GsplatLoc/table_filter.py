@@ -21,7 +21,7 @@ def color_cell(value, rank):
     # bold no.1
     color_start = colors.get(rank, "")
     color_end = "}" if rank == 1 else ""
-    return f"{color_start}{value:.2f}{color_end}"
+    return f"{color_start}{value:.3f}{color_end}"
 
 
 def process_table_data(data, is_lower_better):
@@ -89,7 +89,7 @@ def replace_longtables_with_tabular(elem, doc):
             rows = []
             for index, row in df.iterrows():
                 cells = list(row)
-
+                
                 if index == len(df) - 1:
                     cells[0] = "\\textbf{" + cells[0] + "}"
                 rows.append(" & ".join(cells) + "\\\\")
@@ -100,19 +100,33 @@ def replace_longtables_with_tabular(elem, doc):
         def caption():
             if elem.caption and elem.caption.content:
                 caption_text = get_text(elem.caption.content)
+                # set the first sentence to bold
+                first_sentence, _, rest = caption_text.partition(".")
+                if rest:
+                    caption_text = f"\\textbf{{{first_sentence}}}." + rest
+                else:
+                    caption_text = f"\\textbf{{{caption_text}}}"
+
                 label = "table:" + re.sub(r"\W+", "_", caption_text.lower())[:20]
                 return "\\caption{" + caption_text + "}\n" + "\\label{" + label + "}\n"
             return ""
 
+        def table_format():
+            """Make sure that the table number (e.g. "Table 1:") is also bold in the generated LaTeX document"""
+            return "\\renewcommand{\\thetable}{\\textbf{\\arabic{table}}}\n\\renewcommand{\\tablename}{\\textbf{Table}}\n"
+
         result = (
             "\\begin{table}[htbp]\n"
-            "\\centering\n"
-            "\\begin{adjustbox}{max width=\\columnwidth,max height=!,center}\n"
+            + table_format()
+            + "\\centering\n"
+            + caption()  # 将 caption 移到这里
+            + "\\begin{adjustbox}{max width=\\columnwidth,max height=!,center}\n"
             + tabular()
             + headers()
             + items()
             + "\\bottomrule\n\\end{tabular}\n"
-            "\\end{adjustbox}\n" + caption() + "\\end{table}"
+            + "\\end{adjustbox}\n"
+            + "\\end{table}"
         )
 
         print("Table processed successfully", file=sys.stderr)

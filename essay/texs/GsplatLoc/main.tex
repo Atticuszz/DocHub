@@ -20,9 +20,27 @@
 \usepackage{tabularx}
 \usepackage{colortbl}
 
-\setmainfont{Times New Roman}
-\setsansfont{Arial} % 设置无衬线字体
-\setmonofont{Courier New} % 设置等宽字体
+\usepackage{adjustbox}
+
+
+\usepackage{libertinus}
+
+
+
+%\usepackage{lmodern}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 % 配置链接颜色
 \definecolor{authorcolor}{HTML}{800080} % 淡紫色
@@ -185,18 +203,18 @@ priors that shape the optimization objective.
 
 \section{Method}\label{method}
 
-\textbf{Overview:} The GSplatLoc method presents an innovative approach
+\textbf{Overview.} The GSplatLoc method presents an innovative approach
 to camera localization, leveraging the differentiable nature of 3D
 Gaussian splatting for efficient and accurate pose estimation.
 
-\textbf{Motivation:} Recent advancements in 3D scene representation,
+\textbf{Motivation.} Recent advancements in 3D scene representation,
 particularly the 3D Gaussian Splatting technique {[}1{]}, have opened
 new avenues for efficient and high-quality 3D scene rendering. By
 adapting this approach to the task of camera localization, we aim to
 exploit its differentiable properties and speed advantages to achieve
 robust and real-time pose estimation.
 
-\textbf{Problem formulation:} Our objective is to estimate the 6-DoF
+\textbf{Problem formulation.} Our objective is to estimate the 6-DoF
 pose \((R, t) \in SE(3)\) of a query depth image \(D_q\), where \(R\) is
 the rotation matrix and \(t\) is the translation vector in the camera
 coordinate system. Given a 3D representation of the environment in the
@@ -212,7 +230,7 @@ which is crucial for our localization task. Our approach utilizes the
 efficiency and quality of Gaussian splatting while tailoring it
 specifically for depth-based localization.
 
-\textbf{3D Gaussians:} Each Gaussian \(G_i\) is characterized by its 3D
+\textbf{3D Gaussians.} Each Gaussian \(G_i\) is characterized by its 3D
 mean \(\boldsymbol{\mu}_i \in \mathbb{R}^3\), 3D covariance matrix
 \(\boldsymbol{\Sigma}_i \in \mathbb{R}^{3\times3}\), opacity
 \(o_i \in \mathbb{R}\), and scale \(\mathbf{s}_i \in \mathbb{R}^3\). To
@@ -275,7 +293,7 @@ parameter of the Gaussian. \(T_n\) denotes the cumulative transparency
 product of all Gaussians preceding \(n\), accounting for the occlusion
 effects of previous Gaussians.
 
-\textbf{Scaling Depth:} To ensure consistent representation across the
+\textbf{Scaling Depth.} To ensure consistent representation across the
 image, we normalize the depth values. First, we calculate the total
 accumulated opacity \(\alpha(p)\) for each pixel:
 
@@ -305,7 +323,7 @@ depth image \(D_q\) within this map. This process essentially becomes an
 image alignment problem between the rendered depth map from our Gaussian
 representation and the query depth image.
 
-\textbf{Rotating with Quaternions:} We parameterize the camera pose
+\textbf{Rotating with Quaternions.} We parameterize the camera pose
 using a quaternion \(\mathbf{q}_{cw}\) for rotation and a vector
 \(\mathbf{t}_{cw}\) for translation. This choice of parameterization is
 particularly advantageous in our differential rendering context.
@@ -315,7 +333,7 @@ their compact four-parameter form aligns well with our differentiable
 rendering pipeline, allowing for efficient computation of gradients with
 respect to rotation parameters.
 
-\textbf{Loss function:} Our optimization strategy is designed to
+\textbf{Loss function.} Our optimization strategy is designed to
 leverage the differentiable nature of our depth rendering process. We
 define our loss function to incorporate both depth accuracy and edge
 alignment:
@@ -363,14 +381,14 @@ The optimization objective can be formulated as:
 where \(\lambda_q\) and \(\lambda_t\) are regularization terms for the
 quaternion and translation parameters, respectively.
 
-\textbf{Masking Uncertainty:} The rendered alpha mask plays a crucial
+\textbf{Masking Uncertainty.} The rendered alpha mask plays a crucial
 role in our optimization process. It effectively captures the epistemic
 uncertainty of our map, allowing us to focus the optimization on
 well-represented parts of the scene. By utilizing this mask, we avoid
 optimizing based on unreliable or non-existent data, which could
 otherwise lead to erroneous pose estimates.
 
-\textbf{Fine-tuning the Engine:} The learning rates are set to
+\textbf{Fine-tuning the Engine.} The learning rates are set to
 \(5 \times 10^{-4}\) for quaternion optimization and \(10^{-3}\) for
 translation optimization, based on empirical results. The weight decay
 values, serving as regularization to mitigate overfitting, are set to
@@ -385,7 +403,7 @@ only posed reference depth images \(\{D_k\}\) and a query depth image
 \(D_q\). Its differentiability in rendering of 3D Gaussians facilitates
 efficient and smooth convergence during optimization.
 
-\textbf{Evaluation Scene:} For evaluation consistency, we initialize 3D
+\textbf{Evaluation Scene.} For evaluation consistency, we initialize 3D
 Gaussians from point clouds rendered by \(\{D_k\}\). Each point
 corresponds to a Gaussian's mean \(\boldsymbol{\mu}_i\). After outlier
 filtering, we set opacity \(o_i = 1\) for all Gaussians. The scale
@@ -410,7 +428,7 @@ significantly improves the stability of loss reduction during
 optimization and facilitates the achievement of lower final loss values,
 particularly in the depth loss component of our objective function.
 
-\textbf{Optimization:} We employ the Adam optimizer for both quaternion
+\textbf{Optimization.} We employ the Adam optimizer for both quaternion
 and translation optimization, with distinct learning rates and weight
 decay values for each. The optimization process benefits from the
 real-time rendering capabilities of 3D Gaussian Splatting. Each
@@ -419,7 +437,7 @@ rendering, which is extremely fast due to the efficiency of Gaussian
 splatting. This allows for rapid convergence of our pose estimation
 algorithm, making it suitable for real-time applications.
 
-\textbf{Convergence:} To determine the convergence of the optimization
+\textbf{Convergence.} To determine the convergence of the optimization
 process, we implement an early stopping mechanism based on the
 stabilization of the total loss. Extensive experimental results indicate
 that the total loss typically stabilizes after approximately 100
@@ -435,72 +453,125 @@ camera localization method.
 
 \section{Experiments}\label{experiments}
 
-\begin{table}[htbp]
-\centering
-\scalebox{0.75}{%
-\begin{tabular}{lccccccccc}
-\toprule
-Methods & Avg. & R0 & R1 & R2 & Of0 & Of1 & Of2 & Of3 & Of4\\
-\midrule
-\textbf{ICP} & \cellcolor{lime!50}0.38 & \cellcolor{lime!50}0.53 & \cellcolor{yellow!30}0.38 & 0.45 & \cellcolor{green!30}\textbf{0.35} & \cellcolor{green!30}\textbf{0.24} & \cellcolor{lime!50}0.36 & \cellcolor{lime!50}0.33 & \cellcolor{green!30}\textbf{0.43}\\
-Vox-Fusion & 3.09 & 1.37 & 4.70 & 1.47 & 8.48 & 2.04 & 2.58 & 1.11 & 2.94\\
-NICE-SLAM & 1.06 & 0.97 & 1.31 & 1.07 & 0.88 & 1.00 & 1.06 & 1.10 & 1.13\\
-ESLAM & 0.63 & 0.71 & 0.70 & 0.52 & 0.57 & 0.55 & 0.58 & 0.72 & 0.63\\
-Point-SLAM & 0.52 & 0.61 & 0.41 & \cellcolor{yellow!30}0.37 & \cellcolor{yellow!30}0.38 & \cellcolor{lime!50}0.48 & 0.54 & 0.69 & 0.72\\
-SplaTAM & \cellcolor{yellow!30}0.36 & \cellcolor{yellow!30}0.31 & \cellcolor{lime!50}0.40 & \cellcolor{green!30}\textbf{0.29} & \cellcolor{lime!50}0.47 & \cellcolor{yellow!30}0.27 & \cellcolor{yellow!30}0.29 & \cellcolor{yellow!30}0.32 & \cellcolor{lime!50}0.55\\
-\midrule
-\textbf{Ours} & \cellcolor{green!30}\textbf{0.10} & \cellcolor{green!30}\textbf{0.20} & \cellcolor{green!30}\textbf{0.30} & \cellcolor{lime!50}0.40 & 0.50 & 0.60 & \cellcolor{green!30}\textbf{0.20} & \cellcolor{green!30}\textbf{0.30} & \cellcolor{yellow!30}0.50\\
-\bottomrule
-\end{tabular}
-}
-\caption{Replica[5] (ATE RMSE ↓[cm])}
-\label{table:}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\scalebox{0.75}{%
-\begin{tabular}{lcccccc}
-\toprule
-Methods & Avg. & fr1/desk & fr1/desk2 & fr1/room & fr2/xyz & fr3/off.\\
-\midrule
-\textbf{Kintinous} & \cellcolor{yellow!30}4.84 & 3.70 & 7.10 & \cellcolor{yellow!30}7.50 & 2.90 & \cellcolor{lime!50}3.00\\
-ElasticFusion & 6.91 & \cellcolor{yellow!30}2.53 & 6.83 & 21.49 & \cellcolor{yellow!30}1.17 & \cellcolor{yellow!30}2.52\\
-ORB-SLAM2 & \cellcolor{green!30}\textbf{1.98} & \cellcolor{green!30}\textbf{1.60} & \cellcolor{green!30}\textbf{2.20} & \cellcolor{green!30}\textbf{4.70} & \cellcolor{green!30}\textbf{0.40} & \cellcolor{green!30}\textbf{1.00}\\
-NICE-SLAM & 15.87 & 4.26 & \cellcolor{lime!50}4.99 & 34.49 & 31.73 & 3.87\\
-Vox-Fusion & 11.31 & 3.52 & 6.00 & 19.53 & 1.49 & 26.01\\
-Point-SLAM & 8.92 & 4.34 & \cellcolor{yellow!30}4.54 & 30.92 & 1.31 & 3.48\\
-\midrule
-\textbf{SplaTAM} & \cellcolor{lime!50}5.48 & \cellcolor{lime!50}3.35 & 6.54 & \cellcolor{lime!50}11.13 & \cellcolor{lime!50}1.24 & 5.16\\
-\bottomrule
-\end{tabular}
-}
-\caption{TUM[6] (ATE RMSE ↓[cm])}
-\label{table:}
-\end{table}
-
-\textbf{Datasets:} The Replica dataset {[}5{]} comprises high-quality 3D
+\textbf{Datasets.} The Replica dataset {[}5{]} comprises high-quality 3D
 reconstructions of a variety of indoor scenes. We utilize the publicly
-available dataset collected by Sucar et al . {[}7{]}, which provides
+available dataset collected by Sucar et al . {[}6{]}, which provides
 trajectories from an RGBD sensor. Further, we demonstrate that our
 framework achieves SOTA results on real-world data by using the TUM-RGBD
-{[}6{]}. The poses for TUM-RGBD were captured using an external motion
+{[}7{]}. The poses for TUM-RGBD were captured using an external motion
 capture system.
 
-\textbf{Metrics:} We quantitatively evaluate reconstruction quality
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Replica[5] (eT RMSE ↓[cm])}. The Replica dataset [5] comprises high-quality 3D reconstructions of a variety of indoor scenes. We utilize the publicly available dataset collected by Sucar et al . [6], which provides trajectories from an RGBD sensor.}
+\label{table:_textbf_replica_5_et}
+\begin{adjustbox}{max width=\columnwidth,max height=!,center}
+\begin{tabular}{lccccccccc}
+\toprule
+\textbf{Methods} & \textbf{Avg.} & \textbf{R0} & \textbf{R1} & \textbf{R2} & \textbf{Of0} & \textbf{Of1} & \textbf{Of2} & \textbf{Of3} & \textbf{Of4}\\
+\midrule
+ICP & \cellcolor{lime!50}0.380 & \cellcolor{lime!50}0.530 & \cellcolor{yellow!30}0.380 & 0.450 & \cellcolor{yellow!30}0.350 & \cellcolor{yellow!30}0.240 & \cellcolor{lime!50}0.360 & \cellcolor{lime!50}0.330 & \cellcolor{yellow!30}0.430\\
+Vox-Fusion & 3.090 & 1.370 & 4.700 & 1.470 & 8.480 & 2.040 & 2.580 & 1.110 & 2.940\\
+NICE-SLAM & 1.060 & 0.970 & 1.310 & 1.070 & 0.880 & 1.000 & 1.060 & 1.100 & 1.130\\
+ESLAM & 0.630 & 0.710 & 0.700 & 0.520 & 0.570 & 0.550 & 0.580 & 0.720 & 0.630\\
+Point-SLAM & 0.520 & 0.610 & 0.410 & \cellcolor{lime!50}0.370 & \cellcolor{lime!50}0.380 & 0.480 & 0.540 & 0.690 & 0.720\\
+SplaTAM & \cellcolor{yellow!30}0.360 & \cellcolor{yellow!30}0.310 & \cellcolor{lime!50}0.400 & \cellcolor{yellow!30}0.290 & 0.470 & \cellcolor{lime!50}0.270 & \cellcolor{yellow!30}0.290 & \cellcolor{yellow!30}0.320 & \cellcolor{lime!50}0.550\\
+\midrule
+\textbf{Ours} & \cellcolor{green!30}\textbf{0.016} & \cellcolor{green!30}\textbf{0.015} & \cellcolor{green!30}\textbf{0.013} & \cellcolor{green!30}\textbf{0.021} & \cellcolor{green!30}\textbf{0.011} & \cellcolor{green!30}\textbf{0.009} & \cellcolor{green!30}\textbf{0.018} & \cellcolor{green!30}\textbf{0.020} & \cellcolor{green!30}\textbf{0.019}\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Replica[5] (eR RMSE ↓[°])}. The Replica dataset [5] comprises high-quality 3D reconstructions of a variety of indoor scenes. We utilize the publicly available dataset collected by Sucar et al . [6], which provides trajectories from an RGBD sensor.}
+\label{table:_textbf_replica_5_er}
+\begin{adjustbox}{max width=\columnwidth,max height=!,center}
+\begin{tabular}{lccccccccc}
+\toprule
+\textbf{Methods} & \textbf{Avg.} & \textbf{R0} & \textbf{R1} & \textbf{R2} & \textbf{Of0} & \textbf{Of1} & \textbf{Of2} & \textbf{Of3} & \textbf{Of4}\\
+\midrule
+ICP & \cellcolor{lime!50}0.380 & \cellcolor{lime!50}0.530 & \cellcolor{yellow!30}0.380 & 0.450 & \cellcolor{yellow!30}0.350 & \cellcolor{yellow!30}0.240 & \cellcolor{lime!50}0.360 & \cellcolor{lime!50}0.330 & \cellcolor{yellow!30}0.430\\
+Vox-Fusion & 3.090 & 1.370 & 4.700 & 1.470 & 8.480 & 2.040 & 2.580 & 1.110 & 2.940\\
+NICE-SLAM & 1.060 & 0.970 & 1.310 & 1.070 & 0.880 & 1.000 & 1.060 & 1.100 & 1.130\\
+ESLAM & 0.630 & 0.710 & 0.700 & 0.520 & 0.570 & 0.550 & 0.580 & 0.720 & 0.630\\
+Point-SLAM & 0.520 & 0.610 & 0.410 & \cellcolor{lime!50}0.370 & \cellcolor{lime!50}0.380 & 0.480 & 0.540 & 0.690 & 0.720\\
+SplaTAM & \cellcolor{yellow!30}0.360 & \cellcolor{yellow!30}0.310 & \cellcolor{lime!50}0.400 & \cellcolor{yellow!30}0.290 & 0.470 & \cellcolor{lime!50}0.270 & \cellcolor{yellow!30}0.290 & \cellcolor{yellow!30}0.320 & \cellcolor{lime!50}0.550\\
+\midrule
+\textbf{Ours} & \cellcolor{green!30}\textbf{0.009} & \cellcolor{green!30}\textbf{0.007} & \cellcolor{green!30}\textbf{0.008} & \cellcolor{green!30}\textbf{0.010} & \cellcolor{green!30}\textbf{0.009} & \cellcolor{green!30}\textbf{0.009} & \cellcolor{green!30}\textbf{0.011} & \cellcolor{green!30}\textbf{0.009} & \cellcolor{green!30}\textbf{0.011}\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\begin{adjustbox}{max width=\columnwidth,max height=!,center}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Methods} & \textbf{Avg.} & \textbf{fr1/desk} & \textbf{fr1/desk2} & \textbf{fr1/room} & \textbf{fr2/xyz} & \textbf{fr3/off.}\\
+\midrule
+Kintinous & 4.840 & \cellcolor{lime!50}3.700 & \cellcolor{green!30}\textbf{7.100} & 7.500 & \cellcolor{yellow!30}2.900 & 3.000\\
+ElasticFusion & 6.910 & 2.530 & \cellcolor{yellow!30}6.830 & \cellcolor{lime!50}21.490 & 1.170 & 2.520\\
+ORB-SLAM2 & 1.980 & 1.600 & 2.200 & 4.700 & 0.400 & 1.000\\
+NICE-SLAM & \cellcolor{green!30}\textbf{15.870} & \cellcolor{yellow!30}4.260 & 4.990 & \cellcolor{green!30}\textbf{34.490} & \cellcolor{green!30}\textbf{31.730} & \cellcolor{lime!50}3.870\\
+Vox-Fusion & \cellcolor{yellow!30}11.310 & 3.520 & 6.000 & 19.530 & \cellcolor{lime!50}1.490 & \cellcolor{green!30}\textbf{26.010}\\
+Point-SLAM & \cellcolor{lime!50}8.920 & \cellcolor{green!30}\textbf{4.340} & 4.540 & \cellcolor{yellow!30}30.920 & 1.310 & 3.480\\
+\midrule
+\textbf{Ours} & 5.480 & 3.350 & \cellcolor{lime!50}6.540 & 11.130 & 1.240 & \cellcolor{yellow!30}5.160\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\textbf{Table 3. TUM{[}7{]} (eR RMSE ↓{[}°{]}),} Further, we demonstrate
+that our framework achieves SOTA results on real-world data by using the
+TUM-RGBD {[}7{]}. The poses for TUM-RGBD were captured using an external
+motion capture system.
+
+\begin{table}[htbp]
+\centering
+\begin{adjustbox}{max width=\columnwidth,max height=!,center}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Methods} & \textbf{Avg.} & \textbf{fr1/desk} & \textbf{fr1/desk2} & \textbf{fr1/room} & \textbf{fr2/xyz} & \textbf{fr3/off.}\\
+\midrule
+Kintinous & 4.840 & \cellcolor{lime!50}3.700 & \cellcolor{green!30}\textbf{7.100} & 7.500 & \cellcolor{yellow!30}2.900 & 3.000\\
+ElasticFusion & 6.910 & 2.530 & \cellcolor{yellow!30}6.830 & \cellcolor{lime!50}21.490 & 1.170 & 2.520\\
+ORB-SLAM2 & 1.980 & 1.600 & 2.200 & 4.700 & 0.400 & 1.000\\
+NICE-SLAM & \cellcolor{green!30}\textbf{15.870} & \cellcolor{yellow!30}4.260 & 4.990 & \cellcolor{green!30}\textbf{34.490} & \cellcolor{green!30}\textbf{31.730} & \cellcolor{lime!50}3.870\\
+Vox-Fusion & \cellcolor{yellow!30}11.310 & 3.520 & 6.000 & 19.530 & \cellcolor{lime!50}1.490 & \cellcolor{green!30}\textbf{26.010}\\
+Point-SLAM & \cellcolor{lime!50}8.920 & \cellcolor{green!30}\textbf{4.340} & 4.540 & \cellcolor{yellow!30}30.920 & 1.310 & 3.480\\
+\midrule
+\textbf{Ours} & 5.480 & 3.350 & \cellcolor{lime!50}6.540 & 11.130 & 1.240 & \cellcolor{yellow!30}5.160\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\textbf{Table 4. TUM{[}7{]} (eT RMSE ↓{[}cm{]}),} Further, we
+demonstrate that our framework achieves SOTA results on real-world data
+by using the TUM-RGBD {[}7{]}. The poses for TUM-RGBD were captured
+using an external motion capture system.
+
+\textbf{Metrics.} We quantitatively evaluate reconstruction quality
 using different 3D metrics. Given 3D triangle meshes, we compute mapping
 Accuracy {[}cm{]}, Completion {[}cm{]}, and Completion Ratio
 {[}\textless5cm \%{]}. Following NICE-SLAM {[}58{]}, we discard
 unobserved regions that are not in any viewpoints. As for tracking
 performance, we measure ATE RMSE {[}41{]} for estimated trajectories
-\textbf{Baselines:} We primarily consider state-of-the-art NeRF-SLAM
+
+\textbf{Baselines.} We primarily consider state-of-the-art NeRF-SLAM
 works, including NICE-SLAM {[}58{]}, Co-SLAM {[}47{]}, Point-SLAM
 {[}34{]}, and Vox-Fusion {[}53{]}, as baselines. For a fair comparison,
 we reproduced all results from these baselines and reported their
 reconstruction performance with the same evaluation mechanism. We also
 add some concurrent manuscripts such as GS-SLAM {[}51{]} and SplaTAM
 {[}20{]} for reference, and we directly report the results in their
-papers. \# Conclusion
+papers.
+
+\section{Conclusion}\label{conclusion}
 
 We present GSplatLoc, an innovative pose estimation method for RGB-D
 cameras that employs a volumetric representation of 3D Gaussians. This
@@ -552,21 +623,21 @@ operator,''} \emph{IEEE Journal of solid-state circuits}, vol. 23, no.
 Digital Replica} of {Indoor Spaces}.''} Accessed: Aug. 10, 2024.
 {[}Online{]}. Available: \url{http://arxiv.org/abs/1906.05797}}
 
-\bibitem[\citeproctext]{ref-sturmBenchmarkEvaluationRGBD2012}
-\CSLLeftMargin{{[}6{]} }%
-\CSLRightInline{J. Sturm, N. Engelhard, F. Endres, W. Burgard, and D.
-Cremers, {``A benchmark for the evaluation of {RGB-D SLAM} systems,''}
-in \emph{2012 {IEEE}/{RSJ} international conference on intelligent
-robots and systems}, IEEE, 2012, pp. 573--580. doi:
-\href{https://doi.org/10.1109/IROS.2012.6385773}{10.1109/IROS.2012.6385773}.}
-
 \bibitem[\citeproctext]{ref-sucarImapImplicitMapping2021}
-\CSLLeftMargin{{[}7{]} }%
+\CSLLeftMargin{{[}6{]} }%
 \CSLRightInline{E. Sucar, S. Liu, J. Ortiz, and A. J. Davison, {``Imap:
 {Implicit} mapping and positioning in real-time,''} in \emph{Proceedings
 of the {IEEE}/{CVF} international conference on computer vision}, 2021,
 pp. 6229--6238. Accessed: Aug. 10, 2024. {[}Online{]}. Available:
 \url{http://openaccess.thecvf.com/content/ICCV2021/html/Sucar_iMAP_Implicit_Mapping_and_Positioning_in_Real-Time_ICCV_2021_paper.html}}
+
+\bibitem[\citeproctext]{ref-sturmBenchmarkEvaluationRGBD2012}
+\CSLLeftMargin{{[}7{]} }%
+\CSLRightInline{J. Sturm, N. Engelhard, F. Endres, W. Burgard, and D.
+Cremers, {``A benchmark for the evaluation of {RGB-D SLAM} systems,''}
+in \emph{2012 {IEEE}/{RSJ} international conference on intelligent
+robots and systems}, IEEE, 2012, pp. 573--580. doi:
+\href{https://doi.org/10.1109/IROS.2012.6385773}{10.1109/IROS.2012.6385773}.}
 
 \end{CSLReferences}
 
