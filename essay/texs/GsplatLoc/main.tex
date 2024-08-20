@@ -451,42 +451,79 @@ This pipeline effectively combines the efficiency of Gaussian splatting
 with a robust optimization strategy, resulting in a fast and accurate
 camera localization method.
 
-\section{Experiments}\label{experiments}
+\section{Evaluation}\label{evaluation}
 
-\textbf{Datasets.} The Replica dataset {[}5{]} comprises high-quality 3D
-reconstructions of a variety of indoor scenes. We utilize the publicly
-available dataset collected by Sucar et al . {[}6{]}, which provides
-trajectories from an RGBD sensor. Further, we demonstrate that our
-framework achieves SOTA results on real-world data by using the TUM-RGBD
-{[}7{]}. The poses for TUM-RGBD were captured using an external motion
-capture system.
+In this section, we delineate our experimental setup and validate that
+the proposed system achieves significant improvements in accuracy.
+
+\subsection{Experimental Setup}\label{experimental-setup}
+
+\textbf{Implementation Details.}~We implemented our SLAM system on a
+laptop equipped with a 13th Gen Intel(R) Core(TM) i7-13620H 2.40 GHz
+processor, 16GB of RAM, and an NVIDIA RTX 4060 8GB GPU. The optimization
+pipeline was implemented using Python with the PyTorch framework, while
+custom CUDA kernels were developed for rasterization and backpropagation
+operations.
+
+\textbf{Datasets.}~We utilized the Replica dataset {[}5{]} and the
+TUM-RGBD dataset {[}6{]} to evaluate our pose estimation accuracy. The
+Replica dataset, specifically designed for RGB-D SLAM evaluation,
+provides high-quality 3D reconstructions of various indoor scenes. We
+employed the publicly available dataset collected by Sucar et al.
+{[}7{]}, which offers trajectories from an RGB-D sensor. The Replica
+dataset contains challenging purely rotational camera motions. The
+TUM-RGBD dataset, widely used in the SLAM field for evaluating tracking
+accuracy, represents real-world scenarios and provides precise camera
+poses captured by an external motion capture system.
+
+\textbf{Metrics.}~To assess camera pose estimation accuracy, we employed
+the average absolute trajectory error (ATE RMSE) and the absolute
+angular error (AAE RMSE). In the result tables, we highlight the
+\{green\}best\{/green\}, \{yellow\}second\{/yellow\}, and
+\{lime\}third\{/lime\} performances.
+
+\textbf{Baselines.}~We primarily compare our method against
+state-of-the-art Gaussian-SLAM approaches, including RTG-SLAM{[}8{]},
+GS-ICP-SLAM {[}9{]}, and Gaussian-SLAM {[}10{]}. Additionally, we
+include the renowned ORB-SLAM3 estimation algorithm {[}11{]} as a
+baseline. For a fair comparison, we adapted their tracking methods.
+RTG-SLAM employs ICP, GS-ICP-SLAM uses G-ICP {[}12{]}, and Gaussian-SLAM
+utilizes Open3D {[}13{]} RGB-D Odometry for pose estimation, which
+combines colored point cloud alignment {[}14{]} with an energy-based
+approach to visual odometry from RGB-D images {[}15{]}.
+
+\subsection{Localization Evaluation}\label{localization-evaluation}
+
+To mitigate long-term drift accumulation, we focus on evaluating pose
+estimation between consecutive frames. For each frame, we initialize the
+pose using the ground truth pose of the previous frame.
 
 \begin{table}[htbp]
+\renewcommand{\thetable}{\textbf{\arabic{table}}}
+\renewcommand{\tablename}{\textbf{Table}}
 \centering
-\caption{\textbf{Replica[5] (eT RMSE ↓[cm])}. The Replica dataset [5] comprises high-quality 3D reconstructions of a variety of indoor scenes. We utilize the publicly available dataset collected by Sucar et al . [6], which provides trajectories from an RGBD sensor.}
-\label{table:_textbf_replica_5_et}
 \begin{adjustbox}{max width=\columnwidth,max height=!,center}
 \begin{tabular}{lccccccccc}
 \toprule
 \textbf{Methods} & \textbf{Avg.} & \textbf{R0} & \textbf{R1} & \textbf{R2} & \textbf{Of0} & \textbf{Of1} & \textbf{Of2} & \textbf{Of3} & \textbf{Of4}\\
 \midrule
-ICP & \cellcolor{lime!50}0.380 & \cellcolor{lime!50}0.530 & \cellcolor{yellow!30}0.380 & 0.450 & \cellcolor{yellow!30}0.350 & \cellcolor{yellow!30}0.240 & \cellcolor{lime!50}0.360 & \cellcolor{lime!50}0.330 & \cellcolor{yellow!30}0.430\\
-Vox-Fusion & 3.090 & 1.370 & 4.700 & 1.470 & 8.480 & 2.040 & 2.580 & 1.110 & 2.940\\
-NICE-SLAM & 1.060 & 0.970 & 1.310 & 1.070 & 0.880 & 1.000 & 1.060 & 1.100 & 1.130\\
-ESLAM & 0.630 & 0.710 & 0.700 & 0.520 & 0.570 & 0.550 & 0.580 & 0.720 & 0.630\\
-Point-SLAM & 0.520 & 0.610 & 0.410 & \cellcolor{lime!50}0.370 & \cellcolor{lime!50}0.380 & 0.480 & 0.540 & 0.690 & 0.720\\
-SplaTAM & \cellcolor{yellow!30}0.360 & \cellcolor{yellow!30}0.310 & \cellcolor{lime!50}0.400 & \cellcolor{yellow!30}0.290 & 0.470 & \cellcolor{lime!50}0.270 & \cellcolor{yellow!30}0.290 & \cellcolor{yellow!30}0.320 & \cellcolor{lime!50}0.550\\
+RTG-SLAM*[8] & 0.380 & 0.530 & 0.380 & 0.450 & 0.350 & 0.240 & 0.360 & 0.330 & 0.430\\
+GS-ICP-SLAM*[9] & \cellcolor{green!30}\textbf{3.090} & \cellcolor{green!30}\textbf{1.370} & \cellcolor{green!30}\textbf{4.700} & \cellcolor{green!30}\textbf{1.470} & \cellcolor{green!30}\textbf{8.480} & \cellcolor{green!30}\textbf{2.040} & \cellcolor{green!30}\textbf{2.580} & \cellcolor{green!30}\textbf{1.110} & \cellcolor{green!30}\textbf{2.940}\\
+Gaussian-SLAM*[10] & \cellcolor{yellow!30}1.060 & \cellcolor{yellow!30}0.970 & \cellcolor{yellow!30}1.310 & \cellcolor{yellow!30}1.070 & \cellcolor{yellow!30}0.880 & \cellcolor{yellow!30}1.000 & \cellcolor{yellow!30}1.060 & \cellcolor{yellow!30}1.100 & \cellcolor{yellow!30}1.130\\
+ & \cellcolor{lime!50}0.630 & \cellcolor{lime!50}0.710 & \cellcolor{lime!50}0.700 & \cellcolor{lime!50}0.520 & \cellcolor{lime!50}0.570 & \cellcolor{lime!50}0.550 & \cellcolor{lime!50}0.580 & \cellcolor{lime!50}0.720 & \cellcolor{lime!50}0.630\\
 \midrule
-\textbf{Ours} & \cellcolor{green!30}\textbf{0.016} & \cellcolor{green!30}\textbf{0.015} & \cellcolor{green!30}\textbf{0.013} & \cellcolor{green!30}\textbf{0.021} & \cellcolor{green!30}\textbf{0.011} & \cellcolor{green!30}\textbf{0.009} & \cellcolor{green!30}\textbf{0.018} & \cellcolor{green!30}\textbf{0.020} & \cellcolor{green!30}\textbf{0.019}\\
+\textbf{Ours} & 0.016 & 0.015 & 0.013 & 0.021 & 0.011 & 0.009 & 0.018 & 0.020 & 0.019\\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
 \end{table}
 
 \begin{table}[htbp]
+\renewcommand{\thetable}{\textbf{\arabic{table}}}
+\renewcommand{\tablename}{\textbf{Table}}
 \centering
-\caption{\textbf{Replica[5] (eR RMSE ↓[°])}. The Replica dataset [5] comprises high-quality 3D reconstructions of a variety of indoor scenes. We utilize the publicly available dataset collected by Sucar et al . [6], which provides trajectories from an RGBD sensor.}
-\label{table:_textbf_replica_5_er}
+\caption{\textbf{ Replica[5] (AAE RMSE ↓[°])}. This table shows the Absolute Angular Error (AAE) RMSE in degrees for different methods on the Replica dataset. Lower values indicate more accurate rotation estimation.Replica[5] (ATE RMSE ↓[cm]). This table presents the Average Trajectory Error (ATE) Root Mean Square Error (RMSE) in centimeters for various methods on the Replica dataset. Lower values indicate better performance.}
+\label{table:_textbf_replica_5_aa}
 \begin{adjustbox}{max width=\columnwidth,max height=!,center}
 \begin{tabular}{lccccccccc}
 \toprule
@@ -506,70 +543,52 @@ SplaTAM & \cellcolor{yellow!30}0.360 & \cellcolor{yellow!30}0.310 & \cellcolor{l
 \end{table}
 
 \begin{table}[htbp]
+\renewcommand{\thetable}{\textbf{\arabic{table}}}
+\renewcommand{\tablename}{\textbf{Table}}
 \centering
+\caption{\textbf{TUM[6] (ATE RMSE ↓[cm] and AAE RMSE ↓[°])}. These tables present the ATE RMSE in centimeters and AAE RMSE in degrees, respectively, for various methods on the TUM-RGBD dataset. The results demonstrate the performance of different SLAM systems on real-world data.}
+\label{table:_textbf_tum_6_ate_rm}
 \begin{adjustbox}{max width=\columnwidth,max height=!,center}
 \begin{tabular}{lcccccc}
 \toprule
 \textbf{Methods} & \textbf{Avg.} & \textbf{fr1/desk} & \textbf{fr1/desk2} & \textbf{fr1/room} & \textbf{fr2/xyz} & \textbf{fr3/off.}\\
 \midrule
-Kintinous & 4.840 & \cellcolor{lime!50}3.700 & \cellcolor{green!30}\textbf{7.100} & 7.500 & \cellcolor{yellow!30}2.900 & 3.000\\
-ElasticFusion & 6.910 & 2.530 & \cellcolor{yellow!30}6.830 & \cellcolor{lime!50}21.490 & 1.170 & 2.520\\
-ORB-SLAM2 & 1.980 & 1.600 & 2.200 & 4.700 & 0.400 & 1.000\\
-NICE-SLAM & \cellcolor{green!30}\textbf{15.870} & \cellcolor{yellow!30}4.260 & 4.990 & \cellcolor{green!30}\textbf{34.490} & \cellcolor{green!30}\textbf{31.730} & \cellcolor{lime!50}3.870\\
-Vox-Fusion & \cellcolor{yellow!30}11.310 & 3.520 & 6.000 & 19.530 & \cellcolor{lime!50}1.490 & \cellcolor{green!30}\textbf{26.010}\\
-Point-SLAM & \cellcolor{lime!50}8.920 & \cellcolor{green!30}\textbf{4.340} & 4.540 & \cellcolor{yellow!30}30.920 & 1.310 & 3.480\\
+Kintinous & \cellcolor{yellow!30}4.840 & 3.700 & 7.100 & \cellcolor{yellow!30}7.500 & 2.900 & \cellcolor{lime!50}3.000\\
+ElasticFusion & 6.910 & \cellcolor{yellow!30}2.530 & 6.830 & 21.490 & \cellcolor{yellow!30}1.170 & \cellcolor{yellow!30}2.520\\
+ORB-SLAM2 & \cellcolor{green!30}\textbf{1.980} & \cellcolor{green!30}\textbf{1.600} & \cellcolor{green!30}\textbf{2.200} & \cellcolor{green!30}\textbf{4.700} & \cellcolor{green!30}\textbf{0.400} & \cellcolor{green!30}\textbf{1.000}\\
+NICE-SLAM & 15.870 & 4.260 & \cellcolor{lime!50}4.990 & 34.490 & 31.730 & 3.870\\
+Vox-Fusion & 11.310 & 3.520 & 6.000 & 19.530 & 1.490 & 26.010\\
+Point-SLAM & 8.920 & 4.340 & \cellcolor{yellow!30}4.540 & 30.920 & 1.310 & 3.480\\
 \midrule
-\textbf{Ours} & 5.480 & 3.350 & \cellcolor{lime!50}6.540 & 11.130 & 1.240 & \cellcolor{yellow!30}5.160\\
+\textbf{Ours} & \cellcolor{lime!50}5.480 & \cellcolor{lime!50}3.350 & 6.540 & \cellcolor{lime!50}11.130 & \cellcolor{lime!50}1.240 & 5.160\\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
 \end{table}
-
-\textbf{Table 3. TUM{[}7{]} (eR RMSE ↓{[}°{]}),} Further, we demonstrate
-that our framework achieves SOTA results on real-world data by using the
-TUM-RGBD {[}7{]}. The poses for TUM-RGBD were captured using an external
-motion capture system.
 
 \begin{table}[htbp]
+\renewcommand{\thetable}{\textbf{\arabic{table}}}
+\renewcommand{\tablename}{\textbf{Table}}
 \centering
+\caption{\textbf{TUM[6] (ATE RMSE ↓[cm] and AAE RMSE ↓[°])}. These tables present the ATE RMSE in centimeters and AAE RMSE in degrees, respectively, for various methods on the TUM-RGBD dataset. The results demonstrate the performance of different SLAM systems on real-world data.}
+\label{table:_textbf_tum_6_ate_rm}
 \begin{adjustbox}{max width=\columnwidth,max height=!,center}
 \begin{tabular}{lcccccc}
 \toprule
 \textbf{Methods} & \textbf{Avg.} & \textbf{fr1/desk} & \textbf{fr1/desk2} & \textbf{fr1/room} & \textbf{fr2/xyz} & \textbf{fr3/off.}\\
 \midrule
-Kintinous & 4.840 & \cellcolor{lime!50}3.700 & \cellcolor{green!30}\textbf{7.100} & 7.500 & \cellcolor{yellow!30}2.900 & 3.000\\
-ElasticFusion & 6.910 & 2.530 & \cellcolor{yellow!30}6.830 & \cellcolor{lime!50}21.490 & 1.170 & 2.520\\
-ORB-SLAM2 & 1.980 & 1.600 & 2.200 & 4.700 & 0.400 & 1.000\\
-NICE-SLAM & \cellcolor{green!30}\textbf{15.870} & \cellcolor{yellow!30}4.260 & 4.990 & \cellcolor{green!30}\textbf{34.490} & \cellcolor{green!30}\textbf{31.730} & \cellcolor{lime!50}3.870\\
-Vox-Fusion & \cellcolor{yellow!30}11.310 & 3.520 & 6.000 & 19.530 & \cellcolor{lime!50}1.490 & \cellcolor{green!30}\textbf{26.010}\\
-Point-SLAM & \cellcolor{lime!50}8.920 & \cellcolor{green!30}\textbf{4.340} & 4.540 & \cellcolor{yellow!30}30.920 & 1.310 & 3.480\\
+Kintinous & \cellcolor{yellow!30}4.840 & 3.700 & 7.100 & \cellcolor{yellow!30}7.500 & 2.900 & \cellcolor{lime!50}3.000\\
+ElasticFusion & 6.910 & \cellcolor{yellow!30}2.530 & 6.830 & 21.490 & \cellcolor{yellow!30}1.170 & \cellcolor{yellow!30}2.520\\
+ORB-SLAM2 & \cellcolor{green!30}\textbf{1.980} & \cellcolor{green!30}\textbf{1.600} & \cellcolor{green!30}\textbf{2.200} & \cellcolor{green!30}\textbf{4.700} & \cellcolor{green!30}\textbf{0.400} & \cellcolor{green!30}\textbf{1.000}\\
+NICE-SLAM & 15.870 & 4.260 & \cellcolor{lime!50}4.990 & 34.490 & 31.730 & 3.870\\
+Vox-Fusion & 11.310 & 3.520 & 6.000 & 19.530 & 1.490 & 26.010\\
+Point-SLAM & 8.920 & 4.340 & \cellcolor{yellow!30}4.540 & 30.920 & 1.310 & 3.480\\
 \midrule
-\textbf{Ours} & 5.480 & 3.350 & \cellcolor{lime!50}6.540 & 11.130 & 1.240 & \cellcolor{yellow!30}5.160\\
+\textbf{Ours} & \cellcolor{lime!50}5.480 & \cellcolor{lime!50}3.350 & 6.540 & \cellcolor{lime!50}11.130 & \cellcolor{lime!50}1.240 & 5.160\\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
 \end{table}
-
-\textbf{Table 4. TUM{[}7{]} (eT RMSE ↓{[}cm{]}),} Further, we
-demonstrate that our framework achieves SOTA results on real-world data
-by using the TUM-RGBD {[}7{]}. The poses for TUM-RGBD were captured
-using an external motion capture system.
-
-\textbf{Metrics.} We quantitatively evaluate reconstruction quality
-using different 3D metrics. Given 3D triangle meshes, we compute mapping
-Accuracy {[}cm{]}, Completion {[}cm{]}, and Completion Ratio
-{[}\textless5cm \%{]}. Following NICE-SLAM {[}58{]}, we discard
-unobserved regions that are not in any viewpoints. As for tracking
-performance, we measure ATE RMSE {[}41{]} for estimated trajectories
-
-\textbf{Baselines.} We primarily consider state-of-the-art NeRF-SLAM
-works, including NICE-SLAM {[}58{]}, Co-SLAM {[}47{]}, Point-SLAM
-{[}34{]}, and Vox-Fusion {[}53{]}, as baselines. For a fair comparison,
-we reproduced all results from these baselines and reported their
-reconstruction performance with the same evaluation mechanism. We also
-add some concurrent manuscripts such as GS-SLAM {[}51{]} and SplaTAM
-{[}20{]} for reference, and we directly report the results in their
-papers.
 
 \section{Conclusion}\label{conclusion}
 
@@ -623,21 +642,78 @@ operator,''} \emph{IEEE Journal of solid-state circuits}, vol. 23, no.
 Digital Replica} of {Indoor Spaces}.''} Accessed: Aug. 10, 2024.
 {[}Online{]}. Available: \url{http://arxiv.org/abs/1906.05797}}
 
-\bibitem[\citeproctext]{ref-sucarImapImplicitMapping2021}
+\bibitem[\citeproctext]{ref-sturmBenchmarkEvaluationRGBD2012}
 \CSLLeftMargin{{[}6{]} }%
+\CSLRightInline{J. Sturm, N. Engelhard, F. Endres, W. Burgard, and D.
+Cremers, {``A benchmark for the evaluation of {RGB-D SLAM} systems,''}
+in \emph{2012 {IEEE}/{RSJ} international conference on intelligent
+robots and systems}, IEEE, 2012, pp. 573--580. doi:
+\href{https://doi.org/10.1109/IROS.2012.6385773}{10.1109/IROS.2012.6385773}.}
+
+\bibitem[\citeproctext]{ref-sucarImapImplicitMapping2021}
+\CSLLeftMargin{{[}7{]} }%
 \CSLRightInline{E. Sucar, S. Liu, J. Ortiz, and A. J. Davison, {``Imap:
 {Implicit} mapping and positioning in real-time,''} in \emph{Proceedings
 of the {IEEE}/{CVF} international conference on computer vision}, 2021,
 pp. 6229--6238. Accessed: Aug. 10, 2024. {[}Online{]}. Available:
 \url{http://openaccess.thecvf.com/content/ICCV2021/html/Sucar_iMAP_Implicit_Mapping_and_Positioning_in_Real-Time_ICCV_2021_paper.html}}
 
-\bibitem[\citeproctext]{ref-sturmBenchmarkEvaluationRGBD2012}
-\CSLLeftMargin{{[}7{]} }%
-\CSLRightInline{J. Sturm, N. Engelhard, F. Endres, W. Burgard, and D.
-Cremers, {``A benchmark for the evaluation of {RGB-D SLAM} systems,''}
-in \emph{2012 {IEEE}/{RSJ} international conference on intelligent
-robots and systems}, IEEE, 2012, pp. 573--580. doi:
-\href{https://doi.org/10.1109/IROS.2012.6385773}{10.1109/IROS.2012.6385773}.}
+\bibitem[\citeproctext]{ref-pengRTGSLAMRealtime3D2024}
+\CSLLeftMargin{{[}8{]} }%
+\CSLRightInline{Z. Peng \emph{et al.}, {``{RTG-SLAM}: {Real-time 3D
+Reconstruction} at {Scale} using {Gaussian Splatting}.''} Accessed: Jul.
+16, 2024. {[}Online{]}. Available:
+\url{http://arxiv.org/abs/2404.19706}}
+
+\bibitem[\citeproctext]{ref-haRGBDGSICPSLAM2024}
+\CSLLeftMargin{{[}9{]} }%
+\CSLRightInline{S. Ha, J. Yeon, and H. Yu, {``{RGBD GS-ICP SLAM}.''}
+Accessed: May 23, 2024. {[}Online{]}. Available:
+\url{http://arxiv.org/abs/2403.12550}}
+
+\bibitem[\citeproctext]{ref-yugayGaussianSLAMPhotorealisticDense2024}
+\CSLLeftMargin{{[}10{]} }%
+\CSLRightInline{V. Yugay, Y. Li, T. Gevers, and M. R. Oswald,
+{``Gaussian-{SLAM}: {Photo-realistic Dense SLAM} with {Gaussian
+Splatting}.''} Accessed: Jun. 09, 2024. {[}Online{]}. Available:
+\url{http://arxiv.org/abs/2312.10070}}
+
+\bibitem[\citeproctext]{ref-camposOrbslam3AccurateOpensource2021}
+\CSLLeftMargin{{[}11{]} }%
+\CSLRightInline{C. Campos, R. Elvira, J. J. G. Rodríguez, J. M. Montiel,
+and J. D. Tardós, {``Orb-Slam3: {An} accurate open-source library for
+visual, visual--inertial, and multimap slam,''} \emph{IEEE Transactions
+on Robotics}, vol. 37, no. 6, pp. 1874--1890, 2021, doi:
+\href{https://doi.org/10.1109/TRO.2021.3075644}{10.1109/TRO.2021.3075644}.}
+
+\bibitem[\citeproctext]{ref-segalGeneralizedicp2009a}
+\CSLLeftMargin{{[}12{]} }%
+\CSLRightInline{A. Segal, D. Haehnel, and S. Thrun,
+{``Generalized-icp.''} in \emph{Robotics: Science and systems}, Seattle,
+WA, 2009, p. 435. doi:
+\href{https://doi.org/10.15607/RSS.2009.V.021}{10.15607/RSS.2009.V.021}.}
+
+\bibitem[\citeproctext]{ref-zhouOpen3DModernLibrary2018}
+\CSLLeftMargin{{[}13{]} }%
+\CSLRightInline{Q.-Y. Zhou, J. Park, and V. Koltun, {``{Open3D}: {A
+Modern Library} for {3D Data Processing}.''} Accessed: Aug. 20, 2024.
+{[}Online{]}. Available: \url{http://arxiv.org/abs/1801.09847}}
+
+\bibitem[\citeproctext]{ref-parkColoredPointCloud2017}
+\CSLLeftMargin{{[}14{]} }%
+\CSLRightInline{J. Park, Q.-Y. Zhou, and V. Koltun, {``Colored point
+cloud registration revisited,''} in \emph{Proceedings of the {IEEE}
+international conference on computer vision}, 2017, pp. 143--152.
+Accessed: May 23, 2024. {[}Online{]}. Available:
+\url{http://openaccess.thecvf.com/content_iccv_2017/html/Park_Colored_Point_Cloud_ICCV_2017_paper.html}}
+
+\bibitem[\citeproctext]{ref-steinbruckerRealtimeVisualOdometry2011}
+\CSLLeftMargin{{[}15{]} }%
+\CSLRightInline{F. Steinbrücker, J. Sturm, and D. Cremers, {``Real-time
+visual odometry from dense {RGB-D} images,''} in \emph{2011 {IEEE}
+international conference on computer vision workshops ({ICCV
+Workshops})}, IEEE, 2011, pp. 719--722. doi:
+\href{https://doi.org/10.1109/ICCVW.2011.6130321}{10.1109/ICCVW.2011.6130321}.}
 
 \end{CSLReferences}
 

@@ -39,7 +39,7 @@
         "kind": 2,
         "importPath": "essay.texs.GsplatLoc.table_filter",
         "description": "essay.texs.GsplatLoc.table_filter",
-        "peekOfCode": "def color_cell(value, rank):\n    colors = {\n        1: \"\\\\cellcolor{green!30}\\\\textbf{\",\n        2: \"\\\\cellcolor{yellow!30}\",\n        3: \"\\\\cellcolor{lime!50}\",\n    }\n    # bold no.1\n    color_start = colors.get(rank, \"\")\n    color_end = \"}\" if rank == 1 else \"\"\n    return f\"{color_start}{value:.2f}{color_end}\"",
+        "peekOfCode": "def color_cell(value, rank):\n    colors = {\n        1: \"\\\\cellcolor{green!30}\\\\textbf{\",\n        2: \"\\\\cellcolor{yellow!30}\",\n        3: \"\\\\cellcolor{lime!50}\",\n    }\n    # bold no.1\n    color_start = colors.get(rank, \"\")\n    color_end = \"}\" if rank == 1 else \"\"\n    return f\"{color_start}{value:.3f}{color_end}\"",
         "detail": "essay.texs.GsplatLoc.table_filter",
         "documentation": {}
     },

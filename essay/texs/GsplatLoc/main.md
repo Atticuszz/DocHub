@@ -153,12 +153,32 @@ This pipeline effectively combines the efficiency of Gaussian splatting with a r
 
 
 
-# Experiments
+# Evaluation
 
 
 
+In this section, we delineate our experimental setup and validate that the proposed system achieves significant improvements in accuracy.
 
-**Datasets.** The Replica dataset [@straubReplicaDatasetDigital2019]  comprises high-quality 3D reconstructions of a variety of indoor scenes. We utilize the publicly available dataset collected by Sucar et al . [@sucarImapImplicitMapping2021], which provides trajectories from an RGBD sensor. Further, we demonstrate that our framework achieves SOTA results on real-world data by using the TUM-RGBD [@sturmBenchmarkEvaluationRGBD2012]. The poses for TUM-RGBD were captured using an external motion capture system.
+## Experimental Setup
+
+
+
+**Implementation Details.** We implemented our SLAM system on a laptop equipped with a 13th Gen Intel(R) Core(TM) i7-13620H 2.40 GHz processor, 16GB of RAM, and an NVIDIA RTX 4060 8GB GPU. The optimization pipeline was implemented using Python with the PyTorch framework, while custom CUDA kernels were developed for rasterization and backpropagation operations.
+
+
+**Datasets.** We utilized the Replica dataset [@straubReplicaDatasetDigital2019] and the TUM-RGBD dataset [@sturmBenchmarkEvaluationRGBD2012] to evaluate our pose estimation accuracy. The Replica dataset, specifically designed for RGB-D SLAM evaluation, provides high-quality 3D reconstructions of various indoor scenes. We employed the publicly available dataset collected by Sucar et al. [@sucarImapImplicitMapping2021], which offers trajectories from an RGB-D sensor. The Replica dataset contains challenging purely rotational camera motions. The TUM-RGBD dataset, widely used in the SLAM field for evaluating tracking accuracy, represents real-world scenarios and provides precise camera poses captured by an external motion capture system.
+
+
+
+**Metrics.** To assess camera pose estimation accuracy, we employed the average absolute trajectory error (ATE RMSE) and the absolute angular error (AAE RMSE). In the result tables, we highlight the best, second, and third performances.
+
+**Baselines.** We primarily compare our method against state-of-the-art Gaussian-SLAM approaches, including RTG-SLAM[@pengRTGSLAMRealtime3D2024], GS-ICP-SLAM [@haRGBDGSICPSLAM2024], and Gaussian-SLAM [@yugayGaussianSLAMPhotorealisticDense2024]. Additionally, we include the renowned ORB-SLAM3 estimation algorithm [@camposOrbslam3AccurateOpensource2021] as a baseline. For a fair comparison, we adapted their tracking methods. RTG-SLAM employs ICP, GS-ICP-SLAM uses G-ICP [@segalGeneralizedicp2009a], and Gaussian-SLAM utilizes Open3D [@zhouOpen3DModernLibrary2018] RGB-D Odometry for pose estimation, which combines colored point cloud alignment [@parkColoredPointCloud2017] with an energy-based approach to visual odometry from RGB-D images [@steinbruckerRealtimeVisualOdometry2011].
+
+## Localization Evaluation 
+
+
+
+To mitigate long-term drift accumulation, we focus on evaluating pose estimation between consecutive frames. For each frame, we initialize the pose using the ground truth pose of the previous frame.
 
 
 ::: {.table}
@@ -168,11 +188,9 @@ This pipeline effectively combines the efficiency of Gaussian splatting with a r
 | RTG-SLAM*[@pengRTGSLAMRealtime3D2024]                     | 0.38    | 0.53    | 0.38    | 0.45    | 0.35    | 0.24    | 0.36    | 0.33    | 0.43    |
 | GS-ICP-SLAM*[@haRGBDGSICPSLAM2024]                        | 3.09    | 1.37    | 4.70    | 1.47    | 8.48    | 2.04    | 2.58    | 1.11    | 2.94    |
 | Gaussian-SLAM*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.06    | 0.97    | 1.31    | 1.07    | 0.88    | 1.00    | 1.06    | 1.10    | 1.13    |
-| ESLAM                                                     | 0.63    | 0.71    | 0.70    | 0.52    | 0.57    | 0.55    | 0.58    | 0.72    | 0.63    |
-| Point-SLAM                                                | 0.52    | 0.61    | 0.41    | 0.37    | 0.38    | 0.48    | 0.54    | 0.69    | 0.72    |
-| SplaTAM                                                   | 0.36    | 0.31    | 0.40    | 0.29    | 0.47    | 0.27    | 0.29    | 0.32    | 0.55    |
+|                                                           | 0.63    | 0.71    | 0.70    | 0.52    | 0.57    | 0.55    | 0.58    | 0.72    | 0.63    |
 | Ours                                                      | 0.01587 | 0.01519 | 0.01272 | 0.02052 | 0.01136 | 0.00937 | 0.01836 | 0.02003 | 0.01943 |
-: Replica[@straubReplicaDatasetDigital2019] \(eT RMSE ↓\[cm\]\). The Replica dataset [@straubReplicaDatasetDigital2019]  comprises high-quality 3D reconstructions of a variety of indoor scenes. We utilize the publicly available dataset collected by Sucar et al . [@sucarImapImplicitMapping2021], which provides trajectories from an RGBD sensor. 
+:Replica[@straubReplicaDatasetDigital2019] \(ATE RMSE ↓\[cm\]\). This table presents the Average Trajectory Error (ATE) Root Mean Square Error (RMSE) in centimeters for various methods on the Replica dataset. Lower values indicate better performance.
 :::
 
 
@@ -188,7 +206,7 @@ This pipeline effectively combines the efficiency of Gaussian splatting with a r
 | Point-SLAM | 0.52   | 0.61   | 0.41   | 0.37   | 0.38   | 0.48   | 0.54   | 0.69   | 0.72   |
 | SplaTAM    | 0.36   | 0.31   | 0.40   | 0.29   | 0.47   | 0.27   | 0.29   | 0.32   | 0.55   |
 | Ours       | 0.0093 | 0.0072 | 0.0081 | 0.0100 | 0.0092 | 0.0087 | 0.0107 | 0.0093 | 0.0108 |
-:Replica[@straubReplicaDatasetDigital2019] \(eR RMSE ↓\[°\]\). The Replica dataset [@straubReplicaDatasetDigital2019]  comprises high-quality 3D reconstructions of a variety of indoor scenes. We utilize the publicly available dataset collected by Sucar et al . [@sucarImapImplicitMapping2021], which provides trajectories from an RGBD sensor. 
+:Replica[@straubReplicaDatasetDigital2019] \(AAE RMSE ↓\[°\]\). This table shows the Absolute Angular Error \(AAE\) RMSE in degrees for different methods on the Replica dataset. Lower values indicate more accurate rotation estimation.
 :::
 
 
@@ -206,11 +224,8 @@ This pipeline effectively combines the efficiency of Gaussian splatting with a r
 | Vox-Fusion    | 11.31 | 3.52     | 6.00      | 19.53    | 1.49    | 26.01    |
 | Point-SLAM    | 8.92  | 4.34     | 4.54      | 30.92    | 1.31    | 3.48     |
 | Ours          | 5.48  | 3.35     | 6.54      | 11.13    | 1.24    | 5.16     |
-: TUM[@sturmBenchmarkEvaluationRGBD2012]  \(eR RMSE ↓\[°\]\). Further, we demonstrate that our framework achieves SOTA results on real-world data by using the TUM-RGBD [@sturmBenchmarkEvaluationRGBD2012]. The poses for TUM-RGBD were captured using an external motion capture system.
+: TUM[@sturmBenchmarkEvaluationRGBD2012] (ATE RMSE ↓[cm] and AAE RMSE ↓[°]). These tables present the ATE RMSE in centimeters and AAE RMSE in degrees, respectively, for various methods on the TUM-RGBD dataset. The results demonstrate the performance of different SLAM systems on real-world data.
 :::
-
-
-
 
 
 ::: {.table}
@@ -224,19 +239,8 @@ This pipeline effectively combines the efficiency of Gaussian splatting with a r
 | Vox-Fusion    | 11.31 | 3.52     | 6.00      | 19.53    | 1.49    | 26.01    |
 | Point-SLAM    | 8.92  | 4.34     | 4.54      | 30.92    | 1.31    | 3.48     |
 | Ours          | 5.48  | 3.35     | 6.54      | 11.13    | 1.24    | 5.16     |
-: TUM[@sturmBenchmarkEvaluationRGBD2012]  \(eR RMSE ↓\[°\]\). Further, we demonstrate that our framework achieves SOTA results on real-world data by using the TUM-RGBD [@sturmBenchmarkEvaluationRGBD2012]. The poses for TUM-RGBD were captured using an external motion capture system.
+: TUM[@sturmBenchmarkEvaluationRGBD2012] (ATE RMSE ↓[cm] and AAE RMSE ↓[°]). These tables present the ATE RMSE in centimeters and AAE RMSE in degrees, respectively, for various methods on the TUM-RGBD dataset. The results demonstrate the performance of different SLAM systems on real-world data.
 :::
-
-
-
-
-**Metrics.** We quantitatively evaluate reconstruction quality using different 3D metrics. Given 3D triangle meshes, we compute mapping Accuracy [cm], Completion [cm], and Completion Ratio [<5cm %]. Following NICE-SLAM [58], we discard unobserved regions that are not in any viewpoints. As for tracking performance, we measure ATE RMSE [41] for estimated trajectories
-
-
-**Baselines.** We primarily consider state-of-the-art NeRF-SLAM works, including NICE-SLAM [58], Co-SLAM [47], Point-SLAM [34], and Vox-Fusion [53], as baselines. For a fair comparison, we reproduced all results from these baselines and reported their reconstruction performance with the same evaluation mechanism. We also add some concurrent manuscripts such as GS-SLAM [51] and SplaTAM [20] for reference, and we directly report the results in their papers.
-
-
-
 
 
 

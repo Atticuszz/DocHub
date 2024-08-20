@@ -89,7 +89,7 @@ def replace_longtables_with_tabular(elem, doc):
             rows = []
             for index, row in df.iterrows():
                 cells = list(row)
-                
+
                 if index == len(df) - 1:
                     cells[0] = "\\textbf{" + cells[0] + "}"
                 rows.append(" & ".join(cells) + "\\\\")
