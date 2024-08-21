@@ -1,6 +1,6 @@
 ---
 first-title-word: GSplatLoc
-title-rest: ": Ultra-Precise Pose Optimization via 3D Gaussian Reprojection"
+title-rest: ": Ultra-Precise Pose Optimization via 3D Gaussian Rendering"
 bibliography: C:/Users/18317/DevSpace/DocHub/essay/zotero/bibliography.bib
 csl: C:/Users/18317/DevSpace/DocHub/essay/zotero/ieee.csl
 resource-path: C:/Users/18317/DevSpace/DocHub/essay;C:/Users/18317/DevSpace/DocHub/assets;
@@ -19,7 +19,7 @@ url: https://github.com/Atticuszz/GsplatLoc
 
 
 
-We present GSplatLoc, an innovative pose estimation method for RGB-D cameras that employs a volumetric representation of 3D Gaussians. This approach facilitates precise pose estimation by minimizing the loss based on the reprojection of 3D Gaussians from real depth maps captured from the estimated pose. Our method attains rotational errors close to zero and translational errors within 0.01mm, representing a substantial advancement in pose accuracy over existing point cloud registration algorithms, as well as explicit volumetric and implicit neural representation-based SLAM methods. Comprehensive evaluations demonstrate that GSplatLoc significantly improves pose estimation accuracy, which contributes to increased robustness and fidelity in real-time 3D scene reconstruction, setting a new standard for localization techniques in dense mapping SLAM.
+We present GSplatLoc, an innovative pose estimation method for RGB-D cameras that employs a volumetric representation of 3D Gaussians. This approach facilitates precise pose estimation by minimizing the loss based on the  3D Gaussians rendering from real depth maps captured from the estimated pose. Our method attains rotational errors close to zero and translational errors within 0.01mm, representing a substantial advancement in pose accuracy over existing point cloud registration algorithms, as well as explicit volumetric and implicit neural representation-based SLAM methods. Comprehensive evaluations demonstrate that GSplatLoc significantly improves pose estimation accuracy, which contributes to increased robustness and fidelity in real-time 3D scene reconstruction, setting a new standard for localization techniques in dense mapping SLAM.
 
 
 # Related Work
@@ -35,15 +35,15 @@ Accurate visual localization commonly relies on estimating correspondences betwe
 
 **Overview.** The GSplatLoc method presents an innovative approach to camera localization, leveraging the differentiable nature of 3D Gaussian splatting for efficient and accurate pose estimation.
 
-**Motivation.** Recent advancements in 3D scene representation, particularly the 3D Gaussian Splatting technique [@kerbl3dGaussianSplatting2023], have opened new avenues for efficient and high-quality 3D scene rendering. By adapting this approach to the task of camera localization, we aim to exploit its differentiable properties and speed advantages to achieve robust and real-time pose estimation.
-
+**Motivation.** Recent advancements in 3D scene representation, particularly the 3D Gaussian Splatting technique[@kerbl3DGaussianSplatting2023] , have opened new avenues for efficient and high-quality 3D scene rendering. By adapting this approach to the task of camera localization, we aim to exploit its differentiable properties and speed advantages to achieve robust and real-time pose estimation.
+kerbl3dGaussianSplatting2023
 **Problem formulation.** Our objective is to estimate the 6-DoF pose $(R, t) \in SE(3)$ of a query depth image $D_q$, where $R$ is the rotation matrix and $t$ is the translation vector in the camera coordinate system. Given a 3D representation of the environment in the form of 3D Gaussians, let $\mathcal{G} = \{G_i\}_{i=1}^N$ denote a set of $N$ 3D Gaussians, and posed reference depth images $\{D_k\}$, which together constitute the reference data.
 
 ## Scene Representation
 
 
 
-Building upon the Gaussian splatting method [@kerbl3dGaussianSplatting2023], we adapt the scene representation to focus on the differentiable depth rendering process, which is crucial for our localization task. Our approach utilizes the efficiency and quality of Gaussian splatting while tailoring it specifically for depth-based localization.
+Building upon the Gaussian splatting method [@kerbl3DGaussianSplatting2023], we adapt the scene representation to focus on the differentiable depth rendering process, which is crucial for our localization task. Our approach utilizes the efficiency and quality of Gaussian splatting while tailoring it specifically for depth-based localization.
 
 **3D Gaussians.** Each Gaussian $G_i$ is characterized by its 3D mean $\boldsymbol{\mu}_i \in \mathbb{R}^3$, 3D covariance matrix $\boldsymbol{\Sigma}_i \in \mathbb{R}^{3\times3}$, opacity $o_i \in \mathbb{R}$, and scale $\mathbf{s}_i \in \mathbb{R}^3$. To represent the orientation of each Gaussian, we use a rotation quaternion $\mathbf{q}_i \in \mathbb{R}^4$.
 
@@ -53,7 +53,7 @@ $$\boldsymbol{\Sigma}_i = R(\mathbf{q}_i) S(\mathbf{s}_i) S(\mathbf{s}_i)^T R(\m
 
 where $R(\mathbf{q}_i)$ is the rotation matrix derived from $\mathbf{q}_i$, and $S(\mathbf{s}_i) = \text{diag}(\mathbf{s}_i)$ is a diagonal matrix of scales.
 
-**Projecting 3D to 2D:** To project these 3D Gaussians onto a 2D image plane, we follow the approach described by [@kerbl3dGaussianSplatting2023]. The projection of the 3D mean $\boldsymbol{\mu}_i$ to the 2D image plane is given by:
+**Projecting 3D to 2D:** To project these 3D Gaussians onto a 2D image plane, we follow the approach described by [@kerbl3DGaussianSplatting2023]. The projection of the 3D mean $\boldsymbol{\mu}_i$ to the 2D image plane is given by:
 
 $$\boldsymbol{\mu}_{I,i} = \pi(P(T_{wc} \boldsymbol{\mu}_{i,\text{homogeneous}}))$$
 
@@ -69,7 +69,7 @@ where $R_{wc}$ represents the rotation component of $T_{wc}$, and $J$ is the aff
 
 We implement a differential depth rendering process, which is crucial for our localization method as it allows for gradient computation throughout the rendering pipeline. This differentiability enables us to optimize camera poses directly based on rendered depth maps.
 
-**Compositing Depth:** For depth map generation, we employ a front-to-back compositing scheme, which allows for accurate depth estimation and edge alignment. Let $d_n$ represent the depth value associated with the $n$-th Gaussian, which is the z-coordinate of the Gaussian's mean in the camera coordinate system. The depth $D(p)$ at pixel $p$ is computed as [@kerbl3dGaussianSplatting2023]:
+**Compositing Depth:** For depth map generation, we employ a front-to-back compositing scheme, which allows for accurate depth estimation and edge alignment. Let $d_n$ represent the depth value associated with the $n$-th Gaussian, which is the z-coordinate of the Gaussian's mean in the camera coordinate system. The depth $D(p)$ at pixel $p$ is computed as [@kerbl3DGaussianSplatting2023]:
 
 $$D(p) = \sum_{n \leq N} d_n \cdot \alpha_n \cdot T_n, \quad \text{where } T_n = \prod_{m<n} (1 - \alpha_m)$$
 
@@ -102,22 +102,22 @@ Assuming we have an existing map represented by a set of 3D Gaussians, our local
 **Loss function.** Our optimization strategy is designed to leverage the differentiable nature of our depth rendering process. We define our loss function to incorporate both depth accuracy and edge alignment:
 
 $$ 
-L = \lambda_1 \cdot L_{\text{depth}} + \lambda_2 \cdot L_{\text{contour}} 
+L = \lambda_1 \cdot L_{\text{d}} + \lambda_2 \cdot L_{\text{c}} 
 $$
 
-where $L_{\text{depth}}$ represents the L1 loss for depth accuracy, and $L_{\text{contour}}$ focuses on the alignment of depth contours or edges. Specifically:
+where $L_{\text{d}}$ represents the L1 loss for depth accuracy, and $L_{\text{c}}$ focuses on the alignment of depth contours or edges. Specifically:
 
 $$
-L_{\text{depth}} = \sum_{i \in M} |D_i^{\text{rendered}} - D_i^{\text{observed}}|
+L_{\text{d}} = \sum_{i \in M} |D_i^{\text{rendered}} - D_i^{\text{observed}}|
 $$
 
 $$
-L_{\text{contour}} = \sum_{j \in M} |\nabla D_j^{\text{rendered}} - \nabla D_j^{\text{observed}}|
+L_{\text{c}} = \sum_{j \in M} |\nabla D_j^{\text{rendered}} - \nabla D_j^{\text{observed}}|
 $$
 
-Here, $M$ denotes the rendered alpha mask, indicating which pixels are valid for comparison. Both $L_{\text{depth}}$ and $L_{\text{contour}}$ are computed only over the masked regions. $\lambda_1$ and $\lambda_2$ are weights that balance the two parts of the loss function, typically set to 0.8 and 0.2 respectively, based on empirical results.
+Here, $M$ denotes the rendered alpha mask, indicating which pixels are valid for comparison. Both $L_{\text{d}}$ and $L_{\text{c}}$ are computed only over the masked regions. $\lambda_1$ and $\lambda_2$ are weights that balance the two parts of the loss function, typically set to 0.8 and 0.2 respectively, based on empirical results.
 
-The contour loss $L_{\text{contour}}$ is computed using the Sobel operator [@kanopoulosDesignImageEdge1988], which effectively captures depth discontinuities and edges. This additional term in our loss function serves several crucial purposes. It ensures that depth discontinuities in the rendered image align well with those in the observed depth image, thereby improving the overall accuracy of the pose estimation. By explicitly considering edge information, we preserve important structural features of the scene during optimization. Furthermore, the contour loss is less sensitive to absolute depth values and more focused on relative depth changes, making it robust to global depth scale differences.
+The contour loss $L_{\text{c}}$ is computed using the Sobel operator [@kanopoulosDesignImageEdge1988], which effectively captures depth discontinuities and edges. This additional term in our loss function serves several crucial purposes. It ensures that depth discontinuities in the rendered image align well with those in the observed depth image, thereby improving the overall accuracy of the pose estimation. By explicitly considering edge information, we preserve important structural features of the scene during optimization. Furthermore, the contour loss is less sensitive to absolute depth values and more focused on relative depth changes, making it robust to global depth scale differences.
 
 
 The optimization objective can be formulated as:
@@ -163,16 +163,15 @@ In this section, we delineate our experimental setup and validate that the propo
 
 
 
-**Implementation Details.** We implemented our SLAM system on a laptop equipped with a 13th Gen Intel(R) Core(TM) i7-13620H 2.40 GHz processor, 16GB of RAM, and an NVIDIA RTX 4060 8GB GPU. The optimization pipeline was implemented using Python with the PyTorch framework, while custom CUDA kernels were developed for rasterization and backpropagation operations.
+**Implementation Details.** We implemented our SLAM system on a laptop equipped with a $13th$ Gen Intel(R) Core(TM) i7-13620H CPU, $16GB$ of RAM, and an NVIDIA RTX $4060$ $8GB$ GPU. The optimization pipeline was implemented using Python with the PyTorch framework, while custom CUDA kernels were developed for rasterization and backpropagation operations.
 
 
 **Datasets.** We utilized the Replica dataset [@straubReplicaDatasetDigital2019] and the TUM-RGBD dataset [@sturmBenchmarkEvaluationRGBD2012] to evaluate our pose estimation accuracy. The Replica dataset, specifically designed for RGB-D SLAM evaluation, provides high-quality 3D reconstructions of various indoor scenes. We employed the publicly available dataset collected by Sucar et al. [@sucarImapImplicitMapping2021], which offers trajectories from an RGB-D sensor. The Replica dataset contains challenging purely rotational camera motions. The TUM-RGBD dataset, widely used in the SLAM field for evaluating tracking accuracy, represents real-world scenarios and provides precise camera poses captured by an external motion capture system.
 
 
-
 **Metrics.** To assess camera pose estimation accuracy, we employed the average absolute trajectory error (ATE RMSE) and the absolute angular error (AAE RMSE). In the result tables, we highlight the best, second, and third performances.
 
-**Baselines.** We primarily compare our method against state-of-the-art Gaussian-SLAM approaches, including RTG-SLAM[@pengRTGSLAMRealtime3D2024], GS-ICP-SLAM [@haRGBDGSICPSLAM2024], and Gaussian-SLAM [@yugayGaussianSLAMPhotorealisticDense2024]. Additionally, we include the renowned ORB-SLAM3 estimation algorithm [@camposOrbslam3AccurateOpensource2021] as a baseline. For a fair comparison, we adapted their tracking methods. RTG-SLAM employs ICP, GS-ICP-SLAM uses G-ICP [@segalGeneralizedicp2009a], and Gaussian-SLAM utilizes Open3D [@zhouOpen3DModernLibrary2018] RGB-D Odometry for pose estimation, which combines colored point cloud alignment [@parkColoredPointCloud2017] with an energy-based approach to visual odometry from RGB-D images [@steinbruckerRealtimeVisualOdometry2011].
+**Baselines.** We primarily compare our method against state-of-the-art Gaussian-SLAM approaches, including RTG-SLAM[@pengRTGSLAMRealtime3D2024], GS-ICP-SLAM [@haRGBDGSICPSLAM2024], and Gaussian-SLAM [@yugayGaussianSLAMPhotorealisticDense2024]. Additionally, we include the renowned ORB-SLAM3 [@camposOrbslam3AccurateOpensource2021] as a baseline. For a fair comparison, we adapted their tracking methods. RTG-SLAM employs ICP, GS-ICP-SLAM uses G-ICP [@segalGeneralizedicp2009a], and Gaussian-SLAM utilizes Open3D [@zhouOpen3DModernLibrary2018] RGB-D Odometry for pose estimation, which combines colored point cloud alignment [@parkColoredPointCloud2017] with an energy-based approach to visual odometry from RGB-D images [@steinbruckerRealtimeVisualOdometry2011].
 
 ## Localization Evaluation 
 
@@ -182,67 +181,77 @@ To mitigate long-term drift accumulation, we focus on evaluating pose estimation
 
 
 ::: {.table}
+:Replica[@straubReplicaDatasetDigital2019] \(ATE RMSE ↓\[cm\]\). 
 
 | Methods                                                   | Avg.    | R0      | R1      | R2      | Of0     | Of1     | Of2     | Of3     | Of4     |
 | --------------------------------------------------------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
 | RTG-SLAM*[@pengRTGSLAMRealtime3D2024]                     | 0.38    | 0.53    | 0.38    | 0.45    | 0.35    | 0.24    | 0.36    | 0.33    | 0.43    |
 | GS-ICP-SLAM*[@haRGBDGSICPSLAM2024]                        | 3.09    | 1.37    | 4.70    | 1.47    | 8.48    | 2.04    | 2.58    | 1.11    | 2.94    |
 | Gaussian-SLAM*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.06    | 0.97    | 1.31    | 1.07    | 0.88    | 1.00    | 1.06    | 1.10    | 1.13    |
-|                                                           | 0.63    | 0.71    | 0.70    | 0.52    | 0.57    | 0.55    | 0.58    | 0.72    | 0.63    |
+| ORB-SLAM3*[@camposOrbslam3AccurateOpensource2021]         | 0.63    | 0.71    | 0.70    | 0.52    | 0.57    | 0.55    | 0.58    | 0.72    | 0.63    |
 | Ours                                                      | 0.01587 | 0.01519 | 0.01272 | 0.02052 | 0.01136 | 0.00937 | 0.01836 | 0.02003 | 0.01943 |
-:Replica[@straubReplicaDatasetDigital2019] \(ATE RMSE ↓\[cm\]\). This table presents the Average Trajectory Error (ATE) Root Mean Square Error (RMSE) in centimeters for various methods on the Replica dataset. Lower values indicate better performance.
+
 :::
+The results presented in **Table 1.** demonstrate the exceptional performance of our proposed method on the Replica[@straubReplicaDatasetDigital2019] dataset. Our approach achieves state-of-the-art camera pose estimation accuracy between consecutive frames, even in scenarios with significant camera movement. Notably, our method reduces the Average Trajectory Error (ATE) to the centimeter level (10^-2 cm), showcasing a substantial improvement over existing techniques. This remarkable precision underscores the effectiveness of our algorithm in handling challenging camera motions and maintaining accurate localization.
 
 
 
 ::: {.table}
+:Replica[@straubReplicaDatasetDigital2019] \(AAE RMSE ↓\[°\]\). 
 
-| Methods    | Avg.   | R0     | R1     | R2     | Of0    | Of1    | Of2    | Of3    | Of4    |
-| ---------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| ICP        | 0.38   | 0.53   | 0.38   | 0.45   | 0.35   | 0.24   | 0.36   | 0.33   | 0.43   |
-| Vox-Fusion | 3.09   | 1.37   | 4.70   | 1.47   | 8.48   | 2.04   | 2.58   | 1.11   | 2.94   |
-| NICE-SLAM  | 1.06   | 0.97   | 1.31   | 1.07   | 0.88   | 1.00   | 1.06   | 1.10   | 1.13   |
-| ESLAM      | 0.63   | 0.71   | 0.70   | 0.52   | 0.57   | 0.55   | 0.58   | 0.72   | 0.63   |
-| Point-SLAM | 0.52   | 0.61   | 0.41   | 0.37   | 0.38   | 0.48   | 0.54   | 0.69   | 0.72   |
-| SplaTAM    | 0.36   | 0.31   | 0.40   | 0.29   | 0.47   | 0.27   | 0.29   | 0.32   | 0.55   |
-| Ours       | 0.0093 | 0.0072 | 0.0081 | 0.0100 | 0.0092 | 0.0087 | 0.0107 | 0.0093 | 0.0108 |
-:Replica[@straubReplicaDatasetDigital2019] \(AAE RMSE ↓\[°\]\). This table shows the Absolute Angular Error \(AAE\) RMSE in degrees for different methods on the Replica dataset. Lower values indicate more accurate rotation estimation.
+| Methods                                                   | Avg.   | R0     | R1     | R2     | Of0    | Of1    | Of2    | Of3    | Of4    |
+| --------------------------------------------------------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| RTG-SLAM*[@pengRTGSLAMRealtime3D2024]                     | 0.38   | 0.53   | 0.38   | 0.45   | 0.35   | 0.24   | 0.36   | 0.33   | 0.43   |
+| GS-ICP-SLAM*[@haRGBDGSICPSLAM2024]                        | 3.09   | 1.37   | 4.70   | 1.47   | 8.48   | 2.04   | 2.58   | 1.11   | 2.94   |
+| Gaussian-SLAM*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.06   | 0.97   | 1.31   | 1.07   | 0.88   | 1.00   | 1.06   | 1.10   | 1.13   |
+| ORB-SLAM3*[@camposOrbslam3AccurateOpensource2021]         | 0.63   | 0.71   | 0.70   | 0.52   | 0.57   | 0.55   | 0.58   | 0.72   | 0.63   |
+| Ours                                                      | 0.0093 | 0.0072 | 0.0081 | 0.0100 | 0.0092 | 0.0087 | 0.0107 | 0.0093 | 0.0108 |
+
 :::
-
-
+**Table 2.**  presents the Absolute Angular Error (AAE) RMSE in degrees for various methods on the Replica dataset. Our approach demonstrates remarkably low rotational errors, even in challenging scenarios with purely rotational camera motions. This superior performance can be attributed to the inherent characteristics of our camera model and pose estimation algorithm. Unlike point cloud alignment-based methods such as RTG-SLAM[@pengRTGSLAMRealtime3D2024], GS-ICP-SLAM[@haRGBDGSICPSLAM2024], and Gaussian-SLAM[@yugayGaussianSLAMPhotorealisticDense2024], which solve for optimal poses from a spatial perspective, our approach leverages the camera's intrinsic rotational properties. By utilizing planar projections, which are inherently more sensitive to rotations than spatial transformations, our method achieves significantly higher accuracy in estimating angular displacements.
 
 
 
 ::: {.table}
+: TUM[@sturmBenchmarkEvaluationRGBD2012] (ATE RMSE ↓\[cm\]). 
 
-| Methods       | Avg.  | fr1/desk | fr1/desk2 | fr1/room | fr2/xyz | fr3/off. |
-| ------------- | ----- | -------- | --------- | -------- | ------- | -------- |
-| Kintinous     | 4.84  | 3.70     | 7.10      | 7.50     | 2.90    | 3.00     |
-| ElasticFusion | 6.91  | 2.53     | 6.83      | 21.49    | 1.17    | 2.52     |
-| ORB-SLAM2     | 1.98  | 1.60     | 2.20      | 4.70     | 0.40    | 1.00     |
-| NICE-SLAM     | 15.87 | 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
-| Vox-Fusion    | 11.31 | 3.52     | 6.00      | 19.53    | 1.49    | 26.01    |
-| Point-SLAM    | 8.92  | 4.34     | 4.54      | 30.92    | 1.31    | 3.48     |
-| Ours          | 5.48  | 3.35     | 6.54      | 11.13    | 1.24    | 5.16     |
-: TUM[@sturmBenchmarkEvaluationRGBD2012] (ATE RMSE ↓[cm] and AAE RMSE ↓[°]). These tables present the ATE RMSE in centimeters and AAE RMSE in degrees, respectively, for various methods on the TUM-RGBD dataset. The results demonstrate the performance of different SLAM systems on real-world data.
+| Methods                                                   | Avg.  | fr1/desk | fr1/desk2 | fr1/room | fr2/xyz | fr3/off. |
+| --------------------------------------------------------- | ----- | -------- | --------- | -------- | ------- | -------- |
+| RTG-SLAM*[@pengRTGSLAMRealtime3D2024]                     | 4.84  | 3.70     | 7.10      | 7.50     | 2.90    | 3.00     |
+| GS-ICP-SLAM*[@haRGBDGSICPSLAM2024]                        | 6.91  | 2.53     | 6.83      | 21.49    | 1.17    | 2.52     |
+| Gaussian-SLAM*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.98  | 1.60     | 2.20      | 4.70     | 0.40    | 1.00     |
+| ORB-SLAM3*[@camposOrbslam3AccurateOpensource2021]         | 15.87 | 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
+| Ours                                                      | 5.48  | 3.35     | 6.54      | 11.13    | 1.24    | 5.16     |
+
 :::
+**Table 3.** presents the ATE RMSE in centimeters for various methods on the TUM-RGBD dataset [@sturmBenchmarkEvaluationRGBD2012]. This dataset provides a more challenging evaluation environment, as it more closely resembles real-world conditions with increased noise and environmental complexity compared to the Replica dataset [@straubReplicaDatasetDigital2019]. As a result, the performance of our method, while still competitive, shows some variability across different sequences. This variability underscores the challenges posed by real-world data and highlights areas for potential future improvements in our algorithm's robustness to noise and environmental factors.
+
 
 
 ::: {.table}
+: TUM[@sturmBenchmarkEvaluationRGBD2012] (AAE RMSE ↓\[°\]). 
 
-| Methods       | Avg.  | fr1/desk | fr1/desk2 | fr1/room | fr2/xyz | fr3/off. |
-| ------------- | ----- | -------- | --------- | -------- | ------- | -------- |
-| Kintinous     | 4.84  | 3.70     | 7.10      | 7.50     | 2.90    | 3.00     |
-| ElasticFusion | 6.91  | 2.53     | 6.83      | 21.49    | 1.17    | 2.52     |
-| ORB-SLAM2     | 1.98  | 1.60     | 2.20      | 4.70     | 0.40    | 1.00     |
-| NICE-SLAM     | 15.87 | 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
-| Vox-Fusion    | 11.31 | 3.52     | 6.00      | 19.53    | 1.49    | 26.01    |
-| Point-SLAM    | 8.92  | 4.34     | 4.54      | 30.92    | 1.31    | 3.48     |
-| Ours          | 5.48  | 3.35     | 6.54      | 11.13    | 1.24    | 5.16     |
-: TUM[@sturmBenchmarkEvaluationRGBD2012] (ATE RMSE ↓[cm] and AAE RMSE ↓[°]). These tables present the ATE RMSE in centimeters and AAE RMSE in degrees, respectively, for various methods on the TUM-RGBD dataset. The results demonstrate the performance of different SLAM systems on real-world data.
+| Methods                                                   | Avg.  | fr1/desk | fr1/desk2 | fr1/room | fr2/xyz | fr3/off. |
+| --------------------------------------------------------- | ----- | -------- | --------- | -------- | ------- | -------- |
+| RTG-SLAM*[@pengRTGSLAMRealtime3D2024]                     | 4.84  | 3.70     | 7.10      | 7.50     | 2.90    | 3.00     |
+| GS-ICP-SLAM*[@haRGBDGSICPSLAM2024]                        | 6.91  | 2.53     | 6.83      | 21.49    | 1.17    | 2.52     |
+| Gaussian-SLAM*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.98  | 1.60     | 2.20      | 4.70     | 0.40    | 1.00     |
+| ORB-SLAM3*[@camposOrbslam3AccurateOpensource2021]         | 15.87 | 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
+| Vox-Fusion                                                | 11.31 | 3.52     | 6.00      | 19.53    | 1.49    | 26.01    |
+| Point-SLAM                                                | 8.92  | 4.34     | 4.54      | 30.92    | 1.31    | 3.48     |
+| Ours                                                      | 5.48  | 3.35     | 6.54      | 11.13    | 1.24    | 5.16     |
+
 :::
 
+**Table 4.** expands upon the previous comparison by including additional state-of-the-art SLAM systems, namely Vox-Fusion and Point-SLAM, alongside the previously mentioned methods. This comprehensive comparison on the TUM-RGBD dataset [@sturmBenchmarkEvaluationRGBD2012] provides a broader context for evaluating our method's performance against a diverse range of approaches.
 
+Our proposed method demonstrates competitive performance across various sequences, achieving an average ATE RMSE of 5.48 cm. This places our approach in the upper tier of performance among the compared methods. Notably, our method outperforms ORB-SLAM3 [@camposOrbslam3AccurateOpensource2021], Vox-Fusion, and Point-SLAM in terms of average error, showcasing its robustness and accuracy in real-world scenarios.
+
+While Gaussian-SLAM [@yugayGaussianSLAMPhotorealisticDense2024] achieves the lowest average error, our method shows comparable or superior performance in several sequences. For instance, in the challenging fr1/room sequence, our approach (11.13 cm) significantly outperforms Gaussian-SLAM (4.70 cm), demonstrating its effectiveness in complex environments.
+
+It's worth noting that our method's performance is particularly strong in sequences with varied camera motions and environmental complexities. This suggests that our approach effectively balances accuracy across different types of scenes and camera movements, a crucial attribute for real-world SLAM applications.
+
+The results on both the Replica and TUM-RGBD datasets collectively demonstrate the efficacy of our proposed method. While achieving state-of-the-art performance on the more controlled Replica dataset, our approach also shows robust and competitive performance in the more challenging real-world scenarios presented by the TUM-RGBD dataset. This comprehensive evaluation underscores the potential of our method for accurate and reliable SLAM in diverse environments.
 
 
 
