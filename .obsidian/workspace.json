@@ -8,24 +8,14 @@
         "type": "tabs",
         "children": [
           {
-            "id": "87216e7e428d1ea2",
+            "id": "713c7813c3698b51",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/Arxiv.md",
+                "file": "essay/texs/GsplatLoc/main.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "713c7813c3698b51",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           },
@@ -42,14 +32,12 @@
             }
           },
           {
-            "id": "859f739f98a864ef",
+            "id": "2512daba735c19db",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "essay/journals/ITE computer vision.md",
-                "mode": "source",
-                "source": false
+                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           }
@@ -138,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/Arxiv.md",
+                "file": "essay/texs/GsplatLoc/main.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -155,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/Arxiv.md",
+                "file": "essay/texs/GsplatLoc/main.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -179,7 +167,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/Arxiv.md"
+                "file": "essay/texs/GsplatLoc/main.md"
               }
             }
           },
@@ -189,7 +177,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "essay/Arxiv.md"
+                "file": "essay/texs/GsplatLoc/main.md"
               }
             }
           }
@@ -217,26 +205,35 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "87216e7e428d1ea2",
+  "active": "713c7813c3698b51",
   "lastOpenFiles": [
-    "essay/texs/Untitled.md",
-    "essay/Arxiv.md",
-    "essay/texs/Untitled.pdf",
     "essay/texs/GsplatLoc/main.pdf",
-    "essay/texs/GsplatLoc/mess notes.md",
     "essay/texs/GsplatLoc/main.md",
+    "essay/texs/GsplatLoc/mess notes.md",
+    "essay/zotero/attachments/gs_spalt/experiments/Mur-Artal_Tardós_2017_Orb-slam2.pdf",
+    "essay/zotero/attachments/gs_spalt/introduce/Chung et al_2023_Orbeez-slam.pdf",
+    "essay/zotero/attachments/gs_spalt/introduce/Sandström et al_2023_Point-slam.pdf",
+    "essay/zotero/attachments/gs_spalt/introduce/Mildenhall et al_2022_NeRF2.pdf",
+    "essay/zotero/attachments/gs_spalt/introduce/Mildenhall et al_2022_NeRF.pdf",
+    "essay/zotero/attachments/gs_spalt/introduce/Kerl et al_2013_Dense visual SLAM for RGB-D cameras.pdf",
+    "essay/zotero/attachments/gs_spalt/introduce",
+    "essay/zotero/attachments/gs_spalt/Kerl et al_2013_Dense visual SLAM for RGB-D cameras.pdf",
     "essay/journals/ITE computer vision.md",
-    "essay/zotero/attachments/gs_spalt/experiments/Zhou et al_2018_Open3D.pdf",
-    "essay/zotero/attachments/gs_spalt/experiments/Campos et al_2021_Orb-slam3.pdf",
-    "essay/zotero/attachments/gs_spalt/experiments",
+    "docs/tools/pdf.md",
+    "docs/tools/git-install-instruction.md",
+    "docs/account.md",
+    "docs/tools/IDE/plugin.md",
+    "docs/tools/IDE/JetBrains.md",
+    "docs/VCS/git.md",
+    "essay/read-dairy.md",
+    "essay/Arxiv.md",
+    "docs/URLs.md",
+    "docs/tutorials/KnowledgeHub.md",
+    "essay/texs/Untitled.md",
+    "essay/texs/Untitled.pdf",
     "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
     "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
     "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
-    "essay/texs/GsplatLoc/fronts/FiraSans-ExtraBoldItalic.ttf",
-    "essay/texs/GsplatLoc/fronts/FiraSans-BlackItalic.ttf",
-    "essay/texs/GsplatLoc/fronts/FiraSans-Light.ttf",
-    "essay/texs/GsplatLoc/fronts/FiraSans-Regular.ttf",
-    "essay/texs/GsplatLoc/fronts/FiraSans-Black.ttf",
     "assets/screenshot.png",
     "assets/renRobustGICPbased3D2019/renRobustGICPbased3D2019-4-x63-y60.png",
     "assets/kornColorSupportedGeneralizedICP2014a/kornColorSupportedGeneralizedICP2014a-4-x69-y230.png",
@@ -246,9 +243,7 @@
     "assets/Pasted_image_20240512125417.png",
     "assets/Pasted_image_20240512125353.png",
     "assets/Pasted image 20240524150219.png",
-    "docs/tools/IDE/JetBrains.md",
     "essay/texs/GsplatLoc/debug_output.md",
-    "essay/read-dairy.md",
     "assets/Pasted image 20240810124116.png",
     "essay/zotero/annotations/keethaSplaTAMSplatTrack2024.md",
     "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
@@ -257,14 +252,6 @@
     "conflict-files-obsidian-git.md",
     "essay/zotero/annotations/huangPhotoSLAMRealtimeSimultaneous2024.md",
     "essay/zotero/annotations/haRGBDGSICPSLAM2024.md",
-    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
-    "essay/zotero/annotations/guptaNDT6DColor2023.md",
-    "essay/zotero/notes/{{citekey}}.md/huangPhotoSLAMRealtimeSimultaneous2024.md",
-    "essay/zotero/notes/{{citekey}}.md",
-    "essay/texs/GSplatLoc.md",
-    "essay/texs/ABGICP/ABGICP.md",
-    "essay/template/arxiv/main.md",
-    "essay/template/arxiv/ABGICP.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",

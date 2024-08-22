@@ -22,22 +22,8 @@
 
 \usepackage{adjustbox}
 
-
-\usepackage{libertinus}
-
-
-
 %\usepackage{lmodern}
-
-
-
-
-
-
-
-
-
-
+\usepackage{libertinus}
 
 
 
@@ -103,11 +89,10 @@ $if(csl-refs)$
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 $endif$
 
-% color words
-\newcommand{\greentext}[1]{\textcolor{green!50!black}{\textbf{#1}}}
-\newcommand{\yellowtext}[1]{\textcolor{yellow!50!black}{#1}}
-\newcommand{\limetext}[1]{\textcolor{lime!50!black}{#1}}
 
+% tightlist error using Pandoc with Markdown https://stackoverflow.com/questions/40438037/tightlist-error-using-pandoc-with-markdown
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 % main
 \begin{document}
