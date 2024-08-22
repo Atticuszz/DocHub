@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md",
+                "file": "essay/Arxiv.md",
                 "mode": "source",
                 "source": false
               }
@@ -53,8 +53,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -139,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf",
+                "file": "essay/Arxiv.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +155,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf",
+                "file": "essay/Arxiv.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -180,7 +179,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf"
+                "file": "essay/Arxiv.md"
               }
             }
           },
@@ -190,7 +189,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf"
+                "file": "essay/Arxiv.md"
               }
             }
           }
@@ -218,7 +217,7 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "713c7813c3698b51",
+  "active": "87216e7e428d1ea2",
   "lastOpenFiles": [
     "essay/texs/GsplatLoc/main.md",
     "essay/texs/GsplatLoc/main.pdf",
