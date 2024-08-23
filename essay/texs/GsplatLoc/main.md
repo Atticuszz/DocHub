@@ -56,12 +56,13 @@ We present GSplatLoc, an innovative pose estimation method for RGB-D cameras tha
 
 **Overview.** The GSplatLoc method presents an innovative approach to camera localization, leveraging the differentiable nature of 3D Gaussian splatting for efficient and accurate pose estimation.
 
-**Motivation.** Recent advancements in 3D scene representation, particularly the 3D Gaussian Splatting technique[@kerbl3DGaussianSplatting2023] , have opened new avenues for efficient and high-quality 3D scene rendering. By adapting this approach to the task of camera localization, we aim to exploit its differentiable properties and speed advantages to achieve robust and real-time pose estimation.
-kerbl3dGaussianSplatting2023
-**Problem formulation.** Our objective is to estimate the 6-DoF pose $(R, t) \in SE(3)$ of a query depth image $D_q$, where $R$ is the rotation matrix and $t$ is the translation vector in the camera coordinate system. Given a 3D representation of the environment in the form of 3D Gaussians, let $\mathcal{G} = \{G_i\}_{i=1}^N$ denote a set of $N$ 3D Gaussians, and posed reference depth images $\{D_k\}$, which together constitute the reference data.
+**Motivation.** Recent advancements in 3D scene representation, particularly the 3D Gaussian Splatting technique [@kerbl3DGaussianSplatting2023], have opened new avenues for efficient and high-quality 3D scene rendering. By adapting this approach to the task of camera localization, we aim to exploit its differentiable properties and speed advantages to achieve robust and real-time pose estimation.
+
+**Problem formulation.** Our objective is to estimate the 6-DoF pose $(\mathbf{R}, \mathbf{t}) \in SE(3)$ of a query depth image $D_q$, where $\mathbf{R}$ is the rotation matrix and $\mathbf{t}$ is the translation vector in the camera coordinate system. Given a 3D representation of the environment in the form of 3D Gaussians, let $\mathcal{G} = \{G_i\}_{i=1}^N$ denote a set of $N$ 3D Gaussians, and posed reference depth images $\{D_k\}$, which together constitute the reference data.
+
+
 
 ## Scene Representation
-
 
 
 Building upon the Gaussian splatting method [@kerbl3DGaussianSplatting2023], we adapt the scene representation to focus on the differentiable depth rendering process, which is crucial for our localization task. Our approach utilizes the efficiency and quality of Gaussian splatting while tailoring it specifically for depth-based localization.
@@ -70,43 +71,44 @@ Building upon the Gaussian splatting method [@kerbl3DGaussianSplatting2023], we 
 
 The 3D covariance matrix $\boldsymbol{\Sigma}_i$ is then parameterized using $\mathbf{s}_i$ and $\mathbf{q}_i$:
 
-$$\boldsymbol{\Sigma}_i = R(\mathbf{q}_i) S(\mathbf{s}_i) S(\mathbf{s}_i)^T R(\mathbf{q}_i)^T$$
+$$\boldsymbol{\Sigma}_i = \mathbf{R}(\mathbf{q}_i) \mathbf{S}(\mathbf{s}_i) \mathbf{S}(\mathbf{s}_i)^\top \mathbf{R}(\mathbf{q}_i)^\top$$
 
-where $R(\mathbf{q}_i)$ is the rotation matrix derived from $\mathbf{q}_i$, and $S(\mathbf{s}_i) = \text{diag}(\mathbf{s}_i)$ is a diagonal matrix of scales.
+where $\mathbf{R}(\mathbf{q}_i)$ is the rotation matrix derived from $\mathbf{q}_i$, and $\mathbf{S}(\mathbf{s}_i) = \text{diag}(\mathbf{s}_i)$ is a diagonal matrix of scales.
 
 **Projecting 3D to 2D:** To project these 3D Gaussians onto a 2D image plane, we follow the approach described by [@kerbl3DGaussianSplatting2023]. The projection of the 3D mean $\boldsymbol{\mu}_i$ to the 2D image plane is given by:
 
-$$\boldsymbol{\mu}_{I,i} = \pi(P(T_{wc} \boldsymbol{\mu}_{i,\text{homogeneous}}))$$
+$$\boldsymbol{\mu}_{I,i} = \pi(\mathbf{P}(\mathbf{T}_{wc} \boldsymbol{\mu}_{i,\text{homogeneous}}))$$
 
-where $T_{wc} \in SE(3)$ is the world-to-camera transformation, $P \in \mathbb{R}^{4 \times 4}$ is the projection matrix [@yeMathematicalSupplementTexttt2023], and $\pi: \mathbb{R}^4 \rightarrow \mathbb{R}^2$ maps to pixel coordinates.
+where $\mathbf{T}_{wc} \in SE(3)$ is the world-to-camera transformation, $\mathbf{P} \in \mathbb{R}^{4 \times 4}$ is the projection matrix [@yeMathematicalSupplementTexttt2023], and $\pi: \mathbb{R}^4 \rightarrow \mathbb{R}^2$ maps to pixel coordinates.
 
 The 2D covariance $\boldsymbol{\Sigma}_{I,i} \in \mathbb{R}^{2\times2}$ of the projected Gaussian is derived as:
 
-$$\boldsymbol{\Sigma}_{I,i} = J R_{wc} \boldsymbol{\Sigma}_i R_{wc}^T J^T$$
+$$\boldsymbol{\Sigma}_{I,i} = \mathbf{J} \mathbf{R}_{wc} \boldsymbol{\Sigma}_i \mathbf{R}_{wc}^\top \mathbf{J}^\top$$
 
-where $R_{wc}$ represents the rotation component of $T_{wc}$, and $J$ is the affine transform as described by [@zwickerEWASplatting2002].
+where $\mathbf{R}_{wc}$ represents the rotation component of $\mathbf{T}_{wc}$, and $\mathbf{J}$ is the affine transform as described by [@zwickerEWASplatting2002].
+
 
 ## Depth Rendering
 
 We implement a differential depth rendering process, which is crucial for our localization method as it allows for gradient computation throughout the rendering pipeline. This differentiability enables us to optimize camera poses directly based on rendered depth maps.
 
-**Compositing Depth:** For depth map generation, we employ a front-to-back compositing scheme, which allows for accurate depth estimation and edge alignment. Let $d_n$ represent the depth value associated with the $n$-th Gaussian, which is the z-coordinate of the Gaussian's mean in the camera coordinate system. The depth $D(p)$ at pixel $p$ is computed as [@kerbl3DGaussianSplatting2023]:
+**Compositing Depth:** For depth map generation, we employ a front-to-back compositing scheme, which allows for accurate depth estimation and edge alignment. Let $d_n$ represent the depth value associated with the $n$-th Gaussian, which is the z-coordinate of the Gaussian's mean in the camera coordinate system. The depth $D(\mathbf{p})$ at pixel $\mathbf{p}$ is computed as [@kerbl3DGaussianSplatting2023]:
 
-$$D(p) = \sum_{n \leq N} d_n \cdot \alpha_n \cdot T_n, \quad \text{where } T_n = \prod_{m<n} (1 - \alpha_m)$$
+$$D(\mathbf{p}) = \sum_{n \leq N} d_n \cdot \alpha_n \cdot T_n, \quad \text{where } T_n = \prod_{m<n} (1 - \alpha_m)$$
 
-Here, $\alpha_n$ represents the opacity of the $n$-th Gaussian at pixel $p$, computed as:
+Here, $\alpha_n$ represents the opacity of the $n$-th Gaussian at pixel $\mathbf{p}$, computed as:
 
-$$\alpha_n = o_n \cdot \exp(-\sigma_n), \quad \sigma_n = \frac{1}{2} \Delta_n^T \boldsymbol{\Sigma}_I^{-1} \Delta_n$$
+$$\alpha_n = o_n \cdot \exp(-\sigma_n), \quad \sigma_n = \frac{1}{2} \boldsymbol{\Delta}_n^\top \boldsymbol{\Sigma}_I^{-1} \boldsymbol{\Delta}_n$$
 
-where $\Delta_n$ is the offset between the pixel center and the 2D Gaussian center $\boldsymbol{\mu}_I$, and $o_n$ is the opacity parameter of the Gaussian. $T_n$ denotes the cumulative transparency product of all Gaussians preceding $n$, accounting for the occlusion effects of previous Gaussians.
+where $\boldsymbol{\Delta}_n$ is the offset between the pixel center and the 2D Gaussian center $\boldsymbol{\mu}_I$, and $o_n$ is the opacity parameter of the Gaussian. $T_n$ denotes the cumulative transparency product of all Gaussians preceding $n$, accounting for the occlusion effects of previous Gaussians.
 
-**Scaling Depth.** To ensure consistent representation across the image, we normalize the depth values. First, we calculate the total accumulated opacity $\alpha(p)$ for each pixel:
+**Scaling Depth.** To ensure consistent representation across the image, we normalize the depth values. First, we calculate the total accumulated opacity $\alpha(\mathbf{p})$ for each pixel:
 
-$$\alpha(p) = \sum_{n \leq N} \alpha_n \cdot T_n$$
+$$\alpha(\mathbf{p}) = \sum_{n \leq N} \alpha_n \cdot T_n$$
 
-The normalized depth $\text{Norm}_D(p)$ is then defined as:
+The normalized depth $\text{Norm}_D(\mathbf{p})$ is then defined as:
 
-$$\text{Norm}_D(p) = \frac{D(p)}{\alpha(p)}$$
+$$\text{Norm}_D(\mathbf{p}) = \frac{D(\mathbf{p})}{\alpha(\mathbf{p})}$$
 
 This normalization process ensures that the depth values are properly scaled and comparable across different regions of the image, regardless of the varying densities of Gaussians in the scene.
 
@@ -120,23 +122,24 @@ Assuming we have an existing map represented by a set of 3D Gaussians, our local
 
 **Rotating with Quaternions.** We parameterize the camera pose using a quaternion $\mathbf{q}_{cw}$ for rotation and a vector $\mathbf{t}_{cw}$ for translation. This choice of parameterization is particularly advantageous in our differential rendering context. Quaternions provide a continuous and singularity-free representation of rotation, which is crucial for gradient-based optimization. Moreover, their compact four-parameter form aligns well with our differentiable rendering pipeline, allowing for efficient computation of gradients with respect to rotation parameters.
 
+
 **Loss function.** Our optimization strategy is designed to leverage the differentiable nature of our depth rendering process. We define our loss function to incorporate both depth accuracy and edge alignment:
 
-$$ 
-L = \lambda_1 \cdot L_{\text{d}} + \lambda_2 \cdot L_{\text{c}} 
+$$
+\mathcal{L} = \lambda_1 \mathcal{L}_d + \lambda_2 \mathcal{L}_c
 $$
 
-where $L_{\text{d}}$ represents the L1 loss for depth accuracy, and $L_{\text{c}}$ focuses on the alignment of depth contours or edges. Specifically:
+where $\mathcal{L}_d$ represents the L1 loss for depth accuracy, and $\mathcal{L}_c$ focuses on the alignment of depth contours or edges. Specifically:
 
 $$
-L_{\text{d}} = \sum_{i \in M} |D_i^{\text{rendered}} - D_i^{\text{observed}}|
+\mathcal{L}_d = \sum_{i \in \mathcal{M}} |D_i^{\text{rendered}} - D_i^{\text{observed}}|
 $$
 
 $$
-L_{\text{c}} = \sum_{j \in M} |\nabla D_j^{\text{rendered}} - \nabla D_j^{\text{observed}}|
+\mathcal{L}_c = \sum_{j \in \mathcal{M}} |\nabla D_j^{\text{rendered}} - \nabla D_j^{\text{observed}}|
 $$
 
-Here, $M$ denotes the rendered alpha mask, indicating which pixels are valid for comparison. Both $L_{\text{d}}$ and $L_{\text{c}}$ are computed only over the masked regions. $\lambda_1$ and $\lambda_2$ are weights that balance the two parts of the loss function, typically set to 0.8 and 0.2 respectively, based on empirical results.
+Here, $\mathcal{M}$ denotes the rendered alpha mask, indicating which pixels are valid for comparison. Both $\mathcal{L}_d$ and $\mathcal{L}_c$ are computed only over the masked regions. $\lambda_1$ and $\lambda_2$ are weights that balance the two parts of the loss function, typically set to 0.8 and 0.2 respectively, based on empirical results.
 
 The contour loss $L_{\text{c}}$ is computed using the Sobel operator [@kanopoulosDesignImageEdge1988], which effectively captures depth discontinuities and edges. This additional term in our loss function serves several crucial purposes. It ensures that depth discontinuities in the rendered image align well with those in the observed depth image, thereby improving the overall accuracy of the pose estimation. By explicitly considering edge information, we preserve important structural features of the scene during optimization. Furthermore, the contour loss is less sensitive to absolute depth values and more focused on relative depth changes, making it robust to global depth scale differences.
 
@@ -144,7 +147,7 @@ The contour loss $L_{\text{c}}$ is computed using the Sobel operator [@kanopoulo
 The optimization objective can be formulated as:
 
 $$
-\min_{\mathbf{q}_{cw}, \mathbf{t}_{cw}} L + \lambda_q \|\mathbf{q}_{cw}\|_2^2 + \lambda_t \|\mathbf{t}_{cw}\|_2^2
+\min_{\mathbf{q}_{cw}, \mathbf{t}_{cw}} \mathcal{L} + \lambda_q \|\mathbf{q}_{cw}\|_2^2 + \lambda_t \|\mathbf{t}_{cw}\|_2^2
 $$
 
 where $\lambda_q$ and $\lambda_t$ are regularization terms for the quaternion and translation parameters, respectively.
