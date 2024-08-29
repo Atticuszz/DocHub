@@ -93,7 +93,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
 
 plugins=(
-    adb
     command-not-found
     extract
     deno
@@ -127,3 +126,4 @@ plugins=(
   "terminal.integrated.defaultProfile.linux": "zsh"
 }
 ```
+

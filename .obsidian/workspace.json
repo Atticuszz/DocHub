@@ -13,25 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md",
+                "file": "docs/OS/Ubuntu/shell.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "ec42f12a4bb2e492",
+            "id": "3c9df18a01ae789f",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": "essay/texs/GsplatLoc/main.md",
-                "staged": false
+                "file": "docs/Language/python/py-env/UV.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -97,6 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "docs/OS/Ubuntu/shell.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -113,6 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "docs/OS/Ubuntu/shell.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +148,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "docs/OS/Ubuntu/shell.md"
+              }
             }
           },
           {
@@ -197,16 +201,17 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "ec42f12a4bb2e492",
+  "active": "215eec8d231b0fe8",
   "lastOpenFiles": [
     "docs/Language/python/py-env/UV.md",
+    "docs/OS/Ubuntu/shell.md",
+    "essay/texs/GsplatLoc/mess notes.md",
     "docs/Language/python/py-env/conda.md",
     "docs/Language/python/py-env/Poetry.md",
     "docs/Language/python/py-env/Pip.md",
     "docs/VCS/git.md",
     "docs/tutorials/KnowledgeHub.md",
     "essay/texs/GsplatLoc/main.md",
-    "essay/texs/GsplatLoc/mess notes.md",
     "essay/zotero/attachments/gs_spalt/introduce/Sandström et al_2023_Point-slam.pdf",
     "essay/zotero/attachments/gs_spalt/introduce/Mildenhall et al_2022_NeRF2.pdf",
     "essay/zotero/attachments/gs_spalt/introduce/Mildenhall et al_2022_NeRF.pdf",
@@ -220,7 +225,6 @@
     "assets/20240822115648.png",
     "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
     "essay/journals/ITE computer vision.md",
-    "docs/OS/Ubuntu/shell.md",
     "docs/OS/GPU.md",
     "docs/account.md",
     "docs/OS/Ubuntu/configs.md",
