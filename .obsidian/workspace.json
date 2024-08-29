@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/OS/Ubuntu/shell.md",
+                "file": "docs/Language/python/py-env/UV.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/OS/Ubuntu/shell.md",
+                "file": "docs/Language/python/py-env/UV.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/OS/Ubuntu/shell.md",
+                "file": "docs/Language/python/py-env/UV.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/OS/Ubuntu/shell.md"
+                "file": "docs/Language/python/py-env/UV.md"
               }
             }
           },
@@ -203,8 +203,8 @@
   },
   "active": "215eec8d231b0fe8",
   "lastOpenFiles": [
-    "docs/Language/python/py-env/UV.md",
     "docs/OS/Ubuntu/shell.md",
+    "docs/Language/python/py-env/UV.md",
     "essay/texs/GsplatLoc/mess notes.md",
     "docs/Language/python/py-env/conda.md",
     "docs/Language/python/py-env/Poetry.md",

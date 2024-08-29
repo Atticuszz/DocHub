@@ -1,7 +1,6 @@
 
-## install
+## [Installation](https://docs.astral.sh/uv/getting-started/installation/)
 
-[Installation - uv](https://docs.astral.sh/uv/getting-started/installation/)
 - download
 ```shell
 curl -LsSf https://astral.sh/uv/install.sh | sh
