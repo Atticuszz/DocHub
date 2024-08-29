@@ -235,7 +235,6 @@ The results presented in **Table 1.** demonstrate the exceptional performance of
 **Table 2.**  presents the Absolute Angular Error (AAE) RMSE in degrees for various methods on the Replica dataset. Our approach demonstrates remarkably low rotational errors, even in challenging scenarios with purely rotational camera motions. This superior performance can be attributed to the inherent characteristics of our camera model and pose estimation algorithm. Unlike point cloud alignment-based methods such as RTG-SLAM[@pengRTGSLAMRealtime3D2024], GS-ICP-SLAM[@haRGBDGSICPSLAM2024], and Gaussian-SLAM[@yugayGaussianSLAMPhotorealisticDense2024], which solve for optimal poses from a spatial perspective, our approach leverages the camera's intrinsic rotational properties. By utilizing planar projections, which are inherently more sensitive to rotations than spatial transformations, our method achieves significantly higher accuracy in estimating angular displacements.
 
 
-
 ::: {.table}
 : TUM[@sturmBenchmarkEvaluationRGBD2012] (ATE RMSE ↓\[cm\]). 
 
@@ -245,7 +244,7 @@ The results presented in **Table 1.** demonstrate the exceptional performance of
 | GS-ICP-SLAM*[@haRGBDGSICPSLAM2024]                        | 6.91  | 2.53     | 6.83      | 21.49    | 1.17    | 2.52     |
 | Gaussian-SLAM*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.98  | 1.60     | 2.20      | 4.70     | 0.40    | 1.00     |
 | ORB-SLAM3*[@camposOrbslam3AccurateOpensource2021]         | 15.87 | 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
-| Ours                                                      | 5.48  | 3.35     | 6.54      | 11.13    | 1.24    | 5.16     |
+| Ours                                                      | 0.81  | 0.93     | 1.01      | 0.67     | 0.25    | 1.20     |
 
 :::
 **Table 3.** presents the ATE RMSE in centimeters for various methods on the TUM-RGBD dataset [@sturmBenchmarkEvaluationRGBD2012]. This dataset provides a more challenging evaluation environment, as it more closely resembles real-world conditions with increased noise and environmental complexity compared to the Replica dataset [@straubReplicaDatasetDigital2019]. As a result, the performance of our method, while still competitive, shows some variability across different sequences. This variability underscores the challenges posed by real-world data and highlights areas for potential future improvements in our algorithm's robustness to noise and environmental factors.
@@ -263,7 +262,7 @@ The results presented in **Table 1.** demonstrate the exceptional performance of
 | ORB-SLAM3*[@camposOrbslam3AccurateOpensource2021]         | 15.87 | 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
 | Vox-Fusion                                                | 11.31 | 3.52     | 6.00      | 19.53    | 1.49    | 26.01    |
 | Point-SLAM                                                | 8.92  | 4.34     | 4.54      | 30.92    | 1.31    | 3.48     |
-| Ours                                                      | 5.48  | 3.35     | 6.54      | 11.13    | 1.24    | 5.16     |
+| Ours                                                      | 0.98  | 1.13     | 1.27      | 0.91     | 0.79    | 0.81     |
 
 :::
 
