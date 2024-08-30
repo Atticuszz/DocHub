@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Language/python/py-env/UV.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,7 +31,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -201,10 +202,11 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "215eec8d231b0fe8",
+  "active": "3c9df18a01ae789f",
   "lastOpenFiles": [
-    "docs/OS/Ubuntu/shell.md",
+    "README.md",
     "docs/Language/python/py-env/UV.md",
+    "docs/OS/Ubuntu/shell.md",
     "essay/texs/GsplatLoc/mess notes.md",
     "docs/Language/python/py-env/conda.md",
     "docs/Language/python/py-env/Poetry.md",
@@ -242,7 +244,6 @@
     "essay/zotero/annotations/matsukiGaussianSplattingSlam2024.md",
     "essay/zotero/annotations/guptaNDT6DColor2023.md",
     "assets/huangPhotoSLAMRealtimeSimultaneous2024/huangPhotoSLAMRealtimeSimultaneous2024-5-x457-y204.png",
-    "essay/zotero/annotations/ressSLAMIndoorMapping2024.md",
     "assets/screenshot.png",
     "assets/Pasted image 20240524150219.png",
     "assets/guptaNDT6DColor2023/guptaNDT6DColor2023-14-x56-y502.png",

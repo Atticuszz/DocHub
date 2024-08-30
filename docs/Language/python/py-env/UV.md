@@ -28,3 +28,12 @@ rm -r "$(uv python dir)"
 rm -r "$(uv tool dir)"
 rm ~/.cargo/bin/uv ~/.cargo/bin/uvx
 ```
+
+
+## [python](https://docs.astral.sh/uv/concepts/python-versions/#installing-a-python-version)
+
+
+- `uv` will [automatically fetch Python versions](https://docs.astral.sh/uv/guides/install-python/#automatic-python-downloads) as needed — you don't need to install Python to get started.
+- also it can manange your python envs
+- Once Python is installed, it will be used by `uv` commands automatically.
+
