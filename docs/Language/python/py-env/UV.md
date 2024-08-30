@@ -37,3 +37,13 @@ rm ~/.cargo/bin/uv ~/.cargo/bin/uvx
 - also it can manange your python envs
 - Once Python is installed, it will be used by `uv` commands automatically.
 
+
+- [activate venv](https://docs.astral.sh/uv/guides/projects/#running-commands:~:text=uv%20sync%0A%24%20source%20.venv/bin/activate)
+```shell
+uv sync
+source .venv/bin/activate
+```
+- [Finding a Python executable](https://docs.astral.sh/uv/concepts/python-versions/#finding-a-python-executable:~:text=To%20find%20a%20Python%20executable%2C%20use%20the%20uv%20python%20find%20command%3A)
+```shell
+uv python find
+```
