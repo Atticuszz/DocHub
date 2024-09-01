@@ -260,8 +260,6 @@ The results presented in **Table 1.** demonstrate the exceptional performance of
 | GS-ICP-SLAM*[@haRGBDGSICPSLAM2024]                        | 6.91  | 2.53     | 6.83      | 21.49    | 1.17    | 2.52     |
 | Gaussian-SLAM*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.98  | 1.60     | 2.20      | 4.70     | 0.40    | 1.00     |
 | ORB-SLAM3*[@camposOrbslam3AccurateOpensource2021]         | 15.87 | 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
-| Vox-Fusion                                                | 11.31 | 3.52     | 6.00      | 19.53    | 1.49    | 26.01    |
-| Point-SLAM                                                | 8.92  | 4.34     | 4.54      | 30.92    | 1.31    | 3.48     |
 | Ours                                                      | 0.98  | 1.13     | 1.27      | 0.91     | 0.79    | 0.81     |
 
 :::
