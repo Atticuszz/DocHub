@@ -8,17 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "713c7813c3698b51",
-            "type": "leaf",
-            "state": {
-              "type": "diff-view",
-              "state": {
-                "file": "essay/texs/GsplatLoc/main.md",
-                "staged": false
-              }
-            }
-          },
-          {
             "id": "c6e942937bc7dff2",
             "type": "leaf",
             "state": {
@@ -31,16 +20,6 @@
             }
           },
           {
-            "id": "2512daba735c19db",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "essay/texs/GsplatLoc/main.pdf"
-              }
-            }
-          },
-          {
             "id": "12eb18fd834e9c58",
             "type": "leaf",
             "state": {
@@ -49,6 +28,16 @@
                 "file": "essay/texs/GsplatLoc/main.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "2512daba735c19db",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "essay/texs/GsplatLoc/main.pdf"
               }
             }
           },
@@ -150,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md",
+                "file": "essay/texs/GsplatLoc/main.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -167,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md",
+                "file": "essay/texs/GsplatLoc/main.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -191,7 +180,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md"
+                "file": "essay/texs/GsplatLoc/main.md"
               }
             }
           },
@@ -201,7 +190,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "essay/texs/GsplatLoc/mess notes.md"
+                "file": "essay/texs/GsplatLoc/main.md"
               }
             }
           }
@@ -226,25 +215,27 @@
       "obsidian-importer:Open Importer": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
-      "darlal-switcher-plus:Open Symbols for the active editor": false
+      "darlal-switcher-plus:Open Symbols for the active editor": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "21942943f6ffac1a",
+  "active": "12eb18fd834e9c58",
   "lastOpenFiles": [
-    "docs/Language/python/py-env/UV.md",
-    "essay/texs/GsplatLoc/main.md",
     "essay/texs/GsplatLoc/main.pdf",
-    "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
-    "assets/20240822115648.png",
     "essay/texs/GsplatLoc/mess notes.md",
+    "essay/texs/GsplatLoc/main.md",
+    "essay/zotero/annotations/yugayGaussianSLAMPhotorealisticDense2024.md",
+    "essay/texs/GsplatLoc/citation_filter.py",
+    "essay/zotero/attachments/gs_spalt/relate_works/Whelan et al_2015_ElasticFusion.pdf",
+    "essay/zotero/attachments/gs_spalt/relate_works",
+    "docs/Language/python/py-env/UV.md",
+    "assets/20240822115648.png",
     "essay/zotero/attachments/gs_spalt/experiments/Mur-Artal_Tardós_2017_Orb-slam2.pdf",
     "essay/zotero/attachments/gs_spalt/introduce/Chung et al_2023_Orbeez-slam.pdf",
     "essay/zotero/attachments/gs_spalt/introduce/Sandström et al_2023_Point-slam.pdf",
     "essay/zotero/attachments/gs_spalt/introduce/Mildenhall et al_2022_NeRF2.pdf",
     "essay/zotero/attachments/gs_spalt/introduce/Mildenhall et al_2022_NeRF.pdf",
     "essay/zotero/attachments/gs_spalt/introduce/Kerl et al_2013_Dense visual SLAM for RGB-D cameras.pdf",
-    "essay/zotero/attachments/gs_spalt/introduce",
-    "essay/zotero/attachments/gs_spalt/Kerl et al_2013_Dense visual SLAM for RGB-D cameras.pdf",
     "essay/journals/ITE computer vision.md",
     "docs/tools/pdf.md",
     "docs/tools/git-install-instruction.md",
@@ -257,7 +248,6 @@
     "docs/URLs.md",
     "docs/tutorials/KnowledgeHub.md",
     "essay/texs/Untitled.md",
-    "essay/texs/Untitled.pdf",
     "essay/zotero/annotations/pengRTGSLAMRealtime3D2024.md",
     "essay/zotero/annotations/huCGSLAMEfficientDense2024.md",
     "assets/screenshot.png",
@@ -276,7 +266,6 @@
     "essay/zotero/annotations/sunMM3DGSSLAMMultimodal2024.md",
     "conflict-files-obsidian-git.md",
     "essay/zotero/annotations/huangPhotoSLAMRealtimeSimultaneous2024.md",
-    "essay/zotero/annotations/haRGBDGSICPSLAM2024.md",
     "未命名.canvas",
     "未命名 3.canvas",
     "未命名 2.canvas",
