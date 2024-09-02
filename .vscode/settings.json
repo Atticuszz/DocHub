@@ -1,3 +1,5 @@
 {
-  "DockerRun.DisableAutoGenerateConfig": true
+  "DockerRun.DisableAutoGenerateConfig": true,
+  "files.autoSave": "afterDelay",
+  "editor.fontSize": 16
 }
