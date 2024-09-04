@@ -14,8 +14,9 @@
   "obsidian-annotator",
   "obsidian-enhancing-export",
   "obsidian-pandoc",
-  "obsidian-pandoc-reference-list",
   "obsidian-linter",
   "darlal-switcher-plus",
-  "obsidian-image-auto-upload-plugin"
+  "obsidian-image-auto-upload-plugin",
+  "obsidian-pandoc-reference-list",
+  "obsidian-mkdocs-publisher"
 ]
