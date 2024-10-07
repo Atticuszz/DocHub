@@ -1,5 +1,5 @@
 /**
- * Based on https://github.com/Fevol/obsidian-translate/blob/master/src/ui/translator-components/SettingsPage.svelte 
+ * Based on https://github.com/Fevol/obsidian-translate/blob/master/src/ui/translator-components/SettingsPage.svelte
  */
 
 .linter-navigation-item {
@@ -21,23 +21,24 @@
   overflow: hidden;
 
   background-color: var(--background-primary-secondary-alt);
-  
-  transition: color 0.25s ease-in-out,
-        padding 0.25s ease-in-out,
-        background-color 0.35s cubic-bezier(0.45, 0.25, 0.83, 0.67),
-        max-width 0.35s cubic-bezier(0.57, 0.04, 0.58, 1);
+
+  transition:
+    color 0.25s ease-in-out,
+    padding 0.25s ease-in-out,
+    background-color 0.35s cubic-bezier(0.45, 0.25, 0.83, 0.67),
+    max-width 0.35s cubic-bezier(0.57, 0.04, 0.58, 1);
   height: 32px;
 }
 
 @media screen and (max-width: 1325px) {
   .linter-navigation-item.linter-desktop {
-		max-width: 32px;
+    max-width: 32px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .linter-navigation-item.linter-mobile {
-		max-width: 32px;
+    max-width: 32px;
   }
 }
 
@@ -58,10 +59,11 @@
   border: 1px solid var(--background-modifier-border);
   border-radius: 8px 8px 2px 2px;
   border-bottom: 0px;
-  transition: color 0.25s ease-in-out,
-        padding 0.25s ease-in-out,
-        background-color 0.35s cubic-bezier(0.45, 0.25, 0.83, 0.67),
-        max-width 0.45s cubic-bezier(0.57, 0.04, 0.58, 1) 0.2s;
+  transition:
+    color 0.25s ease-in-out,
+    padding 0.25s ease-in-out,
+    background-color 0.35s cubic-bezier(0.45, 0.25, 0.83, 0.67),
+    max-width 0.45s cubic-bezier(0.57, 0.04, 0.58, 1) 0.2s;
 }
 
 /**
@@ -125,10 +127,11 @@
   border-right: 2px solid var(--background-modifier-border);
 }
 
-/** Hide linter element css 
+/** Hide linter element css
  * Based on https://zellwk.com/blog/hide-content-accessibly/
  */
-.linter-navigation-item:not(.linter-navigation-item-selected) > span:nth-child(2),
+.linter-navigation-item:not(.linter-navigation-item-selected)
+  > span:nth-child(2),
 .linter-visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -171,10 +174,12 @@ textarea.full-width {
 .settings-copy-button svg.linter-success path {
   fill: var(--interactive-success);
 }
-.settings-copy-button:hover, .settings-copy-button:active {
+.settings-copy-button:hover,
+.settings-copy-button:active {
   cursor: pointer;
 }
-.settings-copy-button:hover svg path, .settings-copy-button:active svg path {
+.settings-copy-button:hover svg path,
+.settings-copy-button:active svg path {
   fill: var(--text-accent-hover);
   transition: all ease 0.3s;
 }

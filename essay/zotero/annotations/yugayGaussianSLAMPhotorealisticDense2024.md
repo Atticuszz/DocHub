@@ -23,7 +23,7 @@ V. Yugay, Y. Li, T. Gevers, and M. R. Oswald, ‘Gaussian-SLAM: Photo-realistic 
 > _« We present a dense simultaneous localization and mapping (SLAM) method that uses 3D Gaussians as a scene representation. Our approach enables interactive-time reconstruction and photo-realistic rendering from real-world single-camera RGBD videos. To this end, we propose a novel effective strategy for seeding new Gaussians for newly explored areas and their effective online optimization that is independent of the scene size and thus scalable to larger scenes. This is achieved by organizing the scene into sub-maps which are independently optimized and do not need to be kept in memory. We further accomplish frame-to-model camera tracking by minimizing photometric and geometric losses between the input and rendered frames. The Gaussian representation allows for high-quality photo-realistic real-time rendering of real-world scenes. Evaluation on synthetic and real-world datasets demonstrates competitive or superior performance in mapping, tracking, and rendering compared to existing neural dense SLAM methods. »_
 
 > [!Annotation|#ff6666]+
->_« L tracking »_([17](zotero://open-pdf/library/items/IPBKIVSA?page=17&annotation=ZBQC3YE5))
+> _« L tracking »_([17](zotero://open-pdf/library/items/IPBKIVSA?page=17&annotation=ZBQC3YE5))
 >
 > ### 定位方式的分析与公式
 
@@ -100,7 +100,7 @@ $$
 其中，$\Delta_j \in \mathbb{R}^2$ 是像素坐标与高斯均值之间的偏移量。
 
 > [!Annotation|#ff6666]+
->_« 4 Experiments »_([17](zotero://open-pdf/library/items/IPBKIVSA?page=17&annotation=P72JCCVY))
+> _« 4 Experiments »_([17](zotero://open-pdf/library/items/IPBKIVSA?page=17&annotation=P72JCCVY))
 >
 > ### 定位部分的评估标准
 
@@ -118,13 +118,13 @@ $$
 
 表格展示了不同方法在TUM-RGBD数据集上的跟踪性能比较：
 
-| 方法              | desk (cm)↓ | xyz (cm)↓ | office (cm)↓ | 平均值 (cm)↓ |
-|-----------------|-------------|-----------|--------------|--------------|
-| NICE-SLAM [89]  | 4.3         | 31.7      | 3.9          | 13.3         |
-| Vox-Fusion [78] | 3.5         | 1.5       | 26.0         | 10.3         |
-| Point-SLAM [53] | 4.3         | 1.3       | 3.5          | 3.0          |
-| SplaTAM∗ [23]   | 3.4         | 1.2       | 5.2          | 3.3          |
-| Gaussian-SLAM   | 2.6         | 1.3       | 4.6          | 2.9          |
+| 方法              | desk (cm)↓  | xyz (cm)↓ | office (cm)↓ | 平均值 (cm)↓ |
+| ----------------- | ----------- | --------- | ------------ | ------------ |
+| NICE-SLAM [89]    | 4.3         | 31.7      | 3.9          | 13.3         |
+| Vox-Fusion [78]   | 3.5         | 1.5       | 26.0         | 10.3         |
+| Point-SLAM [53]   | 4.3         | 1.3       | 3.5          | 3.0          |
+| SplaTAM∗ [23]     | 3.4         | 1.2       | 5.2          | 3.3          |
+| Gaussian-SLAM     | 2.6         | 1.3       | 4.6          | 2.9          |
 
 数据来源：TUM-RGBD数据集【12:15†Yugay et al_2024_Gaussian-SLAM2.pdf】
 
@@ -132,13 +132,13 @@ $$
 
 表格展示了不同方法在ScanNet数据集上的跟踪性能比较：
 
-| 方法              | 0000 (cm)↓ | 0059 (cm)↓ | 0106 (cm)↓ | 0169 (cm)↓ | 0181 (cm)↓ | 0207 (cm)↓ | 平均值 (cm)↓ |
-|-----------------|-------------|------------|------------|------------|------------|------------|--------------|
-| NICE-SLAM [89]  | 12.00       | 14.00      | 7.90       | 10.90      | 13.40      | 6.20       | 10.70         |
-| Vox-Fusion [78] | 68.84       | 24.18      | 8.41       | 27.28      | 23.30      | 9.41       | 26.90         |
-| Point-SLAM [53] | 10.24       | 7.81       | 8.65       | 22.16      | 14.77      | 9.54       | 12.19         |
-| SplaTAM∗ [23]   | 12.83       | 10.10      | 17.72      | 12.08      | 11.10      | 7.46       | 11.88         |
-| Gaussian-SLAM   | 24.75       | 8.63       | 11.27      | 14.59      | 18.70      | 14.36      | 15.38         |
+| 方法              | 0000 (cm)↓  | 0059 (cm)↓ | 0106 (cm)↓ | 0169 (cm)↓ | 0181 (cm)↓ | 0207 (cm)↓ | 平均值 (cm)↓  |
+| ----------------- | ----------- | ---------- | ---------- | ---------- | ---------- | ---------- | ------------- |
+| NICE-SLAM [89]    | 12.00       | 14.00      | 7.90       | 10.90      | 13.40      | 6.20       | 10.70         |
+| Vox-Fusion [78]   | 68.84       | 24.18      | 8.41       | 27.28      | 23.30      | 9.41       | 26.90         |
+| Point-SLAM [53]   | 10.24       | 7.81       | 8.65       | 22.16      | 14.77      | 9.54       | 12.19         |
+| SplaTAM∗ [23]     | 12.83       | 10.10      | 17.72      | 12.08      | 11.10      | 7.46       | 11.88         |
+| Gaussian-SLAM     | 24.75       | 8.63       | 11.27      | 14.59      | 18.70      | 14.36      | 15.38         |
 
 数据来源：ScanNet数据集【12:15†Yugay et al_2024_Gaussian-SLAM2.pdf】
 
@@ -146,12 +146,12 @@ $$
 
 表格展示了不同方法在ScanNet++数据集上的跟踪性能比较：
 
-| 方法              | b20a261fdf (cm)↓ | 8b5caf3398 (cm)↓ | fb05e13ad1 (cm)↓ | 2e74812d00 (cm)↓ | 281bc17764 (cm)↓ | 平均值 (cm)↓ |
-|-----------------|-------------------|-------------------|-------------------|-------------------|-------------------|--------------|
-| Point-SLAM [53] | 246.16            | 632.99            | 830.79            | 271.42            | 574.86            | 511.24       |
-| ESLAM [34]      | 25.15             | 2.15              | 27.02             | 20.89             | 35.47             | 22.14        |
-| SplaTAM∗ [23]   | 1.50              | 0.57              | 0.31              | 443.10            | 1.58              | 89.41        |
-| Gaussian-SLAM   | 1.37              | 5.97              | 2.70              | 2.35              | 1.02              | 2.68         |
+| 方法              | b20a261fdf (cm)↓  | 8b5caf3398 (cm)↓  | fb05e13ad1 (cm)↓  | 2e74812d00 (cm)↓  | 281bc17764 (cm)↓  | 平均值 (cm)↓ |
+| ----------------- | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- | ------------ |
+| Point-SLAM [53]   | 246.16            | 632.99            | 830.79            | 271.42            | 574.86            | 511.24       |
+| ESLAM [34]        | 25.15             | 2.15              | 27.02             | 20.89             | 35.47             | 22.14        |
+| SplaTAM∗ [23]     | 1.50              | 0.57              | 0.31              | 443.10            | 1.58              | 89.41        |
+| Gaussian-SLAM     | 1.37              | 5.97              | 2.70              | 2.35              | 1.02              | 2.68         |
 
 数据来源：ScanNet++数据集【
 
@@ -161,17 +161,15 @@ $$
 
 表格展示了不同方法在Replica数据集上的跟踪性能比较：
 
-| 方法              | Rm0 (cm)↓ | Rm1 (cm)↓ | Rm2 (cm)↓ | Off0 (cm)↓ | Off1 (cm)↓ | Off2 (cm)↓ | Off3 (cm)↓ | Off4 (cm)↓ | 平均值 (cm)↓ |
-|-----------------|------------|-----------|-----------|------------|------------|------------|------------|------------|--------------|
-| NICE-SLAM [89]  | 1.69       | 2.04      | 1.55      | 0.99       | 0.90       | 1.39       | 3.97       | 3.08       | 1.95         |
-| Vox-Fusion [78] | 0.27       | 1.33      | 0.47      | 0.70       | 1.11       | 0.46       | 0.26       | 0.58       | 0.65         |
-| ESLAM [34]      | 0.71       | 0.70      | 0.52      | 0.57       | 0.55       | 0.58       | 0.72       | 0.63       | 0.63         |
-| Point-SLAM [53] | 0.61       | 0.41      | 0.37      | 0.38       | 0.48       | 0.54       | 0.72       | 0.63       | 0.52         |
-| SplaTAM∗ [23]   | 0.31       | 0.40      | 0.29      | 0.47       | 0.27       | 0.29       | 0.32       | 0.55       | 0.36         |
-| Gaussian-SLAM   | 0.29       | 0.29      | 0.22      | 0.37       | 0.23       | 0.41       | 0.30       | 0.35       | 0.31         |
+| 方法              | Rm0 (cm)↓  | Rm1 (cm)↓ | Rm2 (cm)↓ | Off0 (cm)↓ | Off1 (cm)↓ | Off2 (cm)↓ | Off3 (cm)↓ | Off4 (cm)↓ | 平均值 (cm)↓ |
+| ----------------- | ---------- | --------- | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ------------ |
+| NICE-SLAM [89]    | 1.69       | 2.04      | 1.55      | 0.99       | 0.90       | 1.39       | 3.97       | 3.08       | 1.95         |
+| Vox-Fusion [78]   | 0.27       | 1.33      | 0.47      | 0.70       | 1.11       | 0.46       | 0.26       | 0.58       | 0.65         |
+| ESLAM [34]        | 0.71       | 0.70      | 0.52      | 0.57       | 0.55       | 0.58       | 0.72       | 0.63       | 0.63         |
+| Point-SLAM [53]   | 0.61       | 0.41      | 0.37      | 0.38       | 0.48       | 0.54       | 0.72       | 0.63       | 0.52         |
+| SplaTAM∗ [23]     | 0.31       | 0.40      | 0.29      | 0.47       | 0.27       | 0.29       | 0.32       | 0.55       | 0.36         |
+| Gaussian-SLAM     | 0.29       | 0.29      | 0.22      | 0.37       | 0.23       | 0.41       | 0.30       | 0.35       | 0.31         |
 
 数据来源：Replica数据集【12:15†Yugay et al_2024_Gaussian-SLAM2.pdf】
 
 这些数据展示了Gaussian-SLAM在不同数据集上的跟踪性能，表明其在绝对轨迹误差（ATE）上的优越性能。
-
-

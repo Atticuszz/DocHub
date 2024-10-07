@@ -15,9 +15,8 @@ author:
 abstract: We present GSplatLoc, an innovative pose estimation method for RGB-D cameras that employs a volumetric representation of 3D Gaussians. This approach facilitates precise pose estimation by minimizing the loss based on the rendering of 3D Gaussians from real depth maps captured from the estimated pose. Our method attains rotational errors close to zero and translational errors within 0.01mm, representing a substantial advancement in pose accuracy over existing point cloud registration algorithms, as well as explicit volumetric and implicit neural representation-based SLAM methods. Comprehensive evaluations demonstrate that GSplatLoc significantly improves pose estimation accuracy, which contributes to increased robustness and fidelity in real-time 3D scene reconstruction, setting a new standard for localization techniques in dense mapping SLAM.
 url: https://github.com/Atticuszz/GsplatLoc
 ---
+
 # Introduction
-
-
 
 Visual localization, the task of estimating camera position and orientation for a given image within a known scene, is a fundamental challenge in computer vision. This problem is crucial for enabling truly autonomous robots, such as self-driving cars, and serves as a prerequisite for Augmented and Virtual Reality systems. Recent advancements in Dense Visual Localization and Mapping (Visual SLAM) have shown significant progress in simultaneously performing pose tracking and scene mapping for various applications, including virtual/augmented reality (VR/AR), robot navigation, and autonomous driving.
 
@@ -37,27 +36,17 @@ Our main contributions are as follows:
 
 By addressing the challenges of localization in Gaussian Splatting-based scenes, GSplatLoc opens new avenues for high-precision camera pose estimation in complex environments. Our work contributes to the ongoing advancement of visual localization systems, pushing the boundaries of accuracy and real-time performance in 3D scene understanding and navigation.
 
-
-
-
 # Related Work
-
-
-
 
 ## Classical RGBD dense SLAM
 
-
-Dense visual SLAM focuses on reconstructing detailed 3D maps, unlike sparse SLAM methods which excel in pose estimation [[@engelDirectSparseOdometry2017], [@forsterSVOFastSemidirect2014], [@camposOrbslam3AccurateOpensource2021]] but typically yield maps useful mainly for localisation. In contrast, dense SLAM creates interactive maps beneficial for broader applications, including AR and robotics. Dense SLAM methods are generally divided into two primary categories: Frame-centric and Map-centric. Frame-centric SLAM minimises photometric error across consecutive frames, jointly estimating per-frame depth and frame-to-frame camera motion. Frame-centric approaches [[@czarnowskiDeepfactorsRealtimeProbabilistic2020], [@teedDroidslamDeepVisual2021]] are efficient, as individual frames host local rather than global geometry (e.g. depth maps), and are attractive for long-session SLAM, but if a dense global map is needed, it must be constructed on demand by assembling all of these parts which are not necessarily fully consistent. In contrast, Map-centric SLAM uses a unified 3D representation across the SLAM pipeline, enabling a compact and streamlined system. Compared to purely local frame-to-frame tracking, a map-centric approach leverages global information by tracking against the reconstructed 3D consistent map. Classical map-centric approaches often use voxel grids [[@daiBundleFusionRealTimeGlobally2017], [@newcombeKinectfusionRealtimeDense2011],[@prisacariuFrameworkVolumetricIntegration2014], [@whelanRealtimeLargescaleDense2015]] or points [[@kellerRealtime3dReconstruction2013], [@schopsBadSlamBundle2019], [@whelanElasticFusionDenseSLAM2015]] as the underlying 3D representation. While voxels enable a fast look-up of features in 3D, the representation is expensive, and the fixed voxel resolution and distribution are problematic when the spatial characteristics of the environment are not known in advance. On the other hand, a point-based map representation, such as surfel clouds, enables adaptive changes in resolution and spatial distribution by dynamic allocation of point primitives in the 3D space. Such flexibility benefits online applications such as SLAM with deformation-based loop closure [[@schopsBadSlamBundle2019], [@whelanElasticFusionDenseSLAM2015]]. However, optimising the representation to capture high fidelity is challenging due to the lack of correlation among the primitives. Recently, in addition to classical graphic primitives, neural network-based map representations are a promising alternative. iMAP [@sucarImapImplicitMapping2021]demonstrated the interesting properties of neural representation, such as sensible hole filling of unobserved geometry. Many recent approaches combine the classical and neural representations to capture finer details [[@johariEslamEfficientDense2023], [@sandstromPointslamDenseNeural2023], [@zhuNiceslamNeuralImplicit2022], [@zhuNICERSLAMNeuralImplicit2024]]; however, the large amount of computation required for neural rendering makes the live operation of such systems challenging.  
-
+Dense visual SLAM focuses on reconstructing detailed 3D maps, unlike sparse SLAM methods which excel in pose estimation [[@engelDirectSparseOdometry2017], [@forsterSVOFastSemidirect2014], [@camposOrbslam3AccurateOpensource2021]] but typically yield maps useful mainly for localisation. In contrast, dense SLAM creates interactive maps beneficial for broader applications, including AR and robotics. Dense SLAM methods are generally divided into two primary categories: Frame-centric and Map-centric. Frame-centric SLAM minimises photometric error across consecutive frames, jointly estimating per-frame depth and frame-to-frame camera motion. Frame-centric approaches [[@czarnowskiDeepfactorsRealtimeProbabilistic2020], [@teedDroidslamDeepVisual2021]] are efficient, as individual frames host local rather than global geometry (e.g. depth maps), and are attractive for long-session SLAM, but if a dense global map is needed, it must be constructed on demand by assembling all of these parts which are not necessarily fully consistent. In contrast, Map-centric SLAM uses a unified 3D representation across the SLAM pipeline, enabling a compact and streamlined system. Compared to purely local frame-to-frame tracking, a map-centric approach leverages global information by tracking against the reconstructed 3D consistent map. Classical map-centric approaches often use voxel grids [[@daiBundleFusionRealTimeGlobally2017], [@newcombeKinectfusionRealtimeDense2011],[@prisacariuFrameworkVolumetricIntegration2014], [@whelanRealtimeLargescaleDense2015]] or points [[@kellerRealtime3dReconstruction2013], [@schopsBadSlamBundle2019], [@whelanElasticFusionDenseSLAM2015]] as the underlying 3D representation. While voxels enable a fast look-up of features in 3D, the representation is expensive, and the fixed voxel resolution and distribution are problematic when the spatial characteristics of the environment are not known in advance. On the other hand, a point-based map representation, such as surfel clouds, enables adaptive changes in resolution and spatial distribution by dynamic allocation of point primitives in the 3D space. Such flexibility benefits online applications such as SLAM with deformation-based loop closure [[@schopsBadSlamBundle2019], [@whelanElasticFusionDenseSLAM2015]]. However, optimising the representation to capture high fidelity is challenging due to the lack of correlation among the primitives. Recently, in addition to classical graphic primitives, neural network-based map representations are a promising alternative. iMAP [@sucarImapImplicitMapping2021]demonstrated the interesting properties of neural representation, such as sensible hole filling of unobserved geometry. Many recent approaches combine the classical and neural representations to capture finer details [[@johariEslamEfficientDense2023], [@sandstromPointslamDenseNeural2023], [@zhuNiceslamNeuralImplicit2022], [@zhuNICERSLAMNeuralImplicit2024]]; however, the large amount of computation required for neural rendering makes the live operation of such systems challenging.
 
 ## NeRF-based RGBD dense SLAM
 
-
-
 The classical method for creating a 3D representation was to unproject 2D observations into 3D space and to fuse them via weighted averaging [[@mccormacSemanticfusionDense3d2017], [@newcombeKinectfusionRealtimeDense2011]]. Such an averaging scheme suffers from over-smooth representation and lacks the expressiveness to capture high-quality details. To capture a scene with photorealistic quality, differentiable volumetric rendering [[@niemeyerDifferentiableVolumetricRendering2020]] has recently been popularised with Neural Radiance Fields (NeRF) [[@mildenhallNeRFRepresentingScenes2022]]. Using a single Multi-Layer Perceptron (MLP) as a scene representation, NeRF performs volume rendering by marching along pixel rays, querying the MLP for opacity and colour. Since volume rendering is naturally differentiable, the MLP representation is optimised to minimise the rendering loss using multiview information to achieve high-quality novel view synthesis. The main weakness of NeRF is its training speed. Recent developments have introduced explicit volume structures such as multi-resolution voxel grids [[@fridovich-keilPlenoxelsRadianceFields2022],[@liuNeuralSparseVoxel2020], [@sunDirectVoxelGrid2022]] or hash functions [[@mullerInstantNeuralGraphics2022]] to improve performance. Interestingly, these projects demonstrate that the main contributor to high-quality novel view synthesis is not the neural network but rather differentiable volumetric rendering, and that it is possible to avoid the use of an MLP and yet achieve comparable rendering quality to NeRF [[@fridovich-keilPlenoxelsRadianceFields2022]]. However, even in these systems, per-pixel ray marching remains a significant bottleneck for rendering speed. This issue is particularly critical in SLAM, where immediate interaction with the map is essential for tracking. In contrast to NeRF
 
-The classical method for creating a 3D representation was to unproject 2D observations into 3D space and to fuse them via weighted averaging [16, 23]. Such an averaging scheme suffers from over-smooth representation and lacks the expressiveness to capture high-quality details. To capture a scene with photorealistic quality, differentiable volumetric rendering [24] has recently been popularised with Neural Radiance Fields (NeRF) [17]. Using a single Multi-Layer Perceptron (MLP) as a scene representation, NeRF performs volume rendering by marching along pixel rays, querying the MLP for opacity and colour. Since volume rendering is naturally differentiable, the MLP representation is optimised to minimise the rendering loss using multiview information to achieve high-quality novel view synthesis. The main weakness of NeRF is its training speed. Recent developments have introduced explicit volume structures such as multi-resolution voxel grids [6, 14, 34] or hash functions [19] to improve performance. Interestingly, these projects demonstrate that the main contributor to high-quality novel view synthesis is not the neural network but rather differentiable volumetric rendering, and that it is possible to avoid the use of an MLP and yet achieve comparable rendering quality to NeRF [6]. However, even in these systems, per-pixel ray marching remains a significant bottleneck for rendering speed. This issue is particularly critical in SLAM, where immediate interaction with the map is essential for tracking. 
+The classical method for creating a 3D representation was to unproject 2D observations into 3D space and to fuse them via weighted averaging [16, 23]. Such an averaging scheme suffers from over-smooth representation and lacks the expressiveness to capture high-quality details. To capture a scene with photorealistic quality, differentiable volumetric rendering [24] has recently been popularised with Neural Radiance Fields (NeRF) [17]. Using a single Multi-Layer Perceptron (MLP) as a scene representation, NeRF performs volume rendering by marching along pixel rays, querying the MLP for opacity and colour. Since volume rendering is naturally differentiable, the MLP representation is optimised to minimise the rendering loss using multiview information to achieve high-quality novel view synthesis. The main weakness of NeRF is its training speed. Recent developments have introduced explicit volume structures such as multi-resolution voxel grids [6, 14, 34] or hash functions [19] to improve performance. Interestingly, these projects demonstrate that the main contributor to high-quality novel view synthesis is not the neural network but rather differentiable volumetric rendering, and that it is possible to avoid the use of an MLP and yet achieve comparable rendering quality to NeRF [6]. However, even in these systems, per-pixel ray marching remains a significant bottleneck for rendering speed. This issue is particularly critical in SLAM, where immediate interaction with the map is essential for tracking.
 
 ## Gaussian-based RGBD dense SLAM
 
@@ -67,18 +56,13 @@ In contrast to NeRF, 3DGS performs differentiable rasterisation. Similar to regu
 
 # Method
 
-
-
 **Overview.** The GSplatLoc method presents an innovative approach to camera localization, leveraging the differentiable nature of 3D Gaussian splatting for efficient and accurate pose estimation.
 
 **Motivation.** Recent advancements in 3D scene representation, particularly the 3D Gaussian Splatting technique [@kerbl3DGaussianSplatting2023], have opened new avenues for efficient and high-quality 3D scene rendering. By adapting this approach to the task of camera localization, we aim to exploit its differentiable properties and speed advantages to achieve robust and real-time pose estimation.
 
 **Problem formulation.** Our objective is to estimate the 6-DoF pose $(\mathbf{R}, \mathbf{t}) \in SE(3)$ of a query depth image $D_q$, where $\mathbf{R}$ is the rotation matrix and $\mathbf{t}$ is the translation vector in the camera coordinate system. Given a 3D representation of the environment in the form of 3D Gaussians, let $\mathcal{G} = \{G_i\}_{i=1}^N$ denote a set of $N$ 3D Gaussians, and posed reference depth images $\{D_k\}$, which together constitute the reference data.
 
-
-
 ## Scene Representation
-
 
 Building upon the Gaussian splatting method [@kerbl3DGaussianSplatting2023], we adapt the scene representation to focus on the differentiable depth rendering process, which is crucial for our localization task. Our approach utilizes the efficiency and quality of Gaussian splatting while tailoring it specifically for depth-based localization.
 
@@ -101,7 +85,6 @@ The 2D covariance $\boldsymbol{\Sigma}_{I,i} \in \mathbb{R}^{2\times2}$ of the p
 $$\boldsymbol{\Sigma}_{I,i} = \mathbf{J} \mathbf{R}_{wc} \boldsymbol{\Sigma}_i \mathbf{R}_{wc}^\top \mathbf{J}^\top$$
 
 where $\mathbf{R}_{wc}$ represents the rotation component of $\mathbf{T}_{wc}$, and $\mathbf{J}$ is the affine transform as described by [@zwickerEWASplatting2002].
-
 
 ## Depth Rendering
 
@@ -131,12 +114,9 @@ The differentiable nature of this depth rendering process is key to our localiza
 
 ## Localization as Image Alignment
 
-
-
 Assuming we have an existing map represented by a set of 3D Gaussians, our localization task focuses on estimating the 6-DoF pose of a query depth image $D_q$ within this map. This process essentially becomes an image alignment problem between the rendered depth map from our Gaussian representation and the query depth image.
 
 **Rotating with Quaternions.** We parameterize the camera pose using a quaternion $\mathbf{q}_{cw}$ for rotation and a vector $\mathbf{t}_{cw}$ for translation. This choice of parameterization is particularly advantageous in our differential rendering context. Quaternions provide a continuous and singularity-free representation of rotation, which is crucial for gradient-based optimization. Moreover, their compact four-parameter form aligns well with our differentiable rendering pipeline, allowing for efficient computation of gradients with respect to rotation parameters.
-
 
 **Loss function.** Our optimization strategy is designed to leverage the differentiable nature of our depth rendering process. We define our loss function to incorporate both depth accuracy and edge alignment:
 
@@ -158,7 +138,6 @@ Here, $\mathcal{M}$ denotes the rendered alpha mask, indicating which pixels are
 
 The contour loss $L_{\text{c}}$ is computed using the Sobel operator [@kanopoulosDesignImageEdge1988], which effectively captures depth discontinuities and edges. This additional term in our loss function serves several crucial purposes. It ensures that depth discontinuities in the rendered image align well with those in the observed depth image, thereby improving the overall accuracy of the pose estimation. By explicitly considering edge information, we preserve important structural features of the scene during optimization. Furthermore, the contour loss is less sensitive to absolute depth values and more focused on relative depth changes, making it robust to global depth scale differences.
 
-
 The optimization objective can be formulated as:
 
 $$
@@ -170,7 +149,6 @@ where $\lambda_q$ and $\lambda_t$ are regularization terms for the quaternion an
 **Masking Uncertainty.** The rendered alpha mask plays a crucial role in our optimization process. It effectively captures the epistemic uncertainty of our map, allowing us to focus the optimization on well-represented parts of the scene. By utilizing this mask, we avoid optimizing based on unreliable or non-existent data, which could otherwise lead to erroneous pose estimates.
 
 **Fine-tuning the Engine.** The learning rates are set to $5 \times 10^{-4}$ for quaternion optimization and $10^{-3}$ for translation optimization, based on empirical results. The weight decay values, serving as regularization to mitigate overfitting, are set to $10^{-3}$ for both quaternion and translation parameters. These parameters are crucial for balancing the trade-off between convergence speed and stability in the optimization process.
-
 
 ## Pipeline
 
@@ -190,92 +168,76 @@ To enhance optimization stability, we apply standard Principal Component Analysi
 
 This pipeline effectively combines the efficiency of Gaussian splatting with a robust optimization strategy, resulting in a fast and accurate camera localization method.
 
-
-
 # Evaluation
-
-
 
 In this section, we delineate our experimental setup and validate that the proposed system achieves significant improvements in accuracy.
 
 ## Experimental Setup
 
-
-
 **Implementation Details.** We implemented our SLAM system on a laptop equipped with a $13th$ Gen Intel(R) Core(TM) i7-13620H CPU, $16GB$ of RAM, and an NVIDIA RTX $4060$ $8GB$ GPU. The optimization pipeline was implemented using Python with the PyTorch framework, while custom CUDA kernels were developed for rasterization and backpropagation operations.
 
-
 **Datasets.** We utilized the Replica dataset [@straubReplicaDatasetDigital2019] and the TUM-RGBD dataset [@sturmBenchmarkEvaluationRGBD2012] to evaluate our pose estimation accuracy. The Replica dataset, specifically designed for RGB-D SLAM evaluation, provides high-quality 3D reconstructions of various indoor scenes. We employed the publicly available dataset collected by Sucar et al. [@sucarImapImplicitMapping2021], which offers trajectories from an RGB-D sensor. The Replica dataset contains challenging purely rotational camera motions. The TUM-RGBD dataset, widely used in the SLAM field for evaluating tracking accuracy, represents real-world scenarios and provides precise camera poses captured by an external motion capture system.
-
 
 **Metrics.** To assess camera pose estimation accuracy, we employed the average absolute trajectory error (ATE RMSE) and the absolute angular error (AAE RMSE). In the result tables, we highlight the best, second, and third performances.
 
 **Baselines.** We evaluate our method against state-of-the-art SLAM approaches that leverage advanced scene representations, focusing on their localization components. Our comparison includes recent methods utilizing 3D Gaussian Splatting (3DGS) and Neural Radiance Fields (NeRF) for mapping, as well as established classical techniques. Specifically, we consider RTG-SLAM [@pengRTGSLAMRealtime3D2024], which employs ICP for pose estimation within a 3DGS framework, and GS-ICP-SLAM [@haRGBDGSICPSLAM2024], which utilizes Generalized-ICP [@segalGeneralizedicp2009a] for alignment. We also include Gaussian-SLAM [@yugayGaussianSLAMPhotorealisticDense2024], which adapts Open3D [@zhouOpen3DModernLibrary2018] RGB-D Odometry, combining colored point cloud alignment [@parkColoredPointCloud2017] with an energy-based visual odometry approach [@steinbruckerRealtimeVisualOdometry2011]. To broaden our comparison, we incorporate ORBEE-SLAM [@chungOrbeezslamRealtimeMonocular2023], a NeRF-based approach built upon ORB-SLAM2 [@mur-artalOrbslam2OpensourceSlam2017]. Additionally, we include ORB-SLAM3 [@camposOrbslam3AccurateOpensource2021] as a reference baseline, representing well-established feature-based methods. This selection enables a comprehensive evaluation of our approach against both cutting-edge neural implicit representation-based methods and classical techniques, with a focus on localization performance in the context of advanced mapping capabilities.
 
-## Localization Evaluation 
-
-
+## Localization Evaluation
 
 To mitigate long-term drift accumulation, we focus on evaluating pose estimation between consecutive frames. For each frame, we initialize the pose using the ground truth pose of the previous frame.
 
-
 ::: {.table}
-:Replica[@straubReplicaDatasetDigital2019] \(ATE RMSE ↓\[cm\]\). 
+:Replica[@straubReplicaDatasetDigital2019] \(ATE RMSE ↓\[cm\]\).
 
-| Methods                                                   | Avg.    | R0      | R1      | R2      | Of0     | Of1     | Of2     | Of3     | Of4     |
-| --------------------------------------------------------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
-| RTG-SLAM*[@pengRTGSLAMRealtime3D2024]                     | 0.38    | 0.53    | 0.38    | 0.45    | 0.35    | 0.24    | 0.36    | 0.33    | 0.43    |
-| GS-ICP-SLAM*[@haRGBDGSICPSLAM2024]                        | 3.09    | 1.37    | 4.70    | 1.47    | 8.48    | 2.04    | 2.58    | 1.11    | 2.94    |
-| Gaussian-SLAM*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.06    | 0.97    | 1.31    | 1.07    | 0.88    | 1.00    | 1.06    | 1.10    | 1.13    |
-| ORB-SLAM3*[@camposOrbslam3AccurateOpensource2021]         | 0.63    | 0.71    | 0.70    | 0.52    | 0.57    | 0.55    | 0.58    | 0.72    | 0.63    |
-| Ours                                                      | 0.01587 | 0.01519 | 0.01272 | 0.02052 | 0.01136 | 0.00937 | 0.01836 | 0.02003 | 0.01943 |
+| Methods                                                    | Avg.    | R0      | R1      | R2      | Of0     | Of1     | Of2     | Of3     | Of4     |
+| ---------------------------------------------------------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| RTG-SLAM\*[@pengRTGSLAMRealtime3D2024]                     | 0.38    | 0.53    | 0.38    | 0.45    | 0.35    | 0.24    | 0.36    | 0.33    | 0.43    |
+| GS-ICP-SLAM\*[@haRGBDGSICPSLAM2024]                        | 3.09    | 1.37    | 4.70    | 1.47    | 8.48    | 2.04    | 2.58    | 1.11    | 2.94    |
+| Gaussian-SLAM\*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.06    | 0.97    | 1.31    | 1.07    | 0.88    | 1.00    | 1.06    | 1.10    | 1.13    |
+| ORB-SLAM3\*[@camposOrbslam3AccurateOpensource2021]         | 0.63    | 0.71    | 0.70    | 0.52    | 0.57    | 0.55    | 0.58    | 0.72    | 0.63    |
+| Ours                                                       | 0.01587 | 0.01519 | 0.01272 | 0.02052 | 0.01136 | 0.00937 | 0.01836 | 0.02003 | 0.01943 |
 
 :::
 The results presented in **Table 1.** demonstrate the exceptional performance of our proposed method on the Replica[@straubReplicaDatasetDigital2019] dataset. Our approach achieves state-of-the-art camera pose estimation accuracy between consecutive frames, even in scenarios with significant camera movement. Notably, our method reduces the Average Trajectory Error (ATE) to the centimeter level (10^-2 cm), showcasing a substantial improvement over existing techniques. This remarkable precision underscores the effectiveness of our algorithm in handling challenging camera motions and maintaining accurate localization.
 
-
-
 ::: {.table}
-:Replica[@straubReplicaDatasetDigital2019] \(AAE RMSE ↓\[°\]\). 
+:Replica[@straubReplicaDatasetDigital2019] \(AAE RMSE ↓\[°\]\).
 
-| Methods                                                   | Avg.   | R0     | R1     | R2     | Of0    | Of1    | Of2    | Of3    | Of4    |
-| --------------------------------------------------------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| RTG-SLAM*[@pengRTGSLAMRealtime3D2024]                     | 0.38   | 0.53   | 0.38   | 0.45   | 0.35   | 0.24   | 0.36   | 0.33   | 0.43   |
-| GS-ICP-SLAM*[@haRGBDGSICPSLAM2024]                        | 3.09   | 1.37   | 4.70   | 1.47   | 8.48   | 2.04   | 2.58   | 1.11   | 2.94   |
-| Gaussian-SLAM*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.06   | 0.97   | 1.31   | 1.07   | 0.88   | 1.00   | 1.06   | 1.10   | 1.13   |
-| ORB-SLAM3*[@camposOrbslam3AccurateOpensource2021]         | 0.63   | 0.71   | 0.70   | 0.52   | 0.57   | 0.55   | 0.58   | 0.72   | 0.63   |
-| Ours                                                      | 0.0093 | 0.0072 | 0.0081 | 0.0100 | 0.0092 | 0.0087 | 0.0107 | 0.0093 | 0.0108 |
+| Methods                                                    | Avg.   | R0     | R1     | R2     | Of0    | Of1    | Of2    | Of3    | Of4    |
+| ---------------------------------------------------------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| RTG-SLAM\*[@pengRTGSLAMRealtime3D2024]                     | 0.38   | 0.53   | 0.38   | 0.45   | 0.35   | 0.24   | 0.36   | 0.33   | 0.43   |
+| GS-ICP-SLAM\*[@haRGBDGSICPSLAM2024]                        | 3.09   | 1.37   | 4.70   | 1.47   | 8.48   | 2.04   | 2.58   | 1.11   | 2.94   |
+| Gaussian-SLAM\*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.06   | 0.97   | 1.31   | 1.07   | 0.88   | 1.00   | 1.06   | 1.10   | 1.13   |
+| ORB-SLAM3\*[@camposOrbslam3AccurateOpensource2021]         | 0.63   | 0.71   | 0.70   | 0.52   | 0.57   | 0.55   | 0.58   | 0.72   | 0.63   |
+| Ours                                                       | 0.0093 | 0.0072 | 0.0081 | 0.0100 | 0.0092 | 0.0087 | 0.0107 | 0.0093 | 0.0108 |
 
 :::
-**Table 2.**  presents the Absolute Angular Error (AAE) RMSE in degrees for various methods on the Replica dataset. Our approach demonstrates remarkably low rotational errors, even in challenging scenarios with purely rotational camera motions. This superior performance can be attributed to the inherent characteristics of our camera model and pose estimation algorithm. Unlike point cloud alignment-based methods such as RTG-SLAM[@pengRTGSLAMRealtime3D2024], GS-ICP-SLAM[@haRGBDGSICPSLAM2024], and Gaussian-SLAM[@yugayGaussianSLAMPhotorealisticDense2024], which solve for optimal poses from a spatial perspective, our approach leverages the camera's intrinsic rotational properties. By utilizing planar projections, which are inherently more sensitive to rotations than spatial transformations, our method achieves significantly higher accuracy in estimating angular displacements.
-
+**Table 2.** presents the Absolute Angular Error (AAE) RMSE in degrees for various methods on the Replica dataset. Our approach demonstrates remarkably low rotational errors, even in challenging scenarios with purely rotational camera motions. This superior performance can be attributed to the inherent characteristics of our camera model and pose estimation algorithm. Unlike point cloud alignment-based methods such as RTG-SLAM[@pengRTGSLAMRealtime3D2024], GS-ICP-SLAM[@haRGBDGSICPSLAM2024], and Gaussian-SLAM[@yugayGaussianSLAMPhotorealisticDense2024], which solve for optimal poses from a spatial perspective, our approach leverages the camera's intrinsic rotational properties. By utilizing planar projections, which are inherently more sensitive to rotations than spatial transformations, our method achieves significantly higher accuracy in estimating angular displacements.
 
 ::: {.table}
-: TUM[@sturmBenchmarkEvaluationRGBD2012] (ATE RMSE ↓\[cm\]). 
+: TUM[@sturmBenchmarkEvaluationRGBD2012] (ATE RMSE ↓\[cm\]).
 
-| Methods                                                   | Avg.  | fr1/desk | fr1/desk2 | fr1/room | fr2/xyz | fr3/off. |
-| --------------------------------------------------------- | ----- | -------- | --------- | -------- | ------- | -------- |
-| RTG-SLAM*[@pengRTGSLAMRealtime3D2024]                     | 4.84  | 3.70     | 7.10      | 7.50     | 2.90    | 3.00     |
-| GS-ICP-SLAM*[@haRGBDGSICPSLAM2024]                        | 6.91  | 2.53     | 6.83      | 21.49    | 1.17    | 2.52     |
-| Gaussian-SLAM*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.98  | 1.60     | 2.20      | 4.70     | 0.40    | 1.00     |
-| ORB-SLAM3*[@camposOrbslam3AccurateOpensource2021]         | 15.87 | 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
-| Ours                                                      | 0.81  | 0.93     | 1.01      | 0.67     | 0.25    | 1.20     |
+| Methods                                                    | Avg.  | fr1/desk | fr1/desk2 | fr1/room | fr2/xyz | fr3/off. |
+| ---------------------------------------------------------- | ----- | -------- | --------- | -------- | ------- | -------- |
+| RTG-SLAM\*[@pengRTGSLAMRealtime3D2024]                     | 4.84  | 3.70     | 7.10      | 7.50     | 2.90    | 3.00     |
+| GS-ICP-SLAM\*[@haRGBDGSICPSLAM2024]                        | 6.91  | 2.53     | 6.83      | 21.49    | 1.17    | 2.52     |
+| Gaussian-SLAM\*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.98  | 1.60     | 2.20      | 4.70     | 0.40    | 1.00     |
+| ORB-SLAM3\*[@camposOrbslam3AccurateOpensource2021]         | 15.87 | 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
+| Ours                                                       | 0.81  | 0.93     | 1.01      | 0.67     | 0.25    | 1.20     |
 
 :::
 **Table 3.** presents the ATE RMSE in centimeters for various methods on the TUM-RGBD dataset [@sturmBenchmarkEvaluationRGBD2012]. This dataset provides a more challenging evaluation environment, as it more closely resembles real-world conditions with increased noise and environmental complexity compared to the Replica dataset [@straubReplicaDatasetDigital2019]. As a result, the performance of our method, while still competitive, shows some variability across different sequences. This variability underscores the challenges posed by real-world data and highlights areas for potential future improvements in our algorithm's robustness to noise and environmental factors.
 
-
-
 ::: {.table}
-: TUM[@sturmBenchmarkEvaluationRGBD2012] (AAE RMSE ↓\[°\]). 
+: TUM[@sturmBenchmarkEvaluationRGBD2012] (AAE RMSE ↓\[°\]).
 
-| Methods                                                   | Avg.  | fr1/desk | fr1/desk2 | fr1/room | fr2/xyz | fr3/off. |
-| --------------------------------------------------------- | ----- | -------- | --------- | -------- | ------- | -------- |
-| RTG-SLAM*[@pengRTGSLAMRealtime3D2024]                     | 4.84  | 3.70     | 7.10      | 7.50     | 2.90    | 3.00     |
-| GS-ICP-SLAM*[@haRGBDGSICPSLAM2024]                        | 6.91  | 2.53     | 6.83      | 21.49    | 1.17    | 2.52     |
-| Gaussian-SLAM*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.98  | 1.60     | 2.20      | 4.70     | 0.40    | 1.00     |
-| ORB-SLAM3*[@camposOrbslam3AccurateOpensource2021]         | 15.87 | 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
-| Ours                                                      | 0.98  | 1.13     | 1.27      | 0.91     | 0.79    | 0.81     |
+| Methods                                                    | Avg.  | fr1/desk | fr1/desk2 | fr1/room | fr2/xyz | fr3/off. |
+| ---------------------------------------------------------- | ----- | -------- | --------- | -------- | ------- | -------- |
+| RTG-SLAM\*[@pengRTGSLAMRealtime3D2024]                     | 4.84  | 3.70     | 7.10      | 7.50     | 2.90    | 3.00     |
+| GS-ICP-SLAM\*[@haRGBDGSICPSLAM2024]                        | 6.91  | 2.53     | 6.83      | 21.49    | 1.17    | 2.52     |
+| Gaussian-SLAM\*[@yugayGaussianSLAMPhotorealisticDense2024] | 1.98  | 1.60     | 2.20      | 4.70     | 0.40    | 1.00     |
+| ORB-SLAM3\*[@camposOrbslam3AccurateOpensource2021]         | 15.87 | 4.26     | 4.99      | 34.49    | 31.73   | 3.87     |
+| Ours                                                       | 0.98  | 1.13     | 1.27      | 0.91     | 0.79    | 0.81     |
 
 :::
 
@@ -289,11 +251,7 @@ It's worth noting that our method's performance is particularly strong in sequen
 
 The results on both the Replica and TUM-RGBD datasets collectively demonstrate the efficacy of our proposed method. While achieving state-of-the-art performance on the more controlled Replica dataset, our approach also shows robust and competitive performance in the more challenging real-world scenarios presented by the TUM-RGBD dataset. This comprehensive evaluation underscores the potential of our method for accurate and reliable SLAM in diverse environments.
 
-
-
 # Conclusion
-
-
 
 In this paper, we have presented GSplatLoc, a novel camera localization method that leverages the differentiable nature of 3D Gaussian splatting for efficient and accurate pose estimation. Our approach demonstrates significant improvements in pose accuracy, particularly in rotational precision, compared to existing point cloud registration algorithms and state-of-the-art SLAM methods. By utilizing a volumetric representation of 3D Gaussians and optimizing camera poses through differentiable depth rendering, GSplatLoc achieves rotational errors approaching zero and translational errors within 0.01mm on the Replica dataset, setting a new benchmark for localization accuracy in RGB-D SLAM systems.
 

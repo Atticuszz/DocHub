@@ -1,127 +1,127 @@
 [
-    {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
-        "documentation": {}
-    },
-    {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
-        "documentation": {}
-    },
-    {
-        "label": "pandas",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pandas",
-        "description": "pandas",
-        "detail": "pandas",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "panflute",
-        "description": "panflute",
-        "isExtraImport": true,
-        "detail": "panflute",
-        "documentation": {}
-    },
-    {
-        "label": "parse_references",
-        "kind": 2,
-        "importPath": "essay.texs.GsplatLoc.citation_filter",
-        "description": "essay.texs.GsplatLoc.citation_filter",
-        "peekOfCode": "def parse_references(text: str) -> dict:\n    \"\"\"\n    Parse references from a given text and extract titles.\n    Args:\n    text (str): The input text containing references.\n    Returns:\n    dict: A dictionary where keys are reference numbers and values are titles.\n    \"\"\"\n    parts = text.split(\"[\")\n    refs = {}",
-        "detail": "essay.texs.GsplatLoc.citation_filter",
-        "documentation": {}
-    },
-    {
-        "label": "replace_citations",
-        "kind": 2,
-        "importPath": "essay.texs.GsplatLoc.citation_filter",
-        "description": "essay.texs.GsplatLoc.citation_filter",
-        "peekOfCode": "def replace_citations(text: str, refs: dict) -> str:\n    \"\"\"\n    Replace citation numbers with their corresponding titles in the given text.\n    Args:\n    text (str): The input text containing citations.\n    refs (dict): A dictionary of reference numbers and their titles.\n    Returns:\n    str: The text with citations replaced by titles.\n    \"\"\"\n    # Handle multiple citations first",
-        "detail": "essay.texs.GsplatLoc.citation_filter",
-        "documentation": {}
-    },
-    {
-        "label": "color_cell",
-        "kind": 2,
-        "importPath": "essay.texs.GsplatLoc.table_filter",
-        "description": "essay.texs.GsplatLoc.table_filter",
-        "peekOfCode": "def color_cell(value, rank):\n    colors = {\n        1: \"\\\\cellcolor{green!30}\\\\textbf{\",\n        2: \"\\\\cellcolor{yellow!30}\",\n        3: \"\\\\cellcolor{lime!50}\",\n    }\n    # bold no.1\n    color_start = colors.get(rank, \"\")\n    color_end = \"}\" if rank == 1 else \"\"\n    return f\"{color_start}{value:.3f}{color_end}\"",
-        "detail": "essay.texs.GsplatLoc.table_filter",
-        "documentation": {}
-    },
-    {
-        "label": "process_table_data",
-        "kind": 2,
-        "importPath": "essay.texs.GsplatLoc.table_filter",
-        "description": "essay.texs.GsplatLoc.table_filter",
-        "peekOfCode": "def process_table_data(data, is_lower_better):\n    df = pd.DataFrame(data)\n    for col in df.columns[1:]:  # 跳过第一列（方法名）\n        col_data = pd.to_numeric(df[col], errors=\"coerce\")\n        if is_lower_better:\n            ranks = col_data.rank(method=\"min\")\n        else:\n            ranks = col_data.rank(method=\"min\", ascending=False)\n        df[col] = [\n            color_cell(float(val), rank) if pd.notnull(val) else val",
-        "detail": "essay.texs.GsplatLoc.table_filter",
-        "documentation": {}
-    },
-    {
-        "label": "get_text",
-        "kind": 2,
-        "importPath": "essay.texs.GsplatLoc.table_filter",
-        "description": "essay.texs.GsplatLoc.table_filter",
-        "peekOfCode": "def get_text(item):\n    if isinstance(item, (Str, Math, RawInline)):\n        return item.text\n    elif isinstance(item, Space):\n        return \" \"\n    # elif isinstance(item, ListContainer):\n    #     # return \"\".join([get_text(i) for i in item])\n    #     return stringify(item)\n    else:\n        return stringify(item)",
-        "detail": "essay.texs.GsplatLoc.table_filter",
-        "documentation": {}
-    },
-    {
-        "label": "replace_longtables_with_tabular",
-        "kind": 2,
-        "importPath": "essay.texs.GsplatLoc.table_filter",
-        "description": "essay.texs.GsplatLoc.table_filter",
-        "peekOfCode": "def replace_longtables_with_tabular(elem, doc):\n    try:\n        def tabular():\n            # 使用 l 作为第一列，其余列使用 c（居中对齐）\n            return \"\\\\begin{tabular}{l\" + \"c\" * (elem.cols - 1) + \"}\\n\\\\toprule\\n\"\n        def headers():\n            if elem.head and elem.head.content:\n                return (\n                    \" & \".join(\n                        [",
-        "detail": "essay.texs.GsplatLoc.table_filter",
-        "documentation": {}
-    },
-    {
-        "label": "prepare",
-        "kind": 2,
-        "importPath": "essay.texs.GsplatLoc.table_filter",
-        "description": "essay.texs.GsplatLoc.table_filter",
-        "peekOfCode": "def prepare(doc):\n    pass\ndef action(elem, doc):\n    if doc.format != \"latex\":\n        return None\n    if isinstance(elem, Table):\n        print(\"Table found!\", file=sys.stderr)\n        return replace_longtables_with_tabular(elem, doc)\n    return None\ndef finalize(doc):",
-        "detail": "essay.texs.GsplatLoc.table_filter",
-        "documentation": {}
-    },
-    {
-        "label": "action",
-        "kind": 2,
-        "importPath": "essay.texs.GsplatLoc.table_filter",
-        "description": "essay.texs.GsplatLoc.table_filter",
-        "peekOfCode": "def action(elem, doc):\n    if doc.format != \"latex\":\n        return None\n    if isinstance(elem, Table):\n        print(\"Table found!\", file=sys.stderr)\n        return replace_longtables_with_tabular(elem, doc)\n    return None\ndef finalize(doc):\n    pass\ndef main(doc=None):",
-        "detail": "essay.texs.GsplatLoc.table_filter",
-        "documentation": {}
-    },
-    {
-        "label": "finalize",
-        "kind": 2,
-        "importPath": "essay.texs.GsplatLoc.table_filter",
-        "description": "essay.texs.GsplatLoc.table_filter",
-        "peekOfCode": "def finalize(doc):\n    pass\ndef main(doc=None):\n    return run_filter(action, prepare=prepare, finalize=finalize, doc=doc)\nif __name__ == \"__main__\":\n    main()",
-        "detail": "essay.texs.GsplatLoc.table_filter",
-        "documentation": {}
-    },
-    {
-        "label": "main",
-        "kind": 2,
-        "importPath": "essay.texs.GsplatLoc.table_filter",
-        "description": "essay.texs.GsplatLoc.table_filter",
-        "peekOfCode": "def main(doc=None):\n    return run_filter(action, prepare=prepare, finalize=finalize, doc=doc)\nif __name__ == \"__main__\":\n    main()",
-        "detail": "essay.texs.GsplatLoc.table_filter",
-        "documentation": {}
-    }
+  {
+    "label": "re",
+    "kind": 6,
+    "isExtraImport": true,
+    "importPath": "re",
+    "description": "re",
+    "detail": "re",
+    "documentation": {}
+  },
+  {
+    "label": "sys",
+    "kind": 6,
+    "isExtraImport": true,
+    "importPath": "sys",
+    "description": "sys",
+    "detail": "sys",
+    "documentation": {}
+  },
+  {
+    "label": "pandas",
+    "kind": 6,
+    "isExtraImport": true,
+    "importPath": "pandas",
+    "description": "pandas",
+    "detail": "pandas",
+    "documentation": {}
+  },
+  {
+    "label": "*",
+    "importPath": "panflute",
+    "description": "panflute",
+    "isExtraImport": true,
+    "detail": "panflute",
+    "documentation": {}
+  },
+  {
+    "label": "parse_references",
+    "kind": 2,
+    "importPath": "essay.texs.GsplatLoc.citation_filter",
+    "description": "essay.texs.GsplatLoc.citation_filter",
+    "peekOfCode": "def parse_references(text: str) -> dict:\n    \"\"\"\n    Parse references from a given text and extract titles.\n    Args:\n    text (str): The input text containing references.\n    Returns:\n    dict: A dictionary where keys are reference numbers and values are titles.\n    \"\"\"\n    parts = text.split(\"[\")\n    refs = {}",
+    "detail": "essay.texs.GsplatLoc.citation_filter",
+    "documentation": {}
+  },
+  {
+    "label": "replace_citations",
+    "kind": 2,
+    "importPath": "essay.texs.GsplatLoc.citation_filter",
+    "description": "essay.texs.GsplatLoc.citation_filter",
+    "peekOfCode": "def replace_citations(text: str, refs: dict) -> str:\n    \"\"\"\n    Replace citation numbers with their corresponding titles in the given text.\n    Args:\n    text (str): The input text containing citations.\n    refs (dict): A dictionary of reference numbers and their titles.\n    Returns:\n    str: The text with citations replaced by titles.\n    \"\"\"\n    # Handle multiple citations first",
+    "detail": "essay.texs.GsplatLoc.citation_filter",
+    "documentation": {}
+  },
+  {
+    "label": "color_cell",
+    "kind": 2,
+    "importPath": "essay.texs.GsplatLoc.table_filter",
+    "description": "essay.texs.GsplatLoc.table_filter",
+    "peekOfCode": "def color_cell(value, rank):\n    colors = {\n        1: \"\\\\cellcolor{green!30}\\\\textbf{\",\n        2: \"\\\\cellcolor{yellow!30}\",\n        3: \"\\\\cellcolor{lime!50}\",\n    }\n    # bold no.1\n    color_start = colors.get(rank, \"\")\n    color_end = \"}\" if rank == 1 else \"\"\n    return f\"{color_start}{value:.3f}{color_end}\"",
+    "detail": "essay.texs.GsplatLoc.table_filter",
+    "documentation": {}
+  },
+  {
+    "label": "process_table_data",
+    "kind": 2,
+    "importPath": "essay.texs.GsplatLoc.table_filter",
+    "description": "essay.texs.GsplatLoc.table_filter",
+    "peekOfCode": "def process_table_data(data, is_lower_better):\n    df = pd.DataFrame(data)\n    for col in df.columns[1:]:  # 跳过第一列（方法名）\n        col_data = pd.to_numeric(df[col], errors=\"coerce\")\n        if is_lower_better:\n            ranks = col_data.rank(method=\"min\")\n        else:\n            ranks = col_data.rank(method=\"min\", ascending=False)\n        df[col] = [\n            color_cell(float(val), rank) if pd.notnull(val) else val",
+    "detail": "essay.texs.GsplatLoc.table_filter",
+    "documentation": {}
+  },
+  {
+    "label": "get_text",
+    "kind": 2,
+    "importPath": "essay.texs.GsplatLoc.table_filter",
+    "description": "essay.texs.GsplatLoc.table_filter",
+    "peekOfCode": "def get_text(item):\n    if isinstance(item, (Str, Math, RawInline)):\n        return item.text\n    elif isinstance(item, Space):\n        return \" \"\n    # elif isinstance(item, ListContainer):\n    #     # return \"\".join([get_text(i) for i in item])\n    #     return stringify(item)\n    else:\n        return stringify(item)",
+    "detail": "essay.texs.GsplatLoc.table_filter",
+    "documentation": {}
+  },
+  {
+    "label": "replace_longtables_with_tabular",
+    "kind": 2,
+    "importPath": "essay.texs.GsplatLoc.table_filter",
+    "description": "essay.texs.GsplatLoc.table_filter",
+    "peekOfCode": "def replace_longtables_with_tabular(elem, doc):\n    try:\n        def tabular():\n            # 使用 l 作为第一列，其余列使用 c（居中对齐）\n            return \"\\\\begin{tabular}{l\" + \"c\" * (elem.cols - 1) + \"}\\n\\\\toprule\\n\"\n        def headers():\n            if elem.head and elem.head.content:\n                return (\n                    \" & \".join(\n                        [",
+    "detail": "essay.texs.GsplatLoc.table_filter",
+    "documentation": {}
+  },
+  {
+    "label": "prepare",
+    "kind": 2,
+    "importPath": "essay.texs.GsplatLoc.table_filter",
+    "description": "essay.texs.GsplatLoc.table_filter",
+    "peekOfCode": "def prepare(doc):\n    pass\ndef action(elem, doc):\n    if doc.format != \"latex\":\n        return None\n    if isinstance(elem, Table):\n        print(\"Table found!\", file=sys.stderr)\n        return replace_longtables_with_tabular(elem, doc)\n    return None\ndef finalize(doc):",
+    "detail": "essay.texs.GsplatLoc.table_filter",
+    "documentation": {}
+  },
+  {
+    "label": "action",
+    "kind": 2,
+    "importPath": "essay.texs.GsplatLoc.table_filter",
+    "description": "essay.texs.GsplatLoc.table_filter",
+    "peekOfCode": "def action(elem, doc):\n    if doc.format != \"latex\":\n        return None\n    if isinstance(elem, Table):\n        print(\"Table found!\", file=sys.stderr)\n        return replace_longtables_with_tabular(elem, doc)\n    return None\ndef finalize(doc):\n    pass\ndef main(doc=None):",
+    "detail": "essay.texs.GsplatLoc.table_filter",
+    "documentation": {}
+  },
+  {
+    "label": "finalize",
+    "kind": 2,
+    "importPath": "essay.texs.GsplatLoc.table_filter",
+    "description": "essay.texs.GsplatLoc.table_filter",
+    "peekOfCode": "def finalize(doc):\n    pass\ndef main(doc=None):\n    return run_filter(action, prepare=prepare, finalize=finalize, doc=doc)\nif __name__ == \"__main__\":\n    main()",
+    "detail": "essay.texs.GsplatLoc.table_filter",
+    "documentation": {}
+  },
+  {
+    "label": "main",
+    "kind": 2,
+    "importPath": "essay.texs.GsplatLoc.table_filter",
+    "description": "essay.texs.GsplatLoc.table_filter",
+    "peekOfCode": "def main(doc=None):\n    return run_filter(action, prepare=prepare, finalize=finalize, doc=doc)\nif __name__ == \"__main__\":\n    main()",
+    "detail": "essay.texs.GsplatLoc.table_filter",
+    "documentation": {}
+  }
 ]

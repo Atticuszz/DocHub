@@ -126,4 +126,3 @@ plugins=(
   "terminal.integrated.defaultProfile.linux": "zsh"
 }
 ```
-

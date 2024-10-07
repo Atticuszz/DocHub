@@ -16,43 +16,63 @@ var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __knownSymbol = (name, symbol) => {
   return (symbol = Symbol[name]) ? symbol : Symbol.for("Symbol." + name);
 };
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __defNormalProp = (obj, key, value) =>
+  key in obj
+    ? __defProp(obj, key, {
+        enumerable: true,
+        configurable: true,
+        writable: true,
+        value,
+      })
+    : (obj[key] = value);
 var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
+    if (__hasOwnProp.call(b, prop)) __defNormalProp(a, prop, b[prop]);
   if (__getOwnPropSymbols)
     for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
+      if (__propIsEnum.call(b, prop)) __defNormalProp(a, prop, b[prop]);
     }
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-var __commonJS = (cb, mod) => function __require() {
-  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
-};
+var __commonJS = (cb, mod) =>
+  function __require() {
+    return (
+      mod ||
+        (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod),
+      mod.exports
+    );
+  };
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
 };
 var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
+  if ((from && typeof from === "object") || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
       if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+        __defProp(to, key, {
+          get: () => from[key],
+          enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable,
+        });
   }
   return to;
 };
-var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-  // If the importer is in node compatibility mode or this is not an ESM
-  // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. "__esModule" has not been set), then set
-  // "default" to the CommonJS "module.exports" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-  mod
-));
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __toESM = (mod, isNodeMode, target) => (
+  (target = mod != null ? __create(__getProtoOf(mod)) : {}),
+  __copyProps(
+    // If the importer is in node compatibility mode or this is not an ESM
+    // file that has been converted to a CommonJS file using a Babel-
+    // compatible transform (i.e. "__esModule" has not been set), then set
+    // "default" to the CommonJS "module.exports" for node compatibility.
+    isNodeMode || !mod || !mod.__esModule
+      ? __defProp(target, "default", { value: mod, enumerable: true })
+      : target,
+    mod,
+  )
+);
+var __toCommonJS = (mod) =>
+  __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
   return value;
@@ -73,11 +93,14 @@ var __async = (__this, __arguments, generator) => {
         reject(e);
       }
     };
-    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+    var step = (x) =>
+      x.done
+        ? resolve(x.value)
+        : Promise.resolve(x.value).then(fulfilled, rejected);
     step((generator = generator.apply(__this, __arguments)).next());
   });
 };
-var __await = function(promise, isYieldStar) {
+var __await = function (promise, isYieldStar) {
   this[0] = promise;
   this[1] = isYieldStar;
 };
@@ -88,31 +111,41 @@ var __yieldStar = (value) => {
   var it = {};
   if (obj == null) {
     obj = value[__knownSymbol("iterator")]();
-    method = (k) => it[k] = (x) => obj[k](x);
+    method = (k) => (it[k] = (x) => obj[k](x));
   } else {
     obj = obj.call(value);
-    method = (k) => it[k] = (v) => {
-      if (isAwait) {
-        isAwait = false;
-        if (k === "throw")
-          throw v;
-        return v;
-      }
-      isAwait = true;
-      return {
-        done: false,
-        value: new __await(new Promise((resolve) => {
-          var x = obj[k](v);
-          if (!(x instanceof Object))
-            throw TypeError("Object expected");
-          resolve(x);
-        }), 1)
-      };
-    };
+    method = (k) =>
+      (it[k] = (v) => {
+        if (isAwait) {
+          isAwait = false;
+          if (k === "throw") throw v;
+          return v;
+        }
+        isAwait = true;
+        return {
+          done: false,
+          value: new __await(
+            new Promise((resolve) => {
+              var x = obj[k](v);
+              if (!(x instanceof Object)) throw TypeError("Object expected");
+              resolve(x);
+            }),
+            1,
+          ),
+        };
+      });
   }
-  return it[__knownSymbol("iterator")] = () => it, method("next"), "throw" in obj ? method("throw") : it.throw = (x) => {
-    throw x;
-  }, "return" in obj && method("return"), it;
+  return (
+    (it[__knownSymbol("iterator")] = () => it),
+    method("next"),
+    "throw" in obj
+      ? method("throw")
+      : (it.throw = (x) => {
+          throw x;
+        }),
+    "return" in obj && method("return"),
+    it
+  );
 };
 
 // node_modules/function-bind/implementation.js
@@ -140,7 +173,7 @@ var require_implementation = __commonJS({
       }
       return arr;
     };
-    var joiny = function(arr, joiner) {
+    var joiny = function (arr, joiner) {
       var str = "";
       for (var i = 0; i < arr.length; i += 1) {
         str += arr[i];
@@ -157,38 +190,36 @@ var require_implementation = __commonJS({
       }
       var args = slicy(arguments, 1);
       var bound;
-      var binder = function() {
+      var binder = function () {
         if (this instanceof bound) {
-          var result = target.apply(
-            this,
-            concatty(args, arguments)
-          );
+          var result = target.apply(this, concatty(args, arguments));
           if (Object(result) === result) {
             return result;
           }
           return this;
         }
-        return target.apply(
-          that,
-          concatty(args, arguments)
-        );
+        return target.apply(that, concatty(args, arguments));
       };
       var boundLength = max2(0, target.length - args.length);
       var boundArgs = [];
       for (var i = 0; i < boundLength; i++) {
         boundArgs[i] = "$" + i;
       }
-      bound = Function("binder", "return function (" + joiny(boundArgs, ",") + "){ return binder.apply(this,arguments); }")(binder);
+      bound = Function(
+        "binder",
+        "return function (" +
+          joiny(boundArgs, ",") +
+          "){ return binder.apply(this,arguments); }",
+      )(binder);
       if (target.prototype) {
-        var Empty = function Empty2() {
-        };
+        var Empty = function Empty2() {};
         Empty.prototype = target.prototype;
         bound.prototype = new Empty();
         Empty.prototype = null;
       }
       return bound;
     };
-  }
+  },
 });
 
 // node_modules/function-bind/index.js
@@ -197,7 +228,7 @@ var require_function_bind = __commonJS({
     "use strict";
     var implementation = require_implementation();
     module2.exports = Function.prototype.bind || implementation;
-  }
+  },
 });
 
 // node_modules/es-errors/index.js
@@ -205,7 +236,7 @@ var require_es_errors = __commonJS({
   "node_modules/es-errors/index.js"(exports, module2) {
     "use strict";
     module2.exports = Error;
-  }
+  },
 });
 
 // node_modules/es-errors/eval.js
@@ -213,7 +244,7 @@ var require_eval = __commonJS({
   "node_modules/es-errors/eval.js"(exports, module2) {
     "use strict";
     module2.exports = EvalError;
-  }
+  },
 });
 
 // node_modules/es-errors/range.js
@@ -221,7 +252,7 @@ var require_range = __commonJS({
   "node_modules/es-errors/range.js"(exports, module2) {
     "use strict";
     module2.exports = RangeError;
-  }
+  },
 });
 
 // node_modules/es-errors/ref.js
@@ -229,7 +260,7 @@ var require_ref = __commonJS({
   "node_modules/es-errors/ref.js"(exports, module2) {
     "use strict";
     module2.exports = ReferenceError;
-  }
+  },
 });
 
 // node_modules/es-errors/syntax.js
@@ -237,7 +268,7 @@ var require_syntax = __commonJS({
   "node_modules/es-errors/syntax.js"(exports, module2) {
     "use strict";
     module2.exports = SyntaxError;
-  }
+  },
 });
 
 // node_modules/es-errors/type.js
@@ -245,7 +276,7 @@ var require_type = __commonJS({
   "node_modules/es-errors/type.js"(exports, module2) {
     "use strict";
     module2.exports = TypeError;
-  }
+  },
 });
 
 // node_modules/es-errors/uri.js
@@ -253,7 +284,7 @@ var require_uri = __commonJS({
   "node_modules/es-errors/uri.js"(exports, module2) {
     "use strict";
     module2.exports = URIError;
-  }
+  },
 });
 
 // node_modules/has-symbols/shams.js
@@ -261,7 +292,10 @@ var require_shams = __commonJS({
   "node_modules/has-symbols/shams.js"(exports, module2) {
     "use strict";
     module2.exports = function hasSymbols() {
-      if (typeof Symbol !== "function" || typeof Object.getOwnPropertySymbols !== "function") {
+      if (
+        typeof Symbol !== "function" ||
+        typeof Object.getOwnPropertySymbols !== "function"
+      ) {
         return false;
       }
       if (typeof Symbol.iterator === "symbol") {
@@ -287,7 +321,10 @@ var require_shams = __commonJS({
       if (typeof Object.keys === "function" && Object.keys(obj).length !== 0) {
         return false;
       }
-      if (typeof Object.getOwnPropertyNames === "function" && Object.getOwnPropertyNames(obj).length !== 0) {
+      if (
+        typeof Object.getOwnPropertyNames === "function" &&
+        Object.getOwnPropertyNames(obj).length !== 0
+      ) {
         return false;
       }
       var syms = Object.getOwnPropertySymbols(obj);
@@ -305,7 +342,7 @@ var require_shams = __commonJS({
       }
       return true;
     };
-  }
+  },
 });
 
 // node_modules/has-symbols/index.js
@@ -329,7 +366,7 @@ var require_has_symbols = __commonJS({
       }
       return hasSymbolSham();
     };
-  }
+  },
 });
 
 // node_modules/has-proto/index.js
@@ -338,13 +375,13 @@ var require_has_proto = __commonJS({
     "use strict";
     var test = {
       __proto__: null,
-      foo: {}
+      foo: {},
     };
     var $Object = Object;
     module2.exports = function hasProto() {
       return { __proto__: test }.foo === test.foo && !(test instanceof $Object);
     };
-  }
+  },
 });
 
 // node_modules/hasown/index.js
@@ -355,7 +392,7 @@ var require_hasown = __commonJS({
     var $hasOwn = Object.prototype.hasOwnProperty;
     var bind = require_function_bind();
     module2.exports = bind.call(call, $hasOwn);
-  }
+  },
 });
 
 // node_modules/get-intrinsic/index.js
@@ -371,11 +408,12 @@ var require_get_intrinsic = __commonJS({
     var $TypeError = require_type();
     var $URIError = require_uri();
     var $Function = Function;
-    var getEvalledConstructor = function(expressionSyntax) {
+    var getEvalledConstructor = function (expressionSyntax) {
       try {
-        return $Function('"use strict"; return (' + expressionSyntax + ").constructor;")();
-      } catch (e) {
-      }
+        return $Function(
+          '"use strict"; return (' + expressionSyntax + ").constructor;",
+        )();
+      } catch (e) {}
     };
     var $gOPD = Object.getOwnPropertyDescriptor;
     if ($gOPD) {
@@ -385,34 +423,46 @@ var require_get_intrinsic = __commonJS({
         $gOPD = null;
       }
     }
-    var throwTypeError = function() {
+    var throwTypeError = function () {
       throw new $TypeError();
     };
-    var ThrowTypeError = $gOPD ? function() {
-      try {
-        arguments.callee;
-        return throwTypeError;
-      } catch (calleeThrows) {
-        try {
-          return $gOPD(arguments, "callee").get;
-        } catch (gOPDthrows) {
-          return throwTypeError;
-        }
-      }
-    }() : throwTypeError;
+    var ThrowTypeError = $gOPD
+      ? (function () {
+          try {
+            arguments.callee;
+            return throwTypeError;
+          } catch (calleeThrows) {
+            try {
+              return $gOPD(arguments, "callee").get;
+            } catch (gOPDthrows) {
+              return throwTypeError;
+            }
+          }
+        })()
+      : throwTypeError;
     var hasSymbols = require_has_symbols()();
     var hasProto = require_has_proto()();
-    var getProto = Object.getPrototypeOf || (hasProto ? function(x) {
-      return x.__proto__;
-    } : null);
+    var getProto =
+      Object.getPrototypeOf ||
+      (hasProto
+        ? function (x) {
+            return x.__proto__;
+          }
+        : null);
     var needsEval = {};
-    var TypedArray = typeof Uint8Array === "undefined" || !getProto ? undefined2 : getProto(Uint8Array);
+    var TypedArray =
+      typeof Uint8Array === "undefined" || !getProto
+        ? undefined2
+        : getProto(Uint8Array);
     var INTRINSICS = {
       __proto__: null,
-      "%AggregateError%": typeof AggregateError === "undefined" ? undefined2 : AggregateError,
+      "%AggregateError%":
+        typeof AggregateError === "undefined" ? undefined2 : AggregateError,
       "%Array%": Array,
-      "%ArrayBuffer%": typeof ArrayBuffer === "undefined" ? undefined2 : ArrayBuffer,
-      "%ArrayIteratorPrototype%": hasSymbols && getProto ? getProto([][Symbol.iterator]()) : undefined2,
+      "%ArrayBuffer%":
+        typeof ArrayBuffer === "undefined" ? undefined2 : ArrayBuffer,
+      "%ArrayIteratorPrototype%":
+        hasSymbols && getProto ? getProto([][Symbol.iterator]()) : undefined2,
       "%AsyncFromSyncIteratorPrototype%": undefined2,
       "%AsyncFunction%": needsEval,
       "%AsyncGenerator%": needsEval,
@@ -420,8 +470,10 @@ var require_get_intrinsic = __commonJS({
       "%AsyncIteratorPrototype%": needsEval,
       "%Atomics%": typeof Atomics === "undefined" ? undefined2 : Atomics,
       "%BigInt%": typeof BigInt === "undefined" ? undefined2 : BigInt,
-      "%BigInt64Array%": typeof BigInt64Array === "undefined" ? undefined2 : BigInt64Array,
-      "%BigUint64Array%": typeof BigUint64Array === "undefined" ? undefined2 : BigUint64Array,
+      "%BigInt64Array%":
+        typeof BigInt64Array === "undefined" ? undefined2 : BigInt64Array,
+      "%BigUint64Array%":
+        typeof BigUint64Array === "undefined" ? undefined2 : BigUint64Array,
       "%Boolean%": Boolean,
       "%DataView%": typeof DataView === "undefined" ? undefined2 : DataView,
       "%Date%": Date,
@@ -433,20 +485,33 @@ var require_get_intrinsic = __commonJS({
       "%eval%": eval,
       // eslint-disable-line no-eval
       "%EvalError%": $EvalError,
-      "%Float32Array%": typeof Float32Array === "undefined" ? undefined2 : Float32Array,
-      "%Float64Array%": typeof Float64Array === "undefined" ? undefined2 : Float64Array,
-      "%FinalizationRegistry%": typeof FinalizationRegistry === "undefined" ? undefined2 : FinalizationRegistry,
+      "%Float32Array%":
+        typeof Float32Array === "undefined" ? undefined2 : Float32Array,
+      "%Float64Array%":
+        typeof Float64Array === "undefined" ? undefined2 : Float64Array,
+      "%FinalizationRegistry%":
+        typeof FinalizationRegistry === "undefined"
+          ? undefined2
+          : FinalizationRegistry,
       "%Function%": $Function,
       "%GeneratorFunction%": needsEval,
       "%Int8Array%": typeof Int8Array === "undefined" ? undefined2 : Int8Array,
-      "%Int16Array%": typeof Int16Array === "undefined" ? undefined2 : Int16Array,
-      "%Int32Array%": typeof Int32Array === "undefined" ? undefined2 : Int32Array,
+      "%Int16Array%":
+        typeof Int16Array === "undefined" ? undefined2 : Int16Array,
+      "%Int32Array%":
+        typeof Int32Array === "undefined" ? undefined2 : Int32Array,
       "%isFinite%": isFinite,
       "%isNaN%": isNaN,
-      "%IteratorPrototype%": hasSymbols && getProto ? getProto(getProto([][Symbol.iterator]())) : undefined2,
+      "%IteratorPrototype%":
+        hasSymbols && getProto
+          ? getProto(getProto([][Symbol.iterator]()))
+          : undefined2,
       "%JSON%": typeof JSON === "object" ? JSON : undefined2,
       "%Map%": typeof Map === "undefined" ? undefined2 : Map,
-      "%MapIteratorPrototype%": typeof Map === "undefined" || !hasSymbols || !getProto ? undefined2 : getProto((/* @__PURE__ */ new Map())[Symbol.iterator]()),
+      "%MapIteratorPrototype%":
+        typeof Map === "undefined" || !hasSymbols || !getProto
+          ? undefined2
+          : getProto(/* @__PURE__ */ new Map()[Symbol.iterator]()),
       "%Math%": Math,
       "%Number%": Number,
       "%Object%": Object,
@@ -459,23 +524,36 @@ var require_get_intrinsic = __commonJS({
       "%Reflect%": typeof Reflect === "undefined" ? undefined2 : Reflect,
       "%RegExp%": RegExp,
       "%Set%": typeof Set === "undefined" ? undefined2 : Set,
-      "%SetIteratorPrototype%": typeof Set === "undefined" || !hasSymbols || !getProto ? undefined2 : getProto((/* @__PURE__ */ new Set())[Symbol.iterator]()),
-      "%SharedArrayBuffer%": typeof SharedArrayBuffer === "undefined" ? undefined2 : SharedArrayBuffer,
+      "%SetIteratorPrototype%":
+        typeof Set === "undefined" || !hasSymbols || !getProto
+          ? undefined2
+          : getProto(/* @__PURE__ */ new Set()[Symbol.iterator]()),
+      "%SharedArrayBuffer%":
+        typeof SharedArrayBuffer === "undefined"
+          ? undefined2
+          : SharedArrayBuffer,
       "%String%": String,
-      "%StringIteratorPrototype%": hasSymbols && getProto ? getProto(""[Symbol.iterator]()) : undefined2,
+      "%StringIteratorPrototype%":
+        hasSymbols && getProto ? getProto(""[Symbol.iterator]()) : undefined2,
       "%Symbol%": hasSymbols ? Symbol : undefined2,
       "%SyntaxError%": $SyntaxError,
       "%ThrowTypeError%": ThrowTypeError,
       "%TypedArray%": TypedArray,
       "%TypeError%": $TypeError,
-      "%Uint8Array%": typeof Uint8Array === "undefined" ? undefined2 : Uint8Array,
-      "%Uint8ClampedArray%": typeof Uint8ClampedArray === "undefined" ? undefined2 : Uint8ClampedArray,
-      "%Uint16Array%": typeof Uint16Array === "undefined" ? undefined2 : Uint16Array,
-      "%Uint32Array%": typeof Uint32Array === "undefined" ? undefined2 : Uint32Array,
+      "%Uint8Array%":
+        typeof Uint8Array === "undefined" ? undefined2 : Uint8Array,
+      "%Uint8ClampedArray%":
+        typeof Uint8ClampedArray === "undefined"
+          ? undefined2
+          : Uint8ClampedArray,
+      "%Uint16Array%":
+        typeof Uint16Array === "undefined" ? undefined2 : Uint16Array,
+      "%Uint32Array%":
+        typeof Uint32Array === "undefined" ? undefined2 : Uint32Array,
       "%URIError%": $URIError,
       "%WeakMap%": typeof WeakMap === "undefined" ? undefined2 : WeakMap,
       "%WeakRef%": typeof WeakRef === "undefined" ? undefined2 : WeakRef,
-      "%WeakSet%": typeof WeakSet === "undefined" ? undefined2 : WeakSet
+      "%WeakSet%": typeof WeakSet === "undefined" ? undefined2 : WeakSet,
     };
     if (getProto) {
       try {
@@ -518,7 +596,11 @@ var require_get_intrinsic = __commonJS({
       "%ArrayProto_values%": ["Array", "prototype", "values"],
       "%AsyncFunctionPrototype%": ["AsyncFunction", "prototype"],
       "%AsyncGenerator%": ["AsyncGeneratorFunction", "prototype"],
-      "%AsyncGeneratorPrototype%": ["AsyncGeneratorFunction", "prototype", "prototype"],
+      "%AsyncGeneratorPrototype%": [
+        "AsyncGeneratorFunction",
+        "prototype",
+        "prototype",
+      ],
       "%BooleanPrototype%": ["Boolean", "prototype"],
       "%DataViewPrototype%": ["DataView", "prototype"],
       "%DatePrototype%": ["Date", "prototype"],
@@ -560,7 +642,7 @@ var require_get_intrinsic = __commonJS({
       "%Uint32ArrayPrototype%": ["Uint32Array", "prototype"],
       "%URIErrorPrototype%": ["URIError", "prototype"],
       "%WeakMapPrototype%": ["WeakMap", "prototype"],
-      "%WeakSetPrototype%": ["WeakSet", "prototype"]
+      "%WeakSetPrototype%": ["WeakSet", "prototype"],
     };
     var bind = require_function_bind();
     var hasOwn = require_hasown();
@@ -569,20 +651,31 @@ var require_get_intrinsic = __commonJS({
     var $replace = bind.call(Function.call, String.prototype.replace);
     var $strSlice = bind.call(Function.call, String.prototype.slice);
     var $exec = bind.call(Function.call, RegExp.prototype.exec);
-    var rePropName = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
+    var rePropName =
+      /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
     var reEscapeChar = /\\(\\)?/g;
     var stringToPath = function stringToPath2(string2) {
       var first = $strSlice(string2, 0, 1);
       var last = $strSlice(string2, -1);
       if (first === "%" && last !== "%") {
-        throw new $SyntaxError("invalid intrinsic syntax, expected closing `%`");
+        throw new $SyntaxError(
+          "invalid intrinsic syntax, expected closing `%`",
+        );
       } else if (last === "%" && first !== "%") {
-        throw new $SyntaxError("invalid intrinsic syntax, expected opening `%`");
+        throw new $SyntaxError(
+          "invalid intrinsic syntax, expected opening `%`",
+        );
       }
       var result = [];
-      $replace(string2, rePropName, function(match, number2, quote, subString) {
-        result[result.length] = quote ? $replace(subString, reEscapeChar, "$1") : number2 || match;
-      });
+      $replace(
+        string2,
+        rePropName,
+        function (match, number2, quote, subString) {
+          result[result.length] = quote
+            ? $replace(subString, reEscapeChar, "$1")
+            : number2 || match;
+        },
+      );
       return result;
     };
     var getBaseIntrinsic = function getBaseIntrinsic2(name, allowMissing) {
@@ -598,12 +691,16 @@ var require_get_intrinsic = __commonJS({
           value = doEval(intrinsicName);
         }
         if (typeof value === "undefined" && !allowMissing) {
-          throw new $TypeError("intrinsic " + name + " exists, but is not available. Please file an issue!");
+          throw new $TypeError(
+            "intrinsic " +
+              name +
+              " exists, but is not available. Please file an issue!",
+          );
         }
         return {
           alias,
           name: intrinsicName,
-          value
+          value,
         };
       }
       throw new $SyntaxError("intrinsic " + name + " does not exist!");
@@ -616,11 +713,16 @@ var require_get_intrinsic = __commonJS({
         throw new $TypeError('"allowMissing" argument must be a boolean');
       }
       if ($exec(/^%?[^%]*%?$/, name) === null) {
-        throw new $SyntaxError("`%` may not be present anywhere but at the beginning and end of the intrinsic name");
+        throw new $SyntaxError(
+          "`%` may not be present anywhere but at the beginning and end of the intrinsic name",
+        );
       }
       var parts = stringToPath(name);
       var intrinsicBaseName = parts.length > 0 ? parts[0] : "";
-      var intrinsic = getBaseIntrinsic("%" + intrinsicBaseName + "%", allowMissing);
+      var intrinsic = getBaseIntrinsic(
+        "%" + intrinsicBaseName + "%",
+        allowMissing,
+      );
       var intrinsicRealName = intrinsic.name;
       var value = intrinsic.value;
       var skipFurtherCaching = false;
@@ -633,8 +735,18 @@ var require_get_intrinsic = __commonJS({
         var part = parts[i];
         var first = $strSlice(part, 0, 1);
         var last = $strSlice(part, -1);
-        if ((first === '"' || first === "'" || first === "`" || (last === '"' || last === "'" || last === "`")) && first !== last) {
-          throw new $SyntaxError("property names with quotes must have matching quotes");
+        if (
+          (first === '"' ||
+            first === "'" ||
+            first === "`" ||
+            last === '"' ||
+            last === "'" ||
+            last === "`") &&
+          first !== last
+        ) {
+          throw new $SyntaxError(
+            "property names with quotes must have matching quotes",
+          );
         }
         if (part === "constructor" || !isOwn) {
           skipFurtherCaching = true;
@@ -646,7 +758,11 @@ var require_get_intrinsic = __commonJS({
         } else if (value != null) {
           if (!(part in value)) {
             if (!allowMissing) {
-              throw new $TypeError("base intrinsic for " + name + " exists, but the property is not available.");
+              throw new $TypeError(
+                "base intrinsic for " +
+                  name +
+                  " exists, but the property is not available.",
+              );
             }
             return void 0;
           }
@@ -669,7 +785,7 @@ var require_get_intrinsic = __commonJS({
       }
       return value;
     };
-  }
+  },
 });
 
 // node_modules/es-define-property/index.js
@@ -677,7 +793,8 @@ var require_es_define_property = __commonJS({
   "node_modules/es-define-property/index.js"(exports, module2) {
     "use strict";
     var GetIntrinsic = require_get_intrinsic();
-    var $defineProperty = GetIntrinsic("%Object.defineProperty%", true) || false;
+    var $defineProperty =
+      GetIntrinsic("%Object.defineProperty%", true) || false;
     if ($defineProperty) {
       try {
         $defineProperty({}, "a", { value: 1 });
@@ -686,7 +803,7 @@ var require_es_define_property = __commonJS({
       }
     }
     module2.exports = $defineProperty;
-  }
+  },
 });
 
 // node_modules/gopd/index.js
@@ -703,7 +820,7 @@ var require_gopd = __commonJS({
       }
     }
     module2.exports = $gOPD;
-  }
+  },
 });
 
 // node_modules/define-data-property/index.js
@@ -715,20 +832,38 @@ var require_define_data_property = __commonJS({
     var $TypeError = require_type();
     var gopd = require_gopd();
     module2.exports = function defineDataProperty(obj, property, value) {
-      if (!obj || typeof obj !== "object" && typeof obj !== "function") {
+      if (!obj || (typeof obj !== "object" && typeof obj !== "function")) {
         throw new $TypeError("`obj` must be an object or a function`");
       }
       if (typeof property !== "string" && typeof property !== "symbol") {
         throw new $TypeError("`property` must be a string or a symbol`");
       }
-      if (arguments.length > 3 && typeof arguments[3] !== "boolean" && arguments[3] !== null) {
-        throw new $TypeError("`nonEnumerable`, if provided, must be a boolean or null");
+      if (
+        arguments.length > 3 &&
+        typeof arguments[3] !== "boolean" &&
+        arguments[3] !== null
+      ) {
+        throw new $TypeError(
+          "`nonEnumerable`, if provided, must be a boolean or null",
+        );
       }
-      if (arguments.length > 4 && typeof arguments[4] !== "boolean" && arguments[4] !== null) {
-        throw new $TypeError("`nonWritable`, if provided, must be a boolean or null");
+      if (
+        arguments.length > 4 &&
+        typeof arguments[4] !== "boolean" &&
+        arguments[4] !== null
+      ) {
+        throw new $TypeError(
+          "`nonWritable`, if provided, must be a boolean or null",
+        );
       }
-      if (arguments.length > 5 && typeof arguments[5] !== "boolean" && arguments[5] !== null) {
-        throw new $TypeError("`nonConfigurable`, if provided, must be a boolean or null");
+      if (
+        arguments.length > 5 &&
+        typeof arguments[5] !== "boolean" &&
+        arguments[5] !== null
+      ) {
+        throw new $TypeError(
+          "`nonConfigurable`, if provided, must be a boolean or null",
+        );
       }
       if (arguments.length > 6 && typeof arguments[6] !== "boolean") {
         throw new $TypeError("`loose`, if provided, must be a boolean");
@@ -740,18 +875,27 @@ var require_define_data_property = __commonJS({
       var desc = !!gopd && gopd(obj, property);
       if ($defineProperty) {
         $defineProperty(obj, property, {
-          configurable: nonConfigurable === null && desc ? desc.configurable : !nonConfigurable,
-          enumerable: nonEnumerable === null && desc ? desc.enumerable : !nonEnumerable,
+          configurable:
+            nonConfigurable === null && desc
+              ? desc.configurable
+              : !nonConfigurable,
+          enumerable:
+            nonEnumerable === null && desc ? desc.enumerable : !nonEnumerable,
           value,
-          writable: nonWritable === null && desc ? desc.writable : !nonWritable
+          writable: nonWritable === null && desc ? desc.writable : !nonWritable,
         });
-      } else if (loose || !nonEnumerable && !nonWritable && !nonConfigurable) {
+      } else if (
+        loose ||
+        (!nonEnumerable && !nonWritable && !nonConfigurable)
+      ) {
         obj[property] = value;
       } else {
-        throw new $SyntaxError("This environment does not support defining a property as non-configurable, non-writable, or non-enumerable.");
+        throw new $SyntaxError(
+          "This environment does not support defining a property as non-configurable, non-writable, or non-enumerable.",
+        );
       }
     };
-  }
+  },
 });
 
 // node_modules/has-property-descriptors/index.js
@@ -762,18 +906,19 @@ var require_has_property_descriptors = __commonJS({
     var hasPropertyDescriptors = function hasPropertyDescriptors2() {
       return !!$defineProperty;
     };
-    hasPropertyDescriptors.hasArrayLengthDefineBug = function hasArrayLengthDefineBug() {
-      if (!$defineProperty) {
-        return null;
-      }
-      try {
-        return $defineProperty([], "length", { value: 1 }).length !== 1;
-      } catch (e) {
-        return true;
-      }
-    };
+    hasPropertyDescriptors.hasArrayLengthDefineBug =
+      function hasArrayLengthDefineBug() {
+        if (!$defineProperty) {
+          return null;
+        }
+        try {
+          return $defineProperty([], "length", { value: 1 }).length !== 1;
+        } catch (e) {
+          return true;
+        }
+      };
     module2.exports = hasPropertyDescriptors;
-  }
+  },
 });
 
 // node_modules/set-function-length/index.js
@@ -790,7 +935,12 @@ var require_set_function_length = __commonJS({
       if (typeof fn2 !== "function") {
         throw new $TypeError("`fn` is not a function");
       }
-      if (typeof length !== "number" || length < 0 || length > 4294967295 || $floor(length) !== length) {
+      if (
+        typeof length !== "number" ||
+        length < 0 ||
+        length > 4294967295 ||
+        $floor(length) !== length
+      ) {
         throw new $TypeError("`length` must be a positive 32-bit integer");
       }
       var loose = arguments.length > 2 && !!arguments[2];
@@ -813,20 +963,20 @@ var require_set_function_length = __commonJS({
             "length",
             length,
             true,
-            true
+            true,
           );
         } else {
           define(
             /** @type {Parameters<define>[0]} */
             fn2,
             "length",
-            length
+            length,
           );
         }
       }
       return fn2;
     };
-  }
+  },
 });
 
 // node_modules/call-bind/index.js
@@ -839,7 +989,8 @@ var require_call_bind = __commonJS({
     var $TypeError = require_type();
     var $apply = GetIntrinsic("%Function.prototype.apply%");
     var $call = GetIntrinsic("%Function.prototype.call%");
-    var $reflectApply = GetIntrinsic("%Reflect.apply%", true) || bind.call($call, $apply);
+    var $reflectApply =
+      GetIntrinsic("%Reflect.apply%", true) || bind.call($call, $apply);
     var $defineProperty = require_es_define_property();
     var $max = GetIntrinsic("%Math.max%");
     module2.exports = function callBind(originalFunction) {
@@ -850,7 +1001,7 @@ var require_call_bind = __commonJS({
       return setFunctionLength(
         func,
         1 + $max(0, originalFunction.length - (arguments.length - 1)),
-        true
+        true,
       );
     };
     var applyBind = function applyBind2() {
@@ -861,7 +1012,7 @@ var require_call_bind = __commonJS({
     } else {
       module2.exports.apply = applyBind;
     }
-  }
+  },
 });
 
 // node_modules/object-keys/isArguments.js
@@ -873,11 +1024,17 @@ var require_isArguments = __commonJS({
       var str = toStr.call(value);
       var isArgs = str === "[object Arguments]";
       if (!isArgs) {
-        isArgs = str !== "[object Array]" && value !== null && typeof value === "object" && typeof value.length === "number" && value.length >= 0 && toStr.call(value.callee) === "[object Function]";
+        isArgs =
+          str !== "[object Array]" &&
+          value !== null &&
+          typeof value === "object" &&
+          typeof value.length === "number" &&
+          value.length >= 0 &&
+          toStr.call(value.callee) === "[object Function]";
       }
       return isArgs;
     };
-  }
+  },
 });
 
 // node_modules/object-keys/implementation.js
@@ -891,8 +1048,7 @@ var require_implementation2 = __commonJS({
       isArgs = require_isArguments();
       isEnumerable = Object.prototype.propertyIsEnumerable;
       hasDontEnumBug = !isEnumerable.call({ toString: null }, "toString");
-      hasProtoEnumBug = isEnumerable.call(function() {
-      }, "prototype");
+      hasProtoEnumBug = isEnumerable.call(function () {}, "prototype");
       dontEnums = [
         "toString",
         "toLocaleString",
@@ -900,9 +1056,9 @@ var require_implementation2 = __commonJS({
         "hasOwnProperty",
         "isPrototypeOf",
         "propertyIsEnumerable",
-        "constructor"
+        "constructor",
       ];
-      equalsConstructorPrototype = function(o) {
+      equalsConstructorPrototype = function (o) {
         var ctor = o.constructor;
         return ctor && ctor.prototype === o;
       };
@@ -929,15 +1085,20 @@ var require_implementation2 = __commonJS({
         $self: true,
         $webkitIndexedDB: true,
         $webkitStorageInfo: true,
-        $window: true
+        $window: true,
       };
-      hasAutomationEqualityBug = function() {
+      hasAutomationEqualityBug = (function () {
         if (typeof window === "undefined") {
           return false;
         }
         for (var k in window) {
           try {
-            if (!excludedKeys["$" + k] && has.call(window, k) && window[k] !== null && typeof window[k] === "object") {
+            if (
+              !excludedKeys["$" + k] &&
+              has.call(window, k) &&
+              window[k] !== null &&
+              typeof window[k] === "object"
+            ) {
               try {
                 equalsConstructorPrototype(window[k]);
               } catch (e) {
@@ -949,8 +1110,8 @@ var require_implementation2 = __commonJS({
           }
         }
         return false;
-      }();
-      equalsConstructorPrototypeIfNotBuggy = function(o) {
+      })();
+      equalsConstructorPrototypeIfNotBuggy = function (o) {
         if (typeof window === "undefined" || !hasAutomationEqualityBug) {
           return equalsConstructorPrototype(o);
         }
@@ -981,7 +1142,10 @@ var require_implementation2 = __commonJS({
           }
         } else {
           for (var name in object2) {
-            if (!(skipProto && name === "prototype") && has.call(object2, name)) {
+            if (
+              !(skipProto && name === "prototype") &&
+              has.call(object2, name)
+            ) {
               theKeys.push(String(name));
             }
           }
@@ -989,7 +1153,10 @@ var require_implementation2 = __commonJS({
         if (hasDontEnumBug) {
           var skipConstructor = equalsConstructorPrototypeIfNotBuggy(object2);
           for (var k = 0; k < dontEnums.length; ++k) {
-            if (!(skipConstructor && dontEnums[k] === "constructor") && has.call(object2, dontEnums[k])) {
+            if (
+              !(skipConstructor && dontEnums[k] === "constructor") &&
+              has.call(object2, dontEnums[k])
+            ) {
               theKeys.push(dontEnums[k]);
             }
           }
@@ -1009,7 +1176,7 @@ var require_implementation2 = __commonJS({
     var hasAutomationEqualityBug;
     var equalsConstructorPrototypeIfNotBuggy;
     module2.exports = keysShim;
-  }
+  },
 });
 
 // node_modules/object-keys/index.js
@@ -1019,16 +1186,18 @@ var require_object_keys = __commonJS({
     var slice = Array.prototype.slice;
     var isArgs = require_isArguments();
     var origKeys = Object.keys;
-    var keysShim = origKeys ? function keys(o) {
-      return origKeys(o);
-    } : require_implementation2();
+    var keysShim = origKeys
+      ? function keys(o) {
+          return origKeys(o);
+        }
+      : require_implementation2();
     var originalKeys = Object.keys;
     keysShim.shim = function shimObjectKeys() {
       if (Object.keys) {
-        var keysWorksWithArguments = function() {
+        var keysWorksWithArguments = (function () {
           var args = Object.keys(arguments);
           return args && args.length === arguments.length;
-        }(1, 2);
+        })(1, 2);
         if (!keysWorksWithArguments) {
           Object.keys = function keys(object2) {
             if (isArgs(object2)) {
@@ -1043,7 +1212,7 @@ var require_object_keys = __commonJS({
       return Object.keys || keysShim;
     };
     module2.exports = keysShim;
-  }
+  },
 });
 
 // node_modules/define-properties/index.js
@@ -1051,15 +1220,18 @@ var require_define_properties = __commonJS({
   "node_modules/define-properties/index.js"(exports, module2) {
     "use strict";
     var keys = require_object_keys();
-    var hasSymbols = typeof Symbol === "function" && typeof Symbol("foo") === "symbol";
+    var hasSymbols =
+      typeof Symbol === "function" && typeof Symbol("foo") === "symbol";
     var toStr = Object.prototype.toString;
     var concat = Array.prototype.concat;
     var defineDataProperty = require_define_data_property();
-    var isFunction = function(fn2) {
-      return typeof fn2 === "function" && toStr.call(fn2) === "[object Function]";
+    var isFunction = function (fn2) {
+      return (
+        typeof fn2 === "function" && toStr.call(fn2) === "[object Function]"
+      );
     };
     var supportsDescriptors = require_has_property_descriptors()();
-    var defineProperty = function(object2, name, value, predicate) {
+    var defineProperty = function (object2, name, value, predicate) {
       if (name in object2) {
         if (predicate === true) {
           if (object2[name] === value) {
@@ -1075,7 +1247,7 @@ var require_define_properties = __commonJS({
         defineDataProperty(object2, name, value);
       }
     };
-    var defineProperties = function(object2, map) {
+    var defineProperties = function (object2, map) {
       var predicates = arguments.length > 2 ? arguments[2] : {};
       var props = keys(map);
       if (hasSymbols) {
@@ -1087,7 +1259,7 @@ var require_define_properties = __commonJS({
     };
     defineProperties.supportsDescriptors = !!supportsDescriptors;
     module2.exports = defineProperties;
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/setProto.js
@@ -1097,11 +1269,15 @@ var require_setProto = __commonJS({
     var GetIntrinsic = require_get_intrinsic();
     var originalSetProto = GetIntrinsic("%Object.setPrototypeOf%", true);
     var hasProto = require_has_proto()();
-    module2.exports = originalSetProto || (hasProto ? function(O, proto) {
-      O.__proto__ = proto;
-      return O;
-    } : null);
-  }
+    module2.exports =
+      originalSetProto ||
+      (hasProto
+        ? function (O, proto) {
+            O.__proto__ = proto;
+            return O;
+          }
+        : null);
+  },
 });
 
 // node_modules/es-abstract/helpers/getProto.js
@@ -1111,10 +1287,14 @@ var require_getProto = __commonJS({
     var GetIntrinsic = require_get_intrinsic();
     var originalGetProto = GetIntrinsic("%Object.getPrototypeOf%", true);
     var hasProto = require_has_proto()();
-    module2.exports = originalGetProto || (hasProto ? function(O) {
-      return O.__proto__;
-    } : null);
-  }
+    module2.exports =
+      originalGetProto ||
+      (hasProto
+        ? function (O) {
+            return O.__proto__;
+          }
+        : null);
+  },
 });
 
 // node_modules/es-abstract/5/Type.js
@@ -1141,7 +1321,7 @@ var require_Type = __commonJS({
         return "String";
       }
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/Type.js
@@ -1158,7 +1338,7 @@ var require_Type2 = __commonJS({
       }
       return ES5Type(x);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/OrdinaryGetPrototypeOf.js
@@ -1173,11 +1353,13 @@ var require_OrdinaryGetPrototypeOf = __commonJS({
         throw new $TypeError("Assertion failed: O must be an Object");
       }
       if (!$getProto) {
-        throw new $TypeError("This environment does not support fetching prototypes.");
+        throw new $TypeError(
+          "This environment does not support fetching prototypes.",
+        );
       }
       return $getProto(O);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/OrdinarySetPrototypeOf.js
@@ -1198,7 +1380,7 @@ var require_OrdinarySetPrototypeOf = __commonJS({
       }
       return OrdinaryGetPrototypeOf(O) === V;
     };
-  }
+  },
 });
 
 // node_modules/call-bind/callBound.js
@@ -1210,30 +1392,44 @@ var require_callBound = __commonJS({
     var $indexOf = callBind(GetIntrinsic("String.prototype.indexOf"));
     module2.exports = function callBoundIntrinsic(name, allowMissing) {
       var intrinsic = GetIntrinsic(name, !!allowMissing);
-      if (typeof intrinsic === "function" && $indexOf(name, ".prototype.") > -1) {
+      if (
+        typeof intrinsic === "function" &&
+        $indexOf(name, ".prototype.") > -1
+      ) {
         return callBind(intrinsic);
       }
       return intrinsic;
     };
-  }
+  },
 });
 
 // (disabled):node_modules/object-inspect/util.inspect
 var require_util = __commonJS({
-  "(disabled):node_modules/object-inspect/util.inspect"() {
-  }
+  "(disabled):node_modules/object-inspect/util.inspect"() {},
 });
 
 // node_modules/object-inspect/index.js
 var require_object_inspect = __commonJS({
   "node_modules/object-inspect/index.js"(exports, module2) {
     var hasMap = typeof Map === "function" && Map.prototype;
-    var mapSizeDescriptor = Object.getOwnPropertyDescriptor && hasMap ? Object.getOwnPropertyDescriptor(Map.prototype, "size") : null;
-    var mapSize = hasMap && mapSizeDescriptor && typeof mapSizeDescriptor.get === "function" ? mapSizeDescriptor.get : null;
+    var mapSizeDescriptor =
+      Object.getOwnPropertyDescriptor && hasMap
+        ? Object.getOwnPropertyDescriptor(Map.prototype, "size")
+        : null;
+    var mapSize =
+      hasMap && mapSizeDescriptor && typeof mapSizeDescriptor.get === "function"
+        ? mapSizeDescriptor.get
+        : null;
     var mapForEach = hasMap && Map.prototype.forEach;
     var hasSet = typeof Set === "function" && Set.prototype;
-    var setSizeDescriptor = Object.getOwnPropertyDescriptor && hasSet ? Object.getOwnPropertyDescriptor(Set.prototype, "size") : null;
-    var setSize = hasSet && setSizeDescriptor && typeof setSizeDescriptor.get === "function" ? setSizeDescriptor.get : null;
+    var setSizeDescriptor =
+      Object.getOwnPropertyDescriptor && hasSet
+        ? Object.getOwnPropertyDescriptor(Set.prototype, "size")
+        : null;
+    var setSize =
+      hasSet && setSizeDescriptor && typeof setSizeDescriptor.get === "function"
+        ? setSizeDescriptor.get
+        : null;
     var setForEach = hasSet && Set.prototype.forEach;
     var hasWeakMap = typeof WeakMap === "function" && WeakMap.prototype;
     var weakMapHas = hasWeakMap ? WeakMap.prototype.has : null;
@@ -1254,17 +1450,39 @@ var require_object_inspect = __commonJS({
     var $join = Array.prototype.join;
     var $arrSlice = Array.prototype.slice;
     var $floor = Math.floor;
-    var bigIntValueOf = typeof BigInt === "function" ? BigInt.prototype.valueOf : null;
+    var bigIntValueOf =
+      typeof BigInt === "function" ? BigInt.prototype.valueOf : null;
     var gOPS = Object.getOwnPropertySymbols;
-    var symToString = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? Symbol.prototype.toString : null;
-    var hasShammedSymbols = typeof Symbol === "function" && typeof Symbol.iterator === "object";
-    var toStringTag = typeof Symbol === "function" && Symbol.toStringTag && (typeof Symbol.toStringTag === hasShammedSymbols ? "object" : "symbol") ? Symbol.toStringTag : null;
+    var symToString =
+      typeof Symbol === "function" && typeof Symbol.iterator === "symbol"
+        ? Symbol.prototype.toString
+        : null;
+    var hasShammedSymbols =
+      typeof Symbol === "function" && typeof Symbol.iterator === "object";
+    var toStringTag =
+      typeof Symbol === "function" &&
+      Symbol.toStringTag &&
+      (typeof Symbol.toStringTag === hasShammedSymbols ? "object" : "symbol")
+        ? Symbol.toStringTag
+        : null;
     var isEnumerable = Object.prototype.propertyIsEnumerable;
-    var gPO = (typeof Reflect === "function" ? Reflect.getPrototypeOf : Object.getPrototypeOf) || ([].__proto__ === Array.prototype ? function(O) {
-      return O.__proto__;
-    } : null);
+    var gPO =
+      (typeof Reflect === "function"
+        ? Reflect.getPrototypeOf
+        : Object.getPrototypeOf) ||
+      ([].__proto__ === Array.prototype
+        ? function (O) {
+            return O.__proto__;
+          }
+        : null);
     function addNumericSeparator(num, str) {
-      if (num === Infinity || num === -Infinity || num !== num || num && num > -1e3 && num < 1e3 || $test.call(/e/, str)) {
+      if (
+        num === Infinity ||
+        num === -Infinity ||
+        num !== num ||
+        (num && num > -1e3 && num < 1e3) ||
+        $test.call(/e/, str)
+      ) {
         return str;
       }
       var sepRegex = /[0-9](?=(?:[0-9]{3})+(?![0-9]))/g;
@@ -1273,7 +1491,11 @@ var require_object_inspect = __commonJS({
         if (int !== num) {
           var intStr = String(int);
           var dec = $slice.call(str, intStr.length + 1);
-          return $replace.call(intStr, sepRegex, "$&_") + "." + $replace.call($replace.call(dec, /([0-9]{3})/g, "$&_"), /_$/, "");
+          return (
+            $replace.call(intStr, sepRegex, "$&_") +
+            "." +
+            $replace.call($replace.call(dec, /([0-9]{3})/g, "$&_"), /_$/, "")
+          );
         }
       }
       return $replace.call(str, sepRegex, "$&_");
@@ -1283,21 +1505,48 @@ var require_object_inspect = __commonJS({
     var inspectSymbol = isSymbol(inspectCustom) ? inspectCustom : null;
     module2.exports = function inspect_(obj, options, depth, seen) {
       var opts = options || {};
-      if (has(opts, "quoteStyle") && (opts.quoteStyle !== "single" && opts.quoteStyle !== "double")) {
+      if (
+        has(opts, "quoteStyle") &&
+        opts.quoteStyle !== "single" &&
+        opts.quoteStyle !== "double"
+      ) {
         throw new TypeError('option "quoteStyle" must be "single" or "double"');
       }
-      if (has(opts, "maxStringLength") && (typeof opts.maxStringLength === "number" ? opts.maxStringLength < 0 && opts.maxStringLength !== Infinity : opts.maxStringLength !== null)) {
-        throw new TypeError('option "maxStringLength", if provided, must be a positive integer, Infinity, or `null`');
+      if (
+        has(opts, "maxStringLength") &&
+        (typeof opts.maxStringLength === "number"
+          ? opts.maxStringLength < 0 && opts.maxStringLength !== Infinity
+          : opts.maxStringLength !== null)
+      ) {
+        throw new TypeError(
+          'option "maxStringLength", if provided, must be a positive integer, Infinity, or `null`',
+        );
       }
-      var customInspect = has(opts, "customInspect") ? opts.customInspect : true;
+      var customInspect = has(opts, "customInspect")
+        ? opts.customInspect
+        : true;
       if (typeof customInspect !== "boolean" && customInspect !== "symbol") {
-        throw new TypeError("option \"customInspect\", if provided, must be `true`, `false`, or `'symbol'`");
+        throw new TypeError(
+          "option \"customInspect\", if provided, must be `true`, `false`, or `'symbol'`",
+        );
       }
-      if (has(opts, "indent") && opts.indent !== null && opts.indent !== "	" && !(parseInt(opts.indent, 10) === opts.indent && opts.indent > 0)) {
-        throw new TypeError('option "indent" must be "\\t", an integer > 0, or `null`');
+      if (
+        has(opts, "indent") &&
+        opts.indent !== null &&
+        opts.indent !== "	" &&
+        !(parseInt(opts.indent, 10) === opts.indent && opts.indent > 0)
+      ) {
+        throw new TypeError(
+          'option "indent" must be "\\t", an integer > 0, or `null`',
+        );
       }
-      if (has(opts, "numericSeparator") && typeof opts.numericSeparator !== "boolean") {
-        throw new TypeError('option "numericSeparator", if provided, must be `true` or `false`');
+      if (
+        has(opts, "numericSeparator") &&
+        typeof opts.numericSeparator !== "boolean"
+      ) {
+        throw new TypeError(
+          'option "numericSeparator", if provided, must be `true` or `false`',
+        );
       }
       var numericSeparator = opts.numericSeparator;
       if (typeof obj === "undefined") {
@@ -1321,7 +1570,9 @@ var require_object_inspect = __commonJS({
       }
       if (typeof obj === "bigint") {
         var bigIntStr = String(obj) + "n";
-        return numericSeparator ? addNumericSeparator(obj, bigIntStr) : bigIntStr;
+        return numericSeparator
+          ? addNumericSeparator(obj, bigIntStr)
+          : bigIntStr;
       }
       var maxDepth = typeof opts.depth === "undefined" ? 5 : opts.depth;
       if (typeof depth === "undefined") {
@@ -1343,7 +1594,7 @@ var require_object_inspect = __commonJS({
         }
         if (noIndent) {
           var newOpts = {
-            depth: opts.depth
+            depth: opts.depth,
           };
           if (has(opts, "quoteStyle")) {
             newOpts.quoteStyle = opts.quoteStyle;
@@ -1355,17 +1606,30 @@ var require_object_inspect = __commonJS({
       if (typeof obj === "function" && !isRegExp(obj)) {
         var name = nameOf(obj);
         var keys = arrObjKeys(obj, inspect);
-        return "[Function" + (name ? ": " + name : " (anonymous)") + "]" + (keys.length > 0 ? " { " + $join.call(keys, ", ") + " }" : "");
+        return (
+          "[Function" +
+          (name ? ": " + name : " (anonymous)") +
+          "]" +
+          (keys.length > 0 ? " { " + $join.call(keys, ", ") + " }" : "")
+        );
       }
       if (isSymbol(obj)) {
-        var symString = hasShammedSymbols ? $replace.call(String(obj), /^(Symbol\(.*\))_[^)]*$/, "$1") : symToString.call(obj);
-        return typeof obj === "object" && !hasShammedSymbols ? markBoxed(symString) : symString;
+        var symString = hasShammedSymbols
+          ? $replace.call(String(obj), /^(Symbol\(.*\))_[^)]*$/, "$1")
+          : symToString.call(obj);
+        return typeof obj === "object" && !hasShammedSymbols
+          ? markBoxed(symString)
+          : symString;
       }
       if (isElement2(obj)) {
         var s = "<" + $toLowerCase.call(String(obj.nodeName));
         var attrs = obj.attributes || [];
         for (var i = 0; i < attrs.length; i++) {
-          s += " " + attrs[i].name + "=" + wrapQuotes(quote(attrs[i].value), "double", opts);
+          s +=
+            " " +
+            attrs[i].name +
+            "=" +
+            wrapQuotes(quote(attrs[i].value), "double", opts);
         }
         s += ">";
         if (obj.childNodes && obj.childNodes.length) {
@@ -1386,8 +1650,21 @@ var require_object_inspect = __commonJS({
       }
       if (isError(obj)) {
         var parts = arrObjKeys(obj, inspect);
-        if (!("cause" in Error.prototype) && "cause" in obj && !isEnumerable.call(obj, "cause")) {
-          return "{ [" + String(obj) + "] " + $join.call($concat.call("[cause]: " + inspect(obj.cause), parts), ", ") + " }";
+        if (
+          !("cause" in Error.prototype) &&
+          "cause" in obj &&
+          !isEnumerable.call(obj, "cause")
+        ) {
+          return (
+            "{ [" +
+            String(obj) +
+            "] " +
+            $join.call(
+              $concat.call("[cause]: " + inspect(obj.cause), parts),
+              ", ",
+            ) +
+            " }"
+          );
         }
         if (parts.length === 0) {
           return "[" + String(obj) + "]";
@@ -1395,17 +1672,26 @@ var require_object_inspect = __commonJS({
         return "{ [" + String(obj) + "] " + $join.call(parts, ", ") + " }";
       }
       if (typeof obj === "object" && customInspect) {
-        if (inspectSymbol && typeof obj[inspectSymbol] === "function" && utilInspect) {
+        if (
+          inspectSymbol &&
+          typeof obj[inspectSymbol] === "function" &&
+          utilInspect
+        ) {
           return utilInspect(obj, { depth: maxDepth - depth });
-        } else if (customInspect !== "symbol" && typeof obj.inspect === "function") {
+        } else if (
+          customInspect !== "symbol" &&
+          typeof obj.inspect === "function"
+        ) {
           return obj.inspect();
         }
       }
       if (isMap(obj)) {
         var mapParts = [];
         if (mapForEach) {
-          mapForEach.call(obj, function(value, key) {
-            mapParts.push(inspect(key, obj, true) + " => " + inspect(value, obj));
+          mapForEach.call(obj, function (value, key) {
+            mapParts.push(
+              inspect(key, obj, true) + " => " + inspect(value, obj),
+            );
           });
         }
         return collectionOf("Map", mapSize.call(obj), mapParts, indent);
@@ -1413,7 +1699,7 @@ var require_object_inspect = __commonJS({
       if (isSet(obj)) {
         var setParts = [];
         if (setForEach) {
-          setForEach.call(obj, function(value) {
+          setForEach.call(obj, function (value) {
             setParts.push(inspect(value, obj));
           });
         }
@@ -1448,11 +1734,35 @@ var require_object_inspect = __commonJS({
       }
       if (!isDate(obj) && !isRegExp(obj)) {
         var ys = arrObjKeys(obj, inspect);
-        var isPlainObject = gPO ? gPO(obj) === Object.prototype : obj instanceof Object || obj.constructor === Object;
+        var isPlainObject = gPO
+          ? gPO(obj) === Object.prototype
+          : obj instanceof Object || obj.constructor === Object;
         var protoTag = obj instanceof Object ? "" : "null prototype";
-        var stringTag = !isPlainObject && toStringTag && Object(obj) === obj && toStringTag in obj ? $slice.call(toStr(obj), 8, -1) : protoTag ? "Object" : "";
-        var constructorTag = isPlainObject || typeof obj.constructor !== "function" ? "" : obj.constructor.name ? obj.constructor.name + " " : "";
-        var tag = constructorTag + (stringTag || protoTag ? "[" + $join.call($concat.call([], stringTag || [], protoTag || []), ": ") + "] " : "");
+        var stringTag =
+          !isPlainObject &&
+          toStringTag &&
+          Object(obj) === obj &&
+          toStringTag in obj
+            ? $slice.call(toStr(obj), 8, -1)
+            : protoTag
+              ? "Object"
+              : "";
+        var constructorTag =
+          isPlainObject || typeof obj.constructor !== "function"
+            ? ""
+            : obj.constructor.name
+              ? obj.constructor.name + " "
+              : "";
+        var tag =
+          constructorTag +
+          (stringTag || protoTag
+            ? "[" +
+              $join.call(
+                $concat.call([], stringTag || [], protoTag || []),
+                ": ",
+              ) +
+              "] "
+            : "");
         if (ys.length === 0) {
           return tag + "{}";
         }
@@ -1464,32 +1774,54 @@ var require_object_inspect = __commonJS({
       return String(obj);
     };
     function wrapQuotes(s, defaultStyle, opts) {
-      var quoteChar = (opts.quoteStyle || defaultStyle) === "double" ? '"' : "'";
+      var quoteChar =
+        (opts.quoteStyle || defaultStyle) === "double" ? '"' : "'";
       return quoteChar + s + quoteChar;
     }
     function quote(s) {
       return $replace.call(String(s), /"/g, "&quot;");
     }
     function isArray(obj) {
-      return toStr(obj) === "[object Array]" && (!toStringTag || !(typeof obj === "object" && toStringTag in obj));
+      return (
+        toStr(obj) === "[object Array]" &&
+        (!toStringTag || !(typeof obj === "object" && toStringTag in obj))
+      );
     }
     function isDate(obj) {
-      return toStr(obj) === "[object Date]" && (!toStringTag || !(typeof obj === "object" && toStringTag in obj));
+      return (
+        toStr(obj) === "[object Date]" &&
+        (!toStringTag || !(typeof obj === "object" && toStringTag in obj))
+      );
     }
     function isRegExp(obj) {
-      return toStr(obj) === "[object RegExp]" && (!toStringTag || !(typeof obj === "object" && toStringTag in obj));
+      return (
+        toStr(obj) === "[object RegExp]" &&
+        (!toStringTag || !(typeof obj === "object" && toStringTag in obj))
+      );
     }
     function isError(obj) {
-      return toStr(obj) === "[object Error]" && (!toStringTag || !(typeof obj === "object" && toStringTag in obj));
+      return (
+        toStr(obj) === "[object Error]" &&
+        (!toStringTag || !(typeof obj === "object" && toStringTag in obj))
+      );
     }
     function isString(obj) {
-      return toStr(obj) === "[object String]" && (!toStringTag || !(typeof obj === "object" && toStringTag in obj));
+      return (
+        toStr(obj) === "[object String]" &&
+        (!toStringTag || !(typeof obj === "object" && toStringTag in obj))
+      );
     }
     function isNumber(obj) {
-      return toStr(obj) === "[object Number]" && (!toStringTag || !(typeof obj === "object" && toStringTag in obj));
+      return (
+        toStr(obj) === "[object Number]" &&
+        (!toStringTag || !(typeof obj === "object" && toStringTag in obj))
+      );
     }
     function isBoolean(obj) {
-      return toStr(obj) === "[object Boolean]" && (!toStringTag || !(typeof obj === "object" && toStringTag in obj));
+      return (
+        toStr(obj) === "[object Boolean]" &&
+        (!toStringTag || !(typeof obj === "object" && toStringTag in obj))
+      );
     }
     function isSymbol(obj) {
       if (hasShammedSymbols) {
@@ -1504,8 +1836,7 @@ var require_object_inspect = __commonJS({
       try {
         symToString.call(obj);
         return true;
-      } catch (e) {
-      }
+      } catch (e) {}
       return false;
     }
     function isBigInt(obj) {
@@ -1515,13 +1846,14 @@ var require_object_inspect = __commonJS({
       try {
         bigIntValueOf.call(obj);
         return true;
-      } catch (e) {
-      }
+      } catch (e) {}
       return false;
     }
-    var hasOwn = Object.prototype.hasOwnProperty || function(key) {
-      return key in this;
-    };
+    var hasOwn =
+      Object.prototype.hasOwnProperty ||
+      function (key) {
+        return key in this;
+      };
     function has(obj, key) {
       return hasOwn.call(obj, key);
     }
@@ -1561,8 +1893,7 @@ var require_object_inspect = __commonJS({
           return true;
         }
         return x instanceof Map;
-      } catch (e) {
-      }
+      } catch (e) {}
       return false;
     }
     function isWeakMap(x) {
@@ -1577,8 +1908,7 @@ var require_object_inspect = __commonJS({
           return true;
         }
         return x instanceof WeakMap;
-      } catch (e) {
-      }
+      } catch (e) {}
       return false;
     }
     function isWeakRef(x) {
@@ -1588,8 +1918,7 @@ var require_object_inspect = __commonJS({
       try {
         weakRefDeref.call(x);
         return true;
-      } catch (e) {
-      }
+      } catch (e) {}
       return false;
     }
     function isSet(x) {
@@ -1604,8 +1933,7 @@ var require_object_inspect = __commonJS({
           return true;
         }
         return x instanceof Set;
-      } catch (e) {
-      }
+      } catch (e) {}
       return false;
     }
     function isWeakSet(x) {
@@ -1620,8 +1948,7 @@ var require_object_inspect = __commonJS({
           return true;
         }
         return x instanceof WeakSet;
-      } catch (e) {
-      }
+      } catch (e) {}
       return false;
     }
     function isElement2(x) {
@@ -1631,15 +1958,25 @@ var require_object_inspect = __commonJS({
       if (typeof HTMLElement !== "undefined" && x instanceof HTMLElement) {
         return true;
       }
-      return typeof x.nodeName === "string" && typeof x.getAttribute === "function";
+      return (
+        typeof x.nodeName === "string" && typeof x.getAttribute === "function"
+      );
     }
     function inspectString(str, opts) {
       if (str.length > opts.maxStringLength) {
         var remaining = str.length - opts.maxStringLength;
-        var trailer = "... " + remaining + " more character" + (remaining > 1 ? "s" : "");
-        return inspectString($slice.call(str, 0, opts.maxStringLength), opts) + trailer;
+        var trailer =
+          "... " + remaining + " more character" + (remaining > 1 ? "s" : "");
+        return (
+          inspectString($slice.call(str, 0, opts.maxStringLength), opts) +
+          trailer
+        );
       }
-      var s = $replace.call($replace.call(str, /(['\\])/g, "\\$1"), /[\x00-\x1f]/g, lowbyte);
+      var s = $replace.call(
+        $replace.call(str, /(['\\])/g, "\\$1"),
+        /[\x00-\x1f]/g,
+        lowbyte,
+      );
       return wrapQuotes(s, "single", opts);
     }
     function lowbyte(c) {
@@ -1649,7 +1986,7 @@ var require_object_inspect = __commonJS({
         9: "t",
         10: "n",
         12: "f",
-        13: "r"
+        13: "r",
       }[n];
       if (x) {
         return "\\" + x;
@@ -1663,7 +2000,9 @@ var require_object_inspect = __commonJS({
       return type + " { ? }";
     }
     function collectionOf(type, size, entries, indent) {
-      var joinedEntries = indent ? indentedJoin(entries, indent) : $join.call(entries, ", ");
+      var joinedEntries = indent
+        ? indentedJoin(entries, indent)
+        : $join.call(entries, ", ");
       return type + " (" + size + ") {" + joinedEntries + "}";
     }
     function singleLineValues(xs) {
@@ -1685,7 +2024,7 @@ var require_object_inspect = __commonJS({
       }
       return {
         base: baseIndent,
-        prev: $join.call(Array(depth + 1), baseIndent)
+        prev: $join.call(Array(depth + 1), baseIndent),
       };
     }
     function indentedJoin(xs, indent) {
@@ -1730,13 +2069,15 @@ var require_object_inspect = __commonJS({
       if (typeof gOPS === "function") {
         for (var j = 0; j < syms.length; j++) {
           if (isEnumerable.call(obj, syms[j])) {
-            xs.push("[" + inspect(syms[j]) + "]: " + inspect(obj[syms[j]], obj));
+            xs.push(
+              "[" + inspect(syms[j]) + "]: " + inspect(obj[syms[j]], obj),
+            );
           }
         }
       }
       return xs;
     }
-  }
+  },
 });
 
 // node_modules/side-channel/index.js
@@ -1755,38 +2096,38 @@ var require_side_channel = __commonJS({
     var $mapGet = callBound("Map.prototype.get", true);
     var $mapSet = callBound("Map.prototype.set", true);
     var $mapHas = callBound("Map.prototype.has", true);
-    var listGetNode = function(list, key) {
+    var listGetNode = function (list, key) {
       var prev = list;
       var curr;
       for (; (curr = prev.next) !== null; prev = curr) {
         if (curr.key === key) {
           prev.next = curr.next;
-          curr.next = /** @type {NonNullable<typeof list.next>} */
-          list.next;
+          curr.next = /** @type {NonNullable<typeof list.next>} */ list.next;
           list.next = curr;
           return curr;
         }
       }
     };
-    var listGet = function(objects, key) {
+    var listGet = function (objects, key) {
       var node = listGetNode(objects, key);
       return node && node.value;
     };
-    var listSet = function(objects, key, value) {
+    var listSet = function (objects, key, value) {
       var node = listGetNode(objects, key);
       if (node) {
         node.value = value;
       } else {
-        objects.next = /** @type {import('.').ListNode<typeof value>} */
-        {
-          // eslint-disable-line no-param-reassign, no-extra-parens
-          key,
-          next: objects.next,
-          value
-        };
+        objects.next =
+          /** @type {import('.').ListNode<typeof value>} */
+          {
+            // eslint-disable-line no-param-reassign, no-extra-parens
+            key,
+            next: objects.next,
+            value,
+          };
       }
     };
-    var listHas = function(objects, key) {
+    var listHas = function (objects, key) {
       return !!listGetNode(objects, key);
     };
     module2.exports = function getSideChannel() {
@@ -1794,13 +2135,19 @@ var require_side_channel = __commonJS({
       var $m;
       var $o;
       var channel = {
-        assert: function(key) {
+        assert: function (key) {
           if (!channel.has(key)) {
-            throw new $TypeError("Side channel does not contain " + inspect(key));
+            throw new $TypeError(
+              "Side channel does not contain " + inspect(key),
+            );
           }
         },
-        get: function(key) {
-          if ($WeakMap && key && (typeof key === "object" || typeof key === "function")) {
+        get: function (key) {
+          if (
+            $WeakMap &&
+            key &&
+            (typeof key === "object" || typeof key === "function")
+          ) {
             if ($wm) {
               return $weakMapGet($wm, key);
             }
@@ -1814,8 +2161,12 @@ var require_side_channel = __commonJS({
             }
           }
         },
-        has: function(key) {
-          if ($WeakMap && key && (typeof key === "object" || typeof key === "function")) {
+        has: function (key) {
+          if (
+            $WeakMap &&
+            key &&
+            (typeof key === "object" || typeof key === "function")
+          ) {
             if ($wm) {
               return $weakMapHas($wm, key);
             }
@@ -1830,8 +2181,12 @@ var require_side_channel = __commonJS({
           }
           return false;
         },
-        set: function(key, value) {
-          if ($WeakMap && key && (typeof key === "object" || typeof key === "function")) {
+        set: function (key, value) {
+          if (
+            $WeakMap &&
+            key &&
+            (typeof key === "object" || typeof key === "function")
+          ) {
             if (!$wm) {
               $wm = new $WeakMap();
             }
@@ -1847,11 +2202,11 @@ var require_side_channel = __commonJS({
             }
             listSet($o, key, value);
           }
-        }
+        },
       };
       return channel;
     };
-  }
+  },
 });
 
 // node_modules/internal-slot/index.js
@@ -1862,8 +2217,8 @@ var require_internal_slot = __commonJS({
     var channel = require_side_channel()();
     var $TypeError = require_type();
     var SLOT = {
-      assert: function(O, slot) {
-        if (!O || typeof O !== "object" && typeof O !== "function") {
+      assert: function (O, slot) {
+        if (!O || (typeof O !== "object" && typeof O !== "function")) {
           throw new $TypeError("`O` is not an object");
         }
         if (typeof slot !== "string") {
@@ -1874,8 +2229,8 @@ var require_internal_slot = __commonJS({
           throw new $TypeError("`" + slot + "` is not present on `O`");
         }
       },
-      get: function(O, slot) {
-        if (!O || typeof O !== "object" && typeof O !== "function") {
+      get: function (O, slot) {
+        if (!O || (typeof O !== "object" && typeof O !== "function")) {
           throw new $TypeError("`O` is not an object");
         }
         if (typeof slot !== "string") {
@@ -1884,8 +2239,8 @@ var require_internal_slot = __commonJS({
         var slots = channel.get(O);
         return slots && slots["$" + slot];
       },
-      has: function(O, slot) {
-        if (!O || typeof O !== "object" && typeof O !== "function") {
+      has: function (O, slot) {
+        if (!O || (typeof O !== "object" && typeof O !== "function")) {
           throw new $TypeError("`O` is not an object");
         }
         if (typeof slot !== "string") {
@@ -1894,8 +2249,8 @@ var require_internal_slot = __commonJS({
         var slots = channel.get(O);
         return !!slots && hasOwn(slots, "$" + slot);
       },
-      set: function(O, slot, V) {
-        if (!O || typeof O !== "object" && typeof O !== "function") {
+      set: function (O, slot, V) {
+        if (!O || (typeof O !== "object" && typeof O !== "function")) {
           throw new $TypeError("`O` is not an object");
         }
         if (typeof slot !== "string") {
@@ -1907,13 +2262,13 @@ var require_internal_slot = __commonJS({
           channel.set(O, slots);
         }
         slots["$" + slot] = V;
-      }
+      },
     };
     if (Object.freeze) {
       Object.freeze(SLOT);
     }
     module2.exports = SLOT;
-  }
+  },
 });
 
 // node_modules/has-tostringtag/shams.js
@@ -1924,7 +2279,7 @@ var require_shams2 = __commonJS({
     module2.exports = function hasToStringTagShams() {
       return hasSymbols() && !!Symbol.toStringTag;
     };
-  }
+  },
 });
 
 // node_modules/es-set-tostringtag/index.js
@@ -1937,21 +2292,22 @@ var require_es_set_tostringtag = __commonJS({
     var hasOwn = require_hasown();
     var toStringTag = hasToStringTag ? Symbol.toStringTag : null;
     module2.exports = function setToStringTag(object2, value) {
-      var overrideIfSet = arguments.length > 2 && arguments[2] && arguments[2].force;
+      var overrideIfSet =
+        arguments.length > 2 && arguments[2] && arguments[2].force;
       if (toStringTag && (overrideIfSet || !hasOwn(object2, toStringTag))) {
         if ($defineProperty) {
           $defineProperty(object2, toStringTag, {
             configurable: true,
             enumerable: false,
             value,
-            writable: false
+            writable: false,
           });
         } else {
           object2[toStringTag] = value;
         }
       }
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/IsArray.js
@@ -1960,11 +2316,14 @@ var require_IsArray = __commonJS({
     "use strict";
     var GetIntrinsic = require_get_intrinsic();
     var $Array = GetIntrinsic("%Array%");
-    var toStr = !$Array.isArray && require_callBound()("Object.prototype.toString");
-    module2.exports = $Array.isArray || function IsArray(argument) {
-      return toStr(argument) === "[object Array]";
-    };
-  }
+    var toStr =
+      !$Array.isArray && require_callBound()("Object.prototype.toString");
+    module2.exports =
+      $Array.isArray ||
+      function IsArray(argument) {
+        return toStr(argument) === "[object Array]";
+      };
+  },
 });
 
 // node_modules/es-abstract/2023/IsArray.js
@@ -1972,7 +2331,7 @@ var require_IsArray2 = __commonJS({
   "node_modules/es-abstract/2023/IsArray.js"(exports, module2) {
     "use strict";
     module2.exports = require_IsArray();
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/forEach.js
@@ -1984,7 +2343,7 @@ var require_forEach = __commonJS({
         callback(array[i], i, array);
       }
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/OrdinaryObjectCreate.js
@@ -2002,11 +2361,16 @@ var require_OrdinaryObjectCreate = __commonJS({
     var hasProto = require_has_proto()();
     module2.exports = function OrdinaryObjectCreate(proto) {
       if (proto !== null && Type(proto) !== "Object") {
-        throw new $TypeError("Assertion failed: `proto` must be null or an object");
+        throw new $TypeError(
+          "Assertion failed: `proto` must be null or an object",
+        );
       }
-      var additionalInternalSlotsList = arguments.length < 2 ? [] : arguments[1];
+      var additionalInternalSlotsList =
+        arguments.length < 2 ? [] : arguments[1];
       if (!IsArray(additionalInternalSlotsList)) {
-        throw new $TypeError("Assertion failed: `additionalInternalSlotsList` must be an Array");
+        throw new $TypeError(
+          "Assertion failed: `additionalInternalSlotsList` must be an Array",
+        );
       }
       var O;
       if ($ObjectCreate) {
@@ -2015,21 +2379,22 @@ var require_OrdinaryObjectCreate = __commonJS({
         O = { __proto__: proto };
       } else {
         if (proto === null) {
-          throw new $SyntaxError("native Object.create support is required to create null objects");
+          throw new $SyntaxError(
+            "native Object.create support is required to create null objects",
+          );
         }
-        var T = function T2() {
-        };
+        var T = function T2() {};
         T.prototype = proto;
         O = new T();
       }
       if (additionalInternalSlotsList.length > 0) {
-        forEach(additionalInternalSlotsList, function(slot) {
+        forEach(additionalInternalSlotsList, function (slot) {
           SLOT.set(O, slot, void 0);
         });
       }
       return O;
     };
-  }
+  },
 });
 
 // node_modules/es-object-atoms/RequireObjectCoercible.js
@@ -2039,11 +2404,14 @@ var require_RequireObjectCoercible = __commonJS({
     var $TypeError = require_type();
     module2.exports = function RequireObjectCoercible(value) {
       if (value == null) {
-        throw new $TypeError(arguments.length > 0 && arguments[1] || "Cannot call method on " + value);
+        throw new $TypeError(
+          (arguments.length > 0 && arguments[1]) ||
+            "Cannot call method on " + value,
+        );
       }
       return value;
     };
-  }
+  },
 });
 
 // node_modules/object.entries/implementation.js
@@ -2064,7 +2432,7 @@ var require_implementation3 = __commonJS({
       }
       return entrys;
     };
-  }
+  },
 });
 
 // node_modules/object.entries/polyfill.js
@@ -2073,9 +2441,11 @@ var require_polyfill = __commonJS({
     "use strict";
     var implementation = require_implementation3();
     module2.exports = function getPolyfill() {
-      return typeof Object.entries === "function" ? Object.entries : implementation;
+      return typeof Object.entries === "function"
+        ? Object.entries
+        : implementation;
     };
-  }
+  },
 });
 
 // node_modules/object.entries/shim.js
@@ -2086,14 +2456,18 @@ var require_shim = __commonJS({
     var define = require_define_properties();
     module2.exports = function shimEntries() {
       var polyfill = getPolyfill();
-      define(Object, { entries: polyfill }, {
-        entries: function testEntries() {
-          return Object.entries !== polyfill;
-        }
-      });
+      define(
+        Object,
+        { entries: polyfill },
+        {
+          entries: function testEntries() {
+            return Object.entries !== polyfill;
+          },
+        },
+      );
       return polyfill;
     };
-  }
+  },
 });
 
 // node_modules/object.entries/index.js
@@ -2109,10 +2483,10 @@ var require_object = __commonJS({
     define(polyfill, {
       getPolyfill,
       implementation,
-      shim
+      shim,
     });
     module2.exports = polyfill;
-  }
+  },
 });
 
 // node_modules/is-callable/index.js
@@ -2120,20 +2494,28 @@ var require_is_callable = __commonJS({
   "node_modules/is-callable/index.js"(exports, module2) {
     "use strict";
     var fnToStr = Function.prototype.toString;
-    var reflectApply = typeof Reflect === "object" && Reflect !== null && Reflect.apply;
+    var reflectApply =
+      typeof Reflect === "object" && Reflect !== null && Reflect.apply;
     var badArrayLike;
     var isCallableMarker;
-    if (typeof reflectApply === "function" && typeof Object.defineProperty === "function") {
+    if (
+      typeof reflectApply === "function" &&
+      typeof Object.defineProperty === "function"
+    ) {
       try {
         badArrayLike = Object.defineProperty({}, "length", {
-          get: function() {
+          get: function () {
             throw isCallableMarker;
-          }
+          },
         });
         isCallableMarker = {};
-        reflectApply(function() {
-          throw 42;
-        }, null, badArrayLike);
+        reflectApply(
+          function () {
+            throw 42;
+          },
+          null,
+          badArrayLike,
+        );
       } catch (_) {
         if (_ !== isCallableMarker) {
           reflectApply = null;
@@ -2178,59 +2560,73 @@ var require_is_callable = __commonJS({
       all = document.all;
       if (toStr.call(all) === toStr.call(document.all)) {
         isDDA = function isDocumentDotAll(value) {
-          if ((isIE68 || !value) && (typeof value === "undefined" || typeof value === "object")) {
+          if (
+            (isIE68 || !value) &&
+            (typeof value === "undefined" || typeof value === "object")
+          ) {
             try {
               var str = toStr.call(value);
-              return (str === ddaClass || str === ddaClass2 || str === ddaClass3 || str === objectClass) && value("") == null;
-            } catch (e) {
-            }
+              return (
+                (str === ddaClass ||
+                  str === ddaClass2 ||
+                  str === ddaClass3 ||
+                  str === objectClass) &&
+                value("") == null
+              );
+            } catch (e) {}
           }
           return false;
         };
       }
     }
     var all;
-    module2.exports = reflectApply ? function isCallable(value) {
-      if (isDDA(value)) {
-        return true;
-      }
-      if (!value) {
-        return false;
-      }
-      if (typeof value !== "function" && typeof value !== "object") {
-        return false;
-      }
-      try {
-        reflectApply(value, null, badArrayLike);
-      } catch (e) {
-        if (e !== isCallableMarker) {
-          return false;
+    module2.exports = reflectApply
+      ? function isCallable(value) {
+          if (isDDA(value)) {
+            return true;
+          }
+          if (!value) {
+            return false;
+          }
+          if (typeof value !== "function" && typeof value !== "object") {
+            return false;
+          }
+          try {
+            reflectApply(value, null, badArrayLike);
+          } catch (e) {
+            if (e !== isCallableMarker) {
+              return false;
+            }
+          }
+          return !isES6ClassFn(value) && tryFunctionObject(value);
         }
-      }
-      return !isES6ClassFn(value) && tryFunctionObject(value);
-    } : function isCallable(value) {
-      if (isDDA(value)) {
-        return true;
-      }
-      if (!value) {
-        return false;
-      }
-      if (typeof value !== "function" && typeof value !== "object") {
-        return false;
-      }
-      if (hasToStringTag) {
-        return tryFunctionObject(value);
-      }
-      if (isES6ClassFn(value)) {
-        return false;
-      }
-      var strClass = toStr.call(value);
-      if (strClass !== fnClass && strClass !== genClass && !/^\[object HTML/.test(strClass)) {
-        return false;
-      }
-      return tryFunctionObject(value);
-    };
-  }
+      : function isCallable(value) {
+          if (isDDA(value)) {
+            return true;
+          }
+          if (!value) {
+            return false;
+          }
+          if (typeof value !== "function" && typeof value !== "object") {
+            return false;
+          }
+          if (hasToStringTag) {
+            return tryFunctionObject(value);
+          }
+          if (isES6ClassFn(value)) {
+            return false;
+          }
+          var strClass = toStr.call(value);
+          if (
+            strClass !== fnClass &&
+            strClass !== genClass &&
+            !/^\[object HTML/.test(strClass)
+          ) {
+            return false;
+          }
+          return tryFunctionObject(value);
+        };
+  },
 });
 
 // node_modules/for-each/index.js
@@ -2288,12 +2684,15 @@ var require_for_each = __commonJS({
       }
     };
     module2.exports = forEach;
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/records/property-descriptor.js
 var require_property_descriptor = __commonJS({
-  "node_modules/es-abstract/helpers/records/property-descriptor.js"(exports, module2) {
+  "node_modules/es-abstract/helpers/records/property-descriptor.js"(
+    exports,
+    module2,
+  ) {
     "use strict";
     var $TypeError = require_type();
     var hasOwn = require_hasown();
@@ -2304,7 +2703,7 @@ var require_property_descriptor = __commonJS({
       "[[Get]]": true,
       "[[Set]]": true,
       "[[Value]]": true,
-      "[[Writable]]": true
+      "[[Writable]]": true,
     };
     module2.exports = function isPropertyDescriptor(Desc) {
       if (!Desc || typeof Desc !== "object") {
@@ -2318,11 +2717,13 @@ var require_property_descriptor = __commonJS({
       var isData = hasOwn(Desc, "[[Value]]") || hasOwn(Desc, "[[Writable]]");
       var IsAccessor = hasOwn(Desc, "[[Get]]") || hasOwn(Desc, "[[Set]]");
       if (isData && IsAccessor) {
-        throw new $TypeError("Property Descriptors may not be both accessor and data descriptors");
+        throw new $TypeError(
+          "Property Descriptors may not be both accessor and data descriptors",
+        );
       }
       return true;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/DefineOwnProperty.js
@@ -2331,11 +2732,19 @@ var require_DefineOwnProperty = __commonJS({
     "use strict";
     var hasPropertyDescriptors = require_has_property_descriptors();
     var $defineProperty = require_es_define_property();
-    var hasArrayLengthDefineBug = hasPropertyDescriptors.hasArrayLengthDefineBug();
+    var hasArrayLengthDefineBug =
+      hasPropertyDescriptors.hasArrayLengthDefineBug();
     var isArray = hasArrayLengthDefineBug && require_IsArray();
     var callBound = require_callBound();
     var $isEnumerable = callBound("Object.prototype.propertyIsEnumerable");
-    module2.exports = function DefineOwnProperty(IsDataDescriptor, SameValue, FromPropertyDescriptor, O, P, desc) {
+    module2.exports = function DefineOwnProperty(
+      IsDataDescriptor,
+      SameValue,
+      FromPropertyDescriptor,
+      O,
+      P,
+      desc,
+    ) {
       if (!$defineProperty) {
         if (!IsDataDescriptor(desc)) {
           return false;
@@ -2350,19 +2759,28 @@ var require_DefineOwnProperty = __commonJS({
         O[P] = V;
         return SameValue(O[P], V);
       }
-      if (hasArrayLengthDefineBug && P === "length" && "[[Value]]" in desc && isArray(O) && O.length !== desc["[[Value]]"]) {
+      if (
+        hasArrayLengthDefineBug &&
+        P === "length" &&
+        "[[Value]]" in desc &&
+        isArray(O) &&
+        O.length !== desc["[[Value]]"]
+      ) {
         O.length = desc["[[Value]]"];
         return O.length === desc["[[Value]]"];
       }
       $defineProperty(O, P, FromPropertyDescriptor(desc));
       return true;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/fromPropertyDescriptor.js
 var require_fromPropertyDescriptor = __commonJS({
-  "node_modules/es-abstract/helpers/fromPropertyDescriptor.js"(exports, module2) {
+  "node_modules/es-abstract/helpers/fromPropertyDescriptor.js"(
+    exports,
+    module2,
+  ) {
     "use strict";
     module2.exports = function fromPropertyDescriptor(Desc) {
       if (typeof Desc === "undefined") {
@@ -2389,7 +2807,7 @@ var require_fromPropertyDescriptor = __commonJS({
       }
       return obj;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/FromPropertyDescriptor.js
@@ -2401,11 +2819,13 @@ var require_FromPropertyDescriptor = __commonJS({
     var fromPropertyDescriptor = require_fromPropertyDescriptor();
     module2.exports = function FromPropertyDescriptor(Desc) {
       if (typeof Desc !== "undefined" && !isPropertyDescriptor(Desc)) {
-        throw new $TypeError("Assertion failed: `Desc` must be a Property Descriptor");
+        throw new $TypeError(
+          "Assertion failed: `Desc` must be a Property Descriptor",
+        );
       }
       return fromPropertyDescriptor(Desc);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/IsDataDescriptor.js
@@ -2420,14 +2840,16 @@ var require_IsDataDescriptor = __commonJS({
         return false;
       }
       if (!isPropertyDescriptor(Desc)) {
-        throw new $TypeError("Assertion failed: `Desc` must be a Property Descriptor");
+        throw new $TypeError(
+          "Assertion failed: `Desc` must be a Property Descriptor",
+        );
       }
       if (!hasOwn(Desc, "[[Value]]") && !hasOwn(Desc, "[[Writable]]")) {
         return false;
       }
       return true;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/IsPropertyKey.js
@@ -2437,17 +2859,19 @@ var require_IsPropertyKey = __commonJS({
     module2.exports = function IsPropertyKey(argument) {
       return typeof argument === "string" || typeof argument === "symbol";
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/isNaN.js
 var require_isNaN = __commonJS({
   "node_modules/es-abstract/helpers/isNaN.js"(exports, module2) {
     "use strict";
-    module2.exports = Number.isNaN || function isNaN2(a) {
-      return a !== a;
-    };
-  }
+    module2.exports =
+      Number.isNaN ||
+      function isNaN2(a) {
+        return a !== a;
+      };
+  },
 });
 
 // node_modules/es-abstract/2023/SameValue.js
@@ -2464,7 +2888,7 @@ var require_SameValue = __commonJS({
       }
       return $isNaN(x) && $isNaN(y);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/ToBoolean.js
@@ -2474,7 +2898,7 @@ var require_ToBoolean = __commonJS({
     module2.exports = function ToBoolean(value) {
       return !!value;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/IsCallable.js
@@ -2482,7 +2906,7 @@ var require_IsCallable = __commonJS({
   "node_modules/es-abstract/2023/IsCallable.js"(exports, module2) {
     "use strict";
     module2.exports = require_is_callable();
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/ToPropertyDescriptor.js
@@ -2525,12 +2949,17 @@ var require_ToPropertyDescriptor = __commonJS({
         }
         desc["[[Set]]"] = setter;
       }
-      if ((hasOwn(desc, "[[Get]]") || hasOwn(desc, "[[Set]]")) && (hasOwn(desc, "[[Value]]") || hasOwn(desc, "[[Writable]]"))) {
-        throw new $TypeError("Invalid property descriptor. Cannot both specify accessors and a value or writable attribute");
+      if (
+        (hasOwn(desc, "[[Get]]") || hasOwn(desc, "[[Set]]")) &&
+        (hasOwn(desc, "[[Value]]") || hasOwn(desc, "[[Writable]]"))
+      ) {
+        throw new $TypeError(
+          "Invalid property descriptor. Cannot both specify accessors and a value or writable attribute",
+        );
       }
       return desc;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/DefinePropertyOrThrow.js
@@ -2555,7 +2984,9 @@ var require_DefinePropertyOrThrow = __commonJS({
       }
       var Desc = isPropertyDescriptor(desc) ? desc : ToPropertyDescriptor(desc);
       if (!isPropertyDescriptor(Desc)) {
-        throw new $TypeError("Assertion failed: Desc is not a valid Property Descriptor");
+        throw new $TypeError(
+          "Assertion failed: Desc is not a valid Property Descriptor",
+        );
       }
       return DefineOwnProperty(
         IsDataDescriptor,
@@ -2563,10 +2994,10 @@ var require_DefinePropertyOrThrow = __commonJS({
         FromPropertyDescriptor,
         O,
         P,
-        Desc
+        Desc,
       );
     };
-  }
+  },
 });
 
 // node_modules/es-set/lib/helpers.js
@@ -2583,7 +3014,7 @@ var require_helpers = __commonJS({
     var Type = require_Type2();
     var $ObjectCreate = GetIntrinsic("%Object.create%", true);
     var hasProto = !({ __proto__: null } instanceof Object);
-    exports.emptyObject = function() {
+    exports.emptyObject = function () {
       if ($ObjectCreate) {
         return $ObjectCreate(null);
       }
@@ -2592,41 +3023,53 @@ var require_helpers = __commonJS({
       }
       return {};
     };
-    exports.emulateES6construct = function(o, defaultNewTarget, defaultProto, slots) {
+    exports.emulateES6construct = function (
+      o,
+      defaultNewTarget,
+      defaultProto,
+      slots,
+    ) {
       if (Type(o) !== "Object") {
-        throw new TypeError("Constructor requires `new`: " + defaultNewTarget.name);
+        throw new TypeError(
+          "Constructor requires `new`: " + defaultNewTarget.name,
+        );
       }
       var proto = defaultNewTarget.prototype;
       if (Type(proto) !== "Object") {
         proto = defaultProto;
       }
       var obj = OrdinaryObjectCreate(proto);
-      forEach(entries(slots), function(entry) {
+      forEach(entries(slots), function (entry) {
         var key = entry[0];
         var value = entry[1];
         SLOT.set(obj, key, value);
       });
       return obj;
     };
-    var $iterator$ = hasSymbols && Type(Symbol.iterator) === "Symbol" ? Symbol.iterator : "_es6-shim iterator_";
+    var $iterator$ =
+      hasSymbols && Type(Symbol.iterator) === "Symbol"
+        ? Symbol.iterator
+        : "_es6-shim iterator_";
     if (typeof []["@@iterator"] === "function") {
       $iterator$ = "@@iterator";
     }
-    exports.addIterator = function(prototype, impl) {
-      var implementation = impl || function iterator() {
-        return this;
-      };
+    exports.addIterator = function (prototype, impl) {
+      var implementation =
+        impl ||
+        function iterator() {
+          return this;
+        };
       DefinePropertyOrThrow(prototype, $iterator$, {
         "[[Configurable]]": true,
         "[[Enumerable]]": false,
         "[[Value]]": implementation,
-        "[[Writable]]": true
+        "[[Writable]]": true,
       });
       if (!prototype[$iterator$] && Type($iterator$) === "Symbol") {
         prototype[$iterator$] = implementation;
       }
     };
-  }
+  },
 });
 
 // node_modules/es-set/lib/set-iterator.js
@@ -2654,11 +3097,11 @@ var require_set_iterator = __commonJS({
           throw new TypeError("Not a SetIterator");
         }
         return SLOT.get(this, "[[it]]").next();
-      }
+      },
     });
     setToStringTag(SetIterator.prototype, "Set Iterator");
     module2.exports = SetIterator;
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/Call.js
@@ -2669,15 +3112,19 @@ var require_Call = __commonJS({
     var callBound = require_callBound();
     var $TypeError = require_type();
     var IsArray = require_IsArray2();
-    var $apply = GetIntrinsic("%Reflect.apply%", true) || callBound("Function.prototype.apply");
+    var $apply =
+      GetIntrinsic("%Reflect.apply%", true) ||
+      callBound("Function.prototype.apply");
     module2.exports = function Call(F, V) {
       var argumentsList = arguments.length > 2 ? arguments[2] : [];
       if (!IsArray(argumentsList)) {
-        throw new $TypeError("Assertion failed: optional `argumentsList`, if provided, must be a List");
+        throw new $TypeError(
+          "Assertion failed: optional `argumentsList`, if provided, must be a List",
+        );
       }
       return $apply(F, V, argumentsList);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/isLeadingSurrogate.js
@@ -2685,9 +3132,11 @@ var require_isLeadingSurrogate = __commonJS({
   "node_modules/es-abstract/helpers/isLeadingSurrogate.js"(exports, module2) {
     "use strict";
     module2.exports = function isLeadingSurrogate(charCode) {
-      return typeof charCode === "number" && charCode >= 55296 && charCode <= 56319;
+      return (
+        typeof charCode === "number" && charCode >= 55296 && charCode <= 56319
+      );
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/isTrailingSurrogate.js
@@ -2695,14 +3144,19 @@ var require_isTrailingSurrogate = __commonJS({
   "node_modules/es-abstract/helpers/isTrailingSurrogate.js"(exports, module2) {
     "use strict";
     module2.exports = function isTrailingSurrogate(charCode) {
-      return typeof charCode === "number" && charCode >= 56320 && charCode <= 57343;
+      return (
+        typeof charCode === "number" && charCode >= 56320 && charCode <= 57343
+      );
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/UTF16SurrogatePairToCodePoint.js
 var require_UTF16SurrogatePairToCodePoint = __commonJS({
-  "node_modules/es-abstract/2023/UTF16SurrogatePairToCodePoint.js"(exports, module2) {
+  "node_modules/es-abstract/2023/UTF16SurrogatePairToCodePoint.js"(
+    exports,
+    module2,
+  ) {
     "use strict";
     var GetIntrinsic = require_get_intrinsic();
     var $TypeError = require_type();
@@ -2711,11 +3165,13 @@ var require_UTF16SurrogatePairToCodePoint = __commonJS({
     var isTrailingSurrogate = require_isTrailingSurrogate();
     module2.exports = function UTF16SurrogatePairToCodePoint(lead, trail) {
       if (!isLeadingSurrogate(lead) || !isTrailingSurrogate(trail)) {
-        throw new $TypeError("Assertion failed: `lead` must be a leading surrogate char code, and `trail` must be a trailing surrogate char code");
+        throw new $TypeError(
+          "Assertion failed: `lead` must be a leading surrogate char code, and `trail` must be a trailing surrogate char code",
+        );
       }
       return $fromCharCode(lead) + $fromCharCode(trail);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/CodePointAt.js
@@ -2735,7 +3191,9 @@ var require_CodePointAt = __commonJS({
       }
       var size = string2.length;
       if (position < 0 || position >= size) {
-        throw new $TypeError("Assertion failed: `position` must be >= 0, and < the length of `string`");
+        throw new $TypeError(
+          "Assertion failed: `position` must be >= 0, and < the length of `string`",
+        );
       }
       var first = $charCodeAt(string2, position);
       var cp = $charAt(string2, position);
@@ -2745,14 +3203,14 @@ var require_CodePointAt = __commonJS({
         return {
           "[[CodePoint]]": cp,
           "[[CodeUnitCount]]": 1,
-          "[[IsUnpairedSurrogate]]": false
+          "[[IsUnpairedSurrogate]]": false,
         };
       }
       if (firstIsTrailing || position + 1 === size) {
         return {
           "[[CodePoint]]": cp,
           "[[CodeUnitCount]]": 1,
-          "[[IsUnpairedSurrogate]]": true
+          "[[IsUnpairedSurrogate]]": true,
         };
       }
       var second = $charCodeAt(string2, position + 1);
@@ -2760,16 +3218,16 @@ var require_CodePointAt = __commonJS({
         return {
           "[[CodePoint]]": cp,
           "[[CodeUnitCount]]": 1,
-          "[[IsUnpairedSurrogate]]": true
+          "[[IsUnpairedSurrogate]]": true,
         };
       }
       return {
         "[[CodePoint]]": UTF16SurrogatePairToCodePoint(first, second),
         "[[CodeUnitCount]]": 2,
-        "[[IsUnpairedSurrogate]]": false
+        "[[IsUnpairedSurrogate]]": false,
       };
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/isFinite.js
@@ -2777,10 +3235,15 @@ var require_isFinite = __commonJS({
   "node_modules/es-abstract/helpers/isFinite.js"(exports, module2) {
     "use strict";
     var $isNaN = require_isNaN();
-    module2.exports = function(x) {
-      return (typeof x === "number" || typeof x === "bigint") && !$isNaN(x) && x !== Infinity && x !== -Infinity;
+    module2.exports = function (x) {
+      return (
+        (typeof x === "number" || typeof x === "bigint") &&
+        !$isNaN(x) &&
+        x !== Infinity &&
+        x !== -Infinity
+      );
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/isInteger.js
@@ -2793,13 +3256,17 @@ var require_isInteger = __commonJS({
     var $isNaN = require_isNaN();
     var $isFinite = require_isFinite();
     module2.exports = function isInteger(argument) {
-      if (typeof argument !== "number" || $isNaN(argument) || !$isFinite(argument)) {
+      if (
+        typeof argument !== "number" ||
+        $isNaN(argument) ||
+        !$isFinite(argument)
+      ) {
         return false;
       }
       var absValue = $abs(argument);
       return $floor(absValue) === absValue;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/maxSafeInteger.js
@@ -2807,7 +3274,7 @@ var require_maxSafeInteger = __commonJS({
   "node_modules/es-abstract/helpers/maxSafeInteger.js"(exports, module2) {
     "use strict";
     module2.exports = Number.MAX_SAFE_INTEGER || 9007199254740991;
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/AdvanceStringIndex.js
@@ -2823,7 +3290,9 @@ var require_AdvanceStringIndex = __commonJS({
         throw new $TypeError("Assertion failed: `S` must be a String");
       }
       if (!isInteger(index) || index < 0 || index > MAX_SAFE_INTEGER) {
-        throw new $TypeError("Assertion failed: `length` must be an integer >= 0 and <= 2**53");
+        throw new $TypeError(
+          "Assertion failed: `length` must be an integer >= 0 and <= 2**53",
+        );
       }
       if (typeof unicode !== "boolean") {
         throw new $TypeError("Assertion failed: `unicode` must be a Boolean");
@@ -2838,7 +3307,7 @@ var require_AdvanceStringIndex = __commonJS({
       var cp = CodePointAt(S, index);
       return index + cp["[[CodeUnitCount]]"];
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/CreateIterResultObject.js
@@ -2852,10 +3321,10 @@ var require_CreateIterResultObject = __commonJS({
       }
       return {
         value,
-        done
+        done,
       };
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/Get.js
@@ -2871,11 +3340,13 @@ var require_Get = __commonJS({
         throw new $TypeError("Assertion failed: Type(O) is not Object");
       }
       if (!IsPropertyKey(P)) {
-        throw new $TypeError("Assertion failed: IsPropertyKey(P) is not true, got " + inspect(P));
+        throw new $TypeError(
+          "Assertion failed: IsPropertyKey(P) is not true, got " + inspect(P),
+        );
       }
       return O[P];
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/IteratorComplete.js
@@ -2888,11 +3359,13 @@ var require_IteratorComplete = __commonJS({
     var Type = require_Type2();
     module2.exports = function IteratorComplete(iterResult) {
       if (Type(iterResult) !== "Object") {
-        throw new $TypeError("Assertion failed: Type(iterResult) is not Object");
+        throw new $TypeError(
+          "Assertion failed: Type(iterResult) is not Object",
+        );
       }
       return ToBoolean(Get(iterResult, "done"));
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/IteratorValue.js
@@ -2904,11 +3377,13 @@ var require_IteratorValue = __commonJS({
     var Type = require_Type2();
     module2.exports = function IteratorValue(iterResult) {
       if (Type(iterResult) !== "Object") {
-        throw new $TypeError("Assertion failed: Type(iterResult) is not Object");
+        throw new $TypeError(
+          "Assertion failed: Type(iterResult) is not Object",
+        );
       }
       return Get(iterResult, "value");
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/PromiseResolve.js
@@ -2926,12 +3401,15 @@ var require_PromiseResolve = __commonJS({
       }
       return $PromiseResolve(C, x);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/AsyncFromSyncIteratorContinuation.js
 var require_AsyncFromSyncIteratorContinuation = __commonJS({
-  "node_modules/es-abstract/2023/AsyncFromSyncIteratorContinuation.js"(exports, module2) {
+  "node_modules/es-abstract/2023/AsyncFromSyncIteratorContinuation.js"(
+    exports,
+    module2,
+  ) {
     "use strict";
     var GetIntrinsic = require_get_intrinsic();
     var $SyntaxError = require_syntax();
@@ -2949,22 +3427,24 @@ var require_AsyncFromSyncIteratorContinuation = __commonJS({
         throw new $TypeError("Assertion failed: Type(O) is not Object");
       }
       if (arguments.length > 1) {
-        throw new $SyntaxError("although AsyncFromSyncIteratorContinuation should take a second argument, it is not used in this implementation");
+        throw new $SyntaxError(
+          "although AsyncFromSyncIteratorContinuation should take a second argument, it is not used in this implementation",
+        );
       }
       if (!$Promise) {
         throw new $SyntaxError("This environment does not support Promises.");
       }
-      return new $Promise(function(resolve) {
+      return new $Promise(function (resolve) {
         var done = IteratorComplete(result);
         var value = IteratorValue(result);
         var valueWrapper = PromiseResolve($Promise, value);
-        var onFulfilled = function(value2) {
+        var onFulfilled = function (value2) {
           return CreateIterResultObject(value2, done);
         };
         resolve($then(valueWrapper, onFulfilled));
       });
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/GetV.js
@@ -2976,11 +3456,13 @@ var require_GetV = __commonJS({
     var IsPropertyKey = require_IsPropertyKey();
     module2.exports = function GetV(V, P) {
       if (!IsPropertyKey(P)) {
-        throw new $TypeError("Assertion failed: IsPropertyKey(P) is not true, got " + inspect(P));
+        throw new $TypeError(
+          "Assertion failed: IsPropertyKey(P) is not true, got " + inspect(P),
+        );
       }
       return V[P];
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/GetMethod.js
@@ -3001,22 +3483,35 @@ var require_GetMethod = __commonJS({
         return void 0;
       }
       if (!IsCallable(func)) {
-        throw new $TypeError(inspect(P) + " is not a function: " + inspect(func));
+        throw new $TypeError(
+          inspect(P) + " is not a function: " + inspect(func),
+        );
       }
       return func;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/records/iterator-record.js
 var require_iterator_record = __commonJS({
-  "node_modules/es-abstract/helpers/records/iterator-record.js"(exports, module2) {
+  "node_modules/es-abstract/helpers/records/iterator-record.js"(
+    exports,
+    module2,
+  ) {
     "use strict";
     var hasOwn = require_hasown();
     module2.exports = function isIteratorRecord(value) {
-      return !!value && typeof value === "object" && hasOwn(value, "[[Iterator]]") && hasOwn(value, "[[NextMethod]]") && typeof value["[[NextMethod]]"] === "function" && hasOwn(value, "[[Done]]") && typeof value["[[Done]]"] === "boolean";
+      return (
+        !!value &&
+        typeof value === "object" &&
+        hasOwn(value, "[[Iterator]]") &&
+        hasOwn(value, "[[NextMethod]]") &&
+        typeof value["[[NextMethod]]"] === "function" &&
+        hasOwn(value, "[[Done]]") &&
+        typeof value["[[Done]]"] === "boolean"
+      );
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/IteratorNext.js
@@ -3029,31 +3524,44 @@ var require_IteratorNext = __commonJS({
     var isIteratorRecord = require_iterator_record();
     module2.exports = function IteratorNext(iteratorRecord) {
       if (!isIteratorRecord(iteratorRecord)) {
-        throw new $TypeError("Assertion failed: `iteratorRecord` must be an Iterator Record");
+        throw new $TypeError(
+          "Assertion failed: `iteratorRecord` must be an Iterator Record",
+        );
       }
       var result;
       if (arguments.length < 2) {
-        result = Call(iteratorRecord["[[NextMethod]]"], iteratorRecord["[[Iterator]]"]);
+        result = Call(
+          iteratorRecord["[[NextMethod]]"],
+          iteratorRecord["[[Iterator]]"],
+        );
       } else {
-        result = Call(iteratorRecord["[[NextMethod]]"], iteratorRecord["[[Iterator]]"], [arguments[1]]);
+        result = Call(
+          iteratorRecord["[[NextMethod]]"],
+          iteratorRecord["[[Iterator]]"],
+          [arguments[1]],
+        );
       }
       if (Type(result) !== "Object") {
         throw new $TypeError("iterator next must return an object");
       }
       return result;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/CreateAsyncFromSyncIterator.js
 var require_CreateAsyncFromSyncIterator = __commonJS({
-  "node_modules/es-abstract/2023/CreateAsyncFromSyncIterator.js"(exports, module2) {
+  "node_modules/es-abstract/2023/CreateAsyncFromSyncIterator.js"(
+    exports,
+    module2,
+  ) {
     "use strict";
     var GetIntrinsic = require_get_intrinsic();
     var $SyntaxError = require_syntax();
     var $TypeError = require_type();
     var $Promise = GetIntrinsic("%Promise%", true);
-    var AsyncFromSyncIteratorContinuation = require_AsyncFromSyncIteratorContinuation();
+    var AsyncFromSyncIteratorContinuation =
+      require_AsyncFromSyncIteratorContinuation();
     var Call = require_Call();
     var CreateIterResultObject = require_CreateIterResultObject();
     var Get = require_Get();
@@ -3063,7 +3571,10 @@ var require_CreateAsyncFromSyncIterator = __commonJS({
     var Type = require_Type2();
     var SLOT = require_internal_slot();
     var isIteratorRecord = require_iterator_record();
-    var $AsyncFromSyncIteratorPrototype = GetIntrinsic("%AsyncFromSyncIteratorPrototype%", true) || {
+    var $AsyncFromSyncIteratorPrototype = GetIntrinsic(
+      "%AsyncFromSyncIteratorPrototype%",
+      true,
+    ) || {
       next: function next(value) {
         if (!$Promise) {
           throw new $SyntaxError("This environment does not support Promises.");
@@ -3071,7 +3582,7 @@ var require_CreateAsyncFromSyncIterator = __commonJS({
         var O = this;
         SLOT.assert(O, "[[SyncIteratorRecord]]");
         var argsLength = arguments.length;
-        return new $Promise(function(resolve) {
+        return new $Promise(function (resolve) {
           var syncIteratorRecord = SLOT.get(O, "[[SyncIteratorRecord]]");
           var result;
           if (argsLength > 0) {
@@ -3082,7 +3593,7 @@ var require_CreateAsyncFromSyncIterator = __commonJS({
           resolve(AsyncFromSyncIteratorContinuation(result));
         });
       },
-      "return": function() {
+      return: function () {
         if (!$Promise) {
           throw new $SyntaxError("This environment does not support Promises.");
         }
@@ -3090,8 +3601,10 @@ var require_CreateAsyncFromSyncIterator = __commonJS({
         SLOT.assert(O, "[[SyncIteratorRecord]]");
         var valueIsPresent = arguments.length > 0;
         var value = valueIsPresent ? arguments[0] : void 0;
-        return new $Promise(function(resolve, reject) {
-          var syncIterator = SLOT.get(O, "[[SyncIteratorRecord]]")["[[Iterator]]"];
+        return new $Promise(function (resolve, reject) {
+          var syncIterator = SLOT.get(O, "[[SyncIteratorRecord]]")[
+            "[[Iterator]]"
+          ];
           var iteratorReturn = GetMethod(syncIterator, "return");
           if (typeof iteratorReturn === "undefined") {
             var iterResult = CreateIterResultObject(value, true);
@@ -3105,13 +3618,17 @@ var require_CreateAsyncFromSyncIterator = __commonJS({
             result = Call(iteratorReturn, syncIterator);
           }
           if (Type(result) !== "Object") {
-            Call(reject, void 0, [new $TypeError("Iterator `return` method returned a non-object value.")]);
+            Call(reject, void 0, [
+              new $TypeError(
+                "Iterator `return` method returned a non-object value.",
+              ),
+            ]);
             return;
           }
           resolve(AsyncFromSyncIteratorContinuation(result));
         });
       },
-      "throw": function() {
+      throw: function () {
         if (!$Promise) {
           throw new $SyntaxError("This environment does not support Promises.");
         }
@@ -3119,8 +3636,10 @@ var require_CreateAsyncFromSyncIterator = __commonJS({
         SLOT.assert(O, "[[SyncIteratorRecord]]");
         var valueIsPresent = arguments.length > 0;
         var value = valueIsPresent ? arguments[0] : void 0;
-        return new $Promise(function(resolve, reject) {
-          var syncIterator = SLOT.get(O, "[[SyncIteratorRecord]]")["[[Iterator]]"];
+        return new $Promise(function (resolve, reject) {
+          var syncIterator = SLOT.get(O, "[[SyncIteratorRecord]]")[
+            "[[Iterator]]"
+          ];
           var throwMethod = GetMethod(syncIterator, "throw");
           if (typeof throwMethod === "undefined") {
             Call(reject, void 0, [value]);
@@ -3133,19 +3652,27 @@ var require_CreateAsyncFromSyncIterator = __commonJS({
             result = Call(throwMethod, syncIterator);
           }
           if (Type(result) !== "Object") {
-            Call(reject, void 0, [new $TypeError("Iterator `throw` method returned a non-object value.")]);
+            Call(reject, void 0, [
+              new $TypeError(
+                "Iterator `throw` method returned a non-object value.",
+              ),
+            ]);
             return;
           }
-          resolve(AsyncFromSyncIteratorContinuation(
-            result
-            /* , promiseCapability */
-          ));
+          resolve(
+            AsyncFromSyncIteratorContinuation(
+              result,
+              /* , promiseCapability */
+            ),
+          );
         });
-      }
+      },
     };
     module2.exports = function CreateAsyncFromSyncIterator(syncIteratorRecord) {
       if (!isIteratorRecord(syncIteratorRecord)) {
-        throw new $TypeError("Assertion failed: `syncIteratorRecord` must be an Iterator Record");
+        throw new $TypeError(
+          "Assertion failed: `syncIteratorRecord` must be an Iterator Record",
+        );
       }
       var asyncIterator = OrdinaryObjectCreate($AsyncFromSyncIteratorPrototype);
       SLOT.set(asyncIterator, "[[SyncIteratorRecord]]", syncIteratorRecord);
@@ -3154,10 +3681,10 @@ var require_CreateAsyncFromSyncIterator = __commonJS({
         // steps 3-4
         "[[Iterator]]": asyncIterator,
         "[[NextMethod]]": nextMethod,
-        "[[Done]]": false
+        "[[Done]]": false,
       };
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/GetIteratorFromMethod.js
@@ -3182,10 +3709,10 @@ var require_GetIteratorFromMethod = __commonJS({
         // steps 4-5
         "[[Iterator]]": iterator,
         "[[NextMethod]]": nextMethod,
-        "[[Done]]": false
+        "[[Done]]": false,
       };
     };
-  }
+  },
 });
 
 // node_modules/is-string/index.js
@@ -3211,9 +3738,11 @@ var require_is_string = __commonJS({
       if (typeof value !== "object") {
         return false;
       }
-      return hasToStringTag ? tryStringObject(value) : toStr.call(value) === strClass;
+      return hasToStringTag
+        ? tryStringObject(value)
+        : toStr.call(value) === strClass;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/getIteratorMethod.js
@@ -3232,38 +3761,38 @@ var require_getIteratorMethod = __commonJS({
       if (hasSymbols) {
         usingIterator = ES.GetMethod(iterable, $iterator);
       } else if (ES.IsArray(iterable)) {
-        usingIterator = function() {
+        usingIterator = function () {
           var i = -1;
           var arr = this;
           return {
-            next: function() {
+            next: function () {
               i += 1;
               return {
                 done: i >= arr.length,
-                value: arr[i]
+                value: arr[i],
               };
-            }
+            },
           };
         };
       } else if (isString(iterable)) {
-        usingIterator = function() {
+        usingIterator = function () {
           var i = 0;
           return {
-            next: function() {
+            next: function () {
               var nextIndex = ES.AdvanceStringIndex($String(iterable), i, true);
               var value = $stringSlice(iterable, i, nextIndex);
               i = nextIndex;
               return {
                 done: nextIndex > iterable.length,
-                value
+                value,
               };
-            }
+            },
           };
         };
       }
       return usingIterator;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/GetIterator.js
@@ -3283,7 +3812,10 @@ var require_GetIterator = __commonJS({
     var getIteratorMethod = require_getIteratorMethod();
     module2.exports = function GetIterator(obj, kind) {
       if (kind !== "sync" && kind !== "async") {
-        throw new $TypeError("Assertion failed: `kind` must be one of 'sync' or 'async', got " + inspect(kind));
+        throw new $TypeError(
+          "Assertion failed: `kind` must be one of 'sync' or 'async', got " +
+            inspect(kind),
+        );
       }
       var method;
       if (kind === "async") {
@@ -3296,9 +3828,9 @@ var require_GetIterator = __commonJS({
           {
             AdvanceStringIndex,
             GetMethod,
-            IsArray
+            IsArray,
           },
-          obj
+          obj,
         );
         if (kind === "async") {
           if (typeof syncMethod === "undefined") {
@@ -3314,7 +3846,7 @@ var require_GetIterator = __commonJS({
       }
       return GetIteratorFromMethod(obj, method);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/CompletionRecord.js
@@ -3327,8 +3859,16 @@ var require_CompletionRecord = __commonJS({
       if (!(this instanceof CompletionRecord2)) {
         return new CompletionRecord2(type, value);
       }
-      if (type !== "normal" && type !== "break" && type !== "continue" && type !== "return" && type !== "throw") {
-        throw new $SyntaxError('Assertion failed: `type` must be one of "normal", "break", "continue", "return", or "throw"');
+      if (
+        type !== "normal" &&
+        type !== "break" &&
+        type !== "continue" &&
+        type !== "return" &&
+        type !== "throw"
+      ) {
+        throw new $SyntaxError(
+          'Assertion failed: `type` must be one of "normal", "break", "continue", "return", or "throw"',
+        );
       }
       SLOT.set(this, "[[Type]]", type);
       SLOT.set(this, "[[Value]]", value);
@@ -3348,17 +3888,21 @@ var require_CompletionRecord = __commonJS({
       if (type === "throw") {
         throw value;
       }
-      throw new $SyntaxError('Completion Record is not of type "normal" or "throw": other types not supported');
+      throw new $SyntaxError(
+        'Completion Record is not of type "normal" or "throw": other types not supported',
+      );
     };
     CompletionRecord.prototype["!"] = function assert() {
       var type = SLOT.get(this, "[[Type]]");
       if (type !== "normal") {
-        throw new $SyntaxError('Assertion failed: Completion Record is not of type "normal"');
+        throw new $SyntaxError(
+          'Assertion failed: Completion Record is not of type "normal"',
+        );
       }
       return SLOT.get(this, "[[Value]]");
     };
     module2.exports = CompletionRecord;
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/IteratorClose.js
@@ -3374,17 +3918,29 @@ var require_IteratorClose = __commonJS({
     var isIteratorRecord = require_iterator_record();
     module2.exports = function IteratorClose(iteratorRecord, completion) {
       if (!isIteratorRecord(iteratorRecord)) {
-        throw new $TypeError("Assertion failed: `iteratorRecord` must be an Iterator Record");
+        throw new $TypeError(
+          "Assertion failed: `iteratorRecord` must be an Iterator Record",
+        );
       }
       if (Type(iteratorRecord["[[Iterator]]"]) !== "Object") {
-        throw new $TypeError("Assertion failed: iteratorRecord.[[Iterator]] must be an Object");
+        throw new $TypeError(
+          "Assertion failed: iteratorRecord.[[Iterator]] must be an Object",
+        );
       }
-      if (!IsCallable(completion) && !(completion instanceof CompletionRecord)) {
-        throw new $TypeError("Assertion failed: completion is not a thunk representing a Completion Record, nor a Completion Record instance");
+      if (
+        !IsCallable(completion) &&
+        !(completion instanceof CompletionRecord)
+      ) {
+        throw new $TypeError(
+          "Assertion failed: completion is not a thunk representing a Completion Record, nor a Completion Record instance",
+        );
       }
-      var completionThunk = completion instanceof CompletionRecord ? function() {
-        return completion["?"]();
-      } : completion;
+      var completionThunk =
+        completion instanceof CompletionRecord
+          ? function () {
+              return completion["?"]();
+            }
+          : completion;
       var iterator = iteratorRecord["[[Iterator]]"];
       var iteratorReturn;
       try {
@@ -3412,7 +3968,7 @@ var require_IteratorClose = __commonJS({
       }
       return completionRecord;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/IteratorStep.js
@@ -3425,13 +3981,15 @@ var require_IteratorStep = __commonJS({
     var isIteratorRecord = require_iterator_record();
     module2.exports = function IteratorStep(iteratorRecord) {
       if (!isIteratorRecord(iteratorRecord)) {
-        throw new $TypeError("Assertion failed: `iteratorRecord` must be an Iterator Record");
+        throw new $TypeError(
+          "Assertion failed: `iteratorRecord` must be an Iterator Record",
+        );
       }
       var result = IteratorNext(iteratorRecord);
       var done = IteratorComplete(result);
       return done === true ? false : result;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/ToString.js
@@ -3447,7 +4005,7 @@ var require_ToString = __commonJS({
       }
       return $String(argument);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/SameValueZero.js
@@ -3456,9 +4014,9 @@ var require_SameValueZero = __commonJS({
     "use strict";
     var $isNaN = require_isNaN();
     module2.exports = function SameValueZero(x, y) {
-      return x === y || $isNaN(x) && $isNaN(y);
+      return x === y || ($isNaN(x) && $isNaN(y));
     };
-  }
+  },
 });
 
 // node_modules/es-map/lib/map-entry.js
@@ -3476,7 +4034,7 @@ var require_map_entry = __commonJS({
       return this.key === MapEntry.empty;
     };
     module2.exports = MapEntry;
-  }
+  },
 });
 
 // node_modules/es-abstract/2023/CreateMethodProperty.js
@@ -3501,7 +4059,7 @@ var require_CreateMethodProperty = __commonJS({
         "[[Configurable]]": true,
         "[[Enumerable]]": false,
         "[[Value]]": V,
-        "[[Writable]]": true
+        "[[Writable]]": true,
       };
       return DefineOwnProperty(
         IsDataDescriptor,
@@ -3509,10 +4067,10 @@ var require_CreateMethodProperty = __commonJS({
         FromPropertyDescriptor,
         O,
         P,
-        newDesc
+        newDesc,
       );
     };
-  }
+  },
 });
 
 // node_modules/es-map/lib/validation.js
@@ -3528,10 +4086,15 @@ var require_validation = __commonJS({
     exports.isMap = isMap;
     exports.requireMapSlot = function requireMapSlot(map, method) {
       if (Type(map) !== "Object" || !isMap(map)) {
-        throw new TypeError("Method Map.prototype." + method + " called on incompatible receiver " + ToString(map));
+        throw new TypeError(
+          "Method Map.prototype." +
+            method +
+            " called on incompatible receiver " +
+            ToString(map),
+        );
       }
     };
-  }
+  },
 });
 
 // node_modules/es-map/lib/helpers.js
@@ -3548,7 +4111,7 @@ var require_helpers2 = __commonJS({
     var Type = require_Type2();
     var $ObjectCreate = GetIntrinsic("%Object.create%", true);
     var hasProto = !({ __proto__: null } instanceof Object);
-    exports.emptyObject = function() {
+    exports.emptyObject = function () {
       if ($ObjectCreate) {
         return $ObjectCreate(null);
       }
@@ -3557,36 +4120,48 @@ var require_helpers2 = __commonJS({
       }
       return {};
     };
-    exports.emulateES6construct = function(o, defaultNewTarget, defaultProto, slots) {
+    exports.emulateES6construct = function (
+      o,
+      defaultNewTarget,
+      defaultProto,
+      slots,
+    ) {
       if (Type(o) !== "Object") {
-        throw new TypeError("Constructor requires `new`: " + defaultNewTarget.name);
+        throw new TypeError(
+          "Constructor requires `new`: " + defaultNewTarget.name,
+        );
       }
       var proto = defaultNewTarget.prototype;
       if (Type(proto) !== "Object") {
         proto = defaultProto;
       }
       var obj = OrdinaryObjectCreate(proto);
-      forEach(entries(slots), function(entry) {
+      forEach(entries(slots), function (entry) {
         var key = entry[0];
         var value = entry[1];
         SLOT.set(obj, key, value);
       });
       return obj;
     };
-    var $iterator$ = hasSymbols && Type(Symbol.iterator) === "Symbol" ? Symbol.iterator : "_es6-shim iterator_";
+    var $iterator$ =
+      hasSymbols && Type(Symbol.iterator) === "Symbol"
+        ? Symbol.iterator
+        : "_es6-shim iterator_";
     if (typeof []["@@iterator"] === "function") {
       $iterator$ = "@@iterator";
     }
-    exports.addIterator = function(prototype, impl) {
-      var implementation = impl || function iterator() {
-        return this;
-      };
+    exports.addIterator = function (prototype, impl) {
+      var implementation =
+        impl ||
+        function iterator() {
+          return this;
+        };
       CreateMethodProperty(prototype, $iterator$, implementation);
       if (!prototype[$iterator$] && Type($iterator$) === "Symbol") {
         prototype[$iterator$] = implementation;
       }
     };
-  }
+  },
 });
 
 // node_modules/es-map/lib/map-iterator.js
@@ -3614,44 +4189,40 @@ var require_map_iterator = __commonJS({
       MapIterator.prototype = OrdinaryObjectCreate(IteratorPrototype);
     }
     addIterator(MapIterator.prototype);
-    CreateMethodProperty(
-      MapIterator.prototype,
-      "next",
-      function next() {
-        if (!SLOT.has(this, "[[isMapIterator]]")) {
-          throw new TypeError("Not a MapIterator");
-        }
-        var i = SLOT.get(this, "[[i]]");
-        var kind = SLOT.get(this, "[[kind]]");
-        var head = SLOT.get(this, "[[head]]");
-        if (typeof i === "undefined") {
-          return CreateIterResultObject(void 0, true);
-        }
-        while (i.isRemoved() && i !== head) {
-          i = i.prev;
-        }
-        var result;
-        while (i.next !== head) {
-          i = i.next;
-          if (!i.isRemoved()) {
-            if (kind === "key") {
-              result = i.key;
-            } else if (kind === "value") {
-              result = i.value;
-            } else {
-              result = [i.key, i.value];
-            }
-            SLOT.set(this, "[[i]]", i);
-            return CreateIterResultObject(result, false);
-          }
-        }
-        SLOT.set(this, "[[i]]", void 0);
+    CreateMethodProperty(MapIterator.prototype, "next", function next() {
+      if (!SLOT.has(this, "[[isMapIterator]]")) {
+        throw new TypeError("Not a MapIterator");
+      }
+      var i = SLOT.get(this, "[[i]]");
+      var kind = SLOT.get(this, "[[kind]]");
+      var head = SLOT.get(this, "[[head]]");
+      if (typeof i === "undefined") {
         return CreateIterResultObject(void 0, true);
       }
-    );
+      while (i.isRemoved() && i !== head) {
+        i = i.prev;
+      }
+      var result;
+      while (i.next !== head) {
+        i = i.next;
+        if (!i.isRemoved()) {
+          if (kind === "key") {
+            result = i.key;
+          } else if (kind === "value") {
+            result = i.value;
+          } else {
+            result = [i.key, i.value];
+          }
+          SLOT.set(this, "[[i]]", i);
+          return CreateIterResultObject(result, false);
+        }
+      }
+      SLOT.set(this, "[[i]]", void 0);
+      return CreateIterResultObject(void 0, true);
+    });
     setToStringTag(MapIterator.prototype, "Map Iterator");
     module2.exports = MapIterator;
-  }
+  },
 });
 
 // node_modules/is-arguments/index.js
@@ -3662,7 +4233,12 @@ var require_is_arguments = __commonJS({
     var callBound = require_callBound();
     var $toString = callBound("Object.prototype.toString");
     var isStandardArguments = function isArguments(value) {
-      if (hasToStringTag && value && typeof value === "object" && Symbol.toStringTag in value) {
+      if (
+        hasToStringTag &&
+        value &&
+        typeof value === "object" &&
+        Symbol.toStringTag in value
+      ) {
         return false;
       }
       return $toString(value) === "[object Arguments]";
@@ -3671,14 +4247,23 @@ var require_is_arguments = __commonJS({
       if (isStandardArguments(value)) {
         return true;
       }
-      return value !== null && typeof value === "object" && typeof value.length === "number" && value.length >= 0 && $toString(value) !== "[object Array]" && $toString(value.callee) === "[object Function]";
+      return (
+        value !== null &&
+        typeof value === "object" &&
+        typeof value.length === "number" &&
+        value.length >= 0 &&
+        $toString(value) !== "[object Array]" &&
+        $toString(value.callee) === "[object Function]"
+      );
     };
-    var supportsStandardArguments = function() {
+    var supportsStandardArguments = (function () {
       return isStandardArguments(arguments);
-    }();
+    })();
     isStandardArguments.isLegacyArguments = isLegacyArguments;
-    module2.exports = supportsStandardArguments ? isStandardArguments : isLegacyArguments;
-  }
+    module2.exports = supportsStandardArguments
+      ? isStandardArguments
+      : isLegacyArguments;
+  },
 });
 
 // node_modules/stop-iteration-iterator/index.js
@@ -3687,7 +4272,8 @@ var require_stop_iteration_iterator = __commonJS({
     "use strict";
     var SLOT = require_internal_slot();
     var $SyntaxError = SyntaxError;
-    var $StopIteration = typeof StopIteration === "object" ? StopIteration : null;
+    var $StopIteration =
+      typeof StopIteration === "object" ? StopIteration : null;
     module2.exports = function getStopIterationIterator(origIterator) {
       if (!$StopIteration) {
         throw new $SyntaxError("this environment lacks StopIteration");
@@ -3700,7 +4286,7 @@ var require_stop_iteration_iterator = __commonJS({
           try {
             return {
               done,
-              value: done ? void 0 : iterator.next()
+              value: done ? void 0 : iterator.next(),
             };
           } catch (e) {
             SLOT.set(iterator, "[[Done]]", true);
@@ -3709,25 +4295,27 @@ var require_stop_iteration_iterator = __commonJS({
             }
             return {
               done: true,
-              value: void 0
+              value: void 0,
             };
           }
-        }
+        },
       };
       SLOT.set(siIterator, "[[Iterator]]", origIterator);
       return siIterator;
     };
-  }
+  },
 });
 
 // node_modules/isarray/index.js
 var require_isarray = __commonJS({
   "node_modules/isarray/index.js"(exports, module2) {
     var toString = {}.toString;
-    module2.exports = Array.isArray || function(arr) {
-      return toString.call(arr) == "[object Array]";
-    };
-  }
+    module2.exports =
+      Array.isArray ||
+      function (arr) {
+        return toString.call(arr) == "[object Array]";
+      };
+  },
 });
 
 // node_modules/is-map/index.js
@@ -3749,25 +4337,26 @@ var require_is_map = __commonJS({
         return false;
       };
     }
-    module2.exports = exported || function isMap(x) {
-      if (!x || typeof x !== "object") {
-        return false;
-      }
-      try {
-        $mapHas.call(x);
-        if ($setHas) {
-          try {
-            $setHas.call(x);
-          } catch (e) {
-            return true;
-          }
+    module2.exports =
+      exported ||
+      function isMap(x) {
+        if (!x || typeof x !== "object") {
+          return false;
         }
-        return x instanceof $Map;
-      } catch (e) {
-      }
-      return false;
-    };
-  }
+        try {
+          $mapHas.call(x);
+          if ($setHas) {
+            try {
+              $setHas.call(x);
+            } catch (e) {
+              return true;
+            }
+          }
+          return x instanceof $Map;
+        } catch (e) {}
+        return false;
+      };
+  },
 });
 
 // node_modules/is-set/index.js
@@ -3789,25 +4378,26 @@ var require_is_set = __commonJS({
         return false;
       };
     }
-    module2.exports = exported || function isSet(x) {
-      if (!x || typeof x !== "object") {
-        return false;
-      }
-      try {
-        $setHas.call(x);
-        if ($mapHas) {
-          try {
-            $mapHas.call(x);
-          } catch (e) {
-            return true;
-          }
+    module2.exports =
+      exported ||
+      function isSet(x) {
+        if (!x || typeof x !== "object") {
+          return false;
         }
-        return x instanceof $Set;
-      } catch (e) {
-      }
-      return false;
-    };
-  }
+        try {
+          $setHas.call(x);
+          if ($mapHas) {
+            try {
+              $mapHas.call(x);
+            } catch (e) {
+              return true;
+            }
+          }
+          return x instanceof $Set;
+        } catch (e) {}
+        return false;
+      };
+  },
 });
 
 // node_modules/es-get-iterator/index.js
@@ -3863,12 +4453,15 @@ var require_es_get_iterator = __commonJS({
             }
             return {
               done,
-              value
+              value,
             };
-          }
+          },
         };
       };
-      getNonCollectionIterator = function getNonCollectionIterator2(iterable, noPrimordialCollections) {
+      getNonCollectionIterator = function getNonCollectionIterator2(
+        iterable,
+        noPrimordialCollections,
+      ) {
         if (isArray(iterable) || isArguments(iterable)) {
           return getArrayIterator(iterable);
         }
@@ -3881,12 +4474,15 @@ var require_es_get_iterator = __commonJS({
               i = nextIndex;
               return {
                 done: nextIndex > iterable.length,
-                value
+                value,
               };
-            }
+            },
           };
         }
-        if (noPrimordialCollections && typeof iterable["_es6-shim iterator_"] !== "undefined") {
+        if (
+          noPrimordialCollections &&
+          typeof iterable["_es6-shim iterator_"] !== "undefined"
+        ) {
           return iterable["_es6-shim iterator_"]();
         }
       };
@@ -3901,12 +4497,20 @@ var require_es_get_iterator = __commonJS({
         isSet = require_is_set();
         $mapForEach = callBound("Map.prototype.forEach", true);
         $setForEach = callBound("Set.prototype.forEach", true);
-        if (typeof process === "undefined" || !process.versions || !process.versions.node) {
+        if (
+          typeof process === "undefined" ||
+          !process.versions ||
+          !process.versions.node
+        ) {
           $mapIterator = callBound("Map.prototype.iterator", true);
           $setIterator = callBound("Set.prototype.iterator", true);
         }
-        $mapAtAtIterator = callBound("Map.prototype.@@iterator", true) || callBound("Map.prototype._es6-shim iterator_", true);
-        $setAtAtIterator = callBound("Set.prototype.@@iterator", true) || callBound("Set.prototype._es6-shim iterator_", true);
+        $mapAtAtIterator =
+          callBound("Map.prototype.@@iterator", true) ||
+          callBound("Map.prototype._es6-shim iterator_", true);
+        $setAtAtIterator =
+          callBound("Set.prototype.@@iterator", true) ||
+          callBound("Set.prototype._es6-shim iterator_", true);
         getCollectionIterator = function getCollectionIterator2(iterable) {
           if (isMap(iterable)) {
             if ($mapIterator) {
@@ -3917,7 +4521,7 @@ var require_es_get_iterator = __commonJS({
             }
             if ($mapForEach) {
               var entries = [];
-              $mapForEach(iterable, function(v, k) {
+              $mapForEach(iterable, function (v, k) {
                 $arrayPush(entries, [k, v]);
               });
               return getArrayIterator(entries);
@@ -3932,7 +4536,7 @@ var require_es_get_iterator = __commonJS({
             }
             if ($setForEach) {
               var values = [];
-              $setForEach(iterable, function(v) {
+              $setForEach(iterable, function (v) {
                 $arrayPush(values, v);
               });
               return getArrayIterator(values);
@@ -3940,7 +4544,10 @@ var require_es_get_iterator = __commonJS({
           }
         };
         module2.exports = function getIterator(iterable) {
-          return getCollectionIterator(iterable) || getNonCollectionIterator(iterable);
+          return (
+            getCollectionIterator(iterable) ||
+            getNonCollectionIterator(iterable)
+          );
         };
       }
     }
@@ -3966,7 +4573,7 @@ var require_es_get_iterator = __commonJS({
     var $mapAtAtIterator;
     var $setAtAtIterator;
     var getCollectionIterator;
-  }
+  },
 });
 
 // node_modules/es-map/lib/map-helpers.js
@@ -4012,12 +4619,14 @@ var require_map_helpers = __commonJS({
         for (var i = 0; i < iterable.length; i++) {
           var entry = iterable[i];
           if (Type(entry) !== "Object") {
-            throw new TypeError("Iterator value " + entry + " is not an entry object");
+            throw new TypeError(
+              "Iterator value " + entry + " is not an entry object",
+            );
           }
           map.set(entry[0], entry[1]);
         }
       } else if (isMap(iterable)) {
-        forEach(iterable, function(value, key) {
+        forEach(iterable, function (value, key) {
           map.set(key, value);
         });
       } else {
@@ -4032,18 +4641,20 @@ var require_map_helpers = __commonJS({
           iterRecord = {
             "[[Done]]": false,
             "[[Iterator]]": iter,
-            "[[NextMethod]]": iter.next
+            "[[NextMethod]]": iter.next,
           };
         }
         if (typeof iterRecord === "undefined") {
           throw new TypeError("Object is not iterable");
         }
         var next;
-        while (next = IteratorStep(iterRecord)) {
+        while ((next = IteratorStep(iterRecord))) {
           var nextItem = next.value;
           try {
             if (Type(nextItem) !== "Object") {
-              throw new TypeError("Iterator value " + nextItem + " is not an entry object");
+              throw new TypeError(
+                "Iterator value " + nextItem + " is not an entry object",
+              );
             }
             Call(adder, map, [nextItem[0], nextItem[1]]);
           } catch (e) {
@@ -4053,7 +4664,7 @@ var require_map_helpers = __commonJS({
         }
       }
     };
-  }
+  },
 });
 
 // node_modules/es-map/implementation.js
@@ -4095,7 +4706,7 @@ var require_implementation4 = __commonJS({
         "[[head]]": null,
         "[[map]]": OrigMap ? new OrigMap() : null,
         "[[size]]": 0,
-        "[[storage]]": emptyObject()
+        "[[storage]]": emptyObject(),
       });
       var head = new MapEntry(null, null);
       head.next = head;
@@ -4111,10 +4722,10 @@ var require_implementation4 = __commonJS({
       Object.defineProperty(MapShimPrototype, "size", {
         configurable: true,
         enumerable: false,
-        get: function() {
+        get: function () {
           requireMapSlot(this, "size");
           return SLOT.get(this, "[[size]]");
-        }
+        },
       });
     }
     define(MapShimPrototype, {
@@ -4211,7 +4822,7 @@ var require_implementation4 = __commonJS({
         SLOT.set(this, "[[size]]", SLOT.get(this, "[[size]]") + 1);
         return this;
       },
-      "delete": function(key) {
+      delete: function (key) {
         requireMapSlot(this, "delete");
         var head = SLOT.get(this, "[[head]]");
         var i = head;
@@ -4278,11 +4889,11 @@ var require_implementation4 = __commonJS({
       forEach: function forEach(fn2) {
         requireMapSlot(this, "forEach");
         mapForEach(this, fn2, arguments.length > 1 ? arguments[1] : void 0);
-      }
+      },
     });
     addIterator(MapShimPrototype, MapShimPrototype.entries);
     module2.exports = MapShim;
-  }
+  },
 });
 
 // node_modules/es-set/lib/validation.js
@@ -4298,10 +4909,15 @@ var require_validation2 = __commonJS({
     exports.isSet = isSet;
     exports.requireSetSlot = function requireSetSlot(set, method) {
       if (Type(set) !== "Object" || !isSet(set)) {
-        throw new TypeError("Method Set.prototype." + method + " called on incompatible receiver " + ToString(set));
+        throw new TypeError(
+          "Method Set.prototype." +
+            method +
+            " called on incompatible receiver " +
+            ToString(set),
+        );
       }
     };
-  }
+  },
 });
 
 // node_modules/es-set/lib/set-helpers.js
@@ -4366,7 +4982,7 @@ var require_set_helpers = __commonJS({
     var ensureSet = function ensureSet2(set) {
       if (!SLOT.get(set, "[[setData]]")) {
         var m = new MapShim();
-        iterateStorage(SLOT.get(set, "[[storage]]"), function(fkey) {
+        iterateStorage(SLOT.get(set, "[[storage]]"), function (fkey) {
           var k = decodeKey(fkey);
           m.set(k, k);
         });
@@ -4377,7 +4993,7 @@ var require_set_helpers = __commonJS({
     exports.ensureSet = ensureSet;
     var forEach = function forEach2(set, fn2, context) {
       ensureSet(set);
-      $mapForEach(SLOT.get(set, "[[setData]]"), function(value, key) {
+      $mapForEach(SLOT.get(set, "[[setData]]"), function (value, key) {
         if (typeof context === "undefined") {
           fn2(key, key, set);
         } else {
@@ -4392,7 +5008,7 @@ var require_set_helpers = __commonJS({
           set.add(iterable[i]);
         }
       } else if (isSet(iterable)) {
-        forEach(iterable, function(value) {
+        forEach(iterable, function (value) {
           set.add(value);
         });
       } else {
@@ -4408,7 +5024,7 @@ var require_set_helpers = __commonJS({
           throw new TypeError("Object is not iterable");
         }
         var next;
-        while (next = IteratorStep(iter)) {
+        while ((next = IteratorStep(iter))) {
           try {
             Call(adder, set, [next.value]);
           } catch (e) {
@@ -4418,7 +5034,7 @@ var require_set_helpers = __commonJS({
         }
       }
     };
-  }
+  },
 });
 
 // node_modules/es-set/implementation.js
@@ -4452,7 +5068,7 @@ var require_implementation5 = __commonJS({
       var set = emulateES6construct(this, Set2, SetShimPrototype, {
         "[[es6set]]": true,
         "[[setData]]": null,
-        "[[storage]]": emptyObject()
+        "[[storage]]": emptyObject(),
       });
       if (!SLOT.has(set, "[[es6set]]")) {
         throw new TypeError("bad set");
@@ -4467,19 +5083,19 @@ var require_implementation5 = __commonJS({
       Object.defineProperty(SetShimPrototype, "size", {
         configurable: true,
         enumerable: false,
-        get: function() {
+        get: function () {
           requireSetSlot(this, "size");
           var storage = SLOT.get(this, "[[storage]]");
           if (storage) {
             var size = 0;
-            iterateStorage(storage, function() {
+            iterateStorage(storage, function () {
               size += 1;
             });
             return size;
           }
           ensureSet(this);
           return SLOT.get(this, "[[setData]]").size;
-        }
+        },
       });
     }
     define(SetShimPrototype, {
@@ -4507,7 +5123,7 @@ var require_implementation5 = __commonJS({
         ensureSet(this);
         return SLOT.get(this, "[[setData]]").has(key);
       },
-      "delete": function(key) {
+      delete: function (key) {
         requireSetSlot(this, "delete");
         var fkey;
         var storage = SLOT.get(this, "[[storage]]");
@@ -4545,7 +5161,7 @@ var require_implementation5 = __commonJS({
       forEach: function forEach(fn2) {
         requireSetSlot(this, "forEach");
         setForEach(this, fn2, arguments.length > 1 ? arguments[1] : void 0);
-      }
+      },
     });
     define(SetShimPrototype, { keys: SetShimPrototype.values });
     addIterator(SetShimPrototype, SetShimPrototype.values);
@@ -4553,7 +5169,7 @@ var require_implementation5 = __commonJS({
       setProto(SetShimPrototype, Set.prototype);
     }
     module2.exports = SetShim;
-  }
+  },
 });
 
 // node_modules/functions-have-names/index.js
@@ -4561,8 +5177,7 @@ var require_functions_have_names = __commonJS({
   "node_modules/functions-have-names/index.js"(exports, module2) {
     "use strict";
     var functionsHaveNames = function functionsHaveNames2() {
-      return typeof function f() {
-      }.name === "string";
+      return typeof function f() {}.name === "string";
     };
     var gOPD = Object.getOwnPropertyDescriptor;
     if (gOPD) {
@@ -4572,21 +5187,25 @@ var require_functions_have_names = __commonJS({
         gOPD = null;
       }
     }
-    functionsHaveNames.functionsHaveConfigurableNames = function functionsHaveConfigurableNames() {
-      if (!functionsHaveNames() || !gOPD) {
-        return false;
-      }
-      var desc = gOPD(function() {
-      }, "name");
-      return !!desc && !!desc.configurable;
-    };
+    functionsHaveNames.functionsHaveConfigurableNames =
+      function functionsHaveConfigurableNames() {
+        if (!functionsHaveNames() || !gOPD) {
+          return false;
+        }
+        var desc = gOPD(function () {}, "name");
+        return !!desc && !!desc.configurable;
+      };
     var $bind = Function.prototype.bind;
-    functionsHaveNames.boundFunctionsHaveNames = function boundFunctionsHaveNames() {
-      return functionsHaveNames() && typeof $bind === "function" && function f() {
-      }.bind().name !== "";
-    };
+    functionsHaveNames.boundFunctionsHaveNames =
+      function boundFunctionsHaveNames() {
+        return (
+          functionsHaveNames() &&
+          typeof $bind === "function" &&
+          function f() {}.bind().name !== ""
+        );
+      };
     module2.exports = functionsHaveNames;
-  }
+  },
 });
 
 // node_modules/es-set/lib/support.js
@@ -4594,8 +5213,8 @@ var require_support = __commonJS({
   "node_modules/es-set/lib/support.js"(exports) {
     "use strict";
     var functionsHaveNames = require_functions_have_names();
-    var valueOrFalseIfThrows = function(cb) {
-      return function() {
+    var valueOrFalseIfThrows = function (cb) {
+      return function () {
         try {
           return cb();
         } catch (_) {
@@ -4603,11 +5222,21 @@ var require_support = __commonJS({
         }
       };
     };
-    exports.isGoogleTranslate = function() {
-      return !!Set.prototype["delete"] && Set.prototype.remove && Set.prototype.items && Set.prototype.map && Array.isArray((/* @__PURE__ */ new Set()).keys);
+    exports.isGoogleTranslate = function () {
+      return (
+        !!Set.prototype["delete"] &&
+        Set.prototype.remove &&
+        Set.prototype.items &&
+        Set.prototype.map &&
+        Array.isArray(/* @__PURE__ */ new Set().keys)
+      );
     };
-    exports.setUsesSameValueZero = function() {
-      if (!Set.prototype["delete"] || !Set.prototype.add || !Set.prototype.has) {
+    exports.setUsesSameValueZero = function () {
+      if (
+        !Set.prototype["delete"] ||
+        !Set.prototype.add ||
+        !Set.prototype.has
+      ) {
         return false;
       }
       var s = /* @__PURE__ */ new Set([1, 2, 3, 4]);
@@ -4621,11 +5250,11 @@ var require_support = __commonJS({
       s.add(0);
       return s.has(-0);
     };
-    exports.setSupportsChaining = function() {
+    exports.setSupportsChaining = function () {
       var testSet = /* @__PURE__ */ new Set();
       return testSet.add(1) === testSet;
     };
-    var setSupportsSubclassing = valueOrFalseIfThrows(function() {
+    var setSupportsSubclassing = valueOrFalseIfThrows(function () {
       if (!Object.setPrototypeOf) {
         return true;
       }
@@ -4640,29 +5269,33 @@ var require_support = __commonJS({
       s.add(1, 2);
       return s instanceof Sub;
     });
-    var setRequiresNew = function() {
+    var setRequiresNew = function () {
       try {
         return !(Set() instanceof Set);
       } catch (e) {
         return e instanceof TypeError;
       }
     };
-    exports.setCompliantConstructor = function() {
+    exports.setCompliantConstructor = function () {
       return Set.length === 0 && setSupportsSubclassing() && setRequiresNew();
     };
-    exports.setKeysIsValues = function() {
+    exports.setKeysIsValues = function () {
       return Set.prototype.keys === Set.prototype.values;
     };
-    exports.setHasCorrectName = function() {
+    exports.setHasCorrectName = function () {
       if (!functionsHaveNames) {
         return true;
       }
       return Set.prototype.has.name === "has";
     };
-    exports.setHasOldFirefoxInterface = function() {
-      return (/* @__PURE__ */ new Set()).size !== 0 || typeof Set.prototype.values !== "function" || typeof Set.prototype.forEach !== "function";
+    exports.setHasOldFirefoxInterface = function () {
+      return (
+        /* @__PURE__ */ new Set().size !== 0 ||
+        typeof Set.prototype.values !== "function" ||
+        typeof Set.prototype.forEach !== "function"
+      );
     };
-  }
+  },
 });
 
 // node_modules/es-set/polyfill.js
@@ -4679,7 +5312,10 @@ var require_polyfill2 = __commonJS({
     module2.exports = function getPolyfill() {
       if (typeof Set === "function" && !support.setCompliantConstructor()) {
         var OrigSet = Set;
-        if (!SetShim || !(OrigSet === SetShim || SLOT.get(SetShim, "[[OrigSet]]") === OrigSet)) {
+        if (
+          !SetShim ||
+          !(OrigSet === SetShim || SLOT.get(SetShim, "[[OrigSet]]") === OrigSet)
+        ) {
           var OrigSet$prototype = OrigSet.prototype;
           SetShim = function Set2() {
             if (!(this instanceof SetShim)) {
@@ -4702,19 +5338,29 @@ var require_polyfill2 = __commonJS({
           define(
             SetShim.prototype,
             { constructor: SetShim },
-            { constructor: function() {
-              return true;
-            } }
+            {
+              constructor: function () {
+                return true;
+              },
+            },
           );
         }
         return SetShim;
       }
-      if (typeof Set !== "function" || support.isGoogleTranslate() || support.setHasOldFirefoxInterface() || !support.setHasCorrectName() || !support.setKeysIsValues() || !support.setSupportsChaining() || !support.setUsesSameValueZero()) {
+      if (
+        typeof Set !== "function" ||
+        support.isGoogleTranslate() ||
+        support.setHasOldFirefoxInterface() ||
+        !support.setHasCorrectName() ||
+        !support.setKeysIsValues() ||
+        !support.setSupportsChaining() ||
+        !support.setUsesSameValueZero()
+      ) {
         return implementation;
       }
       return Set;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/IsArray.js
@@ -4722,7 +5368,7 @@ var require_IsArray3 = __commonJS({
   "node_modules/es-abstract/2024/IsArray.js"(exports, module2) {
     "use strict";
     module2.exports = require_IsArray();
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/Call.js
@@ -4733,15 +5379,19 @@ var require_Call2 = __commonJS({
     var callBound = require_callBound();
     var $TypeError = require_type();
     var IsArray = require_IsArray3();
-    var $apply = GetIntrinsic("%Reflect.apply%", true) || callBound("Function.prototype.apply");
+    var $apply =
+      GetIntrinsic("%Reflect.apply%", true) ||
+      callBound("Function.prototype.apply");
     module2.exports = function Call(F, V) {
       var argumentsList = arguments.length > 2 ? arguments[2] : [];
       if (!IsArray(argumentsList)) {
-        throw new $TypeError("Assertion failed: optional `argumentsList`, if provided, must be a List");
+        throw new $TypeError(
+          "Assertion failed: optional `argumentsList`, if provided, must be a List",
+        );
       }
       return $apply(F, V, argumentsList);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/IsPropertyKey.js
@@ -4751,7 +5401,7 @@ var require_IsPropertyKey2 = __commonJS({
     module2.exports = function IsPropertyKey(argument) {
       return typeof argument === "string" || typeof argument === "symbol";
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/Type.js
@@ -4768,7 +5418,7 @@ var require_Type3 = __commonJS({
       }
       return ES5Type(x);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/Get.js
@@ -4784,11 +5434,13 @@ var require_Get2 = __commonJS({
         throw new $TypeError("Assertion failed: Type(O) is not Object");
       }
       if (!IsPropertyKey(P)) {
-        throw new $TypeError("Assertion failed: IsPropertyKey(P) is not true, got " + inspect(P));
+        throw new $TypeError(
+          "Assertion failed: IsPropertyKey(P) is not true, got " + inspect(P),
+        );
       }
       return O[P];
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/IsCallable.js
@@ -4796,7 +5448,7 @@ var require_IsCallable2 = __commonJS({
   "node_modules/es-abstract/2024/IsCallable.js"(exports, module2) {
     "use strict";
     module2.exports = require_is_callable();
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/GetIteratorFromMethod.js
@@ -4821,10 +5473,10 @@ var require_GetIteratorFromMethod2 = __commonJS({
         // steps 4-5
         "[[Iterator]]": iterator,
         "[[NextMethod]]": nextMethod,
-        "[[Done]]": false
+        "[[Done]]": false,
       };
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/isPrimitive.js
@@ -4832,9 +5484,12 @@ var require_isPrimitive = __commonJS({
   "node_modules/es-abstract/helpers/isPrimitive.js"(exports, module2) {
     "use strict";
     module2.exports = function isPrimitive(value) {
-      return value === null || typeof value !== "function" && typeof value !== "object";
+      return (
+        value === null ||
+        (typeof value !== "function" && typeof value !== "object")
+      );
     };
-  }
+  },
 });
 
 // node_modules/es-to-primitive/helpers/isPrimitive.js
@@ -4842,9 +5497,12 @@ var require_isPrimitive2 = __commonJS({
   "node_modules/es-to-primitive/helpers/isPrimitive.js"(exports, module2) {
     "use strict";
     module2.exports = function isPrimitive(value) {
-      return value === null || typeof value !== "function" && typeof value !== "object";
+      return (
+        value === null ||
+        (typeof value !== "function" && typeof value !== "object")
+      );
     };
-  }
+  },
 });
 
 // node_modules/is-date-object/index.js
@@ -4867,9 +5525,11 @@ var require_is_date_object = __commonJS({
       if (typeof value !== "object" || value === null) {
         return false;
       }
-      return hasToStringTag ? tryDateObject(value) : toStr.call(value) === dateClass;
+      return hasToStringTag
+        ? tryDateObject(value)
+        : toStr.call(value) === dateClass;
     };
-  }
+  },
 });
 
 // node_modules/is-symbol/index.js
@@ -4908,14 +5568,15 @@ var require_is_symbol = __commonJS({
     var symToStr;
     var symStringRegex;
     var isSymbolObject;
-  }
+  },
 });
 
 // node_modules/es-to-primitive/es2015.js
 var require_es2015 = __commonJS({
   "node_modules/es-to-primitive/es2015.js"(exports, module2) {
     "use strict";
-    var hasSymbols = typeof Symbol === "function" && typeof Symbol.iterator === "symbol";
+    var hasSymbols =
+      typeof Symbol === "function" && typeof Symbol.iterator === "symbol";
     var isPrimitive = require_isPrimitive2();
     var isCallable = require_is_callable();
     var isDate = require_is_date_object();
@@ -4924,10 +5585,14 @@ var require_es2015 = __commonJS({
       if (typeof O === "undefined" || O === null) {
         throw new TypeError("Cannot call method on " + O);
       }
-      if (typeof hint !== "string" || hint !== "number" && hint !== "string") {
+      if (
+        typeof hint !== "string" ||
+        (hint !== "number" && hint !== "string")
+      ) {
         throw new TypeError('hint must be "string" or "number"');
       }
-      var methodNames = hint === "string" ? ["toString", "valueOf"] : ["valueOf", "toString"];
+      var methodNames =
+        hint === "string" ? ["toString", "valueOf"] : ["valueOf", "toString"];
       var method, result, i;
       for (i = 0; i < methodNames.length; ++i) {
         method = O[methodNames[i]];
@@ -4944,7 +5609,14 @@ var require_es2015 = __commonJS({
       var func = O[P];
       if (func !== null && typeof func !== "undefined") {
         if (!isCallable(func)) {
-          throw new TypeError(func + " returned for property " + P + " of object " + O + " is not a function");
+          throw new TypeError(
+            func +
+              " returned for property " +
+              P +
+              " of object " +
+              O +
+              " is not a function",
+          );
         }
         return func;
       }
@@ -4982,7 +5654,7 @@ var require_es2015 = __commonJS({
       }
       return ordinaryToPrimitive(input, hint === "default" ? "number" : hint);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/ToPrimitive.js
@@ -4996,7 +5668,7 @@ var require_ToPrimitive = __commonJS({
       }
       return toPrimitive(input);
     };
-  }
+  },
 });
 
 // node_modules/is-regex/index.js
@@ -5013,12 +5685,12 @@ var require_is_regex = __commonJS({
       has = callBound("Object.prototype.hasOwnProperty");
       $exec = callBound("RegExp.prototype.exec");
       isRegexMarker = {};
-      throwRegexMarker = function() {
+      throwRegexMarker = function () {
         throw isRegexMarker;
       };
       badStringifier = {
         toString: throwRegexMarker,
-        valueOf: throwRegexMarker
+        valueOf: throwRegexMarker,
       };
       if (typeof Symbol.toPrimitive === "symbol") {
         badStringifier[Symbol.toPrimitive] = throwRegexMarker;
@@ -5028,27 +5700,32 @@ var require_is_regex = __commonJS({
     var $toString = callBound("Object.prototype.toString");
     var gOPD = Object.getOwnPropertyDescriptor;
     var regexClass = "[object RegExp]";
-    module2.exports = hasToStringTag ? function isRegex(value) {
-      if (!value || typeof value !== "object") {
-        return false;
-      }
-      var descriptor = gOPD(value, "lastIndex");
-      var hasLastIndexDataProperty = descriptor && has(descriptor, "value");
-      if (!hasLastIndexDataProperty) {
-        return false;
-      }
-      try {
-        $exec(value, badStringifier);
-      } catch (e) {
-        return e === isRegexMarker;
-      }
-    } : function isRegex(value) {
-      if (!value || typeof value !== "object" && typeof value !== "function") {
-        return false;
-      }
-      return $toString(value) === regexClass;
-    };
-  }
+    module2.exports = hasToStringTag
+      ? function isRegex(value) {
+          if (!value || typeof value !== "object") {
+            return false;
+          }
+          var descriptor = gOPD(value, "lastIndex");
+          var hasLastIndexDataProperty = descriptor && has(descriptor, "value");
+          if (!hasLastIndexDataProperty) {
+            return false;
+          }
+          try {
+            $exec(value, badStringifier);
+          } catch (e) {
+            return e === isRegexMarker;
+          }
+        }
+      : function isRegex(value) {
+          if (
+            !value ||
+            (typeof value !== "object" && typeof value !== "function")
+          ) {
+            return false;
+          }
+          return $toString(value) === regexClass;
+        };
+  },
 });
 
 // node_modules/safe-regex-test/index.js
@@ -5067,7 +5744,7 @@ var require_safe_regex_test = __commonJS({
         return $exec(regex, s) !== null;
       };
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/ToString.js
@@ -5083,7 +5760,7 @@ var require_ToString2 = __commonJS({
       }
       return $String(argument);
     };
-  }
+  },
 });
 
 // node_modules/string.prototype.trim/implementation.js
@@ -5095,13 +5772,17 @@ var require_implementation6 = __commonJS({
     var callBound = require_callBound();
     var $replace = callBound("String.prototype.replace");
     var mvsIsWS = /^\s$/.test("\u180E");
-    var leftWhitespace = mvsIsWS ? /^[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]+/ : /^[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]+/;
-    var rightWhitespace = mvsIsWS ? /[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]+$/ : /[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]+$/;
+    var leftWhitespace = mvsIsWS
+      ? /^[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]+/
+      : /^[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]+/;
+    var rightWhitespace = mvsIsWS
+      ? /[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]+$/
+      : /[\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF]+$/;
     module2.exports = function trim() {
       var S = ToString(RequireObjectCoercible(this));
       return $replace($replace(S, leftWhitespace, ""), rightWhitespace, "");
     };
-  }
+  },
 });
 
 // node_modules/string.prototype.trim/polyfill.js
@@ -5112,12 +5793,19 @@ var require_polyfill3 = __commonJS({
     var zeroWidthSpace = "\u200B";
     var mongolianVowelSeparator = "\u180E";
     module2.exports = function getPolyfill() {
-      if (String.prototype.trim && zeroWidthSpace.trim() === zeroWidthSpace && mongolianVowelSeparator.trim() === mongolianVowelSeparator && ("_" + mongolianVowelSeparator).trim() === "_" + mongolianVowelSeparator && (mongolianVowelSeparator + "_").trim() === mongolianVowelSeparator + "_") {
+      if (
+        String.prototype.trim &&
+        zeroWidthSpace.trim() === zeroWidthSpace &&
+        mongolianVowelSeparator.trim() === mongolianVowelSeparator &&
+        ("_" + mongolianVowelSeparator).trim() ===
+          "_" + mongolianVowelSeparator &&
+        (mongolianVowelSeparator + "_").trim() === mongolianVowelSeparator + "_"
+      ) {
         return String.prototype.trim;
       }
       return implementation;
     };
-  }
+  },
 });
 
 // node_modules/string.prototype.trim/shim.js
@@ -5128,14 +5816,18 @@ var require_shim2 = __commonJS({
     var getPolyfill = require_polyfill3();
     module2.exports = function shimStringTrim() {
       var polyfill = getPolyfill();
-      define(String.prototype, { trim: polyfill }, {
-        trim: function testTrim() {
-          return String.prototype.trim !== polyfill;
-        }
-      });
+      define(
+        String.prototype,
+        { trim: polyfill },
+        {
+          trim: function testTrim() {
+            return String.prototype.trim !== polyfill;
+          },
+        },
+      );
       return polyfill;
     };
-  }
+  },
 });
 
 // node_modules/string.prototype.trim/index.js
@@ -5156,10 +5848,10 @@ var require_string_prototype = __commonJS({
     define(boundMethod, {
       getPolyfill,
       implementation,
-      shim
+      shim,
     });
     module2.exports = boundMethod;
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/StringToNumber.js
@@ -5200,7 +5892,7 @@ var require_StringToNumber = __commonJS({
       }
       return $Number(argument);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/ToNumber.js
@@ -5214,19 +5906,23 @@ var require_ToNumber = __commonJS({
     var ToPrimitive = require_ToPrimitive();
     var StringToNumber = require_StringToNumber();
     module2.exports = function ToNumber(argument) {
-      var value = isPrimitive(argument) ? argument : ToPrimitive(argument, $Number);
+      var value = isPrimitive(argument)
+        ? argument
+        : ToPrimitive(argument, $Number);
       if (typeof value === "symbol") {
         throw new $TypeError("Cannot convert a Symbol value to a number");
       }
       if (typeof value === "bigint") {
-        throw new $TypeError("Conversion from 'BigInt' to 'number' is not allowed.");
+        throw new $TypeError(
+          "Conversion from 'BigInt' to 'number' is not allowed.",
+        );
       }
       if (typeof value === "string") {
         return StringToNumber(value);
       }
       return $Number(value);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/floor.js
@@ -5240,7 +5936,7 @@ var require_floor = __commonJS({
       }
       return $floor(x);
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/truncate.js
@@ -5256,7 +5952,7 @@ var require_truncate = __commonJS({
       var result = x < 0 ? -floor(-x) : floor(x);
       return result === 0 ? 0 : result;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/ToIntegerOrInfinity.js
@@ -5277,12 +5973,15 @@ var require_ToIntegerOrInfinity = __commonJS({
       }
       return truncate(number2);
     };
-  }
+  },
 });
 
 // node_modules/set.prototype.difference/aos/GetSetRecord.js
 var require_GetSetRecord = __commonJS({
-  "node_modules/set.prototype.difference/aos/GetSetRecord.js"(exports, module2) {
+  "node_modules/set.prototype.difference/aos/GetSetRecord.js"(
+    exports,
+    module2,
+  ) {
     "use strict";
     var $RangeError = require_range();
     var $TypeError = require_type();
@@ -5322,9 +6021,14 @@ var require_GetSetRecord = __commonJS({
           return stopIterationIterator(boundKeys(this));
         };
       }
-      return { "[[Set]]": obj, "[[Size]]": intSize, "[[Has]]": has, "[[Keys]]": keys };
+      return {
+        "[[Set]]": obj,
+        "[[Size]]": intSize,
+        "[[Has]]": has,
+        "[[Keys]]": keys,
+      };
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/ToBoolean.js
@@ -5334,7 +6038,7 @@ var require_ToBoolean2 = __commonJS({
     module2.exports = function ToBoolean(value) {
       return !!value;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/IteratorComplete.js
@@ -5347,11 +6051,13 @@ var require_IteratorComplete2 = __commonJS({
     var Type = require_Type3();
     module2.exports = function IteratorComplete(iterResult) {
       if (Type(iterResult) !== "Object") {
-        throw new $TypeError("Assertion failed: Type(iterResult) is not Object");
+        throw new $TypeError(
+          "Assertion failed: Type(iterResult) is not Object",
+        );
       }
       return ToBoolean(Get(iterResult, "done"));
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/IteratorNext.js
@@ -5364,20 +6070,29 @@ var require_IteratorNext2 = __commonJS({
     var isIteratorRecord = require_iterator_record();
     module2.exports = function IteratorNext(iteratorRecord) {
       if (!isIteratorRecord(iteratorRecord)) {
-        throw new $TypeError("Assertion failed: `iteratorRecord` must be an Iterator Record");
+        throw new $TypeError(
+          "Assertion failed: `iteratorRecord` must be an Iterator Record",
+        );
       }
       var result;
       if (arguments.length < 2) {
-        result = Call(iteratorRecord["[[NextMethod]]"], iteratorRecord["[[Iterator]]"]);
+        result = Call(
+          iteratorRecord["[[NextMethod]]"],
+          iteratorRecord["[[Iterator]]"],
+        );
       } else {
-        result = Call(iteratorRecord["[[NextMethod]]"], iteratorRecord["[[Iterator]]"], [arguments[1]]);
+        result = Call(
+          iteratorRecord["[[NextMethod]]"],
+          iteratorRecord["[[Iterator]]"],
+          [arguments[1]],
+        );
       }
       if (Type(result) !== "Object") {
         throw new $TypeError("iterator next must return an object");
       }
       return result;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/IteratorStepValue.js
@@ -5391,7 +6106,9 @@ var require_IteratorStepValue = __commonJS({
     var isIteratorRecord = require_iterator_record();
     module2.exports = function IteratorStepValue(iteratorRecord) {
       if (!isIteratorRecord(iteratorRecord)) {
-        throw new $TypeError("Assertion failed: `iteratorRecord` must be an Iterator Record");
+        throw new $TypeError(
+          "Assertion failed: `iteratorRecord` must be an Iterator Record",
+        );
       }
       var result;
       try {
@@ -5420,7 +6137,7 @@ var require_IteratorStepValue = __commonJS({
       }
       return value;
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/2024/SameValueZero.js
@@ -5429,9 +6146,9 @@ var require_SameValueZero2 = __commonJS({
     "use strict";
     var $isNaN = require_isNaN();
     module2.exports = function SameValueZero(x, y) {
-      return x === y || $isNaN(x) && $isNaN(y);
+      return x === y || ($isNaN(x) && $isNaN(y));
     };
-  }
+  },
 });
 
 // node_modules/iterate-iterator/index.js
@@ -5462,7 +6179,7 @@ var require_iterate_iterator = __commonJS({
         return values;
       }
     };
-  }
+  },
 });
 
 // node_modules/iterate-value/index.js
@@ -5482,7 +6199,7 @@ var require_iterate_value = __commonJS({
       }
       return iterate(iterator);
     };
-  }
+  },
 });
 
 // node_modules/es-set/tools.js
@@ -5496,85 +6213,80 @@ var require_tools = __commonJS({
     var iterate = require_iterate_value();
     var $nativeSetForEach = callBound("Set.prototype.forEach", true);
     var $polyfillSetForEach = callBind($Set.prototype.forEach);
-    var forEach = function(set, callback) {
+    var forEach = function (set, callback) {
       if ($nativeSetForEach) {
         try {
           return $nativeSetForEach(set, callback);
-        } catch (e) {
-        }
+        } catch (e) {}
       }
       try {
         return $polyfillSetForEach(set, callback);
-      } catch (e) {
-      }
+      } catch (e) {}
       iterate(set, callback);
       return void 0;
     };
     var $nativeSetAdd = callBound("Set.prototype.add", true);
     var $polyfillSetAdd = $Set.prototype.add && callBind($Set.prototype.add);
-    var add = function(S, v) {
+    var add = function (S, v) {
       if ($nativeSetAdd) {
         try {
           return $nativeSetAdd(S, v);
-        } catch (e) {
-        }
+        } catch (e) {}
       }
       return $polyfillSetAdd(S, v);
     };
     var $nativeSetHas = callBound("Set.prototype.has", true);
     var $polyfillSetHas = callBind($Set.prototype.has);
-    var has = function(set, key) {
+    var has = function (set, key) {
       if ($nativeSetHas) {
         try {
           return $nativeSetHas(set, key);
-        } catch (e) {
-        }
+        } catch (e) {}
       }
       return $polyfillSetHas(set, key);
     };
     var $nativeSetDelete = callBound("Set.prototype.delete", true);
     var $polyfillSetDelete = callBind($Set.prototype["delete"]);
-    var setDelete = function(set, key) {
+    var setDelete = function (set, key) {
       if ($nativeSetDelete) {
         try {
           return $nativeSetDelete(set, key);
-        } catch (e) {
-        }
+        } catch (e) {}
       }
       return $polyfillSetDelete(set, key);
     };
     var $nativeSetSize = callBound("Set.prototype.size", true);
-    var $polyfillSetSize = gOPD ? callBind(gOPD($Set.prototype, "size").get) : null;
+    var $polyfillSetSize = gOPD
+      ? callBind(gOPD($Set.prototype, "size").get)
+      : null;
     var legacySetSize = function setSize(set) {
       var count = 0;
-      forEach(set, function() {
+      forEach(set, function () {
         count += 1;
       });
       return count;
     };
-    var size = function(S) {
+    var size = function (S) {
       if ($nativeSetSize) {
         try {
           return $nativeSetSize(S);
-        } catch (e) {
-        }
+        } catch (e) {}
       }
       if ($polyfillSetSize) {
         try {
           return $polyfillSetSize(S);
-        } catch (e) {
-        }
+        } catch (e) {}
       }
       return legacySetSize(S);
     };
     module2.exports = {
       add,
-      "delete": setDelete,
+      delete: setDelete,
       forEach,
       has,
-      size
+      size,
     };
-  }
+  },
 });
 
 // node_modules/set.prototype.difference/implementation.js
@@ -5601,22 +6313,30 @@ var require_implementation7 = __commonJS({
     module2.exports = function difference2(other) {
       var O = this;
       if (!isSet(O) && !(O instanceof $Set)) {
-        throw new $TypeError("Method Set.prototype.difference called on incompatible receiver " + O);
+        throw new $TypeError(
+          "Method Set.prototype.difference called on incompatible receiver " +
+            O,
+        );
       }
       var otherRec = GetSetRecord(other);
       var thisSize = $setSize(O);
       var result = new $Set();
       if (thisSize <= otherRec["[[Size]]"]) {
-        $setForEach(O, function(e) {
-          var inOther = ToBoolean(Call(otherRec["[[Has]]"], otherRec["[[Set]]"], [e]));
+        $setForEach(O, function (e) {
+          var inOther = ToBoolean(
+            Call(otherRec["[[Has]]"], otherRec["[[Set]]"], [e]),
+          );
           if (!inOther) {
             $setAdd(result, e);
           }
         });
       } else {
-        var keysIter = GetIteratorFromMethod(otherRec["[[Set]]"], otherRec["[[Keys]]"]);
+        var keysIter = GetIteratorFromMethod(
+          otherRec["[[Set]]"],
+          otherRec["[[Keys]]"],
+        );
         var resultSetData = [];
-        $setForEach(O, function(e) {
+        $setForEach(O, function (e) {
           $push(resultSetData, e);
         });
         var next;
@@ -5633,7 +6353,7 @@ var require_implementation7 = __commonJS({
             }
           }
         }
-        forEach(resultSetData, function(e) {
+        forEach(resultSetData, function (e) {
           if (e !== deleted) {
             $setAdd(result, e);
           }
@@ -5641,7 +6361,7 @@ var require_implementation7 = __commonJS({
       }
       return result;
     };
-  }
+  },
 });
 
 // node_modules/set.prototype.difference/polyfill.js
@@ -5651,9 +6371,11 @@ var require_polyfill4 = __commonJS({
     var Set2 = require_polyfill2()();
     var implementation = require_implementation7();
     module2.exports = function getPolyfill() {
-      return typeof Set2.prototype.difference === "function" ? Set2.prototype.difference : implementation;
+      return typeof Set2.prototype.difference === "function"
+        ? Set2.prototype.difference
+        : implementation;
     };
-  }
+  },
 });
 
 // node_modules/globalthis/implementation.browser.js
@@ -5667,7 +6389,7 @@ var require_implementation_browser = __commonJS({
     } else {
       module2.exports = Function("return this")();
     }
-  }
+  },
 });
 
 // node_modules/globalthis/polyfill.js
@@ -5676,12 +6398,17 @@ var require_polyfill5 = __commonJS({
     "use strict";
     var implementation = require_implementation_browser();
     module2.exports = function getPolyfill() {
-      if (typeof global !== "object" || !global || global.Math !== Math || global.Array !== Array) {
+      if (
+        typeof global !== "object" ||
+        !global ||
+        global.Math !== Math ||
+        global.Array !== Array
+      ) {
         return implementation;
       }
       return global;
     };
-  }
+  },
 });
 
 // node_modules/globalthis/shim.js
@@ -5693,13 +6420,22 @@ var require_shim3 = __commonJS({
     module2.exports = function shimGlobal() {
       var polyfill = getPolyfill();
       if (define.supportsDescriptors) {
-        var descriptor = Object.getOwnPropertyDescriptor(polyfill, "globalThis");
-        if (!descriptor || descriptor.configurable && (descriptor.enumerable || !descriptor.writable || globalThis !== polyfill)) {
+        var descriptor = Object.getOwnPropertyDescriptor(
+          polyfill,
+          "globalThis",
+        );
+        if (
+          !descriptor ||
+          (descriptor.configurable &&
+            (descriptor.enumerable ||
+              !descriptor.writable ||
+              globalThis !== polyfill))
+        ) {
           Object.defineProperty(polyfill, "globalThis", {
             configurable: true,
             enumerable: false,
             value: polyfill,
-            writable: true
+            writable: true,
           });
         }
       } else if (typeof globalThis !== "object" || globalThis !== polyfill) {
@@ -5707,7 +6443,7 @@ var require_shim3 = __commonJS({
       }
       return polyfill;
     };
-  }
+  },
 });
 
 // node_modules/globalthis/index.js
@@ -5719,16 +6455,16 @@ var require_globalthis = __commonJS({
     var getPolyfill = require_polyfill5();
     var shim = require_shim3();
     var polyfill = getPolyfill();
-    var getGlobal = function() {
+    var getGlobal = function () {
       return polyfill;
     };
     defineProperties(getGlobal, {
       getPolyfill,
       implementation,
-      shim
+      shim,
     });
     module2.exports = getGlobal;
-  }
+  },
 });
 
 // node_modules/es-set/shim.js
@@ -5745,10 +6481,10 @@ var require_shim4 = __commonJS({
     var getPolyfill = require_polyfill2();
     var support = require_support();
     var addIterator = require_helpers().addIterator;
-    var force = function() {
+    var force = function () {
       return true;
     };
-    var replaceGlobal = function(SetShim) {
+    var replaceGlobal = function (SetShim) {
       define(globalThis2, { Set: SetShim }, { Set: force });
       return SetShim;
     };
@@ -5758,32 +6494,43 @@ var require_shim4 = __commonJS({
           delete Set.prototype.remove;
           delete Set.prototype.items;
           delete Set.prototype.map;
-          define(Set.prototype, { keys: Set.prototype.values }, { keys: force });
+          define(
+            Set.prototype,
+            { keys: Set.prototype.values },
+            { keys: force },
+          );
         }
         if (support.setHasOldFirefoxInterface()) {
-          if (typeof (/* @__PURE__ */ new Set()).size === "function" && hasPropertyDescriptors()) {
+          if (
+            typeof /* @__PURE__ */ new Set().size === "function" &&
+            hasPropertyDescriptors()
+          ) {
             var $size = callBind(Set.prototype.size);
             DefinePropertyOrThrow(Set.prototype, "size", {
               "[[Configurable]]": true,
               "[[Enumerable]]": false,
               "[[Get]]": function size() {
                 return $size(this);
-              }
+              },
             });
           }
           var $entries = callBind(Set.prototype.entries);
           var $values = callBind(Set.prototype.values);
-          define(Set.prototype, {
-            entries: function entries() {
-              return getStopIterationIterator($entries(this));
+          define(
+            Set.prototype,
+            {
+              entries: function entries() {
+                return getStopIterationIterator($entries(this));
+              },
+              values: function values() {
+                return getStopIterationIterator($values(this));
+              },
             },
-            values: function values() {
-              return getStopIterationIterator($values(this));
-            }
-          }, {
-            entries: force,
-            values: force
-          });
+            {
+              entries: force,
+              values: force,
+            },
+          );
           if (typeof Set.prototype.forEach !== "function") {
             var $iterator = callBind(Set.prototype.iterator);
             define(
@@ -5798,9 +6545,9 @@ var require_shim4 = __commonJS({
                     cbB(result.value, result.value, this);
                     result = iterator.next();
                   }
-                }
+                },
               },
-              { forEach: force }
+              { forEach: force },
             );
           }
         }
@@ -5815,46 +6562,62 @@ var require_shim4 = __commonJS({
       var OrigSet$has = OrigSet$prototype.has;
       var OrigSet$delete = OrigSet$prototype["delete"];
       if (!support.setUsesSameValueZero()) {
-        define(OrigSet.prototype, {
-          add: function add(v) {
-            Call(OrigSet$add, this, [v === 0 ? 0 : v]);
-            return this;
+        define(
+          OrigSet.prototype,
+          {
+            add: function add(v) {
+              Call(OrigSet$add, this, [v === 0 ? 0 : v]);
+              return this;
+            },
+            delete: function _delete(v) {
+              return Call(OrigSet$delete, this, [v === 0 ? 0 : v]);
+            },
+            has: function has(v) {
+              return Call(OrigSet$has, this, [v === 0 ? 0 : v]);
+            },
           },
-          "delete": function _delete(v) {
-            return Call(OrigSet$delete, this, [v === 0 ? 0 : v]);
+          {
+            add: force,
+            delete: force,
+            has: force,
           },
-          has: function has(v) {
-            return Call(OrigSet$has, this, [v === 0 ? 0 : v]);
-          }
-        }, {
-          add: force,
-          "delete": force,
-          has: force
-        });
+        );
       } else if (!support.setSupportsChaining()) {
-        define(OrigSet.prototype, {
-          add: function add(v) {
-            Call(OrigSet$add, this, [v]);
-            return this;
-          }
-        }, { add: force });
+        define(
+          OrigSet.prototype,
+          {
+            add: function add(v) {
+              Call(OrigSet$add, this, [v]);
+              return this;
+            },
+          },
+          { add: force },
+        );
       }
       if (!support.setKeysIsValues()) {
-        define(OrigSet.prototype, { keys: OrigSet.prototype.values }, { keys: force });
+        define(
+          OrigSet.prototype,
+          { keys: OrigSet.prototype.values },
+          { keys: force },
+        );
       }
       if (!support.setHasCorrectName()) {
-        define(OrigSet.prototype, {
-          has: function has(v) {
-            return Call(OrigSet$has, this, v);
-          }
-        }, { has: force });
+        define(
+          OrigSet.prototype,
+          {
+            has: function has(v) {
+              return Call(OrigSet$has, this, v);
+            },
+          },
+          { has: force },
+        );
       }
       if (Object.getPrototypeOf) {
         addIterator(Object.getPrototypeOf(new OrigSet().values()));
       }
       return OrigSet;
     };
-  }
+  },
 });
 
 // node_modules/set.prototype.difference/shim.js
@@ -5870,13 +6633,15 @@ var require_shim5 = __commonJS({
       define(
         Set.prototype,
         { difference: polyfill },
-        { difference: function() {
-          return Set.prototype.difference !== polyfill;
-        } }
+        {
+          difference: function () {
+            return Set.prototype.difference !== polyfill;
+          },
+        },
       );
       return polyfill;
     };
-  }
+  },
 });
 
 // node_modules/set.prototype.difference/index.js
@@ -5892,15 +6657,18 @@ var require_set_prototype = __commonJS({
     define(bound, {
       getPolyfill,
       implementation,
-      shim
+      shim,
     });
     module2.exports = bound;
-  }
+  },
 });
 
 // node_modules/set.prototype.intersection/aos/GetSetRecord.js
 var require_GetSetRecord2 = __commonJS({
-  "node_modules/set.prototype.intersection/aos/GetSetRecord.js"(exports, module2) {
+  "node_modules/set.prototype.intersection/aos/GetSetRecord.js"(
+    exports,
+    module2,
+  ) {
     "use strict";
     var $RangeError = require_range();
     var $TypeError = require_type();
@@ -5940,9 +6708,14 @@ var require_GetSetRecord2 = __commonJS({
           return stopIterationIterator(boundKeys(this));
         };
       }
-      return { "[[Set]]": obj, "[[Size]]": intSize, "[[Has]]": has, "[[Keys]]": keys };
+      return {
+        "[[Set]]": obj,
+        "[[Size]]": intSize,
+        "[[Has]]": has,
+        "[[Keys]]": keys,
+      };
     };
-  }
+  },
 });
 
 // node_modules/es-abstract/helpers/some.js
@@ -5957,12 +6730,15 @@ var require_some = __commonJS({
       }
       return false;
     };
-  }
+  },
 });
 
 // node_modules/set.prototype.intersection/aos/SetDataHas.js
 var require_SetDataHas = __commonJS({
-  "node_modules/set.prototype.intersection/aos/SetDataHas.js"(exports, module2) {
+  "node_modules/set.prototype.intersection/aos/SetDataHas.js"(
+    exports,
+    module2,
+  ) {
     "use strict";
     var $TypeError = require_type();
     var IsArray = require_IsArray3();
@@ -5972,16 +6748,19 @@ var require_SetDataHas = __commonJS({
       if (!IsArray(setData)) {
         throw new $TypeError("`setData` must be a List");
       }
-      return some(setData, function(e) {
+      return some(setData, function (e) {
         return SameValueZero(e, value);
       });
     };
-  }
+  },
 });
 
 // node_modules/set.prototype.intersection/implementation.js
 var require_implementation8 = __commonJS({
-  "node_modules/set.prototype.intersection/implementation.js"(exports, module2) {
+  "node_modules/set.prototype.intersection/implementation.js"(
+    exports,
+    module2,
+  ) {
     "use strict";
     var $TypeError = require_type();
     var $Set = require_polyfill2()();
@@ -6004,17 +6783,22 @@ var require_implementation8 = __commonJS({
     module2.exports = function intersection2(other) {
       var O = this;
       if (!isSet(O) && !(O instanceof $Set)) {
-        throw new $TypeError("Method Set.prototype.intersection called on incompatible receiver " + O);
+        throw new $TypeError(
+          "Method Set.prototype.intersection called on incompatible receiver " +
+            O,
+        );
       }
       var otherRec = GetSetRecord(other);
       var resultSetData = [];
       var thisSize = $setSize(O);
       if (thisSize <= otherRec["[[Size]]"]) {
         var index = 0;
-        $setForEach(O, function(e) {
+        $setForEach(O, function (e) {
           if (index < thisSize) {
             index += 1;
-            var inOther = ToBoolean(Call(otherRec["[[Has]]"], otherRec["[[Set]]"], [e]));
+            var inOther = ToBoolean(
+              Call(otherRec["[[Has]]"], otherRec["[[Set]]"], [e]),
+            );
             if (inOther) {
               var alreadyInResult2 = SetDataHas(resultSetData, e);
               if (!alreadyInResult2) {
@@ -6025,7 +6809,10 @@ var require_implementation8 = __commonJS({
           }
         });
       } else {
-        var keysIter = GetIteratorFromMethod(otherRec["[[Set]]"], otherRec["[[Keys]]"]);
+        var keysIter = GetIteratorFromMethod(
+          otherRec["[[Set]]"],
+          otherRec["[[Keys]]"],
+        );
         var next;
         while (!keysIter["[[Done]]"]) {
           next = IteratorStepValue(keysIter);
@@ -6042,12 +6829,12 @@ var require_implementation8 = __commonJS({
         }
       }
       var result = new $Set();
-      forEach(resultSetData, function(e) {
+      forEach(resultSetData, function (e) {
         $setAdd(result, e);
       });
       return result;
     };
-  }
+  },
 });
 
 // node_modules/set.prototype.intersection/polyfill.js
@@ -6057,9 +6844,11 @@ var require_polyfill6 = __commonJS({
     var Set2 = require_polyfill2()();
     var implementation = require_implementation8();
     module2.exports = function getPolyfill() {
-      return typeof Set2.prototype.intersection === "function" ? Set2.prototype.intersection : implementation;
+      return typeof Set2.prototype.intersection === "function"
+        ? Set2.prototype.intersection
+        : implementation;
     };
-  }
+  },
 });
 
 // node_modules/set.prototype.intersection/shim.js
@@ -6075,13 +6864,15 @@ var require_shim6 = __commonJS({
       define(
         Set.prototype,
         { intersection: polyfill },
-        { intersection: function() {
-          return Set.prototype.intersection !== polyfill;
-        } }
+        {
+          intersection: function () {
+            return Set.prototype.intersection !== polyfill;
+          },
+        },
       );
       return polyfill;
     };
-  }
+  },
 });
 
 // node_modules/set.prototype.intersection/index.js
@@ -6097,16 +6888,16 @@ var require_set_prototype2 = __commonJS({
     define(bound, {
       getPolyfill,
       implementation,
-      shim
+      shim,
     });
     module2.exports = bound;
-  }
+  },
 });
 
 // src/main.ts
 var main_exports = {};
 __export(main_exports, {
-  default: () => LatexSuitePlugin
+  default: () => LatexSuitePlugin,
 });
 module.exports = __toCommonJS(main_exports);
 var import_obsidian8 = require("obsidian");
@@ -6139,14 +6930,11 @@ function parseResult(typed, output, issues) {
   return { typed, output, issues };
 }
 function restAndDefaultArgs(arg1, arg2, arg3) {
-  if (!arg1 || typeof arg1 === "object" && !Array.isArray(arg1)) {
+  if (!arg1 || (typeof arg1 === "object" && !Array.isArray(arg1))) {
     const [error2, pipe2] = defaultArgs(arg2, arg3);
     return [arg1, error2, pipe2];
   }
-  const [error, pipe] = defaultArgs(
-    arg1,
-    arg2
-  );
+  const [error, pipe] = defaultArgs(arg1, arg2);
   return [void 0, error, pipe];
 }
 function pipeIssue(info, issue) {
@@ -6160,7 +6948,7 @@ function pipeIssue(info, issue) {
     path: issue.path,
     abortEarly: info == null ? void 0 : info.abortEarly,
     abortPipeEarly: info == null ? void 0 : info.abortPipeEarly,
-    skipPipe: info == null ? void 0 : info.skipPipe
+    skipPipe: info == null ? void 0 : info.skipPipe,
   };
 }
 function pipeInfo(info, reason) {
@@ -6169,20 +6957,23 @@ function pipeInfo(info, reason) {
     origin: info == null ? void 0 : info.origin,
     abortEarly: info == null ? void 0 : info.abortEarly,
     abortPipeEarly: info == null ? void 0 : info.abortPipeEarly,
-    skipPipe: info == null ? void 0 : info.skipPipe
+    skipPipe: info == null ? void 0 : info.skipPipe,
   };
 }
 function pipeResult(input, pipe, parseInfo, reason, issues) {
   let info;
   let output = input;
-  if ((pipe == null ? void 0 : pipe.length) && !(parseInfo == null ? void 0 : parseInfo.skipPipe)) {
+  if (
+    (pipe == null ? void 0 : pipe.length) &&
+    !(parseInfo == null ? void 0 : parseInfo.skipPipe)
+  ) {
     for (const action of pipe) {
       const result = action._parse(output);
       if (result.issues) {
         info = info || pipeInfo(parseInfo, reason);
         for (const issueInfo of result.issues) {
           const issue = pipeIssue(info, issueInfo);
-          issues ? issues.push(issue) : issues = [issue];
+          issues ? issues.push(issue) : (issues = [issue]);
         }
         if (info.abortEarly || info.abortPipeEarly) {
           break;
@@ -6208,13 +6999,15 @@ function schemaIssue(info, reason, validation, message, input, issues) {
         issues,
         abortEarly: info == null ? void 0 : info.abortEarly,
         abortPipeEarly: info == null ? void 0 : info.abortPipeEarly,
-        skipPipe: info == null ? void 0 : info.skipPipe
-      }
-    ]
+        skipPipe: info == null ? void 0 : info.skipPipe,
+      },
+    ],
   };
 }
 function getDefault(schema) {
-  return typeof schema.default === "function" ? schema.default() : schema.default;
+  return typeof schema.default === "function"
+    ? schema.default()
+    : schema.default;
 }
 function instance(class_, arg2, arg3) {
   const [message = "Invalid type", pipe] = defaultArgs(arg2, arg3);
@@ -6229,7 +7022,7 @@ function instance(class_, arg2, arg3) {
         return schemaIssue(info, "type", "instance", this.message, input);
       }
       return pipeResult(input, this.pipe, info, "instance");
-    }
+    },
   };
 }
 function number(arg1, arg2) {
@@ -6244,11 +7037,15 @@ function number(arg1, arg2) {
         return schemaIssue(info, "type", "number", this.message, input);
       }
       return pipeResult(input, this.pipe, info, "number");
-    }
+    },
   };
 }
 function object(entries, arg2, arg3, arg4) {
-  const [rest, message = "Invalid type", pipe] = restAndDefaultArgs(arg2, arg3, arg4);
+  const [rest, message = "Invalid type", pipe] = restAndDefaultArgs(
+    arg2,
+    arg3,
+    arg4,
+  );
   let cachedEntries;
   return {
     type: "object",
@@ -6273,7 +7070,7 @@ function object(entries, arg2, arg3, arg4) {
             type: "object",
             input,
             key,
-            value: value2
+            value: value2,
           };
           for (const issue of result.issues) {
             if (issue.path) {
@@ -6308,7 +7105,7 @@ function object(entries, arg2, arg3, arg4) {
                 type: "object",
                 input,
                 key,
-                value: value2
+                value: value2,
               };
               for (const issue of result.issues) {
                 if (issue.path) {
@@ -6334,16 +7131,10 @@ function object(entries, arg2, arg3, arg4) {
         }
       }
       if (typed) {
-        return pipeResult(
-          output,
-          this.pipe,
-          info,
-          "object",
-          issues
-        );
+        return pipeResult(output, this.pipe, info, "object", issues);
       }
       return parseResult(false, output, issues);
-    }
+    },
   };
 }
 function optional(wrapped, default_) {
@@ -6361,7 +7152,7 @@ function optional(wrapped, default_) {
         input = override;
       }
       return this.wrapped._parse(input, info);
-    }
+    },
   };
 }
 function string(arg1, arg2) {
@@ -6376,7 +7167,7 @@ function string(arg1, arg2) {
         return schemaIssue(info, "type", "string", this.message, input);
       }
       return pipeResult(input, this.pipe, info, "string");
-    }
+    },
   };
 }
 function special(check, arg2, arg3) {
@@ -6392,7 +7183,7 @@ function special(check, arg2, arg3) {
         return schemaIssue(info, "type", "special", this.message, input);
       }
       return pipeResult(input, this.pipe, info, "special");
-    }
+    },
   };
 }
 function union(options, message = "Invalid type") {
@@ -6423,7 +7214,7 @@ function union(options, message = "Invalid type") {
         return parseResult(true, output[0]);
       }
       return schemaIssue(info, "type", "union", this.message, input, issues);
-    }
+    },
   };
 }
 function parse(schema, input, info) {
@@ -6443,56 +7234,104 @@ var b64ch = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 var b64chs = Array.prototype.slice.call(b64ch);
 var b64tab = ((a) => {
   let tab = {};
-  a.forEach((c, i) => tab[c] = i);
+  a.forEach((c, i) => (tab[c] = i));
   return tab;
 })(b64chs);
 var _fromCC = String.fromCharCode.bind(String);
-var _U8Afrom = typeof Uint8Array.from === "function" ? Uint8Array.from.bind(Uint8Array) : (it) => new Uint8Array(Array.prototype.slice.call(it, 0));
-var _mkUriSafe = (src) => src.replace(/=/g, "").replace(/[+\/]/g, (m0) => m0 == "+" ? "-" : "_");
+var _U8Afrom =
+  typeof Uint8Array.from === "function"
+    ? Uint8Array.from.bind(Uint8Array)
+    : (it) => new Uint8Array(Array.prototype.slice.call(it, 0));
+var _mkUriSafe = (src) =>
+  src.replace(/=/g, "").replace(/[+\/]/g, (m0) => (m0 == "+" ? "-" : "_"));
 var btoaPolyfill = (bin) => {
-  let u32, c0, c1, c2, asc = "";
+  let u32,
+    c0,
+    c1,
+    c2,
+    asc = "";
   const pad = bin.length % 3;
   for (let i = 0; i < bin.length; ) {
-    if ((c0 = bin.charCodeAt(i++)) > 255 || (c1 = bin.charCodeAt(i++)) > 255 || (c2 = bin.charCodeAt(i++)) > 255)
+    if (
+      (c0 = bin.charCodeAt(i++)) > 255 ||
+      (c1 = bin.charCodeAt(i++)) > 255 ||
+      (c2 = bin.charCodeAt(i++)) > 255
+    )
       throw new TypeError("invalid character found");
-    u32 = c0 << 16 | c1 << 8 | c2;
-    asc += b64chs[u32 >> 18 & 63] + b64chs[u32 >> 12 & 63] + b64chs[u32 >> 6 & 63] + b64chs[u32 & 63];
+    u32 = (c0 << 16) | (c1 << 8) | c2;
+    asc +=
+      b64chs[(u32 >> 18) & 63] +
+      b64chs[(u32 >> 12) & 63] +
+      b64chs[(u32 >> 6) & 63] +
+      b64chs[u32 & 63];
   }
   return pad ? asc.slice(0, pad - 3) + "===".substring(pad) : asc;
 };
-var _btoa = _hasbtoa ? (bin) => btoa(bin) : _hasBuffer ? (bin) => Buffer.from(bin, "binary").toString("base64") : btoaPolyfill;
-var _fromUint8Array = _hasBuffer ? (u8a) => Buffer.from(u8a).toString("base64") : (u8a) => {
-  const maxargs = 4096;
-  let strs = [];
-  for (let i = 0, l = u8a.length; i < l; i += maxargs) {
-    strs.push(_fromCC.apply(null, u8a.subarray(i, i + maxargs)));
-  }
-  return _btoa(strs.join(""));
-};
+var _btoa = _hasbtoa
+  ? (bin) => btoa(bin)
+  : _hasBuffer
+    ? (bin) => Buffer.from(bin, "binary").toString("base64")
+    : btoaPolyfill;
+var _fromUint8Array = _hasBuffer
+  ? (u8a) => Buffer.from(u8a).toString("base64")
+  : (u8a) => {
+      const maxargs = 4096;
+      let strs = [];
+      for (let i = 0, l = u8a.length; i < l; i += maxargs) {
+        strs.push(_fromCC.apply(null, u8a.subarray(i, i + maxargs)));
+      }
+      return _btoa(strs.join(""));
+    };
 var cb_utob = (c) => {
   if (c.length < 2) {
     var cc = c.charCodeAt(0);
-    return cc < 128 ? c : cc < 2048 ? _fromCC(192 | cc >>> 6) + _fromCC(128 | cc & 63) : _fromCC(224 | cc >>> 12 & 15) + _fromCC(128 | cc >>> 6 & 63) + _fromCC(128 | cc & 63);
+    return cc < 128
+      ? c
+      : cc < 2048
+        ? _fromCC(192 | (cc >>> 6)) + _fromCC(128 | (cc & 63))
+        : _fromCC(224 | ((cc >>> 12) & 15)) +
+          _fromCC(128 | ((cc >>> 6) & 63)) +
+          _fromCC(128 | (cc & 63));
   } else {
-    var cc = 65536 + (c.charCodeAt(0) - 55296) * 1024 + (c.charCodeAt(1) - 56320);
-    return _fromCC(240 | cc >>> 18 & 7) + _fromCC(128 | cc >>> 12 & 63) + _fromCC(128 | cc >>> 6 & 63) + _fromCC(128 | cc & 63);
+    var cc =
+      65536 + (c.charCodeAt(0) - 55296) * 1024 + (c.charCodeAt(1) - 56320);
+    return (
+      _fromCC(240 | ((cc >>> 18) & 7)) +
+      _fromCC(128 | ((cc >>> 12) & 63)) +
+      _fromCC(128 | ((cc >>> 6) & 63)) +
+      _fromCC(128 | (cc & 63))
+    );
   }
 };
 var re_utob = /[\uD800-\uDBFF][\uDC00-\uDFFFF]|[^\x00-\x7F]/g;
 var utob = (u) => u.replace(re_utob, cb_utob);
-var _encode = _hasBuffer ? (s) => Buffer.from(s, "utf8").toString("base64") : _TE ? (s) => _fromUint8Array(_TE.encode(s)) : (s) => _btoa(utob(s));
-var encode = (src, urlsafe = false) => urlsafe ? _mkUriSafe(_encode(src)) : _encode(src);
+var _encode = _hasBuffer
+  ? (s) => Buffer.from(s, "utf8").toString("base64")
+  : _TE
+    ? (s) => _fromUint8Array(_TE.encode(s))
+    : (s) => _btoa(utob(s));
+var encode = (src, urlsafe = false) =>
+  urlsafe ? _mkUriSafe(_encode(src)) : _encode(src);
 
 // src/snippets/snippets.ts
 var VISUAL_SNIPPET_MAGIC_SELECTION_PLACEHOLDER = "${VISUAL}";
 var Snippet = class {
-  constructor(type, trigger, replacement, options, priority, description, excludedEnvironments) {
+  constructor(
+    type,
+    trigger,
+    replacement,
+    options,
+    priority,
+    description,
+    excludedEnvironments,
+  ) {
     this.type = type;
     this.data = { trigger, replacement };
     this.options = options;
     this.priority = priority;
     this.description = description;
-    this.excludedEnvironments = excludedEnvironments != null ? excludedEnvironments : [];
+    this.excludedEnvironments =
+      excludedEnvironments != null ? excludedEnvironments : [];
   }
   // we need to explicitly type the return value here so the derived classes,
   // have the getter typed properly for the particular <T> the derived class extends
@@ -6510,13 +7349,28 @@ var Snippet = class {
       options: this.options,
       priority: this.priority,
       description: this.description,
-      excludedEnvironments: this.excludedEnvironments
+      excludedEnvironments: this.excludedEnvironments,
     });
   }
 };
 var VisualSnippet = class extends Snippet {
-  constructor({ trigger, replacement, options, priority, description, excludedEnvironments }) {
-    super("visual", trigger, replacement, options, priority, description, excludedEnvironments);
+  constructor({
+    trigger,
+    replacement,
+    options,
+    priority,
+    description,
+    excludedEnvironments,
+  }) {
+    super(
+      "visual",
+      trigger,
+      replacement,
+      options,
+      priority,
+      description,
+      excludedEnvironments,
+    );
   }
   process(effectiveLine, range, sel) {
     const hasSelection = !!sel;
@@ -6529,7 +7383,10 @@ var VisualSnippet = class extends Snippet {
     const triggerPos = range.from;
     let replacement;
     if (typeof this.replacement === "string") {
-      replacement = this.replacement.replace(VISUAL_SNIPPET_MAGIC_SELECTION_PLACEHOLDER, sel);
+      replacement = this.replacement.replace(
+        VISUAL_SNIPPET_MAGIC_SELECTION_PLACEHOLDER,
+        sel,
+      );
     } else {
       replacement = this.replacement(sel);
       if (typeof replacement !== "string") {
@@ -6540,8 +7397,23 @@ var VisualSnippet = class extends Snippet {
   }
 };
 var RegexSnippet = class extends Snippet {
-  constructor({ trigger, replacement, options, priority, description, excludedEnvironments }) {
-    super("regex", trigger, replacement, options, priority, description, excludedEnvironments);
+  constructor({
+    trigger,
+    replacement,
+    options,
+    priority,
+    description,
+    excludedEnvironments,
+  }) {
+    super(
+      "regex",
+      trigger,
+      replacement,
+      options,
+      priority,
+      description,
+      excludedEnvironments,
+    );
   }
   process(effectiveLine, range, sel) {
     const hasSelection = !!sel;
@@ -6556,10 +7428,13 @@ var RegexSnippet = class extends Snippet {
     let replacement;
     if (typeof this.replacement === "string") {
       const nCaptureGroups = result.length - 1;
-      replacement = Array.from({ length: nCaptureGroups }).map((_, i) => i + 1).reduce(
-        (replacement2, i) => replacement2.replaceAll(`[[${i - 1}]]`, result[i]),
-        this.replacement
-      );
+      replacement = Array.from({ length: nCaptureGroups })
+        .map((_, i) => i + 1)
+        .reduce(
+          (replacement2, i) =>
+            replacement2.replaceAll(`[[${i - 1}]]`, result[i]),
+          this.replacement,
+        );
     } else {
       replacement = this.replacement(result);
       if (typeof replacement !== "string") {
@@ -6570,8 +7445,23 @@ var RegexSnippet = class extends Snippet {
   }
 };
 var StringSnippet = class extends Snippet {
-  constructor({ trigger, replacement, options, priority, description, excludedEnvironments: excludeIn }) {
-    super("string", trigger, replacement, options, priority, description, excludeIn);
+  constructor({
+    trigger,
+    replacement,
+    options,
+    priority,
+    description,
+    excludedEnvironments: excludeIn,
+  }) {
+    super(
+      "string",
+      trigger,
+      replacement,
+      options,
+      priority,
+      description,
+      excludeIn,
+    );
   }
   process(effectiveLine, range, sel) {
     const hasSelection = !!sel;
@@ -6582,7 +7472,10 @@ var StringSnippet = class extends Snippet {
       return null;
     }
     const triggerPos = effectiveLine.length - this.trigger.length;
-    const replacement = typeof this.replacement === "string" ? this.replacement : this.replacement(this.trigger);
+    const replacement =
+      typeof this.replacement === "string"
+        ? this.replacement
+        : this.replacement(this.trigger);
     if (typeof replacement !== "string") {
       return null;
     }
@@ -6693,7 +7586,16 @@ var Mode = class _Mode {
           break;
       }
     }
-    if (!(mode.text || mode.inlineMath || mode.blockMath || mode.codeMath || mode.code || mode.textEnv)) {
+    if (
+      !(
+        mode.text ||
+        mode.inlineMath ||
+        mode.blockMath ||
+        mode.codeMath ||
+        mode.code ||
+        mode.textEnv
+      )
+    ) {
       mode.invert();
       return mode;
     }
@@ -6703,7 +7605,10 @@ var Mode = class _Mode {
 
 // src/snippets/sort.ts
 function sortSnippets(snippets2) {
-  return snippets2.map((snippet, i) => [getPriority(snippet), getTriggerLength(snippet), i]).sort(schwartzianSnippetCompare).map(([p, t2, i]) => snippets2[i]);
+  return snippets2
+    .map((snippet, i) => [getPriority(snippet), getTriggerLength(snippet), i])
+    .sort(schwartzianSnippetCompare)
+    .map(([p, t2, i]) => snippets2[i]);
 }
 function schwartzianSnippetCompare(a, b) {
   return comparePriority(a[0], b[0]) || compareTriggerLength(a[1], b[1]);
@@ -6730,13 +7635,15 @@ function getPriority(snippet) {
   return snippet.priority || 0;
 }
 function getTriggerLength(snippet) {
-  return typeof snippet.trigger === "string" ? snippet.trigger.length : snippet.trigger.source.length;
+  return typeof snippet.trigger === "string"
+    ? snippet.trigger.length
+    : snippet.trigger.source.length;
 }
 
 // src/snippets/environment.ts
 var EXCLUSIONS = {
   "([A-Za-z])(\\d)": { openSymbol: "\\pu{", closeSymbol: "}" },
-  "->": { openSymbol: "\\ce{", closeSymbol: "}" }
+  "->": { openSymbol: "\\ce{", closeSymbol: "}" },
 };
 
 // src/snippets/parse.ts
@@ -6745,9 +7652,13 @@ function importRaw(maybeJavaScriptCode) {
     let raw;
     try {
       try {
-        raw = yield importModuleDefault(`data:text/javascript;base64,${encode(maybeJavaScriptCode)}`);
+        raw = yield importModuleDefault(
+          `data:text/javascript;base64,${encode(maybeJavaScriptCode)}`,
+        );
       } catch (e) {
-        raw = yield importModuleDefault(`data:text/javascript;base64,${encode(`export default ${maybeJavaScriptCode}`)}`);
+        raw = yield importModuleDefault(
+          `data:text/javascript;base64,${encode(`export default ${maybeJavaScriptCode}`)}`,
+        );
       }
     } catch (e) {
       throw "Invalid format.";
@@ -6819,7 +7730,7 @@ var RawSnippetSchema = object({
   options: string(),
   flags: optional(string()),
   priority: optional(number()),
-  description: optional(string())
+  description: optional(string()),
 });
 function validateRawSnippets(snippets2) {
   if (!Array.isArray(snippets2)) {
@@ -6856,16 +7767,33 @@ function parseSnippet(raw, snippetVariables) {
     triggerStr = `${triggerStr}$`;
     trigger = new RegExp(triggerStr, flags);
     options.regex = true;
-    const normalised = { trigger, replacement, options, priority, description, excludedEnvironments };
+    const normalised = {
+      trigger,
+      replacement,
+      options,
+      priority,
+      description,
+      excludedEnvironments,
+    };
     return new RegexSnippet(normalised);
   } else {
     let trigger2 = raw.trigger;
     trigger2 = insertSnippetVariables(trigger2, snippetVariables);
     excludedEnvironments = getExcludedEnvironments(trigger2);
-    if (typeof replacement === "string" && replacement.includes(VISUAL_SNIPPET_MAGIC_SELECTION_PLACEHOLDER)) {
+    if (
+      typeof replacement === "string" &&
+      replacement.includes(VISUAL_SNIPPET_MAGIC_SELECTION_PLACEHOLDER)
+    ) {
       options.visual = true;
     }
-    const normalised = { trigger: trigger2, replacement, options, priority, description, excludedEnvironments };
+    const normalised = {
+      trigger: trigger2,
+      replacement,
+      options,
+      priority,
+      description,
+      excludedEnvironments,
+    };
     if (options.visual) {
       return new VisualSnippet(normalised);
     } else {
@@ -6881,10 +7809,12 @@ function filterFlags(flags) {
     "m",
     "s",
     "u",
-    "v"
+    "v",
     // "y", // almost certainly undesired behavior
   ];
-  return Array.from(new Set(flags.split(""))).filter((flag) => validFlags.includes(flag)).join("");
+  return Array.from(new Set(flags.split("")))
+    .filter((flag) => validFlags.includes(flag))
+    .join("");
 }
 function insertSnippetVariables(trigger, variables) {
   for (const [variable, replacement] of Object.entries(variables)) {
@@ -6909,8 +7839,7 @@ function isInFolder(file, dir) {
   let cur = file.parent;
   let cnt = 0;
   while (cur && !cur.isRoot() && cnt < 100) {
-    if (cur.path === dir.path)
-      return true;
+    if (cur.path === dir.path) return true;
     cur = cur.parent;
     cnt++;
   }
@@ -6921,38 +7850,76 @@ function fileIsInFolder(plugin, folderPath, file) {
   const isFolder = snippetDir instanceof import_obsidian.TFolder;
   return isFolder && isInFolder(file, snippetDir);
 }
-var refreshFromFiles = (0, import_obsidian.debounce)((plugin) => __async(void 0, null, function* () {
-  if (!(plugin.settings.loadSnippetVariablesFromFile || plugin.settings.loadSnippetsFromFile)) {
-    return;
-  }
-  yield plugin.processSettings(false, true);
-}), 500, true);
-var onFileChange = (plugin, file) => __async(void 0, null, function* () {
-  if (!(file instanceof import_obsidian.TFile))
-    return;
-  if (plugin.settings.loadSnippetVariablesFromFile && file.path === plugin.settings.snippetVariablesFileLocation || plugin.settings.loadSnippetsFromFile && file.path === plugin.settings.snippetsFileLocation || fileIsInFolder(plugin, plugin.settings.snippetVariablesFileLocation, file) || fileIsInFolder(plugin, plugin.settings.snippetsFileLocation, file)) {
-    refreshFromFiles(plugin);
-  }
-});
+var refreshFromFiles = (0, import_obsidian.debounce)(
+  (plugin) =>
+    __async(void 0, null, function* () {
+      if (
+        !(
+          plugin.settings.loadSnippetVariablesFromFile ||
+          plugin.settings.loadSnippetsFromFile
+        )
+      ) {
+        return;
+      }
+      yield plugin.processSettings(false, true);
+    }),
+  500,
+  true,
+);
+var onFileChange = (plugin, file) =>
+  __async(void 0, null, function* () {
+    if (!(file instanceof import_obsidian.TFile)) return;
+    if (
+      (plugin.settings.loadSnippetVariablesFromFile &&
+        file.path === plugin.settings.snippetVariablesFileLocation) ||
+      (plugin.settings.loadSnippetsFromFile &&
+        file.path === plugin.settings.snippetsFileLocation) ||
+      fileIsInFolder(
+        plugin,
+        plugin.settings.snippetVariablesFileLocation,
+        file,
+      ) ||
+      fileIsInFolder(plugin, plugin.settings.snippetsFileLocation, file)
+    ) {
+      refreshFromFiles(plugin);
+    }
+  });
 var onFileCreate = (plugin, file) => {
-  if (!(file instanceof import_obsidian.TFile))
-    return;
-  if (plugin.settings.loadSnippetVariablesFromFile && fileIsInFolder(plugin, plugin.settings.snippetVariablesFileLocation, file) || plugin.settings.loadSnippetsFromFile && fileIsInFolder(plugin, plugin.settings.snippetsFileLocation, file)) {
+  if (!(file instanceof import_obsidian.TFile)) return;
+  if (
+    (plugin.settings.loadSnippetVariablesFromFile &&
+      fileIsInFolder(
+        plugin,
+        plugin.settings.snippetVariablesFileLocation,
+        file,
+      )) ||
+    (plugin.settings.loadSnippetsFromFile &&
+      fileIsInFolder(plugin, plugin.settings.snippetsFileLocation, file))
+  ) {
     refreshFromFiles(plugin);
   }
 };
 var onFileDelete = (plugin, file) => {
-  if (!(file instanceof import_obsidian.TFile))
-    return;
-  const snippetVariablesDir = plugin.app.vault.getAbstractFileByPath(plugin.settings.snippetVariablesFileLocation);
-  const snippetDir = plugin.app.vault.getAbstractFileByPath(plugin.settings.snippetsFileLocation);
-  if (plugin.settings.loadSnippetVariablesFromFile && snippetVariablesDir instanceof import_obsidian.TFolder && file.path.contains(snippetVariablesDir.path) || plugin.settings.loadSnippetsFromFile && snippetDir instanceof import_obsidian.TFolder && file.path.contains(snippetDir.path)) {
+  if (!(file instanceof import_obsidian.TFile)) return;
+  const snippetVariablesDir = plugin.app.vault.getAbstractFileByPath(
+    plugin.settings.snippetVariablesFileLocation,
+  );
+  const snippetDir = plugin.app.vault.getAbstractFileByPath(
+    plugin.settings.snippetsFileLocation,
+  );
+  if (
+    (plugin.settings.loadSnippetVariablesFromFile &&
+      snippetVariablesDir instanceof import_obsidian.TFolder &&
+      file.path.contains(snippetVariablesDir.path)) ||
+    (plugin.settings.loadSnippetsFromFile &&
+      snippetDir instanceof import_obsidian.TFolder &&
+      file.path.contains(snippetDir.path))
+  ) {
     refreshFromFiles(plugin);
   }
 };
 function* generateFilesWithin(fileOrFolder) {
-  if (fileOrFolder instanceof import_obsidian.TFile)
-    yield fileOrFolder;
+  if (fileOrFolder instanceof import_obsidian.TFile) yield fileOrFolder;
   else if (fileOrFolder instanceof import_obsidian.TFolder)
     for (const child of fileOrFolder.children)
       yield* __yieldStar(generateFilesWithin(child));
@@ -6963,12 +7930,23 @@ function getFilesWithin(vault, path) {
   return new Set(files);
 }
 function getFileSets(plugin) {
-  const variablesFolder = plugin.settings.loadSnippetVariablesFromFile ? getFilesWithin(plugin.app.vault, plugin.settings.snippetVariablesFileLocation) : /* @__PURE__ */ new Set();
-  const snippetsFolder = plugin.settings.loadSnippetsFromFile ? getFilesWithin(plugin.app.vault, plugin.settings.snippetsFileLocation) : /* @__PURE__ */ new Set();
+  const variablesFolder = plugin.settings.loadSnippetVariablesFromFile
+    ? getFilesWithin(
+        plugin.app.vault,
+        plugin.settings.snippetVariablesFileLocation,
+      )
+    : /* @__PURE__ */ new Set();
+  const snippetsFolder = plugin.settings.loadSnippetsFromFile
+    ? getFilesWithin(plugin.app.vault, plugin.settings.snippetsFileLocation)
+    : /* @__PURE__ */ new Set();
   const definitelyVariableFiles = difference(variablesFolder, snippetsFolder);
   const definitelySnippetFiles = difference(snippetsFolder, variablesFolder);
   const snippetOrVariableFiles = intersection(variablesFolder, snippetsFolder);
-  return { definitelyVariableFiles, definitelySnippetFiles, snippetOrVariableFiles };
+  return {
+    definitelyVariableFiles,
+    definitelySnippetFiles,
+    snippetOrVariableFiles,
+  };
 }
 function getVariablesFromFiles(plugin, files) {
   return __async(this, null, function* () {
@@ -6978,7 +7956,9 @@ function getVariablesFromFiles(plugin, files) {
       try {
         Object.assign(snippetVariables, yield parseSnippetVariables(content));
       } catch (e) {
-        new import_obsidian.Notice(`Failed to parse variable file ${file.name}: ${e}`);
+        new import_obsidian.Notice(
+          `Failed to parse variable file ${file.name}: ${e}`,
+        );
         console.log(`Failed to parse variable file ${file.name}: ${e}`);
         files.definitelyVariableFiles.delete(file);
       }
@@ -7008,9 +7988,11 @@ function getSnippetsFromFiles(plugin, files, snippetVariables) {
     for (const file of files.definitelySnippetFiles) {
       const content = yield plugin.app.vault.cachedRead(file);
       try {
-        snippets2.push(...yield parseSnippets(content, snippetVariables));
+        snippets2.push(...(yield parseSnippets(content, snippetVariables)));
       } catch (e) {
-        new import_obsidian.Notice(`Failed to parse snippet file ${file.name}: ${e}`);
+        new import_obsidian.Notice(
+          `Failed to parse snippet file ${file.name}: ${e}`,
+        );
         console.log(`Failed to parse snippet file ${file.name}: ${e}`);
         files.definitelySnippetFiles.delete(file);
       }
@@ -7020,13 +8002,15 @@ function getSnippetsFromFiles(plugin, files, snippetVariables) {
 }
 
 // _94n10i9xf:/home/runner/work/obsidian-latex-suite/obsidian-latex-suite/src/default_snippets.js
-var default_snippets_default = '[\n    // Math mode\n	{trigger: "mk", replacement: "$$0$", options: "tA"},\n	{trigger: "dm", replacement: "$$\\n$0\\n$$", options: "tAw"},\n	{trigger: "beg", replacement: "\\\\begin{$0}\\n$1\\n\\\\end{$0}", options: "mA"},\n\n    // Dashes\n	// {trigger: "--", replacement: "\u2013", options: "tA"},\n	// {trigger: "\u2013-", replacement: "\u2014", options: "tA"},\n	// {trigger: "\u2014-", replacement: "---", options: "tA"},\n\n    // Greek letters\n	{trigger: "@a", replacement: "\\\\alpha", options: "mA"},\n	{trigger: "@b", replacement: "\\\\beta", options: "mA"},\n	{trigger: "@g", replacement: "\\\\gamma", options: "mA"},\n	{trigger: "@G", replacement: "\\\\Gamma", options: "mA"},\n	{trigger: "@d", replacement: "\\\\delta", options: "mA"},\n	{trigger: "@D", replacement: "\\\\Delta", options: "mA"},\n	{trigger: "@e", replacement: "\\\\epsilon", options: "mA"},\n	{trigger: ":e", replacement: "\\\\varepsilon", options: "mA"},\n	{trigger: "@z", replacement: "\\\\zeta", options: "mA"},\n	{trigger: "@t", replacement: "\\\\theta", options: "mA"},\n	{trigger: "@T", replacement: "\\\\Theta", options: "mA"},\n	{trigger: ":t", replacement: "\\\\vartheta", options: "mA"},\n	{trigger: "@i", replacement: "\\\\iota", options: "mA"},\n	{trigger: "@k", replacement: "\\\\kappa", options: "mA"},\n	{trigger: "@l", replacement: "\\\\lambda", options: "mA"},\n	{trigger: "@L", replacement: "\\\\Lambda", options: "mA"},\n	{trigger: "@s", replacement: "\\\\sigma", options: "mA"},\n	{trigger: "@S", replacement: "\\\\Sigma", options: "mA"},\n	{trigger: "@u", replacement: "\\\\upsilon", options: "mA"},\n	{trigger: "@U", replacement: "\\\\Upsilon", options: "mA"},\n	{trigger: "@o", replacement: "\\\\omega", options: "mA"},\n	{trigger: "@O", replacement: "\\\\Omega", options: "mA"},\n	{trigger: "ome", replacement: "\\\\omega", options: "mA"},\n	{trigger: "Ome", replacement: "\\\\Omega", options: "mA"},\n\n    // Text environment\n    {trigger: "text", replacement: "\\\\text{$0}$1", options: "mA"},\n    {trigger: "\\"", replacement: "\\\\text{$0}$1", options: "mA"},\n\n    // Basic operations\n    {trigger: "sr", replacement: "^{2}", options: "mA"},\n	{trigger: "cb", replacement: "^{3}", options: "mA"},\n	{trigger: "rd", replacement: "^{$0}$1", options: "mA"},\n	{trigger: "_", replacement: "_{$0}$1", options: "mA"},\n	{trigger: "sts", replacement: "_\\\\text{$0}", options: "mA"},\n	{trigger: "sq", replacement: "\\\\sqrt{ $0 }$1", options: "mA"},\n	{trigger: "//", replacement: "\\\\frac{$0}{$1}$2", options: "mA"},\n	{trigger: "ee", replacement: "e^{ $0 }$1", options: "mA"},\n    {trigger: "invs", replacement: "^{-1}", options: "mA"},\n    {trigger: /([A-Za-z])(\\d)/, replacement: "[[0]]_{[[1]]}", options: "rmA", description: "Auto letter subscript", priority: -1},\n\n    {trigger: /([^\\\\])(exp|log|ln)/, replacement: "[[0]]\\\\[[1]]", options: "rmA"},\n    {trigger: "conj", replacement: "^{*}", options: "mA"},\n    {trigger: "Re", replacement: "\\\\mathrm{Re}", options: "mA"},\n	{trigger: "Im", replacement: "\\\\mathrm{Im}", options: "mA"},\n    {trigger: "bf", replacement: "\\\\mathbf{$0}", options: "mA"},\n	{trigger: "rm", replacement: "\\\\mathrm{$0}$1", options: "mA"},\n\n    // Linear algebra\n    {trigger: /([^\\\\])(det)/, replacement: "[[0]]\\\\[[1]]", options: "rmA"},\n    {trigger: "trace", replacement: "\\\\mathrm{Tr}", options: "mA"},\n\n    // More operations\n	{trigger: "([a-zA-Z])hat", replacement: "\\\\hat{[[0]]}", options: "rmA"},\n    {trigger: "([a-zA-Z])bar", replacement: "\\\\bar{[[0]]}", options: "rmA"},\n	{trigger: "([a-zA-Z])dot", replacement: "\\\\dot{[[0]]}", options: "rmA", priority: -1},\n	{trigger: "([a-zA-Z])ddot", replacement: "\\\\ddot{[[0]]}", options: "rmA", priority: 1},\n	{trigger: "([a-zA-Z])tilde", replacement: "\\\\tilde{[[0]]}", options: "rmA"},\n	{trigger: "([a-zA-Z])und", replacement: "\\\\underline{[[0]]}", options: "rmA"},\n	{trigger: "([a-zA-Z])vec", replacement: "\\\\vec{[[0]]}", options: "rmA"},\n    {trigger: "([a-zA-Z]),\\\\.", replacement: "\\\\mathbf{[[0]]}", options: "rmA"},\n	{trigger: "([a-zA-Z])\\\\.,", replacement: "\\\\mathbf{[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}),\\\\.", replacement: "\\\\boldsymbol{\\\\[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK})\\\\.,", replacement: "\\\\boldsymbol{\\\\[[0]]}", options: "rmA"},\n\n	{trigger: "hat", replacement: "\\\\hat{$0}$1", options: "mA"},\n    {trigger: "bar", replacement: "\\\\bar{$0}$1", options: "mA"},\n	{trigger: "dot", replacement: "\\\\dot{$0}$1", options: "mA", priority: -1},\n	{trigger: "ddot", replacement: "\\\\ddot{$0}$1", options: "mA"},\n	{trigger: "cdot", replacement: "\\\\cdot", options: "mA"},\n	{trigger: "tilde", replacement: "\\\\tilde{$0}$1", options: "mA"},\n	{trigger: "und", replacement: "\\\\underline{$0}$1", options: "mA"},\n	{trigger: "vec", replacement: "\\\\vec{$0}$1", options: "mA"},\n\n    // More auto letter subscript\n    {trigger: /([A-Za-z])_(\\d\\d)/, replacement: "[[0]]_{[[1]]}", options: "rmA"},\n	{trigger: /\\\\hat{([A-Za-z])}(\\d)/, replacement: "\\\\hat{[[0]]}_{[[1]]}", options: "rmA"},\n	{trigger: /\\\\vec{([A-Za-z])}(\\d)/, replacement: "\\\\vec{[[0]]}_{[[1]]}", options: "rmA"},\n	{trigger: /\\\\mathbf{([A-Za-z])}(\\d)/, replacement: "\\\\mathbf{[[0]]}_{[[1]]}", options: "rmA"},\n\n    {trigger: "xnn", replacement: "x_{n}", options: "mA"},\n	{trigger: "xii", replacement: "x_{i}", options: "mA"},\n	{trigger: "xjj", replacement: "x_{j}", options: "mA"},\n	{trigger: "xp1", replacement: "x_{n+1}", options: "mA"},\n	{trigger: "ynn", replacement: "y_{n}", options: "mA"},\n	{trigger: "yii", replacement: "y_{i}", options: "mA"},\n	{trigger: "yjj", replacement: "y_{j}", options: "mA"},\n\n    // Symbols\n    {trigger: "ooo", replacement: "\\\\infty", options: "mA"},\n	{trigger: "sum", replacement: "\\\\sum", options: "mA"},\n	{trigger: "prod", replacement: "\\\\prod", options: "mA"},\n	{trigger: "\\\\sum", replacement: "\\\\sum_{${0:i}=${1:1}}^{${2:N}} $3", options: "m"},\n	{trigger: "\\\\prod", replacement: "\\\\prod_{${0:i}=${1:1}}^{${2:N}} $3", options: "m"},\n    {trigger: "lim", replacement: "\\\\lim_{ ${0:n} \\\\to ${1:\\\\infty} } $2", options: "mA"},\n    {trigger: "+-", replacement: "\\\\pm", options: "mA"},\n	{trigger: "-+", replacement: "\\\\mp", options: "mA"},\n    {trigger: "...", replacement: "\\\\dots", options: "mA"},\n    {trigger: "nabl", replacement: "\\\\nabla", options: "mA"},\n	{trigger: "del", replacement: "\\\\nabla", options: "mA"},\n    {trigger: "xx", replacement: "\\\\times", options: "mA"},\n    {trigger: "**", replacement: "\\\\cdot", options: "mA"},\n    {trigger: "para", replacement: "\\\\parallel", options: "mA"},\n\n	{trigger: "===", replacement: "\\\\equiv", options: "mA"},\n    {trigger: "!=", replacement: "\\\\neq", options: "mA"},\n	{trigger: ">=", replacement: "\\\\geq", options: "mA"},\n	{trigger: "<=", replacement: "\\\\leq", options: "mA"},\n	{trigger: ">>", replacement: "\\\\gg", options: "mA"},\n	{trigger: "<<", replacement: "\\\\ll", options: "mA"},\n	{trigger: "simm", replacement: "\\\\sim", options: "mA"},\n	{trigger: "sim=", replacement: "\\\\simeq", options: "mA"},\n    {trigger: "prop", replacement: "\\\\propto", options: "mA"},\n\n\n    {trigger: "<->", replacement: "\\\\leftrightarrow ", options: "mA"},\n	{trigger: "->", replacement: "\\\\to", options: "mA"},\n	{trigger: "!>", replacement: "\\\\mapsto", options: "mA"},\n    {trigger: "=>", replacement: "\\\\implies", options: "mA"},\n	{trigger: "=<", replacement: "\\\\impliedby", options: "mA"},\n\n	{trigger: "and", replacement: "\\\\cap", options: "mA"},\n	{trigger: "orr", replacement: "\\\\cup", options: "mA"},\n	{trigger: "inn", replacement: "\\\\in", options: "mA"},\n	{trigger: "notin", replacement: "\\\\not\\\\in", options: "mA"},\n    {trigger: "\\\\\\\\\\\\", replacement: "\\\\setminus", options: "mA"},\n    {trigger: "sub=", replacement: "\\\\subseteq", options: "mA"},\n    {trigger: "sup=", replacement: "\\\\supseteq", options: "mA"},\n	{trigger: "eset", replacement: "\\\\emptyset", options: "mA"},\n	{trigger: "set", replacement: "\\\\{ $0 \\\\}$1", options: "mA"},\n	{trigger: "e\\\\xi sts", replacement: "\\\\exists", options: "mA", priority: 1},\n\n	{trigger: "LL", replacement: "\\\\mathcal{L}", options: "mA"},\n	{trigger: "HH", replacement: "\\\\mathcal{H}", options: "mA"},\n	{trigger: "CC", replacement: "\\\\mathbb{C}", options: "mA"},\n	{trigger: "RR", replacement: "\\\\mathbb{R}", options: "mA"},\n	{trigger: "ZZ", replacement: "\\\\mathbb{Z}", options: "mA"},\n	{trigger: "NN", replacement: "\\\\mathbb{N}", options: "mA"},\n\n    // Handle spaces and backslashes\n\n    // Snippet variables can be used as shortcuts when writing snippets.\n    // For example, ${GREEK} below is shorthand for "alpha|beta|gamma|Gamma|delta|..."\n    // You can edit snippet variables under the Advanced snippet settings section.\n\n	{trigger: "([^\\\\\\\\])(${GREEK})", replacement: "[[0]]\\\\[[1]]", options: "rmA", description: "Add backslash before Greek letters"},\n	{trigger: "([^\\\\\\\\])(${SYMBOL})", replacement: "[[0]]\\\\[[1]]", options: "rmA", description: "Add backslash before symbols"},\n\n    // Insert space after Greek letters and symbols\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}|${MORE_SYMBOLS})([A-Za-z])", replacement: "\\\\[[0]] [[1]]", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) sr", replacement: "\\\\[[0]]^{2}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) cb", replacement: "\\\\[[0]]^{3}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) rd", replacement: "\\\\[[0]]^{$0}$1", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) hat", replacement: "\\\\hat{\\\\[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) dot", replacement: "\\\\dot{\\\\[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) bar", replacement: "\\\\bar{\\\\[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) vec", replacement: "\\\\vec{\\\\[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) tilde", replacement: "\\\\tilde{\\\\[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) und", replacement: "\\\\underline{\\\\[[0]]}", options: "rmA"},\n\n\n    // Derivatives and integrals\n    {trigger: "par", replacement: "\\\\frac{ \\\\partial ${0:y} }{ \\\\partial ${1:x} } $2", options: "m"},\n    {trigger: /pa([A-Za-z])([A-Za-z])/, replacement: "\\\\frac{ \\\\partial [[0]] }{ \\\\partial [[1]] } ", options: "rm"},\n    {trigger: "ddt", replacement: "\\\\frac{d}{dt} ", options: "mA"},\n\n    {trigger: /([^\\\\])int/, replacement: "[[0]]\\\\int", options: "mA", priority: -1},\n    {trigger: "\\\\int", replacement: "\\\\int $0 \\\\, d${1:x} $2", options: "m"},\n    {trigger: "dint", replacement: "\\\\int_{${0:0}}^{${1:1}} $2 \\\\, d${3:x} $4", options: "mA"},\n    {trigger: "oint", replacement: "\\\\oint", options: "mA"},\n	{trigger: "iint", replacement: "\\\\iint", options: "mA"},\n    {trigger: "iiint", replacement: "\\\\iiint", options: "mA"},\n    {trigger: "oinf", replacement: "\\\\int_{0}^{\\\\infty} $0 \\\\, d${1:x} $2", options: "mA"},\n	{trigger: "infi", replacement: "\\\\int_{-\\\\infty}^{\\\\infty} $0 \\\\, d${1:x} $2", options: "mA"},\n\n\n    // Trigonometry\n    {trigger: /([^\\\\])(arcsin|sin|arccos|cos|arctan|tan|csc|sec|cot)/, replacement: "[[0]]\\\\[[1]]", options: "rmA", description: "Add backslash before trig funcs"},\n\n    {trigger: /\\\\(arcsin|sin|arccos|cos|arctan|tan|csc|sec|cot)([A-Za-gi-z])/,\n     replacement: "\\\\[[0]] [[1]]", options: "rmA",\n     description: "Add space after trig funcs. Skips letter h to allow sinh, cosh, etc."},\n\n    {trigger: /\\\\(sinh|cosh|tanh|coth)([A-Za-z])/,\n     replacement: "\\\\[[0]] [[1]]", options: "rmA",\n     description: "Add space after hyperbolic trig funcs"},\n\n\n    // Visual operations\n	{trigger: "U", replacement: "\\\\underbrace{ ${VISUAL} }_{ $0 }", options: "mA"},\n	{trigger: "O", replacement: "\\\\overbrace{ ${VISUAL} }^{ $0 }", options: "mA"},\n	{trigger: "B", replacement: "\\\\underset{ $0 }{ ${VISUAL} }", options: "mA"},\n	{trigger: "C", replacement: "\\\\cancel{ ${VISUAL} }", options: "mA"},\n	{trigger: "K", replacement: "\\\\cancelto{ $0 }{ ${VISUAL} }", options: "mA"},\n	{trigger: "S", replacement: "\\\\sqrt{ ${VISUAL} }", options: "mA"},\n\n\n    // Physics\n	{trigger: "kbt", replacement: "k_{B}T", options: "mA"},\n	{trigger: "msun", replacement: "M_{\\\\odot}", options: "mA"},\n\n    // Quantum mechanics\n    {trigger: "dag", replacement: "^{\\\\dagger}", options: "mA"},\n	{trigger: "o+", replacement: "\\\\oplus ", options: "mA"},\n	{trigger: "ox", replacement: "\\\\otimes ", options: "mA"},\n    {trigger: "bra", replacement: "\\\\bra{$0} $1", options: "mA"},\n	{trigger: "ket", replacement: "\\\\ket{$0} $1", options: "mA"},\n	{trigger: "brk", replacement: "\\\\braket{ $0 | $1 } $2", options: "mA"},\n    {trigger: "outer", replacement: "\\\\ket{${0:\\\\psi}} \\\\bra{${0:\\\\psi}} $1", options: "mA"},\n\n    // Chemistry\n	{trigger: "pu", replacement: "\\\\pu{ $0 }", options: "mA"},\n	{trigger: "cee", replacement: "\\\\ce{ $0 }", options: "mA"},\n	{trigger: "he4", replacement: "{}^{4}_{2}He ", options: "mA"},\n	{trigger: "he3", replacement: "{}^{3}_{2}He ", options: "mA"},\n	{trigger: "iso", replacement: "{}^{${0:4}}_{${1:2}}${2:He}", options: "mA"},\n\n\n    // Environments\n	{trigger: "pmat", replacement: "\\\\begin{pmatrix}\\n$0\\n\\\\end{pmatrix}", options: "MA"},\n	{trigger: "bmat", replacement: "\\\\begin{bmatrix}\\n$0\\n\\\\end{bmatrix}", options: "MA"},\n	{trigger: "Bmat", replacement: "\\\\begin{Bmatrix}\\n$0\\n\\\\end{Bmatrix}", options: "MA"},\n	{trigger: "vmat", replacement: "\\\\begin{vmatrix}\\n$0\\n\\\\end{vmatrix}", options: "MA"},\n	{trigger: "Vmat", replacement: "\\\\begin{Vmatrix}\\n$0\\n\\\\end{Vmatrix}", options: "MA"},\n	{trigger: "matrix", replacement: "\\\\begin{matrix}\\n$0\\n\\\\end{matrix}", options: "MA"},\n\n	{trigger: "pmat", replacement: "\\\\begin{pmatrix}$0\\\\end{pmatrix}", options: "nA"},\n	{trigger: "bmat", replacement: "\\\\begin{bmatrix}$0\\\\end{bmatrix}", options: "nA"},\n	{trigger: "Bmat", replacement: "\\\\begin{Bmatrix}$0\\\\end{Bmatrix}", options: "nA"},\n	{trigger: "vmat", replacement: "\\\\begin{vmatrix}$0\\\\end{vmatrix}", options: "nA"},\n	{trigger: "Vmat", replacement: "\\\\begin{Vmatrix}$0\\\\end{Vmatrix}", options: "nA"},\n	{trigger: "matrix", replacement: "\\\\begin{matrix}$0\\\\end{matrix}", options: "nA"},\n\n	{trigger: "cases", replacement: "\\\\begin{cases}\\n$0\\n\\\\end{cases}", options: "mA"},\n	{trigger: "align", replacement: "\\\\begin{align}\\n$0\\n\\\\end{align}", options: "mA"},\n	{trigger: "array", replacement: "\\\\begin{array}\\n$0\\n\\\\end{array}", options: "mA"},\n\n\n    // Brackets\n	{trigger: "avg", replacement: "\\\\langle $0 \\\\rangle $1", options: "mA"},\n	{trigger: "norm", replacement: "\\\\lvert $0 \\\\rvert $1", options: "mA", priority: 1},\n	{trigger: "Norm", replacement: "\\\\lVert $0 \\\\rVert $1", options: "mA", priority: 1},\n	{trigger: "ceil", replacement: "\\\\lceil $0 \\\\rceil $1", options: "mA"},\n	{trigger: "floor", replacement: "\\\\lfloor $0 \\\\rfloor $1", options: "mA"},\n	{trigger: "mod", replacement: "|$0|$1", options: "mA"},\n	{trigger: "(", replacement: "(${VISUAL})", options: "mA"},\n	{trigger: "[", replacement: "[${VISUAL}]", options: "mA"},\n	{trigger: "{", replacement: "{${VISUAL}}", options: "mA"},\n	{trigger: "(", replacement: "($0)$1", options: "mA"},\n	{trigger: "{", replacement: "{$0}$1", options: "mA"},\n	{trigger: "[", replacement: "[$0]$1", options: "mA"},\n	{trigger: "lr(", replacement: "\\\\left( $0 \\\\right) $1", options: "mA"},\n	{trigger: "lr{", replacement: "\\\\left\\\\{ $0 \\\\right\\\\} $1", options: "mA"},\n	{trigger: "lr[", replacement: "\\\\left[ $0 \\\\right] $1", options: "mA"},\n	{trigger: "lr|", replacement: "\\\\left| $0 \\\\right| $1", options: "mA"},\n	{trigger: "lra", replacement: "\\\\left< $0 \\\\right> $1", options: "mA"},\n\n\n    // Misc\n\n    // Automatically convert standalone letters in text to math (except a, A, I).\n    // (Un-comment to enable)\n    // {trigger: /([^\'])\\b([B-HJ-Zb-z])\\b([\\n\\s.,?!:\'])/, replacement: "[[0]]$[[1]]$[[2]]", options: "tA"},\n\n    // Automatically convert Greek letters in text to math.\n    // {trigger: "(${GREEK})([\\\\n\\\\s.,?!:\'])", replacement: "$\\\\[[0]]$[[1]]", options: "rtAw"},\n\n    // Automatically convert text of the form "x=2" and "x=n+1" to math.\n    // {trigger: /([A-Za-z]=\\d+)([\\n\\s.,?!:\'])/, replacement: "$[[0]]$[[1]]", options: "rtAw"},\n    // {trigger: /([A-Za-z]=[A-Za-z][+-]\\d+)([\\n\\s.,?!:\'])/, replacement: "$[[0]]$[[1]]", options: "tAw"},\n\n\n    // Snippet replacements can have placeholders.\n	{trigger: "tayl", replacement: "${0:f}(${1:x} + ${2:h}) = ${0:f}(${1:x}) + ${0:f}\'(${1:x})${2:h} + ${0:f}\'\'(${1:x}) \\\\frac{${2:h}^{2}}{2!} + \\\\dots$3", options: "mA", description: "Taylor expansion"},\n\n    // Snippet replacements can also be JavaScript functions.\n    // See the documentation for more information.\n	{trigger: /iden(\\d)/, replacement: (match) => {\n		const n = match[1];\n\n		let arr = [];\n		for (let j = 0; j < n; j++) {\n			arr[j] = [];\n			for (let i = 0; i < n; i++) {\n				arr[j][i] = (i === j) ? 1 : 0;\n			}\n		}\n\n		let output = arr.map(el => el.join(" & ")).join(" \\\\\\\\\\n");\n		output = `\\\\begin{pmatrix}\\n${output}\\n\\\\end{pmatrix}`;\n		return output;\n	}, options: "mA", description: "N x N identity matrix"},\n]\n';
+var default_snippets_default =
+  '[\n    // Math mode\n	{trigger: "mk", replacement: "$$0$", options: "tA"},\n	{trigger: "dm", replacement: "$$\\n$0\\n$$", options: "tAw"},\n	{trigger: "beg", replacement: "\\\\begin{$0}\\n$1\\n\\\\end{$0}", options: "mA"},\n\n    // Dashes\n	// {trigger: "--", replacement: "\u2013", options: "tA"},\n	// {trigger: "\u2013-", replacement: "\u2014", options: "tA"},\n	// {trigger: "\u2014-", replacement: "---", options: "tA"},\n\n    // Greek letters\n	{trigger: "@a", replacement: "\\\\alpha", options: "mA"},\n	{trigger: "@b", replacement: "\\\\beta", options: "mA"},\n	{trigger: "@g", replacement: "\\\\gamma", options: "mA"},\n	{trigger: "@G", replacement: "\\\\Gamma", options: "mA"},\n	{trigger: "@d", replacement: "\\\\delta", options: "mA"},\n	{trigger: "@D", replacement: "\\\\Delta", options: "mA"},\n	{trigger: "@e", replacement: "\\\\epsilon", options: "mA"},\n	{trigger: ":e", replacement: "\\\\varepsilon", options: "mA"},\n	{trigger: "@z", replacement: "\\\\zeta", options: "mA"},\n	{trigger: "@t", replacement: "\\\\theta", options: "mA"},\n	{trigger: "@T", replacement: "\\\\Theta", options: "mA"},\n	{trigger: ":t", replacement: "\\\\vartheta", options: "mA"},\n	{trigger: "@i", replacement: "\\\\iota", options: "mA"},\n	{trigger: "@k", replacement: "\\\\kappa", options: "mA"},\n	{trigger: "@l", replacement: "\\\\lambda", options: "mA"},\n	{trigger: "@L", replacement: "\\\\Lambda", options: "mA"},\n	{trigger: "@s", replacement: "\\\\sigma", options: "mA"},\n	{trigger: "@S", replacement: "\\\\Sigma", options: "mA"},\n	{trigger: "@u", replacement: "\\\\upsilon", options: "mA"},\n	{trigger: "@U", replacement: "\\\\Upsilon", options: "mA"},\n	{trigger: "@o", replacement: "\\\\omega", options: "mA"},\n	{trigger: "@O", replacement: "\\\\Omega", options: "mA"},\n	{trigger: "ome", replacement: "\\\\omega", options: "mA"},\n	{trigger: "Ome", replacement: "\\\\Omega", options: "mA"},\n\n    // Text environment\n    {trigger: "text", replacement: "\\\\text{$0}$1", options: "mA"},\n    {trigger: "\\"", replacement: "\\\\text{$0}$1", options: "mA"},\n\n    // Basic operations\n    {trigger: "sr", replacement: "^{2}", options: "mA"},\n	{trigger: "cb", replacement: "^{3}", options: "mA"},\n	{trigger: "rd", replacement: "^{$0}$1", options: "mA"},\n	{trigger: "_", replacement: "_{$0}$1", options: "mA"},\n	{trigger: "sts", replacement: "_\\\\text{$0}", options: "mA"},\n	{trigger: "sq", replacement: "\\\\sqrt{ $0 }$1", options: "mA"},\n	{trigger: "//", replacement: "\\\\frac{$0}{$1}$2", options: "mA"},\n	{trigger: "ee", replacement: "e^{ $0 }$1", options: "mA"},\n    {trigger: "invs", replacement: "^{-1}", options: "mA"},\n    {trigger: /([A-Za-z])(\\d)/, replacement: "[[0]]_{[[1]]}", options: "rmA", description: "Auto letter subscript", priority: -1},\n\n    {trigger: /([^\\\\])(exp|log|ln)/, replacement: "[[0]]\\\\[[1]]", options: "rmA"},\n    {trigger: "conj", replacement: "^{*}", options: "mA"},\n    {trigger: "Re", replacement: "\\\\mathrm{Re}", options: "mA"},\n	{trigger: "Im", replacement: "\\\\mathrm{Im}", options: "mA"},\n    {trigger: "bf", replacement: "\\\\mathbf{$0}", options: "mA"},\n	{trigger: "rm", replacement: "\\\\mathrm{$0}$1", options: "mA"},\n\n    // Linear algebra\n    {trigger: /([^\\\\])(det)/, replacement: "[[0]]\\\\[[1]]", options: "rmA"},\n    {trigger: "trace", replacement: "\\\\mathrm{Tr}", options: "mA"},\n\n    // More operations\n	{trigger: "([a-zA-Z])hat", replacement: "\\\\hat{[[0]]}", options: "rmA"},\n    {trigger: "([a-zA-Z])bar", replacement: "\\\\bar{[[0]]}", options: "rmA"},\n	{trigger: "([a-zA-Z])dot", replacement: "\\\\dot{[[0]]}", options: "rmA", priority: -1},\n	{trigger: "([a-zA-Z])ddot", replacement: "\\\\ddot{[[0]]}", options: "rmA", priority: 1},\n	{trigger: "([a-zA-Z])tilde", replacement: "\\\\tilde{[[0]]}", options: "rmA"},\n	{trigger: "([a-zA-Z])und", replacement: "\\\\underline{[[0]]}", options: "rmA"},\n	{trigger: "([a-zA-Z])vec", replacement: "\\\\vec{[[0]]}", options: "rmA"},\n    {trigger: "([a-zA-Z]),\\\\.", replacement: "\\\\mathbf{[[0]]}", options: "rmA"},\n	{trigger: "([a-zA-Z])\\\\.,", replacement: "\\\\mathbf{[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}),\\\\.", replacement: "\\\\boldsymbol{\\\\[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK})\\\\.,", replacement: "\\\\boldsymbol{\\\\[[0]]}", options: "rmA"},\n\n	{trigger: "hat", replacement: "\\\\hat{$0}$1", options: "mA"},\n    {trigger: "bar", replacement: "\\\\bar{$0}$1", options: "mA"},\n	{trigger: "dot", replacement: "\\\\dot{$0}$1", options: "mA", priority: -1},\n	{trigger: "ddot", replacement: "\\\\ddot{$0}$1", options: "mA"},\n	{trigger: "cdot", replacement: "\\\\cdot", options: "mA"},\n	{trigger: "tilde", replacement: "\\\\tilde{$0}$1", options: "mA"},\n	{trigger: "und", replacement: "\\\\underline{$0}$1", options: "mA"},\n	{trigger: "vec", replacement: "\\\\vec{$0}$1", options: "mA"},\n\n    // More auto letter subscript\n    {trigger: /([A-Za-z])_(\\d\\d)/, replacement: "[[0]]_{[[1]]}", options: "rmA"},\n	{trigger: /\\\\hat{([A-Za-z])}(\\d)/, replacement: "\\\\hat{[[0]]}_{[[1]]}", options: "rmA"},\n	{trigger: /\\\\vec{([A-Za-z])}(\\d)/, replacement: "\\\\vec{[[0]]}_{[[1]]}", options: "rmA"},\n	{trigger: /\\\\mathbf{([A-Za-z])}(\\d)/, replacement: "\\\\mathbf{[[0]]}_{[[1]]}", options: "rmA"},\n\n    {trigger: "xnn", replacement: "x_{n}", options: "mA"},\n	{trigger: "xii", replacement: "x_{i}", options: "mA"},\n	{trigger: "xjj", replacement: "x_{j}", options: "mA"},\n	{trigger: "xp1", replacement: "x_{n+1}", options: "mA"},\n	{trigger: "ynn", replacement: "y_{n}", options: "mA"},\n	{trigger: "yii", replacement: "y_{i}", options: "mA"},\n	{trigger: "yjj", replacement: "y_{j}", options: "mA"},\n\n    // Symbols\n    {trigger: "ooo", replacement: "\\\\infty", options: "mA"},\n	{trigger: "sum", replacement: "\\\\sum", options: "mA"},\n	{trigger: "prod", replacement: "\\\\prod", options: "mA"},\n	{trigger: "\\\\sum", replacement: "\\\\sum_{${0:i}=${1:1}}^{${2:N}} $3", options: "m"},\n	{trigger: "\\\\prod", replacement: "\\\\prod_{${0:i}=${1:1}}^{${2:N}} $3", options: "m"},\n    {trigger: "lim", replacement: "\\\\lim_{ ${0:n} \\\\to ${1:\\\\infty} } $2", options: "mA"},\n    {trigger: "+-", replacement: "\\\\pm", options: "mA"},\n	{trigger: "-+", replacement: "\\\\mp", options: "mA"},\n    {trigger: "...", replacement: "\\\\dots", options: "mA"},\n    {trigger: "nabl", replacement: "\\\\nabla", options: "mA"},\n	{trigger: "del", replacement: "\\\\nabla", options: "mA"},\n    {trigger: "xx", replacement: "\\\\times", options: "mA"},\n    {trigger: "**", replacement: "\\\\cdot", options: "mA"},\n    {trigger: "para", replacement: "\\\\parallel", options: "mA"},\n\n	{trigger: "===", replacement: "\\\\equiv", options: "mA"},\n    {trigger: "!=", replacement: "\\\\neq", options: "mA"},\n	{trigger: ">=", replacement: "\\\\geq", options: "mA"},\n	{trigger: "<=", replacement: "\\\\leq", options: "mA"},\n	{trigger: ">>", replacement: "\\\\gg", options: "mA"},\n	{trigger: "<<", replacement: "\\\\ll", options: "mA"},\n	{trigger: "simm", replacement: "\\\\sim", options: "mA"},\n	{trigger: "sim=", replacement: "\\\\simeq", options: "mA"},\n    {trigger: "prop", replacement: "\\\\propto", options: "mA"},\n\n\n    {trigger: "<->", replacement: "\\\\leftrightarrow ", options: "mA"},\n	{trigger: "->", replacement: "\\\\to", options: "mA"},\n	{trigger: "!>", replacement: "\\\\mapsto", options: "mA"},\n    {trigger: "=>", replacement: "\\\\implies", options: "mA"},\n	{trigger: "=<", replacement: "\\\\impliedby", options: "mA"},\n\n	{trigger: "and", replacement: "\\\\cap", options: "mA"},\n	{trigger: "orr", replacement: "\\\\cup", options: "mA"},\n	{trigger: "inn", replacement: "\\\\in", options: "mA"},\n	{trigger: "notin", replacement: "\\\\not\\\\in", options: "mA"},\n    {trigger: "\\\\\\\\\\\\", replacement: "\\\\setminus", options: "mA"},\n    {trigger: "sub=", replacement: "\\\\subseteq", options: "mA"},\n    {trigger: "sup=", replacement: "\\\\supseteq", options: "mA"},\n	{trigger: "eset", replacement: "\\\\emptyset", options: "mA"},\n	{trigger: "set", replacement: "\\\\{ $0 \\\\}$1", options: "mA"},\n	{trigger: "e\\\\xi sts", replacement: "\\\\exists", options: "mA", priority: 1},\n\n	{trigger: "LL", replacement: "\\\\mathcal{L}", options: "mA"},\n	{trigger: "HH", replacement: "\\\\mathcal{H}", options: "mA"},\n	{trigger: "CC", replacement: "\\\\mathbb{C}", options: "mA"},\n	{trigger: "RR", replacement: "\\\\mathbb{R}", options: "mA"},\n	{trigger: "ZZ", replacement: "\\\\mathbb{Z}", options: "mA"},\n	{trigger: "NN", replacement: "\\\\mathbb{N}", options: "mA"},\n\n    // Handle spaces and backslashes\n\n    // Snippet variables can be used as shortcuts when writing snippets.\n    // For example, ${GREEK} below is shorthand for "alpha|beta|gamma|Gamma|delta|..."\n    // You can edit snippet variables under the Advanced snippet settings section.\n\n	{trigger: "([^\\\\\\\\])(${GREEK})", replacement: "[[0]]\\\\[[1]]", options: "rmA", description: "Add backslash before Greek letters"},\n	{trigger: "([^\\\\\\\\])(${SYMBOL})", replacement: "[[0]]\\\\[[1]]", options: "rmA", description: "Add backslash before symbols"},\n\n    // Insert space after Greek letters and symbols\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}|${MORE_SYMBOLS})([A-Za-z])", replacement: "\\\\[[0]] [[1]]", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) sr", replacement: "\\\\[[0]]^{2}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) cb", replacement: "\\\\[[0]]^{3}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) rd", replacement: "\\\\[[0]]^{$0}$1", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) hat", replacement: "\\\\hat{\\\\[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) dot", replacement: "\\\\dot{\\\\[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) bar", replacement: "\\\\bar{\\\\[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) vec", replacement: "\\\\vec{\\\\[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) tilde", replacement: "\\\\tilde{\\\\[[0]]}", options: "rmA"},\n	{trigger: "\\\\\\\\(${GREEK}|${SYMBOL}) und", replacement: "\\\\underline{\\\\[[0]]}", options: "rmA"},\n\n\n    // Derivatives and integrals\n    {trigger: "par", replacement: "\\\\frac{ \\\\partial ${0:y} }{ \\\\partial ${1:x} } $2", options: "m"},\n    {trigger: /pa([A-Za-z])([A-Za-z])/, replacement: "\\\\frac{ \\\\partial [[0]] }{ \\\\partial [[1]] } ", options: "rm"},\n    {trigger: "ddt", replacement: "\\\\frac{d}{dt} ", options: "mA"},\n\n    {trigger: /([^\\\\])int/, replacement: "[[0]]\\\\int", options: "mA", priority: -1},\n    {trigger: "\\\\int", replacement: "\\\\int $0 \\\\, d${1:x} $2", options: "m"},\n    {trigger: "dint", replacement: "\\\\int_{${0:0}}^{${1:1}} $2 \\\\, d${3:x} $4", options: "mA"},\n    {trigger: "oint", replacement: "\\\\oint", options: "mA"},\n	{trigger: "iint", replacement: "\\\\iint", options: "mA"},\n    {trigger: "iiint", replacement: "\\\\iiint", options: "mA"},\n    {trigger: "oinf", replacement: "\\\\int_{0}^{\\\\infty} $0 \\\\, d${1:x} $2", options: "mA"},\n	{trigger: "infi", replacement: "\\\\int_{-\\\\infty}^{\\\\infty} $0 \\\\, d${1:x} $2", options: "mA"},\n\n\n    // Trigonometry\n    {trigger: /([^\\\\])(arcsin|sin|arccos|cos|arctan|tan|csc|sec|cot)/, replacement: "[[0]]\\\\[[1]]", options: "rmA", description: "Add backslash before trig funcs"},\n\n    {trigger: /\\\\(arcsin|sin|arccos|cos|arctan|tan|csc|sec|cot)([A-Za-gi-z])/,\n     replacement: "\\\\[[0]] [[1]]", options: "rmA",\n     description: "Add space after trig funcs. Skips letter h to allow sinh, cosh, etc."},\n\n    {trigger: /\\\\(sinh|cosh|tanh|coth)([A-Za-z])/,\n     replacement: "\\\\[[0]] [[1]]", options: "rmA",\n     description: "Add space after hyperbolic trig funcs"},\n\n\n    // Visual operations\n	{trigger: "U", replacement: "\\\\underbrace{ ${VISUAL} }_{ $0 }", options: "mA"},\n	{trigger: "O", replacement: "\\\\overbrace{ ${VISUAL} }^{ $0 }", options: "mA"},\n	{trigger: "B", replacement: "\\\\underset{ $0 }{ ${VISUAL} }", options: "mA"},\n	{trigger: "C", replacement: "\\\\cancel{ ${VISUAL} }", options: "mA"},\n	{trigger: "K", replacement: "\\\\cancelto{ $0 }{ ${VISUAL} }", options: "mA"},\n	{trigger: "S", replacement: "\\\\sqrt{ ${VISUAL} }", options: "mA"},\n\n\n    // Physics\n	{trigger: "kbt", replacement: "k_{B}T", options: "mA"},\n	{trigger: "msun", replacement: "M_{\\\\odot}", options: "mA"},\n\n    // Quantum mechanics\n    {trigger: "dag", replacement: "^{\\\\dagger}", options: "mA"},\n	{trigger: "o+", replacement: "\\\\oplus ", options: "mA"},\n	{trigger: "ox", replacement: "\\\\otimes ", options: "mA"},\n    {trigger: "bra", replacement: "\\\\bra{$0} $1", options: "mA"},\n	{trigger: "ket", replacement: "\\\\ket{$0} $1", options: "mA"},\n	{trigger: "brk", replacement: "\\\\braket{ $0 | $1 } $2", options: "mA"},\n    {trigger: "outer", replacement: "\\\\ket{${0:\\\\psi}} \\\\bra{${0:\\\\psi}} $1", options: "mA"},\n\n    // Chemistry\n	{trigger: "pu", replacement: "\\\\pu{ $0 }", options: "mA"},\n	{trigger: "cee", replacement: "\\\\ce{ $0 }", options: "mA"},\n	{trigger: "he4", replacement: "{}^{4}_{2}He ", options: "mA"},\n	{trigger: "he3", replacement: "{}^{3}_{2}He ", options: "mA"},\n	{trigger: "iso", replacement: "{}^{${0:4}}_{${1:2}}${2:He}", options: "mA"},\n\n\n    // Environments\n	{trigger: "pmat", replacement: "\\\\begin{pmatrix}\\n$0\\n\\\\end{pmatrix}", options: "MA"},\n	{trigger: "bmat", replacement: "\\\\begin{bmatrix}\\n$0\\n\\\\end{bmatrix}", options: "MA"},\n	{trigger: "Bmat", replacement: "\\\\begin{Bmatrix}\\n$0\\n\\\\end{Bmatrix}", options: "MA"},\n	{trigger: "vmat", replacement: "\\\\begin{vmatrix}\\n$0\\n\\\\end{vmatrix}", options: "MA"},\n	{trigger: "Vmat", replacement: "\\\\begin{Vmatrix}\\n$0\\n\\\\end{Vmatrix}", options: "MA"},\n	{trigger: "matrix", replacement: "\\\\begin{matrix}\\n$0\\n\\\\end{matrix}", options: "MA"},\n\n	{trigger: "pmat", replacement: "\\\\begin{pmatrix}$0\\\\end{pmatrix}", options: "nA"},\n	{trigger: "bmat", replacement: "\\\\begin{bmatrix}$0\\\\end{bmatrix}", options: "nA"},\n	{trigger: "Bmat", replacement: "\\\\begin{Bmatrix}$0\\\\end{Bmatrix}", options: "nA"},\n	{trigger: "vmat", replacement: "\\\\begin{vmatrix}$0\\\\end{vmatrix}", options: "nA"},\n	{trigger: "Vmat", replacement: "\\\\begin{Vmatrix}$0\\\\end{Vmatrix}", options: "nA"},\n	{trigger: "matrix", replacement: "\\\\begin{matrix}$0\\\\end{matrix}", options: "nA"},\n\n	{trigger: "cases", replacement: "\\\\begin{cases}\\n$0\\n\\\\end{cases}", options: "mA"},\n	{trigger: "align", replacement: "\\\\begin{align}\\n$0\\n\\\\end{align}", options: "mA"},\n	{trigger: "array", replacement: "\\\\begin{array}\\n$0\\n\\\\end{array}", options: "mA"},\n\n\n    // Brackets\n	{trigger: "avg", replacement: "\\\\langle $0 \\\\rangle $1", options: "mA"},\n	{trigger: "norm", replacement: "\\\\lvert $0 \\\\rvert $1", options: "mA", priority: 1},\n	{trigger: "Norm", replacement: "\\\\lVert $0 \\\\rVert $1", options: "mA", priority: 1},\n	{trigger: "ceil", replacement: "\\\\lceil $0 \\\\rceil $1", options: "mA"},\n	{trigger: "floor", replacement: "\\\\lfloor $0 \\\\rfloor $1", options: "mA"},\n	{trigger: "mod", replacement: "|$0|$1", options: "mA"},\n	{trigger: "(", replacement: "(${VISUAL})", options: "mA"},\n	{trigger: "[", replacement: "[${VISUAL}]", options: "mA"},\n	{trigger: "{", replacement: "{${VISUAL}}", options: "mA"},\n	{trigger: "(", replacement: "($0)$1", options: "mA"},\n	{trigger: "{", replacement: "{$0}$1", options: "mA"},\n	{trigger: "[", replacement: "[$0]$1", options: "mA"},\n	{trigger: "lr(", replacement: "\\\\left( $0 \\\\right) $1", options: "mA"},\n	{trigger: "lr{", replacement: "\\\\left\\\\{ $0 \\\\right\\\\} $1", options: "mA"},\n	{trigger: "lr[", replacement: "\\\\left[ $0 \\\\right] $1", options: "mA"},\n	{trigger: "lr|", replacement: "\\\\left| $0 \\\\right| $1", options: "mA"},\n	{trigger: "lra", replacement: "\\\\left< $0 \\\\right> $1", options: "mA"},\n\n\n    // Misc\n\n    // Automatically convert standalone letters in text to math (except a, A, I).\n    // (Un-comment to enable)\n    // {trigger: /([^\'])\\b([B-HJ-Zb-z])\\b([\\n\\s.,?!:\'])/, replacement: "[[0]]$[[1]]$[[2]]", options: "tA"},\n\n    // Automatically convert Greek letters in text to math.\n    // {trigger: "(${GREEK})([\\\\n\\\\s.,?!:\'])", replacement: "$\\\\[[0]]$[[1]]", options: "rtAw"},\n\n    // Automatically convert text of the form "x=2" and "x=n+1" to math.\n    // {trigger: /([A-Za-z]=\\d+)([\\n\\s.,?!:\'])/, replacement: "$[[0]]$[[1]]", options: "rtAw"},\n    // {trigger: /([A-Za-z]=[A-Za-z][+-]\\d+)([\\n\\s.,?!:\'])/, replacement: "$[[0]]$[[1]]", options: "tAw"},\n\n\n    // Snippet replacements can have placeholders.\n	{trigger: "tayl", replacement: "${0:f}(${1:x} + ${2:h}) = ${0:f}(${1:x}) + ${0:f}\'(${1:x})${2:h} + ${0:f}\'\'(${1:x}) \\\\frac{${2:h}^{2}}{2!} + \\\\dots$3", options: "mA", description: "Taylor expansion"},\n\n    // Snippet replacements can also be JavaScript functions.\n    // See the documentation for more information.\n	{trigger: /iden(\\d)/, replacement: (match) => {\n		const n = match[1];\n\n		let arr = [];\n		for (let j = 0; j < n; j++) {\n			arr[j] = [];\n			for (let i = 0; i < n; i++) {\n				arr[j][i] = (i === j) ? 1 : 0;\n			}\n		}\n\n		let output = arr.map(el => el.join(" & ")).join(" \\\\\\\\\\n");\n		output = `\\\\begin{pmatrix}\\n${output}\\n\\\\end{pmatrix}`;\n		return output;\n	}, options: "mA", description: "N x N identity matrix"},\n]\n';
 
 // src/utils/default_snippets.ts
 var DEFAULT_SNIPPETS = default_snippets_default;
 
 // _94n10i9xf:/home/runner/work/obsidian-latex-suite/obsidian-latex-suite/src/default_snippet_variables.js
-var default_snippet_variables_default = '{\n	"${GREEK}": "alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega",\n	"${SYMBOL}": "parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx",\n	"${MORE_SYMBOLS}": "leq|geq|neq|gg|ll|equiv|sim|propto|rightarrow|leftarrow|Rightarrow|Leftarrow|leftrightarrow|to|mapsto|cap|cup|in|sum|prod|exp|ln|log|det|dots|vdots|ddots|pm|mp|int|iint|iiint|oint"\n}\n';
+var default_snippet_variables_default =
+  '{\n	"${GREEK}": "alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega",\n	"${SYMBOL}": "parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx",\n	"${MORE_SYMBOLS}": "leq|geq|neq|gg|ll|equiv|sim|propto|rightarrow|leftarrow|Rightarrow|Leftarrow|leftrightarrow|to|mapsto|cap|cup|in|sum|prod|exp|ln|log|det|dots|vdots|ddots|pm|mp|int|iint|iiint|oint"\n}\n';
 
 // src/utils/default_snippet_variables.ts
 var DEFAULT_SNIPPET_VARIABLES = default_snippet_variables_default;
@@ -7062,9 +8046,10 @@ var DEFAULT_SETTINGS = {
 		["^{", "}"],
 		["\\\\pu{", "}"]
 	]`,
-  matrixShortcutsEnvNames: "pmatrix, cases, align, bmatrix, Bmatrix, vmatrix, Vmatrix, array, matrix",
+  matrixShortcutsEnvNames:
+    "pmatrix, cases, align, bmatrix, Bmatrix, vmatrix, Vmatrix, array, matrix",
   autoEnlargeBracketsTriggers: "sum, int, frac, prod, bigcup, bigcap",
-  forceMathLanguages: "math"
+  forceMathLanguages: "math",
 };
 function processLatexSuiteSettings(snippets2, settings) {
   function strToArray(str) {
@@ -7074,7 +8059,7 @@ function processLatexSuiteSettings(snippets2, settings) {
     let envs = [];
     try {
       const envsJSON = JSON.parse(envsStr);
-      envs = envsJSON.map(function(env) {
+      envs = envsJSON.map(function (env) {
         return { openSymbol: env[0], closeSymbol: env[1] };
       });
     } catch (e) {
@@ -7085,10 +8070,14 @@ function processLatexSuiteSettings(snippets2, settings) {
   return __spreadProps(__spreadValues({}, settings), {
     // Override raw settings with parsed settings
     snippets: snippets2,
-    autofractionExcludedEnvs: getAutofractionExcludedEnvs(settings.autofractionExcludedEnvs),
+    autofractionExcludedEnvs: getAutofractionExcludedEnvs(
+      settings.autofractionExcludedEnvs,
+    ),
     matrixShortcutsEnvNames: strToArray(settings.matrixShortcutsEnvNames),
-    autoEnlargeBracketsTriggers: strToArray(settings.autoEnlargeBracketsTriggers),
-    forceMathLanguages: strToArray(settings.forceMathLanguages)
+    autoEnlargeBracketsTriggers: strToArray(
+      settings.autoEnlargeBracketsTriggers,
+    ),
+    forceMathLanguages: strToArray(settings.forceMathLanguages),
   });
 }
 
@@ -7113,12 +8102,21 @@ var clippingParents = "clippingParents";
 var viewport = "viewport";
 var popper = "popper";
 var reference = "reference";
-var variationPlacements = /* @__PURE__ */ basePlacements.reduce(function(acc, placement) {
+var variationPlacements = /* @__PURE__ */ basePlacements.reduce(function (
+  acc,
+  placement,
+) {
   return acc.concat([placement + "-" + start, placement + "-" + end]);
 }, []);
-var placements = /* @__PURE__ */ [].concat(basePlacements, [auto]).reduce(function(acc, placement) {
-  return acc.concat([placement, placement + "-" + start, placement + "-" + end]);
-}, []);
+var placements = /* @__PURE__ */ []
+  .concat(basePlacements, [auto])
+  .reduce(function (acc, placement) {
+    return acc.concat([
+      placement,
+      placement + "-" + start,
+      placement + "-" + end,
+    ]);
+  }, []);
 var beforeRead = "beforeRead";
 var read = "read";
 var afterRead = "afterRead";
@@ -7128,7 +8126,17 @@ var afterMain = "afterMain";
 var beforeWrite = "beforeWrite";
 var write = "write";
 var afterWrite = "afterWrite";
-var modifierPhases = [beforeRead, read, afterRead, beforeMain, main, afterMain, beforeWrite, write, afterWrite];
+var modifierPhases = [
+  beforeRead,
+  read,
+  afterRead,
+  beforeMain,
+  main,
+  afterMain,
+  beforeWrite,
+  write,
+  afterWrite,
+];
 
 // node_modules/@popperjs/core/lib/dom-utils/getNodeName.js
 function getNodeName(element) {
@@ -7167,7 +8175,7 @@ function isShadowRoot(node) {
 // node_modules/@popperjs/core/lib/modifiers/applyStyles.js
 function applyStyles(_ref) {
   var state = _ref.state;
-  Object.keys(state.elements).forEach(function(name) {
+  Object.keys(state.elements).forEach(function (name) {
     var style = state.styles[name] || {};
     var attributes = state.attributes[name] || {};
     var element = state.elements[name];
@@ -7175,7 +8183,7 @@ function applyStyles(_ref) {
       return;
     }
     Object.assign(element.style, style);
-    Object.keys(attributes).forEach(function(name2) {
+    Object.keys(attributes).forEach(function (name2) {
       var value = attributes[name2];
       if (value === false) {
         element.removeAttribute(name2);
@@ -7192,24 +8200,28 @@ function effect(_ref2) {
       position: state.options.strategy,
       left: "0",
       top: "0",
-      margin: "0"
+      margin: "0",
     },
     arrow: {
-      position: "absolute"
+      position: "absolute",
     },
-    reference: {}
+    reference: {},
   };
   Object.assign(state.elements.popper.style, initialStyles.popper);
   state.styles = initialStyles;
   if (state.elements.arrow) {
     Object.assign(state.elements.arrow.style, initialStyles.arrow);
   }
-  return function() {
-    Object.keys(state.elements).forEach(function(name) {
+  return function () {
+    Object.keys(state.elements).forEach(function (name) {
       var element = state.elements[name];
       var attributes = state.attributes[name] || {};
-      var styleProperties = Object.keys(state.styles.hasOwnProperty(name) ? state.styles[name] : initialStyles[name]);
-      var style = styleProperties.reduce(function(style2, property) {
+      var styleProperties = Object.keys(
+        state.styles.hasOwnProperty(name)
+          ? state.styles[name]
+          : initialStyles[name],
+      );
+      var style = styleProperties.reduce(function (style2, property) {
         style2[property] = "";
         return style2;
       }, {});
@@ -7217,7 +8229,7 @@ function effect(_ref2) {
         return;
       }
       Object.assign(element.style, style);
-      Object.keys(attributes).forEach(function(attribute) {
+      Object.keys(attributes).forEach(function (attribute) {
         element.removeAttribute(attribute);
       });
     });
@@ -7229,7 +8241,7 @@ var applyStyles_default = {
   phase: "write",
   fn: applyStyles,
   effect,
-  requires: ["computeStyles"]
+  requires: ["computeStyles"],
 };
 
 // node_modules/@popperjs/core/lib/utils/getBasePlacement.js
@@ -7268,7 +8280,7 @@ function getBoundingClientRect(element, includeScale) {
     bottom: rect.bottom / scaleY,
     left: rect.left / scaleX,
     x: rect.left / scaleX,
-    y: rect.top / scaleY
+    y: rect.top / scaleY,
   };
 }
 
@@ -7287,7 +8299,7 @@ function getLayoutRect(element) {
     x: element.offsetLeft,
     y: element.offsetTop,
     width,
-    height
+    height,
   };
 }
 
@@ -7320,10 +8332,12 @@ function isTableElement(element) {
 
 // node_modules/@popperjs/core/lib/dom-utils/getDocumentElement.js
 function getDocumentElement(element) {
-  return ((isElement(element) ? element.ownerDocument : (
-    // $FlowFixMe[prop-missing]
-    element.document
-  )) || window.document).documentElement;
+  return (
+    (isElement(element)
+      ? element.ownerDocument
+      : // $FlowFixMe[prop-missing]
+        element.document) || window.document
+  ).documentElement;
 }
 
 // node_modules/@popperjs/core/lib/dom-utils/getParentNode.js
@@ -7345,8 +8359,10 @@ function getParentNode(element) {
 
 // node_modules/@popperjs/core/lib/dom-utils/getOffsetParent.js
 function getTrueOffsetParent(element) {
-  if (!isHTMLElement(element) || // https://github.com/popperjs/popper-core/issues/837
-  getComputedStyle(element).position === "fixed") {
+  if (
+    !isHTMLElement(element) || // https://github.com/popperjs/popper-core/issues/837
+    getComputedStyle(element).position === "fixed"
+  ) {
     return null;
   }
   return element.offsetParent;
@@ -7364,9 +8380,19 @@ function getContainingBlock(element) {
   if (isShadowRoot(currentNode)) {
     currentNode = currentNode.host;
   }
-  while (isHTMLElement(currentNode) && ["html", "body"].indexOf(getNodeName(currentNode)) < 0) {
+  while (
+    isHTMLElement(currentNode) &&
+    ["html", "body"].indexOf(getNodeName(currentNode)) < 0
+  ) {
     var css = getComputedStyle(currentNode);
-    if (css.transform !== "none" || css.perspective !== "none" || css.contain === "paint" || ["transform", "perspective"].indexOf(css.willChange) !== -1 || isFirefox && css.willChange === "filter" || isFirefox && css.filter && css.filter !== "none") {
+    if (
+      css.transform !== "none" ||
+      css.perspective !== "none" ||
+      css.contain === "paint" ||
+      ["transform", "perspective"].indexOf(css.willChange) !== -1 ||
+      (isFirefox && css.willChange === "filter") ||
+      (isFirefox && css.filter && css.filter !== "none")
+    ) {
       return currentNode;
     } else {
       currentNode = currentNode.parentNode;
@@ -7377,10 +8403,19 @@ function getContainingBlock(element) {
 function getOffsetParent(element) {
   var window2 = getWindow(element);
   var offsetParent = getTrueOffsetParent(element);
-  while (offsetParent && isTableElement(offsetParent) && getComputedStyle(offsetParent).position === "static") {
+  while (
+    offsetParent &&
+    isTableElement(offsetParent) &&
+    getComputedStyle(offsetParent).position === "static"
+  ) {
     offsetParent = getTrueOffsetParent(offsetParent);
   }
-  if (offsetParent && (getNodeName(offsetParent) === "html" || getNodeName(offsetParent) === "body" && getComputedStyle(offsetParent).position === "static")) {
+  if (
+    offsetParent &&
+    (getNodeName(offsetParent) === "html" ||
+      (getNodeName(offsetParent) === "body" &&
+        getComputedStyle(offsetParent).position === "static"))
+  ) {
     return window2;
   }
   return offsetParent || getContainingBlock(element) || window2;
@@ -7406,7 +8441,7 @@ function getFreshSideObject() {
     top: 0,
     right: 0,
     bottom: 0,
-    left: 0
+    left: 0,
   };
 }
 
@@ -7417,7 +8452,7 @@ function mergePaddingObject(paddingObject) {
 
 // node_modules/@popperjs/core/lib/utils/expandToHashMap.js
 function expandToHashMap(value, keys) {
-  return keys.reduce(function(hashMap, key) {
+  return keys.reduce(function (hashMap, key) {
     hashMap[key] = value;
     return hashMap;
   }, {});
@@ -7425,14 +8460,25 @@ function expandToHashMap(value, keys) {
 
 // node_modules/@popperjs/core/lib/modifiers/arrow.js
 var toPaddingObject = function toPaddingObject2(padding, state) {
-  padding = typeof padding === "function" ? padding(Object.assign({}, state.rects, {
-    placement: state.placement
-  })) : padding;
-  return mergePaddingObject(typeof padding !== "number" ? padding : expandToHashMap(padding, basePlacements));
+  padding =
+    typeof padding === "function"
+      ? padding(
+          Object.assign({}, state.rects, {
+            placement: state.placement,
+          }),
+        )
+      : padding;
+  return mergePaddingObject(
+    typeof padding !== "number"
+      ? padding
+      : expandToHashMap(padding, basePlacements),
+  );
 };
 function arrow(_ref) {
   var _state$modifiersData$;
-  var state = _ref.state, name = _ref.name, options = _ref.options;
+  var state = _ref.state,
+    name = _ref.name,
+    options = _ref.options;
   var arrowElement = state.elements.arrow;
   var popperOffsets2 = state.modifiersData.popperOffsets;
   var basePlacement = getBasePlacement(state.placement);
@@ -7446,21 +8492,36 @@ function arrow(_ref) {
   var arrowRect = getLayoutRect(arrowElement);
   var minProp = axis === "y" ? top : left;
   var maxProp = axis === "y" ? bottom : right;
-  var endDiff = state.rects.reference[len] + state.rects.reference[axis] - popperOffsets2[axis] - state.rects.popper[len];
+  var endDiff =
+    state.rects.reference[len] +
+    state.rects.reference[axis] -
+    popperOffsets2[axis] -
+    state.rects.popper[len];
   var startDiff = popperOffsets2[axis] - state.rects.reference[axis];
   var arrowOffsetParent = getOffsetParent(arrowElement);
-  var clientSize = arrowOffsetParent ? axis === "y" ? arrowOffsetParent.clientHeight || 0 : arrowOffsetParent.clientWidth || 0 : 0;
+  var clientSize = arrowOffsetParent
+    ? axis === "y"
+      ? arrowOffsetParent.clientHeight || 0
+      : arrowOffsetParent.clientWidth || 0
+    : 0;
   var centerToReference = endDiff / 2 - startDiff / 2;
   var min2 = paddingObject[minProp];
   var max2 = clientSize - arrowRect[len] - paddingObject[maxProp];
   var center = clientSize / 2 - arrowRect[len] / 2 + centerToReference;
   var offset2 = within(min2, center, max2);
   var axisProp = axis;
-  state.modifiersData[name] = (_state$modifiersData$ = {}, _state$modifiersData$[axisProp] = offset2, _state$modifiersData$.centerOffset = offset2 - center, _state$modifiersData$);
+  state.modifiersData[name] =
+    ((_state$modifiersData$ = {}),
+    (_state$modifiersData$[axisProp] = offset2),
+    (_state$modifiersData$.centerOffset = offset2 - center),
+    _state$modifiersData$);
 }
 function effect2(_ref2) {
-  var state = _ref2.state, options = _ref2.options;
-  var _options$element = options.element, arrowElement = _options$element === void 0 ? "[data-popper-arrow]" : _options$element;
+  var state = _ref2.state,
+    options = _ref2.options;
+  var _options$element = options.element,
+    arrowElement =
+      _options$element === void 0 ? "[data-popper-arrow]" : _options$element;
   if (arrowElement == null) {
     return;
   }
@@ -7472,12 +8533,23 @@ function effect2(_ref2) {
   }
   if (true) {
     if (!isHTMLElement(arrowElement)) {
-      console.error(['Popper: "arrow" element must be an HTMLElement (not an SVGElement).', "To use an SVG arrow, wrap it in an HTMLElement that will be used as", "the arrow."].join(" "));
+      console.error(
+        [
+          'Popper: "arrow" element must be an HTMLElement (not an SVGElement).',
+          "To use an SVG arrow, wrap it in an HTMLElement that will be used as",
+          "the arrow.",
+        ].join(" "),
+      );
     }
   }
   if (!contains(state.elements.popper, arrowElement)) {
     if (true) {
-      console.error(['Popper: "arrow" modifier\'s `element` must be a child of the popper', "element."].join(" "));
+      console.error(
+        [
+          'Popper: "arrow" modifier\'s `element` must be a child of the popper',
+          "element.",
+        ].join(" "),
+      );
     }
     return;
   }
@@ -7490,7 +8562,7 @@ var arrow_default = {
   fn: arrow,
   effect: effect2,
   requires: ["popperOffsets"],
-  requiresIfExists: ["preventOverflow"]
+  requiresIfExists: ["preventOverflow"],
 };
 
 // node_modules/@popperjs/core/lib/utils/getVariation.js
@@ -7503,28 +8575,44 @@ var unsetSides = {
   top: "auto",
   right: "auto",
   bottom: "auto",
-  left: "auto"
+  left: "auto",
 };
 function roundOffsetsByDPR(_ref) {
-  var x = _ref.x, y = _ref.y;
+  var x = _ref.x,
+    y = _ref.y;
   var win = window;
   var dpr = win.devicePixelRatio || 1;
   return {
     x: round(x * dpr) / dpr || 0,
-    y: round(y * dpr) / dpr || 0
+    y: round(y * dpr) / dpr || 0,
   };
 }
 function mapToStyles(_ref2) {
   var _Object$assign2;
-  var popper2 = _ref2.popper, popperRect = _ref2.popperRect, placement = _ref2.placement, variation = _ref2.variation, offsets = _ref2.offsets, position = _ref2.position, gpuAcceleration = _ref2.gpuAcceleration, adaptive = _ref2.adaptive, roundOffsets = _ref2.roundOffsets, isFixed = _ref2.isFixed;
-  var _offsets$x = offsets.x, x = _offsets$x === void 0 ? 0 : _offsets$x, _offsets$y = offsets.y, y = _offsets$y === void 0 ? 0 : _offsets$y;
-  var _ref3 = typeof roundOffsets === "function" ? roundOffsets({
-    x,
-    y
-  }) : {
-    x,
-    y
-  };
+  var popper2 = _ref2.popper,
+    popperRect = _ref2.popperRect,
+    placement = _ref2.placement,
+    variation = _ref2.variation,
+    offsets = _ref2.offsets,
+    position = _ref2.position,
+    gpuAcceleration = _ref2.gpuAcceleration,
+    adaptive = _ref2.adaptive,
+    roundOffsets = _ref2.roundOffsets,
+    isFixed = _ref2.isFixed;
+  var _offsets$x = offsets.x,
+    x = _offsets$x === void 0 ? 0 : _offsets$x,
+    _offsets$y = offsets.y,
+    y = _offsets$y === void 0 ? 0 : _offsets$y;
+  var _ref3 =
+    typeof roundOffsets === "function"
+      ? roundOffsets({
+          x,
+          y,
+        })
+      : {
+          x,
+          y,
+        };
   x = _ref3.x;
   y = _ref3.y;
   var hasX = offsets.hasOwnProperty("x");
@@ -7538,58 +8626,119 @@ function mapToStyles(_ref2) {
     var widthProp = "clientWidth";
     if (offsetParent === getWindow(popper2)) {
       offsetParent = getDocumentElement(popper2);
-      if (getComputedStyle(offsetParent).position !== "static" && position === "absolute") {
+      if (
+        getComputedStyle(offsetParent).position !== "static" &&
+        position === "absolute"
+      ) {
         heightProp = "scrollHeight";
         widthProp = "scrollWidth";
       }
     }
     offsetParent = offsetParent;
-    if (placement === top || (placement === left || placement === right) && variation === end) {
+    if (
+      placement === top ||
+      ((placement === left || placement === right) && variation === end)
+    ) {
       sideY = bottom;
-      var offsetY = isFixed && offsetParent === win && win.visualViewport ? win.visualViewport.height : (
-        // $FlowFixMe[prop-missing]
-        offsetParent[heightProp]
-      );
+      var offsetY =
+        isFixed && offsetParent === win && win.visualViewport
+          ? win.visualViewport.height
+          : // $FlowFixMe[prop-missing]
+            offsetParent[heightProp];
       y -= offsetY - popperRect.height;
       y *= gpuAcceleration ? 1 : -1;
     }
-    if (placement === left || (placement === top || placement === bottom) && variation === end) {
+    if (
+      placement === left ||
+      ((placement === top || placement === bottom) && variation === end)
+    ) {
       sideX = right;
-      var offsetX = isFixed && offsetParent === win && win.visualViewport ? win.visualViewport.width : (
-        // $FlowFixMe[prop-missing]
-        offsetParent[widthProp]
-      );
+      var offsetX =
+        isFixed && offsetParent === win && win.visualViewport
+          ? win.visualViewport.width
+          : // $FlowFixMe[prop-missing]
+            offsetParent[widthProp];
       x -= offsetX - popperRect.width;
       x *= gpuAcceleration ? 1 : -1;
     }
   }
-  var commonStyles = Object.assign({
-    position
-  }, adaptive && unsetSides);
-  var _ref4 = roundOffsets === true ? roundOffsetsByDPR({
-    x,
-    y
-  }) : {
-    x,
-    y
-  };
+  var commonStyles = Object.assign(
+    {
+      position,
+    },
+    adaptive && unsetSides,
+  );
+  var _ref4 =
+    roundOffsets === true
+      ? roundOffsetsByDPR({
+          x,
+          y,
+        })
+      : {
+          x,
+          y,
+        };
   x = _ref4.x;
   y = _ref4.y;
   if (gpuAcceleration) {
     var _Object$assign;
-    return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? "0" : "", _Object$assign[sideX] = hasX ? "0" : "", _Object$assign.transform = (win.devicePixelRatio || 1) <= 1 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
+    return Object.assign(
+      {},
+      commonStyles,
+      ((_Object$assign = {}),
+      (_Object$assign[sideY] = hasY ? "0" : ""),
+      (_Object$assign[sideX] = hasX ? "0" : ""),
+      (_Object$assign.transform =
+        (win.devicePixelRatio || 1) <= 1
+          ? "translate(" + x + "px, " + y + "px)"
+          : "translate3d(" + x + "px, " + y + "px, 0)"),
+      _Object$assign),
+    );
   }
-  return Object.assign({}, commonStyles, (_Object$assign2 = {}, _Object$assign2[sideY] = hasY ? y + "px" : "", _Object$assign2[sideX] = hasX ? x + "px" : "", _Object$assign2.transform = "", _Object$assign2));
+  return Object.assign(
+    {},
+    commonStyles,
+    ((_Object$assign2 = {}),
+    (_Object$assign2[sideY] = hasY ? y + "px" : ""),
+    (_Object$assign2[sideX] = hasX ? x + "px" : ""),
+    (_Object$assign2.transform = ""),
+    _Object$assign2),
+  );
 }
 function computeStyles(_ref5) {
-  var state = _ref5.state, options = _ref5.options;
-  var _options$gpuAccelerat = options.gpuAcceleration, gpuAcceleration = _options$gpuAccelerat === void 0 ? true : _options$gpuAccelerat, _options$adaptive = options.adaptive, adaptive = _options$adaptive === void 0 ? true : _options$adaptive, _options$roundOffsets = options.roundOffsets, roundOffsets = _options$roundOffsets === void 0 ? true : _options$roundOffsets;
+  var state = _ref5.state,
+    options = _ref5.options;
+  var _options$gpuAccelerat = options.gpuAcceleration,
+    gpuAcceleration =
+      _options$gpuAccelerat === void 0 ? true : _options$gpuAccelerat,
+    _options$adaptive = options.adaptive,
+    adaptive = _options$adaptive === void 0 ? true : _options$adaptive,
+    _options$roundOffsets = options.roundOffsets,
+    roundOffsets =
+      _options$roundOffsets === void 0 ? true : _options$roundOffsets;
   if (true) {
-    var transitionProperty = getComputedStyle(state.elements.popper).transitionProperty || "";
-    if (adaptive && ["transform", "top", "right", "bottom", "left"].some(function(property) {
-      return transitionProperty.indexOf(property) >= 0;
-    })) {
-      console.warn(["Popper: Detected CSS transitions on at least one of the following", 'CSS properties: "transform", "top", "right", "bottom", "left".', "\n\n", 'Disable the "computeStyles" modifier\'s `adaptive` option to allow', "for smooth transitions, or remove these properties from the CSS", "transition declaration on the popper element if only transitioning", "opacity or background-color for example.", "\n\n", "We recommend using the popper element as a wrapper around an inner", "element that can have any CSS property transitioned for animations."].join(" "));
+    var transitionProperty =
+      getComputedStyle(state.elements.popper).transitionProperty || "";
+    if (
+      adaptive &&
+      ["transform", "top", "right", "bottom", "left"].some(function (property) {
+        return transitionProperty.indexOf(property) >= 0;
+      })
+    ) {
+      console.warn(
+        [
+          "Popper: Detected CSS transitions on at least one of the following",
+          'CSS properties: "transform", "top", "right", "bottom", "left".',
+          "\n\n",
+          'Disable the "computeStyles" modifier\'s `adaptive` option to allow',
+          "for smooth transitions, or remove these properties from the CSS",
+          "transition declaration on the popper element if only transitioning",
+          "opacity or background-color for example.",
+          "\n\n",
+          "We recommend using the popper element as a wrapper around an inner",
+          "element that can have any CSS property transitioned for animations.",
+        ].join(" "),
+      );
     }
   }
   var commonStyles = {
@@ -7598,26 +8747,38 @@ function computeStyles(_ref5) {
     popper: state.elements.popper,
     popperRect: state.rects.popper,
     gpuAcceleration,
-    isFixed: state.options.strategy === "fixed"
+    isFixed: state.options.strategy === "fixed",
   };
   if (state.modifiersData.popperOffsets != null) {
-    state.styles.popper = Object.assign({}, state.styles.popper, mapToStyles(Object.assign({}, commonStyles, {
-      offsets: state.modifiersData.popperOffsets,
-      position: state.options.strategy,
-      adaptive,
-      roundOffsets
-    })));
+    state.styles.popper = Object.assign(
+      {},
+      state.styles.popper,
+      mapToStyles(
+        Object.assign({}, commonStyles, {
+          offsets: state.modifiersData.popperOffsets,
+          position: state.options.strategy,
+          adaptive,
+          roundOffsets,
+        }),
+      ),
+    );
   }
   if (state.modifiersData.arrow != null) {
-    state.styles.arrow = Object.assign({}, state.styles.arrow, mapToStyles(Object.assign({}, commonStyles, {
-      offsets: state.modifiersData.arrow,
-      position: "absolute",
-      adaptive: false,
-      roundOffsets
-    })));
+    state.styles.arrow = Object.assign(
+      {},
+      state.styles.arrow,
+      mapToStyles(
+        Object.assign({}, commonStyles, {
+          offsets: state.modifiersData.arrow,
+          position: "absolute",
+          adaptive: false,
+          roundOffsets,
+        }),
+      ),
+    );
   }
   state.attributes.popper = Object.assign({}, state.attributes.popper, {
-    "data-popper-placement": state.placement
+    "data-popper-placement": state.placement,
   });
 }
 var computeStyles_default = {
@@ -7625,29 +8786,37 @@ var computeStyles_default = {
   enabled: true,
   phase: "beforeWrite",
   fn: computeStyles,
-  data: {}
+  data: {},
 };
 
 // node_modules/@popperjs/core/lib/modifiers/eventListeners.js
 var passive = {
-  passive: true
+  passive: true,
 };
 function effect3(_ref) {
-  var state = _ref.state, instance2 = _ref.instance, options = _ref.options;
-  var _options$scroll = options.scroll, scroll = _options$scroll === void 0 ? true : _options$scroll, _options$resize = options.resize, resize = _options$resize === void 0 ? true : _options$resize;
+  var state = _ref.state,
+    instance2 = _ref.instance,
+    options = _ref.options;
+  var _options$scroll = options.scroll,
+    scroll = _options$scroll === void 0 ? true : _options$scroll,
+    _options$resize = options.resize,
+    resize = _options$resize === void 0 ? true : _options$resize;
   var window2 = getWindow(state.elements.popper);
-  var scrollParents = [].concat(state.scrollParents.reference, state.scrollParents.popper);
+  var scrollParents = [].concat(
+    state.scrollParents.reference,
+    state.scrollParents.popper,
+  );
   if (scroll) {
-    scrollParents.forEach(function(scrollParent) {
+    scrollParents.forEach(function (scrollParent) {
       scrollParent.addEventListener("scroll", instance2.update, passive);
     });
   }
   if (resize) {
     window2.addEventListener("resize", instance2.update, passive);
   }
-  return function() {
+  return function () {
     if (scroll) {
-      scrollParents.forEach(function(scrollParent) {
+      scrollParents.forEach(function (scrollParent) {
         scrollParent.removeEventListener("scroll", instance2.update, passive);
       });
     }
@@ -7660,10 +8829,9 @@ var eventListeners_default = {
   name: "eventListeners",
   enabled: true,
   phase: "write",
-  fn: function fn() {
-  },
+  fn: function fn() {},
   effect: effect3,
-  data: {}
+  data: {},
 };
 
 // node_modules/@popperjs/core/lib/utils/getOppositePlacement.js
@@ -7671,10 +8839,10 @@ var hash = {
   left: "right",
   right: "left",
   bottom: "top",
-  top: "bottom"
+  top: "bottom",
 };
 function getOppositePlacement(placement) {
-  return placement.replace(/left|right|bottom|top/g, function(matched) {
+  return placement.replace(/left|right|bottom|top/g, function (matched) {
     return hash[matched];
   });
 }
@@ -7682,10 +8850,10 @@ function getOppositePlacement(placement) {
 // node_modules/@popperjs/core/lib/utils/getOppositeVariationPlacement.js
 var hash2 = {
   start: "end",
-  end: "start"
+  end: "start",
 };
 function getOppositeVariationPlacement(placement) {
-  return placement.replace(/start|end/g, function(matched) {
+  return placement.replace(/start|end/g, function (matched) {
     return hash2[matched];
   });
 }
@@ -7697,13 +8865,16 @@ function getWindowScroll(node) {
   var scrollTop = win.pageYOffset;
   return {
     scrollLeft,
-    scrollTop
+    scrollTop,
   };
 }
 
 // node_modules/@popperjs/core/lib/dom-utils/getWindowScrollBarX.js
 function getWindowScrollBarX(element) {
-  return getBoundingClientRect(getDocumentElement(element)).left + getWindowScroll(element).scrollLeft;
+  return (
+    getBoundingClientRect(getDocumentElement(element)).left +
+    getWindowScroll(element).scrollLeft
+  );
 }
 
 // node_modules/@popperjs/core/lib/dom-utils/getViewportRect.js
@@ -7727,7 +8898,7 @@ function getViewportRect(element) {
     width,
     height,
     x: x + getWindowScrollBarX(element),
-    y
+    y,
   };
 }
 
@@ -7736,9 +8907,22 @@ function getDocumentRect(element) {
   var _element$ownerDocumen;
   var html = getDocumentElement(element);
   var winScroll = getWindowScroll(element);
-  var body = (_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body;
-  var width = max(html.scrollWidth, html.clientWidth, body ? body.scrollWidth : 0, body ? body.clientWidth : 0);
-  var height = max(html.scrollHeight, html.clientHeight, body ? body.scrollHeight : 0, body ? body.clientHeight : 0);
+  var body =
+    (_element$ownerDocumen = element.ownerDocument) == null
+      ? void 0
+      : _element$ownerDocumen.body;
+  var width = max(
+    html.scrollWidth,
+    html.clientWidth,
+    body ? body.scrollWidth : 0,
+    body ? body.clientWidth : 0,
+  );
+  var height = max(
+    html.scrollHeight,
+    html.clientHeight,
+    body ? body.scrollHeight : 0,
+    body ? body.clientHeight : 0,
+  );
   var x = -winScroll.scrollLeft + getWindowScrollBarX(element);
   var y = -winScroll.scrollTop;
   if (getComputedStyle(body || html).direction === "rtl") {
@@ -7748,13 +8932,16 @@ function getDocumentRect(element) {
     width,
     height,
     x,
-    y
+    y,
   };
 }
 
 // node_modules/@popperjs/core/lib/dom-utils/isScrollParent.js
 function isScrollParent(element) {
-  var _getComputedStyle = getComputedStyle(element), overflow = _getComputedStyle.overflow, overflowX = _getComputedStyle.overflowX, overflowY = _getComputedStyle.overflowY;
+  var _getComputedStyle = getComputedStyle(element),
+    overflow = _getComputedStyle.overflow,
+    overflowX = _getComputedStyle.overflowX,
+    overflowY = _getComputedStyle.overflowY;
   return /auto|scroll|overlay|hidden/.test(overflow + overflowY + overflowX);
 }
 
@@ -7776,14 +8963,23 @@ function listScrollParents(element, list) {
     list = [];
   }
   var scrollParent = getScrollParent(element);
-  var isBody = scrollParent === ((_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body);
+  var isBody =
+    scrollParent ===
+    ((_element$ownerDocumen = element.ownerDocument) == null
+      ? void 0
+      : _element$ownerDocumen.body);
   var win = getWindow(scrollParent);
-  var target = isBody ? [win].concat(win.visualViewport || [], isScrollParent(scrollParent) ? scrollParent : []) : scrollParent;
+  var target = isBody
+    ? [win].concat(
+        win.visualViewport || [],
+        isScrollParent(scrollParent) ? scrollParent : [],
+      )
+    : scrollParent;
   var updatedList = list.concat(target);
-  return isBody ? updatedList : (
-    // $FlowFixMe[incompatible-call]: isBody tells us target will be an HTMLElement here
-    updatedList.concat(listScrollParents(getParentNode(target)))
-  );
+  return isBody
+    ? updatedList
+    : // $FlowFixMe[incompatible-call]: isBody tells us target will be an HTMLElement here
+      updatedList.concat(listScrollParents(getParentNode(target)));
 }
 
 // node_modules/@popperjs/core/lib/utils/rectToClientRect.js
@@ -7792,7 +8988,7 @@ function rectToClientRect(rect) {
     left: rect.x,
     top: rect.y,
     right: rect.x + rect.width,
-    bottom: rect.y + rect.height
+    bottom: rect.y + rect.height,
   });
 }
 
@@ -7810,31 +9006,49 @@ function getInnerBoundingClientRect(element) {
   return rect;
 }
 function getClientRectFromMixedType(element, clippingParent) {
-  return clippingParent === viewport ? rectToClientRect(getViewportRect(element)) : isElement(clippingParent) ? getInnerBoundingClientRect(clippingParent) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
+  return clippingParent === viewport
+    ? rectToClientRect(getViewportRect(element))
+    : isElement(clippingParent)
+      ? getInnerBoundingClientRect(clippingParent)
+      : rectToClientRect(getDocumentRect(getDocumentElement(element)));
 }
 function getClippingParents(element) {
   var clippingParents2 = listScrollParents(getParentNode(element));
-  var canEscapeClipping = ["absolute", "fixed"].indexOf(getComputedStyle(element).position) >= 0;
-  var clipperElement = canEscapeClipping && isHTMLElement(element) ? getOffsetParent(element) : element;
+  var canEscapeClipping =
+    ["absolute", "fixed"].indexOf(getComputedStyle(element).position) >= 0;
+  var clipperElement =
+    canEscapeClipping && isHTMLElement(element)
+      ? getOffsetParent(element)
+      : element;
   if (!isElement(clipperElement)) {
     return [];
   }
-  return clippingParents2.filter(function(clippingParent) {
-    return isElement(clippingParent) && contains(clippingParent, clipperElement) && getNodeName(clippingParent) !== "body";
+  return clippingParents2.filter(function (clippingParent) {
+    return (
+      isElement(clippingParent) &&
+      contains(clippingParent, clipperElement) &&
+      getNodeName(clippingParent) !== "body"
+    );
   });
 }
 function getClippingRect(element, boundary, rootBoundary) {
-  var mainClippingParents = boundary === "clippingParents" ? getClippingParents(element) : [].concat(boundary);
+  var mainClippingParents =
+    boundary === "clippingParents"
+      ? getClippingParents(element)
+      : [].concat(boundary);
   var clippingParents2 = [].concat(mainClippingParents, [rootBoundary]);
   var firstClippingParent = clippingParents2[0];
-  var clippingRect = clippingParents2.reduce(function(accRect, clippingParent) {
-    var rect = getClientRectFromMixedType(element, clippingParent);
-    accRect.top = max(rect.top, accRect.top);
-    accRect.right = min(rect.right, accRect.right);
-    accRect.bottom = min(rect.bottom, accRect.bottom);
-    accRect.left = max(rect.left, accRect.left);
-    return accRect;
-  }, getClientRectFromMixedType(element, firstClippingParent));
+  var clippingRect = clippingParents2.reduce(
+    function (accRect, clippingParent) {
+      var rect = getClientRectFromMixedType(element, clippingParent);
+      accRect.top = max(rect.top, accRect.top);
+      accRect.right = min(rect.right, accRect.right);
+      accRect.bottom = min(rect.bottom, accRect.bottom);
+      accRect.left = max(rect.left, accRect.left);
+      return accRect;
+    },
+    getClientRectFromMixedType(element, firstClippingParent),
+  );
   clippingRect.width = clippingRect.right - clippingRect.left;
   clippingRect.height = clippingRect.bottom - clippingRect.top;
   clippingRect.x = clippingRect.left;
@@ -7844,7 +9058,9 @@ function getClippingRect(element, boundary, rootBoundary) {
 
 // node_modules/@popperjs/core/lib/utils/computeOffsets.js
 function computeOffsets(_ref) {
-  var reference2 = _ref.reference, element = _ref.element, placement = _ref.placement;
+  var reference2 = _ref.reference,
+    element = _ref.element,
+    placement = _ref.placement;
   var basePlacement = placement ? getBasePlacement(placement) : null;
   var variation = placement ? getVariation(placement) : null;
   var commonX = reference2.x + reference2.width / 2 - element.width / 2;
@@ -7854,31 +9070,31 @@ function computeOffsets(_ref) {
     case top:
       offsets = {
         x: commonX,
-        y: reference2.y - element.height
+        y: reference2.y - element.height,
       };
       break;
     case bottom:
       offsets = {
         x: commonX,
-        y: reference2.y + reference2.height
+        y: reference2.y + reference2.height,
       };
       break;
     case right:
       offsets = {
         x: reference2.x + reference2.width,
-        y: commonY
+        y: commonY,
       };
       break;
     case left:
       offsets = {
         x: reference2.x - element.width,
-        y: commonY
+        y: commonY,
       };
       break;
     default:
       offsets = {
         x: reference2.x,
-        y: reference2.y
+        y: reference2.y,
       };
   }
   var mainAxis = basePlacement ? getMainAxisFromPlacement(basePlacement) : null;
@@ -7886,10 +9102,12 @@ function computeOffsets(_ref) {
     var len = mainAxis === "y" ? "height" : "width";
     switch (variation) {
       case start:
-        offsets[mainAxis] = offsets[mainAxis] - (reference2[len] / 2 - element[len] / 2);
+        offsets[mainAxis] =
+          offsets[mainAxis] - (reference2[len] / 2 - element[len] / 2);
         break;
       case end:
-        offsets[mainAxis] = offsets[mainAxis] + (reference2[len] / 2 - element[len] / 2);
+        offsets[mainAxis] =
+          offsets[mainAxis] + (reference2[len] / 2 - element[len] / 2);
         break;
       default:
     }
@@ -7902,31 +9120,65 @@ function detectOverflow(state, options) {
   if (options === void 0) {
     options = {};
   }
-  var _options = options, _options$placement = _options.placement, placement = _options$placement === void 0 ? state.placement : _options$placement, _options$boundary = _options.boundary, boundary = _options$boundary === void 0 ? clippingParents : _options$boundary, _options$rootBoundary = _options.rootBoundary, rootBoundary = _options$rootBoundary === void 0 ? viewport : _options$rootBoundary, _options$elementConte = _options.elementContext, elementContext = _options$elementConte === void 0 ? popper : _options$elementConte, _options$altBoundary = _options.altBoundary, altBoundary = _options$altBoundary === void 0 ? false : _options$altBoundary, _options$padding = _options.padding, padding = _options$padding === void 0 ? 0 : _options$padding;
-  var paddingObject = mergePaddingObject(typeof padding !== "number" ? padding : expandToHashMap(padding, basePlacements));
+  var _options = options,
+    _options$placement = _options.placement,
+    placement =
+      _options$placement === void 0 ? state.placement : _options$placement,
+    _options$boundary = _options.boundary,
+    boundary =
+      _options$boundary === void 0 ? clippingParents : _options$boundary,
+    _options$rootBoundary = _options.rootBoundary,
+    rootBoundary =
+      _options$rootBoundary === void 0 ? viewport : _options$rootBoundary,
+    _options$elementConte = _options.elementContext,
+    elementContext =
+      _options$elementConte === void 0 ? popper : _options$elementConte,
+    _options$altBoundary = _options.altBoundary,
+    altBoundary =
+      _options$altBoundary === void 0 ? false : _options$altBoundary,
+    _options$padding = _options.padding,
+    padding = _options$padding === void 0 ? 0 : _options$padding;
+  var paddingObject = mergePaddingObject(
+    typeof padding !== "number"
+      ? padding
+      : expandToHashMap(padding, basePlacements),
+  );
   var altContext = elementContext === popper ? reference : popper;
   var popperRect = state.rects.popper;
   var element = state.elements[altBoundary ? altContext : elementContext];
-  var clippingClientRect = getClippingRect(isElement(element) ? element : element.contextElement || getDocumentElement(state.elements.popper), boundary, rootBoundary);
+  var clippingClientRect = getClippingRect(
+    isElement(element)
+      ? element
+      : element.contextElement || getDocumentElement(state.elements.popper),
+    boundary,
+    rootBoundary,
+  );
   var referenceClientRect = getBoundingClientRect(state.elements.reference);
   var popperOffsets2 = computeOffsets({
     reference: referenceClientRect,
     element: popperRect,
     strategy: "absolute",
-    placement
+    placement,
   });
-  var popperClientRect = rectToClientRect(Object.assign({}, popperRect, popperOffsets2));
-  var elementClientRect = elementContext === popper ? popperClientRect : referenceClientRect;
+  var popperClientRect = rectToClientRect(
+    Object.assign({}, popperRect, popperOffsets2),
+  );
+  var elementClientRect =
+    elementContext === popper ? popperClientRect : referenceClientRect;
   var overflowOffsets = {
     top: clippingClientRect.top - elementClientRect.top + paddingObject.top,
-    bottom: elementClientRect.bottom - clippingClientRect.bottom + paddingObject.bottom,
+    bottom:
+      elementClientRect.bottom -
+      clippingClientRect.bottom +
+      paddingObject.bottom,
     left: clippingClientRect.left - elementClientRect.left + paddingObject.left,
-    right: elementClientRect.right - clippingClientRect.right + paddingObject.right
+    right:
+      elementClientRect.right - clippingClientRect.right + paddingObject.right,
   };
   var offsetData = state.modifiersData.offset;
   if (elementContext === popper && offsetData) {
     var offset2 = offsetData[placement];
-    Object.keys(overflowOffsets).forEach(function(key) {
+    Object.keys(overflowOffsets).forEach(function (key) {
       var multiply = [right, bottom].indexOf(key) >= 0 ? 1 : -1;
       var axis = [top, bottom].indexOf(key) >= 0 ? "y" : "x";
       overflowOffsets[key] += offset2[axis] * multiply;
@@ -7940,30 +9192,50 @@ function computeAutoPlacement(state, options) {
   if (options === void 0) {
     options = {};
   }
-  var _options = options, placement = _options.placement, boundary = _options.boundary, rootBoundary = _options.rootBoundary, padding = _options.padding, flipVariations = _options.flipVariations, _options$allowedAutoP = _options.allowedAutoPlacements, allowedAutoPlacements = _options$allowedAutoP === void 0 ? placements : _options$allowedAutoP;
+  var _options = options,
+    placement = _options.placement,
+    boundary = _options.boundary,
+    rootBoundary = _options.rootBoundary,
+    padding = _options.padding,
+    flipVariations = _options.flipVariations,
+    _options$allowedAutoP = _options.allowedAutoPlacements,
+    allowedAutoPlacements =
+      _options$allowedAutoP === void 0 ? placements : _options$allowedAutoP;
   var variation = getVariation(placement);
-  var placements2 = variation ? flipVariations ? variationPlacements : variationPlacements.filter(function(placement2) {
-    return getVariation(placement2) === variation;
-  }) : basePlacements;
-  var allowedPlacements = placements2.filter(function(placement2) {
+  var placements2 = variation
+    ? flipVariations
+      ? variationPlacements
+      : variationPlacements.filter(function (placement2) {
+          return getVariation(placement2) === variation;
+        })
+    : basePlacements;
+  var allowedPlacements = placements2.filter(function (placement2) {
     return allowedAutoPlacements.indexOf(placement2) >= 0;
   });
   if (allowedPlacements.length === 0) {
     allowedPlacements = placements2;
     if (true) {
-      console.error(["Popper: The `allowedAutoPlacements` option did not allow any", "placements. Ensure the `placement` option matches the variation", "of the allowed placements.", 'For example, "auto" cannot be used to allow "bottom-start".', 'Use "auto-start" instead.'].join(" "));
+      console.error(
+        [
+          "Popper: The `allowedAutoPlacements` option did not allow any",
+          "placements. Ensure the `placement` option matches the variation",
+          "of the allowed placements.",
+          'For example, "auto" cannot be used to allow "bottom-start".',
+          'Use "auto-start" instead.',
+        ].join(" "),
+      );
     }
   }
-  var overflows = allowedPlacements.reduce(function(acc, placement2) {
+  var overflows = allowedPlacements.reduce(function (acc, placement2) {
     acc[placement2] = detectOverflow(state, {
       placement: placement2,
       boundary,
       rootBoundary,
-      padding
+      padding,
     })[getBasePlacement(placement2)];
     return acc;
   }, {});
-  return Object.keys(overflows).sort(function(a, b) {
+  return Object.keys(overflows).sort(function (a, b) {
     return overflows[a] - overflows[b];
   });
 }
@@ -7974,28 +9246,56 @@ function getExpandedFallbackPlacements(placement) {
     return [];
   }
   var oppositePlacement = getOppositePlacement(placement);
-  return [getOppositeVariationPlacement(placement), oppositePlacement, getOppositeVariationPlacement(oppositePlacement)];
+  return [
+    getOppositeVariationPlacement(placement),
+    oppositePlacement,
+    getOppositeVariationPlacement(oppositePlacement),
+  ];
 }
 function flip(_ref) {
-  var state = _ref.state, options = _ref.options, name = _ref.name;
+  var state = _ref.state,
+    options = _ref.options,
+    name = _ref.name;
   if (state.modifiersData[name]._skip) {
     return;
   }
-  var _options$mainAxis = options.mainAxis, checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis, _options$altAxis = options.altAxis, checkAltAxis = _options$altAxis === void 0 ? true : _options$altAxis, specifiedFallbackPlacements = options.fallbackPlacements, padding = options.padding, boundary = options.boundary, rootBoundary = options.rootBoundary, altBoundary = options.altBoundary, _options$flipVariatio = options.flipVariations, flipVariations = _options$flipVariatio === void 0 ? true : _options$flipVariatio, allowedAutoPlacements = options.allowedAutoPlacements;
+  var _options$mainAxis = options.mainAxis,
+    checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis,
+    _options$altAxis = options.altAxis,
+    checkAltAxis = _options$altAxis === void 0 ? true : _options$altAxis,
+    specifiedFallbackPlacements = options.fallbackPlacements,
+    padding = options.padding,
+    boundary = options.boundary,
+    rootBoundary = options.rootBoundary,
+    altBoundary = options.altBoundary,
+    _options$flipVariatio = options.flipVariations,
+    flipVariations =
+      _options$flipVariatio === void 0 ? true : _options$flipVariatio,
+    allowedAutoPlacements = options.allowedAutoPlacements;
   var preferredPlacement = state.options.placement;
   var basePlacement = getBasePlacement(preferredPlacement);
   var isBasePlacement = basePlacement === preferredPlacement;
-  var fallbackPlacements = specifiedFallbackPlacements || (isBasePlacement || !flipVariations ? [getOppositePlacement(preferredPlacement)] : getExpandedFallbackPlacements(preferredPlacement));
-  var placements2 = [preferredPlacement].concat(fallbackPlacements).reduce(function(acc, placement2) {
-    return acc.concat(getBasePlacement(placement2) === auto ? computeAutoPlacement(state, {
-      placement: placement2,
-      boundary,
-      rootBoundary,
-      padding,
-      flipVariations,
-      allowedAutoPlacements
-    }) : placement2);
-  }, []);
+  var fallbackPlacements =
+    specifiedFallbackPlacements ||
+    (isBasePlacement || !flipVariations
+      ? [getOppositePlacement(preferredPlacement)]
+      : getExpandedFallbackPlacements(preferredPlacement));
+  var placements2 = [preferredPlacement]
+    .concat(fallbackPlacements)
+    .reduce(function (acc, placement2) {
+      return acc.concat(
+        getBasePlacement(placement2) === auto
+          ? computeAutoPlacement(state, {
+              placement: placement2,
+              boundary,
+              rootBoundary,
+              padding,
+              flipVariations,
+              allowedAutoPlacements,
+            })
+          : placement2,
+      );
+    }, []);
   var referenceRect = state.rects.reference;
   var popperRect = state.rects.popper;
   var checksMap = /* @__PURE__ */ new Map();
@@ -8012,9 +9312,15 @@ function flip(_ref) {
       boundary,
       rootBoundary,
       altBoundary,
-      padding
+      padding,
     });
-    var mainVariationSide = isVertical ? isStartVariation ? right : left : isStartVariation ? bottom : top;
+    var mainVariationSide = isVertical
+      ? isStartVariation
+        ? right
+        : left
+      : isStartVariation
+        ? bottom
+        : top;
     if (referenceRect[len] > popperRect[len]) {
       mainVariationSide = getOppositePlacement(mainVariationSide);
     }
@@ -8024,11 +9330,16 @@ function flip(_ref) {
       checks.push(overflow[_basePlacement] <= 0);
     }
     if (checkAltAxis) {
-      checks.push(overflow[mainVariationSide] <= 0, overflow[altVariationSide] <= 0);
+      checks.push(
+        overflow[mainVariationSide] <= 0,
+        overflow[altVariationSide] <= 0,
+      );
     }
-    if (checks.every(function(check) {
-      return check;
-    })) {
+    if (
+      checks.every(function (check) {
+        return check;
+      })
+    ) {
       firstFittingPlacement = placement;
       makeFallbackChecks = false;
       break;
@@ -8038,10 +9349,10 @@ function flip(_ref) {
   if (makeFallbackChecks) {
     var numberOfChecks = flipVariations ? 3 : 1;
     var _loop = function _loop2(_i2) {
-      var fittingPlacement = placements2.find(function(placement2) {
+      var fittingPlacement = placements2.find(function (placement2) {
         var checks2 = checksMap.get(placement2);
         if (checks2) {
-          return checks2.slice(0, _i2).every(function(check) {
+          return checks2.slice(0, _i2).every(function (check) {
             return check;
           });
         }
@@ -8053,8 +9364,7 @@ function flip(_ref) {
     };
     for (var _i = numberOfChecks; _i > 0; _i--) {
       var _ret = _loop(_i);
-      if (_ret === "break")
-        break;
+      if (_ret === "break") break;
     }
   }
   if (state.placement !== firstFittingPlacement) {
@@ -8070,8 +9380,8 @@ var flip_default = {
   fn: flip,
   requiresIfExists: ["offset"],
   data: {
-    _skip: false
-  }
+    _skip: false,
+  },
 };
 
 // node_modules/@popperjs/core/lib/modifiers/hide.js
@@ -8079,45 +9389,53 @@ function getSideOffsets(overflow, rect, preventedOffsets) {
   if (preventedOffsets === void 0) {
     preventedOffsets = {
       x: 0,
-      y: 0
+      y: 0,
     };
   }
   return {
     top: overflow.top - rect.height - preventedOffsets.y,
     right: overflow.right - rect.width + preventedOffsets.x,
     bottom: overflow.bottom - rect.height + preventedOffsets.y,
-    left: overflow.left - rect.width - preventedOffsets.x
+    left: overflow.left - rect.width - preventedOffsets.x,
   };
 }
 function isAnySideFullyClipped(overflow) {
-  return [top, right, bottom, left].some(function(side) {
+  return [top, right, bottom, left].some(function (side) {
     return overflow[side] >= 0;
   });
 }
 function hide(_ref) {
-  var state = _ref.state, name = _ref.name;
+  var state = _ref.state,
+    name = _ref.name;
   var referenceRect = state.rects.reference;
   var popperRect = state.rects.popper;
   var preventedOffsets = state.modifiersData.preventOverflow;
   var referenceOverflow = detectOverflow(state, {
-    elementContext: "reference"
+    elementContext: "reference",
   });
   var popperAltOverflow = detectOverflow(state, {
-    altBoundary: true
+    altBoundary: true,
   });
-  var referenceClippingOffsets = getSideOffsets(referenceOverflow, referenceRect);
-  var popperEscapeOffsets = getSideOffsets(popperAltOverflow, popperRect, preventedOffsets);
+  var referenceClippingOffsets = getSideOffsets(
+    referenceOverflow,
+    referenceRect,
+  );
+  var popperEscapeOffsets = getSideOffsets(
+    popperAltOverflow,
+    popperRect,
+    preventedOffsets,
+  );
   var isReferenceHidden = isAnySideFullyClipped(referenceClippingOffsets);
   var hasPopperEscaped = isAnySideFullyClipped(popperEscapeOffsets);
   state.modifiersData[name] = {
     referenceClippingOffsets,
     popperEscapeOffsets,
     isReferenceHidden,
-    hasPopperEscaped
+    hasPopperEscaped,
   };
   state.attributes.popper = Object.assign({}, state.attributes.popper, {
     "data-popper-reference-hidden": isReferenceHidden,
-    "data-popper-escaped": hasPopperEscaped
+    "data-popper-escaped": hasPopperEscaped,
   });
 }
 var hide_default = {
@@ -8125,34 +9443,48 @@ var hide_default = {
   enabled: true,
   phase: "main",
   requiresIfExists: ["preventOverflow"],
-  fn: hide
+  fn: hide,
 };
 
 // node_modules/@popperjs/core/lib/modifiers/offset.js
 function distanceAndSkiddingToXY(placement, rects, offset2) {
   var basePlacement = getBasePlacement(placement);
   var invertDistance = [left, top].indexOf(basePlacement) >= 0 ? -1 : 1;
-  var _ref = typeof offset2 === "function" ? offset2(Object.assign({}, rects, {
-    placement
-  })) : offset2, skidding = _ref[0], distance = _ref[1];
+  var _ref =
+      typeof offset2 === "function"
+        ? offset2(
+            Object.assign({}, rects, {
+              placement,
+            }),
+          )
+        : offset2,
+    skidding = _ref[0],
+    distance = _ref[1];
   skidding = skidding || 0;
   distance = (distance || 0) * invertDistance;
-  return [left, right].indexOf(basePlacement) >= 0 ? {
-    x: distance,
-    y: skidding
-  } : {
-    x: skidding,
-    y: distance
-  };
+  return [left, right].indexOf(basePlacement) >= 0
+    ? {
+        x: distance,
+        y: skidding,
+      }
+    : {
+        x: skidding,
+        y: distance,
+      };
 }
 function offset(_ref2) {
-  var state = _ref2.state, options = _ref2.options, name = _ref2.name;
-  var _options$offset = options.offset, offset2 = _options$offset === void 0 ? [0, 0] : _options$offset;
-  var data = placements.reduce(function(acc, placement) {
+  var state = _ref2.state,
+    options = _ref2.options,
+    name = _ref2.name;
+  var _options$offset = options.offset,
+    offset2 = _options$offset === void 0 ? [0, 0] : _options$offset;
+  var data = placements.reduce(function (acc, placement) {
     acc[placement] = distanceAndSkiddingToXY(placement, state.rects, offset2);
     return acc;
   }, {});
-  var _data$state$placement = data[state.placement], x = _data$state$placement.x, y = _data$state$placement.y;
+  var _data$state$placement = data[state.placement],
+    x = _data$state$placement.x,
+    y = _data$state$placement.y;
   if (state.modifiersData.popperOffsets != null) {
     state.modifiersData.popperOffsets.x += x;
     state.modifiersData.popperOffsets.y += y;
@@ -8164,17 +9496,18 @@ var offset_default = {
   enabled: true,
   phase: "main",
   requires: ["popperOffsets"],
-  fn: offset
+  fn: offset,
 };
 
 // node_modules/@popperjs/core/lib/modifiers/popperOffsets.js
 function popperOffsets(_ref) {
-  var state = _ref.state, name = _ref.name;
+  var state = _ref.state,
+    name = _ref.name;
   state.modifiersData[name] = computeOffsets({
     reference: state.rects.reference,
     element: state.rects.popper,
     strategy: "absolute",
-    placement: state.placement
+    placement: state.placement,
   });
 }
 var popperOffsets_default = {
@@ -8182,7 +9515,7 @@ var popperOffsets_default = {
   enabled: true,
   phase: "read",
   fn: popperOffsets,
-  data: {}
+  data: {},
 };
 
 // node_modules/@popperjs/core/lib/utils/getAltAxis.js
@@ -8192,13 +9525,26 @@ function getAltAxis(axis) {
 
 // node_modules/@popperjs/core/lib/modifiers/preventOverflow.js
 function preventOverflow(_ref) {
-  var state = _ref.state, options = _ref.options, name = _ref.name;
-  var _options$mainAxis = options.mainAxis, checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis, _options$altAxis = options.altAxis, checkAltAxis = _options$altAxis === void 0 ? false : _options$altAxis, boundary = options.boundary, rootBoundary = options.rootBoundary, altBoundary = options.altBoundary, padding = options.padding, _options$tether = options.tether, tether = _options$tether === void 0 ? true : _options$tether, _options$tetherOffset = options.tetherOffset, tetherOffset = _options$tetherOffset === void 0 ? 0 : _options$tetherOffset;
+  var state = _ref.state,
+    options = _ref.options,
+    name = _ref.name;
+  var _options$mainAxis = options.mainAxis,
+    checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis,
+    _options$altAxis = options.altAxis,
+    checkAltAxis = _options$altAxis === void 0 ? false : _options$altAxis,
+    boundary = options.boundary,
+    rootBoundary = options.rootBoundary,
+    altBoundary = options.altBoundary,
+    padding = options.padding,
+    _options$tether = options.tether,
+    tether = _options$tether === void 0 ? true : _options$tether,
+    _options$tetherOffset = options.tetherOffset,
+    tetherOffset = _options$tetherOffset === void 0 ? 0 : _options$tetherOffset;
   var overflow = detectOverflow(state, {
     boundary,
     rootBoundary,
     padding,
-    altBoundary
+    altBoundary,
   });
   var basePlacement = getBasePlacement(state.placement);
   var variation = getVariation(state.placement);
@@ -8208,20 +9554,33 @@ function preventOverflow(_ref) {
   var popperOffsets2 = state.modifiersData.popperOffsets;
   var referenceRect = state.rects.reference;
   var popperRect = state.rects.popper;
-  var tetherOffsetValue = typeof tetherOffset === "function" ? tetherOffset(Object.assign({}, state.rects, {
-    placement: state.placement
-  })) : tetherOffset;
-  var normalizedTetherOffsetValue = typeof tetherOffsetValue === "number" ? {
-    mainAxis: tetherOffsetValue,
-    altAxis: tetherOffsetValue
-  } : Object.assign({
-    mainAxis: 0,
-    altAxis: 0
-  }, tetherOffsetValue);
-  var offsetModifierState = state.modifiersData.offset ? state.modifiersData.offset[state.placement] : null;
+  var tetherOffsetValue =
+    typeof tetherOffset === "function"
+      ? tetherOffset(
+          Object.assign({}, state.rects, {
+            placement: state.placement,
+          }),
+        )
+      : tetherOffset;
+  var normalizedTetherOffsetValue =
+    typeof tetherOffsetValue === "number"
+      ? {
+          mainAxis: tetherOffsetValue,
+          altAxis: tetherOffsetValue,
+        }
+      : Object.assign(
+          {
+            mainAxis: 0,
+            altAxis: 0,
+          },
+          tetherOffsetValue,
+        );
+  var offsetModifierState = state.modifiersData.offset
+    ? state.modifiersData.offset[state.placement]
+    : null;
   var data = {
     x: 0,
-    y: 0
+    y: 0,
   };
   if (!popperOffsets2) {
     return;
@@ -8238,22 +9597,59 @@ function preventOverflow(_ref) {
     var minLen = variation === start ? referenceRect[len] : popperRect[len];
     var maxLen = variation === start ? -popperRect[len] : -referenceRect[len];
     var arrowElement = state.elements.arrow;
-    var arrowRect = tether && arrowElement ? getLayoutRect(arrowElement) : {
-      width: 0,
-      height: 0
-    };
-    var arrowPaddingObject = state.modifiersData["arrow#persistent"] ? state.modifiersData["arrow#persistent"].padding : getFreshSideObject();
+    var arrowRect =
+      tether && arrowElement
+        ? getLayoutRect(arrowElement)
+        : {
+            width: 0,
+            height: 0,
+          };
+    var arrowPaddingObject = state.modifiersData["arrow#persistent"]
+      ? state.modifiersData["arrow#persistent"].padding
+      : getFreshSideObject();
     var arrowPaddingMin = arrowPaddingObject[mainSide];
     var arrowPaddingMax = arrowPaddingObject[altSide];
     var arrowLen = within(0, referenceRect[len], arrowRect[len]);
-    var minOffset = isBasePlacement ? referenceRect[len] / 2 - additive - arrowLen - arrowPaddingMin - normalizedTetherOffsetValue.mainAxis : minLen - arrowLen - arrowPaddingMin - normalizedTetherOffsetValue.mainAxis;
-    var maxOffset = isBasePlacement ? -referenceRect[len] / 2 + additive + arrowLen + arrowPaddingMax + normalizedTetherOffsetValue.mainAxis : maxLen + arrowLen + arrowPaddingMax + normalizedTetherOffsetValue.mainAxis;
-    var arrowOffsetParent = state.elements.arrow && getOffsetParent(state.elements.arrow);
-    var clientOffset = arrowOffsetParent ? mainAxis === "y" ? arrowOffsetParent.clientTop || 0 : arrowOffsetParent.clientLeft || 0 : 0;
-    var offsetModifierValue = (_offsetModifierState$ = offsetModifierState == null ? void 0 : offsetModifierState[mainAxis]) != null ? _offsetModifierState$ : 0;
+    var minOffset = isBasePlacement
+      ? referenceRect[len] / 2 -
+        additive -
+        arrowLen -
+        arrowPaddingMin -
+        normalizedTetherOffsetValue.mainAxis
+      : minLen -
+        arrowLen -
+        arrowPaddingMin -
+        normalizedTetherOffsetValue.mainAxis;
+    var maxOffset = isBasePlacement
+      ? -referenceRect[len] / 2 +
+        additive +
+        arrowLen +
+        arrowPaddingMax +
+        normalizedTetherOffsetValue.mainAxis
+      : maxLen +
+        arrowLen +
+        arrowPaddingMax +
+        normalizedTetherOffsetValue.mainAxis;
+    var arrowOffsetParent =
+      state.elements.arrow && getOffsetParent(state.elements.arrow);
+    var clientOffset = arrowOffsetParent
+      ? mainAxis === "y"
+        ? arrowOffsetParent.clientTop || 0
+        : arrowOffsetParent.clientLeft || 0
+      : 0;
+    var offsetModifierValue =
+      (_offsetModifierState$ =
+        offsetModifierState == null ? void 0 : offsetModifierState[mainAxis]) !=
+      null
+        ? _offsetModifierState$
+        : 0;
     var tetherMin = offset2 + minOffset - offsetModifierValue - clientOffset;
     var tetherMax = offset2 + maxOffset - offsetModifierValue;
-    var preventedOffset = within(tether ? min(min2, tetherMin) : min2, offset2, tether ? max(max2, tetherMax) : max2);
+    var preventedOffset = within(
+      tether ? min(min2, tetherMin) : min2,
+      offset2,
+      tether ? max(max2, tetherMax) : max2,
+    );
     popperOffsets2[mainAxis] = preventedOffset;
     data[mainAxis] = preventedOffset - offset2;
   }
@@ -8266,10 +9662,34 @@ function preventOverflow(_ref) {
     var _min = _offset + overflow[_mainSide];
     var _max = _offset - overflow[_altSide];
     var isOriginSide = [top, left].indexOf(basePlacement) !== -1;
-    var _offsetModifierValue = (_offsetModifierState$2 = offsetModifierState == null ? void 0 : offsetModifierState[altAxis]) != null ? _offsetModifierState$2 : 0;
-    var _tetherMin = isOriginSide ? _min : _offset - referenceRect[_len] - popperRect[_len] - _offsetModifierValue + normalizedTetherOffsetValue.altAxis;
-    var _tetherMax = isOriginSide ? _offset + referenceRect[_len] + popperRect[_len] - _offsetModifierValue - normalizedTetherOffsetValue.altAxis : _max;
-    var _preventedOffset = tether && isOriginSide ? withinMaxClamp(_tetherMin, _offset, _tetherMax) : within(tether ? _tetherMin : _min, _offset, tether ? _tetherMax : _max);
+    var _offsetModifierValue =
+      (_offsetModifierState$2 =
+        offsetModifierState == null ? void 0 : offsetModifierState[altAxis]) !=
+      null
+        ? _offsetModifierState$2
+        : 0;
+    var _tetherMin = isOriginSide
+      ? _min
+      : _offset -
+        referenceRect[_len] -
+        popperRect[_len] -
+        _offsetModifierValue +
+        normalizedTetherOffsetValue.altAxis;
+    var _tetherMax = isOriginSide
+      ? _offset +
+        referenceRect[_len] +
+        popperRect[_len] -
+        _offsetModifierValue -
+        normalizedTetherOffsetValue.altAxis
+      : _max;
+    var _preventedOffset =
+      tether && isOriginSide
+        ? withinMaxClamp(_tetherMin, _offset, _tetherMax)
+        : within(
+            tether ? _tetherMin : _min,
+            _offset,
+            tether ? _tetherMax : _max,
+          );
     popperOffsets2[altAxis] = _preventedOffset;
     data[altAxis] = _preventedOffset - _offset;
   }
@@ -8280,14 +9700,14 @@ var preventOverflow_default = {
   enabled: true,
   phase: "main",
   fn: preventOverflow,
-  requiresIfExists: ["offset"]
+  requiresIfExists: ["offset"],
 };
 
 // node_modules/@popperjs/core/lib/dom-utils/getHTMLElementScroll.js
 function getHTMLElementScroll(element) {
   return {
     scrollLeft: element.scrollLeft,
-    scrollTop: element.scrollTop
+    scrollTop: element.scrollTop,
   };
 }
 
@@ -8312,20 +9732,26 @@ function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
     isFixed = false;
   }
   var isOffsetParentAnElement = isHTMLElement(offsetParent);
-  var offsetParentIsScaled = isHTMLElement(offsetParent) && isElementScaled(offsetParent);
+  var offsetParentIsScaled =
+    isHTMLElement(offsetParent) && isElementScaled(offsetParent);
   var documentElement = getDocumentElement(offsetParent);
-  var rect = getBoundingClientRect(elementOrVirtualElement, offsetParentIsScaled);
+  var rect = getBoundingClientRect(
+    elementOrVirtualElement,
+    offsetParentIsScaled,
+  );
   var scroll = {
     scrollLeft: 0,
-    scrollTop: 0
+    scrollTop: 0,
   };
   var offsets = {
     x: 0,
-    y: 0
+    y: 0,
   };
-  if (isOffsetParentAnElement || !isOffsetParentAnElement && !isFixed) {
-    if (getNodeName(offsetParent) !== "body" || // https://github.com/popperjs/popper-core/issues/1078
-    isScrollParent(documentElement)) {
+  if (isOffsetParentAnElement || (!isOffsetParentAnElement && !isFixed)) {
+    if (
+      getNodeName(offsetParent) !== "body" || // https://github.com/popperjs/popper-core/issues/1078
+      isScrollParent(documentElement)
+    ) {
       scroll = getNodeScroll(offsetParent);
     }
     if (isHTMLElement(offsetParent)) {
@@ -8340,7 +9766,7 @@ function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
     x: rect.left + scroll.scrollLeft - offsets.x,
     y: rect.top + scroll.scrollTop - offsets.y,
     width: rect.width,
-    height: rect.height
+    height: rect.height,
   };
 }
 
@@ -8349,13 +9775,16 @@ function order(modifiers) {
   var map = /* @__PURE__ */ new Map();
   var visited = /* @__PURE__ */ new Set();
   var result = [];
-  modifiers.forEach(function(modifier) {
+  modifiers.forEach(function (modifier) {
     map.set(modifier.name, modifier);
   });
   function sort(modifier) {
     visited.add(modifier.name);
-    var requires = [].concat(modifier.requires || [], modifier.requiresIfExists || []);
-    requires.forEach(function(dep) {
+    var requires = [].concat(
+      modifier.requires || [],
+      modifier.requiresIfExists || [],
+    );
+    requires.forEach(function (dep) {
       if (!visited.has(dep)) {
         var depModifier = map.get(dep);
         if (depModifier) {
@@ -8365,7 +9794,7 @@ function order(modifiers) {
     });
     result.push(modifier);
   }
-  modifiers.forEach(function(modifier) {
+  modifiers.forEach(function (modifier) {
     if (!visited.has(modifier.name)) {
       sort(modifier);
     }
@@ -8374,20 +9803,22 @@ function order(modifiers) {
 }
 function orderModifiers(modifiers) {
   var orderedModifiers = order(modifiers);
-  return modifierPhases.reduce(function(acc, phase) {
-    return acc.concat(orderedModifiers.filter(function(modifier) {
-      return modifier.phase === phase;
-    }));
+  return modifierPhases.reduce(function (acc, phase) {
+    return acc.concat(
+      orderedModifiers.filter(function (modifier) {
+        return modifier.phase === phase;
+      }),
+    );
   }, []);
 }
 
 // node_modules/@popperjs/core/lib/utils/debounce.js
 function debounce2(fn2) {
   var pending;
-  return function() {
+  return function () {
     if (!pending) {
-      pending = new Promise(function(resolve) {
-        Promise.resolve().then(function() {
+      pending = new Promise(function (resolve) {
+        Promise.resolve().then(function () {
           pending = void 0;
           resolve(fn2());
         });
@@ -8399,82 +9830,181 @@ function debounce2(fn2) {
 
 // node_modules/@popperjs/core/lib/utils/format.js
 function format(str) {
-  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+  for (
+    var _len = arguments.length,
+      args = new Array(_len > 1 ? _len - 1 : 0),
+      _key = 1;
+    _key < _len;
+    _key++
+  ) {
     args[_key - 1] = arguments[_key];
   }
-  return [].concat(args).reduce(function(p, c) {
+  return [].concat(args).reduce(function (p, c) {
     return p.replace(/%s/, c);
   }, str);
 }
 
 // node_modules/@popperjs/core/lib/utils/validateModifiers.js
-var INVALID_MODIFIER_ERROR = 'Popper: modifier "%s" provided an invalid %s property, expected %s but got %s';
-var MISSING_DEPENDENCY_ERROR = 'Popper: modifier "%s" requires "%s", but "%s" modifier is not available';
-var VALID_PROPERTIES = ["name", "enabled", "phase", "fn", "effect", "requires", "options"];
+var INVALID_MODIFIER_ERROR =
+  'Popper: modifier "%s" provided an invalid %s property, expected %s but got %s';
+var MISSING_DEPENDENCY_ERROR =
+  'Popper: modifier "%s" requires "%s", but "%s" modifier is not available';
+var VALID_PROPERTIES = [
+  "name",
+  "enabled",
+  "phase",
+  "fn",
+  "effect",
+  "requires",
+  "options",
+];
 function validateModifiers(modifiers) {
-  modifiers.forEach(function(modifier) {
-    [].concat(Object.keys(modifier), VALID_PROPERTIES).filter(function(value, index, self2) {
-      return self2.indexOf(value) === index;
-    }).forEach(function(key) {
-      switch (key) {
-        case "name":
-          if (typeof modifier.name !== "string") {
-            console.error(format(INVALID_MODIFIER_ERROR, String(modifier.name), '"name"', '"string"', '"' + String(modifier.name) + '"'));
-          }
-          break;
-        case "enabled":
-          if (typeof modifier.enabled !== "boolean") {
-            console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"enabled"', '"boolean"', '"' + String(modifier.enabled) + '"'));
-          }
-          break;
-        case "phase":
-          if (modifierPhases.indexOf(modifier.phase) < 0) {
-            console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"phase"', "either " + modifierPhases.join(", "), '"' + String(modifier.phase) + '"'));
-          }
-          break;
-        case "fn":
-          if (typeof modifier.fn !== "function") {
-            console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"fn"', '"function"', '"' + String(modifier.fn) + '"'));
-          }
-          break;
-        case "effect":
-          if (modifier.effect != null && typeof modifier.effect !== "function") {
-            console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"effect"', '"function"', '"' + String(modifier.fn) + '"'));
-          }
-          break;
-        case "requires":
-          if (modifier.requires != null && !Array.isArray(modifier.requires)) {
-            console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"requires"', '"array"', '"' + String(modifier.requires) + '"'));
-          }
-          break;
-        case "requiresIfExists":
-          if (!Array.isArray(modifier.requiresIfExists)) {
-            console.error(format(INVALID_MODIFIER_ERROR, modifier.name, '"requiresIfExists"', '"array"', '"' + String(modifier.requiresIfExists) + '"'));
-          }
-          break;
-        case "options":
-        case "data":
-          break;
-        default:
-          console.error('PopperJS: an invalid property has been provided to the "' + modifier.name + '" modifier, valid properties are ' + VALID_PROPERTIES.map(function(s) {
-            return '"' + s + '"';
-          }).join(", ") + '; but "' + key + '" was provided.');
-      }
-      modifier.requires && modifier.requires.forEach(function(requirement) {
-        if (modifiers.find(function(mod) {
-          return mod.name === requirement;
-        }) == null) {
-          console.error(format(MISSING_DEPENDENCY_ERROR, String(modifier.name), requirement, requirement));
+  modifiers.forEach(function (modifier) {
+    []
+      .concat(Object.keys(modifier), VALID_PROPERTIES)
+      .filter(function (value, index, self2) {
+        return self2.indexOf(value) === index;
+      })
+      .forEach(function (key) {
+        switch (key) {
+          case "name":
+            if (typeof modifier.name !== "string") {
+              console.error(
+                format(
+                  INVALID_MODIFIER_ERROR,
+                  String(modifier.name),
+                  '"name"',
+                  '"string"',
+                  '"' + String(modifier.name) + '"',
+                ),
+              );
+            }
+            break;
+          case "enabled":
+            if (typeof modifier.enabled !== "boolean") {
+              console.error(
+                format(
+                  INVALID_MODIFIER_ERROR,
+                  modifier.name,
+                  '"enabled"',
+                  '"boolean"',
+                  '"' + String(modifier.enabled) + '"',
+                ),
+              );
+            }
+            break;
+          case "phase":
+            if (modifierPhases.indexOf(modifier.phase) < 0) {
+              console.error(
+                format(
+                  INVALID_MODIFIER_ERROR,
+                  modifier.name,
+                  '"phase"',
+                  "either " + modifierPhases.join(", "),
+                  '"' + String(modifier.phase) + '"',
+                ),
+              );
+            }
+            break;
+          case "fn":
+            if (typeof modifier.fn !== "function") {
+              console.error(
+                format(
+                  INVALID_MODIFIER_ERROR,
+                  modifier.name,
+                  '"fn"',
+                  '"function"',
+                  '"' + String(modifier.fn) + '"',
+                ),
+              );
+            }
+            break;
+          case "effect":
+            if (
+              modifier.effect != null &&
+              typeof modifier.effect !== "function"
+            ) {
+              console.error(
+                format(
+                  INVALID_MODIFIER_ERROR,
+                  modifier.name,
+                  '"effect"',
+                  '"function"',
+                  '"' + String(modifier.fn) + '"',
+                ),
+              );
+            }
+            break;
+          case "requires":
+            if (
+              modifier.requires != null &&
+              !Array.isArray(modifier.requires)
+            ) {
+              console.error(
+                format(
+                  INVALID_MODIFIER_ERROR,
+                  modifier.name,
+                  '"requires"',
+                  '"array"',
+                  '"' + String(modifier.requires) + '"',
+                ),
+              );
+            }
+            break;
+          case "requiresIfExists":
+            if (!Array.isArray(modifier.requiresIfExists)) {
+              console.error(
+                format(
+                  INVALID_MODIFIER_ERROR,
+                  modifier.name,
+                  '"requiresIfExists"',
+                  '"array"',
+                  '"' + String(modifier.requiresIfExists) + '"',
+                ),
+              );
+            }
+            break;
+          case "options":
+          case "data":
+            break;
+          default:
+            console.error(
+              'PopperJS: an invalid property has been provided to the "' +
+                modifier.name +
+                '" modifier, valid properties are ' +
+                VALID_PROPERTIES.map(function (s) {
+                  return '"' + s + '"';
+                }).join(", ") +
+                '; but "' +
+                key +
+                '" was provided.',
+            );
         }
+        modifier.requires &&
+          modifier.requires.forEach(function (requirement) {
+            if (
+              modifiers.find(function (mod) {
+                return mod.name === requirement;
+              }) == null
+            ) {
+              console.error(
+                format(
+                  MISSING_DEPENDENCY_ERROR,
+                  String(modifier.name),
+                  requirement,
+                  requirement,
+                ),
+              );
+            }
+          });
       });
-    });
   });
 }
 
 // node_modules/@popperjs/core/lib/utils/uniqueBy.js
 function uniqueBy(arr, fn2) {
   var identifiers = /* @__PURE__ */ new Set();
-  return arr.filter(function(item) {
+  return arr.filter(function (item) {
     var identifier = fn2(item);
     if (!identifiers.has(identifier)) {
       identifiers.add(identifier);
@@ -8485,32 +10015,40 @@ function uniqueBy(arr, fn2) {
 
 // node_modules/@popperjs/core/lib/utils/mergeByName.js
 function mergeByName(modifiers) {
-  var merged = modifiers.reduce(function(merged2, current) {
+  var merged = modifiers.reduce(function (merged2, current) {
     var existing = merged2[current.name];
-    merged2[current.name] = existing ? Object.assign({}, existing, current, {
-      options: Object.assign({}, existing.options, current.options),
-      data: Object.assign({}, existing.data, current.data)
-    }) : current;
+    merged2[current.name] = existing
+      ? Object.assign({}, existing, current, {
+          options: Object.assign({}, existing.options, current.options),
+          data: Object.assign({}, existing.data, current.data),
+        })
+      : current;
     return merged2;
   }, {});
-  return Object.keys(merged).map(function(key) {
+  return Object.keys(merged).map(function (key) {
     return merged[key];
   });
 }
 
 // node_modules/@popperjs/core/lib/createPopper.js
-var INVALID_ELEMENT_ERROR = "Popper: Invalid reference or popper argument provided. They must be either a DOM element or virtual element.";
-var INFINITE_LOOP_ERROR = "Popper: An infinite loop in the modifiers cycle has been detected! The cycle has been interrupted to prevent a browser crash.";
+var INVALID_ELEMENT_ERROR =
+  "Popper: Invalid reference or popper argument provided. They must be either a DOM element or virtual element.";
+var INFINITE_LOOP_ERROR =
+  "Popper: An infinite loop in the modifiers cycle has been detected! The cycle has been interrupted to prevent a browser crash.";
 var DEFAULT_OPTIONS = {
   placement: "bottom",
   modifiers: [],
-  strategy: "absolute"
+  strategy: "absolute",
 };
 function areValidElements() {
-  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+  for (
+    var _len = arguments.length, args = new Array(_len), _key = 0;
+    _key < _len;
+    _key++
+  ) {
     args[_key] = arguments[_key];
   }
-  return !args.some(function(element) {
+  return !args.some(function (element) {
     return !(element && typeof element.getBoundingClientRect === "function");
   });
 }
@@ -8518,7 +10056,15 @@ function popperGenerator(generatorOptions) {
   if (generatorOptions === void 0) {
     generatorOptions = {};
   }
-  var _generatorOptions = generatorOptions, _generatorOptions$def = _generatorOptions.defaultModifiers, defaultModifiers2 = _generatorOptions$def === void 0 ? [] : _generatorOptions$def, _generatorOptions$def2 = _generatorOptions.defaultOptions, defaultOptions = _generatorOptions$def2 === void 0 ? DEFAULT_OPTIONS : _generatorOptions$def2;
+  var _generatorOptions = generatorOptions,
+    _generatorOptions$def = _generatorOptions.defaultModifiers,
+    defaultModifiers2 =
+      _generatorOptions$def === void 0 ? [] : _generatorOptions$def,
+    _generatorOptions$def2 = _generatorOptions.defaultOptions,
+    defaultOptions =
+      _generatorOptions$def2 === void 0
+        ? DEFAULT_OPTIONS
+        : _generatorOptions$def2;
   return function createPopper2(reference2, popper2, options) {
     if (options === void 0) {
       options = defaultOptions;
@@ -8530,47 +10076,85 @@ function popperGenerator(generatorOptions) {
       modifiersData: {},
       elements: {
         reference: reference2,
-        popper: popper2
+        popper: popper2,
       },
       attributes: {},
-      styles: {}
+      styles: {},
     };
     var effectCleanupFns = [];
     var isDestroyed = false;
     var instance2 = {
       state,
       setOptions: function setOptions(setOptionsAction) {
-        var options2 = typeof setOptionsAction === "function" ? setOptionsAction(state.options) : setOptionsAction;
+        var options2 =
+          typeof setOptionsAction === "function"
+            ? setOptionsAction(state.options)
+            : setOptionsAction;
         cleanupModifierEffects();
-        state.options = Object.assign({}, defaultOptions, state.options, options2);
+        state.options = Object.assign(
+          {},
+          defaultOptions,
+          state.options,
+          options2,
+        );
         state.scrollParents = {
-          reference: isElement(reference2) ? listScrollParents(reference2) : reference2.contextElement ? listScrollParents(reference2.contextElement) : [],
-          popper: listScrollParents(popper2)
+          reference: isElement(reference2)
+            ? listScrollParents(reference2)
+            : reference2.contextElement
+              ? listScrollParents(reference2.contextElement)
+              : [],
+          popper: listScrollParents(popper2),
         };
-        var orderedModifiers = orderModifiers(mergeByName([].concat(defaultModifiers2, state.options.modifiers)));
-        state.orderedModifiers = orderedModifiers.filter(function(m) {
+        var orderedModifiers = orderModifiers(
+          mergeByName([].concat(defaultModifiers2, state.options.modifiers)),
+        );
+        state.orderedModifiers = orderedModifiers.filter(function (m) {
           return m.enabled;
         });
         if (true) {
-          var modifiers = uniqueBy([].concat(orderedModifiers, state.options.modifiers), function(_ref) {
-            var name = _ref.name;
-            return name;
-          });
+          var modifiers = uniqueBy(
+            [].concat(orderedModifiers, state.options.modifiers),
+            function (_ref) {
+              var name = _ref.name;
+              return name;
+            },
+          );
           validateModifiers(modifiers);
           if (getBasePlacement(state.options.placement) === auto) {
-            var flipModifier = state.orderedModifiers.find(function(_ref2) {
+            var flipModifier = state.orderedModifiers.find(function (_ref2) {
               var name = _ref2.name;
               return name === "flip";
             });
             if (!flipModifier) {
-              console.error(['Popper: "auto" placements require the "flip" modifier be', "present and enabled to work."].join(" "));
+              console.error(
+                [
+                  'Popper: "auto" placements require the "flip" modifier be',
+                  "present and enabled to work.",
+                ].join(" "),
+              );
             }
           }
-          var _getComputedStyle = getComputedStyle(popper2), marginTop = _getComputedStyle.marginTop, marginRight = _getComputedStyle.marginRight, marginBottom = _getComputedStyle.marginBottom, marginLeft = _getComputedStyle.marginLeft;
-          if ([marginTop, marginRight, marginBottom, marginLeft].some(function(margin) {
-            return parseFloat(margin);
-          })) {
-            console.warn(['Popper: CSS "margin" styles cannot be used to apply padding', "between the popper and its reference element or boundary.", "To replicate margin, use the `offset` modifier, as well as", "the `padding` option in the `preventOverflow` and `flip`", "modifiers."].join(" "));
+          var _getComputedStyle = getComputedStyle(popper2),
+            marginTop = _getComputedStyle.marginTop,
+            marginRight = _getComputedStyle.marginRight,
+            marginBottom = _getComputedStyle.marginBottom,
+            marginLeft = _getComputedStyle.marginLeft;
+          if (
+            [marginTop, marginRight, marginBottom, marginLeft].some(
+              function (margin) {
+                return parseFloat(margin);
+              },
+            )
+          ) {
+            console.warn(
+              [
+                'Popper: CSS "margin" styles cannot be used to apply padding',
+                "between the popper and its reference element or boundary.",
+                "To replicate margin, use the `offset` modifier, as well as",
+                "the `padding` option in the `preventOverflow` and `flip`",
+                "modifiers.",
+              ].join(" "),
+            );
           }
         }
         runModifierEffects();
@@ -8585,7 +10169,9 @@ function popperGenerator(generatorOptions) {
         if (isDestroyed) {
           return;
         }
-        var _state$elements = state.elements, reference3 = _state$elements.reference, popper3 = _state$elements.popper;
+        var _state$elements = state.elements,
+          reference3 = _state$elements.reference,
+          popper3 = _state$elements.popper;
         if (!areValidElements(reference3, popper3)) {
           if (true) {
             console.error(INVALID_ELEMENT_ERROR);
@@ -8593,13 +10179,20 @@ function popperGenerator(generatorOptions) {
           return;
         }
         state.rects = {
-          reference: getCompositeRect(reference3, getOffsetParent(popper3), state.options.strategy === "fixed"),
-          popper: getLayoutRect(popper3)
+          reference: getCompositeRect(
+            reference3,
+            getOffsetParent(popper3),
+            state.options.strategy === "fixed",
+          ),
+          popper: getLayoutRect(popper3),
         };
         state.reset = false;
         state.placement = state.options.placement;
-        state.orderedModifiers.forEach(function(modifier) {
-          return state.modifiersData[modifier.name] = Object.assign({}, modifier.data);
+        state.orderedModifiers.forEach(function (modifier) {
+          return (state.modifiersData[modifier.name] = Object.assign(
+            {},
+            modifier.data,
+          ));
         });
         var __debug_loops__ = 0;
         for (var index = 0; index < state.orderedModifiers.length; index++) {
@@ -8615,21 +10208,27 @@ function popperGenerator(generatorOptions) {
             index = -1;
             continue;
           }
-          var _state$orderedModifie = state.orderedModifiers[index], fn2 = _state$orderedModifie.fn, _state$orderedModifie2 = _state$orderedModifie.options, _options = _state$orderedModifie2 === void 0 ? {} : _state$orderedModifie2, name = _state$orderedModifie.name;
+          var _state$orderedModifie = state.orderedModifiers[index],
+            fn2 = _state$orderedModifie.fn,
+            _state$orderedModifie2 = _state$orderedModifie.options,
+            _options =
+              _state$orderedModifie2 === void 0 ? {} : _state$orderedModifie2,
+            name = _state$orderedModifie.name;
           if (typeof fn2 === "function") {
-            state = fn2({
-              state,
-              options: _options,
-              name,
-              instance: instance2
-            }) || state;
+            state =
+              fn2({
+                state,
+                options: _options,
+                name,
+                instance: instance2,
+              }) || state;
           }
         }
       },
       // Async and optimistically optimized update – it will not be executed if
       // not necessary (debounced to run at most once-per-tick)
-      update: debounce2(function() {
-        return new Promise(function(resolve) {
+      update: debounce2(function () {
+        return new Promise(function (resolve) {
           instance2.forceUpdate();
           resolve(state);
         });
@@ -8637,7 +10236,7 @@ function popperGenerator(generatorOptions) {
       destroy: function destroy() {
         cleanupModifierEffects();
         isDestroyed = true;
-      }
+      },
     };
     if (!areValidElements(reference2, popper2)) {
       if (true) {
@@ -8645,29 +10244,31 @@ function popperGenerator(generatorOptions) {
       }
       return instance2;
     }
-    instance2.setOptions(options).then(function(state2) {
+    instance2.setOptions(options).then(function (state2) {
       if (!isDestroyed && options.onFirstUpdate) {
         options.onFirstUpdate(state2);
       }
     });
     function runModifierEffects() {
-      state.orderedModifiers.forEach(function(_ref3) {
-        var name = _ref3.name, _ref3$options = _ref3.options, options2 = _ref3$options === void 0 ? {} : _ref3$options, effect4 = _ref3.effect;
+      state.orderedModifiers.forEach(function (_ref3) {
+        var name = _ref3.name,
+          _ref3$options = _ref3.options,
+          options2 = _ref3$options === void 0 ? {} : _ref3$options,
+          effect4 = _ref3.effect;
         if (typeof effect4 === "function") {
           var cleanupFn = effect4({
             state,
             name,
             instance: instance2,
-            options: options2
+            options: options2,
           });
-          var noopFn = function noopFn2() {
-          };
+          var noopFn = function noopFn2() {};
           effectCleanupFns.push(cleanupFn || noopFn);
         }
       });
     }
     function cleanupModifierEffects() {
-      effectCleanupFns.forEach(function(fn2) {
+      effectCleanupFns.forEach(function (fn2) {
         return fn2();
       });
       effectCleanupFns = [];
@@ -8677,25 +10278,39 @@ function popperGenerator(generatorOptions) {
 }
 
 // node_modules/@popperjs/core/lib/popper.js
-var defaultModifiers = [eventListeners_default, popperOffsets_default, computeStyles_default, applyStyles_default, offset_default, flip_default, preventOverflow_default, arrow_default, hide_default];
+var defaultModifiers = [
+  eventListeners_default,
+  popperOffsets_default,
+  computeStyles_default,
+  applyStyles_default,
+  offset_default,
+  flip_default,
+  preventOverflow_default,
+  arrow_default,
+  hide_default,
+];
 var createPopper = /* @__PURE__ */ popperGenerator({
-  defaultModifiers
+  defaultModifiers,
 });
 
 // src/settings/ui/suggest.ts
 var import_obsidian2 = require("obsidian");
 var wrapAround = (value, size) => {
-  return (value % size + size) % size;
+  return ((value % size) + size) % size;
 };
 var Suggest = class {
   constructor(owner, containerEl, scope) {
     this.owner = owner;
     this.containerEl = containerEl;
-    containerEl.on("click", ".suggestion-item", this.onSuggestionClick.bind(this));
+    containerEl.on(
+      "click",
+      ".suggestion-item",
+      this.onSuggestionClick.bind(this),
+    );
     containerEl.on(
       "mousemove",
       ".suggestion-item",
-      this.onSuggestionMouseover.bind(this)
+      this.onSuggestionMouseover.bind(this),
     );
     scope.register([], "ArrowUp", (event) => {
       if (!event.isComposing) {
@@ -8748,8 +10363,12 @@ var Suggest = class {
     const normalizedIndex = wrapAround(selectedIndex, this.suggestions.length);
     const prevSelectedSuggestion = this.suggestions[this.selectedItem];
     const selectedSuggestion = this.suggestions[normalizedIndex];
-    prevSelectedSuggestion == null ? void 0 : prevSelectedSuggestion.removeClass("is-selected");
-    selectedSuggestion == null ? void 0 : selectedSuggestion.addClass("is-selected");
+    prevSelectedSuggestion == null
+      ? void 0
+      : prevSelectedSuggestion.removeClass("is-selected");
+    selectedSuggestion == null
+      ? void 0
+      : selectedSuggestion.addClass("is-selected");
     this.selectedItem = normalizedIndex;
     if (scrollIntoView) {
       selectedSuggestion.scrollIntoView(false);
@@ -8798,9 +10417,9 @@ var TextInputSuggest = class {
             instance2.update();
           },
           phase: "beforeWrite",
-          requires: ["computeStyles"]
-        }
-      ]
+          requires: ["computeStyles"],
+        },
+      ],
     });
   }
   close() {
@@ -8853,9 +10472,11 @@ var NodeProp = class {
   constructor(config2 = {}) {
     this.id = nextPropID++;
     this.perNode = !!config2.perNode;
-    this.deserialize = config2.deserialize || (() => {
-      throw new Error("This node type doesn't define a deserialize function");
-    });
+    this.deserialize =
+      config2.deserialize ||
+      (() => {
+        throw new Error("This node type doesn't define a deserialize function");
+      });
   }
   /**
   This is meant to be used with
@@ -8869,8 +10490,7 @@ var NodeProp = class {
   add(match) {
     if (this.perNode)
       throw new RangeError("Can't add per-node props to node types");
-    if (typeof match != "function")
-      match = NodeType.match(match);
+    if (typeof match != "function") match = NodeType.match(match);
     return (type) => {
       let result = match(type);
       return result === void 0 ? null : [this, result];
@@ -8911,13 +10531,19 @@ var NodeType = class _NodeType {
   Define a node type.
   */
   static define(spec) {
-    let props = spec.props && spec.props.length ? /* @__PURE__ */ Object.create(null) : noProps;
-    let flags = (spec.top ? 1 : 0) | (spec.skipped ? 2 : 0) | (spec.error ? 4 : 0) | (spec.name == null ? 8 : 0);
+    let props =
+      spec.props && spec.props.length
+        ? /* @__PURE__ */ Object.create(null)
+        : noProps;
+    let flags =
+      (spec.top ? 1 : 0) |
+      (spec.skipped ? 2 : 0) |
+      (spec.error ? 4 : 0) |
+      (spec.name == null ? 8 : 0);
     let type = new _NodeType(spec.name || "", props, spec.id, flags);
     if (spec.props)
       for (let src of spec.props) {
-        if (!Array.isArray(src))
-          src = src(type);
+        if (!Array.isArray(src)) src = src(type);
         if (src) {
           if (src[0].perNode)
             throw new RangeError("Can't store a per-node prop on a node type");
@@ -8964,8 +10590,7 @@ var NodeType = class _NodeType {
   */
   is(name) {
     if (typeof name == "string") {
-      if (this.name == name)
-        return true;
+      if (this.name == name) return true;
       let group = this.prop(NodeProp.group);
       return group ? group.indexOf(name) > -1 : false;
     }
@@ -8982,13 +10607,15 @@ var NodeType = class _NodeType {
   static match(map) {
     let direct = /* @__PURE__ */ Object.create(null);
     for (let prop in map)
-      for (let name of prop.split(" "))
-        direct[name] = map[prop];
+      for (let name of prop.split(" ")) direct[name] = map[prop];
     return (node) => {
-      for (let groups = node.prop(NodeProp.group), i = -1; i < (groups ? groups.length : 0); i++) {
+      for (
+        let groups = node.prop(NodeProp.group), i = -1;
+        i < (groups ? groups.length : 0);
+        i++
+      ) {
         let found = direct[i < 0 ? node.name : groups[i]];
-        if (found)
-          return found;
+        if (found) return found;
       }
     };
   }
@@ -8997,7 +10624,7 @@ NodeType.none = new NodeType(
   "",
   /* @__PURE__ */ Object.create(null),
   0,
-  8
+  8,
   /* NodeFlag.Anonymous */
 );
 var NodeSet = class _NodeSet {
@@ -9009,7 +10636,9 @@ var NodeSet = class _NodeSet {
     this.types = types;
     for (let i = 0; i < types.length; i++)
       if (types[i].id != i)
-        throw new RangeError("Node type ids should correspond to array positions when creating a node set");
+        throw new RangeError(
+          "Node type ids should correspond to array positions when creating a node set",
+        );
   }
   /**
   Create a copy of this set with some node properties added. The
@@ -9023,12 +10652,15 @@ var NodeSet = class _NodeSet {
       for (let source of props) {
         let add = source(type);
         if (add) {
-          if (!newProps)
-            newProps = Object.assign({}, type.props);
+          if (!newProps) newProps = Object.assign({}, type.props);
           newProps[add[0].id] = add[1];
         }
       }
-      newTypes.push(newProps ? new NodeType(type.name, newProps, type.id, type.flags) : type);
+      newTypes.push(
+        newProps
+          ? new NodeType(type.name, newProps, type.id, type.flags)
+          : type,
+      );
     }
     return new _NodeSet(newTypes);
   }
@@ -9036,11 +10668,11 @@ var NodeSet = class _NodeSet {
 var CachedNode = /* @__PURE__ */ new WeakMap();
 var CachedInnerNode = /* @__PURE__ */ new WeakMap();
 var IterMode;
-(function(IterMode2) {
-  IterMode2[IterMode2["ExcludeBuffers"] = 1] = "ExcludeBuffers";
-  IterMode2[IterMode2["IncludeAnonymous"] = 2] = "IncludeAnonymous";
-  IterMode2[IterMode2["IgnoreMounts"] = 4] = "IgnoreMounts";
-  IterMode2[IterMode2["IgnoreOverlays"] = 8] = "IgnoreOverlays";
+(function (IterMode2) {
+  IterMode2[(IterMode2["ExcludeBuffers"] = 1)] = "ExcludeBuffers";
+  IterMode2[(IterMode2["IncludeAnonymous"] = 2)] = "IncludeAnonymous";
+  IterMode2[(IterMode2["IgnoreMounts"] = 4)] = "IgnoreMounts";
+  IterMode2[(IterMode2["IgnoreOverlays"] = 8)] = "IgnoreOverlays";
 })(IterMode || (IterMode = {}));
 var Tree = class _Tree {
   /**
@@ -9063,18 +10695,20 @@ var Tree = class _Tree {
   */
   toString() {
     let mounted = MountedTree.get(this);
-    if (mounted && !mounted.overlay)
-      return mounted.tree.toString();
+    if (mounted && !mounted.overlay) return mounted.tree.toString();
     let children = "";
     for (let ch of this.children) {
       let str = ch.toString();
       if (str) {
-        if (children)
-          children += ",";
+        if (children) children += ",";
         children += str;
       }
     }
-    return !this.type.name ? children : (/\W/.test(this.type.name) && !this.type.isError ? JSON.stringify(this.type.name) : this.type.name) + (children.length ? "(" + children + ")" : "");
+    return !this.type.name
+      ? children
+      : (/\W/.test(this.type.name) && !this.type.isError
+          ? JSON.stringify(this.type.name)
+          : this.type.name) + (children.length ? "(" + children + ")" : "");
   }
   /**
   Get a [tree cursor](#common.TreeCursor) positioned at the top of
@@ -9109,13 +10743,18 @@ var Tree = class _Tree {
   position. If 1, it'll move into nodes that start at the
   position. With 0, it'll only enter nodes that cover the position
   from both sides.
-  
+
   Note that this will not enter
   [overlays](#common.MountedTree.overlay), and you often want
   [`resolveInner`](#common.Tree.resolveInner) instead.
   */
   resolve(pos, side = 0) {
-    let node = resolveNode(CachedNode.get(this) || this.topNode, pos, side, false);
+    let node = resolveNode(
+      CachedNode.get(this) || this.topNode,
+      pos,
+      side,
+      false,
+    );
     CachedNode.set(this, node);
     return node;
   }
@@ -9127,7 +10766,12 @@ var Tree = class _Tree {
   the host trees).
   */
   resolveInner(pos, side = 0) {
-    let node = resolveNode(CachedInnerNode.get(this) || this.topNode, pos, side, true);
+    let node = resolveNode(
+      CachedInnerNode.get(this) || this.topNode,
+      pos,
+      side,
+      true,
+    );
     CachedInnerNode.set(this, node);
     return node;
   }
@@ -9150,21 +10794,22 @@ var Tree = class _Tree {
   */
   iterate(spec) {
     let { enter, leave, from = 0, to = this.length } = spec;
-    let mode = spec.mode || 0, anon = (mode & IterMode.IncludeAnonymous) > 0;
+    let mode = spec.mode || 0,
+      anon = (mode & IterMode.IncludeAnonymous) > 0;
     for (let c = this.cursor(mode | IterMode.IncludeAnonymous); ; ) {
       let entered = false;
-      if (c.from <= to && c.to >= from && (!anon && c.type.isAnonymous || enter(c) !== false)) {
-        if (c.firstChild())
-          continue;
+      if (
+        c.from <= to &&
+        c.to >= from &&
+        ((!anon && c.type.isAnonymous) || enter(c) !== false)
+      ) {
+        if (c.firstChild()) continue;
         entered = true;
       }
-      for (; ; ) {
-        if (entered && leave && (anon || !c.type.isAnonymous))
-          leave(c);
-        if (c.nextSibling())
-          break;
-        if (!c.parent())
-          return;
+      for (;;) {
+        if (entered && leave && (anon || !c.type.isAnonymous)) leave(c);
+        if (c.nextSibling()) break;
+        if (!c.parent()) return;
         entered = true;
       }
     }
@@ -9174,7 +10819,11 @@ var Tree = class _Tree {
   node. Works with both per-node and per-type props.
   */
   prop(prop) {
-    return !prop.perNode ? this.type.prop(prop) : this.props ? this.props[prop.id] : void 0;
+    return !prop.perNode
+      ? this.type.prop(prop)
+      : this.props
+        ? this.props[prop.id]
+        : void 0;
   }
   /**
   Returns the node's [per-node props](#common.NodeProp.perNode) in a
@@ -9184,8 +10833,7 @@ var Tree = class _Tree {
   get propValues() {
     let result = [];
     if (this.props)
-      for (let id2 in this.props)
-        result.push([+id2, this.props[id2]]);
+      for (let id2 in this.props) result.push([+id2, this.props[id2]]);
     return result;
   }
   /**
@@ -9194,7 +10842,22 @@ var Tree = class _Tree {
   [`NodeType.none`](#common.NodeType^none).
   */
   balance(config2 = {}) {
-    return this.children.length <= 8 ? this : balanceRange(NodeType.none, this.children, this.positions, 0, this.children.length, 0, this.length, (children, positions, length) => new _Tree(this.type, children, positions, length, this.propValues), config2.makeTree || ((children, positions, length) => new _Tree(NodeType.none, children, positions, length)));
+    return this.children.length <= 8
+      ? this
+      : balanceRange(
+          NodeType.none,
+          this.children,
+          this.positions,
+          0,
+          this.children.length,
+          0,
+          this.length,
+          (children, positions, length) =>
+            new _Tree(this.type, children, positions, length, this.propValues),
+          config2.makeTree ||
+            ((children, positions, length) =>
+              new _Tree(NodeType.none, children, positions, length)),
+        );
   }
   /**
   Build a tree from a postfix-ordered buffer of node information,
@@ -9262,13 +10925,13 @@ var TreeBuffer = class _TreeBuffer {
   @internal
   */
   childString(index) {
-    let id2 = this.buffer[index], endIndex = this.buffer[index + 3];
-    let type = this.set.types[id2], result = type.name;
-    if (/\W/.test(result) && !type.isError)
-      result = JSON.stringify(result);
+    let id2 = this.buffer[index],
+      endIndex = this.buffer[index + 3];
+    let type = this.set.types[id2],
+      result = type.name;
+    if (/\W/.test(result) && !type.isError) result = JSON.stringify(result);
     index += 4;
-    if (endIndex == index)
-      return result;
+    if (endIndex == index) return result;
     let children = [];
     while (index < endIndex) {
       children.push(this.childString(index));
@@ -9280,12 +10943,12 @@ var TreeBuffer = class _TreeBuffer {
   @internal
   */
   findChild(startIndex, endIndex, dir, pos, side) {
-    let { buffer } = this, pick = -1;
+    let { buffer } = this,
+      pick = -1;
     for (let i = startIndex; i != endIndex; i = buffer[i + 3]) {
       if (checkSide(side, pos, buffer[i + 1], buffer[i + 2])) {
         pick = i;
-        if (dir > 0)
-          break;
+        if (dir > 0) break;
       }
     }
     return pick;
@@ -9295,11 +10958,12 @@ var TreeBuffer = class _TreeBuffer {
   */
   slice(startI, endI, from) {
     let b = this.buffer;
-    let copy = new Uint16Array(endI - startI), len = 0;
+    let copy = new Uint16Array(endI - startI),
+      len = 0;
     for (let i = startI, j = 0; i < endI; ) {
       copy[j++] = b[i++];
       copy[j++] = b[i++] - from;
-      let to = copy[j++] = b[i++] - from;
+      let to = (copy[j++] = b[i++] - from);
       copy[j++] = b[i++] - startI;
       len = Math.max(len, to);
     }
@@ -9324,22 +10988,37 @@ function checkSide(side, pos, from, to) {
 }
 function resolveNode(node, pos, side, overlays) {
   var _a;
-  while (node.from == node.to || (side < 1 ? node.from >= pos : node.from > pos) || (side > -1 ? node.to <= pos : node.to < pos)) {
-    let parent = !overlays && node instanceof TreeNode && node.index < 0 ? null : node.parent;
-    if (!parent)
-      return node;
+  while (
+    node.from == node.to ||
+    (side < 1 ? node.from >= pos : node.from > pos) ||
+    (side > -1 ? node.to <= pos : node.to < pos)
+  ) {
+    let parent =
+      !overlays && node instanceof TreeNode && node.index < 0
+        ? null
+        : node.parent;
+    if (!parent) return node;
     node = parent;
   }
   let mode = overlays ? 0 : IterMode.IgnoreOverlays;
   if (overlays)
-    for (let scan = node, parent = scan.parent; parent; scan = parent, parent = scan.parent) {
-      if (scan instanceof TreeNode && scan.index < 0 && ((_a = parent.enter(pos, side, mode)) === null || _a === void 0 ? void 0 : _a.from) != scan.from)
+    for (
+      let scan = node, parent = scan.parent;
+      parent;
+      scan = parent, parent = scan.parent
+    ) {
+      if (
+        scan instanceof TreeNode &&
+        scan.index < 0 &&
+        ((_a = parent.enter(pos, side, mode)) === null || _a === void 0
+          ? void 0
+          : _a.from) != scan.from
+      )
         node = parent;
     }
-  for (; ; ) {
+  for (;;) {
     let inner = node.enter(pos, side, mode);
-    if (!inner)
-      return node;
+    if (!inner) return node;
     node = inner;
   }
 }
@@ -9364,11 +11043,11 @@ var BaseNode = class {
     return matchNodeContext(this, context);
   }
   enterUnfinishedNodesBefore(pos) {
-    let scan = this.childBefore(pos), node = this;
+    let scan = this.childBefore(pos),
+      node = this;
     while (scan) {
       let last = scan.lastChild;
-      if (!last || last.to != scan.to)
-        break;
+      if (!last || last.to != scan.to) break;
       if (last.type.isError && last.from == last.to) {
         node = scan;
         scan = last.prevSibling;
@@ -9404,33 +11083,59 @@ var TreeNode = class _TreeNode extends BaseNode {
   }
   nextChild(i, dir, pos, side, mode = 0) {
     for (let parent = this; ; ) {
-      for (let { children, positions } = parent._tree, e = dir > 0 ? children.length : -1; i != e; i += dir) {
-        let next = children[i], start2 = positions[i] + parent.from;
-        if (!checkSide(side, pos, start2, start2 + next.length))
-          continue;
+      for (
+        let { children, positions } = parent._tree,
+          e = dir > 0 ? children.length : -1;
+        i != e;
+        i += dir
+      ) {
+        let next = children[i],
+          start2 = positions[i] + parent.from;
+        if (!checkSide(side, pos, start2, start2 + next.length)) continue;
         if (next instanceof TreeBuffer) {
-          if (mode & IterMode.ExcludeBuffers)
-            continue;
-          let index = next.findChild(0, next.buffer.length, dir, pos - start2, side);
+          if (mode & IterMode.ExcludeBuffers) continue;
+          let index = next.findChild(
+            0,
+            next.buffer.length,
+            dir,
+            pos - start2,
+            side,
+          );
           if (index > -1)
-            return new BufferNode(new BufferContext(parent, next, i, start2), null, index);
-        } else if (mode & IterMode.IncludeAnonymous || (!next.type.isAnonymous || hasChild(next))) {
+            return new BufferNode(
+              new BufferContext(parent, next, i, start2),
+              null,
+              index,
+            );
+        } else if (
+          mode & IterMode.IncludeAnonymous ||
+          !next.type.isAnonymous ||
+          hasChild(next)
+        ) {
           let mounted;
-          if (!(mode & IterMode.IgnoreMounts) && (mounted = MountedTree.get(next)) && !mounted.overlay)
+          if (
+            !(mode & IterMode.IgnoreMounts) &&
+            (mounted = MountedTree.get(next)) &&
+            !mounted.overlay
+          )
             return new _TreeNode(mounted.tree, start2, i, parent);
           let inner = new _TreeNode(next, start2, i, parent);
-          return mode & IterMode.IncludeAnonymous || !inner.type.isAnonymous ? inner : inner.nextChild(dir < 0 ? next.children.length - 1 : 0, dir, pos, side);
+          return mode & IterMode.IncludeAnonymous || !inner.type.isAnonymous
+            ? inner
+            : inner.nextChild(
+                dir < 0 ? next.children.length - 1 : 0,
+                dir,
+                pos,
+                side,
+              );
         }
       }
       if (mode & IterMode.IncludeAnonymous || !parent.type.isAnonymous)
         return null;
-      if (parent.index >= 0)
-        i = parent.index + dir;
-      else
-        i = dir < 0 ? -1 : parent._parent._tree.children.length;
+      if (parent.index >= 0) i = parent.index + dir;
+      else i = dir < 0 ? -1 : parent._parent._tree.children.length;
       parent = parent._parent;
-      if (!parent)
-        return null;
+      if (!parent) return null;
     }
   }
   get firstChild() {
@@ -9438,7 +11143,7 @@ var TreeNode = class _TreeNode extends BaseNode {
       0,
       1,
       0,
-      4
+      4,
       /* Side.DontCare */
     );
   }
@@ -9447,7 +11152,7 @@ var TreeNode = class _TreeNode extends BaseNode {
       this._tree.children.length - 1,
       -1,
       0,
-      4
+      4,
       /* Side.DontCare */
     );
   }
@@ -9456,7 +11161,7 @@ var TreeNode = class _TreeNode extends BaseNode {
       0,
       1,
       pos,
-      2
+      2,
       /* Side.After */
     );
   }
@@ -9465,47 +11170,62 @@ var TreeNode = class _TreeNode extends BaseNode {
       this._tree.children.length - 1,
       -1,
       pos,
-      -2
+      -2,
       /* Side.Before */
     );
   }
   enter(pos, side, mode = 0) {
     let mounted;
-    if (!(mode & IterMode.IgnoreOverlays) && (mounted = MountedTree.get(this._tree)) && mounted.overlay) {
+    if (
+      !(mode & IterMode.IgnoreOverlays) &&
+      (mounted = MountedTree.get(this._tree)) &&
+      mounted.overlay
+    ) {
       let rPos = pos - this.from;
       for (let { from, to } of mounted.overlay) {
-        if ((side > 0 ? from <= rPos : from < rPos) && (side < 0 ? to >= rPos : to > rPos))
-          return new _TreeNode(mounted.tree, mounted.overlay[0].from + this.from, -1, this);
+        if (
+          (side > 0 ? from <= rPos : from < rPos) &&
+          (side < 0 ? to >= rPos : to > rPos)
+        )
+          return new _TreeNode(
+            mounted.tree,
+            mounted.overlay[0].from + this.from,
+            -1,
+            this,
+          );
       }
     }
     return this.nextChild(0, 1, pos, side, mode);
   }
   nextSignificantParent() {
     let val = this;
-    while (val.type.isAnonymous && val._parent)
-      val = val._parent;
+    while (val.type.isAnonymous && val._parent) val = val._parent;
     return val;
   }
   get parent() {
     return this._parent ? this._parent.nextSignificantParent() : null;
   }
   get nextSibling() {
-    return this._parent && this.index >= 0 ? this._parent.nextChild(
-      this.index + 1,
-      1,
-      0,
-      4
-      /* Side.DontCare */
-    ) : null;
+    return this._parent && this.index >= 0
+      ? this._parent.nextChild(
+          this.index + 1,
+          1,
+          0,
+          4,
+          /* Side.DontCare */
+        )
+      : null;
   }
   get prevSibling() {
-    return this._parent && this.index >= 0 ? this._parent.nextChild(
-      this.index - 1,
-      -1,
-      0,
-      4
-      /* Side.DontCare */
-    ) : null;
+    return this._parent && this.index >= 0
+      ? this._parent.nextChild(
+          this.index - 1,
+          -1,
+          0,
+          4,
+          /* Side.DontCare */
+        )
+      : null;
   }
   get tree() {
     return this._tree;
@@ -9521,30 +11241,23 @@ var TreeNode = class _TreeNode extends BaseNode {
   }
 };
 function getChildren(node, type, before, after) {
-  let cur = node.cursor(), result = [];
-  if (!cur.firstChild())
-    return result;
+  let cur = node.cursor(),
+    result = [];
+  if (!cur.firstChild()) return result;
   if (before != null) {
-    while (!cur.type.is(before))
-      if (!cur.nextSibling())
-        return result;
+    while (!cur.type.is(before)) if (!cur.nextSibling()) return result;
   }
-  for (; ; ) {
-    if (after != null && cur.type.is(after))
-      return result;
-    if (cur.type.is(type))
-      result.push(cur.node);
-    if (!cur.nextSibling())
-      return after == null ? result : [];
+  for (;;) {
+    if (after != null && cur.type.is(after)) return result;
+    if (cur.type.is(type)) result.push(cur.node);
+    if (!cur.nextSibling()) return after == null ? result : [];
   }
 }
 function matchNodeContext(node, context, i = context.length - 1) {
   for (let p = node.parent; i >= 0; p = p.parent) {
-    if (!p)
-      return false;
+    if (!p) return false;
     if (!p.type.isAnonymous) {
-      if (context[i] && context[i] != p.name)
-        return false;
+      if (context[i] && context[i] != p.name) return false;
       i--;
     }
   }
@@ -9577,14 +11290,20 @@ var BufferNode = class _BufferNode extends BaseNode {
   }
   child(dir, pos, side) {
     let { buffer } = this.context;
-    let index = buffer.findChild(this.index + 4, buffer.buffer[this.index + 3], dir, pos - this.context.start, side);
+    let index = buffer.findChild(
+      this.index + 4,
+      buffer.buffer[this.index + 3],
+      dir,
+      pos - this.context.start,
+      side,
+    );
     return index < 0 ? null : new _BufferNode(this.context, this, index);
   }
   get firstChild() {
     return this.child(
       1,
       0,
-      4
+      4,
       /* Side.DontCare */
     );
   }
@@ -9592,7 +11311,7 @@ var BufferNode = class _BufferNode extends BaseNode {
     return this.child(
       -1,
       0,
-      4
+      4,
       /* Side.DontCare */
     );
   }
@@ -9600,7 +11319,7 @@ var BufferNode = class _BufferNode extends BaseNode {
     return this.child(
       1,
       pos,
-      2
+      2,
       /* Side.After */
     );
   }
@@ -9608,57 +11327,74 @@ var BufferNode = class _BufferNode extends BaseNode {
     return this.child(
       -1,
       pos,
-      -2
+      -2,
       /* Side.Before */
     );
   }
   enter(pos, side, mode = 0) {
-    if (mode & IterMode.ExcludeBuffers)
-      return null;
+    if (mode & IterMode.ExcludeBuffers) return null;
     let { buffer } = this.context;
-    let index = buffer.findChild(this.index + 4, buffer.buffer[this.index + 3], side > 0 ? 1 : -1, pos - this.context.start, side);
+    let index = buffer.findChild(
+      this.index + 4,
+      buffer.buffer[this.index + 3],
+      side > 0 ? 1 : -1,
+      pos - this.context.start,
+      side,
+    );
     return index < 0 ? null : new _BufferNode(this.context, this, index);
   }
   get parent() {
     return this._parent || this.context.parent.nextSignificantParent();
   }
   externalSibling(dir) {
-    return this._parent ? null : this.context.parent.nextChild(
-      this.context.index + dir,
-      dir,
-      0,
-      4
-      /* Side.DontCare */
-    );
+    return this._parent
+      ? null
+      : this.context.parent.nextChild(
+          this.context.index + dir,
+          dir,
+          0,
+          4,
+          /* Side.DontCare */
+        );
   }
   get nextSibling() {
     let { buffer } = this.context;
     let after = buffer.buffer[this.index + 3];
-    if (after < (this._parent ? buffer.buffer[this._parent.index + 3] : buffer.buffer.length))
+    if (
+      after <
+      (this._parent
+        ? buffer.buffer[this._parent.index + 3]
+        : buffer.buffer.length)
+    )
       return new _BufferNode(this.context, this._parent, after);
     return this.externalSibling(1);
   }
   get prevSibling() {
     let { buffer } = this.context;
     let parentStart = this._parent ? this._parent.index + 4 : 0;
-    if (this.index == parentStart)
-      return this.externalSibling(-1);
-    return new _BufferNode(this.context, this._parent, buffer.findChild(
-      parentStart,
-      this.index,
-      -1,
-      0,
-      4
-      /* Side.DontCare */
-    ));
+    if (this.index == parentStart) return this.externalSibling(-1);
+    return new _BufferNode(
+      this.context,
+      this._parent,
+      buffer.findChild(
+        parentStart,
+        this.index,
+        -1,
+        0,
+        4,
+        /* Side.DontCare */
+      ),
+    );
   }
   get tree() {
     return null;
   }
   toTree() {
-    let children = [], positions = [];
+    let children = [],
+      positions = [];
     let { buffer } = this.context;
-    let startI = this.index + 4, endI = buffer.buffer[this.index + 3];
+    let startI = this.index + 4,
+      endI = buffer.buffer[this.index + 3];
     if (endI > startI) {
       let from = buffer.buffer[this.index + 1];
       children.push(buffer.slice(startI, endI, from));
@@ -9674,11 +11410,10 @@ var BufferNode = class _BufferNode extends BaseNode {
   }
 };
 function iterStack(heads) {
-  if (!heads.length)
-    return null;
-  if (heads.length == 1)
-    return heads[0];
-  let pick = 0, picked = heads[0];
+  if (!heads.length) return null;
+  if (heads.length == 1) return heads[0];
+  let pick = 0,
+    picked = heads[0];
   for (let i = 1; i < heads.length; i++) {
     let node = heads[i];
     if (node.from > picked.from || node.to < picked.to) {
@@ -9686,12 +11421,11 @@ function iterStack(heads) {
       pick = i;
     }
   }
-  let next = picked instanceof TreeNode && picked.index < 0 ? null : picked.parent;
+  let next =
+    picked instanceof TreeNode && picked.index < 0 ? null : picked.parent;
   let newHeads = heads.slice();
-  if (next)
-    newHeads[pick] = next;
-  else
-    newHeads.splice(pick, 1);
+  if (next) newHeads[pick] = next;
+  else newHeads.splice(pick, 1);
   return new StackIterator(newHeads, picked);
 }
 var StackIterator = class {
@@ -9704,17 +11438,34 @@ var StackIterator = class {
   }
 };
 function stackIterator(tree, pos, side) {
-  let inner = tree.resolveInner(pos, side), layers = null;
-  for (let scan = inner instanceof TreeNode ? inner : inner.context.parent; scan; scan = scan.parent) {
+  let inner = tree.resolveInner(pos, side),
+    layers = null;
+  for (
+    let scan = inner instanceof TreeNode ? inner : inner.context.parent;
+    scan;
+    scan = scan.parent
+  ) {
     if (scan.index < 0) {
       let parent = scan.parent;
       (layers || (layers = [inner])).push(parent.resolve(pos, side));
       scan = parent;
     } else {
       let mount = MountedTree.get(scan.tree);
-      if (mount && mount.overlay && mount.overlay[0].from <= pos && mount.overlay[mount.overlay.length - 1].to >= pos) {
-        let root = new TreeNode(mount.tree, mount.overlay[0].from + scan.from, 0, null);
-        (layers || (layers = [inner])).push(resolveNode(root, pos, side, false));
+      if (
+        mount &&
+        mount.overlay &&
+        mount.overlay[0].from <= pos &&
+        mount.overlay[mount.overlay.length - 1].to >= pos
+      ) {
+        let root = new TreeNode(
+          mount.tree,
+          mount.overlay[0].from + scan.from,
+          0,
+          null,
+        );
+        (layers || (layers = [inner])).push(
+          resolveNode(root, pos, side, false),
+        );
       }
     }
   }
@@ -9741,15 +11492,13 @@ var TreeCursor = class {
     } else {
       this._tree = node.context.parent;
       this.buffer = node.context;
-      for (let n = node._parent; n; n = n._parent)
-        this.stack.unshift(n.index);
+      for (let n = node._parent; n; n = n._parent) this.stack.unshift(n.index);
       this.bufferNode = node;
       this.yieldBuf(node.index);
     }
   }
   yieldNode(node) {
-    if (!node)
-      return false;
+    if (!node) return false;
     this._tree = node;
     this.type = node.type;
     this.from = node.from;
@@ -9765,8 +11514,7 @@ var TreeCursor = class {
     return true;
   }
   yield(node) {
-    if (!node)
-      return false;
+    if (!node) return false;
     if (node instanceof TreeNode) {
       this.buffer = null;
       return this.yieldNode(node);
@@ -9778,18 +11526,33 @@ var TreeCursor = class {
   @internal
   */
   toString() {
-    return this.buffer ? this.buffer.buffer.childString(this.index) : this._tree.toString();
+    return this.buffer
+      ? this.buffer.buffer.childString(this.index)
+      : this._tree.toString();
   }
   /**
   @internal
   */
   enterChild(dir, pos, side) {
     if (!this.buffer)
-      return this.yield(this._tree.nextChild(dir < 0 ? this._tree._tree.children.length - 1 : 0, dir, pos, side, this.mode));
+      return this.yield(
+        this._tree.nextChild(
+          dir < 0 ? this._tree._tree.children.length - 1 : 0,
+          dir,
+          pos,
+          side,
+          this.mode,
+        ),
+      );
     let { buffer } = this.buffer;
-    let index = buffer.findChild(this.index + 4, buffer.buffer[this.index + 3], dir, pos - this.buffer.start, side);
-    if (index < 0)
-      return false;
+    let index = buffer.findChild(
+      this.index + 4,
+      buffer.buffer[this.index + 3],
+      dir,
+      pos - this.buffer.start,
+      side,
+    );
+    if (index < 0) return false;
     this.stack.push(this.index);
     return this.yieldBuf(index);
   }
@@ -9801,7 +11564,7 @@ var TreeCursor = class {
     return this.enterChild(
       1,
       0,
-      4
+      4,
       /* Side.DontCare */
     );
   }
@@ -9812,7 +11575,7 @@ var TreeCursor = class {
     return this.enterChild(
       -1,
       0,
-      4
+      4,
       /* Side.DontCare */
     );
   }
@@ -9823,7 +11586,7 @@ var TreeCursor = class {
     return this.enterChild(
       1,
       pos,
-      2
+      2,
       /* Side.After */
     );
   }
@@ -9834,7 +11597,7 @@ var TreeCursor = class {
     return this.enterChild(
       -1,
       pos,
-      -2
+      -2,
       /* Side.Before */
     );
   }
@@ -9846,19 +11609,26 @@ var TreeCursor = class {
   set to false.
   */
   enter(pos, side, mode = this.mode) {
-    if (!this.buffer)
-      return this.yield(this._tree.enter(pos, side, mode));
-    return mode & IterMode.ExcludeBuffers ? false : this.enterChild(1, pos, side);
+    if (!this.buffer) return this.yield(this._tree.enter(pos, side, mode));
+    return mode & IterMode.ExcludeBuffers
+      ? false
+      : this.enterChild(1, pos, side);
   }
   /**
   Move to the node's parent node, if this isn't the top node.
   */
   parent() {
     if (!this.buffer)
-      return this.yieldNode(this.mode & IterMode.IncludeAnonymous ? this._tree._parent : this._tree.parent);
-    if (this.stack.length)
-      return this.yieldBuf(this.stack.pop());
-    let parent = this.mode & IterMode.IncludeAnonymous ? this.buffer.parent : this.buffer.parent.nextSignificantParent();
+      return this.yieldNode(
+        this.mode & IterMode.IncludeAnonymous
+          ? this._tree._parent
+          : this._tree.parent,
+      );
+    if (this.stack.length) return this.yieldBuf(this.stack.pop());
+    let parent =
+      this.mode & IterMode.IncludeAnonymous
+        ? this.buffer.parent
+        : this.buffer.parent.nextSignificantParent();
     this.buffer = null;
     return this.yieldNode(parent);
   }
@@ -9867,25 +11637,53 @@ var TreeCursor = class {
   */
   sibling(dir) {
     if (!this.buffer)
-      return !this._tree._parent ? false : this.yield(this._tree.index < 0 ? null : this._tree._parent.nextChild(this._tree.index + dir, dir, 0, 4, this.mode));
-    let { buffer } = this.buffer, d = this.stack.length - 1;
+      return !this._tree._parent
+        ? false
+        : this.yield(
+            this._tree.index < 0
+              ? null
+              : this._tree._parent.nextChild(
+                  this._tree.index + dir,
+                  dir,
+                  0,
+                  4,
+                  this.mode,
+                ),
+          );
+    let { buffer } = this.buffer,
+      d = this.stack.length - 1;
     if (dir < 0) {
       let parentStart = d < 0 ? 0 : this.stack[d] + 4;
       if (this.index != parentStart)
-        return this.yieldBuf(buffer.findChild(
-          parentStart,
-          this.index,
-          -1,
-          0,
-          4
-          /* Side.DontCare */
-        ));
+        return this.yieldBuf(
+          buffer.findChild(
+            parentStart,
+            this.index,
+            -1,
+            0,
+            4,
+            /* Side.DontCare */
+          ),
+        );
     } else {
       let after = buffer.buffer[this.index + 3];
-      if (after < (d < 0 ? buffer.buffer.length : buffer.buffer[this.stack[d] + 3]))
+      if (
+        after <
+        (d < 0 ? buffer.buffer.length : buffer.buffer[this.stack[d] + 3])
+      )
         return this.yieldBuf(after);
     }
-    return d < 0 ? this.yield(this.buffer.parent.nextChild(this.buffer.index + dir, dir, 0, 4, this.mode)) : false;
+    return d < 0
+      ? this.yield(
+          this.buffer.parent.nextChild(
+            this.buffer.index + dir,
+            dir,
+            0,
+            4,
+            this.mode,
+          ),
+        )
+      : false;
   }
   /**
   Move to this node's next sibling, if any.
@@ -9900,15 +11698,15 @@ var TreeCursor = class {
     return this.sibling(-1);
   }
   atLastNode(dir) {
-    let index, parent, { buffer } = this;
+    let index,
+      parent,
+      { buffer } = this;
     if (buffer) {
       if (dir > 0) {
-        if (this.index < buffer.buffer.buffer.length)
-          return false;
+        if (this.index < buffer.buffer.buffer.length) return false;
       } else {
         for (let i = 0; i < this.index; i++)
-          if (buffer.buffer.buffer[i + 3] < this.index)
-            return false;
+          if (buffer.buffer.buffer[i + 3] < this.index) return false;
       }
       ({ index, parent } = buffer);
     } else {
@@ -9916,27 +11714,37 @@ var TreeCursor = class {
     }
     for (; parent; { index, _parent: parent } = parent) {
       if (index > -1)
-        for (let i = index + dir, e = dir < 0 ? -1 : parent._tree.children.length; i != e; i += dir) {
+        for (
+          let i = index + dir, e = dir < 0 ? -1 : parent._tree.children.length;
+          i != e;
+          i += dir
+        ) {
           let child = parent._tree.children[i];
-          if (this.mode & IterMode.IncludeAnonymous || child instanceof TreeBuffer || !child.type.isAnonymous || hasChild(child))
+          if (
+            this.mode & IterMode.IncludeAnonymous ||
+            child instanceof TreeBuffer ||
+            !child.type.isAnonymous ||
+            hasChild(child)
+          )
             return false;
         }
     }
     return true;
   }
   move(dir, enter) {
-    if (enter && this.enterChild(
-      dir,
-      0,
-      4
-      /* Side.DontCare */
-    ))
+    if (
+      enter &&
+      this.enterChild(
+        dir,
+        0,
+        4,
+        /* Side.DontCare */
+      )
+    )
       return true;
-    for (; ; ) {
-      if (this.sibling(dir))
-        return true;
-      if (this.atLastNode(dir) || !this.parent())
-        return false;
+    for (;;) {
+      if (this.sibling(dir)) return true;
+      if (this.atLastNode(dir) || !this.parent()) return false;
     }
   }
   /**
@@ -9964,11 +11772,13 @@ var TreeCursor = class {
   it will enter nodes that start at `pos`.
   */
   moveTo(pos, side = 0) {
-    while (this.from == this.to || (side < 1 ? this.from >= pos : this.from > pos) || (side > -1 ? this.to <= pos : this.to < pos))
-      if (!this.parent())
-        break;
-    while (this.enterChild(1, pos, side)) {
-    }
+    while (
+      this.from == this.to ||
+      (side < 1 ? this.from >= pos : this.from > pos) ||
+      (side > -1 ? this.to <= pos : this.to < pos)
+    )
+      if (!this.parent()) break;
+    while (this.enterChild(1, pos, side)) {}
     return this;
   }
   /**
@@ -9976,26 +11786,25 @@ var TreeCursor = class {
   position.
   */
   get node() {
-    if (!this.buffer)
-      return this._tree;
-    let cache2 = this.bufferNode, result = null, depth = 0;
+    if (!this.buffer) return this._tree;
+    let cache2 = this.bufferNode,
+      result = null,
+      depth = 0;
     if (cache2 && cache2.context == this.buffer) {
-      scan:
-        for (let index = this.index, d = this.stack.length; d >= 0; ) {
-          for (let c = cache2; c; c = c._parent)
-            if (c.index == index) {
-              if (index == this.index)
-                return c;
-              result = c;
-              depth = d + 1;
-              break scan;
-            }
-          index = this.stack[--d];
-        }
+      scan: for (let index = this.index, d = this.stack.length; d >= 0; ) {
+        for (let c = cache2; c; c = c._parent)
+          if (c.index == index) {
+            if (index == this.index) return c;
+            result = c;
+            depth = d + 1;
+            break scan;
+          }
+        index = this.stack[--d];
+      }
     }
     for (let i = depth; i < this.stack.length; i++)
       result = new BufferNode(this.buffer, result, this.stack[i]);
-    return this.bufferNode = new BufferNode(this.buffer, result, this.index);
+    return (this.bufferNode = new BufferNode(this.buffer, result, this.index));
   }
   /**
   Get the [tree](#common.Tree) that represents the current node, if
@@ -10019,17 +11828,13 @@ var TreeCursor = class {
           depth++;
           continue;
         }
-        if (!this.type.isAnonymous)
-          mustLeave = true;
+        if (!this.type.isAnonymous) mustLeave = true;
       }
-      for (; ; ) {
-        if (mustLeave && leave)
-          leave(this);
+      for (;;) {
+        if (mustLeave && leave) leave(this);
         mustLeave = this.type.isAnonymous;
-        if (this.nextSibling())
-          break;
-        if (!depth)
-          return;
+        if (this.nextSibling()) break;
+        if (!depth) return;
         this.parent();
         depth--;
         mustLeave = true;
@@ -10042,16 +11847,14 @@ var TreeCursor = class {
   are treated as wildcards.
   */
   matchContext(context) {
-    if (!this.buffer)
-      return matchNodeContext(this.node, context);
-    let { buffer } = this.buffer, { types } = buffer.set;
+    if (!this.buffer) return matchNodeContext(this.node, context);
+    let { buffer } = this.buffer,
+      { types } = buffer.set;
     for (let i = context.length - 1, d = this.stack.length - 1; i >= 0; d--) {
-      if (d < 0)
-        return matchNodeContext(this.node, context, i);
+      if (d < 0) return matchNodeContext(this.node, context, i);
       let type = types[buffer.buffer[this.stack[d]]];
       if (!type.isAnonymous) {
-        if (context[i] && context[i] != type.name)
-          return false;
+        if (context[i] && context[i] != type.name) return false;
         i--;
       }
     }
@@ -10059,14 +11862,25 @@ var TreeCursor = class {
   }
 };
 function hasChild(tree) {
-  return tree.children.some((ch) => ch instanceof TreeBuffer || !ch.type.isAnonymous || hasChild(ch));
+  return tree.children.some(
+    (ch) => ch instanceof TreeBuffer || !ch.type.isAnonymous || hasChild(ch),
+  );
 }
 function buildTree(data) {
   var _a;
-  let { buffer, nodeSet, maxBufferLength = DefaultBufferLength, reused = [], minRepeatType = nodeSet.types.length } = data;
-  let cursor = Array.isArray(buffer) ? new FlatBufferCursor(buffer, buffer.length) : buffer;
+  let {
+    buffer,
+    nodeSet,
+    maxBufferLength = DefaultBufferLength,
+    reused = [],
+    minRepeatType = nodeSet.types.length,
+  } = data;
+  let cursor = Array.isArray(buffer)
+    ? new FlatBufferCursor(buffer, buffer.length)
+    : buffer;
   let types = nodeSet.types;
-  let contextHash = 0, lookAhead = 0;
+  let contextHash = 0,
+    lookAhead = 0;
   function takeNode(parentStart, minPos, children2, positions2, inRepeat) {
     let { id: id2, start: start2, end: end2, size } = cursor;
     let lookAheadAtStart = lookAhead;
@@ -10087,11 +11901,17 @@ function buildTree(data) {
         throw new RangeError(`Unrecognized record size: ${size}`);
       }
     }
-    let type = types[id2], node, buffer2;
+    let type = types[id2],
+      node,
+      buffer2;
     let startPos = start2 - parentStart;
-    if (end2 - start2 <= maxBufferLength && (buffer2 = findBufferSize(cursor.pos - minPos, inRepeat))) {
+    if (
+      end2 - start2 <= maxBufferLength &&
+      (buffer2 = findBufferSize(cursor.pos - minPos, inRepeat))
+    ) {
       let data2 = new Uint16Array(buffer2.size - buffer2.skip);
-      let endPos = cursor.pos - buffer2.size, index = data2.length;
+      let endPos = cursor.pos - buffer2.size,
+        index = data2.length;
       while (cursor.pos > endPos)
         index = copyToBuffer(buffer2.start, data2, index);
       node = new TreeBuffer(data2, end2 - buffer2.start, nodeSet);
@@ -10099,30 +11919,80 @@ function buildTree(data) {
     } else {
       let endPos = cursor.pos - size;
       cursor.next();
-      let localChildren = [], localPositions = [];
+      let localChildren = [],
+        localPositions = [];
       let localInRepeat = id2 >= minRepeatType ? id2 : -1;
-      let lastGroup = 0, lastEnd = end2;
+      let lastGroup = 0,
+        lastEnd = end2;
       while (cursor.pos > endPos) {
-        if (localInRepeat >= 0 && cursor.id == localInRepeat && cursor.size >= 0) {
+        if (
+          localInRepeat >= 0 &&
+          cursor.id == localInRepeat &&
+          cursor.size >= 0
+        ) {
           if (cursor.end <= lastEnd - maxBufferLength) {
-            makeRepeatLeaf(localChildren, localPositions, start2, lastGroup, cursor.end, lastEnd, localInRepeat, lookAheadAtStart);
+            makeRepeatLeaf(
+              localChildren,
+              localPositions,
+              start2,
+              lastGroup,
+              cursor.end,
+              lastEnd,
+              localInRepeat,
+              lookAheadAtStart,
+            );
             lastGroup = localChildren.length;
             lastEnd = cursor.end;
           }
           cursor.next();
         } else {
-          takeNode(start2, endPos, localChildren, localPositions, localInRepeat);
+          takeNode(
+            start2,
+            endPos,
+            localChildren,
+            localPositions,
+            localInRepeat,
+          );
         }
       }
-      if (localInRepeat >= 0 && lastGroup > 0 && lastGroup < localChildren.length)
-        makeRepeatLeaf(localChildren, localPositions, start2, lastGroup, start2, lastEnd, localInRepeat, lookAheadAtStart);
+      if (
+        localInRepeat >= 0 &&
+        lastGroup > 0 &&
+        lastGroup < localChildren.length
+      )
+        makeRepeatLeaf(
+          localChildren,
+          localPositions,
+          start2,
+          lastGroup,
+          start2,
+          lastEnd,
+          localInRepeat,
+          lookAheadAtStart,
+        );
       localChildren.reverse();
       localPositions.reverse();
       if (localInRepeat > -1 && lastGroup > 0) {
         let make = makeBalanced(type);
-        node = balanceRange(type, localChildren, localPositions, 0, localChildren.length, 0, end2 - start2, make, make);
+        node = balanceRange(
+          type,
+          localChildren,
+          localPositions,
+          0,
+          localChildren.length,
+          0,
+          end2 - start2,
+          make,
+          make,
+        );
       } else {
-        node = makeTree(type, localChildren, localPositions, end2 - start2, lookAheadAtStart - end2);
+        node = makeTree(
+          type,
+          localChildren,
+          localPositions,
+          end2 - start2,
+          lookAheadAtStart - end2,
+        );
       }
     }
     children2.push(node);
@@ -10130,26 +12000,53 @@ function buildTree(data) {
   }
   function makeBalanced(type) {
     return (children2, positions2, length2) => {
-      let lookAhead2 = 0, lastI = children2.length - 1, last, lookAheadProp;
+      let lookAhead2 = 0,
+        lastI = children2.length - 1,
+        last,
+        lookAheadProp;
       if (lastI >= 0 && (last = children2[lastI]) instanceof Tree) {
-        if (!lastI && last.type == type && last.length == length2)
-          return last;
-        if (lookAheadProp = last.prop(NodeProp.lookAhead))
+        if (!lastI && last.type == type && last.length == length2) return last;
+        if ((lookAheadProp = last.prop(NodeProp.lookAhead)))
           lookAhead2 = positions2[lastI] + last.length + lookAheadProp;
       }
       return makeTree(type, children2, positions2, length2, lookAhead2);
     };
   }
-  function makeRepeatLeaf(children2, positions2, base, i, from, to, type, lookAhead2) {
-    let localChildren = [], localPositions = [];
+  function makeRepeatLeaf(
+    children2,
+    positions2,
+    base,
+    i,
+    from,
+    to,
+    type,
+    lookAhead2,
+  ) {
+    let localChildren = [],
+      localPositions = [];
     while (children2.length > i) {
       localChildren.push(children2.pop());
       localPositions.push(positions2.pop() + base - from);
     }
-    children2.push(makeTree(nodeSet.types[type], localChildren, localPositions, to - from, lookAhead2 - to));
+    children2.push(
+      makeTree(
+        nodeSet.types[type],
+        localChildren,
+        localPositions,
+        to - from,
+        lookAhead2 - to,
+      ),
+    );
     positions2.push(from - base);
   }
-  function makeTree(type, children2, positions2, length2, lookAhead2 = 0, props) {
+  function makeTree(
+    type,
+    children2,
+    positions2,
+    length2,
+    lookAhead2 = 0,
+    props,
+  ) {
     if (contextHash) {
       let pair2 = [NodeProp.contextHash, contextHash];
       props = props ? [pair2].concat(props) : [pair2];
@@ -10162,41 +12059,40 @@ function buildTree(data) {
   }
   function findBufferSize(maxSize, inRepeat) {
     let fork = cursor.fork();
-    let size = 0, start2 = 0, skip = 0, minStart = fork.end - maxBufferLength;
+    let size = 0,
+      start2 = 0,
+      skip = 0,
+      minStart = fork.end - maxBufferLength;
     let result = { size: 0, start: 0, skip: 0 };
-    scan:
-      for (let minPos = fork.pos - maxSize; fork.pos > minPos; ) {
-        let nodeSize2 = fork.size;
-        if (fork.id == inRepeat && nodeSize2 >= 0) {
-          result.size = size;
-          result.start = start2;
-          result.skip = skip;
-          skip += 4;
-          size += 4;
-          fork.next();
-          continue;
-        }
-        let startPos = fork.pos - nodeSize2;
-        if (nodeSize2 < 0 || startPos < minPos || fork.start < minStart)
-          break;
-        let localSkipped = fork.id >= minRepeatType ? 4 : 0;
-        let nodeStart = fork.start;
+    scan: for (let minPos = fork.pos - maxSize; fork.pos > minPos; ) {
+      let nodeSize2 = fork.size;
+      if (fork.id == inRepeat && nodeSize2 >= 0) {
+        result.size = size;
+        result.start = start2;
+        result.skip = skip;
+        skip += 4;
+        size += 4;
         fork.next();
-        while (fork.pos > startPos) {
-          if (fork.size < 0) {
-            if (fork.size == -3)
-              localSkipped += 4;
-            else
-              break scan;
-          } else if (fork.id >= minRepeatType) {
-            localSkipped += 4;
-          }
-          fork.next();
-        }
-        start2 = nodeStart;
-        size += nodeSize2;
-        skip += localSkipped;
+        continue;
       }
+      let startPos = fork.pos - nodeSize2;
+      if (nodeSize2 < 0 || startPos < minPos || fork.start < minStart) break;
+      let localSkipped = fork.id >= minRepeatType ? 4 : 0;
+      let nodeStart = fork.start;
+      fork.next();
+      while (fork.pos > startPos) {
+        if (fork.size < 0) {
+          if (fork.size == -3) localSkipped += 4;
+          else break scan;
+        } else if (fork.id >= minRepeatType) {
+          localSkipped += 4;
+        }
+        fork.next();
+      }
+      start2 = nodeStart;
+      size += nodeSize2;
+      skip += localSkipped;
+    }
     if (inRepeat < 0 || size == maxSize) {
       result.size = size;
       result.start = start2;
@@ -10225,15 +12121,30 @@ function buildTree(data) {
     }
     return index;
   }
-  let children = [], positions = [];
+  let children = [],
+    positions = [];
   while (cursor.pos > 0)
     takeNode(data.start || 0, data.bufferStart || 0, children, positions, -1);
-  let length = (_a = data.length) !== null && _a !== void 0 ? _a : children.length ? positions[0] + children[0].length : 0;
-  return new Tree(types[data.topID], children.reverse(), positions.reverse(), length);
+  let length =
+    (_a = data.length) !== null && _a !== void 0
+      ? _a
+      : children.length
+        ? positions[0] + children[0].length
+        : 0;
+  return new Tree(
+    types[data.topID],
+    children.reverse(),
+    positions.reverse(),
+    length,
+  );
 }
 var nodeSizeCache = /* @__PURE__ */ new WeakMap();
 function nodeSize(balanceType, node) {
-  if (!balanceType.isAnonymous || node instanceof TreeBuffer || node.type != balanceType)
+  if (
+    !balanceType.isAnonymous ||
+    node instanceof TreeBuffer ||
+    node.type != balanceType
+  )
     return 1;
   let size = nodeSizeCache.get(node);
   if (size == null) {
@@ -10249,35 +12160,64 @@ function nodeSize(balanceType, node) {
   }
   return size;
 }
-function balanceRange(balanceType, children, positions, from, to, start2, length, mkTop, mkTree) {
+function balanceRange(
+  balanceType,
+  children,
+  positions,
+  from,
+  to,
+  start2,
+  length,
+  mkTop,
+  mkTree,
+) {
   let total = 0;
-  for (let i = from; i < to; i++)
-    total += nodeSize(balanceType, children[i]);
+  for (let i = from; i < to; i++) total += nodeSize(balanceType, children[i]);
   let maxChild = Math.ceil(
-    total * 1.5 / 8
+    (total * 1.5) / 8,
     /* Balance.BranchFactor */
   );
-  let localChildren = [], localPositions = [];
+  let localChildren = [],
+    localPositions = [];
   function divide(children2, positions2, from2, to2, offset2) {
     for (let i = from2; i < to2; ) {
-      let groupFrom = i, groupStart = positions2[i], groupSize = nodeSize(balanceType, children2[i]);
+      let groupFrom = i,
+        groupStart = positions2[i],
+        groupSize = nodeSize(balanceType, children2[i]);
       i++;
       for (; i < to2; i++) {
         let nextSize = nodeSize(balanceType, children2[i]);
-        if (groupSize + nextSize >= maxChild)
-          break;
+        if (groupSize + nextSize >= maxChild) break;
         groupSize += nextSize;
       }
       if (i == groupFrom + 1) {
         if (groupSize > maxChild) {
           let only = children2[groupFrom];
-          divide(only.children, only.positions, 0, only.children.length, positions2[groupFrom] + offset2);
+          divide(
+            only.children,
+            only.positions,
+            0,
+            only.children.length,
+            positions2[groupFrom] + offset2,
+          );
           continue;
         }
         localChildren.push(children2[groupFrom]);
       } else {
         let length2 = positions2[i - 1] + children2[i - 1].length - groupStart;
-        localChildren.push(balanceRange(balanceType, children2, positions2, groupFrom, i, groupStart, length2, null, mkTree));
+        localChildren.push(
+          balanceRange(
+            balanceType,
+            children2,
+            positions2,
+            groupFrom,
+            i,
+            groupStart,
+            length2,
+            null,
+            mkTree,
+          ),
+        );
       }
       localPositions.push(groupStart + offset2 - start2);
     }
@@ -10291,8 +12231,7 @@ var NodeWeakMap = class {
   }
   setBuffer(buffer, index, value) {
     let inner = this.map.get(buffer);
-    if (!inner)
-      this.map.set(buffer, inner = /* @__PURE__ */ new Map());
+    if (!inner) this.map.set(buffer, (inner = /* @__PURE__ */ new Map()));
     inner.set(index, value);
   }
   getBuffer(buffer, index) {
@@ -10305,14 +12244,17 @@ var NodeWeakMap = class {
   set(node, value) {
     if (node instanceof BufferNode)
       this.setBuffer(node.context.buffer, node.index, value);
-    else if (node instanceof TreeNode)
-      this.map.set(node.tree, value);
+    else if (node instanceof TreeNode) this.map.set(node.tree, value);
   }
   /**
   Retrieve value for this syntax node, if it exists in the map.
   */
   get(node) {
-    return node instanceof BufferNode ? this.getBuffer(node.context.buffer, node.index) : node instanceof TreeNode ? this.map.get(node.tree) : void 0;
+    return node instanceof BufferNode
+      ? this.getBuffer(node.context.buffer, node.index)
+      : node instanceof TreeNode
+        ? this.map.get(node.tree)
+        : void 0;
   }
   /**
   Set the value for the node that a cursor currently points to.
@@ -10320,15 +12262,16 @@ var NodeWeakMap = class {
   cursorSet(cursor, value) {
     if (cursor.buffer)
       this.setBuffer(cursor.buffer.buffer, cursor.index, value);
-    else
-      this.map.set(cursor.tree, value);
+    else this.map.set(cursor.tree, value);
   }
   /**
   Retrieve the value for the node that a cursor currently points
   to.
   */
   cursorGet(cursor) {
-    return cursor.buffer ? this.getBuffer(cursor.buffer.buffer, cursor.index) : this.map.get(cursor.tree);
+    return cursor.buffer
+      ? this.getBuffer(cursor.buffer.buffer, cursor.index)
+      : this.map.get(cursor.tree);
   }
 };
 var Parser = class {
@@ -10336,16 +12279,19 @@ var Parser = class {
   Start a parse, returning a [partial parse](#common.PartialParse)
   object. [`fragments`](#common.TreeFragment) can be passed in to
   make the parse incremental.
-  
+
   By default, the entire input is parsed. You can pass `ranges`,
   which should be a sorted array of non-empty, non-overlapping
   ranges, to parse only those ranges. The tree returned in that
   case will start at `ranges[0].from`.
   */
   startParse(input, fragments, ranges) {
-    if (typeof input == "string")
-      input = new StringInput(input);
-    ranges = !ranges ? [new Range(0, input.length)] : ranges.length ? ranges.map((r) => new Range(r.from, r.to)) : [new Range(0, 0)];
+    if (typeof input == "string") input = new StringInput(input);
+    ranges = !ranges
+      ? [new Range(0, input.length)]
+      : ranges.length
+        ? ranges.map((r) => new Range(r.from, r.to))
+        : [new Range(0, 0)];
     return this.createParse(input, fragments || [], ranges);
   }
   /**
@@ -10353,10 +12299,9 @@ var Parser = class {
   */
   parse(input, fragments, ranges) {
     let parse2 = this.startParse(input, fragments, ranges);
-    for (; ; ) {
+    for (;;) {
       let done = parse2.advance();
-      if (done)
-        return done;
+      if (done) return done;
     }
   }
 };
@@ -10382,7 +12327,19 @@ var stoppedInner = new NodeProp({ perNode: true });
 // node_modules/@lezer/lr/dist/index.js
 var Stack = class _Stack {
   /// @internal
-  constructor(p, stack, state, reducePos, pos, score, buffer, bufferBase, curContext, lookAhead = 0, parent) {
+  constructor(
+    p,
+    stack,
+    state,
+    reducePos,
+    pos,
+    score,
+    buffer,
+    bufferBase,
+    curContext,
+    lookAhead = 0,
+    parent,
+  ) {
     this.p = p;
     this.stack = stack;
     this.state = state;
@@ -10403,7 +12360,19 @@ var Stack = class _Stack {
   /// @internal
   static start(p, state, pos = 0) {
     let cx = p.parser.context;
-    return new _Stack(p, [], state, pos, pos, 0, [], 0, cx ? new StackContext(cx, cx.start) : null, 0, null);
+    return new _Stack(
+      p,
+      [],
+      state,
+      pos,
+      pos,
+      0,
+      [],
+      0,
+      cx ? new StackContext(cx, cx.start) : null,
+      0,
+      null,
+    );
   }
   /// The stack's current [context](#lr.ContextTracker) value, if
   /// any. Its type will depend on the context tracker's type
@@ -10422,11 +12391,11 @@ var Stack = class _Stack {
   // Apply a reduce action
   /// @internal
   reduce(action) {
-    let depth = action >> 19, type = action & 65535;
+    let depth = action >> 19,
+      type = action & 65535;
     let { parser: parser2 } = this.p;
     let dPrec = parser2.dynamicPrecedence(type);
-    if (dPrec)
-      this.score += dPrec;
+    if (dPrec) this.score += dPrec;
     if (depth == 0) {
       this.pushState(parser2.getGoto(this.state, type, true), this.reducePos);
       if (type < parser2.minRepeatTerm)
@@ -10436,13 +12405,16 @@ var Stack = class _Stack {
     }
     let base = this.stack.length - (depth - 1) * 3 - (action & 262144 ? 6 : 0);
     let start2 = this.stack[base - 2];
-    let bufferBase = this.stack[base - 1], count = this.bufferBase + this.buffer.length - bufferBase;
+    let bufferBase = this.stack[base - 1],
+      count = this.bufferBase + this.buffer.length - bufferBase;
     if (type < parser2.minRepeatTerm || action & 131072) {
       let pos = parser2.stateFlag(
         this.state,
-        1
+        1,
         /* Skipped */
-      ) ? this.pos : this.reducePos;
+      )
+        ? this.pos
+        : this.reducePos;
       this.storeNode(type, start2, pos, count + 4, true);
     }
     if (action & 262144) {
@@ -10451,22 +12423,26 @@ var Stack = class _Stack {
       let baseStateID = this.stack[base - 3];
       this.state = parser2.getGoto(baseStateID, type, true);
     }
-    while (this.stack.length > base)
-      this.stack.pop();
+    while (this.stack.length > base) this.stack.pop();
     this.reduceContext(type, start2);
   }
   // Shift a value into the buffer
   /// @internal
   storeNode(term, start2, end2, size = 4, isReduce = false) {
-    if (term == 0 && (!this.stack.length || this.stack[this.stack.length - 1] < this.buffer.length + this.bufferBase)) {
-      let cur = this, top2 = this.buffer.length;
+    if (
+      term == 0 &&
+      (!this.stack.length ||
+        this.stack[this.stack.length - 1] <
+          this.buffer.length + this.bufferBase)
+    ) {
+      let cur = this,
+        top2 = this.buffer.length;
       if (top2 == 0 && cur.parent) {
         top2 = cur.bufferBase - cur.parent.bufferBase;
         cur = cur.parent;
       }
       if (top2 > 0 && cur.buffer[top2 - 4] == 0 && cur.buffer[top2 - 1] > -1) {
-        if (start2 == end2)
-          return;
+        if (start2 == end2) return;
         if (cur.buffer[top2 - 2] >= start2) {
           cur.buffer[top2 - 2] = end2;
           return;
@@ -10484,8 +12460,7 @@ var Stack = class _Stack {
           this.buffer[index + 2] = this.buffer[index - 2];
           this.buffer[index + 3] = this.buffer[index - 1];
           index -= 4;
-          if (size > 4)
-            size -= 4;
+          if (size > 4) size -= 4;
         }
       this.buffer[index] = term;
       this.buffer[index + 1] = start2;
@@ -10500,20 +12475,22 @@ var Stack = class _Stack {
     if (action & 131072) {
       this.pushState(action & 65535, this.pos);
     } else if ((action & 262144) == 0) {
-      let nextState = action, { parser: parser2 } = this.p;
+      let nextState = action,
+        { parser: parser2 } = this.p;
       if (nextEnd > this.pos || next <= parser2.maxNode) {
         this.pos = nextEnd;
-        if (!parser2.stateFlag(
-          nextState,
-          1
-          /* Skipped */
-        ))
+        if (
+          !parser2.stateFlag(
+            nextState,
+            1,
+            /* Skipped */
+          )
+        )
           this.reducePos = nextEnd;
       }
       this.pushState(nextState, start2);
       this.shiftContext(next, start2);
-      if (next <= parser2.maxNode)
-        this.buffer.push(next, start2, nextEnd, 4);
+      if (next <= parser2.maxNode) this.buffer.push(next, start2, nextEnd, 4);
     } else {
       this.pos = nextEnd;
       this.shiftContext(next, start2);
@@ -10524,10 +12501,8 @@ var Stack = class _Stack {
   // Apply an action
   /// @internal
   apply(action, next, nextEnd) {
-    if (action & 65536)
-      this.reduce(action);
-    else
-      this.shift(action, next, nextEnd);
+    if (action & 65536) this.reduce(action);
+    else this.shift(action, next, nextEnd);
   }
   // Add a prebuilt (reused) node into the buffer.
   /// @internal
@@ -10544,11 +12519,18 @@ var Stack = class _Stack {
       index,
       start2,
       this.reducePos,
-      -1
+      -1,
       /* size == -1 means this is a reused value */
     );
     if (this.curContext)
-      this.updateContext(this.curContext.tracker.reuse(this.curContext.context, value, this, this.p.stream.reset(this.pos - value.length)));
+      this.updateContext(
+        this.curContext.tracker.reuse(
+          this.curContext.context,
+          value,
+          this,
+          this.p.stream.reset(this.pos - value.length),
+        ),
+      );
   }
   // Split the stack. Due to the buffer sharing and the fact
   // that `this.stack` tends to stay quite shallow, this isn't very
@@ -10557,19 +12539,29 @@ var Stack = class _Stack {
   split() {
     let parent = this;
     let off = parent.buffer.length;
-    while (off > 0 && parent.buffer[off - 2] > parent.reducePos)
-      off -= 4;
-    let buffer = parent.buffer.slice(off), base = parent.bufferBase + off;
-    while (parent && base == parent.bufferBase)
-      parent = parent.parent;
-    return new _Stack(this.p, this.stack.slice(), this.state, this.reducePos, this.pos, this.score, buffer, base, this.curContext, this.lookAhead, parent);
+    while (off > 0 && parent.buffer[off - 2] > parent.reducePos) off -= 4;
+    let buffer = parent.buffer.slice(off),
+      base = parent.bufferBase + off;
+    while (parent && base == parent.bufferBase) parent = parent.parent;
+    return new _Stack(
+      this.p,
+      this.stack.slice(),
+      this.state,
+      this.reducePos,
+      this.pos,
+      this.score,
+      buffer,
+      base,
+      this.curContext,
+      this.lookAhead,
+      parent,
+    );
   }
   // Try to recover from an error by 'deleting' (ignoring) one token.
   /// @internal
   recoverByDelete(next, nextEnd) {
     let isNode = next <= this.p.parser.maxNode;
-    if (isNode)
-      this.storeNode(next, this.pos, nextEnd, 4);
+    if (isNode) this.storeNode(next, this.pos, nextEnd, 4);
     this.storeNode(0, this.pos, nextEnd, isNode ? 8 : 4);
     this.pos = this.reducePos = nextEnd;
     this.score -= 190;
@@ -10580,15 +12572,14 @@ var Stack = class _Stack {
   /// given token when it applies.
   canShift(term) {
     for (let sim = new SimulatedStack(this); ; ) {
-      let action = this.p.parser.stateSlot(
-        sim.state,
-        4
-        /* DefaultReduce */
-      ) || this.p.parser.hasAction(sim.state, term);
-      if ((action & 65536) == 0)
-        return true;
-      if (action == 0)
-        return false;
+      let action =
+        this.p.parser.stateSlot(
+          sim.state,
+          4,
+          /* DefaultReduce */
+        ) || this.p.parser.hasAction(sim.state, term);
+      if ((action & 65536) == 0) return true;
+      if (action == 0) return false;
       sim.reduce(action);
     }
   }
@@ -10596,13 +12587,15 @@ var Stack = class _Stack {
   // inserts some missing token or rule.
   /// @internal
   recoverByInsert(next) {
-    if (this.stack.length >= 300)
-      return [];
+    if (this.stack.length >= 300) return [];
     let nextStates = this.p.parser.nextStates(this.state);
     if (nextStates.length > 4 << 1 || this.stack.length >= 120) {
       let best = [];
       for (let i = 0, s; i < nextStates.length; i += 2) {
-        if ((s = nextStates[i + 1]) != this.state && this.p.parser.hasAction(s, next))
+        if (
+          (s = nextStates[i + 1]) != this.state &&
+          this.p.parser.hasAction(s, next)
+        )
           best.push(nextStates[i], s);
       }
       if (this.stack.length < 120)
@@ -10616,8 +12609,7 @@ var Stack = class _Stack {
     let result = [];
     for (let i = 0; i < nextStates.length && result.length < 4; i += 2) {
       let s = nextStates[i + 1];
-      if (s == this.state)
-        continue;
+      if (s == this.state) continue;
       let stack = this.split();
       stack.pushState(s, this.pos);
       stack.storeNode(0, stack.pos, stack.pos, 4, true);
@@ -10633,14 +12625,14 @@ var Stack = class _Stack {
   forceReduce() {
     let reduce = this.p.parser.stateSlot(
       this.state,
-      5
+      5,
       /* ForcedReduce */
     );
-    if ((reduce & 65536) == 0)
-      return false;
+    if ((reduce & 65536) == 0) return false;
     let { parser: parser2 } = this.p;
     if (!parser2.validAction(this.state, reduce)) {
-      let depth = reduce >> 19, term = reduce & 65535;
+      let depth = reduce >> 19,
+        term = reduce & 65535;
       let target = this.stack.length - depth * 3;
       if (target < 0 || parser2.getGoto(this.stack[target], term, false) < 0)
         return false;
@@ -10653,11 +12645,13 @@ var Stack = class _Stack {
   }
   /// @internal
   forceAll() {
-    while (!this.p.parser.stateFlag(
-      this.state,
-      2
-      /* Accepting */
-    )) {
+    while (
+      !this.p.parser.stateFlag(
+        this.state,
+        2,
+        /* Accepting */
+      )
+    ) {
       if (!this.forceReduce()) {
         this.storeNode(0, this.pos, this.pos, 4, true);
         break;
@@ -10669,17 +12663,21 @@ var Stack = class _Stack {
   /// top state, since any other states must be able to continue
   /// somehow). @internal
   get deadEnd() {
-    if (this.stack.length != 3)
-      return false;
+    if (this.stack.length != 3) return false;
     let { parser: parser2 } = this.p;
-    return parser2.data[parser2.stateSlot(
-      this.state,
-      1
-      /* Actions */
-    )] == 65535 && !parser2.stateSlot(
-      this.state,
-      4
-      /* DefaultReduce */
+    return (
+      parser2.data[
+        parser2.stateSlot(
+          this.state,
+          1,
+          /* Actions */
+        )
+      ] == 65535 &&
+      !parser2.stateSlot(
+        this.state,
+        4,
+        /* DefaultReduce */
+      )
     );
   }
   /// Restart the stack (put it back in its start state). Only safe
@@ -10694,8 +12692,7 @@ var Stack = class _Stack {
     if (this.state != other.state || this.stack.length != other.stack.length)
       return false;
     for (let i = 0; i < this.stack.length; i += 3)
-      if (this.stack[i] != other.stack[i])
-        return false;
+      if (this.stack[i] != other.stack[i]) return false;
     return true;
   }
   /// Get the parser used by this stack.
@@ -10709,17 +12706,36 @@ var Stack = class _Stack {
   }
   shiftContext(term, start2) {
     if (this.curContext)
-      this.updateContext(this.curContext.tracker.shift(this.curContext.context, term, this, this.p.stream.reset(start2)));
+      this.updateContext(
+        this.curContext.tracker.shift(
+          this.curContext.context,
+          term,
+          this,
+          this.p.stream.reset(start2),
+        ),
+      );
   }
   reduceContext(term, start2) {
     if (this.curContext)
-      this.updateContext(this.curContext.tracker.reduce(this.curContext.context, term, this, this.p.stream.reset(start2)));
+      this.updateContext(
+        this.curContext.tracker.reduce(
+          this.curContext.context,
+          term,
+          this,
+          this.p.stream.reset(start2),
+        ),
+      );
   }
   /// @internal
   emitContext() {
     let last = this.buffer.length - 1;
     if (last < 0 || this.buffer[last] != -3)
-      this.buffer.push(this.curContext.hash, this.reducePos, this.reducePos, -3);
+      this.buffer.push(
+        this.curContext.hash,
+        this.reducePos,
+        this.reducePos,
+        -3,
+      );
   }
   /// @internal
   emitLookAhead() {
@@ -10730,8 +12746,7 @@ var Stack = class _Stack {
   updateContext(context) {
     if (context != this.curContext.context) {
       let newCx = new StackContext(this.curContext.tracker, context);
-      if (newCx.hash != this.curContext.hash)
-        this.emitContext();
+      if (newCx.hash != this.curContext.hash) this.emitContext();
       this.curContext = newCx;
     }
   }
@@ -10744,10 +12759,8 @@ var Stack = class _Stack {
   }
   /// @internal
   close() {
-    if (this.curContext && this.curContext.tracker.strict)
-      this.emitContext();
-    if (this.lookAhead > 0)
-      this.emitLookAhead();
+    if (this.curContext && this.curContext.tracker.strict) this.emitContext();
+    if (this.lookAhead > 0) this.emitLookAhead();
   }
 };
 var StackContext = class {
@@ -10758,13 +12771,14 @@ var StackContext = class {
   }
 };
 var Recover;
-(function(Recover2) {
-  Recover2[Recover2["Insert"] = 200] = "Insert";
-  Recover2[Recover2["Delete"] = 190] = "Delete";
-  Recover2[Recover2["Reduce"] = 100] = "Reduce";
-  Recover2[Recover2["MaxNext"] = 4] = "MaxNext";
-  Recover2[Recover2["MaxInsertStackDepth"] = 300] = "MaxInsertStackDepth";
-  Recover2[Recover2["DampenInsertStackDepth"] = 120] = "DampenInsertStackDepth";
+(function (Recover2) {
+  Recover2[(Recover2["Insert"] = 200)] = "Insert";
+  Recover2[(Recover2["Delete"] = 190)] = "Delete";
+  Recover2[(Recover2["Reduce"] = 100)] = "Reduce";
+  Recover2[(Recover2["MaxNext"] = 4)] = "MaxNext";
+  Recover2[(Recover2["MaxInsertStackDepth"] = 300)] = "MaxInsertStackDepth";
+  Recover2[(Recover2["DampenInsertStackDepth"] = 120)] =
+    "DampenInsertStackDepth";
 })(Recover || (Recover = {}));
 var SimulatedStack = class {
   constructor(start2) {
@@ -10774,16 +12788,20 @@ var SimulatedStack = class {
     this.base = this.stack.length;
   }
   reduce(action) {
-    let term = action & 65535, depth = action >> 19;
+    let term = action & 65535,
+      depth = action >> 19;
     if (depth == 0) {
-      if (this.stack == this.start.stack)
-        this.stack = this.stack.slice();
+      if (this.stack == this.start.stack) this.stack = this.stack.slice();
       this.stack.push(this.state, 0, 0);
       this.base += 3;
     } else {
       this.base -= (depth - 1) * 3;
     }
-    let goto = this.start.p.parser.getGoto(this.stack[this.base - 3], term, true);
+    let goto = this.start.p.parser.getGoto(
+      this.stack[this.base - 3],
+      term,
+      true,
+    );
     this.state = goto;
   }
 };
@@ -10793,8 +12811,7 @@ var StackBufferCursor = class _StackBufferCursor {
     this.pos = pos;
     this.index = index;
     this.buffer = stack.buffer;
-    if (this.index == 0)
-      this.maybeNext();
+    if (this.index == 0) this.maybeNext();
   }
   static create(stack, pos = stack.bufferBase + stack.buffer.length) {
     return new _StackBufferCursor(stack, pos, pos - stack.bufferBase);
@@ -10822,8 +12839,7 @@ var StackBufferCursor = class _StackBufferCursor {
   next() {
     this.index -= 4;
     this.pos -= 4;
-    if (this.index == 0)
-      this.maybeNext();
+    if (this.index == 0) this.maybeNext();
   }
   fork() {
     return new _StackBufferCursor(this.stack, this.pos, this.index);
@@ -10860,18 +12876,17 @@ var InputStream = class {
   }
   /// @internal
   resolveOffset(offset2, assoc) {
-    let range = this.range, index = this.rangeIndex;
+    let range = this.range,
+      index = this.rangeIndex;
     let pos = this.pos + offset2;
     while (pos < range.from) {
-      if (!index)
-        return null;
+      if (!index) return null;
       let next = this.ranges[--index];
       pos -= range.from - next.to;
       range = next;
     }
     while (assoc < 0 ? pos > range.to : pos >= range.to) {
-      if (index == this.ranges.length - 1)
-        return null;
+      if (index == this.ranges.length - 1) return null;
       let next = this.ranges[++index];
       pos += next.from - range.to;
       range = next;
@@ -10888,29 +12903,29 @@ var InputStream = class {
   /// cause invalid reparses when looking backward more than 25 code
   /// units, since the library does not track lookbehind.
   peek(offset2) {
-    let idx = this.chunkOff + offset2, pos, result;
+    let idx = this.chunkOff + offset2,
+      pos,
+      result;
     if (idx >= 0 && idx < this.chunk.length) {
       pos = this.pos + offset2;
       result = this.chunk.charCodeAt(idx);
     } else {
       let resolved = this.resolveOffset(offset2, 1);
-      if (resolved == null)
-        return -1;
+      if (resolved == null) return -1;
       pos = resolved;
       if (pos >= this.chunk2Pos && pos < this.chunk2Pos + this.chunk2.length) {
         result = this.chunk2.charCodeAt(pos - this.chunk2Pos);
       } else {
-        let i = this.rangeIndex, range = this.range;
-        while (range.to <= pos)
-          range = this.ranges[++i];
-        this.chunk2 = this.input.chunk(this.chunk2Pos = pos);
+        let i = this.rangeIndex,
+          range = this.range;
+        while (range.to <= pos) range = this.ranges[++i];
+        this.chunk2 = this.input.chunk((this.chunk2Pos = pos));
         if (pos + this.chunk2.length > range.to)
           this.chunk2 = this.chunk2.slice(0, range.to - pos);
         result = this.chunk2.charCodeAt(0);
       }
     }
-    if (pos >= this.token.lookAhead)
-      this.token.lookAhead = pos + 1;
+    if (pos >= this.token.lookAhead) this.token.lookAhead = pos + 1;
     return result;
   }
   /// Accept a token. By default, the end of the token is set to the
@@ -10924,7 +12939,10 @@ var InputStream = class {
     this.token.end = end2;
   }
   getChunk() {
-    if (this.pos >= this.chunk2Pos && this.pos < this.chunk2Pos + this.chunk2.length) {
+    if (
+      this.pos >= this.chunk2Pos &&
+      this.pos < this.chunk2Pos + this.chunk2.length
+    ) {
       let { chunk, chunkPos } = this;
       this.chunk = this.chunk2;
       this.chunkPos = this.chunk2Pos;
@@ -10936,7 +12954,10 @@ var InputStream = class {
       this.chunk2Pos = this.chunkPos;
       let nextChunk = this.input.chunk(this.pos);
       let end2 = this.pos + nextChunk.length;
-      this.chunk = end2 > this.range.to ? nextChunk.slice(0, this.range.to - this.pos) : nextChunk;
+      this.chunk =
+        end2 > this.range.to
+          ? nextChunk.slice(0, this.range.to - this.pos)
+          : nextChunk;
       this.chunkPos = this.pos;
       this.chunkOff = 0;
     }
@@ -10944,32 +12965,29 @@ var InputStream = class {
   readNext() {
     if (this.chunkOff >= this.chunk.length) {
       this.getChunk();
-      if (this.chunkOff == this.chunk.length)
-        return this.next = -1;
+      if (this.chunkOff == this.chunk.length) return (this.next = -1);
     }
-    return this.next = this.chunk.charCodeAt(this.chunkOff);
+    return (this.next = this.chunk.charCodeAt(this.chunkOff));
   }
   /// Move the stream forward N (defaults to 1) code units. Returns
   /// the new value of [`next`](#lr.InputStream.next).
   advance(n = 1) {
     this.chunkOff += n;
     while (this.pos + n >= this.range.to) {
-      if (this.rangeIndex == this.ranges.length - 1)
-        return this.setDone();
+      if (this.rangeIndex == this.ranges.length - 1) return this.setDone();
       n -= this.range.to - this.pos;
       this.range = this.ranges[++this.rangeIndex];
       this.pos = this.range.from;
     }
     this.pos += n;
-    if (this.pos >= this.token.lookAhead)
-      this.token.lookAhead = this.pos + 1;
+    if (this.pos >= this.token.lookAhead) this.token.lookAhead = this.pos + 1;
     return this.readNext();
   }
   setDone() {
     this.pos = this.chunkPos = this.end;
-    this.range = this.ranges[this.rangeIndex = this.ranges.length - 1];
+    this.range = this.ranges[(this.rangeIndex = this.ranges.length - 1)];
     this.chunk = "";
-    return this.next = -1;
+    return (this.next = -1);
   }
   /// @internal
   reset(pos, token) {
@@ -10987,10 +13005,8 @@ var InputStream = class {
         this.setDone();
         return this;
       }
-      while (pos < this.range.from)
-        this.range = this.ranges[--this.rangeIndex];
-      while (pos >= this.range.to)
-        this.range = this.ranges[++this.rangeIndex];
+      while (pos < this.range.from) this.range = this.ranges[--this.rangeIndex];
+      while (pos >= this.range.to) this.range = this.ranges[++this.rangeIndex];
       if (pos >= this.chunkPos && pos < this.chunkPos + this.chunk.length) {
         this.chunkOff = pos - this.chunkPos;
       } else {
@@ -11011,8 +13027,7 @@ var InputStream = class {
       return this.input.read(from, to);
     let result = "";
     for (let r of this.ranges) {
-      if (r.from >= to)
-        break;
+      if (r.from >= to) break;
       if (r.to > from)
         result += this.input.read(Math.max(r.from, from), Math.min(r.to, to));
     }
@@ -11028,7 +13043,10 @@ var TokenGroup = class {
     readToken(this.data, input, stack, this.id);
   }
 };
-TokenGroup.prototype.contextual = TokenGroup.prototype.fallback = TokenGroup.prototype.extend = false;
+TokenGroup.prototype.contextual =
+  TokenGroup.prototype.fallback =
+  TokenGroup.prototype.extend =
+    false;
 var ExternalTokenizer = class {
   /// Create a tokenizer. The first argument is the function that,
   /// given an input stream, scans for the types of tokens it
@@ -11043,101 +13061,115 @@ var ExternalTokenizer = class {
   }
 };
 function readToken(data, input, stack, group) {
-  let state = 0, groupMask = 1 << group, { parser: parser2 } = stack.p, { dialect } = parser2;
-  scan:
-    for (; ; ) {
-      if ((groupMask & data[state]) == 0)
-        break;
-      let accEnd = data[state + 1];
-      for (let i = state + 3; i < accEnd; i += 2)
-        if ((data[i + 1] & groupMask) > 0) {
-          let term = data[i];
-          if (dialect.allows(term) && (input.token.value == -1 || input.token.value == term || parser2.overrides(term, input.token.value))) {
-            input.acceptToken(term);
-            break;
-          }
+  let state = 0,
+    groupMask = 1 << group,
+    { parser: parser2 } = stack.p,
+    { dialect } = parser2;
+  scan: for (;;) {
+    if ((groupMask & data[state]) == 0) break;
+    let accEnd = data[state + 1];
+    for (let i = state + 3; i < accEnd; i += 2)
+      if ((data[i + 1] & groupMask) > 0) {
+        let term = data[i];
+        if (
+          dialect.allows(term) &&
+          (input.token.value == -1 ||
+            input.token.value == term ||
+            parser2.overrides(term, input.token.value))
+        ) {
+          input.acceptToken(term);
+          break;
         }
-      let next = input.next, low = 0, high = data[state + 2];
-      if (input.next < 0 && high > low && data[accEnd + high * 3 - 3] == 65535) {
-        state = data[accEnd + high * 3 - 1];
+      }
+    let next = input.next,
+      low = 0,
+      high = data[state + 2];
+    if (input.next < 0 && high > low && data[accEnd + high * 3 - 3] == 65535) {
+      state = data[accEnd + high * 3 - 1];
+      continue scan;
+    }
+    for (; low < high; ) {
+      let mid = (low + high) >> 1;
+      let index = accEnd + mid + (mid << 1);
+      let from = data[index],
+        to = data[index + 1];
+      if (next < from) high = mid;
+      else if (next >= to) low = mid + 1;
+      else {
+        state = data[index + 2];
+        input.advance();
         continue scan;
       }
-      for (; low < high; ) {
-        let mid = low + high >> 1;
-        let index = accEnd + mid + (mid << 1);
-        let from = data[index], to = data[index + 1];
-        if (next < from)
-          high = mid;
-        else if (next >= to)
-          low = mid + 1;
-        else {
-          state = data[index + 2];
-          input.advance();
-          continue scan;
-        }
-      }
-      break;
     }
+    break;
+  }
 }
 function decodeArray(input, Type = Uint16Array) {
-  if (typeof input != "string")
-    return input;
+  if (typeof input != "string") return input;
   let array = null;
   for (let pos = 0, out = 0; pos < input.length; ) {
     let value = 0;
-    for (; ; ) {
-      let next = input.charCodeAt(pos++), stop = false;
+    for (;;) {
+      let next = input.charCodeAt(pos++),
+        stop = false;
       if (next == 126) {
         value = 65535;
         break;
       }
-      if (next >= 92)
-        next--;
-      if (next >= 34)
-        next--;
+      if (next >= 92) next--;
+      if (next >= 34) next--;
       let digit = next - 32;
       if (digit >= 46) {
         digit -= 46;
         stop = true;
       }
       value += digit;
-      if (stop)
-        break;
+      if (stop) break;
       value *= 46;
     }
-    if (array)
-      array[out++] = value;
-    else
-      array = new Type(value);
+    if (array) array[out++] = value;
+    else array = new Type(value);
   }
   return array;
 }
-var verbose = typeof process != "undefined" && process.env && /\bparse\b/.test(process.env.LOG);
+var verbose =
+  typeof process != "undefined" &&
+  process.env &&
+  /\bparse\b/.test(process.env.LOG);
 var stackIDs = null;
 var Safety;
-(function(Safety2) {
-  Safety2[Safety2["Margin"] = 25] = "Margin";
+(function (Safety2) {
+  Safety2[(Safety2["Margin"] = 25)] = "Margin";
 })(Safety || (Safety = {}));
 function cutAt(tree, pos, side) {
   let cursor = tree.cursor(IterMode.IncludeAnonymous);
   cursor.moveTo(pos);
-  for (; ; ) {
+  for (;;) {
     if (!(side < 0 ? cursor.childBefore(pos) : cursor.childAfter(pos)))
-      for (; ; ) {
-        if ((side < 0 ? cursor.to < pos : cursor.from > pos) && !cursor.type.isError)
-          return side < 0 ? Math.max(0, Math.min(
-            cursor.to - 1,
-            pos - 25
-            /* Margin */
-          )) : Math.min(tree.length, Math.max(
-            cursor.from + 1,
-            pos + 25
-            /* Margin */
-          ));
-        if (side < 0 ? cursor.prevSibling() : cursor.nextSibling())
-          break;
-        if (!cursor.parent())
-          return side < 0 ? 0 : tree.length;
+      for (;;) {
+        if (
+          (side < 0 ? cursor.to < pos : cursor.from > pos) &&
+          !cursor.type.isError
+        )
+          return side < 0
+            ? Math.max(
+                0,
+                Math.min(
+                  cursor.to - 1,
+                  pos - 25,
+                  /* Margin */
+                ),
+              )
+            : Math.min(
+                tree.length,
+                Math.max(
+                  cursor.from + 1,
+                  pos + 25,
+                  /* Margin */
+                ),
+              );
+        if (side < 0 ? cursor.prevSibling() : cursor.nextSibling()) break;
+        if (!cursor.parent()) return side < 0 ? 0 : tree.length;
       }
   }
 }
@@ -11155,10 +13187,15 @@ var FragmentCursor = class {
     this.nextFragment();
   }
   nextFragment() {
-    let fr = this.fragment = this.i == this.fragments.length ? null : this.fragments[this.i++];
+    let fr = (this.fragment =
+      this.i == this.fragments.length ? null : this.fragments[this.i++]);
     if (fr) {
-      this.safeFrom = fr.openStart ? cutAt(fr.tree, fr.from + fr.offset, 1) - fr.offset : fr.from;
-      this.safeTo = fr.openEnd ? cutAt(fr.tree, fr.to + fr.offset, -1) - fr.offset : fr.to;
+      this.safeFrom = fr.openStart
+        ? cutAt(fr.tree, fr.from + fr.offset, 1) - fr.offset
+        : fr.from;
+      this.safeTo = fr.openEnd
+        ? cutAt(fr.tree, fr.to + fr.offset, -1) - fr.offset
+        : fr.to;
       while (this.trees.length) {
         this.trees.pop();
         this.start.pop();
@@ -11174,19 +13211,17 @@ var FragmentCursor = class {
   }
   // `pos` must be >= any previously given `pos` for this cursor
   nodeAt(pos) {
-    if (pos < this.nextStart)
-      return null;
-    while (this.fragment && this.safeTo <= pos)
-      this.nextFragment();
-    if (!this.fragment)
-      return null;
-    for (; ; ) {
+    if (pos < this.nextStart) return null;
+    while (this.fragment && this.safeTo <= pos) this.nextFragment();
+    if (!this.fragment) return null;
+    for (;;) {
       let last = this.trees.length - 1;
       if (last < 0) {
         this.nextFragment();
         return null;
       }
-      let top2 = this.trees[last], index = this.index[last];
+      let top2 = this.trees[last],
+        index = this.index[last];
       if (index == top2.children.length) {
         this.trees.pop();
         this.start.pop();
@@ -11201,13 +13236,11 @@ var FragmentCursor = class {
       }
       if (next instanceof Tree) {
         if (start2 == pos) {
-          if (start2 < this.safeFrom)
-            return null;
+          if (start2 < this.safeFrom) return null;
           let end2 = start2 + next.length;
           if (end2 <= this.safeTo) {
             let lookAhead = next.prop(NodeProp.lookAhead);
-            if (!lookAhead || end2 + lookAhead < this.fragment.to)
-              return next;
+            if (!lookAhead || end2 + lookAhead < this.fragment.to) return next;
           }
         }
         this.index[last]++;
@@ -11234,21 +13267,26 @@ var TokenCache = class {
   getActions(stack) {
     let actionIndex = 0;
     let main2 = null;
-    let { parser: parser2 } = stack.p, { tokenizers } = parser2;
+    let { parser: parser2 } = stack.p,
+      { tokenizers } = parser2;
     let mask = parser2.stateSlot(
       stack.state,
-      3
+      3,
       /* TokenizerMask */
     );
     let context = stack.curContext ? stack.curContext.hash : 0;
     let lookAhead = 0;
     for (let i = 0; i < tokenizers.length; i++) {
-      if ((1 << i & mask) == 0)
-        continue;
-      let tokenizer = tokenizers[i], token = this.tokens[i];
-      if (main2 && !tokenizer.fallback)
-        continue;
-      if (tokenizer.contextual || token.start != stack.pos || token.mask != mask || token.context != context) {
+      if (((1 << i) & mask) == 0) continue;
+      let tokenizer = tokenizers[i],
+        token = this.tokens[i];
+      if (main2 && !tokenizer.fallback) continue;
+      if (
+        tokenizer.contextual ||
+        token.start != stack.pos ||
+        token.mask != mask ||
+        token.context != context
+      ) {
         this.updateCachedToken(token, tokenizer, stack);
         token.mask = mask;
         token.context = context;
@@ -11258,19 +13296,26 @@ var TokenCache = class {
       if (token.value != 0) {
         let startIndex = actionIndex;
         if (token.extended > -1)
-          actionIndex = this.addActions(stack, token.extended, token.end, actionIndex);
-        actionIndex = this.addActions(stack, token.value, token.end, actionIndex);
+          actionIndex = this.addActions(
+            stack,
+            token.extended,
+            token.end,
+            actionIndex,
+          );
+        actionIndex = this.addActions(
+          stack,
+          token.value,
+          token.end,
+          actionIndex,
+        );
         if (!tokenizer.extend) {
           main2 = token;
-          if (actionIndex > startIndex)
-            break;
+          if (actionIndex > startIndex) break;
         }
       }
     }
-    while (this.actions.length > actionIndex)
-      this.actions.pop();
-    if (lookAhead)
-      stack.setLookAhead(lookAhead);
+    while (this.actions.length > actionIndex) this.actions.pop();
+    if (lookAhead) stack.setLookAhead(lookAhead);
     if (!main2 && stack.pos == this.stream.end) {
       main2 = new CachedToken();
       main2.value = stack.p.parser.eofTerm;
@@ -11281,9 +13326,9 @@ var TokenCache = class {
     return this.actions;
   }
   getMainToken(stack) {
-    if (this.mainToken)
-      return this.mainToken;
-    let main2 = new CachedToken(), { pos, p } = stack;
+    if (this.mainToken) return this.mainToken;
+    let main2 = new CachedToken(),
+      { pos, p } = stack;
     main2.start = pos;
     main2.end = Math.min(pos + 1, p.stream.end);
     main2.value = pos == p.stream.end ? p.parser.eofTerm : 0;
@@ -11295,12 +13340,13 @@ var TokenCache = class {
       let { parser: parser2 } = stack.p;
       for (let i = 0; i < parser2.specialized.length; i++)
         if (parser2.specialized[i] == token.value) {
-          let result = parser2.specializers[i](this.stream.read(token.start, token.end), stack);
+          let result = parser2.specializers[i](
+            this.stream.read(token.start, token.end),
+            stack,
+          );
           if (result >= 0 && stack.p.parser.dialect.allows(result >> 1)) {
-            if ((result & 1) == 0)
-              token.value = result >> 1;
-            else
-              token.extended = result >> 1;
+            if ((result & 1) == 0) token.value = result >> 1;
+            else token.extended = result >> 1;
             break;
           }
         }
@@ -11311,21 +13357,26 @@ var TokenCache = class {
   }
   putAction(action, token, end2, index) {
     for (let i = 0; i < index; i += 3)
-      if (this.actions[i] == action)
-        return index;
+      if (this.actions[i] == action) return index;
     this.actions[index++] = action;
     this.actions[index++] = token;
     this.actions[index++] = end2;
     return index;
   }
   addActions(stack, token, end2, index) {
-    let { state } = stack, { parser: parser2 } = stack.p, { data } = parser2;
+    let { state } = stack,
+      { parser: parser2 } = stack.p,
+      { data } = parser2;
     for (let set = 0; set < 2; set++) {
-      for (let i = parser2.stateSlot(
-        state,
-        set ? 2 : 1
-        /* Actions */
-      ); ; i += 3) {
+      for (
+        let i = parser2.stateSlot(
+          state,
+          set ? 2 : 1,
+          /* Actions */
+        );
+        ;
+        i += 3
+      ) {
         if (data[i] == 65535) {
           if (data[i + 1] == 1) {
             i = pair(data, i + 2);
@@ -11343,13 +13394,13 @@ var TokenCache = class {
   }
 };
 var Rec;
-(function(Rec2) {
-  Rec2[Rec2["Distance"] = 5] = "Distance";
-  Rec2[Rec2["MaxRemainingPerStep"] = 3] = "MaxRemainingPerStep";
-  Rec2[Rec2["MinBufferLengthPrune"] = 500] = "MinBufferLengthPrune";
-  Rec2[Rec2["ForceReduceLimit"] = 10] = "ForceReduceLimit";
-  Rec2[Rec2["CutDepth"] = 15e3] = "CutDepth";
-  Rec2[Rec2["CutTo"] = 9e3] = "CutTo";
+(function (Rec2) {
+  Rec2[(Rec2["Distance"] = 5)] = "Distance";
+  Rec2[(Rec2["MaxRemainingPerStep"] = 3)] = "MaxRemainingPerStep";
+  Rec2[(Rec2["MinBufferLengthPrune"] = 500)] = "MinBufferLengthPrune";
+  Rec2[(Rec2["ForceReduceLimit"] = 10)] = "ForceReduceLimit";
+  Rec2[(Rec2["CutDepth"] = 15e3)] = "CutDepth";
+  Rec2[(Rec2["CutTo"] = 9e3)] = "CutTo";
 })(Rec || (Rec = {}));
 var Parse = class {
   constructor(parser2, input, fragments, ranges) {
@@ -11366,7 +13417,10 @@ var Parse = class {
     this.topTerm = parser2.top[1];
     let { from } = ranges[0];
     this.stacks = [Stack.start(this, parser2.top[0], from)];
-    this.fragments = fragments.length && this.stream.end - from > parser2.bufferLength * 4 ? new FragmentCursor(fragments, parser2.nodeSet) : null;
+    this.fragments =
+      fragments.length && this.stream.end - from > parser2.bufferLength * 4
+        ? new FragmentCursor(fragments, parser2.nodeSet)
+        : null;
   }
   get parsedPos() {
     return this.minStackPos;
@@ -11378,12 +13432,13 @@ var Parse = class {
   // When the parse is finished, this will return a syntax tree. When
   // not, it returns `null`.
   advance() {
-    let stacks = this.stacks, pos = this.minStackPos;
-    let newStacks = this.stacks = [];
+    let stacks = this.stacks,
+      pos = this.minStackPos;
+    let newStacks = (this.stacks = []);
     let stopped, stoppedTokens;
     for (let i = 0; i < stacks.length; i++) {
       let stack = stacks[i];
-      for (; ; ) {
+      for (;;) {
         this.tokens.mainToken = null;
         if (stack.pos > pos) {
           newStacks.push(stack);
@@ -11403,46 +13458,54 @@ var Parse = class {
     }
     if (!newStacks.length) {
       let finished = stopped && findFinished(stopped);
-      if (finished)
-        return this.stackToTree(finished);
+      if (finished) return this.stackToTree(finished);
       if (this.parser.strict) {
         if (verbose && stopped)
-          console.log("Stuck with token " + (this.tokens.mainToken ? this.parser.getName(this.tokens.mainToken.value) : "none"));
+          console.log(
+            "Stuck with token " +
+              (this.tokens.mainToken
+                ? this.parser.getName(this.tokens.mainToken.value)
+                : "none"),
+          );
         throw new SyntaxError("No parse at " + pos);
       }
-      if (!this.recovering)
-        this.recovering = 5;
+      if (!this.recovering) this.recovering = 5;
     }
     if (this.recovering && stopped) {
-      let finished = this.stoppedAt != null && stopped[0].pos > this.stoppedAt ? stopped[0] : this.runRecovery(stopped, stoppedTokens, newStacks);
-      if (finished)
-        return this.stackToTree(finished.forceAll());
+      let finished =
+        this.stoppedAt != null && stopped[0].pos > this.stoppedAt
+          ? stopped[0]
+          : this.runRecovery(stopped, stoppedTokens, newStacks);
+      if (finished) return this.stackToTree(finished.forceAll());
     }
     if (this.recovering) {
       let maxRemaining = this.recovering == 1 ? 1 : this.recovering * 3;
       if (newStacks.length > maxRemaining) {
         newStacks.sort((a, b) => b.score - a.score);
-        while (newStacks.length > maxRemaining)
-          newStacks.pop();
+        while (newStacks.length > maxRemaining) newStacks.pop();
       }
-      if (newStacks.some((s) => s.reducePos > pos))
-        this.recovering--;
+      if (newStacks.some((s) => s.reducePos > pos)) this.recovering--;
     } else if (newStacks.length > 1) {
-      outer:
-        for (let i = 0; i < newStacks.length - 1; i++) {
-          let stack = newStacks[i];
-          for (let j = i + 1; j < newStacks.length; j++) {
-            let other = newStacks[j];
-            if (stack.sameState(other) || stack.buffer.length > 500 && other.buffer.length > 500) {
-              if ((stack.score - other.score || stack.buffer.length - other.buffer.length) > 0) {
-                newStacks.splice(j--, 1);
-              } else {
-                newStacks.splice(i--, 1);
-                continue outer;
-              }
+      outer: for (let i = 0; i < newStacks.length - 1; i++) {
+        let stack = newStacks[i];
+        for (let j = i + 1; j < newStacks.length; j++) {
+          let other = newStacks[j];
+          if (
+            stack.sameState(other) ||
+            (stack.buffer.length > 500 && other.buffer.length > 500)
+          ) {
+            if (
+              (stack.score - other.score ||
+                stack.buffer.length - other.buffer.length) > 0
+            ) {
+              newStacks.splice(j--, 1);
+            } else {
+              newStacks.splice(i--, 1);
+              continue outer;
             }
           }
         }
+      }
     }
     this.minStackPos = newStacks[0].pos;
     for (let i = 1; i < newStacks.length; i++)
@@ -11460,64 +13523,89 @@ var Parse = class {
   // given, stacks split off by ambiguous operations will be pushed to
   // `split`, or added to `stacks` if they move `pos` forward.
   advanceStack(stack, stacks, split) {
-    let start2 = stack.pos, { parser: parser2 } = this;
+    let start2 = stack.pos,
+      { parser: parser2 } = this;
     let base = verbose ? this.stackID(stack) + " -> " : "";
     if (this.stoppedAt != null && start2 > this.stoppedAt)
       return stack.forceReduce() ? stack : null;
     if (this.fragments) {
-      let strictCx = stack.curContext && stack.curContext.tracker.strict, cxHash = strictCx ? stack.curContext.hash : 0;
+      let strictCx = stack.curContext && stack.curContext.tracker.strict,
+        cxHash = strictCx ? stack.curContext.hash : 0;
       for (let cached = this.fragments.nodeAt(start2); cached; ) {
-        let match = this.parser.nodeSet.types[cached.type.id] == cached.type ? parser2.getGoto(stack.state, cached.type.id) : -1;
-        if (match > -1 && cached.length && (!strictCx || (cached.prop(NodeProp.contextHash) || 0) == cxHash)) {
+        let match =
+          this.parser.nodeSet.types[cached.type.id] == cached.type
+            ? parser2.getGoto(stack.state, cached.type.id)
+            : -1;
+        if (
+          match > -1 &&
+          cached.length &&
+          (!strictCx || (cached.prop(NodeProp.contextHash) || 0) == cxHash)
+        ) {
           stack.useNode(cached, match);
           if (verbose)
-            console.log(base + this.stackID(stack) + ` (via reuse of ${parser2.getName(cached.type.id)})`);
+            console.log(
+              base +
+                this.stackID(stack) +
+                ` (via reuse of ${parser2.getName(cached.type.id)})`,
+            );
           return true;
         }
-        if (!(cached instanceof Tree) || cached.children.length == 0 || cached.positions[0] > 0)
+        if (
+          !(cached instanceof Tree) ||
+          cached.children.length == 0 ||
+          cached.positions[0] > 0
+        )
           break;
         let inner = cached.children[0];
-        if (inner instanceof Tree && cached.positions[0] == 0)
-          cached = inner;
-        else
-          break;
+        if (inner instanceof Tree && cached.positions[0] == 0) cached = inner;
+        else break;
       }
     }
     let defaultReduce = parser2.stateSlot(
       stack.state,
-      4
+      4,
       /* DefaultReduce */
     );
     if (defaultReduce > 0) {
       stack.reduce(defaultReduce);
       if (verbose)
-        console.log(base + this.stackID(stack) + ` (via always-reduce ${parser2.getName(
-          defaultReduce & 65535
-          /* ValueMask */
-        )})`);
+        console.log(
+          base +
+            this.stackID(stack) +
+            ` (via always-reduce ${parser2.getName(
+              defaultReduce & 65535,
+              /* ValueMask */
+            )})`,
+        );
       return true;
     }
     if (stack.stack.length >= 15e3) {
-      while (stack.stack.length > 9e3 && stack.forceReduce()) {
-      }
+      while (stack.stack.length > 9e3 && stack.forceReduce()) {}
     }
     let actions = this.tokens.getActions(stack);
     for (let i = 0; i < actions.length; ) {
-      let action = actions[i++], term = actions[i++], end2 = actions[i++];
+      let action = actions[i++],
+        term = actions[i++],
+        end2 = actions[i++];
       let last = i == actions.length || !split;
       let localStack = last ? stack : stack.split();
       localStack.apply(action, term, end2);
       if (verbose)
-        console.log(base + this.stackID(localStack) + ` (via ${(action & 65536) == 0 ? "shift" : `reduce of ${parser2.getName(
-          action & 65535
-          /* ValueMask */
-        )}`} for ${parser2.getName(term)} @ ${start2}${localStack == stack ? "" : ", split"})`);
-      if (last)
-        return true;
-      else if (localStack.pos > start2)
-        stacks.push(localStack);
-      else
-        split.push(localStack);
+        console.log(
+          base +
+            this.stackID(localStack) +
+            ` (via ${
+              (action & 65536) == 0
+                ? "shift"
+                : `reduce of ${parser2.getName(
+                    action & 65535,
+                    /* ValueMask */
+                  )}`
+            } for ${parser2.getName(term)} @ ${start2}${localStack == stack ? "" : ", split"})`,
+        );
+      if (last) return true;
+      else if (localStack.pos > start2) stacks.push(localStack);
+      else split.push(localStack);
     }
     return false;
   }
@@ -11526,9 +13614,8 @@ var Parse = class {
   // forward and was given to `pushStackDedup`.
   advanceFully(stack, newStacks) {
     let pos = stack.pos;
-    for (; ; ) {
-      if (!this.advanceStack(stack, null, null))
-        return false;
+    for (;;) {
+      if (!this.advanceStack(stack, null, null)) return false;
       if (stack.pos > pos) {
         pushStackDedup(stack, newStacks);
         return true;
@@ -11536,30 +13623,29 @@ var Parse = class {
     }
   }
   runRecovery(stacks, tokens, newStacks) {
-    let finished = null, restarted = false;
+    let finished = null,
+      restarted = false;
     for (let i = 0; i < stacks.length; i++) {
-      let stack = stacks[i], token = tokens[i << 1], tokenEnd = tokens[(i << 1) + 1];
+      let stack = stacks[i],
+        token = tokens[i << 1],
+        tokenEnd = tokens[(i << 1) + 1];
       let base = verbose ? this.stackID(stack) + " -> " : "";
       if (stack.deadEnd) {
-        if (restarted)
-          continue;
+        if (restarted) continue;
         restarted = true;
         stack.restart();
-        if (verbose)
-          console.log(base + this.stackID(stack) + " (restarted)");
+        if (verbose) console.log(base + this.stackID(stack) + " (restarted)");
         let done = this.advanceFully(stack, newStacks);
-        if (done)
-          continue;
+        if (done) continue;
       }
-      let force = stack.split(), forceBase = base;
+      let force = stack.split(),
+        forceBase = base;
       for (let j = 0; force.forceReduce() && j < 10; j++) {
         if (verbose)
           console.log(forceBase + this.stackID(force) + " (via force-reduce)");
         let done = this.advanceFully(force, newStacks);
-        if (done)
-          break;
-        if (verbose)
-          forceBase = this.stackID(force) + " -> ";
+        if (done) break;
+        if (verbose) forceBase = this.stackID(force) + " -> ";
       }
       for (let insert of stack.recoverByInsert(token)) {
         if (verbose)
@@ -11573,7 +13659,11 @@ var Parse = class {
         }
         stack.recoverByDelete(token, tokenEnd);
         if (verbose)
-          console.log(base + this.stackID(stack) + ` (via recover-delete ${this.parser.getName(token)})`);
+          console.log(
+            base +
+              this.stackID(stack) +
+              ` (via recover-delete ${this.parser.getName(token)})`,
+          );
         pushStackDedup(stack, newStacks);
       } else if (!finished || finished.score < stack.score) {
         finished = stack;
@@ -11592,13 +13682,15 @@ var Parse = class {
       reused: this.reused,
       start: this.ranges[0].from,
       length: stack.pos - this.ranges[0].from,
-      minRepeatType: this.parser.minRepeatTerm
+      minRepeatType: this.parser.minRepeatTerm,
     });
   }
   stackID(stack) {
-    let id2 = (stackIDs || (stackIDs = /* @__PURE__ */ new WeakMap())).get(stack);
+    let id2 = (stackIDs || (stackIDs = /* @__PURE__ */ new WeakMap())).get(
+      stack,
+    );
     if (!id2)
-      stackIDs.set(stack, id2 = String.fromCodePoint(this.nextStackID++));
+      stackIDs.set(stack, (id2 = String.fromCodePoint(this.nextStackID++)));
     return id2 + stack;
   }
 };
@@ -11606,8 +13698,7 @@ function pushStackDedup(stack, newStacks) {
   for (let i = 0; i < newStacks.length; i++) {
     let other = newStacks[i];
     if (other.pos == stack.pos && other.sameState(stack)) {
-      if (newStacks[i].score < stack.score)
-        newStacks[i] = stack;
+      if (newStacks[i].score < stack.score) newStacks[i] = stack;
       return;
     }
   }
@@ -11641,43 +13732,45 @@ var LRParser = class _LRParser extends Parser {
     super();
     this.wrappers = [];
     if (spec.version != 14)
-      throw new RangeError(`Parser version (${spec.version}) doesn't match runtime version (${14})`);
+      throw new RangeError(
+        `Parser version (${spec.version}) doesn't match runtime version (${14})`,
+      );
     let nodeNames = spec.nodeNames.split(" ");
     this.minRepeatTerm = nodeNames.length;
-    for (let i = 0; i < spec.repeatNodeCount; i++)
-      nodeNames.push("");
+    for (let i = 0; i < spec.repeatNodeCount; i++) nodeNames.push("");
     let topTerms = Object.keys(spec.topRules).map((r) => spec.topRules[r][1]);
     let nodeProps = [];
-    for (let i = 0; i < nodeNames.length; i++)
-      nodeProps.push([]);
+    for (let i = 0; i < nodeNames.length; i++) nodeProps.push([]);
     function setProp(nodeID, prop, value) {
       nodeProps[nodeID].push([prop, prop.deserialize(String(value))]);
     }
     if (spec.nodeProps)
       for (let propSpec of spec.nodeProps) {
         let prop = propSpec[0];
-        if (typeof prop == "string")
-          prop = NodeProp[prop];
+        if (typeof prop == "string") prop = NodeProp[prop];
         for (let i = 1; i < propSpec.length; ) {
           let next = propSpec[i++];
           if (next >= 0) {
             setProp(next, prop, propSpec[i++]);
           } else {
             let value = propSpec[i + -next];
-            for (let j = -next; j > 0; j--)
-              setProp(propSpec[i++], prop, value);
+            for (let j = -next; j > 0; j--) setProp(propSpec[i++], prop, value);
             i++;
           }
         }
       }
-    this.nodeSet = new NodeSet(nodeNames.map((name, i) => NodeType.define({
-      name: i >= this.minRepeatTerm ? void 0 : name,
-      id: i,
-      props: nodeProps[i],
-      top: topTerms.indexOf(i) > -1,
-      error: i == 0,
-      skipped: spec.skippedNodes && spec.skippedNodes.indexOf(i) > -1
-    })));
+    this.nodeSet = new NodeSet(
+      nodeNames.map((name, i) =>
+        NodeType.define({
+          name: i >= this.minRepeatTerm ? void 0 : name,
+          id: i,
+          props: nodeProps[i],
+          top: topTerms.indexOf(i) > -1,
+          error: i == 0,
+          skipped: spec.skippedNodes && spec.skippedNodes.indexOf(i) > -1,
+        }),
+      ),
+    );
     if (spec.propSources)
       this.nodeSet = this.nodeSet.extend(...spec.propSources);
     this.strict = false;
@@ -11693,7 +13786,9 @@ var LRParser = class _LRParser extends Parser {
     this.data = decodeArray(spec.stateData);
     this.goto = decodeArray(spec.goto);
     this.maxTerm = spec.maxTerm;
-    this.tokenizers = spec.tokenizers.map((value) => typeof value == "number" ? new TokenGroup(tokenArray, value) : value);
+    this.tokenizers = spec.tokenizers.map((value) =>
+      typeof value == "number" ? new TokenGroup(tokenArray, value) : value,
+    );
     this.topRules = spec.topRules;
     this.dialects = spec.dialects || {};
     this.dynamicPrecedences = spec.dynamicPrecedences || null;
@@ -11705,46 +13800,43 @@ var LRParser = class _LRParser extends Parser {
   }
   createParse(input, fragments, ranges) {
     let parse2 = new Parse(this, input, fragments, ranges);
-    for (let w of this.wrappers)
-      parse2 = w(parse2, input, fragments, ranges);
+    for (let w of this.wrappers) parse2 = w(parse2, input, fragments, ranges);
     return parse2;
   }
   /// Get a goto table entry @internal
   getGoto(state, term, loose = false) {
     let table = this.goto;
-    if (term >= table[0])
-      return -1;
+    if (term >= table[0]) return -1;
     for (let pos = table[term + 1]; ; ) {
-      let groupTag = table[pos++], last = groupTag & 1;
+      let groupTag = table[pos++],
+        last = groupTag & 1;
       let target = table[pos++];
-      if (last && loose)
-        return target;
+      if (last && loose) return target;
       for (let end2 = pos + (groupTag >> 1); pos < end2; pos++)
-        if (table[pos] == state)
-          return target;
-      if (last)
-        return -1;
+        if (table[pos] == state) return target;
+      if (last) return -1;
     }
   }
   /// Check if this state has an action for a given terminal @internal
   hasAction(state, terminal) {
     let data = this.data;
     for (let set = 0; set < 2; set++) {
-      for (let i = this.stateSlot(
-        state,
-        set ? 2 : 1
-        /* Actions */
-      ), next; ; i += 3) {
+      for (
+        let i = this.stateSlot(
+            state,
+            set ? 2 : 1,
+            /* Actions */
+          ),
+          next;
+        ;
+        i += 3
+      ) {
         if ((next = data[i]) == 65535) {
-          if (data[i + 1] == 1)
-            next = data[i = pair(data, i + 2)];
-          else if (data[i + 1] == 2)
-            return pair(data, i + 2);
-          else
-            break;
+          if (data[i + 1] == 1) next = data[(i = pair(data, i + 2))];
+          else if (data[i + 1] == 2) return pair(data, i + 2);
+          else break;
         }
-        if (next == terminal || next == 0)
-          return pair(data, i + 1);
+        if (next == terminal || next == 0) return pair(data, i + 1);
       }
     }
     return 0;
@@ -11755,51 +13847,61 @@ var LRParser = class _LRParser extends Parser {
   }
   /// @internal
   stateFlag(state, flag) {
-    return (this.stateSlot(
-      state,
+    return (
+      (this.stateSlot(
+        state,
+        0,
+        /* Flags */
+      ) &
+        flag) >
       0
-      /* Flags */
-    ) & flag) > 0;
+    );
   }
   /// @internal
   validAction(state, action) {
-    if (action == this.stateSlot(
-      state,
-      4
-      /* DefaultReduce */
-    ))
+    if (
+      action ==
+      this.stateSlot(
+        state,
+        4,
+        /* DefaultReduce */
+      )
+    )
       return true;
-    for (let i = this.stateSlot(
-      state,
-      1
-      /* Actions */
-    ); ; i += 3) {
+    for (
+      let i = this.stateSlot(
+        state,
+        1,
+        /* Actions */
+      );
+      ;
+      i += 3
+    ) {
       if (this.data[i] == 65535) {
-        if (this.data[i + 1] == 1)
-          i = pair(this.data, i + 2);
-        else
-          return false;
+        if (this.data[i + 1] == 1) i = pair(this.data, i + 2);
+        else return false;
       }
-      if (action == pair(this.data, i + 1))
-        return true;
+      if (action == pair(this.data, i + 1)) return true;
     }
   }
   /// Get the states that can follow this one through shift actions or
   /// goto jumps. @internal
   nextStates(state) {
     let result = [];
-    for (let i = this.stateSlot(
-      state,
-      1
-      /* Actions */
-    ); ; i += 3) {
+    for (
+      let i = this.stateSlot(
+        state,
+        1,
+        /* Actions */
+      );
+      ;
+      i += 3
+    ) {
       if (this.data[i] == 65535) {
-        if (this.data[i + 1] == 1)
-          i = pair(this.data, i + 2);
-        else
-          break;
+        if (this.data[i + 1] == 1) i = pair(this.data, i + 2);
+        else break;
       }
-      if ((this.data[i + 2] & 65536 >> 16) == 0) {
+      if ((this.data[i + 2] & (65536 >> 16)) == 0) {
         let value = this.data[i + 1];
         if (!result.some((v, i2) => i2 & 1 && v == value))
           result.push(this.data[i], value);
@@ -11810,19 +13912,19 @@ var LRParser = class _LRParser extends Parser {
   /// @internal
   overrides(token, prev) {
     let iPrev = findOffset(this.data, this.tokenPrecTable, prev);
-    return iPrev < 0 || findOffset(this.data, this.tokenPrecTable, token) < iPrev;
+    return (
+      iPrev < 0 || findOffset(this.data, this.tokenPrecTable, token) < iPrev
+    );
   }
   /// Configure the parser. Returns a new parser instance that has the
   /// given settings modified. Settings not provided in `config` are
   /// kept from the original parser.
   configure(config2) {
     let copy = Object.assign(Object.create(_LRParser.prototype), this);
-    if (config2.props)
-      copy.nodeSet = this.nodeSet.extend(...config2.props);
+    if (config2.props) copy.nodeSet = this.nodeSet.extend(...config2.props);
     if (config2.top) {
       let info = this.topRules[config2.top];
-      if (!info)
-        throw new RangeError(`Invalid top rule name ${config2.top}`);
+      if (!info) throw new RangeError(`Invalid top rule name ${config2.top}`);
       copy.top = info;
     }
     if (config2.tokenizers)
@@ -11834,23 +13936,17 @@ var LRParser = class _LRParser extends Parser {
       copy.specializers = this.specializers.slice();
       copy.specializerSpecs = this.specializerSpecs.map((s, i) => {
         let found = config2.specializers.find((r) => r.from == s.external);
-        if (!found)
-          return s;
+        if (!found) return s;
         let spec = Object.assign(Object.assign({}, s), { external: found.to });
         copy.specializers[i] = getSpecializer(spec);
         return spec;
       });
     }
-    if (config2.contextTracker)
-      copy.context = config2.contextTracker;
-    if (config2.dialect)
-      copy.dialect = this.parseDialect(config2.dialect);
-    if (config2.strict != null)
-      copy.strict = config2.strict;
-    if (config2.wrap)
-      copy.wrappers = copy.wrappers.concat(config2.wrap);
-    if (config2.bufferLength != null)
-      copy.bufferLength = config2.bufferLength;
+    if (config2.contextTracker) copy.context = config2.contextTracker;
+    if (config2.dialect) copy.dialect = this.parseDialect(config2.dialect);
+    if (config2.strict != null) copy.strict = config2.strict;
+    if (config2.wrap) copy.wrappers = copy.wrappers.concat(config2.wrap);
+    if (config2.bufferLength != null) copy.bufferLength = config2.bufferLength;
     return copy;
   }
   /// Tells you whether any [parse wrappers](#lr.ParserConfig.wrap)
@@ -11863,7 +13959,9 @@ var LRParser = class _LRParser extends Parser {
   /// `--names` option. By default, only the names of tagged terms are
   /// stored.
   getName(term) {
-    return this.termNames ? this.termNames[term] : String(term <= this.maxNode && this.nodeSet.types[term].name || term);
+    return this.termNames
+      ? this.termNames[term]
+      : String((term <= this.maxNode && this.nodeSet.types[term].name) || term);
   }
   /// The eof term id is always allocated directly after the node
   /// types. @internal
@@ -11881,17 +13979,21 @@ var LRParser = class _LRParser extends Parser {
   }
   /// @internal
   parseDialect(dialect) {
-    let values = Object.keys(this.dialects), flags = values.map(() => false);
+    let values = Object.keys(this.dialects),
+      flags = values.map(() => false);
     if (dialect)
       for (let part of dialect.split(" ")) {
         let id2 = values.indexOf(part);
-        if (id2 >= 0)
-          flags[id2] = true;
+        if (id2 >= 0) flags[id2] = true;
       }
     let disabled = null;
     for (let i = 0; i < values.length; i++)
       if (!flags[i]) {
-        for (let j = this.dialects[values[i]], id2; (id2 = this.data[j++]) != 65535; )
+        for (
+          let j = this.dialects[values[i]], id2;
+          (id2 = this.data[j++]) != 65535;
+
+        )
           (disabled || (disabled = new Uint8Array(this.maxTerm + 1)))[id2] = 1;
       }
     return new Dialect(dialect, flags, disabled);
@@ -11903,23 +14005,27 @@ var LRParser = class _LRParser extends Parser {
   }
 };
 function pair(data, off) {
-  return data[off] | data[off + 1] << 16;
+  return data[off] | (data[off + 1] << 16);
 }
 function findOffset(data, start2, term) {
   for (let i = start2, next; (next = data[i]) != 65535; i++)
-    if (next == term)
-      return i - start2;
+    if (next == term) return i - start2;
   return -1;
 }
 function findFinished(stacks) {
   let best = null;
   for (let stack of stacks) {
     let stopped = stack.p.stoppedAt;
-    if ((stack.pos == stack.p.stream.end || stopped != null && stack.pos > stopped) && stack.p.parser.stateFlag(
-      stack.state,
-      2
-      /* Accepting */
-    ) && (!best || best.score < stack.score))
+    if (
+      (stack.pos == stack.p.stream.end ||
+        (stopped != null && stack.pos > stopped)) &&
+      stack.p.parser.stateFlag(
+        stack.state,
+        2,
+        /* Accepting */
+      ) &&
+      (!best || best.score < stack.score)
+    )
       best = stack;
   }
   return best;
@@ -11927,7 +14033,7 @@ function findFinished(stacks) {
 function getSpecializer(spec) {
   if (spec.external) {
     let mask = spec.extend ? 1 : 0;
-    return (value, stack) => spec.external(value, stack) << 1 | mask;
+    return (value, stack) => (spec.external(value, stack) << 1) | mask;
   }
   return spec.get;
 }
@@ -11948,31 +14054,8 @@ var LineComment = 5;
 var BlockComment = 6;
 var Dialect_ts = 1;
 var space = [
-  9,
-  10,
-  11,
-  12,
-  13,
-  32,
-  133,
-  160,
-  5760,
-  8192,
-  8193,
-  8194,
-  8195,
-  8196,
-  8197,
-  8198,
-  8199,
-  8200,
-  8201,
-  8202,
-  8232,
-  8233,
-  8239,
-  8287,
-  12288
+  9, 10, 11, 12, 13, 32, 133, 160, 5760, 8192, 8193, 8194, 8195, 8196, 8197,
+  8198, 8199, 8200, 8201, 8202, 8232, 8233, 8239, 8287, 12288,
 ];
 var braceR = 125;
 var braceL = 123;
@@ -11987,53 +14070,68 @@ var backslash = 92;
 var trackNewline = new ContextTracker({
   start: false,
   shift(context, term) {
-    return term == LineComment || term == BlockComment || term == spaces ? context : term == newline;
+    return term == LineComment || term == BlockComment || term == spaces
+      ? context
+      : term == newline;
   },
-  strict: false
+  strict: false,
 });
-var insertSemicolon = new ExternalTokenizer((input, stack) => {
-  let { next } = input;
-  if ((next == braceR || next == -1 || stack.context) && stack.canShift(insertSemi))
-    input.acceptToken(insertSemi);
-}, { contextual: true, fallback: true });
-var noSemicolon = new ExternalTokenizer((input, stack) => {
-  let { next } = input, after;
-  if (space.indexOf(next) > -1)
-    return;
-  if (next == slash && ((after = input.peek(1)) == slash || after == star))
-    return;
-  if (next != braceR && next != semicolon && next != -1 && !stack.context && stack.canShift(noSemi))
-    input.acceptToken(noSemi);
-}, { contextual: true });
-var incdecToken = new ExternalTokenizer((input, stack) => {
-  let { next } = input;
-  if (next == plus || next == minus) {
-    input.advance();
-    if (next == input.next) {
+var insertSemicolon = new ExternalTokenizer(
+  (input, stack) => {
+    let { next } = input;
+    if (
+      (next == braceR || next == -1 || stack.context) &&
+      stack.canShift(insertSemi)
+    )
+      input.acceptToken(insertSemi);
+  },
+  { contextual: true, fallback: true },
+);
+var noSemicolon = new ExternalTokenizer(
+  (input, stack) => {
+    let { next } = input,
+      after;
+    if (space.indexOf(next) > -1) return;
+    if (next == slash && ((after = input.peek(1)) == slash || after == star))
+      return;
+    if (
+      next != braceR &&
+      next != semicolon &&
+      next != -1 &&
+      !stack.context &&
+      stack.canShift(noSemi)
+    )
+      input.acceptToken(noSemi);
+  },
+  { contextual: true },
+);
+var incdecToken = new ExternalTokenizer(
+  (input, stack) => {
+    let { next } = input;
+    if (next == plus || next == minus) {
       input.advance();
-      let mayPostfix = !stack.context && stack.canShift(incdec);
-      input.acceptToken(mayPostfix ? incdec : incdecPrefix);
+      if (next == input.next) {
+        input.advance();
+        let mayPostfix = !stack.context && stack.canShift(incdec);
+        input.acceptToken(mayPostfix ? incdec : incdecPrefix);
+      }
     }
-  }
-}, { contextual: true });
+  },
+  { contextual: true },
+);
 var template = new ExternalTokenizer((input) => {
   for (let afterDollar = false, i = 0; ; i++) {
     let { next } = input;
     if (next < 0) {
-      if (i)
-        input.acceptToken(templateContent);
+      if (i) input.acceptToken(templateContent);
       break;
     } else if (next == backtick) {
-      if (i)
-        input.acceptToken(templateContent);
-      else
-        input.acceptToken(templateEnd, 1);
+      if (i) input.acceptToken(templateContent);
+      else input.acceptToken(templateEnd, 1);
       break;
     } else if (next == braceL && afterDollar) {
-      if (i == 1)
-        input.acceptToken(InterpolationStart, 1);
-      else
-        input.acceptToken(templateContent, -1);
+      if (i == 1) input.acceptToken(InterpolationStart, 1);
+      else input.acceptToken(templateContent, -1);
       break;
     } else if (next == 10 && i) {
       input.advance();
@@ -12047,23 +14145,30 @@ var template = new ExternalTokenizer((input) => {
   }
 });
 var tsExtends = new ExternalTokenizer((input, stack) => {
-  if (input.next != 101 || !stack.dialectEnabled(Dialect_ts))
-    return;
+  if (input.next != 101 || !stack.dialectEnabled(Dialect_ts)) return;
   input.advance();
   for (let i = 0; i < 6; i++) {
-    if (input.next != "xtends".charCodeAt(i))
-      return;
+    if (input.next != "xtends".charCodeAt(i)) return;
     input.advance();
   }
-  if (input.next >= 57 && input.next <= 65 || input.next >= 48 && input.next <= 90 || input.next == 95 || input.next >= 97 && input.next <= 122 || input.next > 160)
+  if (
+    (input.next >= 57 && input.next <= 65) ||
+    (input.next >= 48 && input.next <= 90) ||
+    input.next == 95 ||
+    (input.next >= 97 && input.next <= 122) ||
+    input.next > 160
+  )
     return;
   input.acceptToken(TSExtends);
 });
 var jsHighlight = (0, import_highlight.styleTags)({
   "get set async static": import_highlight.tags.modifier,
-  "for while do if else switch try catch finally return throw break continue default case": import_highlight.tags.controlKeyword,
-  "in of await yield void typeof delete instanceof": import_highlight.tags.operatorKeyword,
-  "let var const function class extends": import_highlight.tags.definitionKeyword,
+  "for while do if else switch try catch finally return throw break continue default case":
+    import_highlight.tags.controlKeyword,
+  "in of await yield void typeof delete instanceof":
+    import_highlight.tags.operatorKeyword,
+  "let var const function class extends":
+    import_highlight.tags.definitionKeyword,
   "import export from": import_highlight.tags.moduleKeyword,
   "with debugger as new": import_highlight.tags.keyword,
   TemplateString: import_highlight.tags.special(import_highlight.tags.string),
@@ -12073,16 +14178,30 @@ var jsHighlight = (0, import_highlight.styleTags)({
   null: import_highlight.tags.null,
   Star: import_highlight.tags.modifier,
   VariableName: import_highlight.tags.variableName,
-  "CallExpression/VariableName TaggedTemplateExpression/VariableName": import_highlight.tags.function(import_highlight.tags.variableName),
-  VariableDefinition: import_highlight.tags.definition(import_highlight.tags.variableName),
+  "CallExpression/VariableName TaggedTemplateExpression/VariableName":
+    import_highlight.tags.function(import_highlight.tags.variableName),
+  VariableDefinition: import_highlight.tags.definition(
+    import_highlight.tags.variableName,
+  ),
   Label: import_highlight.tags.labelName,
   PropertyName: import_highlight.tags.propertyName,
-  PrivatePropertyName: import_highlight.tags.special(import_highlight.tags.propertyName),
-  "CallExpression/MemberExpression/PropertyName": import_highlight.tags.function(import_highlight.tags.propertyName),
-  "FunctionDeclaration/VariableDefinition": import_highlight.tags.function(import_highlight.tags.definition(import_highlight.tags.variableName)),
-  "ClassDeclaration/VariableDefinition": import_highlight.tags.definition(import_highlight.tags.className),
-  PropertyDefinition: import_highlight.tags.definition(import_highlight.tags.propertyName),
-  PrivatePropertyDefinition: import_highlight.tags.definition(import_highlight.tags.special(import_highlight.tags.propertyName)),
+  PrivatePropertyName: import_highlight.tags.special(
+    import_highlight.tags.propertyName,
+  ),
+  "CallExpression/MemberExpression/PropertyName":
+    import_highlight.tags.function(import_highlight.tags.propertyName),
+  "FunctionDeclaration/VariableDefinition": import_highlight.tags.function(
+    import_highlight.tags.definition(import_highlight.tags.variableName),
+  ),
+  "ClassDeclaration/VariableDefinition": import_highlight.tags.definition(
+    import_highlight.tags.className,
+  ),
+  PropertyDefinition: import_highlight.tags.definition(
+    import_highlight.tags.propertyName,
+  ),
+  PrivatePropertyDefinition: import_highlight.tags.definition(
+    import_highlight.tags.special(import_highlight.tags.propertyName),
+  ),
   UpdateOp: import_highlight.tags.updateOperator,
   LineComment: import_highlight.tags.lineComment,
   BlockComment: import_highlight.tags.blockComment,
@@ -12099,46 +14218,270 @@ var jsHighlight = (0, import_highlight.styleTags)({
   "( )": import_highlight.tags.paren,
   "[ ]": import_highlight.tags.squareBracket,
   "{ }": import_highlight.tags.brace,
-  "InterpolationStart InterpolationEnd": import_highlight.tags.special(import_highlight.tags.brace),
+  "InterpolationStart InterpolationEnd": import_highlight.tags.special(
+    import_highlight.tags.brace,
+  ),
   ".": import_highlight.tags.derefOperator,
   ", ;": import_highlight.tags.separator,
   TypeName: import_highlight.tags.typeName,
-  TypeDefinition: import_highlight.tags.definition(import_highlight.tags.typeName),
-  "type enum interface implements namespace module declare": import_highlight.tags.definitionKeyword,
+  TypeDefinition: import_highlight.tags.definition(
+    import_highlight.tags.typeName,
+  ),
+  "type enum interface implements namespace module declare":
+    import_highlight.tags.definitionKeyword,
   "abstract global Privacy readonly override": import_highlight.tags.modifier,
   "is keyof unique infer": import_highlight.tags.operatorKeyword,
   JSXAttributeValue: import_highlight.tags.attributeValue,
   JSXText: import_highlight.tags.content,
-  "JSXStartTag JSXStartCloseTag JSXSelfCloseEndTag JSXEndTag": import_highlight.tags.angleBracket,
+  "JSXStartTag JSXStartCloseTag JSXSelfCloseEndTag JSXEndTag":
+    import_highlight.tags.angleBracket,
   "JSXIdentifier JSXNameSpacedName": import_highlight.tags.tagName,
-  "JSXAttribute/JSXIdentifier JSXAttribute/JSXNameSpacedName": import_highlight.tags.attributeName
+  "JSXAttribute/JSXIdentifier JSXAttribute/JSXNameSpacedName":
+    import_highlight.tags.attributeName,
 });
-var spec_identifier = { __proto__: null, export: 18, as: 23, from: 29, default: 32, async: 37, function: 38, this: 48, true: 56, false: 56, void: 66, typeof: 70, null: 86, super: 88, new: 122, await: 139, yield: 141, delete: 142, class: 152, extends: 154, public: 197, private: 197, protected: 197, readonly: 199, instanceof: 220, in: 222, const: 224, import: 256, keyof: 307, unique: 311, infer: 317, is: 351, abstract: 371, implements: 373, type: 375, let: 378, var: 380, interface: 387, enum: 391, namespace: 397, module: 399, declare: 403, global: 407, for: 428, of: 437, while: 440, with: 444, do: 448, if: 452, else: 454, switch: 458, case: 464, try: 470, catch: 474, finally: 478, return: 482, throw: 486, break: 490, continue: 494, debugger: 498 };
-var spec_word = { __proto__: null, async: 109, get: 111, set: 113, public: 161, private: 161, protected: 161, static: 163, abstract: 165, override: 167, readonly: 173, new: 355 };
+var spec_identifier = {
+  __proto__: null,
+  export: 18,
+  as: 23,
+  from: 29,
+  default: 32,
+  async: 37,
+  function: 38,
+  this: 48,
+  true: 56,
+  false: 56,
+  void: 66,
+  typeof: 70,
+  null: 86,
+  super: 88,
+  new: 122,
+  await: 139,
+  yield: 141,
+  delete: 142,
+  class: 152,
+  extends: 154,
+  public: 197,
+  private: 197,
+  protected: 197,
+  readonly: 199,
+  instanceof: 220,
+  in: 222,
+  const: 224,
+  import: 256,
+  keyof: 307,
+  unique: 311,
+  infer: 317,
+  is: 351,
+  abstract: 371,
+  implements: 373,
+  type: 375,
+  let: 378,
+  var: 380,
+  interface: 387,
+  enum: 391,
+  namespace: 397,
+  module: 399,
+  declare: 403,
+  global: 407,
+  for: 428,
+  of: 437,
+  while: 440,
+  with: 444,
+  do: 448,
+  if: 452,
+  else: 454,
+  switch: 458,
+  case: 464,
+  try: 470,
+  catch: 474,
+  finally: 478,
+  return: 482,
+  throw: 486,
+  break: 490,
+  continue: 494,
+  debugger: 498,
+};
+var spec_word = {
+  __proto__: null,
+  async: 109,
+  get: 111,
+  set: 113,
+  public: 161,
+  private: 161,
+  protected: 161,
+  static: 163,
+  abstract: 165,
+  override: 167,
+  readonly: 173,
+  new: 355,
+};
 var spec_LessThan = { __proto__: null, "<": 129 };
 var parser = LRParser.deserialize({
   version: 14,
-  states: "$8SO`QdOOO'QQ(C|O'#ChO'XOWO'#DVO)dQdO'#D]O)tQdO'#DhO){QdO'#DrO-xQdO'#DxOOQO'#E]'#E]O.]Q`O'#E[O.bQ`O'#E[OOQ(C['#Ef'#EfO0aQ(C|O'#ItO2wQ(C|O'#IuO3eQ`O'#EzO3jQ!bO'#FaOOQ(C['#FS'#FSO3rO#tO'#FSO4QQ&jO'#FhO5bQ`O'#FgOOQ(C['#Iu'#IuOOQ(CW'#It'#ItOOQS'#J^'#J^O5gQ`O'#HpO5lQ(ChO'#HqOOQS'#Ih'#IhOOQS'#Hr'#HrQ`QdOOO){QdO'#DjO5tQ`O'#G[O5yQ&jO'#CmO6XQ`O'#EZO6dQ`O'#EgO6iQ,UO'#FRO7TQ`O'#G[O7YQ`O'#G`O7eQ`O'#G`O7sQ`O'#GcO7sQ`O'#GdO7sQ`O'#GfO5tQ`O'#GiO8dQ`O'#GlO9rQ`O'#CdO:SQ`O'#GyO:[Q`O'#HPO:[Q`O'#HRO`QdO'#HTO:[Q`O'#HVO:[Q`O'#HYO:aQ`O'#H`O:fQ(CjO'#HfO){QdO'#HhO:qQ(CjO'#HjO:|Q(CjO'#HlO5lQ(ChO'#HnO){QdO'#DWOOOW'#Ht'#HtO;XOWO,59qOOQ(C[,59q,59qO=jQtO'#ChO=tQdO'#HuO>XQ`O'#IvO@WQtO'#IvO'dQdO'#IvO@_Q`O,59wO@uQ7[O'#DbOAnQ`O'#E]OA{Q`O'#JROBWQ`O'#JQOBWQ`O'#JQOB`Q`O,5:yOBeQ`O'#JPOBlQaO'#DyO5yQ&jO'#EZOBzQ`O'#EZOCVQpO'#FROOQ(C[,5:S,5:SOC_QdO,5:SOE]Q(C|O,5:^OEyQ`O,5:dOFdQ(ChO'#JOO7YQ`O'#I}OFkQ`O'#I}OFsQ`O,5:xOFxQ`O'#I}OGWQdO,5:vOIWQ&jO'#EWOJeQ`O,5:vOKwQ&jO'#DlOLOQdO'#DqOLYQ7[O,5;PO){QdO,5;POOQS'#Er'#ErOOQS'#Et'#EtO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;ROOQS'#Ex'#ExOLbQdO,5;cOOQ(C[,5;h,5;hOOQ(C[,5;i,5;iONbQ`O,5;iOOQ(C[,5;j,5;jO){QdO'#IPONgQ(ChO,5<TO! RQ&jO,5;RO){QdO,5;fO! kQ!bO'#JVO! YQ!bO'#JVO! rQ!bO'#JVO!!TQ!bO,5;qOOOO,5;{,5;{O!!cQdO'#FcOOOO'#IO'#IOO3rO#tO,5;nO!!jQ!bO'#FeOOQ(C[,5;n,5;nO!#WQ,VO'#CrOOQ(C]'#Cu'#CuO!#kQ`O'#CuO!#pOWO'#CyO!$^Q,VO,5<QO!$eQ`O,5<SO!%tQ&jO'#FrO!&RQ`O'#FsO!&WQ`O'#FsO!&]Q&jO'#FwO!'[Q7[O'#F{O!'}Q,VO'#IqOOQ(C]'#Iq'#IqO!(XQaO'#IpO!(gQ`O'#IoO!(oQ`O'#CqOOQ(C]'#Cs'#CsOOQ(C]'#C|'#C|O!(wQ`O'#DOOJjQ&jO'#FjOJjQ&jO'#FlO!(|Q`O'#FnO!)RQ`O'#FoO!&WQ`O'#FuOJjQ&jO'#FzO!)WQ`O'#E^O!)oQ`O,5<RO`QdO,5>[OOQS'#Ik'#IkOOQS,5>],5>]OOQS-E;p-E;pO!+kQ(C|O,5:UOOQ(CX'#Cp'#CpO!,[Q&kO,5<vOOQO'#Cf'#CfO!,mQ(ChO'#IlO5bQ`O'#IlO:aQ`O,59XO!-OQ!bO,59XO!-WQ&jO,59XO5yQ&jO,59XO!-cQ`O,5:vO!-kQ`O'#GxO!-yQ`O'#JbO){QdO,5;kO!.RQ7[O,5;mO!.WQ`O,5=cO!.]Q`O,5=cO!.bQ`O,5=cO5lQ(ChO,5=cO5tQ`O,5<vO!.pQ`O'#E_O!/UQ7[O'#E`OOQ(CW'#JP'#JPO!/gQ(ChO'#J_O5lQ(ChO,5<zO7sQ`O,5=QOOQP'#Cr'#CrO!/rQ!bO,5<}O!/zQ!cO,5=OO!0VQ`O,5=QO!0[QpO,5=TO:aQ`O'#GnO5tQ`O'#GpO!0dQ`O'#GpO5yQ&jO'#GsO!0iQ`O'#GsOOQS,5=W,5=WO!0nQ`O'#GtO!0vQ`O'#CmO!0{Q`O,59OO!1VQ`O,59OO!3XQdO,59OOOQS,59O,59OO!3fQ(ChO,59OO){QdO,59OO!3qQdO'#G{OOQS'#G|'#G|OOQS'#G}'#G}O`QdO,5=eO!4RQ`O,5=eO){QdO'#DxO`QdO,5=kO`QdO,5=mO!4WQ`O,5=oO`QdO,5=qO!4]Q`O,5=tO!4bQdO,5=zOOQS,5>Q,5>QO){QdO,5>QO5lQ(ChO,5>SOOQS,5>U,5>UO!8cQ`O,5>UOOQS,5>W,5>WO!8cQ`O,5>WOOQS,5>Y,5>YO!8hQpO,59rOOOW-E;r-E;rOOQ(C[1G/]1G/]O!8mQtO,5>aO'dQdO,5>aOOQO,5>f,5>fO!8wQdO'#HuOOQO-E;s-E;sO!9UQ`O,5?bO!9^QtO,5?bO!9eQ`O,5?lOOQ(C[1G/c1G/cO!9mQ!bO'#DTOOQO'#Ix'#IxO){QdO'#IxO!:[Q!bO'#IxO!:yQ!bO'#DcO!;[Q7[O'#DcO!=gQdO'#DcO!=nQ`O'#IwO!=vQ`O,59|O!={Q`O'#EaO!>ZQ`O'#JSO!>cQ`O,5:zO!>yQ7[O'#DcO){QdO,5?mO!?TQ`O'#HzOOQO-E;x-E;xO!9eQ`O,5?lOOQ(CW1G0e1G0eO!@aQ7[O'#D|OOQ(C[,5:e,5:eO){QdO,5:eOIWQ&jO,5:eO!@hQaO,5:eO:aQ`O,5:uO!-OQ!bO,5:uO!-WQ&jO,5:uO5yQ&jO,5:uOOQ(C[1G/n1G/nOOQ(C[1G0O1G0OOOQ(CW'#EV'#EVO){QdO,5?jO!@sQ(ChO,5?jO!AUQ(ChO,5?jO!A]Q`O,5?iO!AeQ`O'#H|O!A]Q`O,5?iOOQ(CW1G0d1G0dO7YQ`O,5?iOOQ(C[1G0b1G0bO!BPQ(C|O1G0bO!CRQ(CyO,5:rOOQ(C]'#Fq'#FqO!CoQ(C}O'#IqOGWQdO1G0bO!EqQ,VO'#IyO!E{Q`O,5:WO!FQQtO'#IzO){QdO'#IzO!F[Q`O,5:]OOQ(C]'#DT'#DTOOQ(C[1G0k1G0kO!FaQ`O1G0kO!HrQ(C|O1G0mO!HyQ(C|O1G0mO!K^Q(C|O1G0mO!KeQ(C|O1G0mO!MlQ(C|O1G0mO!NPQ(C|O1G0mO#!pQ(C|O1G0mO#!wQ(C|O1G0mO#%[Q(C|O1G0mO#%cQ(C|O1G0mO#'WQ(C|O1G0mO#*QQMlO'#ChO#+{QMlO1G0}O#-vQMlO'#IuOOQ(C[1G1T1G1TO#.ZQ(C|O,5>kOOQ(CW-E;}-E;}O#.zQ(C}O1G0mOOQ(C[1G0m1G0mO#1PQ(C|O1G1QO#1pQ!bO,5;sO#1uQ!bO,5;tO#1zQ!bO'#F[O#2`Q`O'#FZOOQO'#JW'#JWOOQO'#H}'#H}O#2eQ!bO1G1]OOQ(C[1G1]1G1]OOOO1G1f1G1fO#2sQMlO'#ItO#2}Q`O,5;}OLbQdO,5;}OOOO-E;|-E;|OOQ(C[1G1Y1G1YOOQ(C[,5<P,5<PO#3SQ!bO,5<POOQ(C],59a,59aOIWQ&jO'#C{OOOW'#Hs'#HsO#3XOWO,59eOOQ(C],59e,59eO){QdO1G1lO!)RQ`O'#IRO#3dQ`O,5<eOOQ(C],5<b,5<bOOQO'#GV'#GVOJjQ&jO,5<pOOQO'#GX'#GXOJjQ&jO,5<rOIWQ&jO,5<tOOQO1G1n1G1nO#3oQqO'#CpO#4SQqO,5<^O#4ZQ`O'#JZO5tQ`O'#JZO#4iQ`O,5<`OJjQ&jO,5<_O#4nQ`O'#FtO#4yQ`O,5<_O#5OQqO'#FqO#5]QqO'#J[O#5gQ`O'#J[OIWQ&jO'#J[O#5lQ`O,5<cOOQ(CW'#Dg'#DgO#5qQ!bO'#F|O!'VQ7[O'#F|O!'VQ7[O'#GOO#6SQ`O'#GPO!&WQ`O'#GSO#6XQ(ChO'#ITO#6dQ7[O,5<gOOQ(C],5<g,5<gO#6kQ7[O'#F|O#6yQ7[O'#F}O#7RQ7[O'#F}OOQ(C],5<u,5<uOJjQ&jO,5?[OJjQ&jO,5?[O#7WQ`O'#IUO#7cQ`O,5?ZO#7kQ`O,59]OOQ(C]'#Ch'#ChO#8[Q,VO,59jOOQ(C],59j,59jO#8}Q,VO,5<UO#9pQ,VO,5<WO#9zQ`O,5<YOOQ(C],5<Z,5<ZO#:PQ`O,5<aO#:UQ,VO,5<fOGWQdO1G1mO#:fQ`O1G1mOOQS1G3v1G3vOOQ(C[1G/p1G/pONbQ`O1G/pOOQS1G2b1G2bOIWQ&jO1G2bO){QdO1G2bOIWQ&jO1G2bO#:kQaO1G2bO#<QQ&jO'#EWOOQ(CW,5?W,5?WO#<[Q(ChO,5?WOOQS1G.s1G.sO:aQ`O1G.sO!-OQ!bO1G.sO!-WQ&jO1G.sO#<mQ`O1G0bO#<rQ`O'#ChO#<}Q`O'#JcO#=VQ`O,5=dO#=[Q`O'#JcO#=aQ`O'#JcO#=iQ`O'#I^O#=wQ`O,5?|O#>PQtO1G1VOOQ(C[1G1X1G1XO5tQ`O1G2}O#>WQ`O1G2}O#>]Q`O1G2}O#>bQ`O1G2}OOQS1G2}1G2}O#>gQ&kO1G2bO7YQ`O'#JQO7YQ`O'#EaO7YQ`O'#IWO#>xQ(ChO,5?yOOQS1G2f1G2fO!0VQ`O1G2lOIWQ&jO1G2iO#?TQ`O1G2iOOQS1G2j1G2jOIWQ&jO1G2jO#?YQaO1G2jO#?bQ7[O'#GhOOQS1G2l1G2lO!'VQ7[O'#IYO!0[QpO1G2oOOQS1G2o1G2oOOQS,5=Y,5=YO#?jQ&kO,5=[O5tQ`O,5=[O#6SQ`O,5=_O5bQ`O,5=_O!-OQ!bO,5=_O!-WQ&jO,5=_O5yQ&jO,5=_O#?{Q`O'#JaO#@WQ`O,5=`OOQS1G.j1G.jO#@]Q(ChO1G.jO#@hQ`O1G.jO#@mQ`O1G.jO5lQ(ChO1G.jO#@uQtO,5@OO#APQ`O,5@OO#A[QdO,5=gO#AcQ`O,5=gO7YQ`O,5@OOOQS1G3P1G3PO`QdO1G3POOQS1G3V1G3VOOQS1G3X1G3XO:[Q`O1G3ZO#AhQdO1G3]O#EcQdO'#H[OOQS1G3`1G3`O#EpQ`O'#HbO:aQ`O'#HdOOQS1G3f1G3fO#ExQdO1G3fO5lQ(ChO1G3lOOQS1G3n1G3nOOQ(CW'#Fx'#FxO5lQ(ChO1G3pO5lQ(ChO1G3rOOOW1G/^1G/^O#IvQpO,5<TO#JOQtO1G3{OOQO1G4Q1G4QO){QdO,5>aO#JYQ`O1G4|O#JbQ`O1G5WO#JjQ`O,5?dOLbQdO,5:{O7YQ`O,5:{O:aQ`O,59}OLbQdO,59}O!-OQ!bO,59}O#JoQMlO,59}OOQO,5:{,5:{O#JyQ7[O'#HvO#KaQ`O,5?cOOQ(C[1G/h1G/hO#KiQ7[O'#H{O#K}Q`O,5?nOOQ(CW1G0f1G0fO!;[Q7[O,59}O#LVQtO1G5XO7YQ`O,5>fOOQ(CW'#ES'#ESO#LaQ(DjO'#ETO!@XQ7[O'#D}OOQO'#Hy'#HyO#L{Q7[O,5:hOOQ(C[,5:h,5:hO#MSQ7[O'#D}O#MeQ7[O'#D}O#MlQ7[O'#EYO#MoQ7[O'#ETO#M|Q7[O'#ETO!@XQ7[O'#ETO#NaQ`O1G0PO#NfQqO1G0POOQ(C[1G0P1G0PO){QdO1G0POIWQ&jO1G0POOQ(C[1G0a1G0aO:aQ`O1G0aO!-OQ!bO1G0aO!-WQ&jO1G0aO#NmQ(C|O1G5UO){QdO1G5UO#N}Q(ChO1G5UO$ `Q`O1G5TO7YQ`O,5>hOOQO,5>h,5>hO$ hQ`O,5>hOOQO-E;z-E;zO$ `Q`O1G5TO$ vQ(C}O,59jO$#xQ(C}O,5<UO$%}Q(C}O,5<WO$(SQ(C}O,5<fOOQ(C[7+%|7+%|O$*_Q(C|O7+%|O$+OQ&jO'#HwO$+YQ`O,5?eOOQ(C]1G/r1G/rO$+bQdO'#HxO$+oQ`O,5?fO$+wQtO,5?fOOQ(C[1G/w1G/wOOQ(C[7+&V7+&VO$,RQMlO,5:^O){QdO7+&iO$,]QMlO,5:UOOQO1G1_1G1_OOQO1G1`1G1`O$,jQ!LQO,5;vOLbQdO,5;uOOQO-E;{-E;{OOQ(C[7+&w7+&wOOOO7+'Q7+'QOOOO1G1i1G1iO$,uQ`O1G1iOOQ(C[1G1k1G1kO$,zQqO,59gOOOW-E;q-E;qOOQ(C]1G/P1G/PO$-RQ(C|O7+'WOOQ(C],5>m,5>mO$-rQ`O,5>mOOQ(C]1G2P1G2PP$-wQ`O'#IRPOQ(C]-E<P-E<PO$.hQ,VO1G2[O$/ZQ,VO1G2^O$/eQqO1G2`OOQ(C]1G1x1G1xO$/lQ`O'#IQO$/zQ`O,5?uO$/zQ`O,5?uO$0SQ`O,5?uO$0_Q`O,5?uOOQO1G1z1G1zO$0mQ,VO1G1yOJjQ&jO1G1yO$0}Q&jO'#ISO$1_Q`O,5?vOIWQ&jO,5?vO$1gQqO,5?vOOQ(C]1G1}1G1}OOQ(CW,5<h,5<hOOQ(CW,5<i,5<iO$1qQ`O,5<iO#5}Q`O,5<iO!-OQ!bO,5<hO$1vQ`O,5<jOOQ(CW,5<k,5<kO$1qQ`O,5<nOOQO,5>o,5>oOOQO-E<R-E<ROOQ(C]1G2R1G2RO!'VQ7[O,5<hO$2OQ`O,5<iO!'VQ7[O,5<jO!'VQ7[O,5<iO$2ZQ,VO1G4vO$2eQ,VO1G4vOOQO,5>p,5>pOOQO-E<S-E<SOOQP1G.w1G.wO!.RQ7[O,59lO){QdO,59lO$2rQ`O1G1tOJjQ&jO1G1{O$2wQ(C|O7+'XOOQ(C[7+'X7+'XOGWQdO7+'XOOQ(C[7+%[7+%[O$3hQqO'#J]O#NaQ`O7+'|O$3rQ`O7+'|O$3zQqO7+'|OOQS7+'|7+'|OIWQ&jO7+'|O){QdO7+'|OIWQ&jO7+'|O$4UQ(CyO'#ChO$4iQ(CyO,5<lO$5ZQ`O,5<lOOQ(CW1G4r1G4rOOQS7+$_7+$_O:aQ`O7+$_O!-OQ!bO7+$_OGWQdO7+%|O$5`Q`O'#I]O$5qQ`O,5?}OOQO1G3O1G3OO5tQ`O,5?}O$5qQ`O,5?}O$5yQ`O,5?}OOQO,5>x,5>xOOQO-E<[-E<[OOQ(C[7+&q7+&qO$6OQ`O7+(iO5lQ(ChO7+(iO5tQ`O7+(iO$6TQ`O7+(iO$6YQaO7+'|OOQ(CW,5>r,5>rOOQ(CW-E<U-E<UOOQS7+(W7+(WO$6hQ(CyO7+(TOIWQ&jO7+(TO$6rQqO7+(UOOQS7+(U7+(UOIWQ&jO7+(UO$6yQ`O'#J`O$7UQ`O,5=SOOQO,5>t,5>tOOQO-E<W-E<WOOQS7+(Z7+(ZO$8OQ7[O'#GqOOQS1G2v1G2vOIWQ&jO1G2vO){QdO1G2vOIWQ&jO1G2vO$8VQaO1G2vO$8eQ&kO1G2vO5lQ(ChO1G2yO#6SQ`O1G2yO5bQ`O1G2yO!-OQ!bO1G2yO!-WQ&jO1G2yO$8vQ`O'#I[O$9RQ`O,5?{O$9ZQ7[O,5?{OOQ(CW1G2z1G2zOOQS7+$U7+$UO$9cQ`O7+$UO5lQ(ChO7+$UO$9hQ`O7+$UO){QdO1G5jO){QdO1G5kO$9mQdO1G3RO$9tQ`O1G3RO$9yQdO1G3RO$:QQ(ChO1G5jOOQS7+(k7+(kO5lQ(ChO7+(uO`QdO7+(wOOQS'#Jf'#JfOOQS'#I_'#I_O$:[QdO,5=vOOQS,5=v,5=vO){QdO'#H]O$:iQ`O'#H_OOQS,5=|,5=|O7YQ`O,5=|OOQS,5>O,5>OOOQS7+)Q7+)QOOQS7+)W7+)WOOQS7+)[7+)[OOQS7+)^7+)^OOQO1G5O1G5OO$:nQMlO1G0gO$:xQ`O1G0gOOQO1G/i1G/iO$;TQMlO1G/iO:aQ`O1G/iOLbQdO'#DcOOQO,5>b,5>bOOQO-E;t-E;tOOQO,5>g,5>gOOQO-E;y-E;yO!-OQ!bO1G/iO:aQ`O,5:iOOQO,5:o,5:oO){QdO,5:oO$;_Q(ChO,5:oO$;jQ(ChO,5:oO!-OQ!bO,5:iOOQO-E;w-E;wOOQ(C[1G0S1G0SO!@XQ7[O,5:iO$;xQ7[O,5:iO$<ZQ(DjO,5:oO$<uQ7[O,5:iO!@XQ7[O,5:oOOQO,5:t,5:tO$<|Q7[O,5:oO$=ZQ(ChO,5:oOOQ(C[7+%k7+%kO#NaQ`O7+%kO#NfQqO7+%kOOQ(C[7+%{7+%{O:aQ`O7+%{O!-OQ!bO7+%{O$=oQ(C|O7+*pO){QdO7+*pOOQO1G4S1G4SO7YQ`O1G4SO$>PQ`O7+*oO$>XQ(C}O1G2[O$@^Q(C}O1G2^O$BcQ(C}O1G1yO$DnQ,VO,5>cOOQO-E;u-E;uO$DxQtO,5>dO){QdO,5>dOOQO-E;v-E;vO$ESQ`O1G5QO$E[QMlO1G0bO$GcQMlO1G0mO$GjQMlO1G0mO$IkQMlO1G0mO$IrQMlO1G0mO$KgQMlO1G0mO$KzQMlO1G0mO$NXQMlO1G0mO$N`QMlO1G0mO%!aQMlO1G0mO%!hQMlO1G0mO%$]QMlO1G0mO%$pQ(C|O<<JTO%%rQMmO1G0mO%'|QMmO'#IqO%)iQMlO1G1QOLbQdO'#F^OOQO'#JX'#JXOOQO1G1b1G1bO%)vQ`O1G1aO%){QMlO,5>kOOOO7+'T7+'TOOOW1G/R1G/ROOQ(C]1G4X1G4XOJjQ&jO7+'zO%*VQ`O,5>lO5tQ`O,5>lOOQO-E<O-E<OO%*eQ`O1G5aO%*eQ`O1G5aO%*mQ`O1G5aO%*xQ,VO7+'eO%+YQqO,5>nO%+dQ`O,5>nOIWQ&jO,5>nOOQO-E<Q-E<QO%+iQqO1G5bO%+sQ`O1G5bOOQ(CW1G2T1G2TO$1qQ`O1G2TOOQ(CW1G2S1G2SO%+{Q`O1G2UOIWQ&jO1G2UOOQ(CW1G2Y1G2YO!-OQ!bO1G2SO#5}Q`O1G2TO%,QQ`O1G2UO%,YQ`O1G2TOJjQ&jO7+*bOOQ(C]1G/W1G/WO%,eQ`O1G/WOOQ(C]7+'`7+'`O%,jQ,VO7+'gO%,zQ(C|O<<JsOOQ(C[<<Js<<JsOIWQ&jO'#IVO%-kQ`O,5?wOOQS<<Kh<<KhOIWQ&jO<<KhO#NaQ`O<<KhO%-sQ`O<<KhO%-{QqO<<KhOIWQ&jO1G2WOOQS<<Gy<<GyO:aQ`O<<GyO%.VQ(C|O<<IhOOQ(C[<<Ih<<IhOOQO,5>w,5>wO%.vQ`O,5>wO%.{Q`O,5>wOOQO-E<Z-E<ZO%/TQ`O1G5iO%/TQ`O1G5iO5tQ`O1G5iO%/]Q`O<<LTOOQS<<LT<<LTO%/bQ`O<<LTO5lQ(ChO<<LTO){QdO<<KhOIWQ&jO<<KhOOQS<<Ko<<KoO$6hQ(CyO<<KoOOQS<<Kp<<KpO$6rQqO<<KpO%/gQ7[O'#IXO%/rQ`O,5?zOLbQdO,5?zOOQS1G2n1G2nO#LaQ(DjO'#ETO!@XQ7[O'#GrOOQO'#IZ'#IZO%/zQ7[O,5=]OOQS,5=],5=]O%0RQ7[O'#ETO%0^Q7[O'#ETO%0uQ7[O'#ETO%1PQ7[O'#GrO%1bQ`O7+(bO%1gQ`O7+(bO%1oQqO7+(bOOQS7+(b7+(bOIWQ&jO7+(bO){QdO7+(bOIWQ&jO7+(bO%1yQaO7+(bOOQS7+(e7+(eO5lQ(ChO7+(eO#6SQ`O7+(eO5bQ`O7+(eO!-OQ!bO7+(eO%2XQ`O,5>vOOQO-E<Y-E<YOOQO'#Gu'#GuO%2dQ`O1G5gO5lQ(ChO<<GpOOQS<<Gp<<GpO%2lQ`O<<GpO%2qQ`O7++UO%2vQ`O7++VOOQS7+(m7+(mO%2{Q`O7+(mO%3QQdO7+(mO%3XQ`O7+(mO){QdO7++UO){QdO7++VOOQS<<La<<LaOOQS<<Lc<<LcOOQS-E<]-E<]OOQS1G3b1G3bO%3^Q`O,5=wOOQS,5=y,5=yO%3cQ`O1G3hOLbQdO7+&ROOQO7+%T7+%TO%3hQMlO1G5XO:aQ`O7+%TOOQO1G0T1G0TO%3rQ(C|O1G0ZOOQO1G0Z1G0ZO){QdO1G0ZO%3|Q(ChO1G0ZO:aQ`O1G0TO!-OQ!bO1G0TO!@XQ7[O1G0TO%4XQ(ChO1G0ZO%4gQ7[O1G0TO%4xQ(ChO1G0ZO%5^Q(DjO1G0ZO%5hQ7[O1G0TO!@XQ7[O1G0ZOOQ(C[<<IV<<IVOOQ(C[<<Ig<<IgO:aQ`O<<IgO%5oQ(C|O<<N[OOQO7+)n7+)nO%6PQ(C}O7+'eO%8[Q(C}O7+'gO%:gQtO1G4OO%:qQMlO7+%|O%;gQMmO,59jO%=hQMmO,5<UO%?lQMmO,5<WO%A[QMmO,5<fO%B}QMlO7+'WO%C[QMlO7+'XO%CiQ`O,5;xOOQO7+&{7+&{O%CnQ,VO<<KfOOQO1G4W1G4WO%CuQ`O1G4WO%DQQ`O1G4WO%D`Q`O7+*{O%D`Q`O7+*{OIWQ&jO1G4YO%DhQqO1G4YO%DrQ`O7+*|OOQ(CW7+'o7+'oO$1qQ`O7+'pO%DzQqO7+'pOOQ(CW7+'n7+'nO$1qQ`O7+'oO%ERQ`O7+'pOIWQ&jO7+'pO#5}Q`O7+'oO%EWQ,VO<<M|OOQ(C]7+$r7+$rO%EbQqO,5>qOOQO-E<T-E<TO#NaQ`OANASOOQSANASANASOIWQ&jOANASO%ElQ(CyO7+'rOOQSAN=eAN=eO5tQ`O1G4cOOQO1G4c1G4cO%E|Q`O1G4cO%FRQ`O7++TO%FRQ`O7++TO5lQ(ChOANAoO%FZQ`OANAoOOQSANAoANAoO%F`Q`OANASO%FhQqOANASOOQSANAZANAZOOQSANA[ANA[O%FrQ`O,5>sOOQO-E<V-E<VO%F}QMlO1G5fO#6SQ`O,5=^O5bQ`O,5=^O!-OQ!bO,5=^OOQO-E<X-E<XOOQS1G2w1G2wO$<ZQ(DjO,5:oO!@XQ7[O,5=^O%GXQ7[O,5=^O%GjQ7[O,5:oOOQS<<K|<<K|OIWQ&jO<<K|O%1bQ`O<<K|O%GtQ`O<<K|O%G|QqO<<K|O){QdO<<K|OIWQ&jO<<K|OOQS<<LP<<LPO5lQ(ChO<<LPO#6SQ`O<<LPO5bQ`O<<LPO%HWQ7[O1G4bO%H`Q`O7++ROOQSAN=[AN=[O5lQ(ChOAN=[OOQS<<Np<<NpOOQS<<Nq<<NqOOQS<<LX<<LXO%HhQ`O<<LXO%HmQdO<<LXO%HtQ`O<<NpO%HyQ`O<<NqOOQS1G3c1G3cO:aQ`O7+)SO%IOQMlO<<ImOOQO<<Ho<<HoOOQO7+%u7+%uO%3rQ(C|O7+%uO){QdO7+%uOOQO7+%o7+%oO:aQ`O7+%oO!-OQ!bO7+%oO%IYQ(ChO7+%uO!@XQ7[O7+%oO%IeQ(ChO7+%uO%IsQ7[O7+%oO%JUQ(ChO7+%uOOQ(C[AN?RAN?RO%JjQMlO<<JTO%JwQMmO1G1yO%MOQMmO1G2[O& SQMmO1G2^O&!rQMlO<<JsO&#PQMlO<<IhOOQO1G1d1G1dOJjQ&jOANAQOOQO7+)r7+)rO&#^Q`O7+)rO&#iQ`O<<NgO&#qQqO7+)tOOQ(CW<<K[<<K[O$1qQ`O<<K[OOQ(CW<<KZ<<KZO&#{QqO<<K[O$1qQ`O<<KZOOQSG26nG26nO#NaQ`OG26nOOQO7+)}7+)}O5tQ`O7+)}O&$SQ`O<<NoOOQSG27ZG27ZO5lQ(ChOG27ZOIWQ&jOG26nOLbQdO1G4_O&$[Q`O7++QO5lQ(ChO1G2xO#6SQ`O1G2xO5bQ`O1G2xO!-OQ!bO1G2xO!@XQ7[O1G2xO%5^Q(DjO1G0ZO&$dQ7[O1G2xO%1bQ`OANAhOOQSANAhANAhOIWQ&jOANAhO&$uQ`OANAhO&$}QqOANAhOOQSANAkANAkO5lQ(ChOANAkO#6SQ`OANAkOOQO'#Gv'#GvOOQO7+)|7+)|OOQSG22vG22vOOQSANAsANAsO&%XQ`OANAsOOQSAND[AND[OOQSAND]AND]OOQS<<Ln<<LnOOQO<<Ia<<IaO%3rQ(C|O<<IaOOQO<<IZ<<IZO:aQ`O<<IZO){QdO<<IaO!-OQ!bO<<IZO&%^Q(ChO<<IaO!@XQ7[O<<IZO&%iQ(ChO<<IaO&%wQMmO7+'eO&'jQMmO7+'gO&)]Q,VOG26lOOQO<<M^<<M^OOQ(CWAN@vAN@vO$1qQ`OAN@vOOQ(CWAN@uAN@uOOQSLD,YLD,YOOQO<<Mi<<MiOOQSLD,uLD,uO#NaQ`OLD,YO&)mQMlO7+)yOOQO7+(d7+(dO5lQ(ChO7+(dO#6SQ`O7+(dO5bQ`O7+(dO!-OQ!bO7+(dO!@XQ7[O7+(dOOQSG27SG27SO%1bQ`OG27SOIWQ&jOG27SOOQSG27VG27VO5lQ(ChOG27VOOQSG27_G27_OOQOAN>{AN>{OOQOAN>uAN>uO%3rQ(C|OAN>{O:aQ`OAN>uO){QdOAN>{O!-OQ!bOAN>uO&)wQ(ChOAN>{O&*SQ(C}OG26lOOQ(CWG26bG26bOOQS!$( t!$( tOOQO<<LO<<LOO5lQ(ChO<<LOO#6SQ`O<<LOO5bQ`O<<LOO!-OQ!bO<<LOOOQSLD,nLD,nO%1bQ`OLD,nOOQSLD,qLD,qOOQOG24gG24gOOQOG24aG24aO%3rQ(C|OG24gO:aQ`OG24aO){QdOG24gO&,pQ!LRO,5:rO&-gQ$ITO'#IqOOQOANAjANAjO5lQ(ChOANAjO#6SQ`OANAjO5bQ`OANAjOOQS!$(!Y!$(!YOOQOLD*RLD*ROOQOLD){LD){O%3rQ(C|OLD*RO&.ZQMmOG26lO&/|Q!LRO,59jO&0pQ!LRO,5<UO&1dQ!LRO,5<WO&2WQ!LRO,5<fOOQOG27UG27UO5lQ(ChOG27UO#6SQ`OG27UOOQO!$'Mm!$'MmO&2}Q!LRO1G2[O&3qQ!LRO1G2^O&4eQ!LRO1G1yOOQOLD,pLD,pO5lQ(ChOLD,pO&5[Q!LRO7+'eO&6RQ!LRO7+'gOOQO!$(![!$(![O&6xQ!LROG26lOLbQdO'#DrO&7oQtO'#ItOLbQdO'#DjO&7vQ(C|O'#ChO&8aQtO'#ChO&8qQdO,5:vO&:qQ&jO'#EWOLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO'#IPO&<OQ`O,5<TO&=eQ&jO,5;ROLbQdO,5;fO!(wQ`O'#DOO!(wQ`O'#DOO!(wQ`O'#DOOIWQ&jO'#FjO&:qQ&jO'#FjO&<WQ&jO'#FjOIWQ&jO'#FlO&:qQ&jO'#FlO&<WQ&jO'#FlOIWQ&jO'#FzO&:qQ&jO'#FzO&<WQ&jO'#FzOLbQdO,5?mO&8qQdO1G0bO&=lQMlO'#ChOLbQdO1G1lOIWQ&jO,5<pO&:qQ&jO,5<pO&<WQ&jO,5<pOIWQ&jO,5<rO&:qQ&jO,5<rO&<WQ&jO,5<rOIWQ&jO,5<_O&:qQ&jO,5<_O&<WQ&jO,5<_O&8qQdO1G1mOLbQdO7+&iOIWQ&jO1G1yO&:qQ&jO1G1yO&<WQ&jO1G1yOIWQ&jO1G1{O&:qQ&jO1G1{O&<WQ&jO1G1{O&8qQdO7+'XO&8qQdO7+%|O&=vQ`O7+'pOIWQ&jOANAQO&:qQ&jOANAQO&<WQ&jOANAQO&=vQ`O<<K[O&=vQ`OAN@vO&={Q`O'#E[O&>QQ`O'#E[O&>YQ`O'#EzO&>_Q`O'#EgO&>dQ`O'#JRO&>oQ`O'#JPO&>zQ`O,5:vO&?PQ,VO,5<QO&?WQ`O'#FsO&?]Q`O'#FsO&?bQ`O'#FsO&?gQ`O,5<RO&?oQ`O,5:vO&?wQMlO1G0}O&@OQ`O,5<_O&@TQ`O,5<_O&@YQ`O,5<_O&@_Q`O,5<aO&@dQ`O,5<aO&@iQ`O,5<aO&@nQ`O1G1mO&@sQ`O1G0bO&@xQ`O1G2UO&@}Q,VO<<KfO&AUQ,VO<<KfO&A]Q,VO<<KfO&AdQqO7+'pO&AkQ`O7+'pO&ApQqO<<K[O4QQ&jO'#FhO5bQ`O'#FgOBzQ`O'#EZOLbQdO,5;cO!&WQ`O'#FsO!&WQ`O'#FsO!&WQ`O'#FsO!&WQ`O'#FuO!&WQ`O'#FuO!&WQ`O'#FuO&AwQ`O,5<jOJjQ&jO7+'zOJjQ&jO7+'zOJjQ&jO7+'zOIWQ&jO1G2UO&BPQ`O1G2UOIWQ&jO7+'pO!'VQ7[O'#GOO$/eQqO1G2`O$/eQqO1G2`O$/eQqO1G2`O!'VQ7[O,5<jOIWQ&jO,5<tOIWQ&jO,5<tOIWQ&jO,5<t",
-  stateData: "&B}~O'YOS'ZOSTOSUOS~OQTORTOXyO]cO_hObnOcmOhcOjTOkcOlcOqTOsTOxRO{cO|cO}cO!TSO!_kO!dUO!gTO!hTO!iTO!jTO!kTO!nlO#dsO#tpO#x^O%PqO%RtO%TrO%UrO%XuO%ZvO%^wO%_wO%axO%nzO%t{O%v|O%x}O%z!OO%}!PO&T!QO&Z!RO&]!SO&_!TO&a!UO&c!VO']PO'fQO'oYO'|aO~OQ[XZ[X_[Xj[Xu[Xv[Xx[X!R[X!a[X!b[X!d[X!j[X!{[X#WdX#[[X#][X#^[X#_[X#`[X#a[X#b[X#c[X#e[X#g[X#i[X#j[X#o[X'W[X'f[X'p[X'w[X'x[X~O!]$lX~P$zOS!WO'U!XO'V!ZO~OQTORTO]cOb!kOc!jOhcOjTOkcOlcOqTOsTOxRO{cO|cO}cO!T!bO!_kO!dUO!gTO!hTO!iTO!jTO!kTO!n!iO#t!lO#x^O']![O'fQO'oYO'|aO~O!Q!`O!R!]O!O'jP!O'tP~P'dO!S!mO~P`OQTORTO]cOb!kOc!jOhcOjTOkcOlcOqTOsTOxRO{cO|cO}cO!T!bO!_kO!dUO!gTO!hTO!iTO!jTO!kTO!n!iO#t!lO#x^O']9aO'fQO'oYO'|aO~OQTORTO]cOb!kOc!jOhcOjTOkcOlcOqTOsTOxRO{cO|cO}cO!T!bO!_kO!dUO!gTO!hTO!iTO!jTO!kTO!n!iO#t!lO#x^O'fQO'oYO'|aO~O!Q!rO#U!uO#V!rO']9bO!c'qP~P+{O#W!vO~O!]!wO#W!vO~OQ#^OZ#dOj#ROu!{Ov!{Ox!|O!R#bO!a#TO!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO#a#TO#b#TO#c#TO#e#UO#g#WO#i#YO#j#ZO'fQO'p#[O'w!}O'x#OO~O_'hX'W'hX!c'hX!O'hX!T'hX%Q'hX!]'hX~P.jO!{#eO#o#eOQ'iXZ'iX_'iXj'iXu'iXv'iXx'iX!R'iX!a'iX!b'iX!d'iX!j'iX#['iX#]'iX#^'iX#_'iX#`'iX#a'iX#b'iX#e'iX#g'iX#i'iX#j'iX'f'iX'p'iX'w'iX'x'iX~O#c'iX'W'iX!O'iX!c'iXn'iX!T'iX%Q'iX!]'iX~P0zO!{#eO~O#z#fO$R#jO~O!T#kO#x^O$U#lO$W#nO~O]#qOh$QOj#rOk#qOl#qOq$ROs$SOx#yO!T#zO!_$XO!d#vO#V$YO#t$VO$_$TO$a$UO$d$WO']#pO'b$PO'f#sO'a'cP~O!d$ZO~O!]$]O~O_$^O'W$^O~O']$bO~O!d$ZO']$bO'^$dO'b$PO~Oc$jO!d$ZO']$bO~O#c#TO~O]$sOu$oO!T$lO!d$nO%R$rO']$bO'^$dO^(UP~O!n$tO~Ox$uO!T$vO']$bO~Ox$uO!T$vO%Z$zO']$bO~O']${O~O#dsO%RtO%TrO%UrO%XuO%ZvO%^wO%_wO~Ob%UOc%TO!n%RO%P%SO%c%QO~P7xOb%XOcmO!T%WO!nlO#dsO%PqO%TrO%UrO%XuO%ZvO%^wO%_wO%axO~O`%[O!{%_O%R%YO'^$dO~P8wO!d%`O!g%dO~O!d%eO~O!TSO~O_$^O'T%mO'W$^O~O_$^O'T%pO'W$^O~O_$^O'T%rO'W$^O~OS!WO'U!XO'V%vO~OQ[XZ[Xj[Xu[Xv[Xx[X!R[X!RdX!a[X!b[X!d[X!j[X!{[X!{dX#WdX#[[X#][X#^[X#_[X#`[X#a[X#b[X#c[X#e[X#g[X#i[X#j[X#o[X'f[X'p[X'w[X'x[X~O!O[X!OdX~P;dO!Q%xO!O&iX!O&nX!R&iX!R&nX~P'dO!R%zO!O'jX~OQ#^OZ#dOj#ROu!{Ov!{Ox!|O!R%zO!a#TO!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO#a#TO#b#TO#c#TO#e#UO#g#WO#i#YO#j#ZO'fQO'p#[O'w!}O'x#OO~O!O'jX~P>aO!O&PO~Ox&SO!W&^O!X&VO!Y&VO'^$dO~O]&TOk&TO!Q&WO'g&QO!S'kP!S'vP~P@dO!O'sX!R'sX!]'sX!c'sX'p'sX~O!{'sX#W#PX!S'sX~PA]O!{&_O!O'uX!R'uX~O!R&`O!O'tX~O!O&cO~O!{#eO~PA]OP&gO!T&dO!o&fO']$bO~Oc&lO!d$ZO']$bO~Ou$oO!d$nO~O!S&mO~P`Ou!{Ov!{Ox!|O!b!yO!d!zO'fQOQ!faZ!faj!fa!R!fa!a!fa!j!fa#[!fa#]!fa#^!fa#_!fa#`!fa#a!fa#b!fa#c!fa#e!fa#g!fa#i!fa#j!fa'p!fa'w!fa'x!fa~O_!fa'W!fa!O!fa!c!fan!fa!T!fa%Q!fa!]!fa~PCfO!c&nO~O!]!wO!{&pO'p&oO!R'rX_'rX'W'rX~O!c'rX~PFOO!R&tO!c'qX~O!c&vO~Ox$uO!T$vO#V&wO']$bO~OQTORTO]cOb!kOc!jOhcOjTOkcOlcOqTOsTOxRO{cO|cO}cO!TSO!_kO!dUO!gTO!hTO!iTO!jTO!kTO!n!iO#t!lO#x^O']9aO'fQO'oYO'|aO~O]#qOh$QOj#rOk#qOl#qOq$ROs9tOx#yO!T#zO!_;eO!d#vO#V9}O#t$VO$_9wO$a9zO$d$WO']&{O'b$PO'f#sO~O#W&}O~O]#qOh$QOj#rOk#qOl#qOq$ROs$SOx#yO!T#zO!_$XO!d#vO#V$YO#t$VO$_$TO$a$UO$d$WO']&{O'b$PO'f#sO~O'a'mP~PJjO!Q'RO!c'nP~P){O'g'TO'oYO~OQ9^OR9^O]cOb;`Oc!jOhcOj9^OkcOlcOq9^Os9^OxRO{cO|cO}cO!T!bO!_9`O!dUO!g9^O!h9^O!i9^O!j9^O!k9^O!n!iO#t!lO#x^O']'cO'fQO'oYO'|;^O~O!d!zO~O!R#bO_$]a'W$]a!c$]a!O$]a!T$]a%Q$]a!]$]a~O#d'jO~PIWO!]'lO!T'yX#w'yX#z'yX$R'yX~Ou'mO~P! YOu'mO!T'yX#w'yX#z'yX$R'yX~O!T'oO#w'sO#z'nO$R'tO~O!Q'wO~PLbO#z#fO$R'zO~OP$eXu$eXx$eX!b$eX'w$eX'x$eX~OPfX!RfX!{fX'afX'a$eX~P!!rOk'|O~OS'}O'U(OO'V(QO~OP(ZOu(SOx(TO'w(VO'x(XO~O'a(RO~P!#{O'a([O~O]#qOh$QOj#rOk#qOl#qOq$ROs9tOx#yO!T#zO!_;eO!d#vO#V9}O#t$VO$_9wO$a9zO$d$WO'b$PO'f#sO~O!Q(`O'](]O!c'}P~P!$jO#W(bO~O!d(cO~O!Q(hO'](eO!O(OP~P!$jOj(uOx(mO!W(sO!X(lO!Y(lO!d(cO!x(tO$w(oO'^$dO'g(jO~O!S(rO~P!&jO!b!yOP'eXu'eXx'eX'w'eX'x'eX!R'eX!{'eX~O'a'eX#m'eX~P!'cOP(xO!{(wO!R'dX'a'dX~O!R(yO'a'cX~O']${O'a'cP~O'](|O~O!d)RO~O']&{O~Ox$uO!Q!rO!T$vO#U!uO#V!rO']$bO!c'qP~O!]!wO#W)VO~OQ#^OZ#dOj#ROu!{Ov!{Ox!|O!a#TO!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO#a#TO#b#TO#c#TO#e#UO#g#WO#i#YO#j#ZO'fQO'p#[O'w!}O'x#OO~O_!^a!R!^a'W!^a!O!^a!c!^an!^a!T!^a%Q!^a!]!^a~P!)wOP)_O!T&dO!o)^O%Q)]O'b$PO~O!])aO!T'`X_'`X!R'`X'W'`X~O!d$ZO'b$PO~O!d$ZO']$bO'b$PO~O!]!wO#W&}O~O])lO%R)mO'])iO!S(VP~O!R)nO^(UX~O'g'TO~OZ)rO~O^)sO~O!T$lO']$bO'^$dO^(UP~Ox$uO!Q)xO!R&`O!T$vO']$bO!O'tP~O]&ZOk&ZO!Q)yO'g'TO!S'vP~O!R)zO_(RX'W(RX~O!{*OO'b$PO~OP*RO!T#zO'b$PO~O!T*TO~Ou*VO!TSO~O!n*[O~Oc*aO~O'](|O!S(TP~Oc$jO~O%RtO']${O~P8wOZ*gO^*fO~OQTORTO]cObnOcmOhcOjTOkcOlcOqTOsTOxRO{cO|cO}cO!_kO!dUO!gTO!hTO!iTO!jTO!kTO!nlO#x^O%PqO'fQO'oYO'|aO~O!T!bO#t!lO']9aO~P!1_O^*fO_$^O'W$^O~O_*kO#d*mO%T*mO%U*mO~P){O!d%`O~O%t*rO~O!T*tO~O&V*vO&X*wOQ&SaR&SaX&Sa]&Sa_&Sab&Sac&Sah&Saj&Sak&Sal&Saq&Sas&Sax&Sa{&Sa|&Sa}&Sa!T&Sa!_&Sa!d&Sa!g&Sa!h&Sa!i&Sa!j&Sa!k&Sa!n&Sa#d&Sa#t&Sa#x&Sa%P&Sa%R&Sa%T&Sa%U&Sa%X&Sa%Z&Sa%^&Sa%_&Sa%a&Sa%n&Sa%t&Sa%v&Sa%x&Sa%z&Sa%}&Sa&T&Sa&Z&Sa&]&Sa&_&Sa&a&Sa&c&Sa'S&Sa']&Sa'f&Sa'o&Sa'|&Sa!S&Sa%{&Sa`&Sa&Q&Sa~O']*|O~On+PO~O!O&ia!R&ia~P!)wO!Q+TO!O&iX!R&iX~P){O!R%zO!O'ja~O!O'ja~P>aO!R&`O!O'ta~O!RwX!R!ZX!SwX!S!ZX!]wX!]!ZX!d!ZX!{wX'b!ZX~O!]+YO!{+XO!R#TX!R'lX!S#TX!S'lX!]'lX!d'lX'b'lX~O!]+[O!d$ZO'b$PO!R!VX!S!VX~O]&ROk&ROx&SO'g(jO~OQ9^OR9^O]cOb;`Oc!jOhcOj9^OkcOlcOq9^Os9^OxRO{cO|cO}cO!T!bO!_9`O!dUO!g9^O!h9^O!i9^O!j9^O!k9^O!n!iO#t!lO#x^O'fQO'oYO'|;^O~O']:SO~P!;jO!R+`O!S'kX~O!S+bO~O!]+YO!{+XO!R#TX!S#TX~O!R+cO!S'vX~O!S+eO~O]&ROk&ROx&SO'^$dO'g(jO~O!X+fO!Y+fO~P!>hOx$uO!Q+hO!T$vO']$bO!O&nX!R&nX~O_+lO!W+oO!X+kO!Y+kO!r+sO!s+qO!t+rO!u+pO!x+tO'^$dO'g(jO'o+iO~O!S+nO~P!?iOP+yO!T&dO!o+xO~O!{,PO!R'ra!c'ra_'ra'W'ra~O!]!wO~P!@sO!R&tO!c'qa~Ox$uO!Q,SO!T$vO#U,UO#V,SO']$bO!R&pX!c&pX~O_#Oi!R#Oi'W#Oi!O#Oi!c#Oin#Oi!T#Oi%Q#Oi!]#Oi~P!)wOP;tOu(SOx(TO'w(VO'x(XO~O#W!za!R!za!c!za!{!za!T!za_!za'W!za!O!za~P!BpO#W'eXQ'eXZ'eX_'eXj'eXv'eX!a'eX!d'eX!j'eX#['eX#]'eX#^'eX#_'eX#`'eX#a'eX#b'eX#c'eX#e'eX#g'eX#i'eX#j'eX'W'eX'f'eX'p'eX!c'eX!O'eX!T'eXn'eX%Q'eX!]'eX~P!'cO!R,_O'a'mX~P!#{O'a,aO~O!R,bO!c'nX~P!)wO!c,eO~O!O,fO~OQ#^Ou!{Ov!{Ox!|O!b!yO!d!zO!j#^O'fQOZ#Zi_#Zij#Zi!R#Zi!a#Zi#]#Zi#^#Zi#_#Zi#`#Zi#a#Zi#b#Zi#c#Zi#e#Zi#g#Zi#i#Zi#j#Zi'W#Zi'p#Zi'w#Zi'x#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~O#[#Zi~P!FfO#[#PO~P!FfOQ#^Ou!{Ov!{Ox!|O!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO'fQOZ#Zi_#Zi!R#Zi!a#Zi#`#Zi#a#Zi#b#Zi#c#Zi#e#Zi#g#Zi#i#Zi#j#Zi'W#Zi'p#Zi'w#Zi'x#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~Oj#Zi~P!IQOj#RO~P!IQOQ#^Oj#ROu!{Ov!{Ox!|O!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO'fQO_#Zi!R#Zi#e#Zi#g#Zi#i#Zi#j#Zi'W#Zi'p#Zi'w#Zi'x#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~OZ#Zi!a#Zi#a#Zi#b#Zi#c#Zi~P!KlOZ#dO!a#TO#a#TO#b#TO#c#TO~P!KlOQ#^OZ#dOj#ROu!{Ov!{Ox!|O!a#TO!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO#a#TO#b#TO#c#TO#e#UO'fQO_#Zi!R#Zi#g#Zi#i#Zi#j#Zi'W#Zi'p#Zi'x#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~O'w#Zi~P!NdO'w!}O~P!NdOQ#^OZ#dOj#ROu!{Ov!{Ox!|O!a#TO!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO#a#TO#b#TO#c#TO#e#UO#g#WO'fQO'w!}O_#Zi!R#Zi#i#Zi#j#Zi'W#Zi'p#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~O'x#Zi~P##OO'x#OO~P##OOQ#^OZ#dOj#ROu!{Ov!{Ox!|O!a#TO!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO#a#TO#b#TO#c#TO#e#UO#g#WO#i#YO'fQO'w!}O'x#OO~O_#Zi!R#Zi#j#Zi'W#Zi'p#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~P#%jOQ[XZ[Xj[Xu[Xv[Xx[X!a[X!b[X!d[X!j[X!{[X#WdX#[[X#][X#^[X#_[X#`[X#a[X#b[X#c[X#e[X#g[X#i[X#j[X#o[X'f[X'p[X'w[X'x[X!R[X!S[X~O#m[X~P#'}OQ#^OZ9rOj9gOu!{Ov!{Ox!|O!a9iO!b!yO!d!zO!j#^O#[9eO#]9fO#^9fO#_9fO#`9hO#a9iO#b9iO#c9iO#e9jO#g9lO#i9nO#j9oO'fQO'p#[O'w!}O'x#OO~O#m,hO~P#*XOQ'iXZ'iXj'iXu'iXv'iXx'iX!a'iX!b'iX!d'iX!j'iX#['iX#]'iX#^'iX#_'iX#`'iX#a'iX#b'iX#e'iX#g'iX#i'iX#j'iX'f'iX'p'iX'w'iX'x'iX!R'iX~O!{9sO#o9sO#c'iX#m'iX!S'iX~P#,SO_&sa!R&sa'W&sa!c&san&sa!O&sa!T&sa%Q&sa!]&sa~P!)wOQ#ZiZ#Zi_#Zij#Ziv#Zi!R#Zi!a#Zi!b#Zi!d#Zi!j#Zi#[#Zi#]#Zi#^#Zi#_#Zi#`#Zi#a#Zi#b#Zi#c#Zi#e#Zi#g#Zi#i#Zi#j#Zi'W#Zi'f#Zi'p#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~P!BpO_#ni!R#ni'W#ni!O#ni!c#nin#ni!T#ni%Q#ni!]#ni~P!)wO#z,jO~O#z,kO~O!]'lO!{,lO!T$OX#w$OX#z$OX$R$OX~O!Q,mO~O!T'oO#w,oO#z'nO$R,pO~O!R9pO!S'hX~P#*XO!S,qO~O$R,sO~OS'}O'U(OO'V,vO~O],yOk,yO!O,zO~O!RdX!]dX!cdX!c$eX'pdX~P!!rO!c-QO~P!BpO!R-RO!]!wO'p&oO!c'}X~O!c-WO~O!Q(`O']$bO!c'}P~O#W-YO~O!O$eX!R$eX!]$lX~P!!rO!R-ZO!O(OX~P!BpO!]-]O~O!O-_O~Oj-cO!]!wO!d$ZO'b$PO'p&oO~O!])aO~O_$^O!R-hO'W$^O~O!S-jO~P!&jO!X-kO!Y-kO'^$dO'g(jO~Ox-mO'g(jO~O!x-nO~O']${O!R&xX'a&xX~O!R(yO'a'ca~O'a-sO~Ou-tOv-tOx-uOPra'wra'xra!Rra!{ra~O'ara#mra~P#7pOu(SOx(TOP$^a'w$^a'x$^a!R$^a!{$^a~O'a$^a#m$^a~P#8fOu(SOx(TOP$`a'w$`a'x$`a!R$`a!{$`a~O'a$`a#m$`a~P#9XO]-vO~O#W-wO~O'a$na!R$na!{$na#m$na~P!#{O#W-zO~OP.TO!T&dO!o.SO%Q.RO~O]#qOj#rOk#qOl#qOq$ROs9tOx#yO!T#zO!_;eO!d#vO#V9}O#t$VO$_9wO$a9zO$d$WO'b$PO'f#sO~Oh.VO'].UO~P#:yO!])aO!T'`a_'`a!R'`a'W'`a~O#W.]O~OZ[X!RdX!SdX~O!R.^O!S(VX~O!S.`O~OZ.aO~O].cO'])iO~O!T$lO']$bO^'QX!R'QX~O!R)nO^(Ua~O!c.fO~P!)wO].hO~OZ.iO~O^.jO~OP.TO!T&dO!o.SO%Q.RO'b$PO~O!R)zO_(Ra'W(Ra~O!{.pO~OP.sO!T#zO~O'g'TO!S(SP~OP.}O!T.yO!o.|O%Q.{O'b$PO~OZ/XO!R/VO!S(TX~O!S/YO~O^/[O_$^O'W$^O~O]/]O~O]/^O'](|O~O#c/_O%r/`O~P0zO!{#eO#c/_O%r/`O~O_/aO~P){O_/cO~O%{/gOQ%yiR%yiX%yi]%yi_%yib%yic%yih%yij%yik%yil%yiq%yis%yix%yi{%yi|%yi}%yi!T%yi!_%yi!d%yi!g%yi!h%yi!i%yi!j%yi!k%yi!n%yi#d%yi#t%yi#x%yi%P%yi%R%yi%T%yi%U%yi%X%yi%Z%yi%^%yi%_%yi%a%yi%n%yi%t%yi%v%yi%x%yi%z%yi%}%yi&T%yi&Z%yi&]%yi&_%yi&a%yi&c%yi'S%yi']%yi'f%yi'o%yi'|%yi!S%yi`%yi&Q%yi~O`/mO!S/kO&Q/lO~P`O!TSO!d/oO~O&X*wOQ&SiR&SiX&Si]&Si_&Sib&Sic&Sih&Sij&Sik&Sil&Siq&Sis&Six&Si{&Si|&Si}&Si!T&Si!_&Si!d&Si!g&Si!h&Si!i&Si!j&Si!k&Si!n&Si#d&Si#t&Si#x&Si%P&Si%R&Si%T&Si%U&Si%X&Si%Z&Si%^&Si%_&Si%a&Si%n&Si%t&Si%v&Si%x&Si%z&Si%}&Si&T&Si&Z&Si&]&Si&_&Si&a&Si&c&Si'S&Si']&Si'f&Si'o&Si'|&Si!S&Si%{&Si`&Si&Q&Si~O!R#bOn$]a~O!O&ii!R&ii~P!)wO!R%zO!O'ji~O!R&`O!O'ti~O!O/uO~O!R!Va!S!Va~P#*XO]&ROk&RO!Q/{O'g(jO!R&jX!S&jX~P@dO!R+`O!S'ka~O]&ZOk&ZO!Q)yO'g'TO!R&oX!S&oX~O!R+cO!S'va~O!O'ui!R'ui~P!)wO_$^O!]!wO!d$ZO!j0VO!{0TO'W$^O'b$PO'p&oO~O!S0YO~P!?iO!X0ZO!Y0ZO'^$dO'g(jO'o+iO~O!W0[O~P#MSO!TSO!W0[O!u0^O!x0_O~P#MSO!W0[O!s0aO!t0aO!u0^O!x0_O~P#MSO!T&dO~O!T&dO~P!BpO!R'ri!c'ri_'ri'W'ri~P!)wO!{0jO!R'ri!c'ri_'ri'W'ri~O!R&tO!c'qi~Ox$uO!T$vO#V0lO']$bO~O#WraQraZra_rajra!ara!bra!dra!jra#[ra#]ra#^ra#_ra#`ra#ara#bra#cra#era#gra#ira#jra'Wra'fra'pra!cra!Ora!Tranra%Qra!]ra~P#7pO#W$^aQ$^aZ$^a_$^aj$^av$^a!a$^a!b$^a!d$^a!j$^a#[$^a#]$^a#^$^a#_$^a#`$^a#a$^a#b$^a#c$^a#e$^a#g$^a#i$^a#j$^a'W$^a'f$^a'p$^a!c$^a!O$^a!T$^an$^a%Q$^a!]$^a~P#8fO#W$`aQ$`aZ$`a_$`aj$`av$`a!a$`a!b$`a!d$`a!j$`a#[$`a#]$`a#^$`a#_$`a#`$`a#a$`a#b$`a#c$`a#e$`a#g$`a#i$`a#j$`a'W$`a'f$`a'p$`a!c$`a!O$`a!T$`an$`a%Q$`a!]$`a~P#9XO#W$naQ$naZ$na_$naj$nav$na!R$na!a$na!b$na!d$na!j$na#[$na#]$na#^$na#_$na#`$na#a$na#b$na#c$na#e$na#g$na#i$na#j$na'W$na'f$na'p$na!c$na!O$na!T$na!{$nan$na%Q$na!]$na~P!BpO_#Oq!R#Oq'W#Oq!O#Oq!c#Oqn#Oq!T#Oq%Q#Oq!]#Oq~P!)wO!R&kX'a&kX~PJjO!R,_O'a'ma~O!Q0tO!R&lX!c&lX~P){O!R,bO!c'na~O!R,bO!c'na~P!)wO#m!fa!S!fa~PCfO#m!^a!R!^a!S!^a~P#*XO!T1XO#x^O$P1YO~O!S1^O~On1_O~P!BpO_$Yq!R$Yq'W$Yq!O$Yq!c$Yqn$Yq!T$Yq%Q$Yq!]$Yq~P!)wO!O1`O~O],yOk,yO~Ou(SOx(TO'x(XOP$xi'w$xi!R$xi!{$xi~O'a$xi#m$xi~P$.POu(SOx(TOP$zi'w$zi'x$zi!R$zi!{$zi~O'a$zi#m$zi~P$.rO'p#[O~P!BpO!Q1cO']$bO!R&tX!c&tX~O!R-RO!c'}a~O!R-RO!]!wO!c'}a~O!R-RO!]!wO'p&oO!c'}a~O'a$gi!R$gi!{$gi#m$gi~P!#{O!Q1kO'](eO!O&vX!R&vX~P!$jO!R-ZO!O(Oa~O!R-ZO!O(Oa~P!BpO!]!wO~O!]!wO#c1sO~Oj1vO!]!wO'p&oO~O!R'di'a'di~P!#{O!{1yO!R'di'a'di~P!#{O!c1|O~O_$Zq!R$Zq'W$Zq!O$Zq!c$Zqn$Zq!T$Zq%Q$Zq!]$Zq~P!)wO!R2QO!T(PX~P!BpO!T&dO%Q2TO~O!T&dO%Q2TO~P!BpO!T$eX$u[X_$eX!R$eX'W$eX~P!!rO$u2XOPgXugXxgX!TgX'wgX'xgX_gX!RgX'WgX~O$u2XO~O]2_O%R2`O'])iO!R'PX!S'PX~O!R.^O!S(Va~OZ2dO~O^2eO~O]2hO~OP2jO!T&dO!o2iO%Q2TO~O_$^O'W$^O~P!BpO!T#zO~P!BpO!R2oO!{2qO!S(SX~O!S2rO~Ox;oO!W2{O!X2tO!Y2tO!r2zO!s2yO!t2yO!x2xO'^$dO'g(jO'o+iO~O!S2wO~P$7ZOP3SO!T.yO!o3RO%Q3QO~OP3SO!T.yO!o3RO%Q3QO'b$PO~O'](|O!R'OX!S'OX~O!R/VO!S(Ta~O]3^O'g3]O~O]3_O~O^3aO~O!c3dO~P){O_3fO~O_3fO~P){O#c3hO%r3iO~PFOO`/mO!S3mO&Q/lO~P`O!]3oO~O!R#Ti!S#Ti~P#*XO!{3qO!R#Ti!S#Ti~O!R!Vi!S!Vi~P#*XO_$^O!{3xO'W$^O~O_$^O!]!wO!{3xO'W$^O~O!X3|O!Y3|O'^$dO'g(jO'o+iO~O_$^O!]!wO!d$ZO!j3}O!{3xO'W$^O'b$PO'p&oO~O!W4OO~P$;xO!W4OO!u4RO!x4SO~P$;xO_$^O!]!wO!j3}O!{3xO'W$^O'p&oO~O!R'rq!c'rq_'rq'W'rq~P!)wO!R&tO!c'qq~O#W$xiQ$xiZ$xi_$xij$xiv$xi!a$xi!b$xi!d$xi!j$xi#[$xi#]$xi#^$xi#_$xi#`$xi#a$xi#b$xi#c$xi#e$xi#g$xi#i$xi#j$xi'W$xi'f$xi'p$xi!c$xi!O$xi!T$xin$xi%Q$xi!]$xi~P$.PO#W$ziQ$ziZ$zi_$zij$ziv$zi!a$zi!b$zi!d$zi!j$zi#[$zi#]$zi#^$zi#_$zi#`$zi#a$zi#b$zi#c$zi#e$zi#g$zi#i$zi#j$zi'W$zi'f$zi'p$zi!c$zi!O$zi!T$zin$zi%Q$zi!]$zi~P$.rO#W$giQ$giZ$gi_$gij$giv$gi!R$gi!a$gi!b$gi!d$gi!j$gi#[$gi#]$gi#^$gi#_$gi#`$gi#a$gi#b$gi#c$gi#e$gi#g$gi#i$gi#j$gi'W$gi'f$gi'p$gi!c$gi!O$gi!T$gi!{$gin$gi%Q$gi!]$gi~P!BpO!R&ka'a&ka~P!#{O!R&la!c&la~P!)wO!R,bO!c'ni~O#m#Oi!R#Oi!S#Oi~P#*XOQ#^Ou!{Ov!{Ox!|O!b!yO!d!zO!j#^O'fQOZ#Zij#Zi!a#Zi#]#Zi#^#Zi#_#Zi#`#Zi#a#Zi#b#Zi#c#Zi#e#Zi#g#Zi#i#Zi#j#Zi#m#Zi'p#Zi'w#Zi'x#Zi!R#Zi!S#Zi~O#[#Zi~P$EiO#[9eO~P$EiOQ#^Ou!{Ov!{Ox!|O!b!yO!d!zO!j#^O#[9eO#]9fO#^9fO#_9fO'fQOZ#Zi!a#Zi#`#Zi#a#Zi#b#Zi#c#Zi#e#Zi#g#Zi#i#Zi#j#Zi#m#Zi'p#Zi'w#Zi'x#Zi!R#Zi!S#Zi~Oj#Zi~P$GqOj9gO~P$GqOQ#^Oj9gOu!{Ov!{Ox!|O!b!yO!d!zO!j#^O#[9eO#]9fO#^9fO#_9fO#`9hO'fQO#e#Zi#g#Zi#i#Zi#j#Zi#m#Zi'p#Zi'w#Zi'x#Zi!R#Zi!S#Zi~OZ#Zi!a#Zi#a#Zi#b#Zi#c#Zi~P$IyOZ9rO!a9iO#a9iO#b9iO#c9iO~P$IyOQ#^OZ9rOj9gOu!{Ov!{Ox!|O!a9iO!b!yO!d!zO!j#^O#[9eO#]9fO#^9fO#_9fO#`9hO#a9iO#b9iO#c9iO#e9jO'fQO#g#Zi#i#Zi#j#Zi#m#Zi'p#Zi'x#Zi!R#Zi!S#Zi~O'w#Zi~P$L_O'w!}O~P$L_OQ#^OZ9rOj9gOu!{Ov!{Ox!|O!a9iO!b!yO!d!zO!j#^O#[9eO#]9fO#^9fO#_9fO#`9hO#a9iO#b9iO#c9iO#e9jO#g9lO'fQO'w!}O#i#Zi#j#Zi#m#Zi'p#Zi!R#Zi!S#Zi~O'x#Zi~P$NgO'x#OO~P$NgOQ#^OZ9rOj9gOu!{Ov!{Ox!|O!a9iO!b!yO!d!zO!j#^O#[9eO#]9fO#^9fO#_9fO#`9hO#a9iO#b9iO#c9iO#e9jO#g9lO#i9nO'fQO'w!}O'x#OO~O#j#Zi#m#Zi'p#Zi!R#Zi!S#Zi~P%!oO_#ky!R#ky'W#ky!O#ky!c#kyn#ky!T#ky%Q#ky!]#ky~P!)wOP;vOu(SOx(TO'w(VO'x(XO~OQ#ZiZ#Zij#Ziv#Zi!a#Zi!b#Zi!d#Zi!j#Zi#[#Zi#]#Zi#^#Zi#_#Zi#`#Zi#a#Zi#b#Zi#c#Zi#e#Zi#g#Zi#i#Zi#j#Zi#m#Zi'f#Zi'p#Zi!R#Zi!S#Zi~P%%aO!b!yOP'eXu'eXx'eX'w'eX'x'eX!S'eX~OQ'eXZ'eXj'eXv'eX!a'eX!d'eX!j'eX#['eX#]'eX#^'eX#_'eX#`'eX#a'eX#b'eX#c'eX#e'eX#g'eX#i'eX#j'eX#m'eX'f'eX'p'eX!R'eX~P%'eO#m#ni!R#ni!S#ni~P#*XO!S4eO~O!R&sa!S&sa~P#*XO!]!wO'p&oO!R&ta!c&ta~O!R-RO!c'}i~O!R-RO!]!wO!c'}i~O'a$gq!R$gq!{$gq#m$gq~P!#{O!O&va!R&va~P!BpO!]4lO~O!R-ZO!O(Oi~P!BpO!R-ZO!O(Oi~O!O4pO~O!]!wO#c4uO~Oj4vO!]!wO'p&oO~O!O4xO~O'a$iq!R$iq!{$iq#m$iq~P!#{O_$Zy!R$Zy'W$Zy!O$Zy!c$Zyn$Zy!T$Zy%Q$Zy!]$Zy~P!)wO!R2QO!T(Pa~O!T&dO%Q4}O~O!T&dO%Q4}O~P!BpO_#Oy!R#Oy'W#Oy!O#Oy!c#Oyn#Oy!T#Oy%Q#Oy!]#Oy~P!)wOZ5QO~O]5SO'])iO~O!R.^O!S(Vi~O]5VO~O^5WO~O'g'TO!R&{X!S&{X~O!R2oO!S(Sa~O!S5eO~P$7ZOx;sO'g(jO'o+iO~O!W5hO!X5gO!Y5gO!x0_O'^$dO'g(jO'o+iO~O!s5iO!t5iO~P%0^O!X5gO!Y5gO'^$dO'g(jO'o+iO~O!T.yO~O!T.yO%Q5kO~O!T.yO%Q5kO~P!BpOP5pO!T.yO!o5oO%Q5kO~OZ5uO!R'Oa!S'Oa~O!R/VO!S(Ti~O]5xO~O!c5yO~O!c5zO~O!c5{O~O!c5{O~P){O_5}O~O!]6QO~O!c6RO~O!R'ui!S'ui~P#*XO_$^O'W$^O~P!)wO_$^O!{6WO'W$^O~O_$^O!]!wO!{6WO'W$^O~O!X6]O!Y6]O'^$dO'g(jO'o+iO~O_$^O!]!wO!j6^O!{6WO'W$^O'p&oO~O!d$ZO'b$PO~P%4xO!W6_O~P%4gO!R'ry!c'ry_'ry'W'ry~P!)wO#W$gqQ$gqZ$gq_$gqj$gqv$gq!R$gq!a$gq!b$gq!d$gq!j$gq#[$gq#]$gq#^$gq#_$gq#`$gq#a$gq#b$gq#c$gq#e$gq#g$gq#i$gq#j$gq'W$gq'f$gq'p$gq!c$gq!O$gq!T$gq!{$gqn$gq%Q$gq!]$gq~P!BpO#W$iqQ$iqZ$iq_$iqj$iqv$iq!R$iq!a$iq!b$iq!d$iq!j$iq#[$iq#]$iq#^$iq#_$iq#`$iq#a$iq#b$iq#c$iq#e$iq#g$iq#i$iq#j$iq'W$iq'f$iq'p$iq!c$iq!O$iq!T$iq!{$iqn$iq%Q$iq!]$iq~P!BpO!R&li!c&li~P!)wO#m#Oq!R#Oq!S#Oq~P#*XOu-tOv-tOx-uOPra'wra'xra!Sra~OQraZrajra!ara!bra!dra!jra#[ra#]ra#^ra#_ra#`ra#ara#bra#cra#era#gra#ira#jra#mra'fra'pra!Rra~P%;OOu(SOx(TOP$^a'w$^a'x$^a!S$^a~OQ$^aZ$^aj$^av$^a!a$^a!b$^a!d$^a!j$^a#[$^a#]$^a#^$^a#_$^a#`$^a#a$^a#b$^a#c$^a#e$^a#g$^a#i$^a#j$^a#m$^a'f$^a'p$^a!R$^a~P%=SOu(SOx(TOP$`a'w$`a'x$`a!S$`a~OQ$`aZ$`aj$`av$`a!a$`a!b$`a!d$`a!j$`a#[$`a#]$`a#^$`a#_$`a#`$`a#a$`a#b$`a#c$`a#e$`a#g$`a#i$`a#j$`a#m$`a'f$`a'p$`a!R$`a~P%?WOQ$naZ$naj$nav$na!a$na!b$na!d$na!j$na#[$na#]$na#^$na#_$na#`$na#a$na#b$na#c$na#e$na#g$na#i$na#j$na#m$na'f$na'p$na!R$na!S$na~P%%aO#m$Yq!R$Yq!S$Yq~P#*XO#m$Zq!R$Zq!S$Zq~P#*XO!S6hO~O#m6iO~P!#{O!]!wO!R&ti!c&ti~O!]!wO'p&oO!R&ti!c&ti~O!R-RO!c'}q~O!O&vi!R&vi~P!BpO!R-ZO!O(Oq~O!O6oO~P!BpO!O6oO~O!R'dy'a'dy~P!#{O!R&ya!T&ya~P!BpO!T$tq_$tq!R$tq'W$tq~P!BpOZ6vO~O!R.^O!S(Vq~O]6yO~O!T&dO%Q6zO~O!T&dO%Q6zO~P!BpO!{6{O!R&{a!S&{a~O!R2oO!S(Si~P#*XO!X7RO!Y7RO'^$dO'g(jO'o+iO~O!W7TO!x4SO~P%GXO!T.yO%Q7WO~O!T.yO%Q7WO~P!BpO]7_O'g7^O~O!R/VO!S(Tq~O!c7aO~O!c7aO~P){O!c7cO~O!c7dO~O!R#Ty!S#Ty~P#*XO_$^O!{7jO'W$^O~O_$^O!]!wO!{7jO'W$^O~O!X7mO!Y7mO'^$dO'g(jO'o+iO~O_$^O!]!wO!j7nO!{7jO'W$^O'p&oO~O#m#ky!R#ky!S#ky~P#*XOQ$giZ$gij$giv$gi!a$gi!b$gi!d$gi!j$gi#[$gi#]$gi#^$gi#_$gi#`$gi#a$gi#b$gi#c$gi#e$gi#g$gi#i$gi#j$gi#m$gi'f$gi'p$gi!R$gi!S$gi~P%%aOu(SOx(TO'x(XOP$xi'w$xi!S$xi~OQ$xiZ$xij$xiv$xi!a$xi!b$xi!d$xi!j$xi#[$xi#]$xi#^$xi#_$xi#`$xi#a$xi#b$xi#c$xi#e$xi#g$xi#i$xi#j$xi#m$xi'f$xi'p$xi!R$xi~P%LjOu(SOx(TOP$zi'w$zi'x$zi!S$zi~OQ$ziZ$zij$ziv$zi!a$zi!b$zi!d$zi!j$zi#[$zi#]$zi#^$zi#_$zi#`$zi#a$zi#b$zi#c$zi#e$zi#g$zi#i$zi#j$zi#m$zi'f$zi'p$zi!R$zi~P%NnO#m$Zy!R$Zy!S$Zy~P#*XO#m#Oy!R#Oy!S#Oy~P#*XO!]!wO!R&tq!c&tq~O!R-RO!c'}y~O!O&vq!R&vq~P!BpO!O7tO~P!BpO!R.^O!S(Vy~O!R2oO!S(Sq~O!X8QO!Y8QO'^$dO'g(jO'o+iO~O!T.yO%Q8TO~O!T.yO%Q8TO~P!BpO!c8WO~O_$^O!{8]O'W$^O~O_$^O!]!wO!{8]O'W$^O~OQ$gqZ$gqj$gqv$gq!a$gq!b$gq!d$gq!j$gq#[$gq#]$gq#^$gq#_$gq#`$gq#a$gq#b$gq#c$gq#e$gq#g$gq#i$gq#j$gq#m$gq'f$gq'p$gq!R$gq!S$gq~P%%aOQ$iqZ$iqj$iqv$iq!a$iq!b$iq!d$iq!j$iq#[$iq#]$iq#^$iq#_$iq#`$iq#a$iq#b$iq#c$iq#e$iq#g$iq#i$iq#j$iq#m$iq'f$iq'p$iq!R$iq!S$iq~P%%aO'a$|!Z!R$|!Z!{$|!Z#m$|!Z~P!#{O!R&{q!S&{q~P#*XO_$^O!{8oO'W$^O~O#W$|!ZQ$|!ZZ$|!Z_$|!Zj$|!Zv$|!Z!R$|!Z!a$|!Z!b$|!Z!d$|!Z!j$|!Z#[$|!Z#]$|!Z#^$|!Z#_$|!Z#`$|!Z#a$|!Z#b$|!Z#c$|!Z#e$|!Z#g$|!Z#i$|!Z#j$|!Z'W$|!Z'f$|!Z'p$|!Z!c$|!Z!O$|!Z!T$|!Z!{$|!Zn$|!Z%Q$|!Z!]$|!Z~P!BpOP;uOu(SOx(TO'w(VO'x(XO~O!S!za!W!za!X!za!Y!za!r!za!s!za!t!za!x!za'^!za'g!za'o!za~P&,_O!W'eX!X'eX!Y'eX!r'eX!s'eX!t'eX!x'eX'^'eX'g'eX'o'eX~P%'eOQ$|!ZZ$|!Zj$|!Zv$|!Z!a$|!Z!b$|!Z!d$|!Z!j$|!Z#[$|!Z#]$|!Z#^$|!Z#_$|!Z#`$|!Z#a$|!Z#b$|!Z#c$|!Z#e$|!Z#g$|!Z#i$|!Z#j$|!Z#m$|!Z'f$|!Z'p$|!Z!R$|!Z!S$|!Z~P%%aO!Wra!Xra!Yra!rra!sra!tra!xra'^ra'gra'ora~P%;OO!W$^a!X$^a!Y$^a!r$^a!s$^a!t$^a!x$^a'^$^a'g$^a'o$^a~P%=SO!W$`a!X$`a!Y$`a!r$`a!s$`a!t$`a!x$`a'^$`a'g$`a'o$`a~P%?WO!S$na!W$na!X$na!Y$na!r$na!s$na!t$na!x$na'^$na'g$na'o$na~P&,_O!W$xi!X$xi!Y$xi!r$xi!s$xi!t$xi!x$xi'^$xi'g$xi'o$xi~P%LjO!W$zi!X$zi!Y$zi!r$zi!s$zi!t$zi!x$zi'^$zi'g$zi'o$zi~P%NnO!S$gi!W$gi!X$gi!Y$gi!r$gi!s$gi!t$gi!x$gi'^$gi'g$gi'o$gi~P&,_O!S$gq!W$gq!X$gq!Y$gq!r$gq!s$gq!t$gq!x$gq'^$gq'g$gq'o$gq~P&,_O!S$iq!W$iq!X$iq!Y$iq!r$iq!s$iq!t$iq!x$iq'^$iq'g$iq'o$iq~P&,_O!S$|!Z!W$|!Z!X$|!Z!Y$|!Z!r$|!Z!s$|!Z!t$|!Z!x$|!Z'^$|!Z'g$|!Z'o$|!Z~P&,_On'hX~P.jOn[X!O[X!c[X%r[X!T[X%Q[X!][X~P$zO!]dX!c[X!cdX'pdX~P;dOQ9^OR9^O]cOb;`Oc!jOhcOj9^OkcOlcOq9^Os9^OxRO{cO|cO}cO!TSO!_9`O!dUO!g9^O!h9^O!i9^O!j9^O!k9^O!n!iO#t!lO#x^O']'cO'fQO'oYO'|;^O~O]#qOh$QOj#rOk#qOl#qOq$ROs9uOx#yO!T#zO!_;fO!d#vO#V:OO#t$VO$_9xO$a9{O$d$WO']&{O'b$PO'f#sO~O!R9pO!S$]a~O]#qOh$QOj#rOk#qOl#qOq$ROs9vOx#yO!T#zO!_;gO!d#vO#V:PO#t$VO$_9yO$a9|O$d$WO']&{O'b$PO'f#sO~O#d'jO~P&<WO!S[X!SdX~P;dO!]9dO~O#W9cO~O!]!wO#W9cO~O!{9sO~O#c9iO~O!{:QO!R'uX!S'uX~O!{9sO!R'sX!S'sX~O#W:RO~O'a:TO~P!#{O#W:[O~O#W:]O~O#W:^O~O!]!wO#W:_O~O!]!wO#W:RO~O#m:`O~P#*XO#W:aO~O#W:bO~O#W:cO~O#W:dO~O#W:eO~O#W:fO~O#W:gO~O#W:hO~O!O:iO~O#m:jO~P!#{O#m:kO~P!#{O#m:lO~P!#{O!O:mO~P!BpO!O:mO~O!O:nO~P!BpO!]!wO#c;lO~O!]!wO#c;nO~O#x~!b!r!t!u#U#V'|$_$a$d$u%P%Q%R%X%Z%^%_%a%c~UT#x'|#]}'Y'Z#z'Y']'g~",
+  states:
+    "$8SO`QdOOO'QQ(C|O'#ChO'XOWO'#DVO)dQdO'#D]O)tQdO'#DhO){QdO'#DrO-xQdO'#DxOOQO'#E]'#E]O.]Q`O'#E[O.bQ`O'#E[OOQ(C['#Ef'#EfO0aQ(C|O'#ItO2wQ(C|O'#IuO3eQ`O'#EzO3jQ!bO'#FaOOQ(C['#FS'#FSO3rO#tO'#FSO4QQ&jO'#FhO5bQ`O'#FgOOQ(C['#Iu'#IuOOQ(CW'#It'#ItOOQS'#J^'#J^O5gQ`O'#HpO5lQ(ChO'#HqOOQS'#Ih'#IhOOQS'#Hr'#HrQ`QdOOO){QdO'#DjO5tQ`O'#G[O5yQ&jO'#CmO6XQ`O'#EZO6dQ`O'#EgO6iQ,UO'#FRO7TQ`O'#G[O7YQ`O'#G`O7eQ`O'#G`O7sQ`O'#GcO7sQ`O'#GdO7sQ`O'#GfO5tQ`O'#GiO8dQ`O'#GlO9rQ`O'#CdO:SQ`O'#GyO:[Q`O'#HPO:[Q`O'#HRO`QdO'#HTO:[Q`O'#HVO:[Q`O'#HYO:aQ`O'#H`O:fQ(CjO'#HfO){QdO'#HhO:qQ(CjO'#HjO:|Q(CjO'#HlO5lQ(ChO'#HnO){QdO'#DWOOOW'#Ht'#HtO;XOWO,59qOOQ(C[,59q,59qO=jQtO'#ChO=tQdO'#HuO>XQ`O'#IvO@WQtO'#IvO'dQdO'#IvO@_Q`O,59wO@uQ7[O'#DbOAnQ`O'#E]OA{Q`O'#JROBWQ`O'#JQOBWQ`O'#JQOB`Q`O,5:yOBeQ`O'#JPOBlQaO'#DyO5yQ&jO'#EZOBzQ`O'#EZOCVQpO'#FROOQ(C[,5:S,5:SOC_QdO,5:SOE]Q(C|O,5:^OEyQ`O,5:dOFdQ(ChO'#JOO7YQ`O'#I}OFkQ`O'#I}OFsQ`O,5:xOFxQ`O'#I}OGWQdO,5:vOIWQ&jO'#EWOJeQ`O,5:vOKwQ&jO'#DlOLOQdO'#DqOLYQ7[O,5;PO){QdO,5;POOQS'#Er'#ErOOQS'#Et'#EtO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;RO){QdO,5;ROOQS'#Ex'#ExOLbQdO,5;cOOQ(C[,5;h,5;hOOQ(C[,5;i,5;iONbQ`O,5;iOOQ(C[,5;j,5;jO){QdO'#IPONgQ(ChO,5<TO! RQ&jO,5;RO){QdO,5;fO! kQ!bO'#JVO! YQ!bO'#JVO! rQ!bO'#JVO!!TQ!bO,5;qOOOO,5;{,5;{O!!cQdO'#FcOOOO'#IO'#IOO3rO#tO,5;nO!!jQ!bO'#FeOOQ(C[,5;n,5;nO!#WQ,VO'#CrOOQ(C]'#Cu'#CuO!#kQ`O'#CuO!#pOWO'#CyO!$^Q,VO,5<QO!$eQ`O,5<SO!%tQ&jO'#FrO!&RQ`O'#FsO!&WQ`O'#FsO!&]Q&jO'#FwO!'[Q7[O'#F{O!'}Q,VO'#IqOOQ(C]'#Iq'#IqO!(XQaO'#IpO!(gQ`O'#IoO!(oQ`O'#CqOOQ(C]'#Cs'#CsOOQ(C]'#C|'#C|O!(wQ`O'#DOOJjQ&jO'#FjOJjQ&jO'#FlO!(|Q`O'#FnO!)RQ`O'#FoO!&WQ`O'#FuOJjQ&jO'#FzO!)WQ`O'#E^O!)oQ`O,5<RO`QdO,5>[OOQS'#Ik'#IkOOQS,5>],5>]OOQS-E;p-E;pO!+kQ(C|O,5:UOOQ(CX'#Cp'#CpO!,[Q&kO,5<vOOQO'#Cf'#CfO!,mQ(ChO'#IlO5bQ`O'#IlO:aQ`O,59XO!-OQ!bO,59XO!-WQ&jO,59XO5yQ&jO,59XO!-cQ`O,5:vO!-kQ`O'#GxO!-yQ`O'#JbO){QdO,5;kO!.RQ7[O,5;mO!.WQ`O,5=cO!.]Q`O,5=cO!.bQ`O,5=cO5lQ(ChO,5=cO5tQ`O,5<vO!.pQ`O'#E_O!/UQ7[O'#E`OOQ(CW'#JP'#JPO!/gQ(ChO'#J_O5lQ(ChO,5<zO7sQ`O,5=QOOQP'#Cr'#CrO!/rQ!bO,5<}O!/zQ!cO,5=OO!0VQ`O,5=QO!0[QpO,5=TO:aQ`O'#GnO5tQ`O'#GpO!0dQ`O'#GpO5yQ&jO'#GsO!0iQ`O'#GsOOQS,5=W,5=WO!0nQ`O'#GtO!0vQ`O'#CmO!0{Q`O,59OO!1VQ`O,59OO!3XQdO,59OOOQS,59O,59OO!3fQ(ChO,59OO){QdO,59OO!3qQdO'#G{OOQS'#G|'#G|OOQS'#G}'#G}O`QdO,5=eO!4RQ`O,5=eO){QdO'#DxO`QdO,5=kO`QdO,5=mO!4WQ`O,5=oO`QdO,5=qO!4]Q`O,5=tO!4bQdO,5=zOOQS,5>Q,5>QO){QdO,5>QO5lQ(ChO,5>SOOQS,5>U,5>UO!8cQ`O,5>UOOQS,5>W,5>WO!8cQ`O,5>WOOQS,5>Y,5>YO!8hQpO,59rOOOW-E;r-E;rOOQ(C[1G/]1G/]O!8mQtO,5>aO'dQdO,5>aOOQO,5>f,5>fO!8wQdO'#HuOOQO-E;s-E;sO!9UQ`O,5?bO!9^QtO,5?bO!9eQ`O,5?lOOQ(C[1G/c1G/cO!9mQ!bO'#DTOOQO'#Ix'#IxO){QdO'#IxO!:[Q!bO'#IxO!:yQ!bO'#DcO!;[Q7[O'#DcO!=gQdO'#DcO!=nQ`O'#IwO!=vQ`O,59|O!={Q`O'#EaO!>ZQ`O'#JSO!>cQ`O,5:zO!>yQ7[O'#DcO){QdO,5?mO!?TQ`O'#HzOOQO-E;x-E;xO!9eQ`O,5?lOOQ(CW1G0e1G0eO!@aQ7[O'#D|OOQ(C[,5:e,5:eO){QdO,5:eOIWQ&jO,5:eO!@hQaO,5:eO:aQ`O,5:uO!-OQ!bO,5:uO!-WQ&jO,5:uO5yQ&jO,5:uOOQ(C[1G/n1G/nOOQ(C[1G0O1G0OOOQ(CW'#EV'#EVO){QdO,5?jO!@sQ(ChO,5?jO!AUQ(ChO,5?jO!A]Q`O,5?iO!AeQ`O'#H|O!A]Q`O,5?iOOQ(CW1G0d1G0dO7YQ`O,5?iOOQ(C[1G0b1G0bO!BPQ(C|O1G0bO!CRQ(CyO,5:rOOQ(C]'#Fq'#FqO!CoQ(C}O'#IqOGWQdO1G0bO!EqQ,VO'#IyO!E{Q`O,5:WO!FQQtO'#IzO){QdO'#IzO!F[Q`O,5:]OOQ(C]'#DT'#DTOOQ(C[1G0k1G0kO!FaQ`O1G0kO!HrQ(C|O1G0mO!HyQ(C|O1G0mO!K^Q(C|O1G0mO!KeQ(C|O1G0mO!MlQ(C|O1G0mO!NPQ(C|O1G0mO#!pQ(C|O1G0mO#!wQ(C|O1G0mO#%[Q(C|O1G0mO#%cQ(C|O1G0mO#'WQ(C|O1G0mO#*QQMlO'#ChO#+{QMlO1G0}O#-vQMlO'#IuOOQ(C[1G1T1G1TO#.ZQ(C|O,5>kOOQ(CW-E;}-E;}O#.zQ(C}O1G0mOOQ(C[1G0m1G0mO#1PQ(C|O1G1QO#1pQ!bO,5;sO#1uQ!bO,5;tO#1zQ!bO'#F[O#2`Q`O'#FZOOQO'#JW'#JWOOQO'#H}'#H}O#2eQ!bO1G1]OOQ(C[1G1]1G1]OOOO1G1f1G1fO#2sQMlO'#ItO#2}Q`O,5;}OLbQdO,5;}OOOO-E;|-E;|OOQ(C[1G1Y1G1YOOQ(C[,5<P,5<PO#3SQ!bO,5<POOQ(C],59a,59aOIWQ&jO'#C{OOOW'#Hs'#HsO#3XOWO,59eOOQ(C],59e,59eO){QdO1G1lO!)RQ`O'#IRO#3dQ`O,5<eOOQ(C],5<b,5<bOOQO'#GV'#GVOJjQ&jO,5<pOOQO'#GX'#GXOJjQ&jO,5<rOIWQ&jO,5<tOOQO1G1n1G1nO#3oQqO'#CpO#4SQqO,5<^O#4ZQ`O'#JZO5tQ`O'#JZO#4iQ`O,5<`OJjQ&jO,5<_O#4nQ`O'#FtO#4yQ`O,5<_O#5OQqO'#FqO#5]QqO'#J[O#5gQ`O'#J[OIWQ&jO'#J[O#5lQ`O,5<cOOQ(CW'#Dg'#DgO#5qQ!bO'#F|O!'VQ7[O'#F|O!'VQ7[O'#GOO#6SQ`O'#GPO!&WQ`O'#GSO#6XQ(ChO'#ITO#6dQ7[O,5<gOOQ(C],5<g,5<gO#6kQ7[O'#F|O#6yQ7[O'#F}O#7RQ7[O'#F}OOQ(C],5<u,5<uOJjQ&jO,5?[OJjQ&jO,5?[O#7WQ`O'#IUO#7cQ`O,5?ZO#7kQ`O,59]OOQ(C]'#Ch'#ChO#8[Q,VO,59jOOQ(C],59j,59jO#8}Q,VO,5<UO#9pQ,VO,5<WO#9zQ`O,5<YOOQ(C],5<Z,5<ZO#:PQ`O,5<aO#:UQ,VO,5<fOGWQdO1G1mO#:fQ`O1G1mOOQS1G3v1G3vOOQ(C[1G/p1G/pONbQ`O1G/pOOQS1G2b1G2bOIWQ&jO1G2bO){QdO1G2bOIWQ&jO1G2bO#:kQaO1G2bO#<QQ&jO'#EWOOQ(CW,5?W,5?WO#<[Q(ChO,5?WOOQS1G.s1G.sO:aQ`O1G.sO!-OQ!bO1G.sO!-WQ&jO1G.sO#<mQ`O1G0bO#<rQ`O'#ChO#<}Q`O'#JcO#=VQ`O,5=dO#=[Q`O'#JcO#=aQ`O'#JcO#=iQ`O'#I^O#=wQ`O,5?|O#>PQtO1G1VOOQ(C[1G1X1G1XO5tQ`O1G2}O#>WQ`O1G2}O#>]Q`O1G2}O#>bQ`O1G2}OOQS1G2}1G2}O#>gQ&kO1G2bO7YQ`O'#JQO7YQ`O'#EaO7YQ`O'#IWO#>xQ(ChO,5?yOOQS1G2f1G2fO!0VQ`O1G2lOIWQ&jO1G2iO#?TQ`O1G2iOOQS1G2j1G2jOIWQ&jO1G2jO#?YQaO1G2jO#?bQ7[O'#GhOOQS1G2l1G2lO!'VQ7[O'#IYO!0[QpO1G2oOOQS1G2o1G2oOOQS,5=Y,5=YO#?jQ&kO,5=[O5tQ`O,5=[O#6SQ`O,5=_O5bQ`O,5=_O!-OQ!bO,5=_O!-WQ&jO,5=_O5yQ&jO,5=_O#?{Q`O'#JaO#@WQ`O,5=`OOQS1G.j1G.jO#@]Q(ChO1G.jO#@hQ`O1G.jO#@mQ`O1G.jO5lQ(ChO1G.jO#@uQtO,5@OO#APQ`O,5@OO#A[QdO,5=gO#AcQ`O,5=gO7YQ`O,5@OOOQS1G3P1G3PO`QdO1G3POOQS1G3V1G3VOOQS1G3X1G3XO:[Q`O1G3ZO#AhQdO1G3]O#EcQdO'#H[OOQS1G3`1G3`O#EpQ`O'#HbO:aQ`O'#HdOOQS1G3f1G3fO#ExQdO1G3fO5lQ(ChO1G3lOOQS1G3n1G3nOOQ(CW'#Fx'#FxO5lQ(ChO1G3pO5lQ(ChO1G3rOOOW1G/^1G/^O#IvQpO,5<TO#JOQtO1G3{OOQO1G4Q1G4QO){QdO,5>aO#JYQ`O1G4|O#JbQ`O1G5WO#JjQ`O,5?dOLbQdO,5:{O7YQ`O,5:{O:aQ`O,59}OLbQdO,59}O!-OQ!bO,59}O#JoQMlO,59}OOQO,5:{,5:{O#JyQ7[O'#HvO#KaQ`O,5?cOOQ(C[1G/h1G/hO#KiQ7[O'#H{O#K}Q`O,5?nOOQ(CW1G0f1G0fO!;[Q7[O,59}O#LVQtO1G5XO7YQ`O,5>fOOQ(CW'#ES'#ESO#LaQ(DjO'#ETO!@XQ7[O'#D}OOQO'#Hy'#HyO#L{Q7[O,5:hOOQ(C[,5:h,5:hO#MSQ7[O'#D}O#MeQ7[O'#D}O#MlQ7[O'#EYO#MoQ7[O'#ETO#M|Q7[O'#ETO!@XQ7[O'#ETO#NaQ`O1G0PO#NfQqO1G0POOQ(C[1G0P1G0PO){QdO1G0POIWQ&jO1G0POOQ(C[1G0a1G0aO:aQ`O1G0aO!-OQ!bO1G0aO!-WQ&jO1G0aO#NmQ(C|O1G5UO){QdO1G5UO#N}Q(ChO1G5UO$ `Q`O1G5TO7YQ`O,5>hOOQO,5>h,5>hO$ hQ`O,5>hOOQO-E;z-E;zO$ `Q`O1G5TO$ vQ(C}O,59jO$#xQ(C}O,5<UO$%}Q(C}O,5<WO$(SQ(C}O,5<fOOQ(C[7+%|7+%|O$*_Q(C|O7+%|O$+OQ&jO'#HwO$+YQ`O,5?eOOQ(C]1G/r1G/rO$+bQdO'#HxO$+oQ`O,5?fO$+wQtO,5?fOOQ(C[1G/w1G/wOOQ(C[7+&V7+&VO$,RQMlO,5:^O){QdO7+&iO$,]QMlO,5:UOOQO1G1_1G1_OOQO1G1`1G1`O$,jQ!LQO,5;vOLbQdO,5;uOOQO-E;{-E;{OOQ(C[7+&w7+&wOOOO7+'Q7+'QOOOO1G1i1G1iO$,uQ`O1G1iOOQ(C[1G1k1G1kO$,zQqO,59gOOOW-E;q-E;qOOQ(C]1G/P1G/PO$-RQ(C|O7+'WOOQ(C],5>m,5>mO$-rQ`O,5>mOOQ(C]1G2P1G2PP$-wQ`O'#IRPOQ(C]-E<P-E<PO$.hQ,VO1G2[O$/ZQ,VO1G2^O$/eQqO1G2`OOQ(C]1G1x1G1xO$/lQ`O'#IQO$/zQ`O,5?uO$/zQ`O,5?uO$0SQ`O,5?uO$0_Q`O,5?uOOQO1G1z1G1zO$0mQ,VO1G1yOJjQ&jO1G1yO$0}Q&jO'#ISO$1_Q`O,5?vOIWQ&jO,5?vO$1gQqO,5?vOOQ(C]1G1}1G1}OOQ(CW,5<h,5<hOOQ(CW,5<i,5<iO$1qQ`O,5<iO#5}Q`O,5<iO!-OQ!bO,5<hO$1vQ`O,5<jOOQ(CW,5<k,5<kO$1qQ`O,5<nOOQO,5>o,5>oOOQO-E<R-E<ROOQ(C]1G2R1G2RO!'VQ7[O,5<hO$2OQ`O,5<iO!'VQ7[O,5<jO!'VQ7[O,5<iO$2ZQ,VO1G4vO$2eQ,VO1G4vOOQO,5>p,5>pOOQO-E<S-E<SOOQP1G.w1G.wO!.RQ7[O,59lO){QdO,59lO$2rQ`O1G1tOJjQ&jO1G1{O$2wQ(C|O7+'XOOQ(C[7+'X7+'XOGWQdO7+'XOOQ(C[7+%[7+%[O$3hQqO'#J]O#NaQ`O7+'|O$3rQ`O7+'|O$3zQqO7+'|OOQS7+'|7+'|OIWQ&jO7+'|O){QdO7+'|OIWQ&jO7+'|O$4UQ(CyO'#ChO$4iQ(CyO,5<lO$5ZQ`O,5<lOOQ(CW1G4r1G4rOOQS7+$_7+$_O:aQ`O7+$_O!-OQ!bO7+$_OGWQdO7+%|O$5`Q`O'#I]O$5qQ`O,5?}OOQO1G3O1G3OO5tQ`O,5?}O$5qQ`O,5?}O$5yQ`O,5?}OOQO,5>x,5>xOOQO-E<[-E<[OOQ(C[7+&q7+&qO$6OQ`O7+(iO5lQ(ChO7+(iO5tQ`O7+(iO$6TQ`O7+(iO$6YQaO7+'|OOQ(CW,5>r,5>rOOQ(CW-E<U-E<UOOQS7+(W7+(WO$6hQ(CyO7+(TOIWQ&jO7+(TO$6rQqO7+(UOOQS7+(U7+(UOIWQ&jO7+(UO$6yQ`O'#J`O$7UQ`O,5=SOOQO,5>t,5>tOOQO-E<W-E<WOOQS7+(Z7+(ZO$8OQ7[O'#GqOOQS1G2v1G2vOIWQ&jO1G2vO){QdO1G2vOIWQ&jO1G2vO$8VQaO1G2vO$8eQ&kO1G2vO5lQ(ChO1G2yO#6SQ`O1G2yO5bQ`O1G2yO!-OQ!bO1G2yO!-WQ&jO1G2yO$8vQ`O'#I[O$9RQ`O,5?{O$9ZQ7[O,5?{OOQ(CW1G2z1G2zOOQS7+$U7+$UO$9cQ`O7+$UO5lQ(ChO7+$UO$9hQ`O7+$UO){QdO1G5jO){QdO1G5kO$9mQdO1G3RO$9tQ`O1G3RO$9yQdO1G3RO$:QQ(ChO1G5jOOQS7+(k7+(kO5lQ(ChO7+(uO`QdO7+(wOOQS'#Jf'#JfOOQS'#I_'#I_O$:[QdO,5=vOOQS,5=v,5=vO){QdO'#H]O$:iQ`O'#H_OOQS,5=|,5=|O7YQ`O,5=|OOQS,5>O,5>OOOQS7+)Q7+)QOOQS7+)W7+)WOOQS7+)[7+)[OOQS7+)^7+)^OOQO1G5O1G5OO$:nQMlO1G0gO$:xQ`O1G0gOOQO1G/i1G/iO$;TQMlO1G/iO:aQ`O1G/iOLbQdO'#DcOOQO,5>b,5>bOOQO-E;t-E;tOOQO,5>g,5>gOOQO-E;y-E;yO!-OQ!bO1G/iO:aQ`O,5:iOOQO,5:o,5:oO){QdO,5:oO$;_Q(ChO,5:oO$;jQ(ChO,5:oO!-OQ!bO,5:iOOQO-E;w-E;wOOQ(C[1G0S1G0SO!@XQ7[O,5:iO$;xQ7[O,5:iO$<ZQ(DjO,5:oO$<uQ7[O,5:iO!@XQ7[O,5:oOOQO,5:t,5:tO$<|Q7[O,5:oO$=ZQ(ChO,5:oOOQ(C[7+%k7+%kO#NaQ`O7+%kO#NfQqO7+%kOOQ(C[7+%{7+%{O:aQ`O7+%{O!-OQ!bO7+%{O$=oQ(C|O7+*pO){QdO7+*pOOQO1G4S1G4SO7YQ`O1G4SO$>PQ`O7+*oO$>XQ(C}O1G2[O$@^Q(C}O1G2^O$BcQ(C}O1G1yO$DnQ,VO,5>cOOQO-E;u-E;uO$DxQtO,5>dO){QdO,5>dOOQO-E;v-E;vO$ESQ`O1G5QO$E[QMlO1G0bO$GcQMlO1G0mO$GjQMlO1G0mO$IkQMlO1G0mO$IrQMlO1G0mO$KgQMlO1G0mO$KzQMlO1G0mO$NXQMlO1G0mO$N`QMlO1G0mO%!aQMlO1G0mO%!hQMlO1G0mO%$]QMlO1G0mO%$pQ(C|O<<JTO%%rQMmO1G0mO%'|QMmO'#IqO%)iQMlO1G1QOLbQdO'#F^OOQO'#JX'#JXOOQO1G1b1G1bO%)vQ`O1G1aO%){QMlO,5>kOOOO7+'T7+'TOOOW1G/R1G/ROOQ(C]1G4X1G4XOJjQ&jO7+'zO%*VQ`O,5>lO5tQ`O,5>lOOQO-E<O-E<OO%*eQ`O1G5aO%*eQ`O1G5aO%*mQ`O1G5aO%*xQ,VO7+'eO%+YQqO,5>nO%+dQ`O,5>nOIWQ&jO,5>nOOQO-E<Q-E<QO%+iQqO1G5bO%+sQ`O1G5bOOQ(CW1G2T1G2TO$1qQ`O1G2TOOQ(CW1G2S1G2SO%+{Q`O1G2UOIWQ&jO1G2UOOQ(CW1G2Y1G2YO!-OQ!bO1G2SO#5}Q`O1G2TO%,QQ`O1G2UO%,YQ`O1G2TOJjQ&jO7+*bOOQ(C]1G/W1G/WO%,eQ`O1G/WOOQ(C]7+'`7+'`O%,jQ,VO7+'gO%,zQ(C|O<<JsOOQ(C[<<Js<<JsOIWQ&jO'#IVO%-kQ`O,5?wOOQS<<Kh<<KhOIWQ&jO<<KhO#NaQ`O<<KhO%-sQ`O<<KhO%-{QqO<<KhOIWQ&jO1G2WOOQS<<Gy<<GyO:aQ`O<<GyO%.VQ(C|O<<IhOOQ(C[<<Ih<<IhOOQO,5>w,5>wO%.vQ`O,5>wO%.{Q`O,5>wOOQO-E<Z-E<ZO%/TQ`O1G5iO%/TQ`O1G5iO5tQ`O1G5iO%/]Q`O<<LTOOQS<<LT<<LTO%/bQ`O<<LTO5lQ(ChO<<LTO){QdO<<KhOIWQ&jO<<KhOOQS<<Ko<<KoO$6hQ(CyO<<KoOOQS<<Kp<<KpO$6rQqO<<KpO%/gQ7[O'#IXO%/rQ`O,5?zOLbQdO,5?zOOQS1G2n1G2nO#LaQ(DjO'#ETO!@XQ7[O'#GrOOQO'#IZ'#IZO%/zQ7[O,5=]OOQS,5=],5=]O%0RQ7[O'#ETO%0^Q7[O'#ETO%0uQ7[O'#ETO%1PQ7[O'#GrO%1bQ`O7+(bO%1gQ`O7+(bO%1oQqO7+(bOOQS7+(b7+(bOIWQ&jO7+(bO){QdO7+(bOIWQ&jO7+(bO%1yQaO7+(bOOQS7+(e7+(eO5lQ(ChO7+(eO#6SQ`O7+(eO5bQ`O7+(eO!-OQ!bO7+(eO%2XQ`O,5>vOOQO-E<Y-E<YOOQO'#Gu'#GuO%2dQ`O1G5gO5lQ(ChO<<GpOOQS<<Gp<<GpO%2lQ`O<<GpO%2qQ`O7++UO%2vQ`O7++VOOQS7+(m7+(mO%2{Q`O7+(mO%3QQdO7+(mO%3XQ`O7+(mO){QdO7++UO){QdO7++VOOQS<<La<<LaOOQS<<Lc<<LcOOQS-E<]-E<]OOQS1G3b1G3bO%3^Q`O,5=wOOQS,5=y,5=yO%3cQ`O1G3hOLbQdO7+&ROOQO7+%T7+%TO%3hQMlO1G5XO:aQ`O7+%TOOQO1G0T1G0TO%3rQ(C|O1G0ZOOQO1G0Z1G0ZO){QdO1G0ZO%3|Q(ChO1G0ZO:aQ`O1G0TO!-OQ!bO1G0TO!@XQ7[O1G0TO%4XQ(ChO1G0ZO%4gQ7[O1G0TO%4xQ(ChO1G0ZO%5^Q(DjO1G0ZO%5hQ7[O1G0TO!@XQ7[O1G0ZOOQ(C[<<IV<<IVOOQ(C[<<Ig<<IgO:aQ`O<<IgO%5oQ(C|O<<N[OOQO7+)n7+)nO%6PQ(C}O7+'eO%8[Q(C}O7+'gO%:gQtO1G4OO%:qQMlO7+%|O%;gQMmO,59jO%=hQMmO,5<UO%?lQMmO,5<WO%A[QMmO,5<fO%B}QMlO7+'WO%C[QMlO7+'XO%CiQ`O,5;xOOQO7+&{7+&{O%CnQ,VO<<KfOOQO1G4W1G4WO%CuQ`O1G4WO%DQQ`O1G4WO%D`Q`O7+*{O%D`Q`O7+*{OIWQ&jO1G4YO%DhQqO1G4YO%DrQ`O7+*|OOQ(CW7+'o7+'oO$1qQ`O7+'pO%DzQqO7+'pOOQ(CW7+'n7+'nO$1qQ`O7+'oO%ERQ`O7+'pOIWQ&jO7+'pO#5}Q`O7+'oO%EWQ,VO<<M|OOQ(C]7+$r7+$rO%EbQqO,5>qOOQO-E<T-E<TO#NaQ`OANASOOQSANASANASOIWQ&jOANASO%ElQ(CyO7+'rOOQSAN=eAN=eO5tQ`O1G4cOOQO1G4c1G4cO%E|Q`O1G4cO%FRQ`O7++TO%FRQ`O7++TO5lQ(ChOANAoO%FZQ`OANAoOOQSANAoANAoO%F`Q`OANASO%FhQqOANASOOQSANAZANAZOOQSANA[ANA[O%FrQ`O,5>sOOQO-E<V-E<VO%F}QMlO1G5fO#6SQ`O,5=^O5bQ`O,5=^O!-OQ!bO,5=^OOQO-E<X-E<XOOQS1G2w1G2wO$<ZQ(DjO,5:oO!@XQ7[O,5=^O%GXQ7[O,5=^O%GjQ7[O,5:oOOQS<<K|<<K|OIWQ&jO<<K|O%1bQ`O<<K|O%GtQ`O<<K|O%G|QqO<<K|O){QdO<<K|OIWQ&jO<<K|OOQS<<LP<<LPO5lQ(ChO<<LPO#6SQ`O<<LPO5bQ`O<<LPO%HWQ7[O1G4bO%H`Q`O7++ROOQSAN=[AN=[O5lQ(ChOAN=[OOQS<<Np<<NpOOQS<<Nq<<NqOOQS<<LX<<LXO%HhQ`O<<LXO%HmQdO<<LXO%HtQ`O<<NpO%HyQ`O<<NqOOQS1G3c1G3cO:aQ`O7+)SO%IOQMlO<<ImOOQO<<Ho<<HoOOQO7+%u7+%uO%3rQ(C|O7+%uO){QdO7+%uOOQO7+%o7+%oO:aQ`O7+%oO!-OQ!bO7+%oO%IYQ(ChO7+%uO!@XQ7[O7+%oO%IeQ(ChO7+%uO%IsQ7[O7+%oO%JUQ(ChO7+%uOOQ(C[AN?RAN?RO%JjQMlO<<JTO%JwQMmO1G1yO%MOQMmO1G2[O& SQMmO1G2^O&!rQMlO<<JsO&#PQMlO<<IhOOQO1G1d1G1dOJjQ&jOANAQOOQO7+)r7+)rO&#^Q`O7+)rO&#iQ`O<<NgO&#qQqO7+)tOOQ(CW<<K[<<K[O$1qQ`O<<K[OOQ(CW<<KZ<<KZO&#{QqO<<K[O$1qQ`O<<KZOOQSG26nG26nO#NaQ`OG26nOOQO7+)}7+)}O5tQ`O7+)}O&$SQ`O<<NoOOQSG27ZG27ZO5lQ(ChOG27ZOIWQ&jOG26nOLbQdO1G4_O&$[Q`O7++QO5lQ(ChO1G2xO#6SQ`O1G2xO5bQ`O1G2xO!-OQ!bO1G2xO!@XQ7[O1G2xO%5^Q(DjO1G0ZO&$dQ7[O1G2xO%1bQ`OANAhOOQSANAhANAhOIWQ&jOANAhO&$uQ`OANAhO&$}QqOANAhOOQSANAkANAkO5lQ(ChOANAkO#6SQ`OANAkOOQO'#Gv'#GvOOQO7+)|7+)|OOQSG22vG22vOOQSANAsANAsO&%XQ`OANAsOOQSAND[AND[OOQSAND]AND]OOQS<<Ln<<LnOOQO<<Ia<<IaO%3rQ(C|O<<IaOOQO<<IZ<<IZO:aQ`O<<IZO){QdO<<IaO!-OQ!bO<<IZO&%^Q(ChO<<IaO!@XQ7[O<<IZO&%iQ(ChO<<IaO&%wQMmO7+'eO&'jQMmO7+'gO&)]Q,VOG26lOOQO<<M^<<M^OOQ(CWAN@vAN@vO$1qQ`OAN@vOOQ(CWAN@uAN@uOOQSLD,YLD,YOOQO<<Mi<<MiOOQSLD,uLD,uO#NaQ`OLD,YO&)mQMlO7+)yOOQO7+(d7+(dO5lQ(ChO7+(dO#6SQ`O7+(dO5bQ`O7+(dO!-OQ!bO7+(dO!@XQ7[O7+(dOOQSG27SG27SO%1bQ`OG27SOIWQ&jOG27SOOQSG27VG27VO5lQ(ChOG27VOOQSG27_G27_OOQOAN>{AN>{OOQOAN>uAN>uO%3rQ(C|OAN>{O:aQ`OAN>uO){QdOAN>{O!-OQ!bOAN>uO&)wQ(ChOAN>{O&*SQ(C}OG26lOOQ(CWG26bG26bOOQS!$( t!$( tOOQO<<LO<<LOO5lQ(ChO<<LOO#6SQ`O<<LOO5bQ`O<<LOO!-OQ!bO<<LOOOQSLD,nLD,nO%1bQ`OLD,nOOQSLD,qLD,qOOQOG24gG24gOOQOG24aG24aO%3rQ(C|OG24gO:aQ`OG24aO){QdOG24gO&,pQ!LRO,5:rO&-gQ$ITO'#IqOOQOANAjANAjO5lQ(ChOANAjO#6SQ`OANAjO5bQ`OANAjOOQS!$(!Y!$(!YOOQOLD*RLD*ROOQOLD){LD){O%3rQ(C|OLD*RO&.ZQMmOG26lO&/|Q!LRO,59jO&0pQ!LRO,5<UO&1dQ!LRO,5<WO&2WQ!LRO,5<fOOQOG27UG27UO5lQ(ChOG27UO#6SQ`OG27UOOQO!$'Mm!$'MmO&2}Q!LRO1G2[O&3qQ!LRO1G2^O&4eQ!LRO1G1yOOQOLD,pLD,pO5lQ(ChOLD,pO&5[Q!LRO7+'eO&6RQ!LRO7+'gOOQO!$(![!$(![O&6xQ!LROG26lOLbQdO'#DrO&7oQtO'#ItOLbQdO'#DjO&7vQ(C|O'#ChO&8aQtO'#ChO&8qQdO,5:vO&:qQ&jO'#EWOLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO,5;ROLbQdO'#IPO&<OQ`O,5<TO&=eQ&jO,5;ROLbQdO,5;fO!(wQ`O'#DOO!(wQ`O'#DOO!(wQ`O'#DOOIWQ&jO'#FjO&:qQ&jO'#FjO&<WQ&jO'#FjOIWQ&jO'#FlO&:qQ&jO'#FlO&<WQ&jO'#FlOIWQ&jO'#FzO&:qQ&jO'#FzO&<WQ&jO'#FzOLbQdO,5?mO&8qQdO1G0bO&=lQMlO'#ChOLbQdO1G1lOIWQ&jO,5<pO&:qQ&jO,5<pO&<WQ&jO,5<pOIWQ&jO,5<rO&:qQ&jO,5<rO&<WQ&jO,5<rOIWQ&jO,5<_O&:qQ&jO,5<_O&<WQ&jO,5<_O&8qQdO1G1mOLbQdO7+&iOIWQ&jO1G1yO&:qQ&jO1G1yO&<WQ&jO1G1yOIWQ&jO1G1{O&:qQ&jO1G1{O&<WQ&jO1G1{O&8qQdO7+'XO&8qQdO7+%|O&=vQ`O7+'pOIWQ&jOANAQO&:qQ&jOANAQO&<WQ&jOANAQO&=vQ`O<<K[O&=vQ`OAN@vO&={Q`O'#E[O&>QQ`O'#E[O&>YQ`O'#EzO&>_Q`O'#EgO&>dQ`O'#JRO&>oQ`O'#JPO&>zQ`O,5:vO&?PQ,VO,5<QO&?WQ`O'#FsO&?]Q`O'#FsO&?bQ`O'#FsO&?gQ`O,5<RO&?oQ`O,5:vO&?wQMlO1G0}O&@OQ`O,5<_O&@TQ`O,5<_O&@YQ`O,5<_O&@_Q`O,5<aO&@dQ`O,5<aO&@iQ`O,5<aO&@nQ`O1G1mO&@sQ`O1G0bO&@xQ`O1G2UO&@}Q,VO<<KfO&AUQ,VO<<KfO&A]Q,VO<<KfO&AdQqO7+'pO&AkQ`O7+'pO&ApQqO<<K[O4QQ&jO'#FhO5bQ`O'#FgOBzQ`O'#EZOLbQdO,5;cO!&WQ`O'#FsO!&WQ`O'#FsO!&WQ`O'#FsO!&WQ`O'#FuO!&WQ`O'#FuO!&WQ`O'#FuO&AwQ`O,5<jOJjQ&jO7+'zOJjQ&jO7+'zOJjQ&jO7+'zOIWQ&jO1G2UO&BPQ`O1G2UOIWQ&jO7+'pO!'VQ7[O'#GOO$/eQqO1G2`O$/eQqO1G2`O$/eQqO1G2`O!'VQ7[O,5<jOIWQ&jO,5<tOIWQ&jO,5<tOIWQ&jO,5<t",
+  stateData:
+    "&B}~O'YOS'ZOSTOSUOS~OQTORTOXyO]cO_hObnOcmOhcOjTOkcOlcOqTOsTOxRO{cO|cO}cO!TSO!_kO!dUO!gTO!hTO!iTO!jTO!kTO!nlO#dsO#tpO#x^O%PqO%RtO%TrO%UrO%XuO%ZvO%^wO%_wO%axO%nzO%t{O%v|O%x}O%z!OO%}!PO&T!QO&Z!RO&]!SO&_!TO&a!UO&c!VO']PO'fQO'oYO'|aO~OQ[XZ[X_[Xj[Xu[Xv[Xx[X!R[X!a[X!b[X!d[X!j[X!{[X#WdX#[[X#][X#^[X#_[X#`[X#a[X#b[X#c[X#e[X#g[X#i[X#j[X#o[X'W[X'f[X'p[X'w[X'x[X~O!]$lX~P$zOS!WO'U!XO'V!ZO~OQTORTO]cOb!kOc!jOhcOjTOkcOlcOqTOsTOxRO{cO|cO}cO!T!bO!_kO!dUO!gTO!hTO!iTO!jTO!kTO!n!iO#t!lO#x^O']![O'fQO'oYO'|aO~O!Q!`O!R!]O!O'jP!O'tP~P'dO!S!mO~P`OQTORTO]cOb!kOc!jOhcOjTOkcOlcOqTOsTOxRO{cO|cO}cO!T!bO!_kO!dUO!gTO!hTO!iTO!jTO!kTO!n!iO#t!lO#x^O']9aO'fQO'oYO'|aO~OQTORTO]cOb!kOc!jOhcOjTOkcOlcOqTOsTOxRO{cO|cO}cO!T!bO!_kO!dUO!gTO!hTO!iTO!jTO!kTO!n!iO#t!lO#x^O'fQO'oYO'|aO~O!Q!rO#U!uO#V!rO']9bO!c'qP~P+{O#W!vO~O!]!wO#W!vO~OQ#^OZ#dOj#ROu!{Ov!{Ox!|O!R#bO!a#TO!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO#a#TO#b#TO#c#TO#e#UO#g#WO#i#YO#j#ZO'fQO'p#[O'w!}O'x#OO~O_'hX'W'hX!c'hX!O'hX!T'hX%Q'hX!]'hX~P.jO!{#eO#o#eOQ'iXZ'iX_'iXj'iXu'iXv'iXx'iX!R'iX!a'iX!b'iX!d'iX!j'iX#['iX#]'iX#^'iX#_'iX#`'iX#a'iX#b'iX#e'iX#g'iX#i'iX#j'iX'f'iX'p'iX'w'iX'x'iX~O#c'iX'W'iX!O'iX!c'iXn'iX!T'iX%Q'iX!]'iX~P0zO!{#eO~O#z#fO$R#jO~O!T#kO#x^O$U#lO$W#nO~O]#qOh$QOj#rOk#qOl#qOq$ROs$SOx#yO!T#zO!_$XO!d#vO#V$YO#t$VO$_$TO$a$UO$d$WO']#pO'b$PO'f#sO'a'cP~O!d$ZO~O!]$]O~O_$^O'W$^O~O']$bO~O!d$ZO']$bO'^$dO'b$PO~Oc$jO!d$ZO']$bO~O#c#TO~O]$sOu$oO!T$lO!d$nO%R$rO']$bO'^$dO^(UP~O!n$tO~Ox$uO!T$vO']$bO~Ox$uO!T$vO%Z$zO']$bO~O']${O~O#dsO%RtO%TrO%UrO%XuO%ZvO%^wO%_wO~Ob%UOc%TO!n%RO%P%SO%c%QO~P7xOb%XOcmO!T%WO!nlO#dsO%PqO%TrO%UrO%XuO%ZvO%^wO%_wO%axO~O`%[O!{%_O%R%YO'^$dO~P8wO!d%`O!g%dO~O!d%eO~O!TSO~O_$^O'T%mO'W$^O~O_$^O'T%pO'W$^O~O_$^O'T%rO'W$^O~OS!WO'U!XO'V%vO~OQ[XZ[Xj[Xu[Xv[Xx[X!R[X!RdX!a[X!b[X!d[X!j[X!{[X!{dX#WdX#[[X#][X#^[X#_[X#`[X#a[X#b[X#c[X#e[X#g[X#i[X#j[X#o[X'f[X'p[X'w[X'x[X~O!O[X!OdX~P;dO!Q%xO!O&iX!O&nX!R&iX!R&nX~P'dO!R%zO!O'jX~OQ#^OZ#dOj#ROu!{Ov!{Ox!|O!R%zO!a#TO!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO#a#TO#b#TO#c#TO#e#UO#g#WO#i#YO#j#ZO'fQO'p#[O'w!}O'x#OO~O!O'jX~P>aO!O&PO~Ox&SO!W&^O!X&VO!Y&VO'^$dO~O]&TOk&TO!Q&WO'g&QO!S'kP!S'vP~P@dO!O'sX!R'sX!]'sX!c'sX'p'sX~O!{'sX#W#PX!S'sX~PA]O!{&_O!O'uX!R'uX~O!R&`O!O'tX~O!O&cO~O!{#eO~PA]OP&gO!T&dO!o&fO']$bO~Oc&lO!d$ZO']$bO~Ou$oO!d$nO~O!S&mO~P`Ou!{Ov!{Ox!|O!b!yO!d!zO'fQOQ!faZ!faj!fa!R!fa!a!fa!j!fa#[!fa#]!fa#^!fa#_!fa#`!fa#a!fa#b!fa#c!fa#e!fa#g!fa#i!fa#j!fa'p!fa'w!fa'x!fa~O_!fa'W!fa!O!fa!c!fan!fa!T!fa%Q!fa!]!fa~PCfO!c&nO~O!]!wO!{&pO'p&oO!R'rX_'rX'W'rX~O!c'rX~PFOO!R&tO!c'qX~O!c&vO~Ox$uO!T$vO#V&wO']$bO~OQTORTO]cOb!kOc!jOhcOjTOkcOlcOqTOsTOxRO{cO|cO}cO!TSO!_kO!dUO!gTO!hTO!iTO!jTO!kTO!n!iO#t!lO#x^O']9aO'fQO'oYO'|aO~O]#qOh$QOj#rOk#qOl#qOq$ROs9tOx#yO!T#zO!_;eO!d#vO#V9}O#t$VO$_9wO$a9zO$d$WO']&{O'b$PO'f#sO~O#W&}O~O]#qOh$QOj#rOk#qOl#qOq$ROs$SOx#yO!T#zO!_$XO!d#vO#V$YO#t$VO$_$TO$a$UO$d$WO']&{O'b$PO'f#sO~O'a'mP~PJjO!Q'RO!c'nP~P){O'g'TO'oYO~OQ9^OR9^O]cOb;`Oc!jOhcOj9^OkcOlcOq9^Os9^OxRO{cO|cO}cO!T!bO!_9`O!dUO!g9^O!h9^O!i9^O!j9^O!k9^O!n!iO#t!lO#x^O']'cO'fQO'oYO'|;^O~O!d!zO~O!R#bO_$]a'W$]a!c$]a!O$]a!T$]a%Q$]a!]$]a~O#d'jO~PIWO!]'lO!T'yX#w'yX#z'yX$R'yX~Ou'mO~P! YOu'mO!T'yX#w'yX#z'yX$R'yX~O!T'oO#w'sO#z'nO$R'tO~O!Q'wO~PLbO#z#fO$R'zO~OP$eXu$eXx$eX!b$eX'w$eX'x$eX~OPfX!RfX!{fX'afX'a$eX~P!!rOk'|O~OS'}O'U(OO'V(QO~OP(ZOu(SOx(TO'w(VO'x(XO~O'a(RO~P!#{O'a([O~O]#qOh$QOj#rOk#qOl#qOq$ROs9tOx#yO!T#zO!_;eO!d#vO#V9}O#t$VO$_9wO$a9zO$d$WO'b$PO'f#sO~O!Q(`O'](]O!c'}P~P!$jO#W(bO~O!d(cO~O!Q(hO'](eO!O(OP~P!$jOj(uOx(mO!W(sO!X(lO!Y(lO!d(cO!x(tO$w(oO'^$dO'g(jO~O!S(rO~P!&jO!b!yOP'eXu'eXx'eX'w'eX'x'eX!R'eX!{'eX~O'a'eX#m'eX~P!'cOP(xO!{(wO!R'dX'a'dX~O!R(yO'a'cX~O']${O'a'cP~O'](|O~O!d)RO~O']&{O~Ox$uO!Q!rO!T$vO#U!uO#V!rO']$bO!c'qP~O!]!wO#W)VO~OQ#^OZ#dOj#ROu!{Ov!{Ox!|O!a#TO!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO#a#TO#b#TO#c#TO#e#UO#g#WO#i#YO#j#ZO'fQO'p#[O'w!}O'x#OO~O_!^a!R!^a'W!^a!O!^a!c!^an!^a!T!^a%Q!^a!]!^a~P!)wOP)_O!T&dO!o)^O%Q)]O'b$PO~O!])aO!T'`X_'`X!R'`X'W'`X~O!d$ZO'b$PO~O!d$ZO']$bO'b$PO~O!]!wO#W&}O~O])lO%R)mO'])iO!S(VP~O!R)nO^(UX~O'g'TO~OZ)rO~O^)sO~O!T$lO']$bO'^$dO^(UP~Ox$uO!Q)xO!R&`O!T$vO']$bO!O'tP~O]&ZOk&ZO!Q)yO'g'TO!S'vP~O!R)zO_(RX'W(RX~O!{*OO'b$PO~OP*RO!T#zO'b$PO~O!T*TO~Ou*VO!TSO~O!n*[O~Oc*aO~O'](|O!S(TP~Oc$jO~O%RtO']${O~P8wOZ*gO^*fO~OQTORTO]cObnOcmOhcOjTOkcOlcOqTOsTOxRO{cO|cO}cO!_kO!dUO!gTO!hTO!iTO!jTO!kTO!nlO#x^O%PqO'fQO'oYO'|aO~O!T!bO#t!lO']9aO~P!1_O^*fO_$^O'W$^O~O_*kO#d*mO%T*mO%U*mO~P){O!d%`O~O%t*rO~O!T*tO~O&V*vO&X*wOQ&SaR&SaX&Sa]&Sa_&Sab&Sac&Sah&Saj&Sak&Sal&Saq&Sas&Sax&Sa{&Sa|&Sa}&Sa!T&Sa!_&Sa!d&Sa!g&Sa!h&Sa!i&Sa!j&Sa!k&Sa!n&Sa#d&Sa#t&Sa#x&Sa%P&Sa%R&Sa%T&Sa%U&Sa%X&Sa%Z&Sa%^&Sa%_&Sa%a&Sa%n&Sa%t&Sa%v&Sa%x&Sa%z&Sa%}&Sa&T&Sa&Z&Sa&]&Sa&_&Sa&a&Sa&c&Sa'S&Sa']&Sa'f&Sa'o&Sa'|&Sa!S&Sa%{&Sa`&Sa&Q&Sa~O']*|O~On+PO~O!O&ia!R&ia~P!)wO!Q+TO!O&iX!R&iX~P){O!R%zO!O'ja~O!O'ja~P>aO!R&`O!O'ta~O!RwX!R!ZX!SwX!S!ZX!]wX!]!ZX!d!ZX!{wX'b!ZX~O!]+YO!{+XO!R#TX!R'lX!S#TX!S'lX!]'lX!d'lX'b'lX~O!]+[O!d$ZO'b$PO!R!VX!S!VX~O]&ROk&ROx&SO'g(jO~OQ9^OR9^O]cOb;`Oc!jOhcOj9^OkcOlcOq9^Os9^OxRO{cO|cO}cO!T!bO!_9`O!dUO!g9^O!h9^O!i9^O!j9^O!k9^O!n!iO#t!lO#x^O'fQO'oYO'|;^O~O']:SO~P!;jO!R+`O!S'kX~O!S+bO~O!]+YO!{+XO!R#TX!S#TX~O!R+cO!S'vX~O!S+eO~O]&ROk&ROx&SO'^$dO'g(jO~O!X+fO!Y+fO~P!>hOx$uO!Q+hO!T$vO']$bO!O&nX!R&nX~O_+lO!W+oO!X+kO!Y+kO!r+sO!s+qO!t+rO!u+pO!x+tO'^$dO'g(jO'o+iO~O!S+nO~P!?iOP+yO!T&dO!o+xO~O!{,PO!R'ra!c'ra_'ra'W'ra~O!]!wO~P!@sO!R&tO!c'qa~Ox$uO!Q,SO!T$vO#U,UO#V,SO']$bO!R&pX!c&pX~O_#Oi!R#Oi'W#Oi!O#Oi!c#Oin#Oi!T#Oi%Q#Oi!]#Oi~P!)wOP;tOu(SOx(TO'w(VO'x(XO~O#W!za!R!za!c!za!{!za!T!za_!za'W!za!O!za~P!BpO#W'eXQ'eXZ'eX_'eXj'eXv'eX!a'eX!d'eX!j'eX#['eX#]'eX#^'eX#_'eX#`'eX#a'eX#b'eX#c'eX#e'eX#g'eX#i'eX#j'eX'W'eX'f'eX'p'eX!c'eX!O'eX!T'eXn'eX%Q'eX!]'eX~P!'cO!R,_O'a'mX~P!#{O'a,aO~O!R,bO!c'nX~P!)wO!c,eO~O!O,fO~OQ#^Ou!{Ov!{Ox!|O!b!yO!d!zO!j#^O'fQOZ#Zi_#Zij#Zi!R#Zi!a#Zi#]#Zi#^#Zi#_#Zi#`#Zi#a#Zi#b#Zi#c#Zi#e#Zi#g#Zi#i#Zi#j#Zi'W#Zi'p#Zi'w#Zi'x#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~O#[#Zi~P!FfO#[#PO~P!FfOQ#^Ou!{Ov!{Ox!|O!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO'fQOZ#Zi_#Zi!R#Zi!a#Zi#`#Zi#a#Zi#b#Zi#c#Zi#e#Zi#g#Zi#i#Zi#j#Zi'W#Zi'p#Zi'w#Zi'x#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~Oj#Zi~P!IQOj#RO~P!IQOQ#^Oj#ROu!{Ov!{Ox!|O!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO'fQO_#Zi!R#Zi#e#Zi#g#Zi#i#Zi#j#Zi'W#Zi'p#Zi'w#Zi'x#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~OZ#Zi!a#Zi#a#Zi#b#Zi#c#Zi~P!KlOZ#dO!a#TO#a#TO#b#TO#c#TO~P!KlOQ#^OZ#dOj#ROu!{Ov!{Ox!|O!a#TO!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO#a#TO#b#TO#c#TO#e#UO'fQO_#Zi!R#Zi#g#Zi#i#Zi#j#Zi'W#Zi'p#Zi'x#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~O'w#Zi~P!NdO'w!}O~P!NdOQ#^OZ#dOj#ROu!{Ov!{Ox!|O!a#TO!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO#a#TO#b#TO#c#TO#e#UO#g#WO'fQO'w!}O_#Zi!R#Zi#i#Zi#j#Zi'W#Zi'p#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~O'x#Zi~P##OO'x#OO~P##OOQ#^OZ#dOj#ROu!{Ov!{Ox!|O!a#TO!b!yO!d!zO!j#^O#[#PO#]#QO#^#QO#_#QO#`#SO#a#TO#b#TO#c#TO#e#UO#g#WO#i#YO'fQO'w!}O'x#OO~O_#Zi!R#Zi#j#Zi'W#Zi'p#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~P#%jOQ[XZ[Xj[Xu[Xv[Xx[X!a[X!b[X!d[X!j[X!{[X#WdX#[[X#][X#^[X#_[X#`[X#a[X#b[X#c[X#e[X#g[X#i[X#j[X#o[X'f[X'p[X'w[X'x[X!R[X!S[X~O#m[X~P#'}OQ#^OZ9rOj9gOu!{Ov!{Ox!|O!a9iO!b!yO!d!zO!j#^O#[9eO#]9fO#^9fO#_9fO#`9hO#a9iO#b9iO#c9iO#e9jO#g9lO#i9nO#j9oO'fQO'p#[O'w!}O'x#OO~O#m,hO~P#*XOQ'iXZ'iXj'iXu'iXv'iXx'iX!a'iX!b'iX!d'iX!j'iX#['iX#]'iX#^'iX#_'iX#`'iX#a'iX#b'iX#e'iX#g'iX#i'iX#j'iX'f'iX'p'iX'w'iX'x'iX!R'iX~O!{9sO#o9sO#c'iX#m'iX!S'iX~P#,SO_&sa!R&sa'W&sa!c&san&sa!O&sa!T&sa%Q&sa!]&sa~P!)wOQ#ZiZ#Zi_#Zij#Ziv#Zi!R#Zi!a#Zi!b#Zi!d#Zi!j#Zi#[#Zi#]#Zi#^#Zi#_#Zi#`#Zi#a#Zi#b#Zi#c#Zi#e#Zi#g#Zi#i#Zi#j#Zi'W#Zi'f#Zi'p#Zi!O#Zi!c#Zin#Zi!T#Zi%Q#Zi!]#Zi~P!BpO_#ni!R#ni'W#ni!O#ni!c#nin#ni!T#ni%Q#ni!]#ni~P!)wO#z,jO~O#z,kO~O!]'lO!{,lO!T$OX#w$OX#z$OX$R$OX~O!Q,mO~O!T'oO#w,oO#z'nO$R,pO~O!R9pO!S'hX~P#*XO!S,qO~O$R,sO~OS'}O'U(OO'V,vO~O],yOk,yO!O,zO~O!RdX!]dX!cdX!c$eX'pdX~P!!rO!c-QO~P!BpO!R-RO!]!wO'p&oO!c'}X~O!c-WO~O!Q(`O']$bO!c'}P~O#W-YO~O!O$eX!R$eX!]$lX~P!!rO!R-ZO!O(OX~P!BpO!]-]O~O!O-_O~Oj-cO!]!wO!d$ZO'b$PO'p&oO~O!])aO~O_$^O!R-hO'W$^O~O!S-jO~P!&jO!X-kO!Y-kO'^$dO'g(jO~Ox-mO'g(jO~O!x-nO~O']${O!R&xX'a&xX~O!R(yO'a'ca~O'a-sO~Ou-tOv-tOx-uOPra'wra'xra!Rra!{ra~O'ara#mra~P#7pOu(SOx(TOP$^a'w$^a'x$^a!R$^a!{$^a~O'a$^a#m$^a~P#8fOu(SOx(TOP$`a'w$`a'x$`a!R$`a!{$`a~O'a$`a#m$`a~P#9XO]-vO~O#W-wO~O'a$na!R$na!{$na#m$na~P!#{O#W-zO~OP.TO!T&dO!o.SO%Q.RO~O]#qOj#rOk#qOl#qOq$ROs9tOx#yO!T#zO!_;eO!d#vO#V9}O#t$VO$_9wO$a9zO$d$WO'b$PO'f#sO~Oh.VO'].UO~P#:yO!])aO!T'`a_'`a!R'`a'W'`a~O#W.]O~OZ[X!RdX!SdX~O!R.^O!S(VX~O!S.`O~OZ.aO~O].cO'])iO~O!T$lO']$bO^'QX!R'QX~O!R)nO^(Ua~O!c.fO~P!)wO].hO~OZ.iO~O^.jO~OP.TO!T&dO!o.SO%Q.RO'b$PO~O!R)zO_(Ra'W(Ra~O!{.pO~OP.sO!T#zO~O'g'TO!S(SP~OP.}O!T.yO!o.|O%Q.{O'b$PO~OZ/XO!R/VO!S(TX~O!S/YO~O^/[O_$^O'W$^O~O]/]O~O]/^O'](|O~O#c/_O%r/`O~P0zO!{#eO#c/_O%r/`O~O_/aO~P){O_/cO~O%{/gOQ%yiR%yiX%yi]%yi_%yib%yic%yih%yij%yik%yil%yiq%yis%yix%yi{%yi|%yi}%yi!T%yi!_%yi!d%yi!g%yi!h%yi!i%yi!j%yi!k%yi!n%yi#d%yi#t%yi#x%yi%P%yi%R%yi%T%yi%U%yi%X%yi%Z%yi%^%yi%_%yi%a%yi%n%yi%t%yi%v%yi%x%yi%z%yi%}%yi&T%yi&Z%yi&]%yi&_%yi&a%yi&c%yi'S%yi']%yi'f%yi'o%yi'|%yi!S%yi`%yi&Q%yi~O`/mO!S/kO&Q/lO~P`O!TSO!d/oO~O&X*wOQ&SiR&SiX&Si]&Si_&Sib&Sic&Sih&Sij&Sik&Sil&Siq&Sis&Six&Si{&Si|&Si}&Si!T&Si!_&Si!d&Si!g&Si!h&Si!i&Si!j&Si!k&Si!n&Si#d&Si#t&Si#x&Si%P&Si%R&Si%T&Si%U&Si%X&Si%Z&Si%^&Si%_&Si%a&Si%n&Si%t&Si%v&Si%x&Si%z&Si%}&Si&T&Si&Z&Si&]&Si&_&Si&a&Si&c&Si'S&Si']&Si'f&Si'o&Si'|&Si!S&Si%{&Si`&Si&Q&Si~O!R#bOn$]a~O!O&ii!R&ii~P!)wO!R%zO!O'ji~O!R&`O!O'ti~O!O/uO~O!R!Va!S!Va~P#*XO]&ROk&RO!Q/{O'g(jO!R&jX!S&jX~P@dO!R+`O!S'ka~O]&ZOk&ZO!Q)yO'g'TO!R&oX!S&oX~O!R+cO!S'va~O!O'ui!R'ui~P!)wO_$^O!]!wO!d$ZO!j0VO!{0TO'W$^O'b$PO'p&oO~O!S0YO~P!?iO!X0ZO!Y0ZO'^$dO'g(jO'o+iO~O!W0[O~P#MSO!TSO!W0[O!u0^O!x0_O~P#MSO!W0[O!s0aO!t0aO!u0^O!x0_O~P#MSO!T&dO~O!T&dO~P!BpO!R'ri!c'ri_'ri'W'ri~P!)wO!{0jO!R'ri!c'ri_'ri'W'ri~O!R&tO!c'qi~Ox$uO!T$vO#V0lO']$bO~O#WraQraZra_rajra!ara!bra!dra!jra#[ra#]ra#^ra#_ra#`ra#ara#bra#cra#era#gra#ira#jra'Wra'fra'pra!cra!Ora!Tranra%Qra!]ra~P#7pO#W$^aQ$^aZ$^a_$^aj$^av$^a!a$^a!b$^a!d$^a!j$^a#[$^a#]$^a#^$^a#_$^a#`$^a#a$^a#b$^a#c$^a#e$^a#g$^a#i$^a#j$^a'W$^a'f$^a'p$^a!c$^a!O$^a!T$^an$^a%Q$^a!]$^a~P#8fO#W$`aQ$`aZ$`a_$`aj$`av$`a!a$`a!b$`a!d$`a!j$`a#[$`a#]$`a#^$`a#_$`a#`$`a#a$`a#b$`a#c$`a#e$`a#g$`a#i$`a#j$`a'W$`a'f$`a'p$`a!c$`a!O$`a!T$`an$`a%Q$`a!]$`a~P#9XO#W$naQ$naZ$na_$naj$nav$na!R$na!a$na!b$na!d$na!j$na#[$na#]$na#^$na#_$na#`$na#a$na#b$na#c$na#e$na#g$na#i$na#j$na'W$na'f$na'p$na!c$na!O$na!T$na!{$nan$na%Q$na!]$na~P!BpO_#Oq!R#Oq'W#Oq!O#Oq!c#Oqn#Oq!T#Oq%Q#Oq!]#Oq~P!)wO!R&kX'a&kX~PJjO!R,_O'a'ma~O!Q0tO!R&lX!c&lX~P){O!R,bO!c'na~O!R,bO!c'na~P!)wO#m!fa!S!fa~PCfO#m!^a!R!^a!S!^a~P#*XO!T1XO#x^O$P1YO~O!S1^O~On1_O~P!BpO_$Yq!R$Yq'W$Yq!O$Yq!c$Yqn$Yq!T$Yq%Q$Yq!]$Yq~P!)wO!O1`O~O],yOk,yO~Ou(SOx(TO'x(XOP$xi'w$xi!R$xi!{$xi~O'a$xi#m$xi~P$.POu(SOx(TOP$zi'w$zi'x$zi!R$zi!{$zi~O'a$zi#m$zi~P$.rO'p#[O~P!BpO!Q1cO']$bO!R&tX!c&tX~O!R-RO!c'}a~O!R-RO!]!wO!c'}a~O!R-RO!]!wO'p&oO!c'}a~O'a$gi!R$gi!{$gi#m$gi~P!#{O!Q1kO'](eO!O&vX!R&vX~P!$jO!R-ZO!O(Oa~O!R-ZO!O(Oa~P!BpO!]!wO~O!]!wO#c1sO~Oj1vO!]!wO'p&oO~O!R'di'a'di~P!#{O!{1yO!R'di'a'di~P!#{O!c1|O~O_$Zq!R$Zq'W$Zq!O$Zq!c$Zqn$Zq!T$Zq%Q$Zq!]$Zq~P!)wO!R2QO!T(PX~P!BpO!T&dO%Q2TO~O!T&dO%Q2TO~P!BpO!T$eX$u[X_$eX!R$eX'W$eX~P!!rO$u2XOPgXugXxgX!TgX'wgX'xgX_gX!RgX'WgX~O$u2XO~O]2_O%R2`O'])iO!R'PX!S'PX~O!R.^O!S(Va~OZ2dO~O^2eO~O]2hO~OP2jO!T&dO!o2iO%Q2TO~O_$^O'W$^O~P!BpO!T#zO~P!BpO!R2oO!{2qO!S(SX~O!S2rO~Ox;oO!W2{O!X2tO!Y2tO!r2zO!s2yO!t2yO!x2xO'^$dO'g(jO'o+iO~O!S2wO~P$7ZOP3SO!T.yO!o3RO%Q3QO~OP3SO!T.yO!o3RO%Q3QO'b$PO~O'](|O!R'OX!S'OX~O!R/VO!S(Ta~O]3^O'g3]O~O]3_O~O^3aO~O!c3dO~P){O_3fO~O_3fO~P){O#c3hO%r3iO~PFOO`/mO!S3mO&Q/lO~P`O!]3oO~O!R#Ti!S#Ti~P#*XO!{3qO!R#Ti!S#Ti~O!R!Vi!S!Vi~P#*XO_$^O!{3xO'W$^O~O_$^O!]!wO!{3xO'W$^O~O!X3|O!Y3|O'^$dO'g(jO'o+iO~O_$^O!]!wO!d$ZO!j3}O!{3xO'W$^O'b$PO'p&oO~O!W4OO~P$;xO!W4OO!u4RO!x4SO~P$;xO_$^O!]!wO!j3}O!{3xO'W$^O'p&oO~O!R'rq!c'rq_'rq'W'rq~P!)wO!R&tO!c'qq~O#W$xiQ$xiZ$xi_$xij$xiv$xi!a$xi!b$xi!d$xi!j$xi#[$xi#]$xi#^$xi#_$xi#`$xi#a$xi#b$xi#c$xi#e$xi#g$xi#i$xi#j$xi'W$xi'f$xi'p$xi!c$xi!O$xi!T$xin$xi%Q$xi!]$xi~P$.PO#W$ziQ$ziZ$zi_$zij$ziv$zi!a$zi!b$zi!d$zi!j$zi#[$zi#]$zi#^$zi#_$zi#`$zi#a$zi#b$zi#c$zi#e$zi#g$zi#i$zi#j$zi'W$zi'f$zi'p$zi!c$zi!O$zi!T$zin$zi%Q$zi!]$zi~P$.rO#W$giQ$giZ$gi_$gij$giv$gi!R$gi!a$gi!b$gi!d$gi!j$gi#[$gi#]$gi#^$gi#_$gi#`$gi#a$gi#b$gi#c$gi#e$gi#g$gi#i$gi#j$gi'W$gi'f$gi'p$gi!c$gi!O$gi!T$gi!{$gin$gi%Q$gi!]$gi~P!BpO!R&ka'a&ka~P!#{O!R&la!c&la~P!)wO!R,bO!c'ni~O#m#Oi!R#Oi!S#Oi~P#*XOQ#^Ou!{Ov!{Ox!|O!b!yO!d!zO!j#^O'fQOZ#Zij#Zi!a#Zi#]#Zi#^#Zi#_#Zi#`#Zi#a#Zi#b#Zi#c#Zi#e#Zi#g#Zi#i#Zi#j#Zi#m#Zi'p#Zi'w#Zi'x#Zi!R#Zi!S#Zi~O#[#Zi~P$EiO#[9eO~P$EiOQ#^Ou!{Ov!{Ox!|O!b!yO!d!zO!j#^O#[9eO#]9fO#^9fO#_9fO'fQOZ#Zi!a#Zi#`#Zi#a#Zi#b#Zi#c#Zi#e#Zi#g#Zi#i#Zi#j#Zi#m#Zi'p#Zi'w#Zi'x#Zi!R#Zi!S#Zi~Oj#Zi~P$GqOj9gO~P$GqOQ#^Oj9gOu!{Ov!{Ox!|O!b!yO!d!zO!j#^O#[9eO#]9fO#^9fO#_9fO#`9hO'fQO#e#Zi#g#Zi#i#Zi#j#Zi#m#Zi'p#Zi'w#Zi'x#Zi!R#Zi!S#Zi~OZ#Zi!a#Zi#a#Zi#b#Zi#c#Zi~P$IyOZ9rO!a9iO#a9iO#b9iO#c9iO~P$IyOQ#^OZ9rOj9gOu!{Ov!{Ox!|O!a9iO!b!yO!d!zO!j#^O#[9eO#]9fO#^9fO#_9fO#`9hO#a9iO#b9iO#c9iO#e9jO'fQO#g#Zi#i#Zi#j#Zi#m#Zi'p#Zi'x#Zi!R#Zi!S#Zi~O'w#Zi~P$L_O'w!}O~P$L_OQ#^OZ9rOj9gOu!{Ov!{Ox!|O!a9iO!b!yO!d!zO!j#^O#[9eO#]9fO#^9fO#_9fO#`9hO#a9iO#b9iO#c9iO#e9jO#g9lO'fQO'w!}O#i#Zi#j#Zi#m#Zi'p#Zi!R#Zi!S#Zi~O'x#Zi~P$NgO'x#OO~P$NgOQ#^OZ9rOj9gOu!{Ov!{Ox!|O!a9iO!b!yO!d!zO!j#^O#[9eO#]9fO#^9fO#_9fO#`9hO#a9iO#b9iO#c9iO#e9jO#g9lO#i9nO'fQO'w!}O'x#OO~O#j#Zi#m#Zi'p#Zi!R#Zi!S#Zi~P%!oO_#ky!R#ky'W#ky!O#ky!c#kyn#ky!T#ky%Q#ky!]#ky~P!)wOP;vOu(SOx(TO'w(VO'x(XO~OQ#ZiZ#Zij#Ziv#Zi!a#Zi!b#Zi!d#Zi!j#Zi#[#Zi#]#Zi#^#Zi#_#Zi#`#Zi#a#Zi#b#Zi#c#Zi#e#Zi#g#Zi#i#Zi#j#Zi#m#Zi'f#Zi'p#Zi!R#Zi!S#Zi~P%%aO!b!yOP'eXu'eXx'eX'w'eX'x'eX!S'eX~OQ'eXZ'eXj'eXv'eX!a'eX!d'eX!j'eX#['eX#]'eX#^'eX#_'eX#`'eX#a'eX#b'eX#c'eX#e'eX#g'eX#i'eX#j'eX#m'eX'f'eX'p'eX!R'eX~P%'eO#m#ni!R#ni!S#ni~P#*XO!S4eO~O!R&sa!S&sa~P#*XO!]!wO'p&oO!R&ta!c&ta~O!R-RO!c'}i~O!R-RO!]!wO!c'}i~O'a$gq!R$gq!{$gq#m$gq~P!#{O!O&va!R&va~P!BpO!]4lO~O!R-ZO!O(Oi~P!BpO!R-ZO!O(Oi~O!O4pO~O!]!wO#c4uO~Oj4vO!]!wO'p&oO~O!O4xO~O'a$iq!R$iq!{$iq#m$iq~P!#{O_$Zy!R$Zy'W$Zy!O$Zy!c$Zyn$Zy!T$Zy%Q$Zy!]$Zy~P!)wO!R2QO!T(Pa~O!T&dO%Q4}O~O!T&dO%Q4}O~P!BpO_#Oy!R#Oy'W#Oy!O#Oy!c#Oyn#Oy!T#Oy%Q#Oy!]#Oy~P!)wOZ5QO~O]5SO'])iO~O!R.^O!S(Vi~O]5VO~O^5WO~O'g'TO!R&{X!S&{X~O!R2oO!S(Sa~O!S5eO~P$7ZOx;sO'g(jO'o+iO~O!W5hO!X5gO!Y5gO!x0_O'^$dO'g(jO'o+iO~O!s5iO!t5iO~P%0^O!X5gO!Y5gO'^$dO'g(jO'o+iO~O!T.yO~O!T.yO%Q5kO~O!T.yO%Q5kO~P!BpOP5pO!T.yO!o5oO%Q5kO~OZ5uO!R'Oa!S'Oa~O!R/VO!S(Ti~O]5xO~O!c5yO~O!c5zO~O!c5{O~O!c5{O~P){O_5}O~O!]6QO~O!c6RO~O!R'ui!S'ui~P#*XO_$^O'W$^O~P!)wO_$^O!{6WO'W$^O~O_$^O!]!wO!{6WO'W$^O~O!X6]O!Y6]O'^$dO'g(jO'o+iO~O_$^O!]!wO!j6^O!{6WO'W$^O'p&oO~O!d$ZO'b$PO~P%4xO!W6_O~P%4gO!R'ry!c'ry_'ry'W'ry~P!)wO#W$gqQ$gqZ$gq_$gqj$gqv$gq!R$gq!a$gq!b$gq!d$gq!j$gq#[$gq#]$gq#^$gq#_$gq#`$gq#a$gq#b$gq#c$gq#e$gq#g$gq#i$gq#j$gq'W$gq'f$gq'p$gq!c$gq!O$gq!T$gq!{$gqn$gq%Q$gq!]$gq~P!BpO#W$iqQ$iqZ$iq_$iqj$iqv$iq!R$iq!a$iq!b$iq!d$iq!j$iq#[$iq#]$iq#^$iq#_$iq#`$iq#a$iq#b$iq#c$iq#e$iq#g$iq#i$iq#j$iq'W$iq'f$iq'p$iq!c$iq!O$iq!T$iq!{$iqn$iq%Q$iq!]$iq~P!BpO!R&li!c&li~P!)wO#m#Oq!R#Oq!S#Oq~P#*XOu-tOv-tOx-uOPra'wra'xra!Sra~OQraZrajra!ara!bra!dra!jra#[ra#]ra#^ra#_ra#`ra#ara#bra#cra#era#gra#ira#jra#mra'fra'pra!Rra~P%;OOu(SOx(TOP$^a'w$^a'x$^a!S$^a~OQ$^aZ$^aj$^av$^a!a$^a!b$^a!d$^a!j$^a#[$^a#]$^a#^$^a#_$^a#`$^a#a$^a#b$^a#c$^a#e$^a#g$^a#i$^a#j$^a#m$^a'f$^a'p$^a!R$^a~P%=SOu(SOx(TOP$`a'w$`a'x$`a!S$`a~OQ$`aZ$`aj$`av$`a!a$`a!b$`a!d$`a!j$`a#[$`a#]$`a#^$`a#_$`a#`$`a#a$`a#b$`a#c$`a#e$`a#g$`a#i$`a#j$`a#m$`a'f$`a'p$`a!R$`a~P%?WOQ$naZ$naj$nav$na!a$na!b$na!d$na!j$na#[$na#]$na#^$na#_$na#`$na#a$na#b$na#c$na#e$na#g$na#i$na#j$na#m$na'f$na'p$na!R$na!S$na~P%%aO#m$Yq!R$Yq!S$Yq~P#*XO#m$Zq!R$Zq!S$Zq~P#*XO!S6hO~O#m6iO~P!#{O!]!wO!R&ti!c&ti~O!]!wO'p&oO!R&ti!c&ti~O!R-RO!c'}q~O!O&vi!R&vi~P!BpO!R-ZO!O(Oq~O!O6oO~P!BpO!O6oO~O!R'dy'a'dy~P!#{O!R&ya!T&ya~P!BpO!T$tq_$tq!R$tq'W$tq~P!BpOZ6vO~O!R.^O!S(Vq~O]6yO~O!T&dO%Q6zO~O!T&dO%Q6zO~P!BpO!{6{O!R&{a!S&{a~O!R2oO!S(Si~P#*XO!X7RO!Y7RO'^$dO'g(jO'o+iO~O!W7TO!x4SO~P%GXO!T.yO%Q7WO~O!T.yO%Q7WO~P!BpO]7_O'g7^O~O!R/VO!S(Tq~O!c7aO~O!c7aO~P){O!c7cO~O!c7dO~O!R#Ty!S#Ty~P#*XO_$^O!{7jO'W$^O~O_$^O!]!wO!{7jO'W$^O~O!X7mO!Y7mO'^$dO'g(jO'o+iO~O_$^O!]!wO!j7nO!{7jO'W$^O'p&oO~O#m#ky!R#ky!S#ky~P#*XOQ$giZ$gij$giv$gi!a$gi!b$gi!d$gi!j$gi#[$gi#]$gi#^$gi#_$gi#`$gi#a$gi#b$gi#c$gi#e$gi#g$gi#i$gi#j$gi#m$gi'f$gi'p$gi!R$gi!S$gi~P%%aOu(SOx(TO'x(XOP$xi'w$xi!S$xi~OQ$xiZ$xij$xiv$xi!a$xi!b$xi!d$xi!j$xi#[$xi#]$xi#^$xi#_$xi#`$xi#a$xi#b$xi#c$xi#e$xi#g$xi#i$xi#j$xi#m$xi'f$xi'p$xi!R$xi~P%LjOu(SOx(TOP$zi'w$zi'x$zi!S$zi~OQ$ziZ$zij$ziv$zi!a$zi!b$zi!d$zi!j$zi#[$zi#]$zi#^$zi#_$zi#`$zi#a$zi#b$zi#c$zi#e$zi#g$zi#i$zi#j$zi#m$zi'f$zi'p$zi!R$zi~P%NnO#m$Zy!R$Zy!S$Zy~P#*XO#m#Oy!R#Oy!S#Oy~P#*XO!]!wO!R&tq!c&tq~O!R-RO!c'}y~O!O&vq!R&vq~P!BpO!O7tO~P!BpO!R.^O!S(Vy~O!R2oO!S(Sq~O!X8QO!Y8QO'^$dO'g(jO'o+iO~O!T.yO%Q8TO~O!T.yO%Q8TO~P!BpO!c8WO~O_$^O!{8]O'W$^O~O_$^O!]!wO!{8]O'W$^O~OQ$gqZ$gqj$gqv$gq!a$gq!b$gq!d$gq!j$gq#[$gq#]$gq#^$gq#_$gq#`$gq#a$gq#b$gq#c$gq#e$gq#g$gq#i$gq#j$gq#m$gq'f$gq'p$gq!R$gq!S$gq~P%%aOQ$iqZ$iqj$iqv$iq!a$iq!b$iq!d$iq!j$iq#[$iq#]$iq#^$iq#_$iq#`$iq#a$iq#b$iq#c$iq#e$iq#g$iq#i$iq#j$iq#m$iq'f$iq'p$iq!R$iq!S$iq~P%%aO'a$|!Z!R$|!Z!{$|!Z#m$|!Z~P!#{O!R&{q!S&{q~P#*XO_$^O!{8oO'W$^O~O#W$|!ZQ$|!ZZ$|!Z_$|!Zj$|!Zv$|!Z!R$|!Z!a$|!Z!b$|!Z!d$|!Z!j$|!Z#[$|!Z#]$|!Z#^$|!Z#_$|!Z#`$|!Z#a$|!Z#b$|!Z#c$|!Z#e$|!Z#g$|!Z#i$|!Z#j$|!Z'W$|!Z'f$|!Z'p$|!Z!c$|!Z!O$|!Z!T$|!Z!{$|!Zn$|!Z%Q$|!Z!]$|!Z~P!BpOP;uOu(SOx(TO'w(VO'x(XO~O!S!za!W!za!X!za!Y!za!r!za!s!za!t!za!x!za'^!za'g!za'o!za~P&,_O!W'eX!X'eX!Y'eX!r'eX!s'eX!t'eX!x'eX'^'eX'g'eX'o'eX~P%'eOQ$|!ZZ$|!Zj$|!Zv$|!Z!a$|!Z!b$|!Z!d$|!Z!j$|!Z#[$|!Z#]$|!Z#^$|!Z#_$|!Z#`$|!Z#a$|!Z#b$|!Z#c$|!Z#e$|!Z#g$|!Z#i$|!Z#j$|!Z#m$|!Z'f$|!Z'p$|!Z!R$|!Z!S$|!Z~P%%aO!Wra!Xra!Yra!rra!sra!tra!xra'^ra'gra'ora~P%;OO!W$^a!X$^a!Y$^a!r$^a!s$^a!t$^a!x$^a'^$^a'g$^a'o$^a~P%=SO!W$`a!X$`a!Y$`a!r$`a!s$`a!t$`a!x$`a'^$`a'g$`a'o$`a~P%?WO!S$na!W$na!X$na!Y$na!r$na!s$na!t$na!x$na'^$na'g$na'o$na~P&,_O!W$xi!X$xi!Y$xi!r$xi!s$xi!t$xi!x$xi'^$xi'g$xi'o$xi~P%LjO!W$zi!X$zi!Y$zi!r$zi!s$zi!t$zi!x$zi'^$zi'g$zi'o$zi~P%NnO!S$gi!W$gi!X$gi!Y$gi!r$gi!s$gi!t$gi!x$gi'^$gi'g$gi'o$gi~P&,_O!S$gq!W$gq!X$gq!Y$gq!r$gq!s$gq!t$gq!x$gq'^$gq'g$gq'o$gq~P&,_O!S$iq!W$iq!X$iq!Y$iq!r$iq!s$iq!t$iq!x$iq'^$iq'g$iq'o$iq~P&,_O!S$|!Z!W$|!Z!X$|!Z!Y$|!Z!r$|!Z!s$|!Z!t$|!Z!x$|!Z'^$|!Z'g$|!Z'o$|!Z~P&,_On'hX~P.jOn[X!O[X!c[X%r[X!T[X%Q[X!][X~P$zO!]dX!c[X!cdX'pdX~P;dOQ9^OR9^O]cOb;`Oc!jOhcOj9^OkcOlcOq9^Os9^OxRO{cO|cO}cO!TSO!_9`O!dUO!g9^O!h9^O!i9^O!j9^O!k9^O!n!iO#t!lO#x^O']'cO'fQO'oYO'|;^O~O]#qOh$QOj#rOk#qOl#qOq$ROs9uOx#yO!T#zO!_;fO!d#vO#V:OO#t$VO$_9xO$a9{O$d$WO']&{O'b$PO'f#sO~O!R9pO!S$]a~O]#qOh$QOj#rOk#qOl#qOq$ROs9vOx#yO!T#zO!_;gO!d#vO#V:PO#t$VO$_9yO$a9|O$d$WO']&{O'b$PO'f#sO~O#d'jO~P&<WO!S[X!SdX~P;dO!]9dO~O#W9cO~O!]!wO#W9cO~O!{9sO~O#c9iO~O!{:QO!R'uX!S'uX~O!{9sO!R'sX!S'sX~O#W:RO~O'a:TO~P!#{O#W:[O~O#W:]O~O#W:^O~O!]!wO#W:_O~O!]!wO#W:RO~O#m:`O~P#*XO#W:aO~O#W:bO~O#W:cO~O#W:dO~O#W:eO~O#W:fO~O#W:gO~O#W:hO~O!O:iO~O#m:jO~P!#{O#m:kO~P!#{O#m:lO~P!#{O!O:mO~P!BpO!O:mO~O!O:nO~P!BpO!]!wO#c;lO~O!]!wO#c;nO~O#x~!b!r!t!u#U#V'|$_$a$d$u%P%Q%R%X%Z%^%_%a%c~UT#x'|#]}'Y'Z#z'Y']'g~",
   goto: "#Kk(ZPPPPPPPP([P(lP*`PPPP-zPP.a3s7o8SP8SPPP8SP:U8SP8SP:YPP:`P:t?VPPPP?ZPPPP?ZA{PPPBRDdP?ZPFwPPPPHp?ZPPPPPJi?ZPPMjNgPPPPNk!!TP!!]!#^PNg?Z?Z!&n!)i!.[!.[!1kPPP!1r!4h?ZPPPPPPPPPP!7_P!8pPP?Z!9}P?ZP?Z?Z?Z?ZP?Z!;dPP!>]P!AQ!AY!A^!A^P!>YP!Ab!AbP!DVP!DZ?Z?Z!Da!GT8SP8SP8S8SP!HW8S8S!Jf8S!M_8S# g8S8S#!T#$c#$c#$g#$c#$oP#$cP8S#%k8S#'X8S8S-zPPP#(yPP#)c#)cP#)cP#)x#)cPP#*OP#)uP#)u#*b!!X#)u#+P#+V#+Y([#+]([P#+d#+d#+dP([P([P([P([PP([P#+j#+mP#+m([P#+qP#+tP([P([P([P([P([P([([#+z#,U#,[#,b#,p#,v#,|#-W#-^#-m#-s#.R#.X#._#.m#/S#0z#1Y#1`#1f#1l#1r#1|#2S#2Y#2d#2v#2|PPPPPPPP#3SPP#3v#7OPP#8f#8m#8uPP#>a#@t#Fp#Fs#Fv#GR#GUPP#GX#G]#Gz#Hq#Hu#IZPP#I_#Ie#IiP#Il#Ip#Is#Jc#Jy#KO#KR#KU#K[#K_#Kc#KgmhOSj}!n$]%c%f%g%i*o*t/g/jQ$imQ$ppQ%ZyS&V!b+`Q&k!jS(l#z(qQ)g$jQ)t$rQ*`%TQ+f&^S+k&d+mQ+}&lQ-k(sQ/U*aY0Z+o+p+q+r+sS2t.y2vU3|0[0^0aU5g2y2z2{S6]4O4RS7R5h5iQ7m6_R8Q7T$p[ORSTUjk}!S!W!]!`!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#b#e$]$n%[%_%c%e%f%g%i%m%x%z&S&_&f&p&}'R(R)V)^*k*o*t+T+x,P,b,h-u-z.S.].|/_/`/a/c/g/j/l0T0j0t2i3R3f3h3i3x5o5}6W7j8]8o!j'e#]#k&W'w+X+[,m/{1X2q3q6{9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;aQ(}$SQ)l$lQ*b%WQ*i%`Q,X9tQ.W)aQ.c)mQ/^*gQ2_.^Q3Z/VQ4^9vQ5S2`R8{9upeOSjy}!n$]%Y%c%f%g%i*o*t/g/jR*d%[&WVOSTjkn}!S!W!k!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#]#b#e#k$]$n%[%_%`%c%e%f%g%i%m%z&S&_&f&p&}'R'w(R)V)^*k*o*t+T+X+[+x,P,b,h,m-u-z.S.].|/_/`/a/c/g/j/l/{0T0j0t1X2i2q3R3f3h3i3q3x5o5}6W6{7j8]8o9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;`;a[!cRU!]!`%x&WQ$clQ$hmS$mp$rv$wrs!r!u$Z$u&`&t&w)x)y)z*m+Y+h,S,U/o0lQ%PwQ&h!iQ&j!jS(_#v(cS)f$i$jQ)j$lQ)w$tQ*Z%RQ*_%TS+|&k&lQ-V(`Q.[)gQ.b)mQ.d)nQ.g)rQ/P*[S/T*`*aQ0h+}Q1b-RQ2^.^Q2b.aQ2g.iQ3Y/UQ4i1cQ5R2`Q5U2dQ6u5QR7w6vx#xa!y$T$U$Y(W(Y(b(w(x,_-Y-w1a1y6i;^;i;j;k!Y$fm!j$h$i$j&U&j&k&l(k)f)g+]+j+|+}-d.[0Q0W0]0h1u3{4Q6Z7k8^Q)`$cQ*P$|Q*S$}Q*^%TQ.k)wQ/O*ZU/S*_*`*aQ3T/PS3X/T/UQ5b2sQ5t3YS7P5c5fS8O7Q7SQ8f8PQ8u8g#[;b!w#d#v#y&g'}(Z(h)])_)a*O*R+y-Z-].R.T.p.s.{.}1k1s2Q2T2X2j3Q3S4l4u4}5k5p6z7W8T9w9z9}:U:X:[:a:d:j;l;n;t;u;vd;c9d9x9{:O:V:Y:]:b:e:ke;d9r9y9|:P:W:Z:^:c:f:lW#}a$P(y;^S$|t%YQ$}uQ%OvR)}$z%P#|a!w!y#d#v#y$T$U$Y&g'}(W(Y(Z(b(h(w(x)])_)a*O*R+y,_-Y-Z-]-w.R.T.p.s.{.}1a1k1s1y2Q2T2X2j3Q3S4l4u4}5k5p6i6z7W8T9d9r9w9x9y9z9{9|9}:O:P:U:V:W:X:Y:Z:[:]:^:a:b:c:d:e:f:j:k:l;^;i;j;k;l;n;t;u;vT(O#s(PX)O$S9t9u9vU&Z!b$v+cQ'U!{Q)q$oQ.t*TQ1z-tR5^2o&^cORSTUjk}!S!W!]!`!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#]#b#e#k$]$n%[%_%`%c%e%f%g%i%m%x%z&S&W&_&f&p&}'R'w(R)V)^*k*o*t+T+X+[+x,P,b,h,m-u-z.S.].|/_/`/a/c/g/j/l/{0T0j0t1X2i2q3R3f3h3i3q3x5o5}6W6{7j8]8o9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;a$]#aZ!_!o$a%w%}&y'Q'W'X'Y'Z'[']'^'_'`'a'b'd'g'k'u)p+R+^+g,O,^,d,g,i,w-x/v/y0i0s0w0x0y0z0{0|0}1O1P1Q1R1S1T1W1]2O2[3s3v4W4[4]4b4c5`6S6V6b6f6g7g7z8Z8m8y9_:|T!XQ!Y&_cORSTUjk}!S!W!]!`!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#]#b#e#k$]$n%[%_%`%c%e%f%g%i%m%x%z&S&W&_&f&p&}'R'w(R)V)^*k*o*t+T+X+[+x,P,b,h,m-u-z.S.].|/_/`/a/c/g/j/l/{0T0j0t1X2i2q3R3f3h3i3q3x5o5}6W6{7j8]8o9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;aQ&X!bR/|+`Y&R!b&V&^+`+fS(k#z(qS+j&d+mS-d(l(sQ-e(mQ-l(tQ.v*VU0W+k+o+pU0]+q+r+sS0b+t2xQ1u-kQ1w-mQ1x-nS2s.y2vU3{0Z0[0^Q4P0_Q4Q0aS5c2t2{S5f2y2zU6Z3|4O4RQ6`4SS7Q5g5hQ7S5iS7k6]6_S8P7R7TQ8^7mQ8g8QQ;h;oR;m;slhOSj}!n$]%c%f%g%i*o*t/g/jQ%k!QS&x!v9cQ)d$gQ*X%PQ*Y%QQ+z&iS,]&}:RS-y)V:_Q.Y)eQ.x*WQ/n*vQ/p*wQ/x+ZQ0`+qQ0f+{S2P-z:gQ2Y.ZS2].]:hQ3r/zQ3u0RQ4U0gQ5P2ZQ6T3tQ6X3zQ6a4VQ7e6RQ7h6YQ8Y7iQ8l8[R8x8n$W#`Z!_!o%w%}&y'Q'W'X'Y'Z'[']'^'_'`'a'b'd'g'k'u)p+R+^+g,O,^,d,g,w-x/v/y0i0s0w0x0y0z0{0|0}1O1P1Q1R1S1T1W1]2O2[3s3v4W4[4]4b4c5`6S6V6b6f6g7g7z8Z8m8y9_:|W(v#{&|1V8qT)Z$a,i$W#_Z!_!o%w%}&y'Q'W'X'Y'Z'[']'^'_'`'a'b'd'g'k'u)p+R+^+g,O,^,d,g,w-x/v/y0i0s0w0x0y0z0{0|0}1O1P1Q1R1S1T1W1]2O2[3s3v4W4[4]4b4c5`6S6V6b6f6g7g7z8Z8m8y9_:|Q'f#`S)Y$a,iR-{)Z&^cORSTUjk}!S!W!]!`!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#]#b#e#k$]$n%[%_%`%c%e%f%g%i%m%x%z&S&W&_&f&p&}'R'w(R)V)^*k*o*t+T+X+[+x,P,b,h,m-u-z.S.].|/_/`/a/c/g/j/l/{0T0j0t1X2i2q3R3f3h3i3q3x5o5}6W6{7j8]8o9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;aQ%f{Q%g|Q%i!OQ%j!PR/f*rQ&e!iQ)[$cQ+w&hS.Q)`)wS0c+u+vW2S-}.O.P.kS4T0d0eU4|2U2V2WU6s4{5Y5ZQ7v6tR8b7yT+l&d+mS+j&d+mU0W+k+o+pU0]+q+r+sS0b+t2xS2s.y2vU3{0Z0[0^Q4P0_Q4Q0aS5c2t2{S5f2y2zU6Z3|4O4RQ6`4SS7Q5g5hQ7S5iS7k6]6_S8P7R7TQ8^7mR8g8QS+l&d+mT2u.y2vS&r!q/dQ-U(_Q-b(kS0V+j2sQ1g-VS1p-c-lU3}0]0b5fQ4h1bS4s1v1xU6^4P4Q7SQ6k4iQ6r4vR7n6`Q!xXS&q!q/dQ)W$[Q)b$eQ)h$kQ,Q&rQ-T(_Q-a(kQ-f(nQ.X)cQ/Q*]S0U+j2sS1f-U-VS1o-b-lQ1r-eQ1t-gQ3V/RW3y0V0]0b5fQ4g1bQ4k1gS4o1p1xQ4t1wQ5r3WW6[3}4P4Q7SS6j4h4iS6n4p:iQ6p4sQ6}5aQ7[5sS7l6^6`Q7r6kS7s6o:mQ7u6rQ7|7OQ8V7]Q8_7nS8a7t:nQ8d7}Q8s8eQ9Q8tQ9X9RQ:u:pQ;T:zQ;U:{Q;V;hR;[;m$rWORSTUjk}!S!W!]!`!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#b#e$]$n%[%_%`%c%e%f%g%i%m%x%z&S&_&f&p&}'R(R)V)^*k*o*t+T+x,P,b,h-u-z.S.].|/_/`/a/c/g/j/l0T0j0t2i3R3f3h3i3x5o5}6W7j8]8oS!xn!k!j:o#]#k&W'w+X+[,m/{1X2q3q6{9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;aR:u;`$rXORSTUjk}!S!W!]!`!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#b#e$]$n%[%_%`%c%e%f%g%i%m%x%z&S&_&f&p&}'R(R)V)^*k*o*t+T+x,P,b,h-u-z.S.].|/_/`/a/c/g/j/l0T0j0t2i3R3f3h3i3x5o5}6W7j8]8oQ$[b!Y$em!j$h$i$j&U&j&k&l(k)f)g+]+j+|+}-d.[0Q0W0]0h1u3{4Q6Z7k8^S$kn!kQ)c$fQ*]%TW/R*^*_*`*aU3W/S/T/UQ5a2sS5s3X3YU7O5b5c5fQ7]5tU7}7P7Q7SS8e8O8PS8t8f8gQ9R8u!j:p#]#k&W'w+X+[,m/{1X2q3q6{9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;aQ:z;_R:{;`$f]OSTjk}!S!W!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#b#e$]$n%[%_%c%e%f%g%i%m%z&S&_&f&p&}'R(R)V)^*k*o*t+T+x,P,b,h-u-z.S.].|/_/`/a/c/g/j/l0T0j0t2i3R3f3h3i3x5o5}6W7j8]8oY!hRU!]!`%xv$wrs!r!u$Z$u&`&t&w)x)y)z*m+Y+h,S,U/o0lQ*j%`!h:q#]#k'w+X+[,m/{1X2q3q6{9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;aR:t&WS&[!b$vR0O+c$p[ORSTUjk}!S!W!]!`!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#b#e$]$n%[%_%c%e%f%g%i%m%x%z&S&_&f&p&}'R(R)V)^*k*o*t+T+x,P,b,h-u-z.S.].|/_/`/a/c/g/j/l0T0j0t2i3R3f3h3i3x5o5}6W7j8]8o!j'e#]#k&W'w+X+[,m/{1X2q3q6{9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;aR*i%`$roORSTUjk}!S!W!]!`!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#b#e$]$n%[%_%`%c%e%f%g%i%m%x%z&S&_&f&p&}'R(R)V)^*k*o*t+T+x,P,b,h-u-z.S.].|/_/`/a/c/g/j/l0T0j0t2i3R3f3h3i3x5o5}6W7j8]8oQ'U!{!k:r#]#k&W'w+X+[,m/{1X2q3q6{9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;a!h#VZ!_$a%w%}&y'Q'_'`'a'b'g'k)p+R+g,O,^,d,w-x0i0s1T2O2[3v4W4[6V7g8Z8m8y9_!R9k'd'u+^,i/v/y0w1P1Q1R1S1W1]3s4]4b4c5`6S6b6f6g7z:|!d#XZ!_$a%w%}&y'Q'a'b'g'k)p+R+g,O,^,d,w-x0i0s1T2O2[3v4W4[6V7g8Z8m8y9_}9m'd'u+^,i/v/y0w1R1S1W1]3s4]4b4c5`6S6b6f6g7z:|!`#]Z!_$a%w%}&y'Q'g'k)p+R+g,O,^,d,w-x0i0s1T2O2[3v4W4[6V7g8Z8m8y9_Q1a-Px;a'd'u+^,i/v/y0w1W1]3s4]4b4c5`6S6b6f6g7z:|Q;i;pQ;j;qR;k;r&^cORSTUjk}!S!W!]!`!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#]#b#e#k$]$n%[%_%`%c%e%f%g%i%m%x%z&S&W&_&f&p&}'R'w(R)V)^*k*o*t+T+X+[+x,P,b,h,m-u-z.S.].|/_/`/a/c/g/j/l/{0T0j0t1X2i2q3R3f3h3i3q3x5o5}6W6{7j8]8o9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;aS#l`#mR1Y,l&e_ORSTU`jk}!S!W!]!`!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#]#b#e#k#m$]$n%[%_%`%c%e%f%g%i%m%x%z&S&W&_&f&p&}'R'w(R)V)^*k*o*t+T+X+[+x,P,b,h,l,m-u-z.S.].|/_/`/a/c/g/j/l/{0T0j0t1X2i2q3R3f3h3i3q3x5o5}6W6{7j8]8o9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;aS#g^#nT'n#i'rT#h^#nT'p#i'r&e`ORSTU`jk}!S!W!]!`!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#]#b#e#k#m$]$n%[%_%`%c%e%f%g%i%m%x%z&S&W&_&f&p&}'R'w(R)V)^*k*o*t+T+X+[+x,P,b,h,l,m-u-z.S.].|/_/`/a/c/g/j/l/{0T0j0t1X2i2q3R3f3h3i3q3x5o5}6W6{7j8]8o9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;aT#l`#mQ#o`R'y#m$rbORSTUjk}!S!W!]!`!n!v!z!|#P#Q#R#S#T#U#V#W#X#Y#Z#b#e$]$n%[%_%`%c%e%f%g%i%m%x%z&S&_&f&p&}'R(R)V)^*k*o*t+T+x,P,b,h-u-z.S.].|/_/`/a/c/g/j/l0T0j0t2i3R3f3h3i3x5o5}6W7j8]8o!k;_#]#k&W'w+X+[,m/{1X2q3q6{9^9`9c9e9f9g9h9i9j9k9l9m9n9o9p9s:Q:R:T:_:`:g:h;a#RdOSUj}!S!W!n!|#k$]%[%_%`%c%e%f%g%i%m&S&f'w)^*k*o*t+x,m-u.S.|/_/`/a/c/g/j/l1X2i3R3f3h3i5o5}x#{a!y$T$U$Y(W(Y(b(w(x,_-Y-w1a1y6i;^;i;j;k#[&|!w#d#v#y&g'}(Z(h)])_)a*O*R+y-Z-].R.T.p.s.{.}1k1s2Q2T2X2j3Q3S4l4u4}5k5p6z7W8T9w9z9}:U:X:[:a:d:j;l;n;t;u;vQ)S$WQ,x(Sd1V9r9y9|:P:W:Z:^:c:f:le8q9d9x9{:O:V:Y:]:b:e:kx#wa!y$T$U$Y(W(Y(b(w(x,_-Y-w1a1y6i;^;i;j;kQ(d#xS(n#z(qQ)T$XQ-g(o#[:w!w#d#v#y&g'}(Z(h)])_)a*O*R+y-Z-].R.T.p.s.{.}1k1s2Q2T2X2j3Q3S4l4u4}5k5p6z7W8T9w9z9}:U:X:[:a:d:j;l;n;t;u;vd:x9d9x9{:O:V:Y:]:b:e:kd:y9r9y9|:P:W:Z:^:c:f:lQ:};bQ;O;cQ;P;dQ;Q;eQ;R;fR;S;gx#{a!y$T$U$Y(W(Y(b(w(x,_-Y-w1a1y6i;^;i;j;k#[&|!w#d#v#y&g'}(Z(h)])_)a*O*R+y-Z-].R.T.p.s.{.}1k1s2Q2T2X2j3Q3S4l4u4}5k5p6z7W8T9w9z9}:U:X:[:a:d:j;l;n;t;u;vd1V9r9y9|:P:W:Z:^:c:f:le8q9d9x9{:O:V:Y:]:b:e:klfOSj}!n$]%c%f%g%i*o*t/g/jQ(g#yQ*}%pQ+O%rR1j-Z%O#|a!w!y#d#v#y$T$U$Y&g'}(W(Y(Z(b(h(w(x)])_)a*O*R+y,_-Y-Z-]-w.R.T.p.s.{.}1a1k1s1y2Q2T2X2j3Q3S4l4u4}5k5p6i6z7W8T9d9r9w9x9y9z9{9|9}:O:P:U:V:W:X:Y:Z:[:]:^:a:b:c:d:e:f:j:k:l;^;i;j;k;l;n;t;u;vQ*Q$}Q.r*SQ2m.qR5]2nT(p#z(qS(p#z(qT2u.y2vQ)b$eQ-f(nQ.X)cQ/Q*]Q3V/RQ5r3WQ6}5aQ7[5sQ7|7OQ8V7]Q8d7}Q8s8eQ9Q8tR9X9Rp(W#t'O)U-X-o-p0q1h1}4f4w7q:v;W;X;Y!n:U&z'i(^(f+v,[,t-P-^-|.P.o.q0e0p1i1m2W2l2n3O4Y4Z4m4q4y5O5Z5n6m6q7Y8`;Z;];p;q;r[:V8p9O9V9Y9Z9]]:W1U4a6c7o7p8zr(Y#t'O)U,}-X-o-p0q1h1}4f4w7q:v;W;X;Y!p:X&z'i(^(f+v,[,t-P-^-|.P.o.q0e0n0p1i1m2W2l2n3O4Y4Z4m4q4y5O5Z5n6m6q7Y8`;Z;];p;q;r^:Y8p9O9T9V9Y9Z9]_:Z1U4a6c6d7o7p8zpeOSjy}!n$]%Y%c%f%g%i*o*t/g/jQ%VxR*k%`peOSjy}!n$]%Y%c%f%g%i*o*t/g/jR%VxQ*U%OR.n)}qeOSjy}!n$]%Y%c%f%g%i*o*t/g/jQ.z*ZS3P/O/PW5j2|2}3O3TU7V5l5m5nU8R7U7X7YQ8h8SR8v8iQ%^yR*e%YR3^/XR7_5uS$mp$rR.d)nQ%czR*o%dR*u%jT/h*t/jR*y%kQ*x%kR/q*yQjOQ!nST$`j!nQ(P#sR,u(PQ!YQR%u!YQ!^RU%{!^%|+UQ%|!_R+U%}Q+a&XR/}+aQ,`'OR0r,`Q,c'QS0u,c0vR0v,dQ+m&dR0X+mS!eR$uU&a!e&b+VQ&b!fR+V&OQ+d&[R0P+dQ&u!sQ,R&sU,V&u,R0mR0m,WQ'r#iR,n'rQ#m`R'x#mQ#cZU'h#c+Q9qQ+Q9_R9q'uQ-S(_W1d-S1e4j6lU1e-T-U-VS4j1f1gR6l4k$k(U#t&z'O'i(^(f)P)Q)U+v,Y,Z,[,t,}-O-P-X-^-o-p-|.P.o.q0e0n0o0p0q1U1h1i1m1}2W2l2n3O4Y4Z4_4`4a4f4m4q4w4y5O5Z5n6c6d6e6m6q7Y7o7p7q8`8p8z8|8}9O9T9U9V9Y9Z9]:v;W;X;Y;Z;];p;q;rQ-[(fU1l-[1n4nQ1n-^R4n1mQ(q#zR-i(qQ(z$OR-r(zQ2R-|R4z2RQ){$xR.m){Q2p.tS5_2p6|R6|5`Q*W%PR.w*WQ2v.yR5d2vQ/W*bS3[/W5vR5v3^Q._)jW2a._2c5T6wQ2c.bQ5T2bR6w5UQ)o$mR.e)oQ/j*tR3l/jWiOSj!nQ%h}Q)X$]Q*n%cQ*p%fQ*q%gQ*s%iQ/e*oS/h*t/jR3k/gQ$_gQ%l!RQ%o!TQ%q!UQ%s!VQ)v$sQ)|$yQ*d%^Q*{%nQ-h(pS/Z*e*hQ/r*zQ/s*}Q/t+OS0S+j2sQ2f.hQ2k.oQ3U/QQ3`/]Q3j/fY3w0U0V0]0b5fQ5X2hQ5[2lQ5q3VQ5w3_[6U3v3y3}4P4Q7SQ6x5VQ7Z5rQ7`5xW7f6V6[6^6`Q7x6yQ7{6}Q8U7[U8X7g7l7nQ8c7|Q8j8VS8k8Z8_Q8r8dQ8w8mQ9P8sQ9S8yQ9W9QR9[9XQ$gmQ&i!jU)e$h$i$jQ+Z&UU+{&j&k&lQ-`(kS.Z)f)gQ/z+]Q0R+jS0g+|+}Q1q-dQ2Z.[Q3t0QS3z0W0]Q4V0hQ4r1uS6Y3{4QQ7i6ZQ8[7kR8n8^S#ua;^R({$PU$Oa$P;^R-q(yQ#taS&z!w)aQ'O!yQ'i#dQ(^#vQ(f#yQ)P$TQ)Q$UQ)U$YQ+v&gQ,Y9wQ,Z9zQ,[9}Q,t'}Q,}(WQ-O(YQ-P(ZQ-X(bQ-^(hQ-o(wQ-p(xd-|)].R.{2T3Q4}5k6z7W8TQ.P)_Q.o*OQ.q*RQ0e+yQ0n:UQ0o:XQ0p:[Q0q,_Q1U9rQ1h-YQ1i-ZQ1m-]Q1}-wQ2W.TQ2l.pQ2n.sQ3O.}Q4Y:aQ4Z:dQ4_9yQ4`9|Q4a:PQ4f1aQ4m1kQ4q1sQ4w1yQ4y2QQ5O2XQ5Z2jQ5n3SQ6c:^Q6d:WQ6e:ZQ6m4lQ6q4uQ7Y5pQ7o:cQ7p:fQ7q6iQ8`:jQ8p9dQ8z:lQ8|9xQ8}9{Q9O:OQ9T:VQ9U:YQ9V:]Q9Y:bQ9Z:eQ9]:kQ:v;^Q;W;iQ;X;jQ;Y;kQ;Z;lQ;];nQ;p;tQ;q;uR;r;vlgOSj}!n$]%c%f%g%i*o*t/g/jS!pU%eQ%n!SQ%t!WQ'V!|Q'v#kS*h%[%_Q*l%`Q*z%mQ+W&SQ+u&fQ,r'wQ.O)^Q/b*kQ0d+xQ1[,mQ1{-uQ2V.SQ2}.|Q3b/_Q3c/`Q3e/aQ3g/cQ3n/lQ4d1XQ5Y2iQ5m3RQ5|3fQ6O3hQ6P3iQ7X5oR7b5}!vZOSUj}!S!n!|$]%[%_%`%c%e%f%g%i%m&S&f)^*k*o*t+x-u.S.|/_/`/a/c/g/j/l2i3R3f3h3i5o5}Q!_RQ!oTQ$akS%w!]%zQ%}!`Q&y!vQ'Q!zQ'W#PQ'X#QQ'Y#RQ'Z#SQ'[#TQ']#UQ'^#VQ'_#WQ'`#XQ'a#YQ'b#ZQ'd#]Q'g#bQ'k#eW'u#k'w,m1XQ)p$nS+R%x+TS+^&W/{Q+g&_Q,O&pQ,^&}Q,d'RQ,g9^Q,i9`Q,w(RQ-x)VQ/v+XQ/y+[Q0i,PQ0s,bQ0w9cQ0x9eQ0y9fQ0z9gQ0{9hQ0|9iQ0}9jQ1O9kQ1P9lQ1Q9mQ1R9nQ1S9oQ1T,hQ1W9sQ1]9pQ2O-zQ2[.]Q3s:QQ3v0TQ4W0jQ4[0tQ4]:RQ4b:TQ4c:_Q5`2qQ6S3qQ6V3xQ6b:`Q6f:gQ6g:hQ7g6WQ7z6{Q8Z7jQ8m8]Q8y8oQ9_!WR:|;aR!aRR&Y!bS&U!b+`S+]&V&^R0Q+fR'P!yR'S!zT!tU$ZS!sU$ZU$xrs*mS&s!r!uQ,T&tQ,W&wQ.l)zS0k,S,UR4X0l`!dR!]!`$u%x&`)x+hh!qUrs!r!u$Z&t&w)z,S,U0lQ/d*mQ/w+YQ3p/oT:s&W)yT!gR$uS!fR$uS%y!]&`S&O!`)xS+S%x+hT+_&W)yT&]!b$vQ#i^R'{#nT'q#i'rR1Z,lT(a#v(cR(i#yQ-})]Q2U.RQ2|.{Q4{2TQ5l3QQ6t4}Q7U5kQ7y6zQ8S7WR8i8TlhOSj}!n$]%c%f%g%i*o*t/g/jQ%]yR*d%YV$yrs*mR.u*TR*c%WQ$qpR)u$rR)k$lT%az%dT%bz%dT/i*t/j",
-  nodeNames: "\u26A0 extends ArithOp ArithOp InterpolationStart LineComment BlockComment Script ExportDeclaration export Star as VariableName String from ; default FunctionDeclaration async function VariableDefinition TypeParamList TypeDefinition ThisType this LiteralType ArithOp Number BooleanLiteral TemplateType InterpolationEnd Interpolation VoidType void TypeofType typeof MemberExpression . ?. PropertyName [ TemplateString Interpolation null super RegExp ] ArrayExpression Spread , } { ObjectExpression Property async get set PropertyDefinition Block : NewExpression new TypeArgList CompareOp < ) ( ArgList UnaryExpression await yield delete LogicOp BitOp ParenthesizedExpression ClassExpression class extends ClassBody MethodDeclaration Privacy static abstract override PrivatePropertyDefinition PropertyDeclaration readonly Optional TypeAnnotation Equals StaticBlock FunctionExpression ArrowFunction ParamList ParamList ArrayPattern ObjectPattern PatternProperty Privacy readonly Arrow MemberExpression PrivatePropertyName BinaryExpression ArithOp ArithOp ArithOp ArithOp BitOp CompareOp instanceof in const CompareOp BitOp BitOp BitOp LogicOp LogicOp ConditionalExpression LogicOp LogicOp AssignmentExpression UpdateOp PostfixExpression CallExpression TaggedTemplateExpression DynamicImport import ImportMeta JSXElement JSXSelfCloseEndTag JSXStartTag JSXSelfClosingTag JSXIdentifier JSXNamespacedName JSXMemberExpression JSXSpreadAttribute JSXAttribute JSXAttributeValue JSXEscape JSXEndTag JSXOpenTag JSXFragmentTag JSXText JSXEscape JSXStartCloseTag JSXCloseTag PrefixCast ArrowFunction TypeParamList SequenceExpression KeyofType keyof UniqueType unique ImportType InferredType infer TypeName ParenthesizedType FunctionSignature ParamList NewSignature IndexedType TupleType Label ArrayType ReadonlyType ObjectType MethodType PropertyType IndexSignature CallSignature TypePredicate is NewSignature new UnionType LogicOp IntersectionType LogicOp ConditionalType ParameterizedType ClassDeclaration abstract implements type VariableDeclaration let var TypeAliasDeclaration InterfaceDeclaration interface EnumDeclaration enum EnumBody NamespaceDeclaration namespace module AmbientDeclaration declare GlobalDeclaration global ClassDeclaration ClassBody MethodDeclaration AmbientFunctionDeclaration ExportGroup VariableName VariableName ImportDeclaration ImportGroup ForStatement for ForSpec ForInSpec ForOfSpec of WhileStatement while WithStatement with DoStatement do IfStatement if else SwitchStatement switch SwitchBody CaseLabel case DefaultLabel TryStatement try CatchClause catch FinallyClause finally ReturnStatement return ThrowStatement throw BreakStatement break ContinueStatement continue DebuggerStatement debugger LabeledStatement ExpressionStatement",
+  nodeNames:
+    "\u26A0 extends ArithOp ArithOp InterpolationStart LineComment BlockComment Script ExportDeclaration export Star as VariableName String from ; default FunctionDeclaration async function VariableDefinition TypeParamList TypeDefinition ThisType this LiteralType ArithOp Number BooleanLiteral TemplateType InterpolationEnd Interpolation VoidType void TypeofType typeof MemberExpression . ?. PropertyName [ TemplateString Interpolation null super RegExp ] ArrayExpression Spread , } { ObjectExpression Property async get set PropertyDefinition Block : NewExpression new TypeArgList CompareOp < ) ( ArgList UnaryExpression await yield delete LogicOp BitOp ParenthesizedExpression ClassExpression class extends ClassBody MethodDeclaration Privacy static abstract override PrivatePropertyDefinition PropertyDeclaration readonly Optional TypeAnnotation Equals StaticBlock FunctionExpression ArrowFunction ParamList ParamList ArrayPattern ObjectPattern PatternProperty Privacy readonly Arrow MemberExpression PrivatePropertyName BinaryExpression ArithOp ArithOp ArithOp ArithOp BitOp CompareOp instanceof in const CompareOp BitOp BitOp BitOp LogicOp LogicOp ConditionalExpression LogicOp LogicOp AssignmentExpression UpdateOp PostfixExpression CallExpression TaggedTemplateExpression DynamicImport import ImportMeta JSXElement JSXSelfCloseEndTag JSXStartTag JSXSelfClosingTag JSXIdentifier JSXNamespacedName JSXMemberExpression JSXSpreadAttribute JSXAttribute JSXAttributeValue JSXEscape JSXEndTag JSXOpenTag JSXFragmentTag JSXText JSXEscape JSXStartCloseTag JSXCloseTag PrefixCast ArrowFunction TypeParamList SequenceExpression KeyofType keyof UniqueType unique ImportType InferredType infer TypeName ParenthesizedType FunctionSignature ParamList NewSignature IndexedType TupleType Label ArrayType ReadonlyType ObjectType MethodType PropertyType IndexSignature CallSignature TypePredicate is NewSignature new UnionType LogicOp IntersectionType LogicOp ConditionalType ParameterizedType ClassDeclaration abstract implements type VariableDeclaration let var TypeAliasDeclaration InterfaceDeclaration interface EnumDeclaration enum EnumBody NamespaceDeclaration namespace module AmbientDeclaration declare GlobalDeclaration global ClassDeclaration ClassBody MethodDeclaration AmbientFunctionDeclaration ExportGroup VariableName VariableName ImportDeclaration ImportGroup ForStatement for ForSpec ForInSpec ForOfSpec of WhileStatement while WithStatement with DoStatement do IfStatement if else SwitchStatement switch SwitchBody CaseLabel case DefaultLabel TryStatement try CatchClause catch FinallyClause finally ReturnStatement return ThrowStatement throw BreakStatement break ContinueStatement continue DebuggerStatement debugger LabeledStatement ExpressionStatement",
   maxTerm: 332,
   context: trackNewline,
   nodeProps: [
-    ["closedBy", 4, "InterpolationEnd", 40, "]", 51, "}", 66, ")", 132, "JSXSelfCloseEndTag JSXEndTag", 146, "JSXEndTag"],
-    ["group", -26, 8, 15, 17, 58, 184, 188, 191, 192, 194, 197, 200, 211, 213, 219, 221, 223, 225, 228, 234, 240, 242, 244, 246, 248, 250, 251, "Statement", -30, 12, 13, 24, 27, 28, 41, 43, 44, 45, 47, 52, 60, 68, 74, 75, 91, 92, 101, 103, 119, 122, 124, 125, 126, 127, 129, 130, 148, 149, 151, "Expression", -22, 23, 25, 29, 32, 34, 152, 154, 156, 157, 159, 160, 161, 163, 164, 165, 167, 168, 169, 178, 180, 182, 183, "Type", -3, 79, 85, 90, "ClassItem"],
-    ["openedBy", 30, "InterpolationStart", 46, "[", 50, "{", 65, "(", 131, "JSXStartTag", 141, "JSXStartTag JSXStartCloseTag"]
+    [
+      "closedBy",
+      4,
+      "InterpolationEnd",
+      40,
+      "]",
+      51,
+      "}",
+      66,
+      ")",
+      132,
+      "JSXSelfCloseEndTag JSXEndTag",
+      146,
+      "JSXEndTag",
+    ],
+    [
+      "group",
+      -26,
+      8,
+      15,
+      17,
+      58,
+      184,
+      188,
+      191,
+      192,
+      194,
+      197,
+      200,
+      211,
+      213,
+      219,
+      221,
+      223,
+      225,
+      228,
+      234,
+      240,
+      242,
+      244,
+      246,
+      248,
+      250,
+      251,
+      "Statement",
+      -30,
+      12,
+      13,
+      24,
+      27,
+      28,
+      41,
+      43,
+      44,
+      45,
+      47,
+      52,
+      60,
+      68,
+      74,
+      75,
+      91,
+      92,
+      101,
+      103,
+      119,
+      122,
+      124,
+      125,
+      126,
+      127,
+      129,
+      130,
+      148,
+      149,
+      151,
+      "Expression",
+      -22,
+      23,
+      25,
+      29,
+      32,
+      34,
+      152,
+      154,
+      156,
+      157,
+      159,
+      160,
+      161,
+      163,
+      164,
+      165,
+      167,
+      168,
+      169,
+      178,
+      180,
+      182,
+      183,
+      "Type",
+      -3,
+      79,
+      85,
+      90,
+      "ClassItem",
+    ],
+    [
+      "openedBy",
+      30,
+      "InterpolationStart",
+      46,
+      "[",
+      50,
+      "{",
+      65,
+      "(",
+      131,
+      "JSXStartTag",
+      141,
+      "JSXStartTag JSXStartCloseTag",
+    ],
   ],
   propSources: [jsHighlight],
   skippedNodes: [0, 5, 6],
   repeatNodeCount: 28,
-  tokenData: "!C}~R!`OX%TXY%cYZ'RZ[%c[]%T]^'R^p%Tpq%cqr'crs(kst0htu2`uv4pvw5ewx6cxy<yyz=Zz{=k{|>k|}?O}!O>k!O!P?`!P!QCl!Q!R!0[!R![!1q![!]!7s!]!^!8V!^!_!8g!_!`!9d!`!a!:[!a!b!<R!b!c%T!c!}2`!}#O!=d#O#P%T#P#Q!=t#Q#R!>U#R#S2`#S#T!>i#T#o2`#o#p!>y#p#q!?O#q#r!?f#r#s!?x#s$f%T$f$g%c$g#BY2`#BY#BZ!@Y#BZ$IS2`$IS$I_!@Y$I_$I|2`$I|$I}!Bq$I}$JO!Bq$JO$JT2`$JT$JU!@Y$JU$KV2`$KV$KW!@Y$KW&FU2`&FU&FV!@Y&FV?HT2`?HT?HU!@Y?HU~2`W%YR$UWO!^%T!_#o%T#p~%T7Z%jg$UW'Y7ROX%TXY%cYZ%TZ[%c[p%Tpq%cq!^%T!_#o%T#p$f%T$f$g%c$g#BY%T#BY#BZ%c#BZ$IS%T$IS$I_%c$I_$JT%T$JT$JU%c$JU$KV%T$KV$KW%c$KW&FU%T&FU&FV%c&FV?HT%T?HT?HU%c?HU~%T7Z'YR$UW'Z7RO!^%T!_#o%T#p~%T$T'jS$UW!j#{O!^%T!_!`'v!`#o%T#p~%T$O'}S#e#v$UWO!^%T!_!`(Z!`#o%T#p~%T$O(bR#e#v$UWO!^%T!_#o%T#p~%T)X(rZ$UW]#eOY(kYZ)eZr(krs*rs!^(k!^!_+U!_#O(k#O#P-b#P#o(k#o#p+U#p~(k&r)jV$UWOr)ers*Ps!^)e!^!_*a!_#o)e#o#p*a#p~)e&r*WR$P&j$UWO!^%T!_#o%T#p~%T&j*dROr*ars*ms~*a&j*rO$P&j)X*{R$P&j$UW]#eO!^%T!_#o%T#p~%T)P+ZV]#eOY+UYZ*aZr+Urs+ps#O+U#O#P+w#P~+U)P+wO$P&j]#e)P+zROr+Urs,Ts~+U)P,[U$P&j]#eOY,nZr,nrs-Vs#O,n#O#P-[#P~,n#e,sU]#eOY,nZr,nrs-Vs#O,n#O#P-[#P~,n#e-[O]#e#e-_PO~,n)X-gV$UWOr(krs-|s!^(k!^!_+U!_#o(k#o#p+U#p~(k)X.VZ$P&j$UW]#eOY.xYZ%TZr.xrs/rs!^.x!^!_,n!_#O.x#O#P0S#P#o.x#o#p,n#p~.x#m/PZ$UW]#eOY.xYZ%TZr.xrs/rs!^.x!^!_,n!_#O.x#O#P0S#P#o.x#o#p,n#p~.x#m/yR$UW]#eO!^%T!_#o%T#p~%T#m0XT$UWO!^.x!^!_,n!_#o.x#o#p,n#p~.x3]0mZ$UWOt%Ttu1`u!^%T!_!c%T!c!}1`!}#R%T#R#S1`#S#T%T#T#o1`#p$g%T$g~1`3]1g]$UW'o3TOt%Ttu1`u!Q%T!Q![1`![!^%T!_!c%T!c!}1`!}#R%T#R#S1`#S#T%T#T#o1`#p$g%T$g~1`7Z2k_$UW#zS']$y'g3SOt%Ttu2`u}%T}!O3j!O!Q%T!Q![2`![!^%T!_!c%T!c!}2`!}#R%T#R#S2`#S#T%T#T#o2`#p$g%T$g~2`[3q_$UW#zSOt%Ttu3ju}%T}!O3j!O!Q%T!Q![3j![!^%T!_!c%T!c!}3j!}#R%T#R#S3j#S#T%T#T#o3j#p$g%T$g~3j$O4wS#^#v$UWO!^%T!_!`5T!`#o%T#p~%T$O5[R$UW#o#vO!^%T!_#o%T#p~%T5b5lU'x5Y$UWOv%Tvw6Ow!^%T!_!`5T!`#o%T#p~%T$O6VS$UW#i#vO!^%T!_!`5T!`#o%T#p~%T)X6jZ$UW]#eOY6cYZ7]Zw6cwx*rx!^6c!^!_8T!_#O6c#O#P:T#P#o6c#o#p8T#p~6c&r7bV$UWOw7]wx*Px!^7]!^!_7w!_#o7]#o#p7w#p~7]&j7zROw7wwx*mx~7w)P8YV]#eOY8TYZ7wZw8Twx+px#O8T#O#P8o#P~8T)P8rROw8Twx8{x~8T)P9SU$P&j]#eOY9fZw9fwx-Vx#O9f#O#P9}#P~9f#e9kU]#eOY9fZw9fwx-Vx#O9f#O#P9}#P~9f#e:QPO~9f)X:YV$UWOw6cwx:ox!^6c!^!_8T!_#o6c#o#p8T#p~6c)X:xZ$P&j$UW]#eOY;kYZ%TZw;kwx/rx!^;k!^!_9f!_#O;k#O#P<e#P#o;k#o#p9f#p~;k#m;rZ$UW]#eOY;kYZ%TZw;kwx/rx!^;k!^!_9f!_#O;k#O#P<e#P#o;k#o#p9f#p~;k#m<jT$UWO!^;k!^!_9f!_#o;k#o#p9f#p~;k&i=QR!d&a$UWO!^%T!_#o%T#p~%Tk=bR!cc$UWO!^%T!_#o%T#p~%T7V=tU'^4V#_#v$UWOz%Tz{>W{!^%T!_!`5T!`#o%T#p~%T$O>_S#[#v$UWO!^%T!_!`5T!`#o%T#p~%T%w>rSj%o$UWO!^%T!_!`5T!`#o%T#p~%T&i?VR!R&a$UWO!^%T!_#o%T#p~%T7Z?gVu5^$UWO!O%T!O!P?|!P!Q%T!Q![@r![!^%T!_#o%T#p~%T!{@RT$UWO!O%T!O!P@b!P!^%T!_#o%T#p~%T!{@iR!Q!s$UWO!^%T!_#o%T#p~%T!{@yZ$UWk!sO!Q%T!Q![@r![!^%T!_!g%T!g!hAl!h#R%T#R#S@r#S#X%T#X#YAl#Y#o%T#p~%T!{AqZ$UWO{%T{|Bd|}%T}!OBd!O!Q%T!Q![CO![!^%T!_#R%T#R#SCO#S#o%T#p~%T!{BiV$UWO!Q%T!Q![CO![!^%T!_#R%T#R#SCO#S#o%T#p~%T!{CVV$UWk!sO!Q%T!Q![CO![!^%T!_#R%T#R#SCO#S#o%T#p~%T7ZCs`$UW#]#vOYDuYZ%TZzDuz{Jl{!PDu!P!Q!-e!Q!^Du!^!_Fx!_!`!.^!`!a!/]!a!}Du!}#OHq#O#PJQ#P#oDu#o#pFx#p~DuXD|[$UW}POYDuYZ%TZ!PDu!P!QEr!Q!^Du!^!_Fx!_!}Du!}#OHq#O#PJQ#P#oDu#o#pFx#p~DuXEy_$UW}PO!^%T!_#Z%T#Z#[Er#[#]%T#]#^Er#^#a%T#a#bEr#b#g%T#g#hEr#h#i%T#i#jEr#j#m%T#m#nEr#n#o%T#p~%TPF}V}POYFxZ!PFx!P!QGd!Q!}Fx!}#OG{#O#PHh#P~FxPGiU}P#Z#[Gd#]#^Gd#a#bGd#g#hGd#i#jGd#m#nGdPHOTOYG{Z#OG{#O#PH_#P#QFx#Q~G{PHbQOYG{Z~G{PHkQOYFxZ~FxXHvY$UWOYHqYZ%TZ!^Hq!^!_G{!_#OHq#O#PIf#P#QDu#Q#oHq#o#pG{#p~HqXIkV$UWOYHqYZ%TZ!^Hq!^!_G{!_#oHq#o#pG{#p~HqXJVV$UWOYDuYZ%TZ!^Du!^!_Fx!_#oDu#o#pFx#p~Du7ZJs^$UW}POYJlYZKoZzJlz{NQ{!PJl!P!Q!,R!Q!^Jl!^!_!!]!_!}Jl!}#O!'|#O#P!+a#P#oJl#o#p!!]#p~Jl7ZKtV$UWOzKoz{LZ{!^Ko!^!_M]!_#oKo#o#pM]#p~Ko7ZL`X$UWOzKoz{LZ{!PKo!P!QL{!Q!^Ko!^!_M]!_#oKo#o#pM]#p~Ko7ZMSR$UWU7RO!^%T!_#o%T#p~%T7RM`ROzM]z{Mi{~M]7RMlTOzM]z{Mi{!PM]!P!QM{!Q~M]7RNQOU7R7ZNX^$UW}POYJlYZKoZzJlz{NQ{!PJl!P!Q! T!Q!^Jl!^!_!!]!_!}Jl!}#O!'|#O#P!+a#P#oJl#o#p!!]#p~Jl7Z! ^_$UWU7R}PO!^%T!_#Z%T#Z#[Er#[#]%T#]#^Er#^#a%T#a#bEr#b#g%T#g#hEr#h#i%T#i#jEr#j#m%T#m#nEr#n#o%T#p~%T7R!!bY}POY!!]YZM]Zz!!]z{!#Q{!P!!]!P!Q!&x!Q!}!!]!}#O!$`#O#P!&f#P~!!]7R!#VY}POY!!]YZM]Zz!!]z{!#Q{!P!!]!P!Q!#u!Q!}!!]!}#O!$`#O#P!&f#P~!!]7R!#|UU7R}P#Z#[Gd#]#^Gd#a#bGd#g#hGd#i#jGd#m#nGd7R!$cWOY!$`YZM]Zz!$`z{!${{#O!$`#O#P!&S#P#Q!!]#Q~!$`7R!%OYOY!$`YZM]Zz!$`z{!${{!P!$`!P!Q!%n!Q#O!$`#O#P!&S#P#Q!!]#Q~!$`7R!%sTU7ROYG{Z#OG{#O#PH_#P#QFx#Q~G{7R!&VTOY!$`YZM]Zz!$`z{!${{~!$`7R!&iTOY!!]YZM]Zz!!]z{!#Q{~!!]7R!&}_}POzM]z{Mi{#ZM]#Z#[!&x#[#]M]#]#^!&x#^#aM]#a#b!&x#b#gM]#g#h!&x#h#iM]#i#j!&x#j#mM]#m#n!&x#n~M]7Z!(R[$UWOY!'|YZKoZz!'|z{!(w{!^!'|!^!_!$`!_#O!'|#O#P!*o#P#QJl#Q#o!'|#o#p!$`#p~!'|7Z!(|^$UWOY!'|YZKoZz!'|z{!(w{!P!'|!P!Q!)x!Q!^!'|!^!_!$`!_#O!'|#O#P!*o#P#QJl#Q#o!'|#o#p!$`#p~!'|7Z!*PY$UWU7ROYHqYZ%TZ!^Hq!^!_G{!_#OHq#O#PIf#P#QDu#Q#oHq#o#pG{#p~Hq7Z!*tX$UWOY!'|YZKoZz!'|z{!(w{!^!'|!^!_!$`!_#o!'|#o#p!$`#p~!'|7Z!+fX$UWOYJlYZKoZzJlz{NQ{!^Jl!^!_!!]!_#oJl#o#p!!]#p~Jl7Z!,Yc$UW}POzKoz{LZ{!^Ko!^!_M]!_#ZKo#Z#[!,R#[#]Ko#]#^!,R#^#aKo#a#b!,R#b#gKo#g#h!,R#h#iKo#i#j!,R#j#mKo#m#n!,R#n#oKo#o#pM]#p~Ko7Z!-lV$UWT7ROY!-eYZ%TZ!^!-e!^!_!.R!_#o!-e#o#p!.R#p~!-e7R!.WQT7ROY!.RZ~!.R$P!.g[$UW#o#v}POYDuYZ%TZ!PDu!P!QEr!Q!^Du!^!_Fx!_!}Du!}#OHq#O#PJQ#P#oDu#o#pFx#p~Du]!/f[#wS$UW}POYDuYZ%TZ!PDu!P!QEr!Q!^Du!^!_Fx!_!}Du!}#OHq#O#PJQ#P#oDu#o#pFx#p~Du!{!0cd$UWk!sO!O%T!O!P@r!P!Q%T!Q![!1q![!^%T!_!g%T!g!hAl!h#R%T#R#S!1q#S#U%T#U#V!3X#V#X%T#X#YAl#Y#b%T#b#c!2w#c#d!4m#d#l%T#l#m!5{#m#o%T#p~%T!{!1x_$UWk!sO!O%T!O!P@r!P!Q%T!Q![!1q![!^%T!_!g%T!g!hAl!h#R%T#R#S!1q#S#X%T#X#YAl#Y#b%T#b#c!2w#c#o%T#p~%T!{!3OR$UWk!sO!^%T!_#o%T#p~%T!{!3^W$UWO!Q%T!Q!R!3v!R!S!3v!S!^%T!_#R%T#R#S!3v#S#o%T#p~%T!{!3}Y$UWk!sO!Q%T!Q!R!3v!R!S!3v!S!^%T!_#R%T#R#S!3v#S#b%T#b#c!2w#c#o%T#p~%T!{!4rV$UWO!Q%T!Q!Y!5X!Y!^%T!_#R%T#R#S!5X#S#o%T#p~%T!{!5`X$UWk!sO!Q%T!Q!Y!5X!Y!^%T!_#R%T#R#S!5X#S#b%T#b#c!2w#c#o%T#p~%T!{!6QZ$UWO!Q%T!Q![!6s![!^%T!_!c%T!c!i!6s!i#R%T#R#S!6s#S#T%T#T#Z!6s#Z#o%T#p~%T!{!6z]$UWk!sO!Q%T!Q![!6s![!^%T!_!c%T!c!i!6s!i#R%T#R#S!6s#S#T%T#T#Z!6s#Z#b%T#b#c!2w#c#o%T#p~%T$u!7|R!]V$UW#m$fO!^%T!_#o%T#p~%T!q!8^R_!i$UWO!^%T!_#o%T#p~%T5w!8rR'bd!a/n#x&s'|P!P!Q!8{!^!_!9Q!_!`!9_W!9QO$WW#v!9VP#`#v!_!`!9Y#v!9_O#o#v#v!9dO#a#v$u!9kT!{$m$UWO!^%T!_!`'v!`!a!9z!a#o%T#p~%T$P!:RR#W#w$UWO!^%T!_#o%T#p~%T%V!:gT'a!R#a#v$RS$UWO!^%T!_!`!:v!`!a!;W!a#o%T#p~%T$O!:}R#a#v$UWO!^%T!_#o%T#p~%T$O!;_T#`#v$UWO!^%T!_!`5T!`!a!;n!a#o%T#p~%T$O!;uS#`#v$UWO!^%T!_!`5T!`#o%T#p~%T*a!<YV'p#{$UWO!O%T!O!P!<o!P!^%T!_!a%T!a!b!=P!b#o%T#p~%T*[!<vRv*S$UWO!^%T!_#o%T#p~%T$O!=WS$UW#j#vO!^%T!_!`5T!`#o%T#p~%T7V!=kRx6}$UWO!^%T!_#o%T#p~%Tk!={R!Oc$UWO!^%T!_#o%T#p~%T$O!>]S#g#v$UWO!^%T!_!`5T!`#o%T#p~%T$a!>pR$UW'f$XO!^%T!_#o%T#p~%T~!?OO!T~5b!?VT'w5Y$UWO!^%T!_!`5T!`#o%T#p#q!=P#q~%T6X!?oR!S5}nQ$UWO!^%T!_#o%T#p~%TX!@PR!kP$UWO!^%T!_#o%T#p~%T7Z!@gr$UW'Y7R#zS']$y'g3SOX%TXY%cYZ%TZ[%c[p%Tpq%cqt%Ttu2`u}%T}!O3j!O!Q%T!Q![2`![!^%T!_!c%T!c!}2`!}#R%T#R#S2`#S#T%T#T#o2`#p$f%T$f$g%c$g#BY2`#BY#BZ!@Y#BZ$IS2`$IS$I_!@Y$I_$JT2`$JT$JU!@Y$JU$KV2`$KV$KW!@Y$KW&FU2`&FU&FV!@Y&FV?HT2`?HT?HU!@Y?HU~2`7Z!CO_$UW'Z7R#zS']$y'g3SOt%Ttu2`u}%T}!O3j!O!Q%T!Q![2`![!^%T!_!c%T!c!}2`!}#R%T#R#S2`#S#T%T#T#o2`#p$g%T$g~2`",
-  tokenizers: [tsExtends, noSemicolon, incdecToken, template, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, insertSemicolon],
-  topRules: { "Script": [0, 7] },
+  tokenData:
+    "!C}~R!`OX%TXY%cYZ'RZ[%c[]%T]^'R^p%Tpq%cqr'crs(kst0htu2`uv4pvw5ewx6cxy<yyz=Zz{=k{|>k|}?O}!O>k!O!P?`!P!QCl!Q!R!0[!R![!1q![!]!7s!]!^!8V!^!_!8g!_!`!9d!`!a!:[!a!b!<R!b!c%T!c!}2`!}#O!=d#O#P%T#P#Q!=t#Q#R!>U#R#S2`#S#T!>i#T#o2`#o#p!>y#p#q!?O#q#r!?f#r#s!?x#s$f%T$f$g%c$g#BY2`#BY#BZ!@Y#BZ$IS2`$IS$I_!@Y$I_$I|2`$I|$I}!Bq$I}$JO!Bq$JO$JT2`$JT$JU!@Y$JU$KV2`$KV$KW!@Y$KW&FU2`&FU&FV!@Y&FV?HT2`?HT?HU!@Y?HU~2`W%YR$UWO!^%T!_#o%T#p~%T7Z%jg$UW'Y7ROX%TXY%cYZ%TZ[%c[p%Tpq%cq!^%T!_#o%T#p$f%T$f$g%c$g#BY%T#BY#BZ%c#BZ$IS%T$IS$I_%c$I_$JT%T$JT$JU%c$JU$KV%T$KV$KW%c$KW&FU%T&FU&FV%c&FV?HT%T?HT?HU%c?HU~%T7Z'YR$UW'Z7RO!^%T!_#o%T#p~%T$T'jS$UW!j#{O!^%T!_!`'v!`#o%T#p~%T$O'}S#e#v$UWO!^%T!_!`(Z!`#o%T#p~%T$O(bR#e#v$UWO!^%T!_#o%T#p~%T)X(rZ$UW]#eOY(kYZ)eZr(krs*rs!^(k!^!_+U!_#O(k#O#P-b#P#o(k#o#p+U#p~(k&r)jV$UWOr)ers*Ps!^)e!^!_*a!_#o)e#o#p*a#p~)e&r*WR$P&j$UWO!^%T!_#o%T#p~%T&j*dROr*ars*ms~*a&j*rO$P&j)X*{R$P&j$UW]#eO!^%T!_#o%T#p~%T)P+ZV]#eOY+UYZ*aZr+Urs+ps#O+U#O#P+w#P~+U)P+wO$P&j]#e)P+zROr+Urs,Ts~+U)P,[U$P&j]#eOY,nZr,nrs-Vs#O,n#O#P-[#P~,n#e,sU]#eOY,nZr,nrs-Vs#O,n#O#P-[#P~,n#e-[O]#e#e-_PO~,n)X-gV$UWOr(krs-|s!^(k!^!_+U!_#o(k#o#p+U#p~(k)X.VZ$P&j$UW]#eOY.xYZ%TZr.xrs/rs!^.x!^!_,n!_#O.x#O#P0S#P#o.x#o#p,n#p~.x#m/PZ$UW]#eOY.xYZ%TZr.xrs/rs!^.x!^!_,n!_#O.x#O#P0S#P#o.x#o#p,n#p~.x#m/yR$UW]#eO!^%T!_#o%T#p~%T#m0XT$UWO!^.x!^!_,n!_#o.x#o#p,n#p~.x3]0mZ$UWOt%Ttu1`u!^%T!_!c%T!c!}1`!}#R%T#R#S1`#S#T%T#T#o1`#p$g%T$g~1`3]1g]$UW'o3TOt%Ttu1`u!Q%T!Q![1`![!^%T!_!c%T!c!}1`!}#R%T#R#S1`#S#T%T#T#o1`#p$g%T$g~1`7Z2k_$UW#zS']$y'g3SOt%Ttu2`u}%T}!O3j!O!Q%T!Q![2`![!^%T!_!c%T!c!}2`!}#R%T#R#S2`#S#T%T#T#o2`#p$g%T$g~2`[3q_$UW#zSOt%Ttu3ju}%T}!O3j!O!Q%T!Q![3j![!^%T!_!c%T!c!}3j!}#R%T#R#S3j#S#T%T#T#o3j#p$g%T$g~3j$O4wS#^#v$UWO!^%T!_!`5T!`#o%T#p~%T$O5[R$UW#o#vO!^%T!_#o%T#p~%T5b5lU'x5Y$UWOv%Tvw6Ow!^%T!_!`5T!`#o%T#p~%T$O6VS$UW#i#vO!^%T!_!`5T!`#o%T#p~%T)X6jZ$UW]#eOY6cYZ7]Zw6cwx*rx!^6c!^!_8T!_#O6c#O#P:T#P#o6c#o#p8T#p~6c&r7bV$UWOw7]wx*Px!^7]!^!_7w!_#o7]#o#p7w#p~7]&j7zROw7wwx*mx~7w)P8YV]#eOY8TYZ7wZw8Twx+px#O8T#O#P8o#P~8T)P8rROw8Twx8{x~8T)P9SU$P&j]#eOY9fZw9fwx-Vx#O9f#O#P9}#P~9f#e9kU]#eOY9fZw9fwx-Vx#O9f#O#P9}#P~9f#e:QPO~9f)X:YV$UWOw6cwx:ox!^6c!^!_8T!_#o6c#o#p8T#p~6c)X:xZ$P&j$UW]#eOY;kYZ%TZw;kwx/rx!^;k!^!_9f!_#O;k#O#P<e#P#o;k#o#p9f#p~;k#m;rZ$UW]#eOY;kYZ%TZw;kwx/rx!^;k!^!_9f!_#O;k#O#P<e#P#o;k#o#p9f#p~;k#m<jT$UWO!^;k!^!_9f!_#o;k#o#p9f#p~;k&i=QR!d&a$UWO!^%T!_#o%T#p~%Tk=bR!cc$UWO!^%T!_#o%T#p~%T7V=tU'^4V#_#v$UWOz%Tz{>W{!^%T!_!`5T!`#o%T#p~%T$O>_S#[#v$UWO!^%T!_!`5T!`#o%T#p~%T%w>rSj%o$UWO!^%T!_!`5T!`#o%T#p~%T&i?VR!R&a$UWO!^%T!_#o%T#p~%T7Z?gVu5^$UWO!O%T!O!P?|!P!Q%T!Q![@r![!^%T!_#o%T#p~%T!{@RT$UWO!O%T!O!P@b!P!^%T!_#o%T#p~%T!{@iR!Q!s$UWO!^%T!_#o%T#p~%T!{@yZ$UWk!sO!Q%T!Q![@r![!^%T!_!g%T!g!hAl!h#R%T#R#S@r#S#X%T#X#YAl#Y#o%T#p~%T!{AqZ$UWO{%T{|Bd|}%T}!OBd!O!Q%T!Q![CO![!^%T!_#R%T#R#SCO#S#o%T#p~%T!{BiV$UWO!Q%T!Q![CO![!^%T!_#R%T#R#SCO#S#o%T#p~%T!{CVV$UWk!sO!Q%T!Q![CO![!^%T!_#R%T#R#SCO#S#o%T#p~%T7ZCs`$UW#]#vOYDuYZ%TZzDuz{Jl{!PDu!P!Q!-e!Q!^Du!^!_Fx!_!`!.^!`!a!/]!a!}Du!}#OHq#O#PJQ#P#oDu#o#pFx#p~DuXD|[$UW}POYDuYZ%TZ!PDu!P!QEr!Q!^Du!^!_Fx!_!}Du!}#OHq#O#PJQ#P#oDu#o#pFx#p~DuXEy_$UW}PO!^%T!_#Z%T#Z#[Er#[#]%T#]#^Er#^#a%T#a#bEr#b#g%T#g#hEr#h#i%T#i#jEr#j#m%T#m#nEr#n#o%T#p~%TPF}V}POYFxZ!PFx!P!QGd!Q!}Fx!}#OG{#O#PHh#P~FxPGiU}P#Z#[Gd#]#^Gd#a#bGd#g#hGd#i#jGd#m#nGdPHOTOYG{Z#OG{#O#PH_#P#QFx#Q~G{PHbQOYG{Z~G{PHkQOYFxZ~FxXHvY$UWOYHqYZ%TZ!^Hq!^!_G{!_#OHq#O#PIf#P#QDu#Q#oHq#o#pG{#p~HqXIkV$UWOYHqYZ%TZ!^Hq!^!_G{!_#oHq#o#pG{#p~HqXJVV$UWOYDuYZ%TZ!^Du!^!_Fx!_#oDu#o#pFx#p~Du7ZJs^$UW}POYJlYZKoZzJlz{NQ{!PJl!P!Q!,R!Q!^Jl!^!_!!]!_!}Jl!}#O!'|#O#P!+a#P#oJl#o#p!!]#p~Jl7ZKtV$UWOzKoz{LZ{!^Ko!^!_M]!_#oKo#o#pM]#p~Ko7ZL`X$UWOzKoz{LZ{!PKo!P!QL{!Q!^Ko!^!_M]!_#oKo#o#pM]#p~Ko7ZMSR$UWU7RO!^%T!_#o%T#p~%T7RM`ROzM]z{Mi{~M]7RMlTOzM]z{Mi{!PM]!P!QM{!Q~M]7RNQOU7R7ZNX^$UW}POYJlYZKoZzJlz{NQ{!PJl!P!Q! T!Q!^Jl!^!_!!]!_!}Jl!}#O!'|#O#P!+a#P#oJl#o#p!!]#p~Jl7Z! ^_$UWU7R}PO!^%T!_#Z%T#Z#[Er#[#]%T#]#^Er#^#a%T#a#bEr#b#g%T#g#hEr#h#i%T#i#jEr#j#m%T#m#nEr#n#o%T#p~%T7R!!bY}POY!!]YZM]Zz!!]z{!#Q{!P!!]!P!Q!&x!Q!}!!]!}#O!$`#O#P!&f#P~!!]7R!#VY}POY!!]YZM]Zz!!]z{!#Q{!P!!]!P!Q!#u!Q!}!!]!}#O!$`#O#P!&f#P~!!]7R!#|UU7R}P#Z#[Gd#]#^Gd#a#bGd#g#hGd#i#jGd#m#nGd7R!$cWOY!$`YZM]Zz!$`z{!${{#O!$`#O#P!&S#P#Q!!]#Q~!$`7R!%OYOY!$`YZM]Zz!$`z{!${{!P!$`!P!Q!%n!Q#O!$`#O#P!&S#P#Q!!]#Q~!$`7R!%sTU7ROYG{Z#OG{#O#PH_#P#QFx#Q~G{7R!&VTOY!$`YZM]Zz!$`z{!${{~!$`7R!&iTOY!!]YZM]Zz!!]z{!#Q{~!!]7R!&}_}POzM]z{Mi{#ZM]#Z#[!&x#[#]M]#]#^!&x#^#aM]#a#b!&x#b#gM]#g#h!&x#h#iM]#i#j!&x#j#mM]#m#n!&x#n~M]7Z!(R[$UWOY!'|YZKoZz!'|z{!(w{!^!'|!^!_!$`!_#O!'|#O#P!*o#P#QJl#Q#o!'|#o#p!$`#p~!'|7Z!(|^$UWOY!'|YZKoZz!'|z{!(w{!P!'|!P!Q!)x!Q!^!'|!^!_!$`!_#O!'|#O#P!*o#P#QJl#Q#o!'|#o#p!$`#p~!'|7Z!*PY$UWU7ROYHqYZ%TZ!^Hq!^!_G{!_#OHq#O#PIf#P#QDu#Q#oHq#o#pG{#p~Hq7Z!*tX$UWOY!'|YZKoZz!'|z{!(w{!^!'|!^!_!$`!_#o!'|#o#p!$`#p~!'|7Z!+fX$UWOYJlYZKoZzJlz{NQ{!^Jl!^!_!!]!_#oJl#o#p!!]#p~Jl7Z!,Yc$UW}POzKoz{LZ{!^Ko!^!_M]!_#ZKo#Z#[!,R#[#]Ko#]#^!,R#^#aKo#a#b!,R#b#gKo#g#h!,R#h#iKo#i#j!,R#j#mKo#m#n!,R#n#oKo#o#pM]#p~Ko7Z!-lV$UWT7ROY!-eYZ%TZ!^!-e!^!_!.R!_#o!-e#o#p!.R#p~!-e7R!.WQT7ROY!.RZ~!.R$P!.g[$UW#o#v}POYDuYZ%TZ!PDu!P!QEr!Q!^Du!^!_Fx!_!}Du!}#OHq#O#PJQ#P#oDu#o#pFx#p~Du]!/f[#wS$UW}POYDuYZ%TZ!PDu!P!QEr!Q!^Du!^!_Fx!_!}Du!}#OHq#O#PJQ#P#oDu#o#pFx#p~Du!{!0cd$UWk!sO!O%T!O!P@r!P!Q%T!Q![!1q![!^%T!_!g%T!g!hAl!h#R%T#R#S!1q#S#U%T#U#V!3X#V#X%T#X#YAl#Y#b%T#b#c!2w#c#d!4m#d#l%T#l#m!5{#m#o%T#p~%T!{!1x_$UWk!sO!O%T!O!P@r!P!Q%T!Q![!1q![!^%T!_!g%T!g!hAl!h#R%T#R#S!1q#S#X%T#X#YAl#Y#b%T#b#c!2w#c#o%T#p~%T!{!3OR$UWk!sO!^%T!_#o%T#p~%T!{!3^W$UWO!Q%T!Q!R!3v!R!S!3v!S!^%T!_#R%T#R#S!3v#S#o%T#p~%T!{!3}Y$UWk!sO!Q%T!Q!R!3v!R!S!3v!S!^%T!_#R%T#R#S!3v#S#b%T#b#c!2w#c#o%T#p~%T!{!4rV$UWO!Q%T!Q!Y!5X!Y!^%T!_#R%T#R#S!5X#S#o%T#p~%T!{!5`X$UWk!sO!Q%T!Q!Y!5X!Y!^%T!_#R%T#R#S!5X#S#b%T#b#c!2w#c#o%T#p~%T!{!6QZ$UWO!Q%T!Q![!6s![!^%T!_!c%T!c!i!6s!i#R%T#R#S!6s#S#T%T#T#Z!6s#Z#o%T#p~%T!{!6z]$UWk!sO!Q%T!Q![!6s![!^%T!_!c%T!c!i!6s!i#R%T#R#S!6s#S#T%T#T#Z!6s#Z#b%T#b#c!2w#c#o%T#p~%T$u!7|R!]V$UW#m$fO!^%T!_#o%T#p~%T!q!8^R_!i$UWO!^%T!_#o%T#p~%T5w!8rR'bd!a/n#x&s'|P!P!Q!8{!^!_!9Q!_!`!9_W!9QO$WW#v!9VP#`#v!_!`!9Y#v!9_O#o#v#v!9dO#a#v$u!9kT!{$m$UWO!^%T!_!`'v!`!a!9z!a#o%T#p~%T$P!:RR#W#w$UWO!^%T!_#o%T#p~%T%V!:gT'a!R#a#v$RS$UWO!^%T!_!`!:v!`!a!;W!a#o%T#p~%T$O!:}R#a#v$UWO!^%T!_#o%T#p~%T$O!;_T#`#v$UWO!^%T!_!`5T!`!a!;n!a#o%T#p~%T$O!;uS#`#v$UWO!^%T!_!`5T!`#o%T#p~%T*a!<YV'p#{$UWO!O%T!O!P!<o!P!^%T!_!a%T!a!b!=P!b#o%T#p~%T*[!<vRv*S$UWO!^%T!_#o%T#p~%T$O!=WS$UW#j#vO!^%T!_!`5T!`#o%T#p~%T7V!=kRx6}$UWO!^%T!_#o%T#p~%Tk!={R!Oc$UWO!^%T!_#o%T#p~%T$O!>]S#g#v$UWO!^%T!_!`5T!`#o%T#p~%T$a!>pR$UW'f$XO!^%T!_#o%T#p~%T~!?OO!T~5b!?VT'w5Y$UWO!^%T!_!`5T!`#o%T#p#q!=P#q~%T6X!?oR!S5}nQ$UWO!^%T!_#o%T#p~%TX!@PR!kP$UWO!^%T!_#o%T#p~%T7Z!@gr$UW'Y7R#zS']$y'g3SOX%TXY%cYZ%TZ[%c[p%Tpq%cqt%Ttu2`u}%T}!O3j!O!Q%T!Q![2`![!^%T!_!c%T!c!}2`!}#R%T#R#S2`#S#T%T#T#o2`#p$f%T$f$g%c$g#BY2`#BY#BZ!@Y#BZ$IS2`$IS$I_!@Y$I_$JT2`$JT$JU!@Y$JU$KV2`$KV$KW!@Y$KW&FU2`&FU&FV!@Y&FV?HT2`?HT?HU!@Y?HU~2`7Z!CO_$UW'Z7R#zS']$y'g3SOt%Ttu2`u}%T}!O3j!O!Q%T!Q![2`![!^%T!_!c%T!c!}2`!}#R%T#R#S2`#S#T%T#T#o2`#p$g%T$g~2`",
+  tokenizers: [
+    tsExtends,
+    noSemicolon,
+    incdecToken,
+    template,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    insertSemicolon,
+  ],
+  topRules: { Script: [0, 7] },
   dialects: { jsx: 12107, ts: 12109 },
-  dynamicPrecedences: { "149": 1, "176": 1 },
-  specialized: [{ term: 289, get: (value) => spec_identifier[value] || -1 }, { term: 299, get: (value) => spec_word[value] || -1 }, { term: 63, get: (value) => spec_LessThan[value] || -1 }],
-  tokenPrec: 12130
+  dynamicPrecedences: { 149: 1, 176: 1 },
+  specialized: [
+    { term: 289, get: (value) => spec_identifier[value] || -1 },
+    { term: 299, get: (value) => spec_word[value] || -1 },
+    { term: 63, get: (value) => spec_LessThan[value] || -1 },
+  ],
+  tokenPrec: 12130,
 });
 
 // node_modules/@codemirror/lang-javascript/dist/index.js
@@ -12147,61 +14490,94 @@ var import_state = require("@codemirror/state");
 var import_view = require("@codemirror/view");
 var import_autocomplete = require("@codemirror/autocomplete");
 var snippets = [
-  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)("function ${name}(${params}) {\n	${}\n}", {
-    label: "function",
-    detail: "definition",
-    type: "keyword"
-  }),
-  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)("for (let ${index} = 0; ${index} < ${bound}; ${index}++) {\n	${}\n}", {
-    label: "for",
-    detail: "loop",
-    type: "keyword"
-  }),
-  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)("for (let ${name} of ${collection}) {\n	${}\n}", {
-    label: "for",
-    detail: "of loop",
-    type: "keyword"
-  }),
-  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)("do {\n	${}\n} while (${})", {
-    label: "do",
-    detail: "loop",
-    type: "keyword"
-  }),
-  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)("while (${}) {\n	${}\n}", {
-    label: "while",
-    detail: "loop",
-    type: "keyword"
-  }),
-  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)("try {\n	${}\n} catch (${error}) {\n	${}\n}", {
-    label: "try",
-    detail: "/ catch block",
-    type: "keyword"
-  }),
-  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)("if (${}) {\n	${}\n}", {
-    label: "if",
-    detail: "block",
-    type: "keyword"
-  }),
-  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)("if (${}) {\n	${}\n} else {\n	${}\n}", {
-    label: "if",
-    detail: "/ else block",
-    type: "keyword"
-  }),
-  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)("class ${name} {\n	constructor(${params}) {\n		${}\n	}\n}", {
-    label: "class",
-    detail: "definition",
-    type: "keyword"
-  }),
-  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)('import {${names}} from "${module}"\n${}', {
-    label: "import",
-    detail: "named",
-    type: "keyword"
-  }),
-  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)('import ${name} from "${module}"\n${}', {
-    label: "import",
-    detail: "default",
-    type: "keyword"
-  })
+  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)(
+    "function ${name}(${params}) {\n	${}\n}",
+    {
+      label: "function",
+      detail: "definition",
+      type: "keyword",
+    },
+  ),
+  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)(
+    "for (let ${index} = 0; ${index} < ${bound}; ${index}++) {\n	${}\n}",
+    {
+      label: "for",
+      detail: "loop",
+      type: "keyword",
+    },
+  ),
+  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)(
+    "for (let ${name} of ${collection}) {\n	${}\n}",
+    {
+      label: "for",
+      detail: "of loop",
+      type: "keyword",
+    },
+  ),
+  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)(
+    "do {\n	${}\n} while (${})",
+    {
+      label: "do",
+      detail: "loop",
+      type: "keyword",
+    },
+  ),
+  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)(
+    "while (${}) {\n	${}\n}",
+    {
+      label: "while",
+      detail: "loop",
+      type: "keyword",
+    },
+  ),
+  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)(
+    "try {\n	${}\n} catch (${error}) {\n	${}\n}",
+    {
+      label: "try",
+      detail: "/ catch block",
+      type: "keyword",
+    },
+  ),
+  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)(
+    "if (${}) {\n	${}\n}",
+    {
+      label: "if",
+      detail: "block",
+      type: "keyword",
+    },
+  ),
+  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)(
+    "if (${}) {\n	${}\n} else {\n	${}\n}",
+    {
+      label: "if",
+      detail: "/ else block",
+      type: "keyword",
+    },
+  ),
+  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)(
+    "class ${name} {\n	constructor(${params}) {\n		${}\n	}\n}",
+    {
+      label: "class",
+      detail: "definition",
+      type: "keyword",
+    },
+  ),
+  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)(
+    'import {${names}} from "${module}"\n${}',
+    {
+      label: "import",
+      detail: "named",
+      type: "keyword",
+    },
+  ),
+  /* @__PURE__ */ (0, import_autocomplete.snippetCompletion)(
+    'import ${name} from "${module}"\n${}',
+    {
+      label: "import",
+      detail: "default",
+      type: "keyword",
+    },
+  ),
 ];
 var cache = /* @__PURE__ */ new NodeWeakMap();
 var ScopeNodes = /* @__PURE__ */ new Set([
@@ -12211,13 +14587,12 @@ var ScopeNodes = /* @__PURE__ */ new Set([
   "FunctionDeclaration",
   "ArrowFunction",
   "MethodDeclaration",
-  "ForStatement"
+  "ForStatement",
 ]);
 function defID(type) {
   return (node, def) => {
     let id2 = node.node.getChild("VariableDefinition");
-    if (id2)
-      def(id2, type);
+    if (id2) def(id2, type);
     return true;
   };
 }
@@ -12230,19 +14605,18 @@ var gatherCompletions = {
   TypeAliasDeclaration: /* @__PURE__ */ defID("type"),
   NamespaceDeclaration: /* @__PURE__ */ defID("namespace"),
   VariableDefinition(node, def) {
-    if (!node.matchContext(functionContext))
-      def(node, "variable");
+    if (!node.matchContext(functionContext)) def(node, "variable");
   },
   TypeDefinition(node, def) {
     def(node, "type");
   },
-  __proto__: null
+  __proto__: null,
 };
 function getScope(doc, node) {
   let cached = cache.get(node);
-  if (cached)
-    return cached;
-  let completions = [], top2 = true;
+  if (cached) return cached;
+  let completions = [],
+    top2 = true;
   function def(node2, type) {
     let name = doc.sliceString(node2.from, node2.to);
     completions.push({ label: name, type });
@@ -12252,11 +14626,10 @@ function getScope(doc, node) {
       top2 = false;
     } else if (node2.name) {
       let gather = gatherCompletions[node2.name];
-      if (gather && gather(node2, def) || ScopeNodes.has(node2.name))
+      if ((gather && gather(node2, def)) || ScopeNodes.has(node2.name))
         return false;
     } else if (node2.to - node2.from > 8192) {
-      for (let c of getScope(doc, node2.node))
-        completions.push(c);
+      for (let c of getScope(doc, node2.node)) completions.push(c);
       return false;
     }
   });
@@ -12276,15 +14649,18 @@ var dontComplete = [
   "PropertyDefinition",
   "PropertyName",
   "PrivatePropertyDefinition",
-  "PrivatePropertyName"
+  "PrivatePropertyName",
 ];
 function localCompletionSource(context) {
-  let inner = (0, import_language.syntaxTree)(context.state).resolveInner(context.pos, -1);
-  if (dontComplete.indexOf(inner.name) > -1)
-    return null;
-  let isWord = inner.to - inner.from < 20 && Identifier.test(context.state.sliceDoc(inner.from, inner.to));
-  if (!isWord && !context.explicit)
-    return null;
+  let inner = (0, import_language.syntaxTree)(context.state).resolveInner(
+    context.pos,
+    -1,
+  );
+  if (dontComplete.indexOf(inner.name) > -1) return null;
+  let isWord =
+    inner.to - inner.from < 20 &&
+    Identifier.test(context.state.sliceDoc(inner.from, inner.to));
+  if (!isWord && !context.explicit) return null;
   let options = [];
   for (let pos = inner; pos; pos = pos.parent) {
     if (ScopeNodes.has(pos.name))
@@ -12293,102 +14669,173 @@ function localCompletionSource(context) {
   return {
     options,
     from: isWord ? inner.from : context.pos,
-    validFor: Identifier
+    validFor: Identifier,
   };
 }
 var javascriptLanguage = /* @__PURE__ */ import_language.LRLanguage.define({
   parser: /* @__PURE__ */ parser.configure({
     props: [
       /* @__PURE__ */ import_language.indentNodeProp.add({
-        IfStatement: /* @__PURE__ */ (0, import_language.continuedIndent)({ except: /^\s*({|else\b)/ }),
-        TryStatement: /* @__PURE__ */ (0, import_language.continuedIndent)({ except: /^\s*({|catch\b|finally\b)/ }),
+        IfStatement: /* @__PURE__ */ (0, import_language.continuedIndent)({
+          except: /^\s*({|else\b)/,
+        }),
+        TryStatement: /* @__PURE__ */ (0, import_language.continuedIndent)({
+          except: /^\s*({|catch\b|finally\b)/,
+        }),
         LabeledStatement: import_language.flatIndent,
         SwitchBody: (context) => {
-          let after = context.textAfter, closed = /^\s*\}/.test(after), isCase = /^\s*(case|default)\b/.test(after);
-          return context.baseIndent + (closed ? 0 : isCase ? 1 : 2) * context.unit;
+          let after = context.textAfter,
+            closed = /^\s*\}/.test(after),
+            isCase = /^\s*(case|default)\b/.test(after);
+          return (
+            context.baseIndent + (closed ? 0 : isCase ? 1 : 2) * context.unit
+          );
         },
-        Block: /* @__PURE__ */ (0, import_language.delimitedIndent)({ closing: "}" }),
+        Block: /* @__PURE__ */ (0, import_language.delimitedIndent)({
+          closing: "}",
+        }),
         ArrowFunction: (cx) => cx.baseIndent + cx.unit,
         "TemplateString BlockComment": () => null,
-        "Statement Property": /* @__PURE__ */ (0, import_language.continuedIndent)({ except: /^{/ }),
+        "Statement Property": /* @__PURE__ */ (0,
+        import_language.continuedIndent)({ except: /^{/ }),
         JSXElement(context) {
           let closed = /^\s*<\//.test(context.textAfter);
-          return context.lineIndent(context.node.from) + (closed ? 0 : context.unit);
+          return (
+            context.lineIndent(context.node.from) + (closed ? 0 : context.unit)
+          );
         },
         JSXEscape(context) {
           let closed = /\s*\}/.test(context.textAfter);
-          return context.lineIndent(context.node.from) + (closed ? 0 : context.unit);
+          return (
+            context.lineIndent(context.node.from) + (closed ? 0 : context.unit)
+          );
         },
         "JSXOpenTag JSXSelfClosingTag"(context) {
           return context.column(context.node.from) + context.unit;
-        }
+        },
       }),
       /* @__PURE__ */ import_language.foldNodeProp.add({
-        "Block ClassBody SwitchBody EnumBody ObjectExpression ArrayExpression": import_language.foldInside,
+        "Block ClassBody SwitchBody EnumBody ObjectExpression ArrayExpression":
+          import_language.foldInside,
         BlockComment(tree) {
           return { from: tree.from + 2, to: tree.to - 2 };
-        }
-      })
-    ]
+        },
+      }),
+    ],
   }),
   languageData: {
     closeBrackets: { brackets: ["(", "[", "{", "'", '"', "`"] },
     commentTokens: { line: "//", block: { open: "/*", close: "*/" } },
     indentOnInput: /^\s*(?:case |default:|\{|\}|<\/)$/,
-    wordChars: "$"
-  }
+    wordChars: "$",
+  },
 });
-var typescriptLanguage = /* @__PURE__ */ javascriptLanguage.configure({ dialect: "ts" });
-var jsxLanguage = /* @__PURE__ */ javascriptLanguage.configure({ dialect: "jsx" });
-var tsxLanguage = /* @__PURE__ */ javascriptLanguage.configure({ dialect: "jsx ts" });
-var keywords = /* @__PURE__ */ "break case const continue default delete export extends false finally in instanceof let new return static super switch this throw true typeof var yield".split(" ").map((kw) => ({ label: kw, type: "keyword" }));
+var typescriptLanguage = /* @__PURE__ */ javascriptLanguage.configure({
+  dialect: "ts",
+});
+var jsxLanguage = /* @__PURE__ */ javascriptLanguage.configure({
+  dialect: "jsx",
+});
+var tsxLanguage = /* @__PURE__ */ javascriptLanguage.configure({
+  dialect: "jsx ts",
+});
+var keywords =
+  /* @__PURE__ */ "break case const continue default delete export extends false finally in instanceof let new return static super switch this throw true typeof var yield"
+    .split(" ")
+    .map((kw) => ({ label: kw, type: "keyword" }));
 function javascript(config2 = {}) {
-  let lang = config2.jsx ? config2.typescript ? tsxLanguage : jsxLanguage : config2.typescript ? typescriptLanguage : javascriptLanguage;
+  let lang = config2.jsx
+    ? config2.typescript
+      ? tsxLanguage
+      : jsxLanguage
+    : config2.typescript
+      ? typescriptLanguage
+      : javascriptLanguage;
   return new import_language.LanguageSupport(lang, [
     javascriptLanguage.data.of({
-      autocomplete: (0, import_autocomplete.ifNotIn)(dontComplete, (0, import_autocomplete.completeFromList)(snippets.concat(keywords)))
+      autocomplete: (0, import_autocomplete.ifNotIn)(
+        dontComplete,
+        (0, import_autocomplete.completeFromList)(snippets.concat(keywords)),
+      ),
     }),
     javascriptLanguage.data.of({
-      autocomplete: localCompletionSource
+      autocomplete: localCompletionSource,
     }),
-    config2.jsx ? autoCloseTags : []
+    config2.jsx ? autoCloseTags : [],
   ]);
 }
 function elementName(doc, tree, max2 = doc.length) {
-  if (!tree)
-    return "";
+  if (!tree) return "";
   let name = tree.getChild("JSXIdentifier");
   return name ? doc.sliceString(name.from, Math.min(name.to, max2)) : "";
 }
-var android = typeof navigator == "object" && /* @__PURE__ */ /Android\b/.test(navigator.userAgent);
-var autoCloseTags = /* @__PURE__ */ import_view.EditorView.inputHandler.of((view, from, to, text) => {
-  if ((android ? view.composing : view.compositionStarted) || view.state.readOnly || from != to || text != ">" && text != "/" || !javascriptLanguage.isActiveAt(view.state, from, -1))
-    return false;
-  let { state } = view;
-  let changes = state.changeByRange((range) => {
-    var _a, _b, _c;
-    let { head } = range, around = (0, import_language.syntaxTree)(state).resolveInner(head, -1), name;
-    if (around.name == "JSXStartTag")
-      around = around.parent;
-    if (text == ">" && around.name == "JSXFragmentTag") {
-      return { range: import_state.EditorSelection.cursor(head + 1), changes: { from: head, insert: `><>` } };
-    } else if (text == ">" && around.name == "JSXIdentifier") {
-      if (((_b = (_a = around.parent) === null || _a === void 0 ? void 0 : _a.lastChild) === null || _b === void 0 ? void 0 : _b.name) != "JSXEndTag" && (name = elementName(state.doc, around.parent, head)))
-        return { range: import_state.EditorSelection.cursor(head + 1), changes: { from: head, insert: `></${name}>` } };
-    } else if (text == "/" && around.name == "JSXFragmentTag") {
-      let empty = around.parent, base = empty === null || empty === void 0 ? void 0 : empty.parent;
-      if (empty.from == head - 1 && ((_c = base.lastChild) === null || _c === void 0 ? void 0 : _c.name) != "JSXEndTag" && (name = elementName(state.doc, base === null || base === void 0 ? void 0 : base.firstChild, head))) {
-        let insert = `/${name}>`;
-        return { range: import_state.EditorSelection.cursor(head + insert.length), changes: { from: head, insert } };
+var android =
+  typeof navigator == "object" &&
+  /* @__PURE__ */ /Android\b/.test(navigator.userAgent);
+var autoCloseTags = /* @__PURE__ */ import_view.EditorView.inputHandler.of(
+  (view, from, to, text) => {
+    if (
+      (android ? view.composing : view.compositionStarted) ||
+      view.state.readOnly ||
+      from != to ||
+      (text != ">" && text != "/") ||
+      !javascriptLanguage.isActiveAt(view.state, from, -1)
+    )
+      return false;
+    let { state } = view;
+    let changes = state.changeByRange((range) => {
+      var _a, _b, _c;
+      let { head } = range,
+        around = (0, import_language.syntaxTree)(state).resolveInner(head, -1),
+        name;
+      if (around.name == "JSXStartTag") around = around.parent;
+      if (text == ">" && around.name == "JSXFragmentTag") {
+        return {
+          range: import_state.EditorSelection.cursor(head + 1),
+          changes: { from: head, insert: `><>` },
+        };
+      } else if (text == ">" && around.name == "JSXIdentifier") {
+        if (
+          ((_b =
+            (_a = around.parent) === null || _a === void 0
+              ? void 0
+              : _a.lastChild) === null || _b === void 0
+            ? void 0
+            : _b.name) != "JSXEndTag" &&
+          (name = elementName(state.doc, around.parent, head))
+        )
+          return {
+            range: import_state.EditorSelection.cursor(head + 1),
+            changes: { from: head, insert: `></${name}>` },
+          };
+      } else if (text == "/" && around.name == "JSXFragmentTag") {
+        let empty = around.parent,
+          base = empty === null || empty === void 0 ? void 0 : empty.parent;
+        if (
+          empty.from == head - 1 &&
+          ((_c = base.lastChild) === null || _c === void 0
+            ? void 0
+            : _c.name) != "JSXEndTag" &&
+          (name = elementName(
+            state.doc,
+            base === null || base === void 0 ? void 0 : base.firstChild,
+            head,
+          ))
+        ) {
+          let insert = `/${name}>`;
+          return {
+            range: import_state.EditorSelection.cursor(head + insert.length),
+            changes: { from: head, insert },
+          };
+        }
       }
-    }
-    return { range };
-  });
-  if (changes.changes.empty)
-    return false;
-  view.dispatch(changes, { userEvent: "input.type", scrollIntoView: true });
-  return true;
-});
+      return { range };
+    });
+    if (changes.changes.empty) return false;
+    view.dispatch(changes, { userEvent: "input.type", scrollIntoView: true });
+    return true;
+  },
+);
 
 // src/settings/ui/snippets_editor/extensions.ts
 var import_language3 = require("@codemirror/language");
@@ -12425,81 +14872,165 @@ var config = {
   comment: "var(--text-faint)",
   heading: "var(--text-accent-hover)",
   invalid: "var(--text-error)",
-  regexp: "var(--text-accent)"
+  regexp: "var(--text-accent)",
 };
-var obsidianTheme = import_view2.EditorView.theme({
-  "&": {
-    color: config.foreground,
-    backgroundColor: config.background
+var obsidianTheme = import_view2.EditorView.theme(
+  {
+    "&": {
+      color: config.foreground,
+      backgroundColor: config.background,
+    },
+    ".cm-content": { caretColor: config.cursor },
+    "&.cm-focused .cm-cursor": { borderLeftColor: config.cursor },
+    "&.cm-focused .cm-selectionBackground, .cm-selectionBackground, & ::selection":
+      { backgroundColor: config.selection },
+    ".cm-panels": {
+      backgroundColor: config.dropdownBackground,
+      color: config.foreground,
+    },
+    ".cm-panels.cm-panels-top": { borderBottom: "2px solid black" },
+    ".cm-panels.cm-panels-bottom": { borderTop: "2px solid black" },
+    ".cm-searchMatch": {
+      backgroundColor: config.dropdownBackground,
+      outline: `1px solid ${config.dropdownBorder}`,
+    },
+    ".cm-searchMatch.cm-searchMatch-selected": {
+      backgroundColor: config.selection,
+    },
+    ".cm-activeLine": { backgroundColor: config.activeLine },
+    ".cm-activeLineGutter": { backgroundColor: config.background },
+    ".cm-selectionMatch": { backgroundColor: config.selection },
+    ".cm-matchingBracket, .cm-nonmatchingBracket": {
+      backgroundColor: config.matchingBracket,
+      outline: "none",
+    },
+    ".cm-gutters": {
+      backgroundColor: config.background,
+      color: config.comment,
+      borderRight: "1px solid var(--background-modifier-border)",
+    },
+    ".cm-lineNumbers, .cm-gutterElement": { color: "inherit" },
+    ".cm-foldPlaceholder": {
+      backgroundColor: "transparent",
+      border: "none",
+      color: config.foreground,
+    },
+    ".cm-tooltip": {
+      border: `1px solid ${config.dropdownBorder}`,
+      backgroundColor: config.dropdownBackground,
+      color: config.foreground,
+    },
+    ".cm-tooltip.cm-tooltip-autocomplete": {
+      "& > ul > li[aria-selected]": {
+        background: config.selection,
+        color: config.foreground,
+      },
+    },
   },
-  ".cm-content": { caretColor: config.cursor },
-  "&.cm-focused .cm-cursor": { borderLeftColor: config.cursor },
-  "&.cm-focused .cm-selectionBackground, .cm-selectionBackground, & ::selection": { backgroundColor: config.selection },
-  ".cm-panels": { backgroundColor: config.dropdownBackground, color: config.foreground },
-  ".cm-panels.cm-panels-top": { borderBottom: "2px solid black" },
-  ".cm-panels.cm-panels-bottom": { borderTop: "2px solid black" },
-  ".cm-searchMatch": {
-    backgroundColor: config.dropdownBackground,
-    outline: `1px solid ${config.dropdownBorder}`
-  },
-  ".cm-searchMatch.cm-searchMatch-selected": {
-    backgroundColor: config.selection
-  },
-  ".cm-activeLine": { backgroundColor: config.activeLine },
-  ".cm-activeLineGutter": { backgroundColor: config.background },
-  ".cm-selectionMatch": { backgroundColor: config.selection },
-  ".cm-matchingBracket, .cm-nonmatchingBracket": {
-    backgroundColor: config.matchingBracket,
-    outline: "none"
-  },
-  ".cm-gutters": {
-    backgroundColor: config.background,
-    color: config.comment,
-    borderRight: "1px solid var(--background-modifier-border)"
-  },
-  ".cm-lineNumbers, .cm-gutterElement": { color: "inherit" },
-  ".cm-foldPlaceholder": {
-    backgroundColor: "transparent",
-    border: "none",
-    color: config.foreground
-  },
-  ".cm-tooltip": {
-    border: `1px solid ${config.dropdownBorder}`,
-    backgroundColor: config.dropdownBackground,
-    color: config.foreground
-  },
-  ".cm-tooltip.cm-tooltip-autocomplete": {
-    "& > ul > li[aria-selected]": {
-      background: config.selection,
-      color: config.foreground
-    }
-  }
-}, { dark: config.dark });
+  { dark: config.dark },
+);
 var obsidianHighlightStyle = import_language2.HighlightStyle.define([
   { tag: import_highlight2.tags.keyword, color: config.keyword },
-  { tag: [import_highlight2.tags.name, import_highlight2.tags.deleted, import_highlight2.tags.character, import_highlight2.tags.macroName], color: config.variable },
+  {
+    tag: [
+      import_highlight2.tags.name,
+      import_highlight2.tags.deleted,
+      import_highlight2.tags.character,
+      import_highlight2.tags.macroName,
+    ],
+    color: config.variable,
+  },
   { tag: [import_highlight2.tags.propertyName], color: config.function },
-  { tag: [import_highlight2.tags.processingInstruction, import_highlight2.tags.string, import_highlight2.tags.inserted, import_highlight2.tags.special(import_highlight2.tags.string)], color: config.string },
-  { tag: [import_highlight2.tags.function(import_highlight2.tags.variableName), import_highlight2.tags.labelName], color: config.function },
-  { tag: [import_highlight2.tags.color, import_highlight2.tags.constant(import_highlight2.tags.name), import_highlight2.tags.standard(import_highlight2.tags.name)], color: config.constant },
-  { tag: [import_highlight2.tags.definition(import_highlight2.tags.name), import_highlight2.tags.separator], color: config.variable },
+  {
+    tag: [
+      import_highlight2.tags.processingInstruction,
+      import_highlight2.tags.string,
+      import_highlight2.tags.inserted,
+      import_highlight2.tags.special(import_highlight2.tags.string),
+    ],
+    color: config.string,
+  },
+  {
+    tag: [
+      import_highlight2.tags.function(import_highlight2.tags.variableName),
+      import_highlight2.tags.labelName,
+    ],
+    color: config.function,
+  },
+  {
+    tag: [
+      import_highlight2.tags.color,
+      import_highlight2.tags.constant(import_highlight2.tags.name),
+      import_highlight2.tags.standard(import_highlight2.tags.name),
+    ],
+    color: config.constant,
+  },
+  {
+    tag: [
+      import_highlight2.tags.definition(import_highlight2.tags.name),
+      import_highlight2.tags.separator,
+    ],
+    color: config.variable,
+  },
   { tag: [import_highlight2.tags.className], color: config.class },
-  { tag: [import_highlight2.tags.number, import_highlight2.tags.changed, import_highlight2.tags.annotation, import_highlight2.tags.modifier, import_highlight2.tags.self, import_highlight2.tags.namespace], color: config.number },
-  { tag: [import_highlight2.tags.typeName], color: config.type, fontStyle: config.type },
-  { tag: [import_highlight2.tags.operator, import_highlight2.tags.operatorKeyword], color: config.keyword },
-  { tag: [import_highlight2.tags.url, import_highlight2.tags.escape, import_highlight2.tags.regexp, import_highlight2.tags.link], color: config.regexp },
-  { tag: [import_highlight2.tags.meta, import_highlight2.tags.comment], color: config.comment },
+  {
+    tag: [
+      import_highlight2.tags.number,
+      import_highlight2.tags.changed,
+      import_highlight2.tags.annotation,
+      import_highlight2.tags.modifier,
+      import_highlight2.tags.self,
+      import_highlight2.tags.namespace,
+    ],
+    color: config.number,
+  },
+  {
+    tag: [import_highlight2.tags.typeName],
+    color: config.type,
+    fontStyle: config.type,
+  },
+  {
+    tag: [
+      import_highlight2.tags.operator,
+      import_highlight2.tags.operatorKeyword,
+    ],
+    color: config.keyword,
+  },
+  {
+    tag: [
+      import_highlight2.tags.url,
+      import_highlight2.tags.escape,
+      import_highlight2.tags.regexp,
+      import_highlight2.tags.link,
+    ],
+    color: config.regexp,
+  },
+  {
+    tag: [import_highlight2.tags.meta, import_highlight2.tags.comment],
+    color: config.comment,
+  },
   { tag: import_highlight2.tags.strong, fontWeight: "bold" },
   { tag: import_highlight2.tags.emphasis, fontStyle: "italic" },
   { tag: import_highlight2.tags.link, textDecoration: "underline" },
-  { tag: import_highlight2.tags.heading, fontWeight: "bold", color: config.heading },
-  { tag: [import_highlight2.tags.atom, import_highlight2.tags.bool, import_highlight2.tags.special(import_highlight2.tags.variableName)], color: config.variable },
+  {
+    tag: import_highlight2.tags.heading,
+    fontWeight: "bold",
+    color: config.heading,
+  },
+  {
+    tag: [
+      import_highlight2.tags.atom,
+      import_highlight2.tags.bool,
+      import_highlight2.tags.special(import_highlight2.tags.variableName),
+    ],
+    color: config.variable,
+  },
   { tag: import_highlight2.tags.invalid, color: config.invalid },
-  { tag: import_highlight2.tags.strikethrough, textDecoration: "line-through" }
+  { tag: import_highlight2.tags.strikethrough, textDecoration: "line-through" },
 ]);
 var obsidian = [
   obsidianTheme,
-  (0, import_language2.syntaxHighlighting)(obsidianHighlightStyle)
+  (0, import_language2.syntaxHighlighting)(obsidianHighlightStyle),
 ];
 
 // src/settings/ui/snippets_editor/extensions.ts
@@ -12513,7 +15044,10 @@ var basicSetup = [
   import_state2.EditorState.allowMultipleSelections.of(true),
   (0, import_language3.indentOnInput)(),
   import_language3.indentUnit.of("    "),
-  (0, import_language3.syntaxHighlighting)(import_language3.defaultHighlightStyle, { fallback: true }),
+  (0, import_language3.syntaxHighlighting)(
+    import_language3.defaultHighlightStyle,
+    { fallback: true },
+  ),
   import_view3.EditorView.lineWrapping,
   (0, import_language3.bracketMatching)(),
   (0, import_autocomplete2.closeBrackets)(),
@@ -12526,8 +15060,8 @@ var basicSetup = [
     ...import_search.searchKeymap,
     ...import_commands.historyKeymap,
     import_commands.indentWithTab,
-    ...import_lint.lintKeymap
-  ])
+    ...import_lint.lintKeymap,
+  ]),
 ].filter((ext) => ext);
 
 // src/settings/settings_tab.ts
@@ -12541,7 +15075,9 @@ var LatexSuiteSettingTab = class extends import_obsidian4.PluginSettingTab {
     (_a = this.snippetsEditor) == null ? void 0 : _a.destroy();
   }
   addHeading(containerEl, name, icon = "math") {
-    const heading = new import_obsidian4.Setting(containerEl).setName(name).setHeading();
+    const heading = new import_obsidian4.Setting(containerEl)
+      .setName(name)
+      .setHeading();
     const parentEl = heading.settingEl;
     const iconEl = parentEl.createDiv();
     (0, import_obsidian4.setIcon)(iconEl, icon);
@@ -12564,31 +15100,68 @@ var LatexSuiteSettingTab = class extends import_obsidian4.PluginSettingTab {
   displaySnippetSettings() {
     const containerEl = this.containerEl;
     this.addHeading(containerEl, "Snippets", "ballpen");
-    new import_obsidian4.Setting(containerEl).setName("Enabled").setDesc("Whether snippets are enabled.").addToggle((toggle) => toggle.setValue(this.plugin.settings.snippetsEnabled).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.snippetsEnabled = value;
-      yield this.plugin.saveSettings();
-    })));
-    const snippetsSetting = new import_obsidian4.Setting(containerEl).setName("Snippets").setDesc('Enter snippets here.  Remember to add a comma after each snippet, and escape all backslashes with an extra \\. Lines starting with "//" will be treated as comments and ignored.').setClass("snippets-text-area");
+    new import_obsidian4.Setting(containerEl)
+      .setName("Enabled")
+      .setDesc("Whether snippets are enabled.")
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.snippetsEnabled)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.snippetsEnabled = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
+    const snippetsSetting = new import_obsidian4.Setting(containerEl)
+      .setName("Snippets")
+      .setDesc(
+        'Enter snippets here.  Remember to add a comma after each snippet, and escape all backslashes with an extra \\. Lines starting with "//" will be treated as comments and ignored.',
+      )
+      .setClass("snippets-text-area");
     this.createSnippetsEditor(snippetsSetting);
-    new import_obsidian4.Setting(containerEl).setName("Load snippets from file or folder").setDesc("Whether to load snippets from a specified file, or from all files within a folder (instead of from the plugin settings).").addToggle((toggle) => toggle.setValue(this.plugin.settings.loadSnippetsFromFile).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.loadSnippetsFromFile = value;
-      snippetsSetting.settingEl.toggleClass("hidden", value);
-      if (this.snippetsFileLocEl != void 0)
-        this.snippetsFileLocEl.toggleClass("hidden", !value);
-      yield this.plugin.saveSettings();
-    })));
+    new import_obsidian4.Setting(containerEl)
+      .setName("Load snippets from file or folder")
+      .setDesc(
+        "Whether to load snippets from a specified file, or from all files within a folder (instead of from the plugin settings).",
+      )
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.loadSnippetsFromFile)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.loadSnippetsFromFile = value;
+              snippetsSetting.settingEl.toggleClass("hidden", value);
+              if (this.snippetsFileLocEl != void 0)
+                this.snippetsFileLocEl.toggleClass("hidden", !value);
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
     const snippetsFileLocDesc = new DocumentFragment();
     snippetsFileLocDesc.createDiv({}, (div) => {
       div.innerHTML = `
 			The file or folder to load snippets from. The file or folder must be within your vault, and not within a hidden folder (such as <code>.obsidian/</code>).`;
     });
-    const snippetsFileLoc = new import_obsidian4.Setting(containerEl).setName("Snippets file or folder location").setDesc(snippetsFileLocDesc);
+    const snippetsFileLoc = new import_obsidian4.Setting(containerEl)
+      .setName("Snippets file or folder location")
+      .setDesc(snippetsFileLocDesc);
     let inputEl;
     snippetsFileLoc.addSearch((component) => {
-      component.setPlaceholder(DEFAULT_SETTINGS.snippetsFileLocation).setValue(this.plugin.settings.snippetsFileLocation).onChange((0, import_obsidian4.debounce)((value) => __async(this, null, function* () {
-        this.plugin.settings.snippetsFileLocation = value;
-        yield this.plugin.saveSettings(true);
-      }), 500, true));
+      component
+        .setPlaceholder(DEFAULT_SETTINGS.snippetsFileLocation)
+        .setValue(this.plugin.settings.snippetsFileLocation)
+        .onChange(
+          (0, import_obsidian4.debounce)(
+            (value) =>
+              __async(this, null, function* () {
+                this.plugin.settings.snippetsFileLocation = value;
+                yield this.plugin.saveSettings(true);
+              }),
+            500,
+            true,
+          ),
+        );
       inputEl = component.inputEl;
       inputEl.addClass("latex-suite-location-input-el");
     });
@@ -12597,246 +15170,549 @@ var LatexSuiteSettingTab = class extends import_obsidian4.PluginSettingTab {
     const loadSnippetsFromFile = this.plugin.settings.loadSnippetsFromFile;
     snippetsSetting.settingEl.toggleClass("hidden", loadSnippetsFromFile);
     this.snippetsFileLocEl.toggleClass("hidden", !loadSnippetsFromFile);
-    new import_obsidian4.Setting(containerEl).setName("Key trigger for non-auto snippets").setDesc("What key to press to expand non-auto snippets.").addDropdown(
-      (dropdown) => dropdown.addOption("Tab", "Tab").addOption(" ", "Space").setValue(this.plugin.settings.snippetsTrigger).onChange((value) => __async(this, null, function* () {
-        this.plugin.settings.snippetsTrigger = value;
-        yield this.plugin.saveSettings();
-      }))
-    );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Key trigger for non-auto snippets")
+      .setDesc("What key to press to expand non-auto snippets.")
+      .addDropdown((dropdown) =>
+        dropdown
+          .addOption("Tab", "Tab")
+          .addOption(" ", "Space")
+          .setValue(this.plugin.settings.snippetsTrigger)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.snippetsTrigger = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
   }
   displayConcealSettings() {
     const containerEl = this.containerEl;
     this.addHeading(containerEl, "Conceal", "math-integral-x");
     {
       const fragment = new DocumentFragment();
-      fragment.createDiv({}, (div) => div.setText("Make equations more readable by hiding LaTeX markup and instead displaying it in a pretty format."));
-      fragment.createDiv({}, (div) => div.innerHTML = `
-				e.g. <code>\\dot{x}^{2} + \\dot{y}^{2}</code> will display as \u1E8B\xB2 + \u1E8F\xB2, and <code>\\sqrt{ 1-\\beta^{2} }</code> will display as \u221A{ 1-\u03B2\xB2 }.
-			`);
-      fragment.createDiv({}, (div) => div.setText("LaTeX beneath the cursor will be revealed."));
-      fragment.createEl("br");
-      fragment.createDiv({}, (div) => div.setText("Disabled by default to not confuse new users. However, I recommend turning this on once you are comfortable with the plugin!"));
-      new import_obsidian4.Setting(containerEl).setName("Enabled").setDesc(fragment).addToggle(
-        (toggle) => toggle.setValue(this.plugin.settings.concealEnabled).onChange((value) => __async(this, null, function* () {
-          this.plugin.settings.concealEnabled = value;
-          yield this.plugin.saveSettings();
-        }))
+      fragment.createDiv({}, (div) =>
+        div.setText(
+          "Make equations more readable by hiding LaTeX markup and instead displaying it in a pretty format.",
+        ),
       );
+      fragment.createDiv(
+        {},
+        (div) =>
+          (div.innerHTML = `
+				e.g. <code>\\dot{x}^{2} + \\dot{y}^{2}</code> will display as \u1E8B\xB2 + \u1E8F\xB2, and <code>\\sqrt{ 1-\\beta^{2} }</code> will display as \u221A{ 1-\u03B2\xB2 }.
+			`),
+      );
+      fragment.createDiv({}, (div) =>
+        div.setText("LaTeX beneath the cursor will be revealed."),
+      );
+      fragment.createEl("br");
+      fragment.createDiv({}, (div) =>
+        div.setText(
+          "Disabled by default to not confuse new users. However, I recommend turning this on once you are comfortable with the plugin!",
+        ),
+      );
+      new import_obsidian4.Setting(containerEl)
+        .setName("Enabled")
+        .setDesc(fragment)
+        .addToggle((toggle) =>
+          toggle
+            .setValue(this.plugin.settings.concealEnabled)
+            .onChange((value) =>
+              __async(this, null, function* () {
+                this.plugin.settings.concealEnabled = value;
+                yield this.plugin.saveSettings();
+              }),
+            ),
+        );
     }
   }
   displayColorHighlightBracketsSettings() {
     const containerEl = this.containerEl;
     this.addHeading(containerEl, "Highlight and color brackets", "parentheses");
-    new import_obsidian4.Setting(containerEl).setName("Color paired brackets").setDesc("Whether to colorize matching brackets.").addToggle((toggle) => toggle.setValue(this.plugin.settings.colorPairedBracketsEnabled).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.colorPairedBracketsEnabled = value;
-      yield this.plugin.saveSettings();
-    })));
-    new import_obsidian4.Setting(containerEl).setName("Highlight matching bracket beneath cursor").setDesc("When the cursor is adjacent to a bracket, highlight the matching bracket.").addToggle((toggle) => toggle.setValue(this.plugin.settings.highlightCursorBracketsEnabled).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.highlightCursorBracketsEnabled = value;
-      yield this.plugin.saveSettings();
-    })));
+    new import_obsidian4.Setting(containerEl)
+      .setName("Color paired brackets")
+      .setDesc("Whether to colorize matching brackets.")
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.colorPairedBracketsEnabled)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.colorPairedBracketsEnabled = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Highlight matching bracket beneath cursor")
+      .setDesc(
+        "When the cursor is adjacent to a bracket, highlight the matching bracket.",
+      )
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.highlightCursorBracketsEnabled)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.highlightCursorBracketsEnabled = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
   }
   displayPopupPreviewSettings() {
     const containerEl = this.containerEl;
     this.addHeading(containerEl, "Math popup preview", "superscript");
     const popup_fragment = document.createDocumentFragment();
     const popup_line1 = document.createElement("div");
-    popup_line1.setText("When inside an equation, show a popup preview window of the rendered math.");
+    popup_line1.setText(
+      "When inside an equation, show a popup preview window of the rendered math.",
+    );
     const popup_space = document.createElement("br");
     const popup_line2 = document.createElement("div");
-    popup_line2.setText("The popup preview will be shown for all inline math equations, as well as for block math equations in Source mode.");
-    popup_fragment.append(popup_line1, popup_space, popup_line2);
-    new import_obsidian4.Setting(containerEl).setName("Enabled").setDesc(popup_fragment).addToggle((toggle) => toggle.setValue(this.plugin.settings.mathPreviewEnabled).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.mathPreviewEnabled = value;
-      yield this.plugin.saveSettings();
-    })));
-    new import_obsidian4.Setting(containerEl).setName("Position").setDesc("Where to display the popup preview relative to the equation source.").addDropdown(
-      (dropdown) => dropdown.addOption("Above", "Above").addOption("Below", "Below").setValue(this.plugin.settings.mathPreviewPositionIsAbove ? "Above" : "Below").onChange((value) => __async(this, null, function* () {
-        this.plugin.settings.mathPreviewPositionIsAbove = value === "Above";
-        yield this.plugin.saveSettings();
-      }))
+    popup_line2.setText(
+      "The popup preview will be shown for all inline math equations, as well as for block math equations in Source mode.",
     );
+    popup_fragment.append(popup_line1, popup_space, popup_line2);
+    new import_obsidian4.Setting(containerEl)
+      .setName("Enabled")
+      .setDesc(popup_fragment)
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.mathPreviewEnabled)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.mathPreviewEnabled = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Position")
+      .setDesc(
+        "Where to display the popup preview relative to the equation source.",
+      )
+      .addDropdown((dropdown) =>
+        dropdown
+          .addOption("Above", "Above")
+          .addOption("Below", "Below")
+          .setValue(
+            this.plugin.settings.mathPreviewPositionIsAbove ? "Above" : "Below",
+          )
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.mathPreviewPositionIsAbove =
+                value === "Above";
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
   }
   displayAutofractionSettings() {
     const containerEl = this.containerEl;
     this.addHeading(containerEl, "Auto-fraction", "math-x-divide-y-2");
-    new import_obsidian4.Setting(containerEl).setName("Enabled").setDesc("Whether auto-fraction is enabled.").addToggle((toggle) => toggle.setValue(this.plugin.settings.autofractionEnabled).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.autofractionEnabled = value;
-      yield this.plugin.saveSettings();
-    })));
-    new import_obsidian4.Setting(containerEl).setName("Fraction symbol").setDesc("The fraction symbol to use in the replacement. e.g. \\frac, \\dfrac, \\tfrac").addText((text) => text.setPlaceholder(DEFAULT_SETTINGS.autofractionSymbol).setValue(this.plugin.settings.autofractionSymbol).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.autofractionSymbol = value;
-      yield this.plugin.saveSettings();
-    })));
-    new import_obsidian4.Setting(containerEl).setName("Excluded environments").setDesc('A list of environments to exclude auto-fraction from running in. For example, to exclude auto-fraction from running while inside an exponent, such as e^{...}, use  ["^{", "}"]').addTextArea((text) => text.setPlaceholder('[ ["^{", "}] ]').setValue(this.plugin.settings.autofractionExcludedEnvs).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.autofractionExcludedEnvs = value;
-      yield this.plugin.saveSettings();
-    })));
-    new import_obsidian4.Setting(containerEl).setName("Breaking characters").setDesc('A list of characters that denote the start/end of a fraction. e.g. if + is included in the list, "a+b/c" will expand to "a+\\frac{b}{c}". If + is not in the list, it will expand to "\\frac{a+b}{c}".').addText((text) => text.setPlaceholder(DEFAULT_SETTINGS.autofractionBreakingChars).setValue(this.plugin.settings.autofractionBreakingChars).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.autofractionBreakingChars = value;
-      yield this.plugin.saveSettings();
-    })));
+    new import_obsidian4.Setting(containerEl)
+      .setName("Enabled")
+      .setDesc("Whether auto-fraction is enabled.")
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.autofractionEnabled)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.autofractionEnabled = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Fraction symbol")
+      .setDesc(
+        "The fraction symbol to use in the replacement. e.g. \\frac, \\dfrac, \\tfrac",
+      )
+      .addText((text) =>
+        text
+          .setPlaceholder(DEFAULT_SETTINGS.autofractionSymbol)
+          .setValue(this.plugin.settings.autofractionSymbol)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.autofractionSymbol = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Excluded environments")
+      .setDesc(
+        'A list of environments to exclude auto-fraction from running in. For example, to exclude auto-fraction from running while inside an exponent, such as e^{...}, use  ["^{", "}"]',
+      )
+      .addTextArea((text) =>
+        text
+          .setPlaceholder('[ ["^{", "}] ]')
+          .setValue(this.plugin.settings.autofractionExcludedEnvs)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.autofractionExcludedEnvs = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Breaking characters")
+      .setDesc(
+        'A list of characters that denote the start/end of a fraction. e.g. if + is included in the list, "a+b/c" will expand to "a+\\frac{b}{c}". If + is not in the list, it will expand to "\\frac{a+b}{c}".',
+      )
+      .addText((text) =>
+        text
+          .setPlaceholder(DEFAULT_SETTINGS.autofractionBreakingChars)
+          .setValue(this.plugin.settings.autofractionBreakingChars)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.autofractionBreakingChars = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
   }
   displayMatrixShortcutsSettings() {
     const containerEl = this.containerEl;
     this.addHeading(containerEl, "Matrix shortcuts", "brackets-contain");
-    new import_obsidian4.Setting(containerEl).setName("Enabled").setDesc("Whether matrix shortcuts are enabled.").addToggle((toggle) => toggle.setValue(this.plugin.settings.matrixShortcutsEnabled).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.matrixShortcutsEnabled = value;
-      yield this.plugin.saveSettings();
-    })));
-    new import_obsidian4.Setting(containerEl).setName("Environments").setDesc("A list of environment names to run the matrix shortcuts in, separated by commas.").addText((text) => text.setPlaceholder(DEFAULT_SETTINGS.matrixShortcutsEnvNames).setValue(this.plugin.settings.matrixShortcutsEnvNames).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.matrixShortcutsEnvNames = value;
-      yield this.plugin.saveSettings();
-    })));
+    new import_obsidian4.Setting(containerEl)
+      .setName("Enabled")
+      .setDesc("Whether matrix shortcuts are enabled.")
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.matrixShortcutsEnabled)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.matrixShortcutsEnabled = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Environments")
+      .setDesc(
+        "A list of environment names to run the matrix shortcuts in, separated by commas.",
+      )
+      .addText((text) =>
+        text
+          .setPlaceholder(DEFAULT_SETTINGS.matrixShortcutsEnvNames)
+          .setValue(this.plugin.settings.matrixShortcutsEnvNames)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.matrixShortcutsEnvNames = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
   }
   displayTaboutSettings() {
     const containerEl = this.containerEl;
     this.addHeading(containerEl, "Tabout", "tabout");
-    new import_obsidian4.Setting(containerEl).setName("Enabled").setDesc("Whether tabout is enabled.").addToggle((toggle) => toggle.setValue(this.plugin.settings.taboutEnabled).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.taboutEnabled = value;
-      yield this.plugin.saveSettings();
-    })));
+    new import_obsidian4.Setting(containerEl)
+      .setName("Enabled")
+      .setDesc("Whether tabout is enabled.")
+      .addToggle((toggle) =>
+        toggle.setValue(this.plugin.settings.taboutEnabled).onChange((value) =>
+          __async(this, null, function* () {
+            this.plugin.settings.taboutEnabled = value;
+            yield this.plugin.saveSettings();
+          }),
+        ),
+      );
   }
   displayAutoEnlargeBracketsSettings() {
     const containerEl = this.containerEl;
     this.addHeading(containerEl, "Auto-enlarge brackets", "parentheses");
-    new import_obsidian4.Setting(containerEl).setName("Enabled").setDesc("Whether to automatically enlarge brackets containing e.g. sum, int, frac.").addToggle((toggle) => toggle.setValue(this.plugin.settings.autoEnlargeBrackets).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.autoEnlargeBrackets = value;
-      yield this.plugin.saveSettings();
-    })));
-    new import_obsidian4.Setting(containerEl).setName("Triggers").setDesc("A list of symbols that should trigger auto-enlarge brackets, separated by commas.").addText((text) => text.setPlaceholder(DEFAULT_SETTINGS.autoEnlargeBracketsTriggers).setValue(this.plugin.settings.autoEnlargeBracketsTriggers).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.autoEnlargeBracketsTriggers = value;
-      yield this.plugin.saveSettings();
-    })));
+    new import_obsidian4.Setting(containerEl)
+      .setName("Enabled")
+      .setDesc(
+        "Whether to automatically enlarge brackets containing e.g. sum, int, frac.",
+      )
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.autoEnlargeBrackets)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.autoEnlargeBrackets = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Triggers")
+      .setDesc(
+        "A list of symbols that should trigger auto-enlarge brackets, separated by commas.",
+      )
+      .addText((text) =>
+        text
+          .setPlaceholder(DEFAULT_SETTINGS.autoEnlargeBracketsTriggers)
+          .setValue(this.plugin.settings.autoEnlargeBracketsTriggers)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.autoEnlargeBracketsTriggers = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
   }
   displayAdvancedSnippetSettings() {
     const containerEl = this.containerEl;
     this.addHeading(containerEl, "Advanced snippet settings");
-    const snippetVariablesSetting = new import_obsidian4.Setting(containerEl).setName("Snippet variables").setDesc("Assign snippet variables that can be used as shortcuts when writing snippets.").addTextArea((text) => text.setValue(this.plugin.settings.snippetVariables).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.snippetVariables = value;
-      yield this.plugin.saveSettings();
-    })).setPlaceholder(DEFAULT_SETTINGS.snippetVariables)).setClass("latex-suite-snippet-variables-setting");
-    new import_obsidian4.Setting(containerEl).setName("Load snippet variables from file or folder").setDesc("Whether to load snippet variables from a specified file, or from all files within a folder (instead of from the plugin settings).").addToggle((toggle) => toggle.setValue(this.plugin.settings.loadSnippetVariablesFromFile).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.loadSnippetVariablesFromFile = value;
-      snippetVariablesSetting.settingEl.toggleClass("hidden", value);
-      if (this.snippetVariablesFileLocEl != void 0)
-        this.snippetVariablesFileLocEl.toggleClass("hidden", !value);
-      yield this.plugin.saveSettings();
-    })));
+    const snippetVariablesSetting = new import_obsidian4.Setting(containerEl)
+      .setName("Snippet variables")
+      .setDesc(
+        "Assign snippet variables that can be used as shortcuts when writing snippets.",
+      )
+      .addTextArea((text) =>
+        text
+          .setValue(this.plugin.settings.snippetVariables)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.snippetVariables = value;
+              yield this.plugin.saveSettings();
+            }),
+          )
+          .setPlaceholder(DEFAULT_SETTINGS.snippetVariables),
+      )
+      .setClass("latex-suite-snippet-variables-setting");
+    new import_obsidian4.Setting(containerEl)
+      .setName("Load snippet variables from file or folder")
+      .setDesc(
+        "Whether to load snippet variables from a specified file, or from all files within a folder (instead of from the plugin settings).",
+      )
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.loadSnippetVariablesFromFile)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.loadSnippetVariablesFromFile = value;
+              snippetVariablesSetting.settingEl.toggleClass("hidden", value);
+              if (this.snippetVariablesFileLocEl != void 0)
+                this.snippetVariablesFileLocEl.toggleClass("hidden", !value);
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
     const snippetVariablesFileLocDesc = new DocumentFragment();
     snippetVariablesFileLocDesc.createDiv({}, (div) => {
       div.innerHTML = `
 			The file or folder to load snippet variables from. The file or folder must be within your vault, and not within a hidden folder (such as <code>.obsidian/</code>).`;
     });
-    const snippetVariablesFileLoc = new import_obsidian4.Setting(containerEl).setName("Snippet variables file or folder location").setDesc(snippetVariablesFileLocDesc);
+    const snippetVariablesFileLoc = new import_obsidian4.Setting(containerEl)
+      .setName("Snippet variables file or folder location")
+      .setDesc(snippetVariablesFileLocDesc);
     let inputVariablesEl;
-    snippetVariablesFileLoc.addSearch(
-      (component) => {
-        component.setPlaceholder(DEFAULT_SETTINGS.snippetVariablesFileLocation).setValue(this.plugin.settings.snippetVariablesFileLocation).onChange((0, import_obsidian4.debounce)((value) => __async(this, null, function* () {
-          this.plugin.settings.snippetVariablesFileLocation = value;
-          yield this.plugin.saveSettings(true);
-        }), 500, true));
-        inputVariablesEl = component.inputEl;
-        inputVariablesEl.addClass("latex-suite-location-input-el");
-      }
-    );
+    snippetVariablesFileLoc.addSearch((component) => {
+      component
+        .setPlaceholder(DEFAULT_SETTINGS.snippetVariablesFileLocation)
+        .setValue(this.plugin.settings.snippetVariablesFileLocation)
+        .onChange(
+          (0, import_obsidian4.debounce)(
+            (value) =>
+              __async(this, null, function* () {
+                this.plugin.settings.snippetVariablesFileLocation = value;
+                yield this.plugin.saveSettings(true);
+              }),
+            500,
+            true,
+          ),
+        );
+      inputVariablesEl = component.inputEl;
+      inputVariablesEl.addClass("latex-suite-location-input-el");
+    });
     this.snippetVariablesFileLocEl = snippetVariablesFileLoc.settingEl;
     new FileSuggest(this.app, inputVariablesEl);
-    const loadSnippetVariablesFromFile = this.plugin.settings.loadSnippetVariablesFromFile;
-    snippetVariablesSetting.settingEl.toggleClass("hidden", loadSnippetVariablesFromFile);
-    this.snippetVariablesFileLocEl.toggleClass("hidden", !loadSnippetVariablesFromFile);
-    new import_obsidian4.Setting(containerEl).setName("Word delimiters").setDesc('Symbols that will be treated as word delimiters, for use with the "w" snippet option.').addText((text) => text.setPlaceholder(DEFAULT_SETTINGS.wordDelimiters).setValue(this.plugin.settings.wordDelimiters).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.wordDelimiters = value;
-      yield this.plugin.saveSettings();
-    })));
-    new import_obsidian4.Setting(containerEl).setName("Remove trailing whitespaces in snippets in inline math").setDesc("Whether to remove trailing whitespaces when expanding snippets at the end of inline math blocks.").addToggle((toggle) => toggle.setValue(this.plugin.settings.removeSnippetWhitespace).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.removeSnippetWhitespace = value;
-      yield this.plugin.saveSettings();
-    })));
-    new import_obsidian4.Setting(containerEl).setName("Remove closing $ when backspacing inside blank inline math").setDesc("Whether to also remove the closing $ when you delete the opening $ symbol inside blank inline math.").addToggle((toggle) => toggle.setValue(this.plugin.settings.autoDelete$).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.autoDelete$ = value;
-      yield this.plugin.saveSettings();
-    })));
-    new import_obsidian4.Setting(containerEl).setName("Don't trigger snippets when IME is active").setDesc("Whether to suppress snippets triggering when an IME is active.").addToggle(
-      (toggle) => toggle.setValue(this.plugin.settings.suppressSnippetTriggerOnIME).onChange((value) => __async(this, null, function* () {
-        this.plugin.settings.suppressSnippetTriggerOnIME = value;
-        yield this.plugin.saveSettings();
-      }))
+    const loadSnippetVariablesFromFile =
+      this.plugin.settings.loadSnippetVariablesFromFile;
+    snippetVariablesSetting.settingEl.toggleClass(
+      "hidden",
+      loadSnippetVariablesFromFile,
     );
-    new import_obsidian4.Setting(containerEl).setName("Code languages to interpret as math mode").setDesc("Codeblock languages where the whole code block should be treated like a math block, separated by commas.").addText((text) => text.setPlaceholder(DEFAULT_SETTINGS.forceMathLanguages).setValue(this.plugin.settings.forceMathLanguages).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.forceMathLanguages = value;
-      yield this.plugin.saveSettings();
-    })));
+    this.snippetVariablesFileLocEl.toggleClass(
+      "hidden",
+      !loadSnippetVariablesFromFile,
+    );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Word delimiters")
+      .setDesc(
+        'Symbols that will be treated as word delimiters, for use with the "w" snippet option.',
+      )
+      .addText((text) =>
+        text
+          .setPlaceholder(DEFAULT_SETTINGS.wordDelimiters)
+          .setValue(this.plugin.settings.wordDelimiters)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.wordDelimiters = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Remove trailing whitespaces in snippets in inline math")
+      .setDesc(
+        "Whether to remove trailing whitespaces when expanding snippets at the end of inline math blocks.",
+      )
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.removeSnippetWhitespace)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.removeSnippetWhitespace = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Remove closing $ when backspacing inside blank inline math")
+      .setDesc(
+        "Whether to also remove the closing $ when you delete the opening $ symbol inside blank inline math.",
+      )
+      .addToggle((toggle) =>
+        toggle.setValue(this.plugin.settings.autoDelete$).onChange((value) =>
+          __async(this, null, function* () {
+            this.plugin.settings.autoDelete$ = value;
+            yield this.plugin.saveSettings();
+          }),
+        ),
+      );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Don't trigger snippets when IME is active")
+      .setDesc("Whether to suppress snippets triggering when an IME is active.")
+      .addToggle((toggle) =>
+        toggle
+          .setValue(this.plugin.settings.suppressSnippetTriggerOnIME)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.suppressSnippetTriggerOnIME = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
+    new import_obsidian4.Setting(containerEl)
+      .setName("Code languages to interpret as math mode")
+      .setDesc(
+        "Codeblock languages where the whole code block should be treated like a math block, separated by commas.",
+      )
+      .addText((text) =>
+        text
+          .setPlaceholder(DEFAULT_SETTINGS.forceMathLanguages)
+          .setValue(this.plugin.settings.forceMathLanguages)
+          .onChange((value) =>
+            __async(this, null, function* () {
+              this.plugin.settings.forceMathLanguages = value;
+              yield this.plugin.saveSettings();
+            }),
+          ),
+      );
   }
   createSnippetsEditor(snippetsSetting) {
-    const customCSSWrapper = snippetsSetting.controlEl.createDiv("snippets-editor-wrapper");
-    const snippetsFooter = snippetsSetting.controlEl.createDiv("snippets-footer");
+    const customCSSWrapper = snippetsSetting.controlEl.createDiv(
+      "snippets-editor-wrapper",
+    );
+    const snippetsFooter =
+      snippetsSetting.controlEl.createDiv("snippets-footer");
     const validity = snippetsFooter.createDiv("snippets-editor-validity");
-    const validityIndicator = new import_obsidian4.ExtraButtonComponent(validity);
-    validityIndicator.setIcon("checkmark").extraSettingsEl.addClass("snippets-editor-validity-indicator");
+    const validityIndicator = new import_obsidian4.ExtraButtonComponent(
+      validity,
+    );
+    validityIndicator
+      .setIcon("checkmark")
+      .extraSettingsEl.addClass("snippets-editor-validity-indicator");
     const validityText = validity.createDiv("snippets-editor-validity-text");
     validityText.addClass("setting-item-description");
     validityText.style.padding = "0";
     function updateValidityIndicator(success) {
       validityIndicator.setIcon(success ? "checkmark" : "cross");
-      validityIndicator.extraSettingsEl.removeClass(success ? "invalid" : "valid");
+      validityIndicator.extraSettingsEl.removeClass(
+        success ? "invalid" : "valid",
+      );
       validityIndicator.extraSettingsEl.addClass(success ? "valid" : "invalid");
-      validityText.setText(success ? "Saved" : "Invalid syntax. Changes not saved");
+      validityText.setText(
+        success ? "Saved" : "Invalid syntax. Changes not saved",
+      );
     }
     const extensions = basicSetup;
-    const change = import_view4.EditorView.updateListener.of((v) => __async(this, null, function* () {
-      if (v.docChanged) {
-        const snippets2 = v.state.doc.toString();
-        let success = true;
-        let snippetVariables;
-        try {
-          snippetVariables = yield parseSnippetVariables(this.plugin.settings.snippetVariables);
-          yield parseSnippets(snippets2, snippetVariables);
-        } catch (e) {
-          success = false;
+    const change = import_view4.EditorView.updateListener.of((v) =>
+      __async(this, null, function* () {
+        if (v.docChanged) {
+          const snippets2 = v.state.doc.toString();
+          let success = true;
+          let snippetVariables;
+          try {
+            snippetVariables = yield parseSnippetVariables(
+              this.plugin.settings.snippetVariables,
+            );
+            yield parseSnippets(snippets2, snippetVariables);
+          } catch (e) {
+            success = false;
+          }
+          updateValidityIndicator(success);
+          if (!success) return;
+          this.plugin.settings.snippets = snippets2;
+          yield this.plugin.saveSettings();
         }
-        updateValidityIndicator(success);
-        if (!success)
-          return;
-        this.plugin.settings.snippets = snippets2;
-        yield this.plugin.saveSettings();
-      }
-    }));
+      }),
+    );
     extensions.push(change);
-    this.snippetsEditor = createCMEditor(this.plugin.settings.snippets, extensions);
+    this.snippetsEditor = createCMEditor(
+      this.plugin.settings.snippets,
+      extensions,
+    );
     customCSSWrapper.appendChild(this.snippetsEditor.dom);
     const buttonsDiv = snippetsFooter.createDiv("snippets-editor-buttons");
     const reset = new import_obsidian4.ButtonComponent(buttonsDiv);
-    reset.setIcon("switch").setTooltip("Reset to default snippets").onClick(() => __async(this, null, function* () {
-      new ConfirmationModal(
-        this.plugin.app,
-        "Are you sure? This will delete any custom snippets you have written.",
-        (button) => button.setButtonText("Reset to default snippets").setWarning(),
-        () => __async(this, null, function* () {
-          this.snippetsEditor.setState(import_state3.EditorState.create({ doc: DEFAULT_SNIPPETS, extensions }));
-          updateValidityIndicator(true);
-          this.plugin.settings.snippets = DEFAULT_SNIPPETS;
-          yield this.plugin.saveSettings();
-        })
-      ).open();
-    }));
+    reset
+      .setIcon("switch")
+      .setTooltip("Reset to default snippets")
+      .onClick(() =>
+        __async(this, null, function* () {
+          new ConfirmationModal(
+            this.plugin.app,
+            "Are you sure? This will delete any custom snippets you have written.",
+            (button) =>
+              button.setButtonText("Reset to default snippets").setWarning(),
+            () =>
+              __async(this, null, function* () {
+                this.snippetsEditor.setState(
+                  import_state3.EditorState.create({
+                    doc: DEFAULT_SNIPPETS,
+                    extensions,
+                  }),
+                );
+                updateValidityIndicator(true);
+                this.plugin.settings.snippets = DEFAULT_SNIPPETS;
+                yield this.plugin.saveSettings();
+              }),
+          ).open();
+        }),
+      );
     const remove = new import_obsidian4.ButtonComponent(buttonsDiv);
-    remove.setIcon("trash").setTooltip("Remove all snippets").onClick(() => __async(this, null, function* () {
-      new ConfirmationModal(
-        this.plugin.app,
-        "Are you sure? This will delete any custom snippets you have written.",
-        (button) => button.setButtonText("Remove all snippets").setWarning(),
-        () => __async(this, null, function* () {
-          const value = `[
+    remove
+      .setIcon("trash")
+      .setTooltip("Remove all snippets")
+      .onClick(() =>
+        __async(this, null, function* () {
+          new ConfirmationModal(
+            this.plugin.app,
+            "Are you sure? This will delete any custom snippets you have written.",
+            (button) =>
+              button.setButtonText("Remove all snippets").setWarning(),
+            () =>
+              __async(this, null, function* () {
+                const value = `[
 
 ]`;
-          this.snippetsEditor.setState(import_state3.EditorState.create({ doc: value, extensions }));
-          updateValidityIndicator(true);
-          this.plugin.settings.snippets = value;
-          yield this.plugin.saveSettings();
-        })
-      ).open();
-    }));
+                this.snippetsEditor.setState(
+                  import_state3.EditorState.create({ doc: value, extensions }),
+                );
+                updateValidityIndicator(true);
+                this.plugin.settings.snippets = value;
+                yield this.plugin.saveSettings();
+              }),
+          ).open();
+        }),
+      );
   }
 };
 var ConfirmationModal = class extends import_obsidian4.Modal {
@@ -12844,25 +15720,31 @@ var ConfirmationModal = class extends import_obsidian4.Modal {
     super(app);
     this.contentEl.addClass("latex-suite-confirmation-modal");
     this.contentEl.createEl("p", { text: body });
-    new import_obsidian4.Setting(this.contentEl).addButton((button) => {
-      buttonCallback(button);
-      button.onClick(() => __async(this, null, function* () {
-        yield clickCallback();
-        this.close();
-      }));
-    }).addButton((button) => button.setButtonText("Cancel").onClick(() => this.close()));
+    new import_obsidian4.Setting(this.contentEl)
+      .addButton((button) => {
+        buttonCallback(button);
+        button.onClick(() =>
+          __async(this, null, function* () {
+            yield clickCallback();
+            this.close();
+          }),
+        );
+      })
+      .addButton((button) =>
+        button.setButtonText("Cancel").onClick(() => this.close()),
+      );
   }
 };
 function createCMEditor(content, extensions) {
   const view = new import_view4.EditorView({
-    state: import_state3.EditorState.create({ doc: content, extensions })
+    state: import_state3.EditorState.create({ doc: content, extensions }),
   });
   return view;
 }
 
 // src/settings/ui/icons.ts
 var ICONS = {
-  "math": `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-math" width="100" height="100" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  math: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-math" width="100" height="100" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
     <path d="M19 5h-7l-4 14l-3 -6h-2"></path>
     <path d="M14 13l6 6"></path>
@@ -12876,7 +15758,7 @@ var ICONS = {
     <path d="M3 4l6 6"></path>
     <path d="M3 10l6 -6"></path>
  </svg>`,
-  "parentheses": `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-parentheses" width="100" height="100" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  parentheses: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-parentheses" width="100" height="100" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
     <path d="M7 4a12.25 12.25 0 0 0 0 16"></path>
     <path d="M17 4a12.25 12.25 0 0 1 0 16"></path>
@@ -12910,18 +15792,18 @@ var ICONS = {
     <path d="M6 19a2 2 0 0 1 -2 -2v-4l-1 -1l1 -1v-4a2 2 0 0 1 2 -2"></path>
     <path d="M18 19a2 2 0 0 0 2 -2v-4l1 -1l-1 -1v-4a2 2 0 0 0 -2 -2"></path>
  </svg>`,
-  "ballpen": `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-ballpen" width="100" height="100" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  ballpen: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-ballpen" width="100" height="100" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
     <path d="M14 6l7 7l-4 4"></path>
     <path d="M5.828 18.172a2.828 2.828 0 0 0 4 0l10.586 -10.586a2 2 0 0 0 0 -2.829l-1.171 -1.171a2 2 0 0 0 -2.829 0l-10.586 10.586a2.828 2.828 0 0 0 0 4z"></path>
     <path d="M4 20l1.768 -1.768"></path>
  </svg>`,
-  "superscript": `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-superscript" width="100" height="100" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  superscript: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-superscript" width="100" height="100" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
     <path d="M5 7l8 10m-8 0l8 -10"></path>
     <path d="M21 11h-4l3.5 -4a1.73 1.73 0 0 0 -3.5 -2"></path>
  </svg>`,
-  "tabout": `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 10.583 10.583">
+  tabout: `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 10.583 10.583">
     <g style="fill:none;stroke:currentColor;stroke-width:3.22892904;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none">
       <path d="M14.818 22.164h-.688c-1.52 0-3.983-1.82-3.983-4.066V-.612c0-2.245 2.462-4.065 3.983-4.065h.688" style="stroke-width:3.22892904;stroke-miterlimit:4;stroke-dasharray:none" transform="translate(6.566 2.931) scale(.24373)"/>
       <path d="M5.605 22.16h.662c1.462 0 3.88-1.906 3.88-4.258v-1.065M5.605-4.674h.662c1.462 0 3.88 1.907 3.88 4.259V.65" style="stroke-width:3.22892904;stroke-miterlimit:4;stroke-dasharray:none" transform="translate(6.566 2.931) scale(.24373)"/>
@@ -12931,7 +15813,7 @@ var ICONS = {
       <path d="M-9.136 8.694v5.17a1 1 0 0 0 1 1h23.658a1 1 0 0 0 1-1v-5.17" style="stroke-width:3.22892904;stroke-miterlimit:4;stroke-dasharray:none" transform="translate(2.662 4.719) scale(.24373)"/>
     </g>
   </svg>
-  `
+  `,
 };
 
 // src/utils/editor_utils.ts
@@ -12939,49 +15821,68 @@ var import_obsidian5 = require("obsidian");
 var import_view5 = require("@codemirror/view");
 function replaceRange(view, start2, end2, replacement) {
   view.dispatch({
-    changes: { from: start2, to: end2, insert: replacement }
+    changes: { from: start2, to: end2, insert: replacement },
   });
 }
 function iterateCM6(workspace, callback) {
   workspace.iterateAllLeaves((leaf) => {
     var _a;
-    (leaf == null ? void 0 : leaf.view) instanceof import_obsidian5.MarkdownView && ((_a = leaf.view.editor) == null ? void 0 : _a.cm) instanceof import_view5.EditorView && callback(leaf.view.editor.cm);
+    (leaf == null ? void 0 : leaf.view) instanceof
+      import_obsidian5.MarkdownView &&
+      ((_a = leaf.view.editor) == null ? void 0 : _a.cm) instanceof
+        import_view5.EditorView &&
+      callback(leaf.view.editor.cm);
   });
 }
 function getCharacterAtPos(viewOrState, pos) {
-  const state = viewOrState instanceof import_view5.EditorView ? viewOrState.state : viewOrState;
+  const state =
+    viewOrState instanceof import_view5.EditorView
+      ? viewOrState.state
+      : viewOrState;
   const doc = state.doc;
   return doc.slice(pos, pos + 1).toString();
 }
 function setCursor(view, pos) {
   view.dispatch({
-    selection: { anchor: pos, head: pos }
+    selection: { anchor: pos, head: pos },
   });
   resetCursorBlink();
 }
 function setSelection(view, start2, end2) {
   view.dispatch({
-    selection: { anchor: start2, head: end2 }
+    selection: { anchor: start2, head: end2 },
   });
   resetCursorBlink();
 }
 function resetCursorBlink() {
-  if (import_obsidian5.Platform.isMobile)
-    return;
+  if (import_obsidian5.Platform.isMobile) return;
   const cursorLayer = document.getElementsByClassName("cm-cursorLayer")[0];
   if (cursorLayer) {
     const curAnim = cursorLayer.style.animationName;
-    cursorLayer.style.animationName = curAnim === "cm-blink" ? "cm-blink2" : "cm-blink";
+    cursorLayer.style.animationName =
+      curAnim === "cm-blink" ? "cm-blink2" : "cm-blink";
   }
 }
 function reverse(s) {
   return s.split("").reverse().join("");
 }
-function findMatchingBracket(text, start2, openBracket, closeBracket, searchBackwards, end2) {
+function findMatchingBracket(
+  text,
+  start2,
+  openBracket,
+  closeBracket,
+  searchBackwards,
+  end2,
+) {
   if (searchBackwards) {
-    const reversedIndex = findMatchingBracket(reverse(text), text.length - (start2 + closeBracket.length), reverse(closeBracket), reverse(openBracket), false);
-    if (reversedIndex === -1)
-      return -1;
+    const reversedIndex = findMatchingBracket(
+      reverse(text),
+      text.length - (start2 + closeBracket.length),
+      reverse(closeBracket),
+      reverse(openBracket),
+      false,
+    );
+    if (reversedIndex === -1) return -1;
     return text.length - (reversedIndex + openBracket.length);
   }
   let brackets2 = 0;
@@ -13010,7 +15911,12 @@ function escalateToToken(cursor, dir, target) {
   if (cursor.name.contains(target)) {
     return cursor.node;
   }
-  while (cursor.name != "Document" && (dir == 0 /* Backward */ && cursor.prev() || dir == 1 /* Forward */ && cursor.next() || cursor.parent())) {
+  while (
+    cursor.name != "Document" &&
+    ((dir == 0 /* Backward */ && cursor.prev()) ||
+      (dir == 1 /* Forward */ && cursor.next()) ||
+      cursor.parent())
+  ) {
     if (cursor.name.contains(target)) {
       return cursor.node;
     }
@@ -13026,12 +15932,18 @@ var import_view6 = require("@codemirror/view");
 var import_state4 = require("@codemirror/state");
 var latexSuiteConfig = import_state4.Facet.define({
   combine: (input) => {
-    const settings = input.length > 0 ? input[0] : processLatexSuiteSettings([], DEFAULT_SETTINGS);
+    const settings =
+      input.length > 0
+        ? input[0]
+        : processLatexSuiteSettings([], DEFAULT_SETTINGS);
     return settings;
-  }
+  },
 });
 function getLatexSuiteConfig(viewOrState) {
-  const state = viewOrState instanceof import_view6.EditorView ? viewOrState.state : viewOrState;
+  const state =
+    viewOrState instanceof import_view6.EditorView
+      ? viewOrState.state
+      : viewOrState;
   return state.facet(latexSuiteConfig);
 }
 var latexSuiteConfigCompartment = new import_state4.Compartment();
@@ -13039,7 +15951,9 @@ function getLatexSuiteConfigExtension(pluginSettings) {
   return latexSuiteConfigCompartment.of(latexSuiteConfig.of(pluginSettings));
 }
 function reconfigureLatexSuiteConfig(pluginSettings) {
-  return latexSuiteConfigCompartment.reconfigure(latexSuiteConfig.of(pluginSettings));
+  return latexSuiteConfigCompartment.reconfigure(
+    latexSuiteConfig.of(pluginSettings),
+  );
 }
 
 // src/utils/context.ts
@@ -13059,8 +15973,7 @@ var Context = class _Context {
     const forceMath = settings.forceMathLanguages.contains(codeblockLanguage);
     ctx.mode.codeMath = forceMath;
     ctx.mode.code = inCode && !forceMath;
-    if (ctx.mode.code)
-      ctx.codeblockLanguage = codeblockLanguage;
+    if (ctx.mode.code) ctx.codeblockLanguage = codeblockLanguage;
     const inMath = forceMath || isWithinEquation(state);
     if (inMath && !forceMath) {
       const inInlineEquation = isWithinInlineEquation(state);
@@ -13077,11 +15990,9 @@ var Context = class _Context {
     return _Context.fromState(view.state);
   }
   isWithinEnvironment(pos, env) {
-    if (!this.mode.inMath())
-      return false;
+    if (!this.mode.inMath()) return false;
     const bounds = this.getInnerBounds();
-    if (!bounds)
-      return;
+    if (!bounds) return;
     const { start: start2, end: end2 } = bounds;
     const text = this.state.sliceDoc(start2, end2);
     pos -= start2;
@@ -13089,7 +16000,10 @@ var Context = class _Context {
     const closeBracket = getCloseBracket(openBracket);
     let offset2;
     let openSearchSymbol;
-    if (["{", "[", "("].contains(openBracket) && env.closeSymbol === closeBracket) {
+    if (
+      ["{", "[", "("].contains(openBracket) &&
+      env.closeSymbol === closeBracket
+    ) {
       offset2 = env.openSymbol.length - 1;
       openSearchSymbol = openBracket;
     } else {
@@ -13098,20 +16012,41 @@ var Context = class _Context {
     }
     let left2 = text.lastIndexOf(env.openSymbol, pos - 1);
     while (left2 != -1) {
-      const right2 = findMatchingBracket(text, left2 + offset2, openSearchSymbol, env.closeSymbol, false);
-      if (right2 === -1)
-        return false;
+      const right2 = findMatchingBracket(
+        text,
+        left2 + offset2,
+        openSearchSymbol,
+        env.closeSymbol,
+        false,
+      );
+      if (right2 === -1) return false;
       if (right2 >= pos && pos >= left2 + env.openSymbol.length) {
         return true;
       }
-      if (left2 <= 0)
-        return false;
+      if (left2 <= 0) return false;
       left2 = text.lastIndexOf(env.openSymbol, left2 - 1);
     }
     return false;
   }
   inTextEnvironment() {
-    return this.isWithinEnvironment(this.pos, { openSymbol: "\\text{", closeSymbol: "}" }) || this.isWithinEnvironment(this.pos, { openSymbol: "\\tag{", closeSymbol: "}" }) || this.isWithinEnvironment(this.pos, { openSymbol: "\\begin{", closeSymbol: "}" }) || this.isWithinEnvironment(this.pos, { openSymbol: "\\end{", closeSymbol: "}" });
+    return (
+      this.isWithinEnvironment(this.pos, {
+        openSymbol: "\\text{",
+        closeSymbol: "}",
+      }) ||
+      this.isWithinEnvironment(this.pos, {
+        openSymbol: "\\tag{",
+        closeSymbol: "}",
+      }) ||
+      this.isWithinEnvironment(this.pos, {
+        openSymbol: "\\begin{",
+        closeSymbol: "}",
+      }) ||
+      this.isWithinEnvironment(this.pos, {
+        openSymbol: "\\end{",
+        closeSymbol: "}",
+      })
+    );
   }
   getBounds(pos = this.pos) {
     if (this.boundsCache.has(pos)) {
@@ -13141,17 +16076,19 @@ var isWithinEquation = (state) => {
   const pos = state.selection.main.to;
   const tree = (0, import_language4.syntaxTree)(state);
   let syntaxNode = tree.resolveInner(pos, -1);
-  if (syntaxNode.name.contains("math-end"))
-    return false;
+  if (syntaxNode.name.contains("math-end")) return false;
   if (!syntaxNode.parent) {
     syntaxNode = tree.resolveInner(pos, 1);
-    if (syntaxNode.name.contains("math-begin"))
-      return false;
+    if (syntaxNode.name.contains("math-begin")) return false;
   }
   if (!syntaxNode.parent) {
     const left2 = tree.resolveInner(pos - 1, -1);
     const right2 = tree.resolveInner(pos + 1, 1);
-    return left2.name.contains("math") && right2.name.contains("math") && !left2.name.contains("math-end");
+    return (
+      left2.name.contains("math") &&
+      right2.name.contains("math") &&
+      !left2.name.contains("math-end")
+    );
   }
   return syntaxNode.name.contains("math");
 };
@@ -13159,29 +16096,24 @@ var isWithinInlineEquation = (state) => {
   const pos = state.selection.main.to;
   const tree = (0, import_language4.syntaxTree)(state);
   let syntaxNode = tree.resolveInner(pos, -1);
-  if (syntaxNode.name.contains("math-end"))
-    return false;
+  if (syntaxNode.name.contains("math-end")) return false;
   if (!syntaxNode.parent) {
     syntaxNode = tree.resolveInner(pos, 1);
-    if (syntaxNode.name.contains("math-begin"))
-      return false;
+    if (syntaxNode.name.contains("math-begin")) return false;
   }
-  if (!syntaxNode.parent)
-    syntaxNode = tree.resolveInner(pos - 1, -1);
+  if (!syntaxNode.parent) syntaxNode = tree.resolveInner(pos - 1, -1);
   const cursor = syntaxNode.cursor();
   const res = escalateToToken(cursor, 0 /* Backward */, "math-begin");
   return !(res == null ? void 0 : res.name.contains("math-block"));
 };
 var getEquationBounds = (state, pos) => {
-  if (!pos)
-    pos = state.selection.main.to;
+  if (!pos) pos = state.selection.main.to;
   const tree = (0, import_language4.syntaxTree)(state);
   let syntaxNode = tree.resolveInner(pos, -1);
   if (!syntaxNode.parent) {
     syntaxNode = tree.resolveInner(pos, 1);
   }
-  if (!syntaxNode.parent)
-    syntaxNode = tree.resolveInner(pos - 1, -1);
+  if (!syntaxNode.parent) syntaxNode = tree.resolveInner(pos - 1, -1);
   const cursor = syntaxNode.cursor();
   const begin = escalateToToken(cursor, 0 /* Backward */, "math-begin");
   const end2 = escalateToToken(cursor, 1 /* Forward */, "math-end");
@@ -13192,38 +16124,55 @@ var getEquationBounds = (state, pos) => {
   }
 };
 var getInnerEquationBounds = (state, pos) => {
-  if (!pos)
-    pos = state.selection.main.to;
+  if (!pos) pos = state.selection.main.to;
   let text = state.doc.toString();
   text = text.replaceAll("\\$", "\\R");
   const left2 = text.lastIndexOf("$", pos - 1);
   const right2 = text.indexOf("$", pos);
-  if (left2 === -1 || right2 === -1)
-    return null;
+  if (left2 === -1 || right2 === -1) return null;
   return { start: left2 + 1, end: right2 };
 };
 var getCodeblockBounds = (state, pos = state.selection.main.from) => {
   const tree = (0, import_language4.syntaxTree)(state);
   let cursor = tree.cursorAt(pos, -1);
-  const blockBegin = escalateToToken(cursor, 0 /* Backward */, "HyperMD-codeblock-begin");
+  const blockBegin = escalateToToken(
+    cursor,
+    0 /* Backward */,
+    "HyperMD-codeblock-begin",
+  );
   cursor = tree.cursorAt(pos, -1);
-  const blockEnd = escalateToToken(cursor, 1 /* Forward */, "HyperMD-codeblock-end");
+  const blockEnd = escalateToToken(
+    cursor,
+    1 /* Forward */,
+    "HyperMD-codeblock-end",
+  );
   return { start: blockBegin.to + 1, end: blockEnd.from - 1 };
 };
 var langIfWithinCodeblock = (state) => {
   const tree = (0, import_language4.syntaxTree)(state);
   const pos = state.selection.ranges[0].from;
-  const cursor = pos === 0 || getCharacterAtPos(state, pos - 1) === "\n" ? tree.cursorAt(pos, 1) : tree.cursorAt(pos, -1);
+  const cursor =
+    pos === 0 || getCharacterAtPos(state, pos - 1) === "\n"
+      ? tree.cursorAt(pos, 1)
+      : tree.cursorAt(pos, -1);
   const inCodeblock = cursor.name.contains("codeblock");
   if (!inCodeblock) {
     return null;
   }
-  const codeblockBegin = escalateToToken(cursor, 0 /* Backward */, "HyperMD-codeblock_HyperMD-codeblock-begin");
+  const codeblockBegin = escalateToToken(
+    cursor,
+    0 /* Backward */,
+    "HyperMD-codeblock_HyperMD-codeblock-begin",
+  );
   if (codeblockBegin == null) {
-    console.warn("unable to locate start of the codeblock even though inside one");
+    console.warn(
+      "unable to locate start of the codeblock even though inside one",
+    );
     return "";
   }
-  const language = state.sliceDoc(codeblockBegin.from, codeblockBegin.to).replace(/`+/, "");
+  const language = state
+    .sliceDoc(codeblockBegin.from, codeblockBegin.to)
+    .replace(/`+/, "");
   return language;
 };
 
@@ -13231,13 +16180,13 @@ var langIfWithinCodeblock = (state) => {
 function boxCurrentEquation(view) {
   const ctx = Context.fromView(view);
   const result = ctx.getBounds();
-  if (!result)
-    return false;
+  if (!result) return false;
   const { start: start2, end: end2 } = result;
   let equation = "\\boxed{" + view.state.sliceDoc(start2, end2) + "}";
-  const insideBlockEqn = view.state.sliceDoc(start2 - 2, start2) === "$$" && view.state.sliceDoc(end2, end2 + 2) === "$$";
-  if (insideBlockEqn)
-    equation = "\n" + equation + "\n";
+  const insideBlockEqn =
+    view.state.sliceDoc(start2 - 2, start2) === "$$" &&
+    view.state.sliceDoc(end2, end2 + 2) === "$$";
+  if (insideBlockEqn) equation = "\n" + equation + "\n";
   const pos = view.state.selection.main.to;
   replaceRange(view, start2, end2, equation);
   setCursor(view, pos + "\\boxed{".length + (insideBlockEqn ? 1 : 0));
@@ -13250,13 +16199,11 @@ function getBoxEquationCommand() {
       const view = editor.cm;
       const ctx = Context.fromView(view);
       const withinEquation = ctx.mode.inMath();
-      if (checking)
-        return withinEquation;
-      if (!withinEquation)
-        return;
+      if (checking) return withinEquation;
+      if (!withinEquation) return;
       boxCurrentEquation(view);
       return;
-    }
+    },
   };
 }
 function getSelectEquationCommand() {
@@ -13267,50 +16214,47 @@ function getSelectEquationCommand() {
       const view = editor.cm;
       const ctx = Context.fromView(view);
       const withinEquation = ctx.mode.inMath();
-      if (checking)
-        return withinEquation;
-      if (!withinEquation)
-        return;
+      if (checking) return withinEquation;
+      if (!withinEquation) return;
       const result = ctx.getBounds();
-      if (!result)
-        return false;
+      if (!result) return false;
       let { start: start2, end: end2 } = result;
       const doc = view.state.doc.toString();
-      if (doc.charAt(start2) === "\n")
-        start2++;
-      if (doc.charAt(end2 - 1) === "\n")
-        end2--;
+      if (doc.charAt(start2) === "\n") start2++;
+      if (doc.charAt(end2 - 1) === "\n") end2--;
       setSelection(view, start2, end2);
       return;
-    }
+    },
   };
 }
 function getEnableAllFeaturesCommand(plugin) {
   return {
     id: "latex-suite-enable-all-features",
     name: "Enable all features",
-    callback: () => __async(this, null, function* () {
-      plugin.settings.snippetsEnabled = true;
-      plugin.settings.autofractionEnabled = true;
-      plugin.settings.matrixShortcutsEnabled = true;
-      plugin.settings.taboutEnabled = true;
-      plugin.settings.autoEnlargeBrackets = true;
-      yield plugin.saveSettings();
-    })
+    callback: () =>
+      __async(this, null, function* () {
+        plugin.settings.snippetsEnabled = true;
+        plugin.settings.autofractionEnabled = true;
+        plugin.settings.matrixShortcutsEnabled = true;
+        plugin.settings.taboutEnabled = true;
+        plugin.settings.autoEnlargeBrackets = true;
+        yield plugin.saveSettings();
+      }),
   };
 }
 function getDisableAllFeaturesCommand(plugin) {
   return {
     id: "latex-suite-disable-all-features",
     name: "Disable all features",
-    callback: () => __async(this, null, function* () {
-      plugin.settings.snippetsEnabled = false;
-      plugin.settings.autofractionEnabled = false;
-      plugin.settings.matrixShortcutsEnabled = false;
-      plugin.settings.taboutEnabled = false;
-      plugin.settings.autoEnlargeBrackets = false;
-      yield plugin.saveSettings();
-    })
+    callback: () =>
+      __async(this, null, function* () {
+        plugin.settings.snippetsEnabled = false;
+        plugin.settings.autofractionEnabled = false;
+        plugin.settings.matrixShortcutsEnabled = false;
+        plugin.settings.taboutEnabled = false;
+        plugin.settings.autoEnlargeBrackets = false;
+        yield plugin.saveSettings();
+      }),
   };
 }
 var getEditorCommands = (plugin) => {
@@ -13318,7 +16262,7 @@ var getEditorCommands = (plugin) => {
     getBoxEquationCommand(),
     getSelectEquationCommand(),
     getEnableAllFeaturesCommand(plugin),
-    getDisableAllFeaturesCommand(plugin)
+    getDisableAllFeaturesCommand(plugin),
   ];
 };
 
@@ -13349,23 +16293,31 @@ var SnippetChangeSpec = class {
       let tabstopEnd = tabstopStart + 2;
       let tabstopReplacement = "";
       if (isNaN(number2)) {
-        if (!(text.charAt(i + 1) === "{"))
-          continue;
-        const closingIndex = findMatchingBracket(text, i + 1, "{", "}", false, start2 + this.insert.length);
+        if (!(text.charAt(i + 1) === "{")) continue;
+        const closingIndex = findMatchingBracket(
+          text,
+          i + 1,
+          "{",
+          "}",
+          false,
+          start2 + this.insert.length,
+        );
         const tabstopString = text.slice(i, closingIndex + 1);
-        if (!tabstopString.includes(":"))
-          continue;
+        if (!tabstopString.includes(":")) continue;
         const colonIndex = tabstopString.indexOf(":");
         number2 = parseInt(tabstopString.slice(2, colonIndex));
-        if (isNaN(number2))
-          continue;
-        if (closingIndex === -1)
-          continue;
+        if (isNaN(number2)) continue;
+        if (closingIndex === -1) continue;
         tabstopReplacement = text.slice(i + colonIndex + 1, closingIndex);
         tabstopEnd = closingIndex + 1;
         i = closingIndex;
       }
-      const tabstop = { number: number2, from: tabstopStart, to: tabstopEnd, replacement: tabstopReplacement };
+      const tabstop = {
+        number: number2,
+        from: tabstopStart,
+        to: tabstopEnd,
+        replacement: tabstopReplacement,
+      };
       tabstops.push(tabstop);
     }
     return tabstops;
@@ -13392,17 +16344,17 @@ var snippetQueueStateField = import_state5.StateField.define({
       }
     }
     return snippetQueue;
-  }
+  },
 });
 function queueSnippet(view, from, to, insert, keyPressed) {
   const snippet = new SnippetChangeSpec(from, to, insert, keyPressed);
   view.dispatch({
-    effects: [queueSnippetEffect.of(snippet)]
+    effects: [queueSnippetEffect.of(snippet)],
   });
 }
 function clearSnippetQueue(view) {
   view.dispatch({
-    effects: [clearSnippetQueueEffect.of(null)]
+    effects: [clearSnippetQueueEffect.of(null)],
   });
 }
 
@@ -13435,7 +16387,7 @@ var tabstopsStateField = import_state6.StateField.define({
     if (transaction.selection) {
       const currTabstopGroupIndex = getCurrentTabstopGroupIndex(
         tabstopGroups,
-        transaction.selection
+        transaction.selection,
       );
       tabstopGroups = tabstopGroups.slice(currTabstopGroupIndex);
       if (tabstopGroups.length <= 1) {
@@ -13451,18 +16403,16 @@ var tabstopsStateField = import_state6.StateField.define({
       const tabstopGroups = view.state.field(field);
       const decos = [];
       for (const tabstopGroup of tabstopGroups) {
-        if (!tabstopGroup.hidden)
-          decos.push(...tabstopGroup.getRanges());
+        if (!tabstopGroup.hidden) decos.push(...tabstopGroup.getRanges());
       }
       return import_view7.Decoration.set(decos, true);
     });
-  }
+  },
 });
 function getCurrentTabstopGroupIndex(tabstopGroups, sel) {
   for (let i = 0; i < tabstopGroups.length; i++) {
     const tabstopGroup = tabstopGroups[i];
-    if (tabstopGroup.containsSelection(sel))
-      return i;
+    if (tabstopGroup.containsSelection(sel)) return i;
   }
   return tabstopGroups.length;
 }
@@ -13472,12 +16422,12 @@ function getTabstopGroupsFromView(view) {
 }
 function addTabstops(view, tabstopGroups) {
   view.dispatch({
-    effects: [addTabstopsEffect.of(tabstopGroups)]
+    effects: [addTabstopsEffect.of(tabstopGroups)],
   });
 }
 function removeAllTabstops(view) {
   view.dispatch({
-    effects: [removeAllTabstopsEffect.of(null)]
+    effects: [removeAllTabstopsEffect.of(null)],
   });
 }
 var N_COLORS = 3;
@@ -13486,8 +16436,7 @@ function getNextTabstopColor(view) {
   const existingColors = field.map((tabstopGroup) => tabstopGroup.color);
   const uniqueExistingColors = new Set(existingColors);
   for (let i = 0; i < N_COLORS; i++) {
-    if (!uniqueExistingColors.has(i))
-      return i;
+    if (!uniqueExistingColors.has(i)) return i;
   }
   return 0;
 }
@@ -13545,12 +16494,14 @@ function getMarkerDecoration(from, to, color) {
   return import_view8.Decoration.mark({
     inclusive: true,
     color,
-    class: className
+    class: className,
   }).range(from, to);
 }
 var TabstopGroup = class {
   constructor(tabstopSpecs, color) {
-    const decos = tabstopSpecs.map((spec) => getMarkerDecoration(spec.from, spec.to, color));
+    const decos = tabstopSpecs.map((spec) =>
+      getMarkerDecoration(spec.from, spec.to, color),
+    );
     this.decos = import_view8.Decoration.set(decos, true);
     this.color = color;
     this.hidden = false;
@@ -13560,7 +16511,7 @@ var TabstopGroup = class {
     const toSelect = selectEndpoints ? getEditorSelectionEndpoints(sel) : sel;
     view.dispatch({
       selection: toSelect,
-      effects: isEndSnippet ? endSnippet.of(null) : null
+      effects: isEndSnippet ? endSnippet.of(null) : null,
     });
     resetCursorBlink();
     this.hideFromEditor();
@@ -13576,8 +16527,7 @@ var TabstopGroup = class {
   }
   toEditorSelection(endpoints = false) {
     let sel = import_state8.EditorSelection.create(this.toSelectionRanges());
-    if (endpoints)
-      sel = getEditorSelectionEndpoints(sel);
+    if (endpoints) sel = getEditorSelectionEndpoints(sel);
     return sel;
   }
   containsSelection(selection) {
@@ -13637,18 +16587,23 @@ function tabstopSpecsToTabstopGroups(tabstops, color) {
   return result;
 }
 function getEditorSelectionEndpoints(sel) {
-  const endpoints = sel.ranges.map((range) => import_state8.EditorSelection.range(range.to, range.to));
+  const endpoints = sel.ranges.map((range) =>
+    import_state8.EditorSelection.range(range.to, range.to),
+  );
   return import_state8.EditorSelection.create(endpoints);
 }
 
 // src/snippets/snippet_management.ts
 function expandSnippets(view) {
   const snippetsToExpand = view.state.field(snippetQueueStateField);
-  if (snippetsToExpand.length === 0)
-    return false;
+  if (snippetsToExpand.length === 0) return false;
   const originalDocLength = view.state.doc.length;
   handleUndoKeypresses(view, snippetsToExpand);
-  const tabstopsToAdd = computeTabstops(view, snippetsToExpand, originalDocLength);
+  const tabstopsToAdd = computeTabstops(
+    view,
+    snippetsToExpand,
+    originalDocLength,
+  );
   if (tabstopsToAdd.length === 0) {
     clearSnippetQueue(view);
     return true;
@@ -13666,19 +16621,29 @@ function handleUndoKeypresses(view, snippets2) {
     if (snippet.keyPressed && snippet.keyPressed.length === 1) {
       const prevChar = view.state.doc.sliceString(snippet.to - 1, snippet.to);
       const from = snippet.to === 0 ? 0 : snippet.to - 1;
-      keyPresses.push({ from, to: snippet.to, insert: prevChar + snippet.keyPressed });
+      keyPresses.push({
+        from,
+        to: snippet.to,
+        insert: prevChar + snippet.keyPressed,
+      });
     }
   }
   view.dispatch({
     changes: keyPresses,
-    annotations: import_commands3.isolateHistory.of("full")
+    annotations: import_commands3.isolateHistory.of("full"),
   });
-  const undoKeyPresses = import_state9.ChangeSet.of(keyPresses, originalDocLength).invert(originalDoc);
-  const changesAsChangeSet = import_state9.ChangeSet.of(snippets2, originalDocLength);
+  const undoKeyPresses = import_state9.ChangeSet.of(
+    keyPresses,
+    originalDocLength,
+  ).invert(originalDoc);
+  const changesAsChangeSet = import_state9.ChangeSet.of(
+    snippets2,
+    originalDocLength,
+  );
   const combinedChanges = undoKeyPresses.compose(changesAsChangeSet);
   view.dispatch({
     changes: combinedChanges,
-    effects: startSnippet.of(null)
+    effects: startSnippet.of(null),
   });
 }
 function computeTabstops(view, snippets2, originalDocLength) {
@@ -13701,7 +16666,7 @@ function expandTabstops(view, tabstops) {
     return { from: tabstop.from, to: tabstop.to, insert: tabstop.replacement };
   });
   view.dispatch({
-    changes
+    changes,
   });
   const firstGrp = getTabstopGroupsFromView(view)[0];
   firstGrp.select(view, false, true);
@@ -13710,17 +16675,15 @@ function setSelectionToNextTabstop(view) {
   const tabstopGroups = view.state.field(tabstopsStateField);
   function aux(nextGrpIndex) {
     const nextGrp = tabstopGroups[nextGrpIndex];
-    if (!nextGrp)
-      return false;
+    if (!nextGrp) return false;
     const currSel = view.state.selection;
     let nextGrpSel = nextGrp.toEditorSelection();
     if (nextGrp.containsSelection(currSel)) {
       nextGrpSel = nextGrp.toEditorSelection(true);
     }
-    if (currSel.eq(nextGrpSel))
-      return aux(nextGrpIndex + 1);
+    if (currSel.eq(nextGrpSel)) return aux(nextGrpIndex + 1);
     view.dispatch({
-      selection: nextGrpSel
+      selection: nextGrpSel,
     });
     resetCursorBlink();
     return true;
@@ -13731,18 +16694,25 @@ function setSelectionToNextTabstop(view) {
 // src/features/auto_enlarge_brackets.ts
 var autoEnlargeBrackets = (view) => {
   const settings = getLatexSuiteConfig(view);
-  if (!settings.autoEnlargeBrackets)
-    return;
+  if (!settings.autoEnlargeBrackets) return;
   const ctx = Context.fromView(view);
   const result = ctx.getBounds();
-  if (!result)
-    return false;
+  if (!result) return false;
   const { start: start2, end: end2 } = result;
   const text = view.state.doc.toString();
   const left2 = "\\left";
   const right2 = "\\right";
   for (let i = start2; i < end2; i++) {
-    const brackets2 = { "(": ")", "[": "]", "\\{": "\\}", "\\langle": "\\rangle", "\\lvert": "\\rvert", "\\lVert": "\\rVert", "\\lceil": "\\rceil", "\\lfloor": "\\rfloor" };
+    const brackets2 = {
+      "(": ")",
+      "[": "]",
+      "\\{": "\\}",
+      "\\langle": "\\rangle",
+      "\\lvert": "\\rvert",
+      "\\lVert": "\\rVert",
+      "\\lceil": "\\rceil",
+      "\\lfloor": "\\rfloor",
+    };
     const openBrackets = Object.keys(brackets2);
     let found = false;
     let open = "";
@@ -13753,17 +16723,20 @@ var autoEnlargeBrackets = (view) => {
         break;
       }
     }
-    if (!found)
-      continue;
+    if (!found) continue;
     const bracketSize = open.length;
     const close = brackets2[open];
     const j = findMatchingBracket(text, i, open, close, false, end2);
-    if (j === -1)
-      continue;
-    if (text.slice(i - left2.length, i) === left2 && text.slice(j - right2.length, j) === right2)
+    if (j === -1) continue;
+    if (
+      text.slice(i - left2.length, i) === left2 &&
+      text.slice(j - right2.length, j) === right2
+    )
       continue;
     const bracketContents = text.slice(i + 1, j);
-    const containsTrigger = settings.autoEnlargeBracketsTriggers.some((word) => bracketContents.contains("\\" + word));
+    const containsTrigger = settings.autoEnlargeBracketsTriggers.some((word) =>
+      bracketContents.contains("\\" + word),
+    );
     if (!containsTrigger) {
       i = j;
       continue;
@@ -13779,8 +16752,7 @@ var runSnippets = (view, ctx, key) => {
   let shouldAutoEnlargeBrackets = false;
   for (const range of ctx.ranges) {
     const result = runSnippetCursor(view, ctx, key, range);
-    if (result.shouldAutoEnlargeBrackets)
-      shouldAutoEnlargeBrackets = true;
+    if (result.shouldAutoEnlargeBrackets) shouldAutoEnlargeBrackets = true;
   }
   const success = expandSnippets(view);
   if (shouldAutoEnlargeBrackets) {
@@ -13800,8 +16772,7 @@ var runSnippetCursor = (view, ctx, key, range) => {
       continue;
     }
     if (snippet.options.automatic || snippet.type === "visual") {
-      if (!(key.length === 1))
-        continue;
+      if (!(key.length === 1)) continue;
       effectiveLine = updatedLine;
     } else if (!(key === settings.snippetsTrigger)) {
       continue;
@@ -13816,11 +16787,12 @@ var runSnippetCursor = (view, ctx, key, range) => {
       continue;
     }
     const result = snippet.process(effectiveLine, range, sel);
-    if (result === null)
-      continue;
+    if (result === null) continue;
     const triggerPos = result.triggerPos;
     if (snippet.options.onWordBoundary) {
-      if (!isOnWordBoundary(view.state, triggerPos, to, settings.wordDelimiters))
+      if (
+        !isOnWordBoundary(view.state, triggerPos, to, settings.wordDelimiters)
+      )
         continue;
     }
     let replacement = result.replacement;
@@ -13829,13 +16801,19 @@ var runSnippetCursor = (view, ctx, key, range) => {
     }
     const start2 = triggerPos;
     queueSnippet(view, start2, to, replacement, key);
-    const containsTrigger = settings.autoEnlargeBracketsTriggers.some((word) => replacement.contains("\\" + word));
+    const containsTrigger = settings.autoEnlargeBracketsTriggers.some((word) =>
+      replacement.contains("\\" + word),
+    );
     return { success: true, shouldAutoEnlargeBrackets: containsTrigger };
   }
   return { success: false, shouldAutoEnlargeBrackets: false };
 };
 var snippetShouldRunInMode = (options, mode) => {
-  if (options.mode.inlineMath && mode.inlineMath || options.mode.blockMath && mode.blockMath || (options.mode.inlineMath || options.mode.blockMath) && mode.codeMath) {
+  if (
+    (options.mode.inlineMath && mode.inlineMath) ||
+    (options.mode.blockMath && mode.blockMath) ||
+    ((options.mode.inlineMath || options.mode.blockMath) && mode.codeMath)
+  ) {
     if (!mode.textEnv) {
       return true;
     }
@@ -13843,7 +16821,7 @@ var snippetShouldRunInMode = (options, mode) => {
   if (mode.inMath() && mode.textEnv && options.mode.text) {
     return true;
   }
-  if (options.mode.text && mode.text || options.mode.code && mode.code) {
+  if ((options.mode.text && mode.text) || (options.mode.code && mode.code)) {
     return true;
   }
 };
@@ -13894,15 +16872,15 @@ var runAutoFractionCursor = (view, ctx, range) => {
     }
   }
   const result = ctx.getBounds();
-  if (!result)
-    return false;
+  if (!result) return false;
   const eqnStart = result.start;
   let curLine = view.state.sliceDoc(0, to);
   let start2 = eqnStart;
   if (from != to) {
     start2 = from;
   } else {
-    const greek2 = "alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|Theta|iota|kappa|lambda|Lambda|mu|nu|omicron|xi|Xi|pi|Pi|rho|sigma|Sigma|tau|upsilon|Upsilon|varphi|phi|Phi|chi|psi|Psi|omega|Omega";
+    const greek2 =
+      "alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|Theta|iota|kappa|lambda|Lambda|mu|nu|omicron|xi|Xi|pi|Pi|rho|sigma|Sigma|tau|upsilon|Upsilon|varphi|phi|Phi|chi|psi|Psi|omega|Omega";
     const regex = new RegExp("(" + greek2 + ") ([^ ])", "g");
     curLine = curLine.replace(regex, "$1#$2");
     for (let i = curLine.length - 1; i >= eqnStart; i--) {
@@ -13910,16 +16888,23 @@ var runAutoFractionCursor = (view, ctx, range) => {
       if ([")", "]", "}"].contains(curChar)) {
         const closeBracket = curChar;
         const openBracket = getOpenBracket(closeBracket);
-        const j = findMatchingBracket(curLine, i, openBracket, closeBracket, true);
-        if (j === -1)
-          return false;
+        const j = findMatchingBracket(
+          curLine,
+          i,
+          openBracket,
+          closeBracket,
+          true,
+        );
+        if (j === -1) return false;
         i = j;
         if (i < eqnStart) {
           start2 = eqnStart;
           break;
         }
       }
-      if (" $([{\n".concat(settings.autofractionBreakingChars).contains(curChar)) {
+      if (
+        " $([{\n".concat(settings.autofractionBreakingChars).contains(curChar)
+      ) {
         start2 = i + 1;
         break;
       }
@@ -13942,11 +16927,9 @@ var runAutoFractionCursor = (view, ctx, range) => {
 
 // src/features/tabout.ts
 var tabout = (view, ctx) => {
-  if (!ctx.mode.inMath())
-    return false;
+  if (!ctx.mode.inMath()) return false;
   const result = ctx.getBounds();
-  if (!result)
-    return false;
+  if (!result) return false;
   const end2 = result.end;
   const pos = view.state.selection.main.to;
   const d = view.state.doc;
@@ -13963,8 +16946,7 @@ var tabout = (view, ctx) => {
   }
   const textBtwnCursorAndEnd = d.sliceString(pos, end2);
   const atEnd = textBtwnCursorAndEnd.trim().length === 0;
-  if (!atEnd)
-    return false;
+  if (!atEnd) return false;
   if (ctx.mode.inlineMath || ctx.mode.codeMath) {
     setCursor(view, end2 + 1);
   } else {
@@ -13980,8 +16962,7 @@ var tabout = (view, ctx) => {
 };
 var shouldTaboutByCloseBracket = (view, keyPressed) => {
   const sel = view.state.selection.main;
-  if (!sel.empty)
-    return;
+  if (!sel.empty) return;
   const pos = sel.from;
   const c = getCharacterAtPos(view, pos);
   const brackets2 = [")", "]", "}"];
@@ -13997,13 +16978,14 @@ var runMatrixShortcuts = (view, ctx, key, shiftKey) => {
   const settings = getLatexSuiteConfig(view);
   let isInsideAnEnv = false;
   for (const envName of settings.matrixShortcutsEnvNames) {
-    const env = { openSymbol: "\\begin{" + envName + "}", closeSymbol: "\\end{" + envName + "}" };
+    const env = {
+      openSymbol: "\\begin{" + envName + "}",
+      closeSymbol: "\\end{" + envName + "}",
+    };
     isInsideAnEnv = ctx.isWithinEnvironment(ctx.pos, env);
-    if (isInsideAnEnv)
-      break;
+    if (isInsideAnEnv) break;
   }
-  if (!isInsideAnEnv)
-    return false;
+  if (!isInsideAnEnv) return false;
   if (key === "Tab") {
     view.dispatch(view.state.replaceSelection(" & "));
     return true;
@@ -14026,7 +17008,7 @@ var runMatrixShortcuts = (view, ctx, key, shiftKey) => {
 var snippetExtensions = [
   tabstopsStateField.extension,
   snippetQueueStateField.extension,
-  snippetInvertedEffects
+  snippetInvertedEffects,
 ];
 
 // src/editor_extensions/conceal.ts
@@ -14036,186 +17018,186 @@ var import_language5 = require("@codemirror/language");
 
 // src/editor_extensions/conceal_maps.ts
 var cmd_symbols = {
-  "aleph": "\u2135",
-  "amalg": "\u2210",
-  "angle": "\u2220",
-  "approx": "\u2248",
-  "ast": "\u2217",
-  "asymp": "\u224D",
-  "backslash": "\u2216",
-  "bigcap": "\u2229",
-  "bigcirc": "\u25CB",
-  "bigcup": "\u222A",
-  "bigodot": "\u2299",
-  "bigoplus": "\u2295",
-  "bigotimes": "\u2297",
-  "bigsqcup": "\u2294",
-  "bigtriangledown": "\u2207",
-  "bigtriangleup": "\u2206",
-  "bigvee": "\u22C1",
-  "bigwedge": "\u22C0",
-  "bot": "\u22A5",
-  "bowtie": "\u22C8",
-  "bullet": "\u2022",
-  "cap": "\u2229",
-  "cdots": "\u22EF",
-  "cdot": "\xB7",
-  "circ": "\u2218",
-  "clubsuit": "\u2663",
-  "cong": "\u2245",
-  "coprod": "\u2210",
-  "copyright": "\xA9",
-  "cup": "\u222A",
-  "dagger": "\u2020",
-  "dashv": "\u22A3",
-  "ddagger": "\u2021",
-  "ddots": "\u22F1",
-  "diamond": "\u22C4",
-  "diamondsuit": "\u2662",
-  "div": "\xF7",
-  "doteq": "\u2250",
-  "dots": "\u2026",
-  "downarrow": "\u2193",
-  "Downarrow": "\u21D3",
-  "ell": "\u2113",
-  "emptyset": "\xD8",
-  "equiv": "\u2261",
-  "exists": "\u2203",
-  "flat": "\u266D",
-  "forall": "\u2200",
-  "frown": "\u2054",
-  "geqslant": "\u2265",
-  "geq": "\u2265",
-  "gets": "\u2190",
-  "ge": "\u2265",
-  "gg": "\u27EB",
-  "hbar": "\u210F",
-  "heartsuit": "\u2661",
-  "hookleftarrow": "\u21A9",
-  "hookrightarrow": "\u21AA",
-  "iff": "\u21D4",
-  "Im": "\u2111",
-  "imath": "\u0269",
-  "infty": "\u221E",
-  "iiint": "\u222D",
-  "iint": "\u222C",
-  "int": "\u222B",
-  "in": "\u2208",
-  "jmath": "\u{1D6A5}",
-  "land": "\u2227",
-  "lnot": "\xAC",
-  "lceil": "\u2308",
-  "ldots": "\u2026",
+  aleph: "\u2135",
+  amalg: "\u2210",
+  angle: "\u2220",
+  approx: "\u2248",
+  ast: "\u2217",
+  asymp: "\u224D",
+  backslash: "\u2216",
+  bigcap: "\u2229",
+  bigcirc: "\u25CB",
+  bigcup: "\u222A",
+  bigodot: "\u2299",
+  bigoplus: "\u2295",
+  bigotimes: "\u2297",
+  bigsqcup: "\u2294",
+  bigtriangledown: "\u2207",
+  bigtriangleup: "\u2206",
+  bigvee: "\u22C1",
+  bigwedge: "\u22C0",
+  bot: "\u22A5",
+  bowtie: "\u22C8",
+  bullet: "\u2022",
+  cap: "\u2229",
+  cdots: "\u22EF",
+  cdot: "\xB7",
+  circ: "\u2218",
+  clubsuit: "\u2663",
+  cong: "\u2245",
+  coprod: "\u2210",
+  copyright: "\xA9",
+  cup: "\u222A",
+  dagger: "\u2020",
+  dashv: "\u22A3",
+  ddagger: "\u2021",
+  ddots: "\u22F1",
+  diamond: "\u22C4",
+  diamondsuit: "\u2662",
+  div: "\xF7",
+  doteq: "\u2250",
+  dots: "\u2026",
+  downarrow: "\u2193",
+  Downarrow: "\u21D3",
+  ell: "\u2113",
+  emptyset: "\xD8",
+  equiv: "\u2261",
+  exists: "\u2203",
+  flat: "\u266D",
+  forall: "\u2200",
+  frown: "\u2054",
+  geqslant: "\u2265",
+  geq: "\u2265",
+  gets: "\u2190",
+  ge: "\u2265",
+  gg: "\u27EB",
+  hbar: "\u210F",
+  heartsuit: "\u2661",
+  hookleftarrow: "\u21A9",
+  hookrightarrow: "\u21AA",
+  iff: "\u21D4",
+  Im: "\u2111",
+  imath: "\u0269",
+  infty: "\u221E",
+  iiint: "\u222D",
+  iint: "\u222C",
+  int: "\u222B",
+  in: "\u2208",
+  jmath: "\u{1D6A5}",
+  land: "\u2227",
+  lnot: "\xAC",
+  lceil: "\u2308",
+  ldots: "\u2026",
   // "leftarrow": "←", // Duplicates
   // "Leftarrow": "⇐",
-  "leftharpoondown": "\u21BD",
-  "leftharpoonup": "\u21BC",
-  "leftrightarrow": "\u2194",
-  "Leftrightarrow": "\u21D4",
-  "lhd": "\u25C1",
-  "rhd": "\u25B7",
-  "leftarrow": "\u2190",
-  "Leftarrow": "\u21D0",
-  "left": "",
-  "leq": "\u2264",
-  "le": "\u2264",
-  "ll": "\u226A",
-  "lmoustache": "\u256D",
-  "lor": "\u2228",
-  "mapsto": "\u21A6",
-  "middle": "",
-  "mid": "\u2223",
-  "models": "\u22A8",
-  "mp": "\u2213",
-  "nabla": "\u2207",
-  "natural": "\u266E",
-  "nearrow": "\u2197",
-  "neg": "\xAC",
-  "neqslant": "\u2260",
-  "neq": "\u2260",
-  "ne": "\u2260",
-  "ni": "\u220B",
-  "notin": "\u2209",
-  "nwarrow": "\u2196",
-  "odot": "\u2299",
-  "oint": "\u222E",
-  "ominus": "\u2296",
-  "oplus": "\u2295",
-  "oslash": "\u2298",
-  "otimes": "\u2297",
-  "owns": "\u220B",
-  "P": "\xB6",
-  "parallel": "\u2551",
-  "partial": "\u2202",
-  "perp": "\u22A5",
-  "pm": "\xB1",
-  "preceq": "\u2AAF",
-  "prec": "\u227A",
-  "prime": "\u2032",
-  "prod": "\u220F",
-  "propto": "\u221D",
-  "rceil": "\u2309",
-  "Re": "\u211C",
-  "qquad": "\u2001",
-  "quad": "\u2000",
-  "rightarrow": "\u2192",
-  "Rightarrow": "\u21D2",
-  "right": "",
-  "rightleftharpoons": "\u21CC",
-  "rmoustache": "\u256E",
-  "S": "\xA7",
-  "searrow": "\u2198",
-  "setminus": "\u29F5",
-  "sharp": "\u266F",
-  "simeq": "\u22CD",
-  "sim": "\u223C",
-  "smile": "\u203F",
-  "spadesuit": "\u2660",
-  "sqcap": "\u2293",
-  "sqcup": "\u2294",
-  "sqsubseteq": "\u2291",
-  "sqsubset": "\u228F",
-  "sqsupseteq": "\u2292",
-  "sqsupset": "\u2290",
-  "square": "\u25A1",
+  leftharpoondown: "\u21BD",
+  leftharpoonup: "\u21BC",
+  leftrightarrow: "\u2194",
+  Leftrightarrow: "\u21D4",
+  lhd: "\u25C1",
+  rhd: "\u25B7",
+  leftarrow: "\u2190",
+  Leftarrow: "\u21D0",
+  left: "",
+  leq: "\u2264",
+  le: "\u2264",
+  ll: "\u226A",
+  lmoustache: "\u256D",
+  lor: "\u2228",
+  mapsto: "\u21A6",
+  middle: "",
+  mid: "\u2223",
+  models: "\u22A8",
+  mp: "\u2213",
+  nabla: "\u2207",
+  natural: "\u266E",
+  nearrow: "\u2197",
+  neg: "\xAC",
+  neqslant: "\u2260",
+  neq: "\u2260",
+  ne: "\u2260",
+  ni: "\u220B",
+  notin: "\u2209",
+  nwarrow: "\u2196",
+  odot: "\u2299",
+  oint: "\u222E",
+  ominus: "\u2296",
+  oplus: "\u2295",
+  oslash: "\u2298",
+  otimes: "\u2297",
+  owns: "\u220B",
+  P: "\xB6",
+  parallel: "\u2551",
+  partial: "\u2202",
+  perp: "\u22A5",
+  pm: "\xB1",
+  preceq: "\u2AAF",
+  prec: "\u227A",
+  prime: "\u2032",
+  prod: "\u220F",
+  propto: "\u221D",
+  rceil: "\u2309",
+  Re: "\u211C",
+  qquad: "\u2001",
+  quad: "\u2000",
+  rightarrow: "\u2192",
+  Rightarrow: "\u21D2",
+  right: "",
+  rightleftharpoons: "\u21CC",
+  rmoustache: "\u256E",
+  S: "\xA7",
+  searrow: "\u2198",
+  setminus: "\u29F5",
+  sharp: "\u266F",
+  simeq: "\u22CD",
+  sim: "\u223C",
+  smile: "\u203F",
+  spadesuit: "\u2660",
+  sqcap: "\u2293",
+  sqcup: "\u2294",
+  sqsubseteq: "\u2291",
+  sqsubset: "\u228F",
+  sqsupseteq: "\u2292",
+  sqsupset: "\u2290",
+  square: "\u25A1",
   // ▢◻
-  "star": "\u272B",
-  "subseteq": "\u2286",
-  "subset": "\u2282",
-  "succeq": "\u2AB0",
-  "succ": "\u227B",
-  "sum": "\u2211",
-  "supseteq": "\u2287",
-  "supset": "\u2283",
-  "surd": "\u221A",
-  "swarrow": "\u2199",
-  "times": "\xD7",
-  "top": "\u22A4",
-  "to": "\u2192",
-  "triangleleft": "\u22B2",
-  "triangleright": "\u22B3",
-  "triangle": "\u2206",
-  "uparrow": "\u2191",
-  "Uparrow": "\u21D1",
-  "updownarrow": "\u2195",
-  "Updownarrow": "\u21D5",
-  "vdash": "\u22A2",
-  "vdots": "\u22EE",
-  "vee": "\u2228",
-  "wedge": "\u2227",
-  "wp": "\u2118",
-  "wr": "\u2240",
-  "implies": "\u21D2",
-  "choose": "C",
-  "sqrt": "\u221A",
-  "coloneqq": "\u2254",
-  "colon": ":",
-  "displaystyle": " ",
+  star: "\u272B",
+  subseteq: "\u2286",
+  subset: "\u2282",
+  succeq: "\u2AB0",
+  succ: "\u227B",
+  sum: "\u2211",
+  supseteq: "\u2287",
+  supset: "\u2283",
+  surd: "\u221A",
+  swarrow: "\u2199",
+  times: "\xD7",
+  top: "\u22A4",
+  to: "\u2192",
+  triangleleft: "\u22B2",
+  triangleright: "\u22B3",
+  triangle: "\u2206",
+  uparrow: "\u2191",
+  Uparrow: "\u21D1",
+  updownarrow: "\u2195",
+  Updownarrow: "\u21D5",
+  vdash: "\u22A2",
+  vdots: "\u22EE",
+  vee: "\u2228",
+  wedge: "\u2227",
+  wp: "\u2118",
+  wr: "\u2240",
+  implies: "\u21D2",
+  choose: "C",
+  sqrt: "\u221A",
+  coloneqq: "\u2254",
+  colon: ":",
+  displaystyle: " ",
   ",": " ",
   ":": " ",
-  ";": " "
+  ";": " ",
 };
-var operators = (
+var operators =
   // From https://www.overleaf.com/learn/latex/Operators
   [
     "arcsin",
@@ -14248,10 +17230,9 @@ var operators = (
     "dim",
     "liminf",
     "min",
-    "max"
+    "max",
     // "inf" // Fix "\\infty" being concealed as "inf∞"
-  ]
-);
+  ];
 var fractions = {
   "{1}{2}": "\xBD",
   "{1}{3}": "\u2153",
@@ -14266,50 +17247,50 @@ var fractions = {
   "{1}{8}": "\u215B",
   "{3}{8}": "\u215C",
   "{5}{8}": "\u215D",
-  "{7}{8}": "\u215E"
+  "{7}{8}": "\u215E",
 };
 var greek = {
-  "alpha": "\u03B1",
-  "beta": "\u03B2",
-  "gamma": "\u03B3",
-  "delta": "\u03B4",
-  "epsilon": "\u03F5",
-  "varepsilon": "\u03B5",
-  "zeta": "\u03B6",
-  "eta": "\u03B7",
-  "theta": "\u03B8",
-  "vartheta": "\u03D1",
-  "iota": "\u03B9",
-  "kappa": "\u03BA",
-  "lambda": "\u03BB",
-  "mu": "\u03BC",
-  "nu": "\u03BD",
-  "xi": "\u03BE",
-  "pi": "\u03C0",
-  "varpi": "\u03D6",
-  "rho": "\u03C1",
-  "varrho": "\u03F1",
-  "sigma": "\u03C3",
-  "varsigma": "\u03C2",
-  "tau": "\u03C4",
-  "upsilon": "\u03C5",
-  "phi": "\u03D5",
-  "varphi": "\u03C6",
-  "chi": "\u03C7",
-  "psi": "\u03C8",
-  "omega": "\u03C9",
-  "Gamma": "\u0393",
-  "Delta": "\u0394",
-  "Theta": "\u0398",
-  "Lambda": "\u039B",
-  "Xi": "\u039E",
-  "Pi": "\u03A0",
-  "Sigma": "\u03A3",
-  "Upsilon": "\u03A5",
-  "Phi": "\u03A6",
-  "Chi": "\u03A7",
-  "Psi": "\u03A8",
-  "Omega": "\u03A9"
+  alpha: "\u03B1",
+  beta: "\u03B2",
+  gamma: "\u03B3",
+  delta: "\u03B4",
+  epsilon: "\u03F5",
+  varepsilon: "\u03B5",
+  zeta: "\u03B6",
+  eta: "\u03B7",
+  theta: "\u03B8",
+  vartheta: "\u03D1",
+  iota: "\u03B9",
+  kappa: "\u03BA",
+  lambda: "\u03BB",
+  mu: "\u03BC",
+  nu: "\u03BD",
+  xi: "\u03BE",
+  pi: "\u03C0",
+  varpi: "\u03D6",
+  rho: "\u03C1",
+  varrho: "\u03F1",
+  sigma: "\u03C3",
+  varsigma: "\u03C2",
+  tau: "\u03C4",
+  upsilon: "\u03C5",
+  phi: "\u03D5",
+  varphi: "\u03C6",
+  chi: "\u03C7",
+  psi: "\u03C8",
+  omega: "\u03C9",
+  Gamma: "\u0393",
+  Delta: "\u0394",
+  Theta: "\u0398",
+  Lambda: "\u039B",
+  Xi: "\u039E",
+  Pi: "\u03A0",
+  Sigma: "\u03A3",
+  Upsilon: "\u03A5",
+  Phi: "\u03A6",
+  Chi: "\u03A7",
+  Psi: "\u03A8",
+  Omega: "\u03A9",
 };
 var map_super = {
   "(": "\u207D",
@@ -14321,60 +17302,60 @@ var map_super = {
   ";": "\uFE14",
   "<": "\u02C2",
   ">": "\u02C3",
-  "0": "\u2070",
-  "1": "\xB9",
-  "2": "\xB2",
-  "3": "\xB3",
-  "4": "\u2074",
-  "5": "\u2075",
-  "6": "\u2076",
-  "7": "\u2077",
-  "8": "\u2078",
-  "9": "\u2079",
-  "a": "\u1D43",
-  "b": "\u1D47",
-  "c": "\u1D9C",
-  "d": "\u1D48",
-  "e": "\u1D49",
-  "f": "\u1DA0",
-  "g": "\u1D4D",
-  "h": "\u02B0",
-  "i": "\u2071",
-  "j": "\u02B2",
-  "k": "\u1D4F",
-  "l": "\u02E1",
-  "m": "\u1D50",
-  "n": "\u207F",
-  "o": "\u1D52",
-  "p": "\u1D56",
-  "r": "\u02B3",
-  "s": "\u02E2",
-  "t": "\u1D57",
-  "u": "\u1D58",
-  "v": "\u1D5B",
-  "w": "\u02B7",
-  "x": "\u02E3",
-  "y": "\u02B8",
-  "z": "\u1DBB",
-  "A": "\u1D2C",
-  "B": "\u1D2E",
-  "D": "\u1D30",
-  "E": "\u1D31",
-  "G": "\u1D33",
-  "H": "\u1D34",
-  "I": "\u1D35",
-  "J": "\u1D36",
-  "K": "\u1D37",
-  "L": "\u1D38",
-  "M": "\u1D39",
-  "N": "\u1D3A",
-  "O": "\u1D3C",
-  "P": "\u1D3E",
-  "R": "\u1D3F",
-  "T": "\u1D40",
-  "U": "\u1D41",
-  "V": "\u2C7D",
-  "W": "\u1D42"
+  0: "\u2070",
+  1: "\xB9",
+  2: "\xB2",
+  3: "\xB3",
+  4: "\u2074",
+  5: "\u2075",
+  6: "\u2076",
+  7: "\u2077",
+  8: "\u2078",
+  9: "\u2079",
+  a: "\u1D43",
+  b: "\u1D47",
+  c: "\u1D9C",
+  d: "\u1D48",
+  e: "\u1D49",
+  f: "\u1DA0",
+  g: "\u1D4D",
+  h: "\u02B0",
+  i: "\u2071",
+  j: "\u02B2",
+  k: "\u1D4F",
+  l: "\u02E1",
+  m: "\u1D50",
+  n: "\u207F",
+  o: "\u1D52",
+  p: "\u1D56",
+  r: "\u02B3",
+  s: "\u02E2",
+  t: "\u1D57",
+  u: "\u1D58",
+  v: "\u1D5B",
+  w: "\u02B7",
+  x: "\u02E3",
+  y: "\u02B8",
+  z: "\u1DBB",
+  A: "\u1D2C",
+  B: "\u1D2E",
+  D: "\u1D30",
+  E: "\u1D31",
+  G: "\u1D33",
+  H: "\u1D34",
+  I: "\u1D35",
+  J: "\u1D36",
+  K: "\u1D37",
+  L: "\u1D38",
+  M: "\u1D39",
+  N: "\u1D3A",
+  O: "\u1D3C",
+  P: "\u1D3E",
+  R: "\u1D3F",
+  T: "\u1D40",
+  U: "\u1D41",
+  V: "\u2C7D",
+  W: "\u1D42",
 };
 var map_sub = {
   // "\\beta":  "ᵦ",
@@ -14387,33 +17368,33 @@ var map_sub = {
   "+": "\u208A",
   "-": "\u208B",
   "=": "\u208C",
-  "0": "\u2080",
-  "1": "\u2081",
-  "2": "\u2082",
-  "3": "\u2083",
-  "4": "\u2084",
-  "5": "\u2085",
-  "6": "\u2086",
-  "7": "\u2087",
-  "8": "\u2088",
-  "9": "\u2089",
-  "a": "\u2090",
-  "e": "\u2091",
-  "h": "\u2095",
-  "i": "\u1D62",
-  "j": "\u2C7C",
-  "k": "\u2096",
-  "l": "\u2097",
-  "m": "\u2098",
-  "n": "\u2099",
-  "o": "\u2092",
-  "p": "\u209A",
-  "r": "\u1D63",
-  "s": "\u209B",
-  "t": "\u209C",
-  "u": "\u1D64",
-  "v": "\u1D65",
-  "x": "\u2093"
+  0: "\u2080",
+  1: "\u2081",
+  2: "\u2082",
+  3: "\u2083",
+  4: "\u2084",
+  5: "\u2085",
+  6: "\u2086",
+  7: "\u2087",
+  8: "\u2088",
+  9: "\u2089",
+  a: "\u2090",
+  e: "\u2091",
+  h: "\u2095",
+  i: "\u1D62",
+  j: "\u2C7C",
+  k: "\u2096",
+  l: "\u2097",
+  m: "\u2098",
+  n: "\u2099",
+  o: "\u2092",
+  p: "\u209A",
+  r: "\u1D63",
+  s: "\u209B",
+  t: "\u209C",
+  u: "\u1D64",
+  v: "\u1D65",
+  x: "\u2093",
 };
 var brackets = {
   // "left(": "(",
@@ -14426,106 +17407,106 @@ var brackets = {
   // "right\\rangle": "〉",
   "left<": "\u3008",
   "right>": "\u3009",
-  "langle": "\u3008",
-  "rangle": "\u3009",
-  "lvert": "|",
-  "rvert": "|",
-  "lVert": "||",
-  "rVert": "||",
-  "vert": "|"
+  langle: "\u3008",
+  rangle: "\u3009",
+  lvert: "|",
+  rvert: "|",
+  lVert: "||",
+  rVert: "||",
+  vert: "|",
 };
 var mathbb = {
   " ": " ",
-  "0": "\u{1D7D8}",
-  "1": "\u{1D7D9}",
-  "2": "\u{1D7DA}",
-  "3": "\u{1D7DB}",
-  "4": "\u{1D7DC}",
-  "5": "\u{1D7DD}",
-  "6": "\u{1D7DE}",
-  "7": "\u{1D7DF}",
-  "8": "\u{1D7E0}",
-  "9": "\u{1D7E1}",
-  "A": "\u{1D538}",
-  "B": "\u{1D539}",
-  "C": "\u2102",
-  "D": "\u{1D53B}",
-  "E": "\u{1D53C}",
-  "F": "\u{1D53D}",
-  "G": "\u{1D53E}",
-  "H": "\u210D",
-  "I": "\u{1D540}",
-  "J": "\u{1D541}",
-  "K": "\u{1D542}",
-  "L": "\u{1D543}",
-  "M": "\u{1D544}",
-  "N": "\u2115",
-  "O": "\u{1D546}",
-  "P": "\u2119",
-  "Q": "\u211A",
-  "R": "\u211D",
-  "S": "\u{1D54A}",
-  "T": "\u{1D54B}",
-  "U": "\u{1D54C}",
-  "V": "\u{1D54D}",
-  "W": "\u{1D54E}",
-  "X": "\u{1D54F}",
-  "Y": "\u{1D550}",
-  "Z": "\u2124",
-  "a": "\u{1D552}",
-  "b": "\u{1D553}",
-  "c": "\u{1D554}",
-  "d": "\u{1D555}",
-  "e": "\u{1D556}",
-  "f": "\u{1D557}",
-  "g": "\u{1D558}",
-  "h": "\u{1D559}",
-  "i": "\u{1D55A}",
-  "j": "\u{1D55B}",
-  "k": "\u{1D55C}",
-  "l": "\u{1D55D}",
-  "m": "\u{1D55E}",
-  "n": "\u{1D55F}",
-  "o": "\u{1D560}",
-  "p": "\u{1D561}",
-  "q": "\u{1D562}",
-  "r": "\u{1D563}",
-  "s": "\u{1D564}",
-  "t": "\u{1D565}",
-  "u": "\u{1D566}",
-  "v": "\u{1D567}",
-  "w": "\u{1D568}",
-  "x": "\u{1D569}",
-  "y": "\u{1D56A}",
-  "z": "\u{1D56B}"
+  0: "\u{1D7D8}",
+  1: "\u{1D7D9}",
+  2: "\u{1D7DA}",
+  3: "\u{1D7DB}",
+  4: "\u{1D7DC}",
+  5: "\u{1D7DD}",
+  6: "\u{1D7DE}",
+  7: "\u{1D7DF}",
+  8: "\u{1D7E0}",
+  9: "\u{1D7E1}",
+  A: "\u{1D538}",
+  B: "\u{1D539}",
+  C: "\u2102",
+  D: "\u{1D53B}",
+  E: "\u{1D53C}",
+  F: "\u{1D53D}",
+  G: "\u{1D53E}",
+  H: "\u210D",
+  I: "\u{1D540}",
+  J: "\u{1D541}",
+  K: "\u{1D542}",
+  L: "\u{1D543}",
+  M: "\u{1D544}",
+  N: "\u2115",
+  O: "\u{1D546}",
+  P: "\u2119",
+  Q: "\u211A",
+  R: "\u211D",
+  S: "\u{1D54A}",
+  T: "\u{1D54B}",
+  U: "\u{1D54C}",
+  V: "\u{1D54D}",
+  W: "\u{1D54E}",
+  X: "\u{1D54F}",
+  Y: "\u{1D550}",
+  Z: "\u2124",
+  a: "\u{1D552}",
+  b: "\u{1D553}",
+  c: "\u{1D554}",
+  d: "\u{1D555}",
+  e: "\u{1D556}",
+  f: "\u{1D557}",
+  g: "\u{1D558}",
+  h: "\u{1D559}",
+  i: "\u{1D55A}",
+  j: "\u{1D55B}",
+  k: "\u{1D55C}",
+  l: "\u{1D55D}",
+  m: "\u{1D55E}",
+  n: "\u{1D55F}",
+  o: "\u{1D560}",
+  p: "\u{1D561}",
+  q: "\u{1D562}",
+  r: "\u{1D563}",
+  s: "\u{1D564}",
+  t: "\u{1D565}",
+  u: "\u{1D566}",
+  v: "\u{1D567}",
+  w: "\u{1D568}",
+  x: "\u{1D569}",
+  y: "\u{1D56A}",
+  z: "\u{1D56B}",
 };
 var mathscrcal = {
-  "A": "\u{1D4D0}",
-  "B": "\u{1D4D1}",
-  "C": "\u{1D4D2}",
-  "D": "\u{1D4D3}",
-  "E": "\u{1D4D4}",
-  "F": "\u{1D4D5}",
-  "G": "\u{1D4D6}",
-  "H": "\u{1D4D7}",
-  "I": "\u{1D4D8}",
-  "J": "\u{1D4D9}",
-  "K": "\u{1D4DA}",
-  "L": "\u{1D4DB}",
-  "M": "\u{1D4DC}",
-  "N": "\u{1D4DD}",
-  "O": "\u{1D4DE}",
-  "P": "\u{1D4DF}",
-  "Q": "\u{1D4E0}",
-  "R": "\u{1D4E1}",
-  "S": "\u{1D4E2}",
-  "T": "\u{1D4E3}",
-  "U": "\u{1D4E4}",
-  "V": "\u{1D4E5}",
-  "W": "\u{1D4E6}",
-  "X": "\u{1D4E7}",
-  "Y": "\u{1D4E8}",
-  "Z": "\u{1D4E9}"
+  A: "\u{1D4D0}",
+  B: "\u{1D4D1}",
+  C: "\u{1D4D2}",
+  D: "\u{1D4D3}",
+  E: "\u{1D4D4}",
+  F: "\u{1D4D5}",
+  G: "\u{1D4D6}",
+  H: "\u{1D4D7}",
+  I: "\u{1D4D8}",
+  J: "\u{1D4D9}",
+  K: "\u{1D4DA}",
+  L: "\u{1D4DB}",
+  M: "\u{1D4DC}",
+  N: "\u{1D4DD}",
+  O: "\u{1D4DE}",
+  P: "\u{1D4DF}",
+  Q: "\u{1D4E0}",
+  R: "\u{1D4E1}",
+  S: "\u{1D4E2}",
+  T: "\u{1D4E3}",
+  U: "\u{1D4E4}",
+  V: "\u{1D4E5}",
+  W: "\u{1D4E6}",
+  X: "\u{1D4E7}",
+  Y: "\u{1D4E8}",
+  Z: "\u{1D4E9}",
 };
 
 // src/editor_extensions/conceal.ts
@@ -14537,7 +17518,11 @@ var ConcealWidget = class extends import_view9.WidgetType {
     this.elementType = elementType ? elementType : "span";
   }
   eq(other) {
-    return other.symbol == this.symbol && other.className === this.className && other.elementType === this.elementType;
+    return (
+      other.symbol == this.symbol &&
+      other.className === this.className &&
+      other.elementType === this.elementType
+    );
   }
   toDOM() {
     const span = document.createElement(this.elementType);
@@ -14589,9 +17574,17 @@ function getEndIncludingLimits(eqn, end2) {
   }
   return end2;
 }
-function concealSymbols(eqn, prefix, suffix, symbolMap, className, allowSucceedingLetters = true) {
+function concealSymbols(
+  eqn,
+  prefix,
+  suffix,
+  symbolMap,
+  className,
+  allowSucceedingLetters = true,
+) {
   const symbolNames = Object.keys(symbolMap);
-  const regexStr = prefix + "(" + escapeRegex(symbolNames.join("|")) + ")" + suffix;
+  const regexStr =
+    prefix + "(" + escapeRegex(symbolNames.join("|")) + ")" + suffix;
   const symbolRegex = new RegExp(regexStr, "g");
   const matches = [...eqn.matchAll(symbolRegex)];
   const concealments = [];
@@ -14604,7 +17597,12 @@ function concealSymbols(eqn, prefix, suffix, symbolMap, className, allowSucceedi
       }
     }
     const end2 = getEndIncludingLimits(eqn, match.index + match[0].length);
-    concealments.push({ start: match.index, end: end2, replacement: symbolMap[symbol], class: className });
+    concealments.push({
+      start: match.index,
+      end: end2,
+      replacement: symbolMap[symbol],
+      class: className,
+    });
   }
   return concealments;
 }
@@ -14615,7 +17613,12 @@ function concealModifier(eqn, modifier, combiningCharacter) {
   const concealments = [];
   for (const match of matches) {
     const symbol = match[1];
-    concealments.push({ start: match.index, end: match.index + match[0].length, replacement: symbol + combiningCharacter, class: "latex-suite-unicode" });
+    concealments.push({
+      start: match.index,
+      end: match.index + match[0].length,
+      replacement: symbol + combiningCharacter,
+      class: "latex-suite-unicode",
+    });
   }
   return concealments;
 }
@@ -14634,12 +17637,19 @@ function concealSupSub(eqn, superscript, symbolMap) {
     const replacement = exponent.replace(symbolRegex, (a, b) => {
       return symbolMap[b];
     });
-    concealments.push({ start: match.index, end: match.index + match[0].length, replacement, class: "cm-number", elementType });
+    concealments.push({
+      start: match.index,
+      end: match.index + match[0].length,
+      replacement,
+      class: "cm-number",
+      elementType,
+    });
   }
   return concealments;
 }
 function concealModified_A_to_Z_0_to_9(eqn, mathBBsymbolMap) {
-  const regexStr = "\\\\(mathbf|boldsymbol|underline|mathrm|text|mathbb){([A-Za-z0-9 ]+)}";
+  const regexStr =
+    "\\\\(mathbf|boldsymbol|underline|mathrm|text|mathbb){([A-Za-z0-9 ]+)}";
   const regex = new RegExp(regexStr, "g");
   const matches = [...eqn.matchAll(regex)];
   const concealments = [];
@@ -14649,14 +17659,35 @@ function concealModified_A_to_Z_0_to_9(eqn, mathBBsymbolMap) {
     const start2 = match.index;
     const end2 = start2 + match[0].length;
     if (type === "mathbf" || type === "boldsymbol") {
-      concealments.push({ start: start2, end: end2, replacement: value, class: "cm-concealed-bold" });
+      concealments.push({
+        start: start2,
+        end: end2,
+        replacement: value,
+        class: "cm-concealed-bold",
+      });
     } else if (type === "underline") {
-      concealments.push({ start: start2, end: end2, replacement: value, class: "cm-concealed-underline" });
+      concealments.push({
+        start: start2,
+        end: end2,
+        replacement: value,
+        class: "cm-concealed-underline",
+      });
     } else if (type === "mathrm") {
-      concealments.push({ start: start2, end: end2, replacement: value, class: "cm-concealed-mathrm" });
+      concealments.push({
+        start: start2,
+        end: end2,
+        replacement: value,
+        class: "cm-concealed-mathrm",
+      });
     } else if (type === "text") {
       if (start2 > 0 && eqn.charAt(start2 - 1) === "_") {
-        concealments.push({ start: start2 - 1, end: end2, replacement: value, class: "cm-concealed-mathrm", elementType: "sub" });
+        concealments.push({
+          start: start2 - 1,
+          end: end2,
+          replacement: value,
+          class: "cm-concealed-mathrm",
+          elementType: "sub",
+        });
       }
     } else if (type === "mathbb") {
       const letters = Array.from(value);
@@ -14668,7 +17699,10 @@ function concealModified_A_to_Z_0_to_9(eqn, mathBBsymbolMap) {
 }
 function concealModifiedGreekLetters(eqn, greekSymbolMap) {
   const greekSymbolNames = Object.keys(greekSymbolMap);
-  const regexStr = "\\\\(underline|boldsymbol){\\\\(" + escapeRegex(greekSymbolNames.join("|")) + ")}";
+  const regexStr =
+    "\\\\(underline|boldsymbol){\\\\(" +
+    escapeRegex(greekSymbolNames.join("|")) +
+    ")}";
   const regex = new RegExp(regexStr, "g");
   const matches = [...eqn.matchAll(regex)];
   const concealments = [];
@@ -14678,9 +17712,19 @@ function concealModifiedGreekLetters(eqn, greekSymbolMap) {
     const start2 = match.index;
     const end2 = start2 + match[0].length;
     if (type === "underline") {
-      concealments.push({ start: start2, end: end2, replacement: greekSymbolMap[value], class: "cm-concealed-underline" });
+      concealments.push({
+        start: start2,
+        end: end2,
+        replacement: greekSymbolMap[value],
+        class: "cm-concealed-underline",
+      });
     } else if (type === "boldsymbol") {
-      concealments.push({ start: start2, end: end2, replacement: greekSymbolMap[value], class: "cm-concealed-bold" });
+      concealments.push({
+        start: start2,
+        end: end2,
+        replacement: greekSymbolMap[value],
+        class: "cm-concealed-bold",
+      });
     }
   }
   return concealments;
@@ -14694,7 +17738,12 @@ function concealText(eqn) {
     const value = match[1];
     const start2 = match.index;
     const end2 = start2 + match[0].length;
-    concealments.push({ start: start2, end: end2, replacement: value, class: "cm-concealed-mathrm cm-variable-2" });
+    concealments.push({
+      start: start2,
+      end: end2,
+      replacement: value,
+      class: "cm-concealed-mathrm cm-variable-2",
+    });
   }
   return concealments;
 }
@@ -14707,7 +17756,12 @@ function concealOperators(eqn, symbols) {
     const value = match[2];
     const start2 = match.index;
     const end2 = getEndIncludingLimits(eqn, start2 + match[1].length);
-    concealments.push({ start: start2, end: end2, replacement: value, class: "cm-concealed-mathrm cm-variable-2" });
+    concealments.push({
+      start: start2,
+      end: end2,
+      replacement: value,
+      class: "cm-concealed-mathrm cm-variable-2",
+    });
   }
   return concealments;
 }
@@ -14720,7 +17774,12 @@ function concealAtoZ(eqn, prefix, suffix, symbolMap, className) {
     const symbol = match[1];
     const letters = Array.from(symbol);
     const replacement = letters.map((el) => symbolMap[el]).join("");
-    concealments.push({ start: match.index, end: match.index + match[0].length, replacement, class: className });
+    concealments.push({
+      start: match.index,
+      end: match.index + match[0].length,
+      replacement,
+      class: className,
+    });
   }
   return concealments;
 }
@@ -14735,22 +17794,43 @@ function concealBraKet(eqn, selection, eqnStartBound, mousedown) {
   for (const match of matches) {
     const loc = match.index + match[0].length;
     const j = findMatchingBracket(eqn, loc - 1, "{", "}", false);
-    if (j === -1)
-      continue;
+    if (j === -1) continue;
     const start2 = match.index;
     const end2 = start2 + match[0].length;
     if (!mousedown) {
-      if (selectionAndRangeOverlap(selection, eqnStartBound + start2, eqnStartBound + end2))
+      if (
+        selectionAndRangeOverlap(
+          selection,
+          eqnStartBound + start2,
+          eqnStartBound + end2,
+        )
+      )
         continue;
-      if (selectionAndRangeOverlap(selection, eqnStartBound + j, eqnStartBound + j + 1))
+      if (
+        selectionAndRangeOverlap(
+          selection,
+          eqnStartBound + j,
+          eqnStartBound + j + 1,
+        )
+      )
         continue;
     }
     const type = match[1];
     const left2 = type === "ket" ? vert : langle;
     const right2 = type === "bra" ? vert : rangle;
     concealments.push({ start: start2, end: end2 - 1, replacement: "" });
-    concealments.push({ start: end2 - 1, end: end2, replacement: left2, class: "cm-bracket" });
-    concealments.push({ start: j, end: j + 1, replacement: right2, class: "cm-bracket" });
+    concealments.push({
+      start: end2 - 1,
+      end: end2,
+      replacement: left2,
+      class: "cm-bracket",
+    });
+    concealments.push({
+      start: j,
+      end: j + 1,
+      replacement: right2,
+      class: "cm-bracket",
+    });
   }
   return concealments;
 }
@@ -14767,16 +17847,38 @@ function concealSet(eqn, selection, eqnStartBound, mousedown) {
       continue;
     }
     if (!mousedown) {
-      if (selectionAndRangeOverlap(selection, eqnStartBound + start2, eqnStartBound + end2)) {
+      if (
+        selectionAndRangeOverlap(
+          selection,
+          eqnStartBound + start2,
+          eqnStartBound + end2,
+        )
+      ) {
         continue;
       }
-      if (selectionAndRangeOverlap(selection, eqnStartBound + j, eqnStartBound + j + 1)) {
+      if (
+        selectionAndRangeOverlap(
+          selection,
+          eqnStartBound + j,
+          eqnStartBound + j + 1,
+        )
+      ) {
         continue;
       }
     }
     concealments.push({ start: start2, end: end2 - 1, replacement: "" });
-    concealments.push({ start: end2 - 1, end: end2, replacement: "{", class: "cm-bracket" });
-    concealments.push({ start: j, end: j + 1, replacement: "}", class: "cm-bracket" });
+    concealments.push({
+      start: end2 - 1,
+      end: end2,
+      replacement: "{",
+      class: "cm-bracket",
+    });
+    concealments.push({
+      start: j,
+      end: j + 1,
+      replacement: "}",
+      class: "cm-bracket",
+    });
   }
   return concealments;
 }
@@ -14788,30 +17890,70 @@ function concealFraction(eqn, selection, eqnStartBound, mousedown) {
   for (const match of matches) {
     const loc = match.index + match[0].length;
     const j = findMatchingBracket(eqn, loc - 1, "{", "}", false);
-    if (j === -1)
-      continue;
+    if (j === -1) continue;
     const charAfterFirstBracket = eqn.charAt(j + 1);
-    if (charAfterFirstBracket != "{")
-      continue;
+    if (charAfterFirstBracket != "{") continue;
     const k = findMatchingBracket(eqn, j + 1, "{", "}", false);
-    if (k === -1)
-      continue;
+    if (k === -1) continue;
     const start2 = match.index;
     const end2 = start2 + match[0].length;
     if (!mousedown) {
-      if (selectionAndRangeOverlap(selection, eqnStartBound + start2, eqnStartBound + end2))
+      if (
+        selectionAndRangeOverlap(
+          selection,
+          eqnStartBound + start2,
+          eqnStartBound + end2,
+        )
+      )
         continue;
-      if (selectionAndRangeOverlap(selection, eqnStartBound + j, eqnStartBound + j + 2))
+      if (
+        selectionAndRangeOverlap(
+          selection,
+          eqnStartBound + j,
+          eqnStartBound + j + 2,
+        )
+      )
         continue;
-      if (selectionAndRangeOverlap(selection, eqnStartBound + k, eqnStartBound + k + 1))
+      if (
+        selectionAndRangeOverlap(
+          selection,
+          eqnStartBound + k,
+          eqnStartBound + k + 1,
+        )
+      )
         continue;
     }
     concealments.push({ start: start2, end: end2 - 1, replacement: "" });
-    concealments.push({ start: end2 - 1, end: end2, replacement: "(", class: "cm-bracket" });
-    concealments.push({ start: j, end: j + 1, replacement: ")", class: "cm-bracket" });
-    concealments.push({ start: j + 1, end: j + 1, replacement: "/", class: "cm-bracket" });
-    concealments.push({ start: j + 1, end: j + 2, replacement: "(", class: "cm-bracket" });
-    concealments.push({ start: k, end: k + 1, replacement: ")", class: "cm-bracket" });
+    concealments.push({
+      start: end2 - 1,
+      end: end2,
+      replacement: "(",
+      class: "cm-bracket",
+    });
+    concealments.push({
+      start: j,
+      end: j + 1,
+      replacement: ")",
+      class: "cm-bracket",
+    });
+    concealments.push({
+      start: j + 1,
+      end: j + 1,
+      replacement: "/",
+      class: "cm-bracket",
+    });
+    concealments.push({
+      start: j + 1,
+      end: j + 2,
+      replacement: "(",
+      class: "cm-bracket",
+    });
+    concealments.push({
+      start: k,
+      end: k + 1,
+      replacement: ")",
+      class: "cm-bracket",
+    });
   }
   return concealments;
 }
@@ -14819,7 +17961,10 @@ function conceal(view) {
   var _a;
   const widgets = [];
   const selection = view.state.selection;
-  const mousedown = (_a = view.plugin(import_obsidian6.livePreviewState)) == null ? void 0 : _a.mousedown;
+  const mousedown =
+    (_a = view.plugin(import_obsidian6.livePreviewState)) == null
+      ? void 0
+      : _a.mousedown;
   for (const { from, to } of view.visibleRanges) {
     (0, import_language5.syntaxTree)(view.state).iterate({
       from,
@@ -14831,10 +17976,12 @@ function conceal(view) {
           return;
         }
         const bounds = getEquationBounds(view.state, to2);
-        if (!bounds)
-          return;
+        if (!bounds) return;
         const eqn = view.state.doc.sliceString(bounds.start, bounds.end);
-        const ALL_SYMBOLS = __spreadValues(__spreadValues({}, greek), cmd_symbols);
+        const ALL_SYMBOLS = __spreadValues(
+          __spreadValues({}, greek),
+          cmd_symbols,
+        );
         const concealments = [
           ...concealSymbols(eqn, "\\^", "", map_super),
           ...concealSymbols(eqn, "_", "", map_sub),
@@ -14857,7 +18004,7 @@ function conceal(view) {
           ...concealBraKet(eqn, selection, bounds.start, mousedown),
           ...concealSet(eqn, selection, bounds.start, mousedown),
           ...concealFraction(eqn, selection, bounds.start, mousedown),
-          ...concealOperators(eqn, operators)
+          ...concealOperators(eqn, operators),
         ];
         for (const concealment of concealments) {
           const start2 = bounds.start + concealment.start;
@@ -14874,34 +18021,41 @@ function conceal(view) {
             widgets.push(
               import_view9.Decoration.widget({
                 widget: new TextWidget(symbol),
-                block: false
-              }).range(start2, end2)
+                block: false,
+              }).range(start2, end2),
             );
           } else {
             widgets.push(
               import_view9.Decoration.replace({
-                widget: new ConcealWidget(symbol, concealment.class, concealment.elementType),
+                widget: new ConcealWidget(
+                  symbol,
+                  concealment.class,
+                  concealment.elementType,
+                ),
                 inclusiveStart,
                 inclusiveEnd,
-                block: false
-              }).range(start2, end2)
+                block: false,
+              }).range(start2, end2),
             );
           }
         }
-      }
+      },
     });
   }
   return import_view9.Decoration.set(widgets, true);
 }
-var concealPlugin = import_view9.ViewPlugin.fromClass(class {
-  constructor(view) {
-    this.decorations = conceal(view);
-  }
-  update(update) {
-    if (update.docChanged || update.viewportChanged || update.selectionSet)
-      this.decorations = conceal(update.view);
-  }
-}, { decorations: (v) => v.decorations });
+var concealPlugin = import_view9.ViewPlugin.fromClass(
+  class {
+    constructor(view) {
+      this.decorations = conceal(view);
+    }
+    update(update) {
+      if (update.docChanged || update.viewportChanged || update.selectionSet)
+        this.decorations = conceal(update.view);
+    }
+  },
+  { decorations: (v) => v.decorations },
+);
 
 // src/editor_extensions/highlight_brackets.ts
 var import_view10 = require("@codemirror/view");
@@ -14912,7 +18066,7 @@ function getHighlightBracketMark(pos, className) {
   return import_view10.Decoration.mark({
     inclusive: true,
     attributes: {},
-    class: className
+    class: className,
   }).range(pos, pos + 1);
 }
 function colorPairedBrackets(view) {
@@ -14928,8 +18082,7 @@ function colorPairedBrackets(view) {
           return;
         }
         const bounds = getEquationBounds(view.state, to2);
-        if (!bounds)
-          return;
+        if (!bounds) return;
         const eqn = view.state.doc.sliceString(bounds.start, bounds.end);
         const openBrackets = ["{", "[", "("];
         const closeBrackets2 = ["}", "]", ")"];
@@ -14954,15 +18107,14 @@ function colorPairedBrackets(view) {
             }
           }
         }
-      }
+      },
     });
   }
   return import_view10.Decoration.set(widgets, true);
 }
 function getEnclosingBracketsPos(view, pos) {
   const result = getEquationBounds(view.state);
-  if (!result)
-    return -1;
+  if (!result) return -1;
   const { start: start2, end: end2 } = result;
   const text = view.state.doc.sliceString(start2, end2);
   for (let i = pos - start2; i > 0; i--) {
@@ -14971,16 +18123,19 @@ function getEnclosingBracketsPos(view, pos) {
       const closeBracket = curChar;
       const openBracket = getOpenBracket(closeBracket);
       const j = findMatchingBracket(text, i, openBracket, closeBracket, true);
-      if (j === -1)
-        return -1;
+      if (j === -1) return -1;
       i = j;
       curChar = text.charAt(i);
     } else {
-      if (!["{", "(", "["].contains(curChar))
-        continue;
-      const j = findMatchingBracket(text, i, curChar, getCloseBracket(curChar), false);
-      if (j === -1)
-        continue;
+      if (!["{", "(", "["].contains(curChar)) continue;
+      const j = findMatchingBracket(
+        text,
+        i,
+        curChar,
+        getCloseBracket(curChar),
+        false,
+      );
+      if (j === -1) continue;
       return { left: i + start2, right: j + start2 };
     }
   }
@@ -14996,8 +18151,7 @@ function highlightCursorBrackets(view) {
     return import_view10.Decoration.none;
   }
   const bounds = ctx.getBounds(selection.main.to);
-  if (!bounds)
-    return import_view10.Decoration.none;
+  if (!bounds) return import_view10.Decoration.none;
   const eqn = view.state.doc.sliceString(bounds.start, bounds.end);
   const openBrackets = ["{", "[", "("];
   const brackets2 = ["{", "[", "(", "}", "]", ")"];
@@ -15005,8 +18159,7 @@ function highlightCursorBrackets(view) {
   for (const range of ranges) {
     for (let i = range.to; i > range.from - 2; i--) {
       const char = text.charAt(i);
-      if (!brackets2.contains(char))
-        continue;
+      if (!brackets2.contains(char)) continue;
       let openBracket, closeBracket;
       let backwards = false;
       if (openBrackets.contains(char)) {
@@ -15017,52 +18170,73 @@ function highlightCursorBrackets(view) {
         openBracket = getOpenBracket(char);
         backwards = true;
       }
-      let j = findMatchingBracket(eqn, i - bounds.start, openBracket, closeBracket, backwards);
-      if (j === -1)
-        continue;
+      let j = findMatchingBracket(
+        eqn,
+        i - bounds.start,
+        openBracket,
+        closeBracket,
+        backwards,
+      );
+      if (j === -1) continue;
       j = j + bounds.start;
-      widgets.push(getHighlightBracketMark(i, "latex-suite-highlighted-bracket"));
-      widgets.push(getHighlightBracketMark(j, "latex-suite-highlighted-bracket"));
+      widgets.push(
+        getHighlightBracketMark(i, "latex-suite-highlighted-bracket"),
+      );
+      widgets.push(
+        getHighlightBracketMark(j, "latex-suite-highlighted-bracket"),
+      );
       done = true;
       break;
     }
-    if (done)
-      break;
+    if (done) break;
     if (range.empty) {
       const pos = range.from - 1;
       const result = getEnclosingBracketsPos(view, pos);
-      if (result === -1)
-        continue;
-      widgets.push(getHighlightBracketMark(result.left, "latex-suite-highlighted-bracket"));
-      widgets.push(getHighlightBracketMark(result.right, "latex-suite-highlighted-bracket"));
+      if (result === -1) continue;
+      widgets.push(
+        getHighlightBracketMark(result.left, "latex-suite-highlighted-bracket"),
+      );
+      widgets.push(
+        getHighlightBracketMark(
+          result.right,
+          "latex-suite-highlighted-bracket",
+        ),
+      );
       done = true;
       break;
     }
-    if (done)
-      break;
+    if (done) break;
   }
   return import_view10.Decoration.set(widgets, true);
 }
-var colorPairedBracketsPlugin = import_view10.ViewPlugin.fromClass(class {
-  constructor(view) {
-    this.decorations = colorPairedBrackets(view);
-  }
-  update(update) {
-    if (update.docChanged || update.viewportChanged) {
-      this.decorations = colorPairedBrackets(update.view);
+var colorPairedBracketsPlugin = import_view10.ViewPlugin.fromClass(
+  class {
+    constructor(view) {
+      this.decorations = colorPairedBrackets(view);
     }
-  }
-}, { decorations: (v) => v.decorations });
-var colorPairedBracketsPluginLowestPrec = import_state10.Prec.lowest(colorPairedBracketsPlugin.extension);
-var highlightCursorBracketsPlugin = import_view10.ViewPlugin.fromClass(class {
-  constructor(view) {
-    this.decorations = highlightCursorBrackets(view);
-  }
-  update(update) {
-    if (update.docChanged || update.selectionSet)
-      this.decorations = highlightCursorBrackets(update.view);
-  }
-}, { decorations: (v) => v.decorations });
+    update(update) {
+      if (update.docChanged || update.viewportChanged) {
+        this.decorations = colorPairedBrackets(update.view);
+      }
+    }
+  },
+  { decorations: (v) => v.decorations },
+);
+var colorPairedBracketsPluginLowestPrec = import_state10.Prec.lowest(
+  colorPairedBracketsPlugin.extension,
+);
+var highlightCursorBracketsPlugin = import_view10.ViewPlugin.fromClass(
+  class {
+    constructor(view) {
+      this.decorations = highlightCursorBrackets(view);
+    }
+    update(update) {
+      if (update.docChanged || update.selectionSet)
+        this.decorations = highlightCursorBrackets(update.view);
+    }
+  },
+  { decorations: (v) => v.decorations },
+);
 
 // src/editor_extensions/math_tooltip.ts
 var import_view11 = require("@codemirror/view");
@@ -15073,24 +18247,23 @@ var cursorTooltipField = import_state11.StateField.define({
   create: () => [],
   update(tooltips2, tr) {
     for (const effect4 of tr.effects) {
-      if (effect4.is(updateTooltipEffect))
-        return effect4.value;
+      if (effect4.is(updateTooltipEffect)) return effect4.value;
     }
     return tooltips2;
   },
-  provide: (f) => import_view11.showTooltip.computeN([f], (state) => state.field(f))
+  provide: (f) =>
+    import_view11.showTooltip.computeN([f], (state) => state.field(f)),
 });
 function handleMathTooltip(update) {
   const shouldUpdate = update.docChanged || update.selectionSet;
-  if (!shouldUpdate)
-    return;
+  if (!shouldUpdate) return;
   const settings = getLatexSuiteConfig(update.state);
   const ctx = Context.fromState(update.state);
   if (!shouldShowTooltip(update.state, ctx)) {
     const currTooltips = update.state.field(cursorTooltipField);
     if (currTooltips.length > 0) {
       update.view.dispatch({
-        effects: [updateTooltipEffect.of([])]
+        effects: [updateTooltipEffect.of([])],
       });
     }
     return;
@@ -15101,59 +18274,67 @@ function handleMathTooltip(update) {
   const create = () => {
     const dom = document.createElement("div");
     dom.addClass("cm-tooltip-cursor");
-    const renderedEqn = (0, import_obsidian7.renderMath)(eqn, ctx.mode.blockMath || ctx.mode.codeMath);
+    const renderedEqn = (0, import_obsidian7.renderMath)(
+      eqn,
+      ctx.mode.blockMath || ctx.mode.codeMath,
+    );
     dom.appendChild(renderedEqn);
     (0, import_obsidian7.finishRenderMath)();
     return { dom };
   };
   let newTooltips = [];
   if (ctx.mode.blockMath || ctx.mode.codeMath) {
-    newTooltips = [{
-      pos: above ? eqnBounds.start : eqnBounds.end,
-      above,
-      strictSide: true,
-      arrow: true,
-      create
-    }];
+    newTooltips = [
+      {
+        pos: above ? eqnBounds.start : eqnBounds.end,
+        above,
+        strictSide: true,
+        arrow: true,
+        create,
+      },
+    ];
   } else if (ctx.mode.inlineMath && above) {
-    newTooltips = [{
-      pos: eqnBounds.start,
-      above: true,
-      strictSide: true,
-      arrow: true,
-      create
-    }];
+    newTooltips = [
+      {
+        pos: eqnBounds.start,
+        above: true,
+        strictSide: true,
+        arrow: true,
+        create,
+      },
+    ];
   } else if (ctx.mode.inlineMath && !above) {
-    const endRange = import_state11.EditorSelection.range(eqnBounds.end, eqnBounds.end);
-    newTooltips = [{
-      pos: Math.max(
-        eqnBounds.start,
-        // the beginning position of the visual line where eqnBounds.end is
-        // located
-        update.view.moveToLineBoundary(endRange, false).anchor
-      ),
-      above: false,
-      strictSide: true,
-      arrow: true,
-      create
-    }];
+    const endRange = import_state11.EditorSelection.range(
+      eqnBounds.end,
+      eqnBounds.end,
+    );
+    newTooltips = [
+      {
+        pos: Math.max(
+          eqnBounds.start,
+          // the beginning position of the visual line where eqnBounds.end is
+          // located
+          update.view.moveToLineBoundary(endRange, false).anchor,
+        ),
+        above: false,
+        strictSide: true,
+        arrow: true,
+        create,
+      },
+    ];
   }
   update.view.dispatch({
-    effects: [updateTooltipEffect.of(newTooltips)]
+    effects: [updateTooltipEffect.of(newTooltips)],
   });
 }
 function shouldShowTooltip(state, ctx) {
-  if (!ctx.mode.inMath())
-    return false;
+  if (!ctx.mode.inMath()) return false;
   const isLivePreview = state.field(import_obsidian7.editorLivePreviewField);
-  if (ctx.mode.blockMath && isLivePreview)
-    return false;
+  if (ctx.mode.blockMath && isLivePreview) return false;
   const eqnBounds = ctx.getBounds();
-  if (!eqnBounds)
-    return false;
+  if (!eqnBounds) return false;
   const eqn = state.sliceDoc(eqnBounds.start, eqnBounds.end).trim();
-  if (eqn === "")
-    return false;
+  if (eqn === "") return false;
   return true;
 }
 var cursorTooltipBaseTheme = import_view11.EditorView.baseTheme({
@@ -15165,19 +18346,19 @@ var cursorTooltipBaseTheme = import_view11.EditorView.baseTheme({
     borderRadius: "6px",
     "& .cm-tooltip-arrow:before": {
       borderTopColor: "var(--background-modifier-border-hover)",
-      borderBottomColor: "var(--background-modifier-border-hover)"
+      borderBottomColor: "var(--background-modifier-border-hover)",
     },
     "& .cm-tooltip-arrow:after": {
       borderTopColor: "var(--background-secondary)",
-      borderBottomColor: "var(--background-secondary)"
+      borderBottomColor: "var(--background-secondary)",
     },
     "& p": {
-      margin: "0px"
+      margin: "0px",
     },
     "& mjx-container": {
-      padding: "2px !important"
-    }
-  }
+      padding: "2px !important",
+    },
+  },
 });
 
 // src/latex_suite.ts
@@ -15189,9 +18370,14 @@ var handleUpdate = (update) => {
   handleUndoRedo(update);
 };
 var onKeydown = (event, view) => {
-  const success = handleKeydown(event.key, event.shiftKey, event.ctrlKey || event.metaKey, isComposing(view, event), view);
-  if (success)
-    event.preventDefault();
+  const success = handleKeydown(
+    event.key,
+    event.shiftKey,
+    event.ctrlKey || event.metaKey,
+    isComposing(view, event),
+    view,
+  );
+  if (success) event.preventDefault();
 };
 var handleKeydown = (key, shiftKey, ctrlKey, isIME, view) => {
   const settings = getLatexSuiteConfig(view);
@@ -15207,13 +18393,11 @@ var handleKeydown = (key, shiftKey, ctrlKey, isIME, view) => {
     }
   }
   if (settings.snippetsEnabled) {
-    if (settings.suppressSnippetTriggerOnIME && isIME)
-      return;
+    if (settings.suppressSnippetTriggerOnIME && isIME) return;
     if (!ctrlKey) {
       try {
         success = runSnippets(view, ctx, key);
-        if (success)
-          return true;
+        if (success) return true;
       } catch (e) {
         clearSnippetQueue(view);
         console.error(e);
@@ -15222,44 +18406,46 @@ var handleKeydown = (key, shiftKey, ctrlKey, isIME, view) => {
   }
   if (key === "Tab") {
     success = setSelectionToNextTabstop(view);
-    if (success)
-      return true;
+    if (success) return true;
   }
   if (settings.autofractionEnabled && ctx.mode.strictlyInMath()) {
     if (key === "/") {
       success = runAutoFraction(view, ctx);
-      if (success)
-        return true;
+      if (success) return true;
     }
   }
   if (settings.matrixShortcutsEnabled && ctx.mode.blockMath) {
     if (["Tab", "Enter"].contains(key)) {
       success = runMatrixShortcuts(view, ctx, key, shiftKey);
-      if (success)
-        return true;
+      if (success) return true;
     }
   }
   if (settings.taboutEnabled) {
     if (key === "Tab" || shouldTaboutByCloseBracket(view, key)) {
       success = tabout(view, ctx);
-      if (success)
-        return true;
+      if (success) return true;
     }
   }
   return false;
 };
 var latexSuiteExtensions = (settings) => [
   getLatexSuiteConfigExtension(settings),
-  import_state12.Prec.highest(import_view12.EditorView.domEventHandlers({ "keydown": onKeydown })),
+  import_state12.Prec.highest(
+    import_view12.EditorView.domEventHandlers({ keydown: onKeydown }),
+  ),
   // Register keymaps
   import_view12.EditorView.updateListener.of(handleUpdate),
-  snippetExtensions
+  snippetExtensions,
 ];
 var optionalExtensions = {
-  "conceal": [concealPlugin.extension],
-  "colorPairedBrackets": [colorPairedBracketsPluginLowestPrec],
-  "highlightCursorBrackets": [highlightCursorBracketsPlugin.extension],
-  "mathPreview": [cursorTooltipField.extension, cursorTooltipBaseTheme, (0, import_view12.tooltips)({ position: "absolute" })]
+  conceal: [concealPlugin.extension],
+  colorPairedBrackets: [colorPairedBracketsPluginLowestPrec],
+  highlightCursorBrackets: [highlightCursorBracketsPlugin.extension],
+  mathPreview: [
+    cursorTooltipField.extension,
+    cursorTooltipBaseTheme,
+    (0, import_view12.tooltips)({ position: "absolute" }),
+  ],
 };
 
 // src/main.ts
@@ -15280,12 +18466,12 @@ var LatexSuitePlugin = class extends import_obsidian8.Plugin {
       this.addEditorCommands();
     });
   }
-  onunload() {
-  }
+  onunload() {}
   legacyEditorWarning() {
     var _a;
     if ((_a = this.app.vault.config) == null ? void 0 : _a.legacyEditor) {
-      const message = "Obsidian Latex Suite: This plugin does not support the legacy editor. Switch to Live Preview mode to use this plugin.";
+      const message =
+        "Obsidian Latex Suite: This plugin does not support the legacy editor. Switch to Live Preview mode to use this plugin.";
       new import_obsidian8.Notice(message, 1e5);
       console.log(message);
       return;
@@ -15296,9 +18482,15 @@ var LatexSuitePlugin = class extends import_obsidian8.Plugin {
       let data = yield this.loadData();
       const shouldMigrateSettings = data ? "basicSettings" in data : false;
       function migrateSettings(oldSettings) {
-        return __spreadProps(__spreadValues(__spreadValues({}, oldSettings.basicSettings), oldSettings.rawSettings), {
-          snippets: oldSettings.snippets
-        });
+        return __spreadProps(
+          __spreadValues(
+            __spreadValues({}, oldSettings.basicSettings),
+            oldSettings.rawSettings,
+          ),
+          {
+            snippets: oldSettings.snippets,
+          },
+        );
       }
       if (shouldMigrateSettings) {
         data = migrateSettings(data);
@@ -15307,10 +18499,17 @@ var LatexSuitePlugin = class extends import_obsidian8.Plugin {
       if (shouldMigrateSettings) {
         this.saveSettings();
       }
-      if (this.settings.loadSnippetsFromFile || this.settings.loadSnippetVariablesFromFile) {
+      if (
+        this.settings.loadSnippetsFromFile ||
+        this.settings.loadSnippetVariablesFromFile
+      ) {
         const tempSnippetVariables = yield this.getSettingsSnippetVariables();
-        const tempSnippets = yield this.getSettingsSnippets(tempSnippetVariables);
-        this.CMSettings = processLatexSuiteSettings(sortSnippets(tempSnippets), this.settings);
+        const tempSnippets =
+          yield this.getSettingsSnippets(tempSnippetVariables);
+        this.CMSettings = processLatexSuiteSettings(
+          sortSnippets(tempSnippets),
+          this.settings,
+        );
         this.app.workspace.onLayoutReady(() => {
           this.processSettings();
         });
@@ -15330,7 +18529,9 @@ var LatexSuitePlugin = class extends import_obsidian8.Plugin {
       try {
         return yield parseSnippetVariables(this.settings.snippetVariables);
       } catch (e) {
-        new import_obsidian8.Notice(`Failed to load snippet variables from settings: ${e}`);
+        new import_obsidian8.Notice(
+          `Failed to load snippet variables from settings: ${e}`,
+        );
         console.log(`Failed to load snippet variables from settings: ${e}`);
         return {};
       }
@@ -15341,7 +18542,9 @@ var LatexSuitePlugin = class extends import_obsidian8.Plugin {
       try {
         return yield parseSnippets(this.settings.snippets, snippetVariables);
       } catch (e) {
-        new import_obsidian8.Notice(`Failed to load snippets from settings: ${e}`);
+        new import_obsidian8.Notice(
+          `Failed to load snippets from settings: ${e}`,
+        );
         console.log(`Failed to load snippets from settings: ${e}`);
         return [];
       }
@@ -15350,19 +18553,37 @@ var LatexSuitePlugin = class extends import_obsidian8.Plugin {
   getSnippets(becauseFileLocationUpdated, becauseFileUpdated) {
     return __async(this, null, function* () {
       const files = getFileSets(this);
-      const snippetVariables = this.settings.loadSnippetVariablesFromFile ? yield getVariablesFromFiles(this, files) : yield this.getSettingsSnippetVariables();
-      const unknownFileVariables = yield tryGetVariablesFromUnknownFiles(this, files);
+      const snippetVariables = this.settings.loadSnippetVariablesFromFile
+        ? yield getVariablesFromFiles(this, files)
+        : yield this.getSettingsSnippetVariables();
+      const unknownFileVariables = yield tryGetVariablesFromUnknownFiles(
+        this,
+        files,
+      );
       if (this.settings.loadSnippetVariablesFromFile) {
         Object.assign(snippetVariables, unknownFileVariables);
       }
-      const snippets2 = this.settings.loadSnippetsFromFile ? yield getSnippetsFromFiles(this, files, snippetVariables) : yield this.getSettingsSnippets(snippetVariables);
-      this.showSnippetsLoadedNotice(snippets2.length, Object.keys(snippetVariables).length, becauseFileLocationUpdated, becauseFileUpdated);
+      const snippets2 = this.settings.loadSnippetsFromFile
+        ? yield getSnippetsFromFiles(this, files, snippetVariables)
+        : yield this.getSettingsSnippets(snippetVariables);
+      this.showSnippetsLoadedNotice(
+        snippets2.length,
+        Object.keys(snippetVariables).length,
+        becauseFileLocationUpdated,
+        becauseFileUpdated,
+      );
       return sortSnippets(snippets2);
     });
   }
-  processSettings(becauseFileLocationUpdated = false, becauseFileUpdated = false) {
+  processSettings(
+    becauseFileLocationUpdated = false,
+    becauseFileUpdated = false,
+  ) {
     return __async(this, null, function* () {
-      this.CMSettings = processLatexSuiteSettings(yield this.getSnippets(becauseFileLocationUpdated, becauseFileUpdated), this.settings);
+      this.CMSettings = processLatexSuiteSettings(
+        yield this.getSnippets(becauseFileLocationUpdated, becauseFileUpdated),
+        this.settings,
+      );
       this.reconfigureLatexSuiteConfig();
       this.refreshCMExtensions();
     });
@@ -15370,13 +18591,12 @@ var LatexSuitePlugin = class extends import_obsidian8.Plugin {
   reconfigureLatexSuiteConfig() {
     iterateCM6(this.app.workspace, (view) => {
       view.dispatch({
-        effects: reconfigureLatexSuiteConfig(this.CMSettings)
+        effects: reconfigureLatexSuiteConfig(this.CMSettings),
       });
     });
   }
   refreshCMExtensions() {
-    while (this.editorExtensions.length)
-      this.editorExtensions.pop();
+    while (this.editorExtensions.length) this.editorExtensions.pop();
     this.editorExtensions.push(latexSuiteExtensions(this.CMSettings));
     const extensionDict = optionalExtensions;
     const features = Object.keys(optionalExtensions);
@@ -15387,13 +18607,18 @@ var LatexSuitePlugin = class extends import_obsidian8.Plugin {
     }
     this.app.workspace.updateOptions();
   }
-  showSnippetsLoadedNotice(nSnippets, nSnippetVariables, becauseFileLocationUpdated, becauseFileUpdated) {
-    if (!(becauseFileLocationUpdated || becauseFileUpdated))
-      return;
-    const prefix = becauseFileLocationUpdated ? "Loaded " : "Successfully reloaded ";
+  showSnippetsLoadedNotice(
+    nSnippets,
+    nSnippetVariables,
+    becauseFileLocationUpdated,
+    becauseFileUpdated,
+  ) {
+    if (!(becauseFileLocationUpdated || becauseFileUpdated)) return;
+    const prefix = becauseFileLocationUpdated
+      ? "Loaded "
+      : "Successfully reloaded ";
     const body = [];
-    if (this.settings.loadSnippetsFromFile)
-      body.push(`${nSnippets} snippets`);
+    if (this.settings.loadSnippetsFromFile) body.push(`${nSnippets} snippets`);
     if (this.settings.loadSnippetVariablesFromFile)
       body.push(`${nSnippetVariables} snippet variables`);
     const suffix = " from files.";
@@ -15407,9 +18632,9 @@ var LatexSuitePlugin = class extends import_obsidian8.Plugin {
   watchFiles() {
     this.app.workspace.onLayoutReady(() => {
       const eventsAndCallbacks = {
-        "modify": onFileChange,
-        "delete": onFileDelete,
-        "create": onFileCreate
+        modify: onFileChange,
+        delete: onFileDelete,
+        create: onFileCreate,
       };
       for (const [key, value] of Object.entries(eventsAndCallbacks)) {
         this.registerEvent(this.app.vault.on(key, (file) => value(this, file)));
