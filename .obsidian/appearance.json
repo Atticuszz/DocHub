@@ -1,9 +1,6 @@
 {
   "cssTheme": "Things",
-  "enabledCssSnippets": [
-    "page_width",
-    "zotero-annotations"
-  ],
+  "enabledCssSnippets": ["page_width", "zotero-annotations"],
   "accentColor": "",
   "baseFontSize": 17
 }

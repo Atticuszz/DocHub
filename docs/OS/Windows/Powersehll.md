@@ -29,7 +29,9 @@ handle.exe <file path>
 `->C:\Users\18317\AppData\Roaming\Python\Scripts\poetry.exe`
 
 ### add Path
-*admin*
+
+_admin_
+
 ```powershell
 # 获取当前系统路径
 $currentPath = [Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
@@ -55,8 +57,8 @@ if ($currentPath -notcontains $newPath) {
 
 ```
 
-
 ### combine project files such as .py
+
 ```powershell
 # 设置需要递归搜索的目录路径
 $directoryPath = "C:\path\to\your\python\files"
@@ -77,10 +79,10 @@ foreach ($file in $pythonFiles) {
     if ($file.FullName -ne $combinedFilePath) {
         # 为每个文件添加一个简单的注释行
         ("# Contents of " + $file.FullName) | Out-File -FilePath $combinedFilePath -Append
-        
+
         # 追加文件内容到combined.py
         Get-Content -Path $file.FullName | Out-File -FilePath $combinedFilePath -Append
-        
+
         # 添加换行以分隔不同的文件内容
         "`n" | Out-File -FilePath $combinedFilePath -Append
     }

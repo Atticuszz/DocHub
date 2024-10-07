@@ -23,7 +23,7 @@ J. Hu _et al._, ‘CG-SLAM: Efficient Dense RGB-D SLAM in a Consistent Uncertain
 > _« Recently neural radiance fields (NeRF) have been widely exploited as 3D representations for dense simultaneous localization and mapping (SLAM). Despite their notable successes in surface modeling and novel view synthesis, existing NeRF-based methods are hindered by their computationally intensive and time-consuming volume rendering pipeline. This paper presents an efficient dense RGB-D SLAM system, i.e., CG-SLAM, based on a novel uncertainty-aware 3D Gaussian field with high consistency and geometric stability. Through an in-depth analysis of Gaussian Splatting, we propose several techniques to construct a consistent and stable 3D Gaussian field suitable for tracking and mapping. Additionally, a novel depth uncertainty model is proposed to ensure the selection of valuable Gaussian primitives during optimization, thereby improving tracking efficiency and accuracy. Experiments on various datasets demonstrate that CG-SLAM achieves superior tracking and mapping performance with a notable tracking speed of up to 15 Hz. We will make our source code publicly available. Project page: https://zju3dv.github.io/cg-slam. »_
 
 > [!Annotation|#ff6666]+
->_« 3.4 Tracking »_([9](zotero://open-pdf/library/items/4SWEXA56?page=9&annotation=HWPMW9GI))
+> _« 3.4 Tracking »_([9](zotero://open-pdf/library/items/4SWEXA56?page=9&annotation=HWPMW9GI))
 >
 > 在《CG-SLAM: Efficient Dense RGB-D SLAM in a Consistent Uncertainty-aware 3D Gaussian Field》论文中，定位方式基于一个不确定性感知的三维高斯场（3D Gaussian Field）。下面我将详细解析定位方式的原理和依赖的场景表示，并结合论文中的数学公式进行说明。
 
@@ -112,7 +112,7 @@ CG-SLAM通过不确定性感知的三维高斯场，结合不确定性建模和�
 参考的主要公式均来自于论文中的公式，以上分析综合了论文中的数学描述和一些扩展说明，以便更好地理解CG-SLAM的定位方式和场景表示。您可以参考原文档中的详细内容以获取更深入的理解：[Hu et al_2024_CG-SLAM3.pdf](file:///mnt/data/Hu%20et%20al_2024_CG-SLAM3.pdf)
 
 > [!Annotation|#ff6666]+
->_« Experiments »_([9](zotero://open-pdf/library/items/4SWEXA56?page=9&annotation=QUYIZY6E))
+> _« Experiments »_([9](zotero://open-pdf/library/items/4SWEXA56?page=9&annotation=QUYIZY6E))
 >
 > ### 定位部分的评估标准
 
@@ -129,10 +129,11 @@ $$
 其中，$$p_i^{\text{est}}$$表示估计的位姿，$$p_i^{\text{gt}}$$表示真实的位姿，$$N$$是位姿的数量。
 
 ### 实验数据展示
+
 #### Replica数据集
 
 | Method       | rm-0 | rm-1 | rm-2 | off-0 | off-1 | off-2 | off-3 | off-4 | Avg  |
-|--------------|------|------|------|-------|-------|-------|-------|-------|------|
+| ------------ | ---- | ---- | ---- | ----- | ----- | ----- | ----- | ----- | ---- |
 | NICE-SLAM    | 0.97 | 1.31 | 1.07 | 0.88  | 1.00  | 1.06  | 1.10  | 1.13  | 1.06 |
 | Co-SLAM      | 0.77 | 1.04 | 1.09 | 0.58  | 0.53  | 2.05  | 1.49  | 0.84  | 0.99 |
 | Point-SLAM   | 0.56 | 0.47 | 0.30 | 0.35  | 0.62  | 0.55  | 0.72  | 0.73  | 0.54 |
@@ -142,35 +143,33 @@ $$
 | **Ours**     | 0.29 | 0.27 | 0.25 | 0.33  | 0.14  | 0.28  | 0.31  | 0.29  | 0.27 |
 | Ours-light   | 0.44 | 0.40 | 0.34 | 0.31  | 0.30  | 0.43  | 0.48  | 0.63  | 0.42 |
 
-*表1：Replica数据集的定位结果 (ATE RMSE [cm] ↓)*
+_表1：Replica数据集的定位结果 (ATE RMSE [cm] ↓)_
 
 #### TUM-RGBD数据集
 
-| Method       | fr1/desk | fr1/desk2 | fr1/room | fr2/xyz | fr3/office | Avg  |
-|--------------|----------|-----------|----------|---------|------------|------|
-| NICE-SLAM    | 4.26     | 4.99      | 34.49    | 31.73   | 3.87       | 15.87|
-| Co-SLAM      | 2.7      | 4.57      | 30.16    | 1.9     | 2.6        | 8.38 |
-| Point-SLAM   | 4.34     | 4.54      | 30.92    | 1.31    | 3.48       | 8.92 |
-| Vox-Fusion   | 3.52     | 6.00      | 19.53    | 1.49    | 26.01      | 11.31|
-| GS-SLAM      | 3.3      | -         | -        | 1.3     | 6.6        | -    |
-| SplaTAM      | 3.35     | 6.54      | 11.13    | 1.24    | 5.16       | 5.48 |
-| **Ours**     | 2.43     | 4.54      | 9.39     | 1.20    | 2.45       | 4.0  |
-| Ours-light   | 3.14     | 4.73      | 10.67    | 1.28    | 2.60       | 4.48 |
+| Method       | fr1/desk | fr1/desk2 | fr1/room | fr2/xyz | fr3/office | Avg   |
+| ------------ | -------- | --------- | -------- | ------- | ---------- | ----- |
+| NICE-SLAM    | 4.26     | 4.99      | 34.49    | 31.73   | 3.87       | 15.87 |
+| Co-SLAM      | 2.7      | 4.57      | 30.16    | 1.9     | 2.6        | 8.38  |
+| Point-SLAM   | 4.34     | 4.54      | 30.92    | 1.31    | 3.48       | 8.92  |
+| Vox-Fusion   | 3.52     | 6.00      | 19.53    | 1.49    | 26.01      | 11.31 |
+| GS-SLAM      | 3.3      | -         | -        | 1.3     | 6.6        | -     |
+| SplaTAM      | 3.35     | 6.54      | 11.13    | 1.24    | 5.16       | 5.48  |
+| **Ours**     | 2.43     | 4.54      | 9.39     | 1.20    | 2.45       | 4.0   |
+| Ours-light   | 3.14     | 4.73      | 10.67    | 1.28    | 2.60       | 4.48  |
 
-*表2：TUM-RGBD数据集的定位结果 (ATE RMSE [cm] ↓)*
+_表2：TUM-RGBD数据集的定位结果 (ATE RMSE [cm] ↓)_
 
 #### ScanNet数据集
 
-| Method       | Sc.0000 | Sc.0059 | Sc.0106 | Sc.0169 | Sc.0181 | Sc.0207 | Avg  |
-|--------------|---------|---------|---------|---------|---------|---------|------|
-| NICE-SLAM    | 12.00   | 14.00   | 7.90    | 10.90   | 13.40   | 6.20    | 10.70|
-| Co-SLAM      | 7.18    | 12.29   | 10.9    | 6.62    | 13.43   | 7.13    | 9.37 |
-| Point-SLAM   | 10.24   | 8.29    | 11.86   | 22.16   | 14.77   | 9.54    | 12.19|
-| Vox-Fusion   | 8.39    | 8.95    | -       | 9.50    | 12.20   | 6.43    | -    |
-| SplaTAM      | 12.83   | 10.10   | 17.72   | 12.08   | 11.10   | 7.46    | 11.88|
-| **Ours**     | 7.09    | 7.46    | 8.88    | 8.16    | 11.60   | 5.34    | 8.08 |
-| Ours-light   | 6.90    | 8.36    | 8.72    | 8.21    | 12.72   | 5.70    | 8.44 |
+| Method       | Sc.0000 | Sc.0059 | Sc.0106 | Sc.0169 | Sc.0181 | Sc.0207 | Avg   |
+| ------------ | ------- | ------- | ------- | ------- | ------- | ------- | ----- |
+| NICE-SLAM    | 12.00   | 14.00   | 7.90    | 10.90   | 13.40   | 6.20    | 10.70 |
+| Co-SLAM      | 7.18    | 12.29   | 10.9    | 6.62    | 13.43   | 7.13    | 9.37  |
+| Point-SLAM   | 10.24   | 8.29    | 11.86   | 22.16   | 14.77   | 9.54    | 12.19 |
+| Vox-Fusion   | 8.39    | 8.95    | -       | 9.50    | 12.20   | 6.43    | -     |
+| SplaTAM      | 12.83   | 10.10   | 17.72   | 12.08   | 11.10   | 7.46    | 11.88 |
+| **Ours**     | 7.09    | 7.46    | 8.88    | 8.16    | 11.60   | 5.34    | 8.08  |
+| Ours-light   | 6.90    | 8.36    | 8.72    | 8.21    | 12.72   | 5.70    | 8.44  |
 
-*表3：ScanNet数据集的定位结果 (ATE RMSE [cm] ↓)*
-
-
+_表3：ScanNet数据集的定位结果 (ATE RMSE [cm] ↓)_

@@ -1,4 +1,5 @@
 ## Basic
+
 - [ ] to-do
 - [/] incomplete
 - [x] done
@@ -7,6 +8,7 @@
 - [<] scheduling
 
 ## Extras
+
 - [?] question
 - [!] important
 - [*] star

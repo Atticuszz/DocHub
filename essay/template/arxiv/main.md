@@ -15,24 +15,15 @@ author:
 abstract: your abstract here
 url: https://spla-tam.github.io
 ---
-# Introduction
 
+# Introduction
 
 # Related Work
 
-
-
 # Method
-
-
 
 ## sub title
 
-
-
 # Experiments
 
-
-
 # Conclusion
-

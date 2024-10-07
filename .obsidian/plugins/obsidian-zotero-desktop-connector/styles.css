@@ -206,7 +206,7 @@
 }
 .zt-suggest-loading:before,
 .zt-suggest-loading:after {
-  content: '';
+  content: "";
   position: absolute;
 }
 .zt-suggest-loading:before {
